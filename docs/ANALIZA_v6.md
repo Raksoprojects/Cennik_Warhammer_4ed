@@ -20,9 +20,9 @@ ale po namyśle. Tabela z `narzedzia/balans_v6.py` (CSV: `docs/analiza_v6/balans
 | Siekiera | 4 s | 4 | 2 | 1 | <1 | <1 | <1 | <1 | <1 | <1 |
 | Broń ręczna (topór, maczuga) | 1 ZK 14 s | 37 | 19 | 12 | 7 | 6 | 2 | 1 | <1 | <1 |
 | Włócznia | 16 s | 17 | 9 | 6 | 3 | 3 | <1 | <1 | <1 | <1 |
-| Łuk | 19 s | 21 | 10 | 7 | 4 | 3 | 1 | <1 | <1 | <1 |
+| Łuk | 2 ZK | 44 | 22 | 15 | 9 | 7 | 2 | 1 | <1 | <1 |
 | Miecz | 3 ZK 9 s | 75 | 38 | 25 | 15 | 13 | 4 | 3 | 1 | <1 |
-| Kusza | 6 ZK 18 s | 151 | 75 | 50 | 30 | 25 | 8 | 5 | 2 | <1 |
+| Kusza | 4 ZK | 87 | 44 | 29 | 17 | 15 | 5 | 3 | 1 | <1 |
 | Rusznica lontowa | 4 ZK | 87 | 44 | 29 | 17 | 15 | 5 | 3 | 1 | <1 |
 | Pistolet | 20 ZK | 400+ | 218 | 145 | 87 | 73 | 24 | 15 | 7 | 2 |
 | Skórzany kaftan | 1 ZK 10 s | 33 | 16 | 11 | 7 | 5 | 2 | 1 | <1 | <1 |
@@ -60,7 +60,7 @@ ale po namyśle. Tabela z `narzedzia/balans_v6.py` (CSV: `docs/analiza_v6/balans
 | # | Co | Dlaczego to problem | Propozycja |
 |---|---|---|---|
 | 1 | **Koc 1 ZK 4 s droższy niż łuk (19 s) i włócznia (16 s)** | Koc podniesiono w v4, żeby nie był tańszy od sukna. Przy stole wygląda dziwnie: chłop kupi łuk taniej niż koc. | Albo zostawić (sukno było drogie, łuk wiejski tani — historycznie prawda), albo obniżyć koc do ok. 12 s z sukna szarego zamiast importowanego. |
-| 2 | **Łuk ¼ ceny RAW, kusza 1,4× RAW** | Kusza 7× droższa od łuku; w RAW tylko 1,25×. Łuk staje się oczywistym wyborem. | Zostawić (źródła angielskie: łuk tani). Albo łuk do ok. 1 ZK. |
+| 2 | **Łuk ¼ ceny RAW, kusza 1,4× RAW** (rozstrzygnięte, 3.1 pkt 4) | Kusza była 7× droższa od łuku; w RAW tylko 1,25×. | Łuk 2 ZK, kusza 4 ZK. |
 | 3 | **Wieś nie ma wozu** | Limit wsi 2 ZK, a furmanka (6 ZK) i wóz nie są w wyjątkach (wyjątki: żywy inwentarz i żywność). Nikt nie robi pojazdów na zamówienie. Wieś musi jechać do miasteczka. | Dodać pojazdy chłopskie (furmanka, wóz) do wyjątków wsi albo dać kowalowi „robotę” na wozy (kołodziej). |
 | 4 | **Generator nie daje towaru z Zaletami ani Wadami** | „Mistrz cechu, wyroby przednie” sprzedaje to samo co rzemieślnik, tylko drożej. Paser i domokrążca nie mają towaru Tandetnego. | Szansa na Zalety u mistrza cechu i płatnerza, na Wady u pasera i domokrążcy. Dziś MG ustawia jakość ręcznie w karcie kupca. |
 | 5 | **Lekki koń bojowy: Dostępność Powszechna** | Rumak jest Ograniczony, a lżejszy koń bojowy Powszechny przy cenie 262 ZK. | Ograniczona. |
@@ -76,7 +76,10 @@ ale po namyśle. Tabela z `narzedzia/balans_v6.py` (CSV: `docs/analiza_v6/balans
    z materiałem wsi 8 ZK 12 s 2 p, robota 7 tygodni. Furmanka: 5 ZK 14 s 9 p, z materiałem 2 ZK 17 s 5 p.
 3. Jakość w sklepach — losowana wg kupca (`kupcy.json → jakosc`): mistrz cechu 35% pozycji z Zaletami, płatnerz 25%,
    bławatny 20%; paser 30% z Wadami, domokrążca 35%, kramarz i kwatermistrz 15%. Szacunki do korekty.
-4. Łuk — do ustalenia (patrz niżej).
+4. Łuki i kusze (2026-10-25): porządny łuk 2 ZK, kusza 4 ZK; rodziny w tych samych proporcjach — krótki łuk
+   1 ZK 14 s, łuk długi 2 ZK 15 s, łuk elfi 13 ZK 15 s (5× długi), ciężka kusza 6 ZK, kusza pistoletowa 5 ZK 16 s.
+   Łuk „z kija z lasu” to łuk z Wadami przedmiotu (np. Tandetny i Brzydki: 10 s). Test rzemieślnika dla łuku długiego:
+   materiał 80 p (dobry cis) i 3 dni pracy zamiast 40 p i 2 dni.
 5. Lekki koń bojowy, najęty mistrz, ubranie — bez zmian.
 
 ## 4. Zmiany v6 bez wpływu na ceny

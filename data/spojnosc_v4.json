@@ -421,8 +421,9 @@
    {
     "id": "luk-dlugi",
     "warsztat": "luczarz",
-    "dni": 2,
-    "material_p": 40
+    "dni": 3,
+    "material_p": 80,
+    "uwaga": "v6 (MG): porządny łuk długi — dobry cis i 3 dni pracy"
    },
    {
     "id": "ksiega-medycyna",

@@ -59,8 +59,28 @@ for nazwa, kat, zr, raw_zk, obc, dost, klasa, wzor in NOWE:
     else:
         j = max(k for k, c in enumerate(C['pozycje']) if c['kat'] == kat)
         C['pozycje'].insert(j + 1, poz); P[i] = poz
+# Decyzja MG (2026-10-25): porządny łuk 2 ZK, kusza 4 ZK (było 19 s i 6 ZK 18 s — kusza 7× łuk, w RAW 1,25×).
+# Łuk „z kija z lasu” to łuk z Wadami przedmiotu (×½ za każdą). Rodziny w tych samych proporcjach co dotąd:
+# łuki × (2 ZK ÷ 19 s), kusze × (4 ZK ÷ 6 ZK 18 s). Łuk elfi zostaje 5× łuk długi (reguła rodziny 4,5–5,5).
+LUKI, KUSZE = ['krotki-luk', 'luk', 'luk-dlugi', 'luk-elfi'], ['kusza', 'ciezka-kusza', 'kusza-pistoletowa']
+ZRODLO_LUK = {'krotki-luk': 96, 'luk': 114, 'luk-dlugi': 156, 'luk-elfi': 780}          # ×1 w v5.2
+ZRODLO_KUSZA = {'kusza': 828, 'ciezka-kusza': 1236, 'kusza-pistoletowa': 1200}
+for ids, stare, cel in ((LUKI, ZRODLO_LUK, ('luk', 480)), (KUSZE, ZRODLO_KUSZA, ('kusza', 960))):
+    m = pr['mnozniki']['bron']
+    q = cel[1] / m / stare[cel[0]]
+    for i in ids:
+        P[i]['cena_ref_p'] = round(stare[i] * q)
+        P[i]['cena_p'] = ladna(P[i]['cena_ref_p'] * m)
+        uw = 'v6: decyzja MG — porządny łuk 2 ZK, kusza 4 ZK; rodzina w tych samych proporcjach.'
+        if uw not in (P[i].get('uwagi_danych') or ''): P[i]['uwagi_danych'] = ((P[i].get('uwagi_danych') or '') + ' ' + uw).strip()
 W('data/cennik.json', C)
 W('data/klasy_cenowe.json', K)
+# Decyzja MG: łuk długi 2 ZK 15 s zostaje; szacunek testu rzemieślnika poprawiony — porządny łuk długi
+# to dobry cis na łęczysko (80 p zamiast 40 p) i 3 dni pracy zamiast 2.
+SP = J('data/spojnosc_v4.json')
+for r in SP['rzemieslnik']['wzorce']:
+    if r['id'] == 'luk-dlugi': r.update(dni=3, material_p=80, uwaga='v6 (MG): porządny łuk długi — dobry cis i 3 dni pracy')
+W('data/spojnosc_v4.json', SP)
 
 # ---------------------------------------------------------------- Zalety i Wady
 WB = J('../Generator_NPC/public/data/weapons.json') if os.path.exists(R + '../Generator_NPC/public/data/weapons.json') else None
