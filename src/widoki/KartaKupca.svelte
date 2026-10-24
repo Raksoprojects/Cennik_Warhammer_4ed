@@ -59,11 +59,12 @@
     skupTxt = skupCena = ''; skupIle = 1;
   }
   // ---- zamówienia
+  let zamMat = $state(false);
   let zamTxt = $state(''), zamJak = $state<Record<string, number>>({}), zamDla = $state(''), zamCena = $state('');
   function zamow() {
     const c = poNazwie(zamTxt); if (!c) { msg = 'Nie ma takiego towaru w cenniku.'; zly = true; return; }
     const cena = parsujCene(zamCena);
-    zDecyzja('Kupiec tego nie robi', w => T.zamow(d, $state.snapshot(K), { id: c.id, jakosc: zamJak, dla: zamDla.trim(), wymus: w, cena_p: Number.isNaN(cena) ? null : cena }),
+    zDecyzja('Kupiec tego nie robi', w => T.zamow(d, $state.snapshot(K), { id: c.id, jakosc: zamJak, dla: zamDla.trim(), wymus: w, material: zamMat, cena_p: Number.isNaN(cena) ? null : cena }),
       `Zamówiono: ${c.nazwa}.`);
     zamTxt = zamDla = zamCena = ''; zamJak = {};
   }
@@ -183,6 +184,8 @@
       <label class="pole waskie"><span>Cena <Podpowiedz tekst="Puste = cena z wyliczenia (jak w zakładce Zamówienie, z Twoim modyfikatorem). Wpisz, jeśli umówiliście się inaczej." /></span><input bind:value={zamCena} placeholder="auto" /></label>
       <button onclick={zamow}>Zamów</button>
     </div>
+    <label class="male nie-drukuj" style="display:flex;gap:6px;align-items:center"><input type="checkbox" bind:checked={zamMat} />
+      Materiał zamawiającego (płaci {Math.round(d.rynek.zamowienie.material_wlasny * 100)}% — tylko gdy kupiec robi sam)</label>
     <details class="opis nie-drukuj"><summary>Jakość zamówienia (Zalety i Wady przedmiotu)</summary><WyborCech bind:cechy={zamJak} /></details>
     {#each [...K.zamowienia].reverse() as z (z.uid)}
       <div style="border-top:1px solid var(--linia);padding:8px 0">

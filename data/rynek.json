@@ -163,6 +163,11 @@
   "opis": "HR-024: każda Wada ×½, każda Zaleta ×2 (PG s.292). W oryginalnym artefakcie Tandetna = ×¼ – błąd poprawiony. v6: cechy przedmiotu z poziomami (jakoscZ w silniku); cena w cenniku = wariant podstawowy bez Zalet i Wad przedmiotu.",
   "za_zalete": 2,
   "za_wade": 0.5,
+  "kategorie": ["Broń biała", "Broń zasięgowa", "Pancerze", "Ubranie i dodatki", "Narzędzia i zestawy", "Wyposażenie różne"],
+  "losowanie": {
+   "opis": "v6: generator — szansa z kupcy.json → jakosc (zalety / wady) na pozycję z kategorii powyżej. Liczba Zalet albo Wad z tabeli ile (1k10). Osobny strumień losowania, nie zmienia reszty sklepu.",
+   "ile": [ { "do": 7, "n": 1 }, { "do": 9, "n": 2 }, { "do": 10, "n": 3 } ]
+  },
   "zalety": [
    { "nazwa": "Poręczny", "wielokrotna": false, "opis": "Obciążenie −1." },
    { "nazwa": "Praktyczny", "wielokrotna": false, "opis": "Nieudany Test z tym przedmiotem +1 PS; kary za noszenie pancerza o poziom niżej." },
@@ -205,6 +210,8 @@
  },
  "zamowienie": {
   "narzut_robota": 1.25,
+  "material_wlasny": 0.5,
+  "material_wlasny_opis": "v6: zamawiający daje materiał (wieś składa się na wóz, daje drewno i żelazo) — płaci tylko ten udział ceny (robociznę). Szacunek, do korekty.",
   "narzut_sprowadzenie": 1.45,
   "zaliczka": 0.5,
   "termin": [

@@ -85,6 +85,32 @@ test('dogenerowanie dodaje nowe pozycje z asortymentu', () => {
   assert.ok(K2.towar.every(w => T.czyWAsortymencie(d, K2, w.id).ok));
 });
 
+test('wóz na zamówienie: kowal i kołodziej robią, wieś daje materiał', () => {
+  for (const kupiec of ['kowal', 'kolodziej']) {
+    const z = S.wycenZamowienie(d, { kupiec, osada: 'wies', przedmiot: 'woz', seed: 1 });
+    assert.equal(z.status, 'wykonuje', kupiec);
+    const m = S.wycenZamowienie(d, { kupiec, osada: 'wies', przedmiot: 'woz', material: true, seed: 1 });
+    assert.equal(m.cena_p, Math.round(z.cena_p * d.rynek.zamowienie.material_wlasny));
+    assert.equal(m.termin, z.termin, 'materiał nie skraca roboty');
+  }
+  assert.ok(S.wycenZamowienie(d, { kupiec: 'kowal', osada: 'wies', przedmiot: 'krowa' }).status === 'odmowa', 'kowal nie robi krów');
+  assert.ok(S.ktoRobi(d, 'Zwierzęta i pojazdy', 'woz').some(k => k.id === 'kolodziej'));
+});
+
+test('jakość w sklepie: mistrz cechu ma Zalety, paser Wady; zapisany kupiec liczy tak samo', () => {
+  const ile = (kupiec, co) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap(seed => S.generujKupca(d, { kupiec, osada: 'metropolia', seed }).towar)
+    .filter(t => t.jakosc && (co === 'z' ? t.jakosc.mnoznik > 1 : t.jakosc.mnoznik < 1)).length;
+  assert.ok(ile('mistrzcechu', 'z') > 0);
+  assert.equal(ile('mistrzcechu', 'w'), 0);
+  assert.ok(ile('paser', 'w') > 0);
+  const sk = S.generujKupca(d, { kupiec: 'mistrzcechu', osada: 'metropolia', seed: 3 });
+  const t = sk.towar.find(x => x.jakosc);
+  assert.ok(t, 'seed 3 ma egzemplarz z jakością');
+  assert.equal(t.cena_wytworcy_p, Math.round(t.cena_cennik_p * t.jakosc.mnoznik));
+  const w = T.wycen(d, T.utworzKupca(d, sk)).towar.find(x => x.id === t.id);
+  assert.equal(w.cena_p, t.cena_p);
+});
+
 test('ustawienia v6: mnożnik kategorii i nowe pozycje MG', () => {
   const C = Object.fromEntries(d.cennik.pozycje.map(c => [c.id, c.cena_p]));
   const n = S.zastosujUstawienia(d, { kategorie: { 'Pancerze': 1.5 },

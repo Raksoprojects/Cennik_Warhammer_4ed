@@ -86,3 +86,24 @@ if WB:
                  'wzor_cech = nazwa w tamtym pliku. wyjatek: tekst, gdy cena celowo łamie regułę (znak stanu, egzotyka, materiał).')
     B.pop('grupy_podpowiedz', None)
     W('data/bron_cechy.json', B)
+
+# ---------------------------------------------------------------- kupcy: wozy na zamówienie, jakość towaru
+# Decyzja MG (2026-10-24): wóz robi kowal albo kołodziej, wieś zbiera się razem i daje drewno i materiały.
+# Decyzja MG: generator losuje jakość wg kupca — mistrz cechu i płatnerz Zalety, paser i domokrążca Wady.
+KU = J('data/kupcy.json')
+P_WOZY = ['furmanka', 'woz']
+KOLODZIEJ = dict(id='kolodziej', nazwa='Kołodziej / cieśla wiejski', status='Brąz 5', marza=0.9, limit_p=1920,
+                 rdzen=['Narzędzia i zestawy'], boczne=['Wyposażenie różne'], robota=['Narzędzia i zestawy'],
+                 robota_pozycje=P_WOZY, skup=0.35, towar_tyg=10, gotowka_tyg=3,
+                 opis='Koła, osie, wozy i beczki. Wóz robi na zamówienie; wieś zwykle składa się na niego i daje drewno.')
+if not any(k['id'] == 'kolodziej' for k in KU['kupcy']): KU['kupcy'].append(KOLODZIEJ)
+JAKOSC = {  # szansa na pozycję: Zalety / Wady przedmiotu (szacunek MG do korekty w kupcy.json)
+    'mistrzcechu': (0.35, 0), 'platnerz': (0.25, 0), 'blawatny': (0.2, 0), 'rzemieslnik': (0.1, 0.05),
+    'zbrojmistrz': (0.1, 0.05), 'rusznikarz': (0.1, 0.05), 'kolodziej': (0.05, 0.1), 'kowal': (0.05, 0.1),
+    'kramarz': (0, 0.15), 'kwatermistrz': (0.05, 0.15), 'paser': (0.05, 0.3), 'domokrazca': (0, 0.35)}
+for k in KU['kupcy']:
+    if k['id'] == 'kowal': k['robota_pozycje'] = P_WOZY
+    if k['id'] in JAKOSC: k['jakosc'] = dict(zip(('zalety', 'wady'), JAKOSC[k['id']]))
+KU['opis'] = KU['opis'].split(' v6:')[0] + (' v6: robota_pozycje = id pozycji, które kupiec robi na zamówienie poza swoimi kategoriami'
+    ' (wozy u kowala i kołodzieja); jakosc = szansa na pozycję z Zaletami / Wadami przedmiotu w sklepie.')
+W('data/kupcy.json', KU)

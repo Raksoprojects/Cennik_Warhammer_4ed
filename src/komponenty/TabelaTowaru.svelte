@@ -35,7 +35,7 @@
         <tr class="klik" class:otwarty={otwarte === t.id} onclick={() => otworz(t.id)}>
           <td class="tytul">{t.nazwa}
             {#if t.sztuk === 0}<span class="znacznik">brak — na zamówienie</span>{:else if t.zapas === 2}<span class="znacznik czerwony">ostatnie sztuki</span>{:else if t.zapas === 0}<span class="znacznik zielony">pełen skład</span>{/if}
-            {#if t.jakosc}<span class="znacznik zielony">{t.jakosc.nazwa} {mnoz(t.jakosc.mnoznik)}</span>{/if}
+            {#if t.jakosc}<span class="znacznik" class:zielony={t.jakosc.mnoznik > 1} class:czerwony={t.jakosc.mnoznik < 1}>{t.jakosc.nazwa} (cena {mnoz(t.jakosc.mnoznik)})</span>{/if}
             {#if t.cena_reczna_p != null}<span class="znacznik zloty">cena MG</span>{/if}
             {#if t.poza_asortymentem}<span class="znacznik fiolet">spoza asortymentu</span>{/if}
           </td>

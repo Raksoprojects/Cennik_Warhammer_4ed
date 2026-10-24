@@ -1,5 +1,5 @@
 {
- "opis": "marza = mnożnik ceny wytwórcy; limit_p = najdroższa rzecz trzymana na stanie; skup = ułamek JEGO ceny sprzedaży, za jaki odkupuje. v5.2: towar_tyg = wartość towaru na stanie w tygodniach brutto Statusu kupca; gotowka_tyg = gotówka przy sobie (× 0,5–1,4 z rzutu).",
+ "opis": "marza = mnożnik ceny wytwórcy; limit_p = najdroższa rzecz trzymana na stanie; skup = ułamek JEGO ceny sprzedaży, za jaki odkupuje. v5.2: towar_tyg = wartość towaru na stanie w tygodniach brutto Statusu kupca; gotowka_tyg = gotówka przy sobie (× 0,5–1,4 z rzutu). v6: robota_pozycje = id pozycji, które kupiec robi na zamówienie poza swoimi kategoriami (wozy u kowala i kołodzieja); jakosc = szansa na pozycję z Zaletami / Wadami przedmiotu w sklepie.",
  "kupcy": [
   {
    "id": "domokrazca",
@@ -21,7 +21,11 @@
    "skup": 0.45,
    "opis": "Wóz pełen drobiazgów zebranych po drodze. Targuje się chętnie, bo musi jechać dalej.",
    "towar_tyg": 10,
-   "gotowka_tyg": 2
+   "gotowka_tyg": 2,
+   "jakosc": {
+    "zalety": 0,
+    "wady": 0.35
+   }
   },
   {
    "id": "kramarz",
@@ -41,7 +45,11 @@
    "skup": 0.4,
    "opis": "Stragan pod płótnem, towar w koszach, żona liczy na palcach.",
    "towar_tyg": 8,
-   "gotowka_tyg": 2
+   "gotowka_tyg": 2,
+   "jakosc": {
+    "zalety": 0,
+    "wady": 0.15
+   }
   },
   {
    "id": "kowal",
@@ -63,7 +71,15 @@
    "skup": 0.35,
    "opis": "Kuźnia przy drodze. Podkuwa konie, klepie sierpy i raz na rok komuś naprawi miecz.",
    "towar_tyg": 12,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "robota_pozycje": [
+    "furmanka",
+    "woz"
+   ],
+   "jakosc": {
+    "zalety": 0.05,
+    "wady": 0.1
+   }
   },
   {
    "id": "rzemieslnik",
@@ -87,7 +103,11 @@
    "skup": 0.45,
    "opis": "Warsztat na parterze, mieszkanie na piętrze. Sprzedaje własny wyrób taniej niż pośrednik.",
    "towar_tyg": 10,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "jakosc": {
+    "zalety": 0.1,
+    "wady": 0.05
+   }
   },
   {
    "id": "mistrzcechu",
@@ -113,7 +133,11 @@
    "skup": 0.4,
    "opis": "Kantor z ladą z orzecha. Wszystko z pieczęcią cechu i z odpowiednią dopłatą za nią.",
    "towar_tyg": 15,
-   "gotowka_tyg": 4
+   "gotowka_tyg": 4,
+   "jakosc": {
+    "zalety": 0.35,
+    "wady": 0
+   }
   },
   {
    "id": "zbrojmistrz",
@@ -137,7 +161,11 @@
    "skup": 0.45,
    "opis": "Kuźnia przy murach. Pół towaru to odkupione łupy, druga połowa robota własna.",
    "towar_tyg": 20,
-   "gotowka_tyg": 4
+   "gotowka_tyg": 4,
+   "jakosc": {
+    "zalety": 0.1,
+    "wady": 0.05
+   }
   },
   {
    "id": "platnerz",
@@ -158,7 +186,11 @@
    "skup": 0.4,
    "opis": "Bierze miarę, każe czekać sześć tygodni i nie schodzi z ceny. Robi zbroje dla ludzi z nazwiskiem.",
    "towar_tyg": 15,
-   "gotowka_tyg": 4
+   "gotowka_tyg": 4,
+   "jakosc": {
+    "zalety": 0.25,
+    "wady": 0
+   }
   },
   {
    "id": "rusznikarz",
@@ -181,7 +213,11 @@
    "skup": 0.45,
    "opis": "Zamki kołowe, lufy i zapach saletry. Pyta, czy masz licencję, ale nie czeka na odpowiedź.",
    "towar_tyg": 20,
-   "gotowka_tyg": 4
+   "gotowka_tyg": 4,
+   "jakosc": {
+    "zalety": 0.1,
+    "wady": 0.05
+   }
   },
   {
    "id": "aptekarz",
@@ -242,7 +278,11 @@
    "skup": 0.4,
    "opis": "Sukna, aksamity i to, co dworzanie noszą w Altdorfie dwa sezony wcześniej niż reszta Imperium.",
    "towar_tyg": 30,
-   "gotowka_tyg": 6
+   "gotowka_tyg": 6,
+   "jakosc": {
+    "zalety": 0.2,
+    "wady": 0
+   }
   },
   {
    "id": "ksiegarz",
@@ -287,7 +327,11 @@
    "skup": 0.3,
    "opis": "Zaplecze rzeźni. Tanio, bez pytań, bez gwarancji i bez możliwości reklamacji.",
    "towar_tyg": 15,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "jakosc": {
+    "zalety": 0.05,
+    "wady": 0.3
+   }
   },
   {
    "id": "kwatermistrz",
@@ -310,7 +354,11 @@
    "skup": 0.5,
    "opis": "Sprzedaje hurtem z magazynu regimentu. Formalnie nic z tego nie jest na sprzedaż.",
    "towar_tyg": 40,
-   "gotowka_tyg": 8
+   "gotowka_tyg": 8,
+   "jakosc": {
+    "zalety": 0.05,
+    "wady": 0.15
+   }
   },
   {
    "id": "medyk",
@@ -333,6 +381,34 @@
    "opis": "Miska, brzytwa i pijawki w słoju. Leczy, goli i wyrywa zęby, w tej kolejności.",
    "towar_tyg": 8,
    "gotowka_tyg": 3
+  },
+  {
+   "id": "kolodziej",
+   "nazwa": "Kołodziej / cieśla wiejski",
+   "status": "Brąz 5",
+   "marza": 0.9,
+   "limit_p": 1920,
+   "rdzen": [
+    "Narzędzia i zestawy"
+   ],
+   "boczne": [
+    "Wyposażenie różne"
+   ],
+   "robota": [
+    "Narzędzia i zestawy"
+   ],
+   "robota_pozycje": [
+    "furmanka",
+    "woz"
+   ],
+   "skup": 0.35,
+   "towar_tyg": 10,
+   "gotowka_tyg": 3,
+   "opis": "Koła, osie, wozy i beczki. Wóz robi na zamówienie; wieś zwykle składa się na niego i daje drewno.",
+   "jakosc": {
+    "zalety": 0.05,
+    "wady": 0.1
+   }
   }
  ]
 }

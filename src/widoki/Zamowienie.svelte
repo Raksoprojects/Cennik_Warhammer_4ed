@@ -9,7 +9,8 @@
   let k = $state('kowal'), o = $state('miasteczko'), n = $state('normalna'), co = $state(''), jakosc = $state<Record<string, number>>({});
   let wynik = $state<any>(null);
   const towary = $derived(d.cennik.pozycje.filter((c: any) => c.typ === 'towar'));
-  function wycen() { wynik = co.trim() ? wycenZamowienie(d, { kupiec: k, osada: o, koniunktura: n, przedmiot: co, jakosc }) : null; }
+  let material = $state(false);
+  function wycen() { wynik = co.trim() ? wycenZamowienie(d, { kupiec: k, osada: o, koniunktura: n, przedmiot: co, jakosc, material }) : null; }
   const kon = $derived(d.koniunktura.koniunktury.find((x: any) => x.id === n));
   const lok = $derived(d.osady.osady.find((x: any) => x.id === o));
 </script>
@@ -30,6 +31,8 @@
       <datalist id="zam-towary">{#each towary as c}<option value={c.nazwa}></option>{/each}</datalist></label>
     <button class="glowny" onclick={wycen}>Wyceń</button>
   </div>
+  <label class="male" style="display:flex;gap:6px;align-items:center;margin-bottom:8px"><input type="checkbox" bind:checked={material} onchange={wycen} />
+    Materiał zamawiającego <Podpowiedz tekst={`Zamawiający daje drewno, żelazo, sukno (np. wieś składa się na wóz). Wytwórca bierze ${Math.round(d.rynek.zamowienie.material_wlasny * 100)}% ceny za robotę. Nie dotyczy rzeczy sprowadzanych.`} /></label>
   <p class="male drugi">Jakość <Podpowiedz tekst="PG s. 292 i HR-024: cena z cennika to wariant podstawowy. Każda Zaleta przedmiotu ×2 (każdy poziom Wyśmienity i Wytrzymały to osobna Zaleta), każda Wada ×½. Wyroby z Zaletami wymagają Testu Rzemiosła wytwórcy." /></p>
   <WyborCech bind:cechy={() => jakosc, c => { jakosc = c; wycen(); }} />
 </div>
@@ -55,7 +58,8 @@
       <p class="male drugi" style="margin-top:10px">
         cena bazowa {mon(wynik.przedmiot.cena_p)} × jakość {mnoz(wynik.jakosc.mnoznik)} × marża {mnoz(s.marza)} ×
         {etykietaOsady(lok)} {mnoz(s.osada)} × {kon.nazwa} ({modyfikatorKoniunktury(kon, wynik.przedmiot.kat)}) {mnoz(s.koniunktura)} ×
-        narzut {wynik.status === 'wykonuje' ? 'roboty' : 'sprowadzenia'} {mnoz(s.narzut)} = {mnoz(wynik.mnoznik * wynik.jakosc.mnoznik)}</p>
+        narzut {wynik.status === 'wykonuje' ? 'roboty' : 'sprowadzenia'} {mnoz(s.narzut)}{#if wynik.material} × materiał zamawiającego {mnoz(wynik.material)}{/if}
+        = {mnoz(wynik.mnoznik * wynik.jakosc.mnoznik * (wynik.material ?? 1))}</p>
       {#if wynik.calosc_z_gory}<p class="komunikat">Rzecz poza skalą sklepu: kupiec żąda całości z góry.</p>{/if}
       {#if wynik.test_rzemiosla}<p class="male">{d.rynek.zamowienie.zalety}</p>{/if}
     {/if}

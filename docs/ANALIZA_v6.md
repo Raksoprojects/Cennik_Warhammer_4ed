@@ -67,6 +67,18 @@ ale po namyśle. Tabela z `narzedzia/balans_v6.py` (CSV: `docs/analiza_v6/balans
 | 6 | **Najęty mistrz rzemiosła 2 ZK 15 s tygodniowo** | To 2× brutto mistrza z warsztatem (Srebro 1). Najemnik (Srebro 2–5) jest zgodny z płacą. | Zostawić (najmowany bierze więcej niż zarabia u siebie) albo zrównać ze Srebrem 2. |
 | 7 | **Ubranie 15 Robót chłopa** | Pełny strój to 3 tygodnie brutto robotnika. Historycznie zgodne, ale gracze z Brązu nie odnowią stroju. | Zostawić — to dobry powód, żeby łachmany były łachmanami. |
 
+### 3.1 Decyzje MG (2026-10-24)
+
+1. Koc — zostaje (sukno było drogie, wiejski łuk tani).
+2. Wóz — robi kowal albo nowy **Kołodziej / cieśla wiejski** (`kupcy.json → robota_pozycje`: furmanka, wóz).
+   Wieś składa się na wóz i daje materiał: opcja „materiał zamawiającego” w zamówieniu, płaci się
+   `rynek.zamowienie.material_wlasny` = 50% ceny (szacunek do korekty). Wóz we wsi u kołodzieja: 17 ZK 4 s 3 p,
+   z materiałem wsi 8 ZK 12 s 2 p, robota 7 tygodni. Furmanka: 5 ZK 14 s 9 p, z materiałem 2 ZK 17 s 5 p.
+3. Jakość w sklepach — losowana wg kupca (`kupcy.json → jakosc`): mistrz cechu 35% pozycji z Zaletami, płatnerz 25%,
+   bławatny 20%; paser 30% z Wadami, domokrążca 35%, kramarz i kwatermistrz 15%. Szacunki do korekty.
+4. Łuk — do ustalenia (patrz niżej).
+5. Lekki koń bojowy, najęty mistrz, ubranie — bez zmian.
+
 ## 4. Zmiany v6 bez wpływu na ceny
 
 - Jakość egzemplarza: cena z cennika to wariant podstawowy. Cechy broni (Szybka, Precyzyjna…) są w niej wliczone.

@@ -138,6 +138,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
   // v5.2: majątek kupca. Towar na stanie i gotówka w tygodniach brutto jego Statusu (kupcy.json → towar_tyg, gotowka_tyg).
   // Budżet towaru dzieli się na pozycje (rdzeń waży 2, boczne 1) i ogranicza liczbę sztuk: kramarz nie ma 47 namiotów.
   const mjt = osobowosc ? majatekKupca(d, kup, seed) : null;
+  const jakRnd = kosci((seed ^ 0x68e31da4) >>> 0);
   const wagi = wybor.map(c => kup.rdzen.includes(c.kat) ? 2 : 1), sumaWag = wagi.reduce((a, b) => a + b, 0) || 1;
   const towar = wybor.map((c, ix) => {
     const rz = k(10), zapas = zapasZRzutu(d, rz);
@@ -146,7 +147,10 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, zapas, popyt);
     const os = osobowosc ? osobowoscKupca(d, kup, c, kaprysRnd.k(10)) : { preferencja: 1, kaprys: 1, rzut: null, mnoznik: 1 };
     const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek;
-    const cena = c.cena_p * mnoznik;
+    // v6: egzemplarz z Zaletami / Wadami przedmiotu (osobny strumień losowania, tylko z osobowością kupca).
+    const jak = osobowosc ? jakoscLosowa(d, kup, c, jakRnd) : null;
+    const baza = jak ? Math.round(c.cena_p * jak.mnoznik) : c.cena_p;
+    const cena = baza * mnoznik;
     let sztuk = ilosc(d, ri, c.cena_ref_p ?? c.cena_p, zapas);   // v4: ilość od ceny bazowej
     if (mjt && mjt.towar_p != null && sztuk > 1) {
       const budzet = mjt.towar_p * wagi[ix] / sumaWag * (zapas === 0 ? 1.5 : 1);
@@ -154,11 +158,12 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     }
     const skupU = Math.max(d.rynek.skup.minimum, kup.skup + (popyt === 2 ? d.rynek.skup.popyt_wysoki : popyt === 0 ? d.rynek.skup.popyt_niski : 0));
     const cenaP = Math.round(cena);
-    const min = cenaMinimalna(d, { kupiec: kup, pozycja: c, osada: lok, koniunktura: kon, mRynek, cena_p: cenaP });
+    const min = cenaMinimalna(d, { kupiec: kup, pozycja: jak ? { ...c, cena_p: baza } : c, osada: lok, koniunktura: kon, mRynek, cena_p: cenaP });
     return {
       id: c.id, nazwa: c.nazwa, kat: c.kat, sztuk,
       cena_raw_p: c.cena_raw_p ?? null,                              // v5.1: cena z podręcznika, do porównania
-      cena_wytworcy_p: c.cena_p, mnoznik, cena_p: cenaP, skup_p: Math.round(cena * skupU),
+      cechy: jak?.cechy ?? null, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null, cena_cennik_p: c.cena_p,
+      cena_wytworcy_p: baza, mnoznik, cena_p: cenaP, skup_p: Math.round(cena * skupU),
       skup_ponad_gotowke: !!(mjt && mjt.gotowka_p != null && cena * skupU > mjt.gotowka_p),
       koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       zapas, zapas_nazwa: d.rynek.zapas.progi[zapas].nazwa, popyt, popyt_nazwa: d.rynek.popyt.nazwy[popyt],
@@ -176,6 +181,25 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
   return { seed, imie, dziwactwo, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
     gotowka_p: mjt?.gotowka_p ?? null, budzet_towaru_p: mjt?.towar_p ?? null, wartosc_towaru_p,
     etykiety: { osada: etykietaOsady(lok), koniunktura: etykietaKoniunktury(d, kon) } };
+}
+
+/* ------------------------------------------------------------ v6: losowa jakość towaru */
+// kupcy.json → jakosc: { zalety, wady } = szansa na pozycję z kategorii rynek.jakosc.kategorie. Rzuty: zalety, wady, 1k10 na liczbę,
+// potem wybór cech. Poręczny i Nieporęczny tylko dla rzeczy z Obciążeniem ≥ 1 (PG: małe szpargały nie mają tej Wady).
+export function jakoscLosowa(d, kup, c, r) {
+  const J = d.rynek.jakosc, sz = kup.jakosc;
+  if (!sz || !J.kategorie?.includes(c.kat)) return null;
+  const a = r.rnd(), b = r.rnd(), n = J.losowanie.ile.find(x => r.k(10) <= x.do).n;
+  const lista = a < (sz.zalety ?? 0) ? J.zalety : b < (sz.wady ?? 0) ? J.wady : null;
+  if (!lista) return null;
+  const pula = lista.filter(z => !/porę/i.test(z.nazwa) || (c.obc ?? 0) >= 1);
+  const cechy = {};
+  for (let i = 0; i < n; i++) {
+    const z = pula[r.ri(pula.length)];
+    if (cechy[z.nazwa] && !z.wielokrotna) continue;
+    cechy[z.nazwa] = (cechy[z.nazwa] ?? 0) + 1;
+  }
+  return jakoscZ(d, cechy);
 }
 
 /* ------------------------------------------------------------ v5.2: majątek kupca */
@@ -217,7 +241,7 @@ export function osobowoscKupca(d, kup, c, rzut) {
 // Jeśli kupiec już żąda mniej — nie schodzi niżej niż jego cena.
 export function cenaMinimalna(d, { kupiec, pozycja, osada, koniunktura, mRynek = 1, cena_p }) {
   const M = d.rynek.cena_minimalna ?? { narzut_min: 1, wyprzedaz: 1, koszt_wlasny: 1 };
-  const robi = kupiec.robota?.includes(pozycja.kat);
+  const robi = robiTo(kupiec, pozycja);
   const koszt = pozycja.cena_p * osada.mnoznik * cenaKoniunktury(koniunktura, pozycja.kat) * (robi ? M.koszt_wlasny : 1);
   const wyprzedaz = mRynek < 1;
   const prog = Math.round(koszt * (wyprzedaz ? M.wyprzedaz : M.narzut_min));
@@ -259,20 +283,24 @@ export function znajdzPozycje(d, q) {
     || pula.filter(c => norm(c.nazwa).includes(n)).sort((a, b) => a.nazwa.length - b.nazwa.length)[0]
     || null;
 }
-export function ktoRobi(d, kat) {
-  let m = d.kupcy.kupcy.filter(k => k.robota.includes(kat));
+// v6: kupiec robi rzeczy ze swoich kategorii (robota) i pojedyncze pozycje spoza nich (robota_pozycje, np. wozy u kowala).
+export const robiTo = (kup, c) => !!(kup.robota?.includes(c.kat) || kup.robota_pozycje?.includes(c.id));
+export function ktoRobi(d, kat, id = null) {
+  let m = d.kupcy.kupcy.filter(k => k.robota.includes(kat) || (id && k.robota_pozycje?.includes(id)));
   if (!m.length) m = d.kupcy.kupcy.filter(k => k.rdzen.includes(kat));
   return m;
 }
+// material: true — zamawiający daje materiał (v6: wieś składa się na wóz i daje drewno). Tylko u wytwórcy;
+// płaci rynek.zamowienie.material_wlasny ceny (robociznę). Termin bez zmian — robota trwa tyle samo.
 /** @param {any} d @param {Record<string, any>} opcje — jakosc: id opcji albo cechy { Wytrzymały: 2 } */
-export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', przedmiot, jakosc = 'zwykla', seed = losowySeed() }) {
+export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', przedmiot, jakosc = 'zwykla', material = false, seed = losowySeed() }) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
   const c = typeof przedmiot === 'object' ? przedmiot : (pozycje(d).find(x => x.id === przedmiot) || znajdzPozycje(d, przedmiot));
   if (!c || !wTowarze(d, c)) return { status: 'brak_w_cenniku' };   // czynsze i usługi się nie zamawia
   const jak = jakoscZ(d, jakosc);
-  const robi = kup.robota.includes(c.kat);
+  const robi = robiTo(kup, c);
   const handluje = kup.rdzen.includes(c.kat) || kup.boczne.includes(c.kat);
-  if (!robi && !handluje) return { status: 'odmowa', przedmiot: c, odsyla_do: ktoRobi(d, c.kat).map(k => k.nazwa) };
+  if (!robi && !handluje) return { status: 'odmowa', przedmiot: c, odsyla_do: ktoRobi(d, c.kat, c.id).map(k => k.nazwa) };
   const Z = d.rynek.zamowienie, { ri } = kosci(seed);
   const baza = c.cena_p * jak.mnoznik;
   const narzut = robi ? Z.narzut_robota : Z.narzut_sprowadzenie;
@@ -282,11 +310,12 @@ export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', pr
   const termin = cena < 240 ? (1 + ri(5)) + ' dni' : cena < 2400 ? (1 + ri(3)) + ' tygodni'
     : cena < 12000 ? (4 + ri(6)) + ' tygodni' : (3 + ri(4)) + ' miesięcy';
   const cap = Math.min(kup.limit_p, limitOsady(lok));
+  const mat = material && robi ? (Z.material_wlasny ?? 1) : 1, razem = cena * mat;
   return {
-    status: robi ? 'wykonuje' : 'sprowadza', przedmiot: c, jakosc: jak,
+    status: robi ? 'wykonuje' : 'sprowadza', przedmiot: c, jakosc: jak, material: mat < 1 ? mat : null,
     baza_p: baza, skladowe: { marza: kup.marza, osada: lok.mnoznik, koniunktura: mKon, narzut }, mnoznik,
-    cena_p: Math.round(cena), zaliczka_p: Math.round(cena * Z.zaliczka), termin,
-    calosc_z_gory: cena > cap * 2, test_rzemiosla: (jak.zalety ?? 0) > 0 || jak.mnoznik >= 2, max_targowanie: d.rynek.targowanie.max_zamowienie,
+    cena_p: Math.round(razem), zaliczka_p: Math.round(razem * Z.zaliczka), termin,
+    calosc_z_gory: razem > cap * 2, test_rzemiosla: (jak.zalety ?? 0) > 0 || jak.mnoznik >= 2, max_targowanie: d.rynek.targowanie.max_zamowienie,
   };
 }
 

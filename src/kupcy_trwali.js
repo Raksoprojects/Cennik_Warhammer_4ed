@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -42,13 +42,15 @@ function normaPozycji(d, K, c, ri) {
 }
 const zapasZeStanu = w => w.sztuk <= 0 ? 3 : w.sztuk < w.norma * 0.5 ? 2 : w.sztuk >= w.norma * 2 ? 0 : 1;
 
-function nowyWiersz(d, K, c, r, { zapas, sztuk, poza = false } = {}) {
+// losujJakosc: jak w generatorze — szansa kupca na Zalety albo Wady przedmiotu (ręcznie dodany towar jest zwykły).
+function nowyWiersz(d, K, c, r, { zapas, sztuk, poza = false, losujJakosc = false } = {}) {
+  const jak = losujJakosc ? jakoscLosowa(d, kupiecZ(d, K), c, r) : null;
   const z = zapas ?? zapasZRzutu(d, r.k(10));
   const norma = normaPozycji(d, K, c, r.ri);
   const szt = sztuk ?? (z === 1 ? norma : Math.max(z === 3 ? 0 : 1, Math.min(ilosc(d, r.ri, c.cena_ref_p ?? c.cena_p, z),
     Math.floor(budzetPozycji(d, K, c.kat) * (z === 0 ? 1.5 : 1) / c.cena_p))));
   return { id: c.id, nazwa: c.nazwa, kat: c.kat, sztuk: szt, norma, zapas: z, przes_popytu: przesunieciePopytu(d, r.k(10)),
-    rzut_kaprysu: r.k(10), cena_wytworcy_p: c.cena_p, cena_reczna_p: null, poza_asortymentem: poza };
+    rzut_kaprysu: r.k(10), cena_wytworcy_p: c.cena_p, cena_reczna_p: null, poza_asortymentem: poza, cechy: jak?.cechy ?? null };
 }
 
 /* ------------------------------------------------------------ zapis wygenerowanego sklepu */
@@ -61,8 +63,8 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
     utworzony: data, zmieniony: data, licznik: 0, towar: [], zamowienia: [], dziennik: [],
   };
   K.towar = sklep.towar.map(t => ({ id: t.id, nazwa: t.nazwa, kat: t.kat, sztuk: t.sztuk, norma: 0, zapas: t.zapas,
-    przes_popytu: przesunieciePopytu(d, t.rzuty.popyt), rzut_kaprysu: t.rzuty.kaprys, cena_wytworcy_p: t.cena_wytworcy_p,
-    cena_reczna_p: null, poza_asortymentem: false }));
+    przes_popytu: przesunieciePopytu(d, t.rzuty.popyt), rzut_kaprysu: t.rzuty.kaprys, cena_wytworcy_p: t.cena_cennik_p ?? t.cena_wytworcy_p,
+    cena_reczna_p: null, poza_asortymentem: false, cechy: t.cechy ?? null }));
   const r = rzuty(K);
   for (const w of K.towar) {
     const c = pozycja(d, w.id);
@@ -95,7 +97,7 @@ export function wycen(d, K) {
       popyt, zapas_nazwa: R.zapas.progi[w.zapas].nazwa, popyt_nazwa: R.popyt.nazwy[popyt], rzuty: { kaprys: os.rzut },
       skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod },
       brak_w_cenniku: !pozycja(d, w.id) };
-  }).sort((a, b) => b.cena_wytworcy_p - a.cena_wytworcy_p);
+  }).sort((a, b) => b.cena_cennik_p - a.cena_cennik_p);   // jak w generatorze: po cenie z cennika, bez jakości
   return { kupiec: kup, osada: lok, koniunktura: kon, towar,
     wartosc_towaru_p: towar.reduce((s, t) => s + t.sztuk * t.cena_wytworcy_p, 0),
     etykiety: { osada: etykietaOsady(lok), koniunktura: etykietaKoniunktury(d, kon) } };
@@ -142,7 +144,7 @@ export function przelosujPozycje(d, K0, id) {
   const K = kopia(K0), i = K.towar.findIndex(x => x.id === id), c = pozycja(d, id);
   if (i < 0 || !c) return K0;
   const stary = K.towar[i];
-  K.towar[i] = { ...nowyWiersz(d, K, c, rzuty(K)), poza_asortymentem: stary.poza_asortymentem };
+  K.towar[i] = { ...nowyWiersz(d, K, c, rzuty(K), { losujJakosc: true }), poza_asortymentem: stary.poza_asortymentem };
   return K;
 }
 // Dolosuj `ile` nowych pozycji z kategorii (albo z całego asortymentu, gdy kat pusta).
@@ -153,7 +155,7 @@ export function dogeneruj(d, K0, { kat = null, ile = 2 } = {}) {
   const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: kat ? [kat] : [...kup.rdzen, ...kup.boczne] }).filter(c => !mam.has(c.id));
   const nowe = [];
   while (nowe.length < ile && pula.length) nowe.push(pula.splice(r.ri(pula.length), 1)[0]);
-  for (const c of nowe) K.towar.push(nowyWiersz(d, K, c, r));
+  for (const c of nowe) K.towar.push(nowyWiersz(d, K, c, r, { losujJakosc: true }));
   wpis(K, nowe.length ? `Dogenerowano: ${nowe.map(c => c.nazwa).join(', ')}.` : 'Dogenerowanie: nic nowego nie pasuje do sklepu.');
   return K;
 }
@@ -205,9 +207,9 @@ export function terminTygodnie(txt) {
 // Zamówienie na miarę u tego kupca. Odmowa (kupiec tego nie robi ani nie sprowadza) wymaga wymus: true —
 // wtedy kupiec sprowadza rzecz z narzutem sprowadzenia. Zaliczka od razu trafia do jego gotówki.
 /** @param {any} d @param {any} K0 @param {Record<string, any>} opcje */
-export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, cena_p = null }) {
+export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, cena_p = null, material = false }) {
   const K = kopia(K0), r = rzuty(K), mod = K.modyfikator ?? 1;
-  const w = wycenZamowienie(d, { kupiec: K.kupiec, osada: K.osada, koniunktura: K.koniunktura, przedmiot: id, jakosc, seed: r.ri(1e9) });
+  const w = wycenZamowienie(d, { kupiec: K.kupiec, osada: K.osada, koniunktura: K.koniunktura, przedmiot: id, jakosc, material, seed: r.ri(1e9) });
   if (w.status === 'brak_w_cenniku') return { blad: 'brak_w_cenniku', powod: 'tej rzeczy nie da się zamówić' };
   let cena, termin, stan = w.status;
   if (w.status === 'odmowa') {
@@ -219,9 +221,9 @@ export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, c
   const cenaP = cena_p ?? Math.round(cena * mod), zaliczka = Math.round(cenaP * d.rynek.zamowienie.zaliczka);
   const jak = jakoscZ(d, jakosc);
   K.zamowienia.push({ uid: nowyUid(), id, nazwa: w.przedmiot.nazwa, jakosc: jak.nazwa, cechy: jak.cechy ?? null, sposob: stan, dla, cena_p: cenaP, zaliczka_p: zaliczka,
-    tydzien_zlozenia: K.tydzien, tydzien_gotowe: K.tydzien + termin, status: 'w_toku', wymuszone: w.status === 'odmowa' });
+    tydzien_zlozenia: K.tydzien, tydzien_gotowe: K.tydzien + termin, status: 'w_toku', wymuszone: w.status === 'odmowa', material: !!w.material });
   K.gotowka_p += zaliczka;
-  wpis(K, `Zamówienie: ${w.przedmiot.nazwa} (${jak.nazwa})${dla ? ' dla ' + dla : ''}, ${mon(cenaP)}, zaliczka ${mon(zaliczka)}, za ${termin} tyg.`);
+  wpis(K, `Zamówienie: ${w.przedmiot.nazwa} (${jak.nazwa})${dla ? ' dla ' + dla : ''}${w.material ? ', materiał zamawiającego' : ''}, ${mon(cenaP)}, zaliczka ${mon(zaliczka)}, za ${termin} tyg.`);
   return K;
 }
 export function odbierzZamowienie(K0, uid) {
@@ -281,8 +283,8 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
       const mam = new Set(K.towar.map(w => w.id));
       const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: [...kup.rdzen, ...kup.boczne] }).filter(c => !mam.has(c.id));
       if (pula.length) {
-        const c = pula[r.ri(pula.length)], w = nowyWiersz(d, K, c, r, { zapas: 1 });
-        const koszt = Math.round(c.cena_p * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), c.kat)) * w.sztuk;
+        const c = pula[r.ri(pula.length)], w = nowyWiersz(d, K, c, r, { zapas: 1, losujJakosc: true });
+        const koszt = Math.round(c.cena_p * (w.cechy ? jakoscZ(d, w.cechy).mnoznik : 1) * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), c.kat)) * w.sztuk;
         if (koszt <= K.gotowka_p) { K.towar.push(w); K.gotowka_p -= koszt; nowe.push(c.nazwa); }
       }
     }

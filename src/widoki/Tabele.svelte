@@ -25,7 +25,8 @@
     <div class="tabela karty"><table class="karty"><thead><tr><th>Kupiec</th><th>Status</th><th class="num">Marża</th><th class="num">Limit</th><th class="num">Skup</th><th>Rdzeń</th><th>Robi sam</th></tr></thead>
       <tbody>{#each d.kupcy.kupcy as k}<tr><td class="tytul">{k.nazwa}</td><td data-l="Status">{k.status}</td><td class="num" data-l="Marża">{mnoz(k.marza)}</td>
         <td class="num" data-l="Limit">{mon(k.limit_p)}</td><td class="num" data-l="Skup">{Math.round(k.skup * 100)}%</td>
-        <td class="pelna male">{k.rdzen.join(', ')}<span class="szary"> · boczne: {k.boczne.join(', ')}</span></td><td class="pelna male drugi">{k.robota.join(', ') || '—'}</td></tr>{/each}</tbody></table></div></details>
+        <td class="pelna male">{k.rdzen.join(', ')}<span class="szary"> · boczne: {k.boczne.join(', ')}</span></td><td class="pelna male drugi">{[...k.robota, ...(k.robota_pozycje ?? []).map((i: string) => d.cennik.pozycje.find((c: any) => c.id === i)?.nazwa ?? i)].join(', ') || '—'}
+          {#if k.jakosc}<br /><span class="szary">jakość: Zalety {Math.round((k.jakosc.zalety ?? 0) * 100)}%, Wady {Math.round((k.jakosc.wady ?? 0) * 100)}% pozycji</span>{/if}</td></tr>{/each}</tbody></table></div></details>
   <details class="sekcja"><summary><span>2. Osady</span></summary>
     <div class="tabela karty"><table class="karty"><thead><tr><th>Osada</th><th class="num">Mnożnik</th><th class="num">Limit towaru</th><th>Uwagi</th></tr></thead>
       <tbody>{#each d.osady.osady as o}<tr><td class="tytul">{o.nazwa}</td><td class="num" data-l="Mnożnik">{proc(o.mnoznik)}</td>
