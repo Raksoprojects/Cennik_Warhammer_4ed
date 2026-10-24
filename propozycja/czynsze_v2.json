@@ -1,0 +1,55 @@
+{
+ "opis": "Stawki bazowe dla miasteczka w normalnych czasach; stosuj mnożnik osady i koniunktury.",
+ "najem": [
+  {
+   "kwatera": "Kąt w izbie czeladnej",
+   "tydzien_p": 24,
+   "miesiac_p": 84,
+   "rok_p": 720
+  },
+  {
+   "kwatera": "Izba na poddaszu",
+   "tydzien_p": 36,
+   "miesiac_p": 96,
+   "rok_p": 960
+  },
+  {
+   "kwatera": "Izba w kamienicy",
+   "tydzien_p": 48,
+   "miesiac_p": 144,
+   "rok_p": 1440
+  },
+  {
+   "kwatera": "Mieszkanie mieszczańskie (2–3 izby)",
+   "tydzien_p": 72,
+   "miesiac_p": 240,
+   "rok_p": 2400
+  },
+  {
+   "kwatera": "Dom mistrza z warsztatem",
+   "tydzien_p": 144,
+   "miesiac_p": 480,
+   "rok_p": 4800
+  },
+  {
+   "kwatera": "Kamienica kupiecka",
+   "tydzien_p": 360,
+   "miesiac_p": 1320,
+   "rok_p": 13200
+  }
+ ],
+ "kupno": [
+  {
+   "nazwa": "Prosty dom",
+   "cena_p": 14400
+  },
+  {
+   "nazwa": "Dom rzemieślnika",
+   "cena_p": 38400
+  },
+  {
+   "nazwa": "Kamienica patrycjuszowska",
+   "cena_p": 432000
+  }
+ ]
+}

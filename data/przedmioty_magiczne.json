@@ -1,0 +1,98 @@
+{
+ "opis": "HR-026 (Archiwa Imperium II s.51–53). Cena bazowa broni/pancerza/tarczy/strzał = zwykła cena z cennika kampanii.",
+ "zalety_renomowanego": "każda Zaleta jakości (Wyśmienity, Wytrzymały) ×2",
+ "pz0_jak": 0.4,
+ "tabela": [
+  {
+   "k100": "01–43",
+   "rodzaj": "Magiczna broń",
+   "koszt": "cena broni × 50 za każdą właściwość",
+   "czas": "2 miesiące"
+  },
+  {
+   "k100": "44–45",
+   "rodzaj": "Magiczna strzała",
+   "koszt": "cena strzał × 30",
+   "czas": "6 strzał w 2 tygodnie"
+  },
+  {
+   "k100": "46–51",
+   "rodzaj": "Magiczny pancerz",
+   "koszt": "cena pancerza × 50 za każdą właściwość",
+   "czas": "4 miesiące"
+  },
+  {
+   "k100": "52–55",
+   "rodzaj": "Magiczna tarcza",
+   "koszt": "cena tarczy × 50 za każdą właściwość",
+   "czas": "4 miesiące"
+  },
+  {
+   "k100": "56–60",
+   "rodzaj": "Zwój",
+   "koszt": "PZ × 10 ZK (PZ 0: 4 ZK)",
+   "czas": "tydzień"
+  },
+  {
+   "k100": "61–65",
+   "rodzaj": "Różdżka",
+   "koszt": "PZ × 50 ZK (PZ 0: 20 ZK)",
+   "czas": "3 tygodnie"
+  },
+  {
+   "k100": "66–70",
+   "rodzaj": "Kostur",
+   "koszt": "cena wg twórcy",
+   "czas": "4 tygodnie"
+  },
+  {
+   "k100": "71–89",
+   "rodzaj": "Pierścień",
+   "koszt": "PZ × 200 ZK (PZ 0: 80 ZK)",
+   "czas": "4 tygodnie"
+  },
+  {
+   "k100": "90–97",
+   "rodzaj": "Talizman",
+   "koszt": "cena wg twórcy",
+   "czas": "8 tygodni"
+  },
+  {
+   "k100": "98–100",
+   "rodzaj": "Osobliwość",
+   "koszt": "–",
+   "czas": "–"
+  }
+ ],
+ "wzory": {
+  "bron": {
+   "baza": "cena_p",
+   "mnoznik": 50,
+   "za": "właściwość"
+  },
+  "pancerz": {
+   "baza": "cena_p",
+   "mnoznik": 50,
+   "za": "właściwość"
+  },
+  "tarcza": {
+   "baza": "cena_p",
+   "mnoznik": 50,
+   "za": "właściwość"
+  },
+  "strzala": {
+   "baza": "cena_p",
+   "mnoznik": 30
+  },
+  "zwoj": {
+   "zk_za_pz": 10
+  },
+  "rozdzka": {
+   "zk_za_pz": 50
+  },
+  "pierscien": {
+   "zk_za_pz": 200
+  }
+ },
+ "uwaga": "Wzór dla strzał: ‘koszt strzał’ — przyjęto cenę pozycji z cennika (tuzin) — do potwierdzenia przez MG."
+}

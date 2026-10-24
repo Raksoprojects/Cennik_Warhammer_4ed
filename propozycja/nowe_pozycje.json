@@ -1,0 +1,215 @@
+{
+ "opis": "Propozycja nowych pozycji wprost ze źródeł (ceny wytwórcy/hurt). Nie dodane do cennika.",
+ "pozycje": [
+  {
+   "nazwa": "Pieprz (funt, 0,4 kg)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 288,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Cynamon (funt)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 1008,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Szafran (funt)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 2520,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Goździki (kamień)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 732,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "⚠ w źródle tanio jak na kamień – sprawdzić"
+  },
+  {
+   "nazwa": "Cukier (kamień)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 2196,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Ryż (kamień)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 636,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Migdały (kamień)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 1488,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Rodzynki (kamień)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 1008,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Śledzie (beczka)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 2760,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Masło (garniec, 3,77 l)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 528,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Sery (kopa = 60 szt.)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 348,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Jaja (kopa = 60 szt.)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 54,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Żyto (ćwiertnia)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 264,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Pszenica (ćwiertnia)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 420,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Jęczmień (ćwiertnia)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 252,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Owies (ćwiertnia) – obrok",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 132,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Groch (korzec, 43,7 l)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 108,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Chleb żytni (bochenek)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 2,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "Sieradz ok. 1540"
+  },
+  {
+   "nazwa": "Mięso (kg)",
+   "kat": "Jedzenie, picie, nocleg",
+   "cena_p": 18,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "wg Wyczańskiego, XVI w."
+  },
+  {
+   "nazwa": "Gęś",
+   "kat": "Zwierzęta i pojazdy",
+   "cena_p": 30,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Kapłon",
+   "kat": "Zwierzęta i pojazdy",
+   "cena_p": 36,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Cielę",
+   "kat": "Zwierzęta i pojazdy",
+   "cena_p": 240,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Sukno (łokieć)",
+   "kat": "Ubranie i dodatki",
+   "cena_p": 420,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "dobre sukno"
+  },
+  {
+   "nazwa": "Płótno (łokieć)",
+   "kat": "Ubranie i dodatki",
+   "cena_p": 18,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Oliwa (litr)",
+   "kat": "Wyposażenie różne",
+   "cena_p": 132,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "Polska poł. XVI w., import"
+  },
+  {
+   "nazwa": "Świeca woskowa (sztuka)",
+   "kat": "Wyposażenie różne",
+   "cena_p": 42,
+   "zrodlo": "Kraków 1526–35 / Polska XVI w.",
+   "uwaga": "3–4 za ¼ zł"
+  },
+  {
+   "nazwa": "Siekiera",
+   "kat": "Narzędzia i zestawy",
+   "cena_p": 42,
+   "zrodlo": "Anglia 1457: 5 d",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Prześcieradło",
+   "kat": "Wyposażenie różne",
+   "cena_p": 36,
+   "zrodlo": "Anglia 1457: 4 d",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Siennik",
+   "kat": "Wyposażenie różne",
+   "cena_p": 17,
+   "zrodlo": "Anglia 1457: 2 d",
+   "uwaga": ""
+  },
+  {
+   "nazwa": "Ręcznik",
+   "kat": "Wyposażenie różne",
+   "cena_p": 84,
+   "zrodlo": "Anglia 1349–52: 6 d",
+   "uwaga": ""
+  }
+ ]
+}

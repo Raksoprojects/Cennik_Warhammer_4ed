@@ -1,0 +1,338 @@
+{
+ "opis": "marza = mnożnik ceny wytwórcy; limit_p = najdroższa rzecz trzymana na stanie; skup = ułamek JEGO ceny sprzedaży, za jaki odkupuje. v5.2: towar_tyg = wartość towaru na stanie w tygodniach brutto Statusu kupca; gotowka_tyg = gotówka przy sobie (× 0,5–1,4 z rzutu).",
+ "kupcy": [
+  {
+   "id": "domokrazca",
+   "nazwa": "Domokrążca",
+   "status": "Brąz 4",
+   "marza": 1.15,
+   "limit_p": 720,
+   "rdzen": [
+    "Wyposażenie różne",
+    "Amunicja"
+   ],
+   "boczne": [
+    "Narzędzia i zestawy",
+    "Zioła, mikstury, narkotyki",
+    "Ubranie i dodatki",
+    "Jedzenie, picie, nocleg"
+   ],
+   "robota": [],
+   "skup": 0.45,
+   "opis": "Wóz pełen drobiazgów zebranych po drodze. Targuje się chętnie, bo musi jechać dalej.",
+   "towar_tyg": 10,
+   "gotowka_tyg": 2
+  },
+  {
+   "id": "kramarz",
+   "nazwa": "Kramarz na targu",
+   "status": "Srebro 1",
+   "marza": 1.05,
+   "limit_p": 1440,
+   "rdzen": [
+    "Jedzenie, picie, nocleg",
+    "Wyposażenie różne"
+   ],
+   "boczne": [
+    "Ubranie i dodatki",
+    "Narzędzia i zestawy"
+   ],
+   "robota": [],
+   "skup": 0.4,
+   "opis": "Stragan pod płótnem, towar w koszach, żona liczy na palcach.",
+   "towar_tyg": 8,
+   "gotowka_tyg": 2
+  },
+  {
+   "id": "kowal",
+   "nazwa": "Kowal wiejski",
+   "status": "Brąz 5",
+   "marza": 0.9,
+   "limit_p": 1920,
+   "rdzen": [
+    "Narzędzia i zestawy"
+   ],
+   "boczne": [
+    "Broń biała",
+    "Amunicja"
+   ],
+   "robota": [
+    "Narzędzia i zestawy",
+    "Broń biała"
+   ],
+   "skup": 0.35,
+   "opis": "Kuźnia przy drodze. Podkuwa konie, klepie sierpy i raz na rok komuś naprawi miecz.",
+   "towar_tyg": 12,
+   "gotowka_tyg": 3
+  },
+  {
+   "id": "rzemieslnik",
+   "nazwa": "Rzemieślnik cechowy",
+   "status": "Srebro 3",
+   "marza": 0.95,
+   "limit_p": 6000,
+   "rdzen": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne"
+   ],
+   "boczne": [
+    "Broń biała",
+    "Ubranie i dodatki"
+   ],
+   "robota": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne",
+    "Broń biała"
+   ],
+   "skup": 0.45,
+   "opis": "Warsztat na parterze, mieszkanie na piętrze. Sprzedaje własny wyrób taniej niż pośrednik.",
+   "towar_tyg": 10,
+   "gotowka_tyg": 3
+  },
+  {
+   "id": "mistrzcechu",
+   "nazwa": "Mistrz cechu, wyroby przednie",
+   "status": "Złoto 1",
+   "marza": 1.4,
+   "limit_p": 60000,
+   "rdzen": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne",
+    "Ubranie i dodatki"
+   ],
+   "boczne": [
+    "Broń biała",
+    "Księgi i dokumenty"
+   ],
+   "robota": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne",
+    "Ubranie i dodatki",
+    "Broń biała"
+   ],
+   "skup": 0.4,
+   "opis": "Kantor z ladą z orzecha. Wszystko z pieczęcią cechu i z odpowiednią dopłatą za nią.",
+   "towar_tyg": 15,
+   "gotowka_tyg": 4
+  },
+  {
+   "id": "zbrojmistrz",
+   "nazwa": "Zbrojmistrz",
+   "status": "Srebro 4",
+   "marza": 1.1,
+   "limit_p": 19200,
+   "rdzen": [
+    "Broń biała",
+    "Broń zasięgowa",
+    "Amunicja"
+   ],
+   "boczne": [
+    "Pancerze",
+    "Wyposażenie różne"
+   ],
+   "robota": [
+    "Broń biała",
+    "Amunicja"
+   ],
+   "skup": 0.45,
+   "opis": "Kuźnia przy murach. Pół towaru to odkupione łupy, druga połowa robota własna.",
+   "towar_tyg": 20,
+   "gotowka_tyg": 4
+  },
+  {
+   "id": "platnerz",
+   "nazwa": "Płatnerz mistrzowski",
+   "status": "Złoto 1",
+   "marza": 1.45,
+   "limit_p": 120000,
+   "rdzen": [
+    "Pancerze"
+   ],
+   "boczne": [
+    "Broń biała"
+   ],
+   "robota": [
+    "Pancerze",
+    "Broń biała"
+   ],
+   "skup": 0.4,
+   "opis": "Bierze miarę, każe czekać sześć tygodni i nie schodzi z ceny. Robi zbroje dla ludzi z nazwiskiem.",
+   "towar_tyg": 15,
+   "gotowka_tyg": 4
+  },
+  {
+   "id": "rusznikarz",
+   "nazwa": "Rusznikarz z Nuln",
+   "status": "Srebro 5",
+   "marza": 1.3,
+   "limit_p": 36000,
+   "rdzen": [
+    "Broń zasięgowa",
+    "Amunicja"
+   ],
+   "boczne": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne"
+   ],
+   "robota": [
+    "Broń zasięgowa",
+    "Amunicja"
+   ],
+   "skup": 0.45,
+   "opis": "Zamki kołowe, lufy i zapach saletry. Pyta, czy masz licencję, ale nie czeka na odpowiedź.",
+   "towar_tyg": 20,
+   "gotowka_tyg": 4
+  },
+  {
+   "id": "aptekarz",
+   "nazwa": "Aptekarz",
+   "status": "Srebro 3",
+   "marza": 1.15,
+   "limit_p": 14400,
+   "rdzen": [
+    "Zioła, mikstury, narkotyki"
+   ],
+   "boczne": [
+    "Księgi i dokumenty",
+    "Wyposażenie różne",
+    "Narzędzia i zestawy"
+   ],
+   "robota": [
+    "Zioła, mikstury, narkotyki"
+   ],
+   "skup": 0.4,
+   "opis": "Biały moździerz z czarnym tłuczkiem nad drzwiami. Część asortymentu trzyma pod ladą.",
+   "towar_tyg": 10,
+   "gotowka_tyg": 3
+  },
+  {
+   "id": "konie",
+   "nazwa": "Handlarz koni",
+   "status": "Srebro 4",
+   "marza": 1.25,
+   "limit_p": 168000,
+   "rdzen": [
+    "Zwierzęta i pojazdy"
+   ],
+   "boczne": [
+    "Narzędzia i zestawy"
+   ],
+   "robota": [],
+   "skup": 0.5,
+   "opis": "Zagroda za rogatkami. Każdego konia opisuje jako najlepszego, jakiego miał w życiu.",
+   "towar_tyg": 40,
+   "gotowka_tyg": 6
+  },
+  {
+   "id": "blawatny",
+   "nazwa": "Kupiec bławatny",
+   "status": "Srebro 5",
+   "marza": 1.3,
+   "limit_p": 96000,
+   "rdzen": [
+    "Ubranie i dodatki"
+   ],
+   "boczne": [
+    "Wyposażenie różne",
+    "Protezy"
+   ],
+   "robota": [
+    "Ubranie i dodatki"
+   ],
+   "skup": 0.4,
+   "opis": "Sukna, aksamity i to, co dworzanie noszą w Altdorfie dwa sezony wcześniej niż reszta Imperium.",
+   "towar_tyg": 30,
+   "gotowka_tyg": 6
+  },
+  {
+   "id": "ksiegarz",
+   "nazwa": "Księgarz i drukarz",
+   "status": "Srebro 3",
+   "marza": 1.15,
+   "limit_p": 24000,
+   "rdzen": [
+    "Księgi i dokumenty"
+   ],
+   "boczne": [
+    "Narzędzia i zestawy",
+    "Wyposażenie różne"
+   ],
+   "robota": [
+    "Księgi i dokumenty"
+   ],
+   "skup": 0.35,
+   "opis": "Prasa w zapleczu, zapach farby. Pyta, po co komu ta konkretna księga.",
+   "towar_tyg": 10,
+   "gotowka_tyg": 3
+  },
+  {
+   "id": "paser",
+   "nazwa": "Paser",
+   "status": "Srebro 2",
+   "marza": 0.65,
+   "limit_p": 36000,
+   "rdzen": [
+    "Broń biała",
+    "Ubranie i dodatki",
+    "Wyposażenie różne"
+   ],
+   "boczne": [
+    "Pancerze",
+    "Księgi i dokumenty",
+    "Narzędzia i zestawy",
+    "Broń zasięgowa",
+    "Protezy"
+   ],
+   "robota": [],
+   "skup": 0.3,
+   "opis": "Zaplecze rzeźni. Tanio, bez pytań, bez gwarancji i bez możliwości reklamacji.",
+   "towar_tyg": 15,
+   "gotowka_tyg": 3
+  },
+  {
+   "id": "kwatermistrz",
+   "nazwa": "Kwatermistrz wojskowy",
+   "status": "Srebro 4",
+   "marza": 0.85,
+   "limit_p": 28800,
+   "rdzen": [
+    "Broń biała",
+    "Pancerze",
+    "Amunicja",
+    "Broń zasięgowa"
+   ],
+   "boczne": [
+    "Jedzenie, picie, nocleg",
+    "Wyposażenie różne",
+    "Zioła, mikstury, narkotyki"
+   ],
+   "robota": [],
+   "skup": 0.5,
+   "opis": "Sprzedaje hurtem z magazynu regimentu. Formalnie nic z tego nie jest na sprzedaż.",
+   "towar_tyg": 40,
+   "gotowka_tyg": 8
+  },
+  {
+   "id": "medyk",
+   "nazwa": "Medyk i balwierz",
+   "status": "Srebro 3",
+   "marza": 1.2,
+   "limit_p": 19200,
+   "rdzen": [
+    "Zioła, mikstury, narkotyki",
+    "Protezy"
+   ],
+   "boczne": [
+    "Narzędzia i zestawy",
+    "Księgi i dokumenty"
+   ],
+   "robota": [
+    "Protezy"
+   ],
+   "skup": 0.35,
+   "opis": "Miska, brzytwa i pijawki w słoju. Leczy, goli i wyrywa zęby, w tej kolejności.",
+   "towar_tyg": 8,
+   "gotowka_tyg": 3
+  }
+ ]
+}

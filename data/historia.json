@@ -1,0 +1,906 @@
+[
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Robotnik niewykwalifikowany",
+  "orig": "1,5 gr/dzień × 6 = 9 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 6.0,
+  "wfrp": "13 s 9 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Czeladnik ciesielski / murarski",
+  "orig": "2,5 gr/dzień × 6 = 15 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 10.0,
+  "wfrp": "1 ZK 2 s 11 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Hutman (urzędnik miejski)",
+  "orig": "24 gr/tydzień",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 16.0,
+  "wfrp": "1 ZK 16 s 8 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Trębacz miejski",
+  "orig": "30 gr/tydzień",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 20.0,
+  "wfrp": "2 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Cieśla (mistrz)",
+  "orig": "30–40 gr/tydzień",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 23.33,
+  "wfrp": "2 ZK 13 s 6 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Murarz (mistrz / przedsiębiorca)",
+  "orig": "60 gr/tydzień",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 40.0,
+  "wfrp": "4 ZK 11 s 8 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Lancknecht (żołd)",
+  "orig": "4 guldeny reńskie/miesiąc",
+  "zrodlo": "Rzesza, XVI w.",
+  "dniowki": 20.0,
+  "wfrp": "2 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Doppelsöldner",
+  "orig": "8 guldenów/miesiąc",
+  "zrodlo": "Rzesza, XVI w.",
+  "dniowki": 40.0,
+  "wfrp": "4 ZK 11 s 8 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Robotnik winnicy",
+  "orig": "10–14 hellerów/dzień × 6",
+  "zrodlo": "Frankfurt 1425",
+  "dniowki": 3.27,
+  "wfrp": "7 s 6 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Murarz",
+  "orig": "40 hellerów/dzień (lato) × 6",
+  "zrodlo": "Frankfurt 1425",
+  "dniowki": 10.91,
+  "wfrp": "1 ZK 5 s"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Zbrojmistrz królewski",
+  "orig": "26 s 8 d / miesiąc",
+  "zrodlo": "Anglia 1544",
+  "dniowki": 18.6,
+  "wfrp": "2 ZK 2 s 8 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Łucznik konny (żołd)",
+  "orig": "6 d/dzień × 7",
+  "zrodlo": "Anglia 1346",
+  "dniowki": 10.5,
+  "wfrp": "1 ZK 4 s 1 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Rycerz (żołd polowy)",
+  "orig": "2 s/dzień × 7",
+  "zrodlo": "Anglia 1316",
+  "dniowki": 42.0,
+  "wfrp": "4 ZK 16 s 3 p"
+ },
+ {
+  "kat": "Płace i dochody (tygodniowo, brutto)",
+  "poz": "Kawalerzysta",
+  "orig": "18 d/dzień × 7",
+  "zrodlo": "Anglia, koniec XVI w.",
+  "dniowki": 31.5,
+  "wfrp": "3 ZK 12 s 2 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Nauczyciel miejski",
+  "orig": "poniżej 6 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 2.31,
+  "wfrp": "5 s 3 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Organista",
+  "orig": "9 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 3.46,
+  "wfrp": "7 s 11 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Skarbnik miejski",
+  "orig": "niespełna 20 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 7.69,
+  "wfrp": "17 s 8 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Urzędnik średniej rangi",
+  "orig": "10–30 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 7.69,
+  "wfrp": "17 s 8 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Muzyk orkiestry królewskiej",
+  "orig": "40 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 15.38,
+  "wfrp": "1 ZK 15 s 3 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Golibroda królewski",
+  "orig": "100 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 38.46,
+  "wfrp": "4 ZK 8 s 2 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Doktor teologii",
+  "orig": "400 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 153.85,
+  "wfrp": "17 ZK 12 s 7 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Lekarz królewski",
+  "orig": "700 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 269.23,
+  "wfrp": "30 ZK 17 s"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Marszałek nadworny",
+  "orig": "do 1000 florenów/rok",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 384.62,
+  "wfrp": "44 ZK 1 s 5 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Ksiądz altarysta",
+  "orig": "£4 13 s 4 d/rok",
+  "zrodlo": "Anglia 1379",
+  "dniowki": 5.38,
+  "wfrp": "12 s 4 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Sergeant at Law (prawnik koronny)",
+  "orig": "£300/rok",
+  "zrodlo": "Anglia 1455",
+  "dniowki": 346.15,
+  "wfrp": "39 ZK 13 s 3 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Sługa kuchenny",
+  "orig": "2–4 s/rok + wikt",
+  "zrodlo": "Anglia XIV w.",
+  "dniowki": 0.17,
+  "wfrp": "5 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Giermek",
+  "orig": "13 s 4 d – £1/rok + wikt",
+  "zrodlo": "Anglia XIV w.",
+  "dniowki": 0.77,
+  "wfrp": "1 s 9 p"
+ },
+ {
+  "kat": "Dochody roczne",
+  "poz": "Husarz (żołd)",
+  "orig": "60 zł/rok (1609)",
+  "zrodlo": "Rzeczpospolita 1609",
+  "dniowki": 23.08,
+  "wfrp": "2 ZK 12 s 11 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Dzienne wyżywienie robotnika",
+  "orig": "poniżej 1 gr",
+  "zrodlo": "Kraków XVI w.",
+  "dniowki": 0.53,
+  "wfrp": "1 s 3 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wyżywienie dzienne: pachołek",
+  "orig": "1 d",
+  "zrodlo": "Anglia 1380",
+  "dniowki": 0.25,
+  "wfrp": "7 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wyżywienie dzienne: czeladnik (yeoman)",
+  "orig": "3 d",
+  "zrodlo": "Anglia 1380",
+  "dniowki": 0.75,
+  "wfrp": "1 s 9 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wyżywienie dzienne: giermek",
+  "orig": "4 d",
+  "zrodlo": "Anglia 1380",
+  "dniowki": 1.0,
+  "wfrp": "2 s 4 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wyżywienie dzienne: pan (lord)",
+  "orig": "7 d",
+  "zrodlo": "Anglia 1380",
+  "dniowki": 1.75,
+  "wfrp": "4 s"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Żyto, 1 ćwiertnia (ok. 44 l)",
+  "orig": "14–15 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 9.67,
+  "wfrp": "1 ZK 2 s 2 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Pszenica, 1 ćwiertnia",
+  "orig": "22–24 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 15.33,
+  "wfrp": "1 ZK 15 s 2 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Owies, 1 ćwiertnia",
+  "orig": "7,5 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 5.0,
+  "wfrp": "11 s 6 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Piwo, 1 achtel (134–140 l)",
+  "orig": "13–14 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 9.0,
+  "wfrp": "1 ZK 7 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Piwo, 0,5 l (hurt)",
+  "orig": "z achtela",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 0.03,
+  "wfrp": "1 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wino, 1 garniec (3,77 l)",
+  "orig": "6–7 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 4.33,
+  "wfrp": "9 s 11 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Wino, butelka 0,75 l",
+  "orig": "z garnca",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 0.86,
+  "wfrp": "2 s"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Masło, 1 garniec",
+  "orig": "26–32 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 19.33,
+  "wfrp": "2 ZK 4 s 4 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Ser, 1 kopa",
+  "orig": "18–20 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 12.67,
+  "wfrp": "1 ZK 9 s"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Jaja, 1 kopa (60 szt.)",
+  "orig": "3 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 2.0,
+  "wfrp": "4 s 7 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Mięso wieprzowe",
+  "orig": "18–20 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 12.67,
+  "wfrp": "1 ZK 9 s"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Ćwierć wołowiny",
+  "orig": "29–31 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 20.0,
+  "wfrp": "2 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Chleb żytni, bochenek",
+  "orig": "1/10 gr",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 0.07,
+  "wfrp": "2 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Ale, 1 galon (4,5 l)",
+  "orig": "1–1,5 d",
+  "zrodlo": "Anglia XIV w.",
+  "dniowki": 0.31,
+  "wfrp": "9 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Pieprz, 1 funt",
+  "orig": "15–16 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 10.33,
+  "wfrp": "1 ZK 3 s 8 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Cynamon, 1 funt",
+  "orig": "55 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 36.67,
+  "wfrp": "4 ZK 4 s"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Szafran, 1 funt",
+  "orig": "135–140 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 91.33,
+  "wfrp": "10 ZK 9 s 4 p"
+ },
+ {
+  "kat": "Żywność i napoje",
+  "poz": "Cukier, 1 kamień",
+  "orig": "120 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 80.0,
+  "wfrp": "9 ZK 3 s 4 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Łóżko w gospodzie, 1 noc",
+  "orig": "2 d",
+  "zrodlo": "Anglia 1331",
+  "dniowki": 0.5,
+  "wfrp": "1 s 2 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Obrok dla konia, 1 noc",
+  "orig": "10 d na 4 konie",
+  "zrodlo": "Anglia 1331",
+  "dniowki": 0.62,
+  "wfrp": "1 s 5 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Chleb w gospodzie (posiłek grupowy)",
+  "orig": "4 d",
+  "zrodlo": "Anglia 1331",
+  "dniowki": 1.0,
+  "wfrp": "2 s 4 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Utrzymanie u nauczyciela",
+  "orig": "2 s/tydzień",
+  "zrodlo": "Anglia 1394",
+  "dniowki": 6.0,
+  "wfrp": "13 s 9 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Nauka szermierki",
+  "orig": "10 s/miesiąc",
+  "zrodlo": "Anglia, koniec XVI w.",
+  "dniowki": 6.98,
+  "wfrp": "16 s"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Wpisowe ucznia do cechu",
+  "orig": "1–2 s",
+  "zrodlo": "Anglia XIV w.",
+  "dniowki": 4.5,
+  "wfrp": "10 s 4 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Członkostwo w cechu",
+  "orig": "3 s 4 d – £3",
+  "zrodlo": "Anglia XIV w.",
+  "dniowki": 10.0,
+  "wfrp": "1 ZK 2 s 11 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Czyszczenie zbroi (korselet)",
+  "orig": "5 d",
+  "zrodlo": "Anglia 1567",
+  "dniowki": 1.25,
+  "wfrp": "2 s 10 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Czynsz roczny: dom murarza",
+  "orig": "1,6 guldena/rok",
+  "zrodlo": "Frankfurt 1450",
+  "dniowki": 0.62,
+  "wfrp": "1 s 5 p"
+ },
+ {
+  "kat": "Nocleg i usługi",
+  "poz": "Czynsz roczny: dom złotnika",
+  "orig": "10 guldenów/rok",
+  "zrodlo": "Frankfurt 1450",
+  "dniowki": 3.85,
+  "wfrp": "8 s 10 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Para butów",
+  "orig": "7–8 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 5.0,
+  "wfrp": "11 s 6 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Para trzewików",
+  "orig": "4–5 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 3.0,
+  "wfrp": "6 s 10 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Kożuch",
+  "orig": "21 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 14.0,
+  "wfrp": "1 ZK 12 s 1 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Sukno, 1 łokieć",
+  "orig": "23 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 15.33,
+  "wfrp": "1 ZK 15 s 2 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Płótno, 1 łokieć",
+  "orig": "1 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 0.67,
+  "wfrp": "1 s 6 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Buty",
+  "orig": "4 d",
+  "zrodlo": "Anglia 1470",
+  "dniowki": 1.0,
+  "wfrp": "2 s 4 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Buty z cholewami",
+  "orig": "6 d",
+  "zrodlo": "Anglia 1470",
+  "dniowki": 1.5,
+  "wfrp": "3 s 5 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Kapelusz",
+  "orig": "10 d – 1 s 2 d",
+  "zrodlo": "Anglia 1470",
+  "dniowki": 3.0,
+  "wfrp": "6 s 10 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Koszula lniana chłopska",
+  "orig": "8 d",
+  "zrodlo": "Anglia 1313",
+  "dniowki": 2.0,
+  "wfrp": "4 s 7 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Strój wełniany",
+  "orig": "3 s",
+  "zrodlo": "Anglia 1313",
+  "dniowki": 9.0,
+  "wfrp": "1 ZK 8 p"
+ },
+ {
+  "kat": "Odzież",
+  "poz": "Jedwab, 1 jard",
+  "orig": "10–12 s",
+  "zrodlo": "Anglia XV w.",
+  "dniowki": 33.0,
+  "wfrp": "3 ZK 15 s 8 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Koń",
+  "orig": "280 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 186.67,
+  "wfrp": "21 ZK 7 s 9 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Koń pociągowy",
+  "orig": "6–7 florenów",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 130.0,
+  "wfrp": "14 ZK 17 s 11 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Koń siodłowy",
+  "orig": "15–20+ florenów",
+  "zrodlo": "Polska XVI w.",
+  "dniowki": 340.0,
+  "wfrp": "38 ZK 19 s 2 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Wół",
+  "orig": "75 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 50.0,
+  "wfrp": "5 ZK 14 s 7 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Wieprz",
+  "orig": "36 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 24.0,
+  "wfrp": "2 ZK 15 s"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Cielę",
+  "orig": "12–14 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 8.67,
+  "wfrp": "19 s 10 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Baran",
+  "orig": "7–10 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 5.67,
+  "wfrp": "13 s"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Kapłon",
+  "orig": "2 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 1.33,
+  "wfrp": "3 s 1 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Gęś",
+  "orig": "1,5–2 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 1.17,
+  "wfrp": "2 s 8 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Kurczę",
+  "orig": "1 gr",
+  "zrodlo": "Kraków 1526–1535",
+  "dniowki": 0.67,
+  "wfrp": "1 s 6 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Krowa",
+  "orig": "9 s 5 d",
+  "zrodlo": "Anglia poł. XIV w.",
+  "dniowki": 28.25,
+  "wfrp": "3 ZK 4 s 9 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Wół",
+  "orig": "13 s 1 d",
+  "zrodlo": "Anglia poł. XIV w.",
+  "dniowki": 39.25,
+  "wfrp": "4 ZK 9 s 11 p"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Destrier (koń bojowy)",
+  "orig": "do £80",
+  "zrodlo": "Anglia XIII w.",
+  "dniowki": 4800.0,
+  "wfrp": "550 ZK"
+ },
+ {
+  "kat": "Zwierzęta",
+  "poz": "Koń pociągowy",
+  "orig": "10–20 s",
+  "zrodlo": "Anglia XIII w.",
+  "dniowki": 45.0,
+  "wfrp": "5 ZK 3 s 2 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Łuk najlepszej klasy",
+  "orig": "3 s 4 d",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 10.0,
+  "wfrp": "1 ZK 2 s 11 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Łuk II klasy",
+  "orig": "2 s 6 d",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 7.5,
+  "wfrp": "17 s 2 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Łuk III klasy",
+  "orig": "2 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 6.0,
+  "wfrp": "13 s 9 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Snop strzał liberyjnych",
+  "orig": "5 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 15.0,
+  "wfrp": "1 ZK 14 s 4 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Snop strzał (24 szt.)",
+  "orig": "2 s 4 d",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 7.0,
+  "wfrp": "16 s"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Pika",
+  "orig": "2 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 6.0,
+  "wfrp": "13 s 9 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Miecz",
+  "orig": "6 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 18.0,
+  "wfrp": "2 ZK 1 s 3 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Tani miecz chłopski",
+  "orig": "6 d",
+  "zrodlo": "Anglia 1340",
+  "dniowki": 1.5,
+  "wfrp": "3 s 5 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Arkebuz",
+  "orig": "8 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 24.0,
+  "wfrp": "2 ZK 15 s"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Kaliwer",
+  "orig": "20 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 60.0,
+  "wfrp": "6 ZK 17 s 6 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Korselet (zbroja municyjna)",
+  "orig": "30 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 90.0,
+  "wfrp": "10 ZK 6 s 3 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Morion",
+  "orig": "3 s 4 d",
+  "zrodlo": "Anglia 1590",
+  "dniowki": 10.0,
+  "wfrp": "1 ZK 2 s 11 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Bascinet + podpinka",
+  "orig": "13 s 4 d + 3 s 4 d",
+  "zrodlo": "Anglia 1369",
+  "dniowki": 50.0,
+  "wfrp": "5 ZK 14 s 7 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Zbroja mediolańska (gotowa)",
+  "orig": "£8 6 s 8 d",
+  "zrodlo": "1441",
+  "dniowki": 500.0,
+  "wfrp": "57 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Zbroja giermka",
+  "orig": "£5 – £6 16 s 8 d",
+  "zrodlo": "1441",
+  "dniowki": 360.0,
+  "wfrp": "41 ZK 5 s"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Kolczuga",
+  "orig": "100 s",
+  "zrodlo": "Anglia XII w.",
+  "dniowki": 300.0,
+  "wfrp": "34 ZK 7 s 6 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Proch strzelniczy, 1 funt",
+  "orig": "ok. 1 s",
+  "zrodlo": "Anglia XVI w.",
+  "dniowki": 3.0,
+  "wfrp": "6 s 10 p"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Pistolet kołowy (para)",
+  "orig": "£2 16 s",
+  "zrodlo": "poł. XVII w.",
+  "dniowki": 168.0,
+  "wfrp": "19 ZK 5 s"
+ },
+ {
+  "kat": "Broń i pancerz",
+  "poz": "Muszkiet",
+  "orig": "16 s 6 d – 18 s 6 d",
+  "zrodlo": "poł. XVII w.",
+  "dniowki": 52.5,
+  "wfrp": "6 ZK 4 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Książka (średnio, z zakupu 7 szt.)",
+  "orig": "ok. 14 s 3 d",
+  "zrodlo": "Anglia 1479",
+  "dniowki": 42.86,
+  "wfrp": "4 ZK 18 s 3 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Biblioteka 126 ksiąg",
+  "orig": "£113",
+  "zrodlo": "Anglia 1397",
+  "dniowki": 6780.0,
+  "wfrp": "776 ZK 17 s 6 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Prosty dom",
+  "orig": "20–30 guldenów",
+  "zrodlo": "Frankfurt 1450",
+  "dniowki": 500.0,
+  "wfrp": "57 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Dom rzemieślnika",
+  "orig": "40–100 guldenów",
+  "zrodlo": "Frankfurt 1450",
+  "dniowki": 1400.0,
+  "wfrp": "160 ZK 8 s 4 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Dom patrycjusza",
+  "orig": "ok. 800 guldenów",
+  "zrodlo": "Frankfurt 1450",
+  "dniowki": 16000.0,
+  "wfrp": "1833 ZK 6 s 8 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Dom przy rynku",
+  "orig": "1825 guldenów",
+  "zrodlo": "Norymberga ok. 1390",
+  "dniowki": 36500.0,
+  "wfrp": "4182 ZK 5 s 10 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "List mistrzowski",
+  "orig": "2 guldeny",
+  "zrodlo": "Frankfurt ok. 1380",
+  "dniowki": 40.0,
+  "wfrp": "4 ZK 11 s 8 p"
+ },
+ {
+  "kat": "Księgi, dom, majątek",
+  "poz": "Infuła wysadzana klejnotami",
+  "orig": "280 florenów (=10 lat pracy tkacza)",
+  "zrodlo": "Toskania 1355",
+  "dniowki": 5600.0,
+  "wfrp": "641 ZK 13 s 4 p"
+ }
+]

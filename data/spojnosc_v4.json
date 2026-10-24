@@ -1,0 +1,442 @@
+{
+ "opis": "Testy arbitrażu i spójności v4. Test: CENNIK=propozycja/cennik_v4_zalecany.json node --test test/arbitraz.test.mjs",
+ "receptury": {
+  "robota_min": 1.1,
+  "pozycje": {
+   "koc": {
+    "sukno-szare-lokiec": 3
+   },
+   "zwijane-poslanie": {
+    "koc": 1,
+    "siennik": 1,
+    "_rzemien": 12
+   },
+   "siennik": {
+    "plotno-zgrzebne-lokiec": 4,
+    "_slome": 4
+   },
+   "przescieradlo": {
+    "plotno-lokiec": 6
+   },
+   "recznik": {
+    "plotno-lokiec": 2
+   },
+   "worek": {
+    "plotno-zgrzebne-lokiec": 2
+   },
+   "duzy-worek": {
+    "plotno-zgrzebne-lokiec": 4
+   },
+   "plocienna-plandeka": {
+    "plotno-lokiec": 14,
+    "_impregnacja": 24
+   },
+   "namiot": {
+    "plocienna-plandeka": 2,
+    "_maszty": 48
+   },
+   "ubranie": {
+    "sukno-szare-lokiec": 3,
+    "plotno-lokiec": 4
+   },
+   "plaszcz": {
+    "sukno-szare-lokiec": 4
+   },
+   "oponcza": {
+    "sukno-szare-lokiec": 5,
+    "plotno-lokiec": 2
+   },
+   "szata": {
+    "sukno-szare-lokiec": 7
+   },
+   "kaptur-lub-maska": {
+    "sukno-szare-lokiec": 1
+   },
+   "mundur": {
+    "ubranie": 1
+   },
+   "stroj-dworski": {
+    "sukno-lokiec": 10
+   }
+  }
+ },
+ "naczynia": [
+  {
+   "pelne": "butelka-wina",
+   "puste": "butelka",
+   "zawartosc_min_p": 20
+  },
+  {
+   "pelne": "sledzie-beczka",
+   "puste": "beczka-145-l",
+   "zawartosc_min_p": 0
+  }
+ ],
+ "rodziny": [
+  {
+   "a": "plocienna-plandeka",
+   "b": "koc",
+   "min": 0.8,
+   "max": 3.0,
+   "opis": "plandeka ÷ koc"
+  },
+  {
+   "a": "namiot",
+   "b": "koc",
+   "min": 2.0,
+   "max": 8.0,
+   "opis": "namiot ÷ koc"
+  },
+  {
+   "a": "plaszcz",
+   "b": "koc",
+   "min": 0.8,
+   "max": 2.5,
+   "opis": "płaszcz ÷ koc"
+  },
+  {
+   "a": "ubranie",
+   "b": "koc",
+   "min": 1.0,
+   "max": 3.0,
+   "opis": "ubranie ÷ koc"
+  },
+  {
+   "a": "koc",
+   "b": "przescieradlo",
+   "min": 1.0,
+   "max": 4.0,
+   "opis": "koc ÷ prześcieradło"
+  },
+  {
+   "a": "przescieradlo",
+   "b": "siennik",
+   "min": 1.5,
+   "max": 6.0,
+   "opis": "prześcieradło ÷ siennik"
+  },
+  {
+   "a": "buty",
+   "b": "rekawiczki",
+   "min": 1.2,
+   "max": 4.0,
+   "opis": "buty ÷ rękawiczki"
+  },
+  {
+   "a": "miecz",
+   "b": "topor",
+   "min": 2.0,
+   "max": 6.0,
+   "opis": "miecz ÷ topór (znak stanu)"
+  },
+  {
+   "a": "miecz",
+   "b": "bron-reczna-topor-maczuga",
+   "min": 1.3,
+   "max": 4.0,
+   "opis": "miecz ÷ broń ręczna (znak stanu)"
+  },
+  {
+   "a": "sierp",
+   "b": "noz",
+   "min": 2.0,
+   "max": 8.0,
+   "opis": "sierp ÷ nóż"
+  },
+  {
+   "a": "siekiera",
+   "b": "sierp",
+   "min": 1.0,
+   "max": 2.0,
+   "opis": "siekiera ÷ sierp"
+  },
+  {
+   "a": "kolczuga",
+   "b": "skorzana-kurta",
+   "min": 4.0,
+   "max": 20.0,
+   "opis": "kolczuga ÷ skórzana kurta"
+  },
+  {
+   "a": "pelna-plytowka-4-elementy",
+   "b": "kolczuga",
+   "min": 2.0,
+   "max": 8.0,
+   "opis": "płytówka ÷ kolczuga"
+  },
+  {
+   "a": "kon-wierzchowy",
+   "b": "kon-pociagowy",
+   "min": 1.8,
+   "max": 4.0,
+   "opis": "koń wierzchowy ÷ pociągowy (Kraków 2,6)"
+  },
+  {
+   "a": "wol",
+   "b": "krowa",
+   "min": 1.0,
+   "max": 1.6,
+   "opis": "wół ÷ krowa"
+  },
+  {
+   "a": "krowa",
+   "b": "ciele",
+   "min": 2.5,
+   "max": 8.0,
+   "opis": "krowa ÷ cielę (2 lata chowu)"
+  },
+  {
+   "a": "woz",
+   "b": "furmanka",
+   "min": 1.5,
+   "max": 5.0,
+   "opis": "wóz ÷ furmanka"
+  },
+  {
+   "a": "lampa-oliwna",
+   "b": "swiece-tuzin",
+   "min": 0.8,
+   "max": 4.0,
+   "opis": "lampa ÷ tuzin świec"
+  },
+  {
+   "a": "pierscien-zloty",
+   "b": "pierscien-srebrny",
+   "min": 5.0,
+   "max": 15.0,
+   "opis": "złoty ÷ srebrny pierścień (kruszec ~11:1)"
+  },
+  {
+   "a": "pelna-plytowka-4-elementy",
+   "b": "stroj-dworski",
+   "min": 2.0,
+   "max": 10.0,
+   "opis": "płytówka ÷ strój dworski (zasada MG: strój nie może być porównywalny z płytówką)"
+  },
+  {
+   "a": "flamberg",
+   "b": "miecz-dwureczny",
+   "min": 1.5,
+   "max": 3.5,
+   "opis": "flamberg ÷ miecz dwuręczny (RAW 3)"
+  },
+  {
+   "a": "rumak",
+   "b": "kon-wierzchowy",
+   "min": 8.0,
+   "max": 40.0,
+   "opis": "rumak ÷ koń wierzchowy (destrier = wielokrotność konia siodłowego)"
+  },
+  {
+   "a": "luk-elfi",
+   "b": "luk-dlugi",
+   "min": 4.5,
+   "max": 5.5,
+   "opis": "łuk elfi ÷ łuk długi (decyzja MG: ×5)"
+  }
+ ],
+ "tusze": {
+  "mieso": "mieso-kg",
+  "kg": {
+   "kurczak": 1,
+   "ges": 3,
+   "kaplon": 1.5,
+   "owca-baran": 12,
+   "swinia": 45,
+   "ciele": 25,
+   "krowa": 110,
+   "wol": 150
+  },
+  "min": 0.7,
+  "max": 2.5
+ },
+ "kruszec": {
+  "zk_gram_zlota": 1.53,
+  "zloto_do_srebra": 11,
+  "max_krotnosc": 4,
+  "pozycje": [
+   {
+    "id": "pierscien-zloty",
+    "metal": "zloto",
+    "g": 5
+   },
+   {
+    "id": "pierscien-srebrny",
+    "metal": "srebro",
+    "g": 5
+   }
+  ]
+ },
+ "budzet": {
+  "jedzenie_dzien_p": 14,
+  "odziez_rok": {
+   "plotno-lokiec": 6,
+   "sukno-szare-lokiec": 3
+  },
+  "udzial_utrzymania": 0.8,
+  "progi": [
+   {
+    "status": "Brąz 3",
+    "brutto_tydz_p": 165,
+    "kwatera": "kat-w-izbie-czeladnej-tydzien",
+    "tygodni": 1
+   },
+   {
+    "status": "Brąz 4",
+    "brutto_tydz_p": 220,
+    "kwatera": "izba-na-poddaszu-miesiac",
+    "tygodni": 4.33
+   }
+  ],
+  "max_udzial_czynszu": 0.25,
+  "czynsz_najemcy": [
+   {
+    "kwatera": "izba-w-kamienicy-miesiac",
+    "status": "Srebro 1",
+    "brutto_tydz_p": 330
+   },
+   {
+    "kwatera": "mieszkanie-mieszczanskie-23-izby-miesiac",
+    "status": "Srebro 2",
+    "brutto_tydz_p": 660
+   }
+  ]
+ },
+ "karczma": {
+  "min": 0.1,
+  "max": 0.5,
+  "pary": [
+   {
+    "najem": "kat-w-izbie-czeladnej-miesiac",
+    "noc": "wspolna-izba-na-1-noc"
+   },
+   {
+    "najem": "izba-w-kamienicy-miesiac",
+    "noc": "prywatny-pokoj-na-1-noc"
+   }
+  ]
+ },
+ "zwrot": [
+  {
+   "kupno": "kupno-dom-rzemieslnika",
+   "najem": "dom-mistrza-z-warsztatem-rok",
+   "min": 7,
+   "max": 25
+  },
+  {
+   "kupno": "kupno-prosty-dom",
+   "najem": "izba-w-kamienicy-rok",
+   "min": 7,
+   "max": 25
+  },
+  {
+   "kupno": "kupno-kamienica-patrycjuszowska",
+   "najem": "kamienica-kupiecka-rok",
+   "min": 7,
+   "max": 40
+  }
+ ],
+ "rzemieslnik": {
+  "min": 0.7,
+  "max": 2.2,
+  "uwaga": "Czas pracy i materiał to SZACUNKI rzędu wielkości. Warsztat = dzienne brutto mistrza + czeladników z drabiny Statusu.",
+  "warsztaty_p_dzien": {
+   "kuznia_wiejska": 73.33,
+   "cechowy": 210.83,
+   "zbrojmistrz": 311.67,
+   "platnernia": 710.0,
+   "szewc_krawiec": 91.67,
+   "tkacz": 82.5,
+   "luczarz": 91.67,
+   "skryba": 55.0,
+   "kolodziej": 155.83
+  },
+  "wzorce": [
+   {
+    "id": "noz",
+    "warsztat": "kuznia_wiejska",
+    "dni": 0.1,
+    "material_p": 3
+   },
+   {
+    "id": "sierp",
+    "warsztat": "kuznia_wiejska",
+    "dni": 0.25,
+    "material_p": 8
+   },
+   {
+    "id": "siekiera",
+    "warsztat": "kuznia_wiejska",
+    "dni": 0.3,
+    "material_p": 12
+   },
+   {
+    "id": "topor",
+    "warsztat": "zbrojmistrz",
+    "dni": 0.5,
+    "material_p": 20
+   },
+   {
+    "id": "miecz",
+    "warsztat": "zbrojmistrz",
+    "dni": 1.5,
+    "material_p": 40
+   },
+   {
+    "id": "kolczuga",
+    "warsztat": "zbrojmistrz",
+    "dni": 10,
+    "material_p": 300
+   },
+   {
+    "id": "napiersnik",
+    "warsztat": "platnernia",
+    "dni": 5,
+    "material_p": 150
+   },
+   {
+    "id": "pelna-plytowka-4-elementy",
+    "warsztat": "platnernia",
+    "dni": 25,
+    "material_p": 600
+   },
+   {
+    "id": "buty",
+    "warsztat": "szewc_krawiec",
+    "dni": 1,
+    "material_p": 50
+   },
+   {
+    "id": "ubranie",
+    "warsztat": "szewc_krawiec",
+    "dni": 1.5,
+    "material_p": null
+   },
+   {
+    "id": "koc",
+    "warsztat": "tkacz",
+    "dni": 1,
+    "material_p": 120
+   },
+   {
+    "id": "luk-dlugi",
+    "warsztat": "luczarz",
+    "dni": 2,
+    "material_p": 40
+   },
+   {
+    "id": "ksiega-medycyna",
+    "warsztat": "skryba",
+    "dni": 100,
+    "material_p": 1800
+   },
+   {
+    "id": "woz",
+    "warsztat": "kolodziej",
+    "dni": 12,
+    "material_p": 600,
+    "uwaga": "v5.1: 8 → 12 dni. Wóz czterokołowy z żelaznymi obręczami to robota kołodzieja i kowala; źródło (15 guldenów = 34 ZK) pokazywało, że 8 dni było za mało."
+   }
+  ]
+ }
+}

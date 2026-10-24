@@ -1,0 +1,48 @@
+{
+ "osady": [
+  {
+   "id": "wies",
+   "nazwa": "Wieś",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "tylko_powszechna": true,
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ],
+   "uwaga": "Limit 2 ZK i wymóg Dostępności Powszechnej nie dotyczą żywego inwentarza ani podstawowej żywności — wieś jest właśnie tym miejscem, gdzie kupuje się krowę."
+  },
+  {
+   "id": "miasteczko",
+   "nazwa": "Miasteczko",
+   "mnoznik": 1.0,
+   "limit_p": 3600
+  },
+  {
+   "id": "miasto",
+   "nazwa": "Miasto",
+   "mnoznik": 1.1,
+   "limit_p": 14400
+  },
+  {
+   "id": "metropolia",
+   "nazwa": "Metropolia (Nuln, Middenheim)",
+   "mnoznik": 1.2,
+   "limit_p": null
+  },
+  {
+   "id": "altdorf",
+   "nazwa": "Altdorf",
+   "mnoznik": 1.3,
+   "limit_p": null,
+   "rzadkie_latwiej": true
+  },
+  {
+   "id": "marienburg",
+   "nazwa": "Marienburg",
+   "mnoznik": 1.45,
+   "limit_p": null,
+   "uwaga": "wszystko z importu (tylko opis)"
+  }
+ ]
+}

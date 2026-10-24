@@ -1,0 +1,529 @@
+{
+ "opis": "Reguły spójności cennika (v3). Test: node --test test/spojnosc.test.mjs",
+ "reguly": [
+  {
+   "opis": "Obozowanie: koc < plandeka < namiot",
+   "typ": "rosnaco",
+   "ids": [
+    "koc",
+    "plocienna-plandeka",
+    "namiot"
+   ]
+  },
+  {
+   "opis": "Koc (samo sukno, bez kroju) to co najmniej ⅓ ceny ubrania",
+   "typ": "stosunek",
+   "a": "koc",
+   "b": "ubranie",
+   "min": 0.33
+  },
+  {
+   "opis": "Pełne naczynie droższe od pustego",
+   "typ": "suma_min",
+   "a": "butelka-wina",
+   "skladniki": [
+    "butelka"
+   ]
+  },
+  {
+   "opis": "Beczułki rosną z pojemnością",
+   "typ": "rosnaco",
+   "ids": [
+    "beczulka-45-l",
+    "beczka-145-l"
+   ]
+  },
+  {
+   "opis": "Beczułka piwa 10 l nie droższa niż pusta 45 l + 10 l piwa w detalu",
+   "typ": "max_suma",
+   "a": "beczulka-piwa-10-l",
+   "skladniki": [
+    "beczulka-45-l"
+   ],
+   "plus": [
+    [
+     "pol-litra-piwa",
+     20
+    ]
+   ]
+  },
+  {
+   "opis": "Wino droższe od piwa na łyk: kielich (0,15 l) ≥ 0,3 × pół litra piwa",
+   "typ": "stosunek",
+   "a": "kielich-wina",
+   "b": "pol-litra-piwa",
+   "min": 0.3
+  },
+  {
+   "opis": "Arkan to lina z pętlą",
+   "typ": "min",
+   "a": "arkan",
+   "b": "lina-10-metrow"
+  },
+  {
+   "opis": "Konie i muły",
+   "typ": "rosnaco",
+   "ids": [
+    "kucyk",
+    "mul",
+    "kon-pociagowy",
+    "kon-wierzchowy",
+    "lekki-kon-bojowy",
+    "rumak"
+   ]
+  },
+  {
+   "opis": "Bydło",
+   "typ": "rosnaco",
+   "ids": [
+    "kurczak",
+    "owca-baran",
+    "swinia",
+    "krowa"
+   ]
+  },
+  {
+   "opis": "Krowa ≤ wół",
+   "typ": "min",
+   "a": "wol",
+   "b": "krowa"
+  },
+  {
+   "opis": "Pojazdy lądowe",
+   "typ": "rosnaco",
+   "ids": [
+    "furmanka",
+    "woz",
+    "powoz"
+   ]
+  },
+  {
+   "opis": "Łodzie",
+   "typ": "rosnaco",
+   "ids": [
+    "lodka-dlubanka",
+    "lodz-wioslowa",
+    "barka-rzeczna"
+   ]
+  },
+  {
+   "opis": "Okrycia: płaszcz < opończa",
+   "typ": "rosnaco",
+   "ids": [
+    "plaszcz",
+    "oponcza"
+   ]
+  },
+  {
+   "opis": "Obuwie",
+   "typ": "rosnaco",
+   "ids": [
+    "buty",
+    "wysokie-buty"
+   ]
+  },
+  {
+   "opis": "Stroje",
+   "typ": "rosnaco",
+   "ids": [
+    "ubranie",
+    "szata",
+    "stroj-dworski",
+    "stroj-ceremonialny-aksamit-zlotoglow-futra"
+   ]
+  },
+  {
+   "opis": "Ubranie ≤ mundur, kostium",
+   "typ": "min",
+   "a": "mundur",
+   "b": "ubranie"
+  },
+  {
+   "opis": "Torby",
+   "typ": "rosnaco",
+   "ids": [
+    "sakiewka",
+    "torba-na-ramie",
+    "plecak",
+    "juki"
+   ]
+  },
+  {
+   "opis": "Worki",
+   "typ": "rosnaco",
+   "ids": [
+    "worek",
+    "duzy-worek"
+   ]
+  },
+  {
+   "opis": "Ostrza",
+   "typ": "rosnaco",
+   "ids": [
+    "noz",
+    "sztylet",
+    "miecz",
+    "poltorak",
+    "miecz-dwureczny"
+   ]
+  },
+  {
+   "opis": "Floret ≤ rapier",
+   "typ": "min",
+   "a": "rapier",
+   "b": "floret"
+  },
+  {
+   "opis": "Szpada ≤ rapier",
+   "typ": "min",
+   "a": "rapier",
+   "b": "szpada"
+  },
+  {
+   "opis": "Drzewcowe: włócznia ≤ pika",
+   "typ": "min",
+   "a": "pika",
+   "b": "wlocznia"
+  },
+  {
+   "opis": "Tarcze",
+   "typ": "rosnaco",
+   "ids": [
+    "tarcza-puklerz",
+    "tarcza",
+    "tarcza-duza",
+    "pawez"
+   ]
+  },
+  {
+   "opis": "Łuki",
+   "typ": "rosnaco",
+   "ids": [
+    "krotki-luk",
+    "luk",
+    "luk-dlugi",
+    "luk-elfi"
+   ]
+  },
+  {
+   "opis": "Tuzin strzał tańszy od najtańszego łuku",
+   "typ": "rosnaco",
+   "ids": [
+    "strzala-12",
+    "krotki-luk"
+   ]
+  },
+  {
+   "opis": "Kusze",
+   "typ": "rosnaco",
+   "ids": [
+    "kusza",
+    "ciezka-kusza"
+   ]
+  },
+  {
+   "opis": "Hełmy",
+   "typ": "rosnaco",
+   "ids": [
+    "skorzany-helm",
+    "helm-otwarty-morion",
+    "helm-zamkniety"
+   ]
+  },
+  {
+   "opis": "Kolczuga tańsza niż kaftan + nogawice osobno",
+   "typ": "max_suma",
+   "a": "kolczuga",
+   "skladniki": [
+    "kaftan-kolczy",
+    "nogawice-kolcze"
+   ]
+  },
+  {
+   "opis": "Kolczuga droższa niż sam kaftan",
+   "typ": "rosnaco",
+   "ids": [
+    "kaftan-kolczy",
+    "kolczuga"
+   ]
+  },
+  {
+   "opis": "Pełna płytówka ≈ suma elementów (±10%)",
+   "typ": "suma_zakres",
+   "a": "pelna-plytowka-4-elementy",
+   "skladniki": [
+    "napiersnik",
+    "naramienniki",
+    "nagolenniki-plytowe",
+    "helm-zamkniety"
+   ],
+   "min": 0.9,
+   "max": 1.1
+  },
+  {
+   "opis": "Półzbroja municyjna = 1 Wada (×½) od napierśnika + morionu (±5%)",
+   "typ": "suma_zakres",
+   "a": "polzbroja-municyjna-napiersnik-morion",
+   "skladniki": [
+    "napiersnik",
+    "helm-otwarty-morion"
+   ],
+   "min": 0.475,
+   "max": 0.525
+  },
+  {
+   "opis": "Zbroja mistrzowska ≈ 2 Zalety (×4) pełnej płytówki (±5%)",
+   "typ": "suma_zakres",
+   "a": "zbroja-mistrzowska-na-miare-mediolan-norymberga",
+   "skladniki": [
+    "pelna-plytowka-4-elementy"
+   ],
+   "min": 3.8,
+   "max": 4.2
+  },
+  {
+   "opis": "Pierścienie",
+   "typ": "rosnaco",
+   "ids": [
+    "pierscien-srebrny",
+    "pierscien-zloty",
+    "pierscien-z-klejnotem"
+   ]
+  },
+  {
+   "opis": "Sygnet ≥ pierścień złoty",
+   "typ": "min",
+   "a": "sygnet",
+   "b": "pierscien-zloty"
+  },
+  {
+   "opis": "Światło",
+   "typ": "rosnaco",
+   "ids": [
+    "lampa-oliwna",
+    "latarnia",
+    "lampa-sztormowa",
+    "lampa-davricha"
+   ]
+  },
+  {
+   "opis": "Narzędzia ziemne tańsze od kilofa",
+   "typ": "rosnaco",
+   "ids": [
+    "szpadel",
+    "kilof"
+   ]
+  },
+  {
+   "opis": "Nocleg",
+   "typ": "rosnaco",
+   "ids": [
+    "wspolna-izba-na-1-noc",
+    "prywatny-pokoj-na-1-noc"
+   ]
+  },
+  {
+   "opis": "Jedzenie na zimno ≤ prowiant",
+   "typ": "rosnaco",
+   "ids": [
+    "jedzenie-na-zimno-na-1-dzien",
+    "prowiant-na-1-dzien"
+   ]
+  },
+  {
+   "opis": "Czynsz miesięczny rośnie z kwaterą",
+   "typ": "rosnaco",
+   "ids": [
+    "kat-w-izbie-czeladnej-miesiac",
+    "izba-na-poddaszu-miesiac",
+    "izba-w-kamienicy-miesiac",
+    "mieszkanie-mieszczanskie-23-izby-miesiac"
+   ]
+  },
+  {
+   "opis": "Czynsz roczny rośnie z kwaterą",
+   "typ": "rosnaco",
+   "ids": [
+    "izba-w-kamienicy-rok",
+    "mieszkanie-mieszczanskie-rok",
+    "dom-mistrza-z-warsztatem-rok",
+    "kamienica-kupiecka-rok"
+   ]
+  },
+  {
+   "opis": "Rok najmu = 8–12 miesięcy",
+   "typ": "stosunek",
+   "a": "izba-w-kamienicy-rok",
+   "b": "izba-w-kamienicy-miesiac",
+   "min": 8,
+   "max": 12
+  },
+  {
+   "opis": "Rok najmu = 8–12 miesięcy",
+   "typ": "stosunek",
+   "a": "mieszkanie-mieszczanskie-rok",
+   "b": "mieszkanie-mieszczanskie-23-izby-miesiac",
+   "min": 8,
+   "max": 12
+  },
+  {
+   "opis": "Miesiąc = 3–4,35 tygodnia",
+   "typ": "stosunek",
+   "a": "kat-w-izbie-czeladnej-miesiac",
+   "b": "kat-w-izbie-czeladnej-tydzien",
+   "min": 3,
+   "max": 4.35
+  },
+  {
+   "opis": "Kupno ≈ 7–25 lat najmu (źródła: Frankfurt 1450, Anglia XIV w.)",
+   "typ": "stosunek",
+   "a": "kupno-dom-rzemieslnika",
+   "b": "dom-mistrza-z-warsztatem-rok",
+   "min": 7,
+   "max": 25
+  },
+  {
+   "opis": "Kupno ≈ 7–40 lat najmu (kamienica)",
+   "typ": "stosunek",
+   "a": "kupno-kamienica-patrycjuszowska",
+   "b": "kamienica-kupiecka-rok",
+   "min": 7,
+   "max": 40
+  },
+  {
+   "opis": "Prosty dom ≈ 7–25 lat najmu izby",
+   "typ": "stosunek",
+   "a": "kupno-prosty-dom",
+   "b": "izba-w-kamienicy-rok",
+   "min": 7,
+   "max": 25
+  },
+  {
+   "opis": "Płace",
+   "typ": "rosnaco",
+   "ids": [
+    "robotnik-niewykwalifikowany",
+    "czeladnik",
+    "mistrz-rzemiosla"
+   ]
+  },
+  {
+   "opis": "Tydzień robotnika = kotwica 165 p (±10%)",
+   "typ": "zakres",
+   "a": "robotnik-niewykwalifikowany",
+   "min": 148,
+   "max": 182
+  },
+  {
+   "opis": "Wpis ucznia < licencja cechowa",
+   "typ": "rosnaco",
+   "ids": [
+    "wpis-ucznia-do-cechu",
+    "wykup-licencji-cechowej"
+   ]
+  },
+  {
+   "opis": "Pojazd bez zwierząt: furmanka tańsza od konia pociągowego",
+   "typ": "rosnaco",
+   "ids": [
+    "furmanka",
+    "kon-pociagowy"
+   ]
+  },
+  {
+   "opis": "Żywy inwentarz rośnie z masą zwierzęcia",
+   "typ": "rosnaco",
+   "ids": [
+    "kurczak",
+    "ges",
+    "kaplon",
+    "owca-baran",
+    "ciele",
+    "swinia",
+    "krowa"
+   ]
+  },
+  {
+   "opis": "Zboża: owies (obrok) < jęczmień < żyto < pszenica",
+   "typ": "rosnaco",
+   "ids": [
+    "owies-cwiertnia-obrok",
+    "jeczmien-cwiertnia",
+    "zyto-cwiertnia",
+    "pszenica-cwiertnia"
+   ]
+  },
+  {
+   "opis": "Przyprawy rosną z egzotyką: pieprz < cynamon < szafran",
+   "typ": "rosnaco",
+   "ids": [
+    "pieprz-funt-0-4-kg",
+    "cynamon-funt",
+    "szafran-funt"
+   ]
+  },
+  {
+   "opis": "Płótno wielokrotnie tańsze od sukna",
+   "typ": "stosunek",
+   "a": "sukno-lokiec",
+   "b": "plotno-lokiec",
+   "min": 5
+  },
+  {
+   "opis": "Siekiera (narzędzie) tańsza od topora bojowego",
+   "typ": "rosnaco",
+   "ids": [
+    "siekiera",
+    "topor"
+   ]
+  },
+  {
+   "opis": "Świeca woskowa droższa od łojowej (cena tuzina)",
+   "typ": "stosunek",
+   "a": "swieca-woskowa-sztuka",
+   "b": "swiece-tuzin",
+   "min": 1.0
+  },
+  {
+   "opis": "Siennik < prześcieradło < koc",
+   "typ": "rosnaco",
+   "ids": [
+    "siennik",
+    "przescieradlo",
+    "koc"
+   ]
+  },
+  {
+   "opis": "Bochenek chleba to ułamek dziennego prowiantu",
+   "typ": "stosunek",
+   "a": "chleb-zytni-bochenek",
+   "b": "prowiant-na-1-dzien",
+   "max": 0.5
+  },
+  {
+   "opis": "Sukno droższe od dziennego prowiantu (łokieć to majątek)",
+   "typ": "rosnaco",
+   "ids": [
+    "prowiant-na-1-dzien",
+    "sukno-lokiec"
+   ]
+  },
+  {
+   "opis": "Posłanie = koc + siennik, więc droższe od koca",
+   "typ": "rosnaco",
+   "ids": [
+    "koc",
+    "zwijane-poslanie"
+   ]
+  },
+  {
+   "opis": "Noclegi: stajnia na sianie < wspólna izba (ława, podłoga) < prywatny pokój",
+   "typ": "rosnaco",
+   "ids": [
+    "nocleg-w-stajni-na-sianie",
+    "wspolna-izba-na-1-noc",
+    "prywatny-pokoj-na-1-noc"
+   ]
+  }
+ ]
+}

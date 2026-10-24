@@ -1,0 +1,2135 @@
+{
+ "opis": "Cechy broni do testu „więcej Zalet = nie taniej” (test/bron_cechy.test.mjs). v6: uzupełnione z Generator_NPC/public/data/weapons.json (nazwy z polskiego podręcznika głównego i „Pod Bronią”); wzor_cech = nazwa w tamtym pliku. wyjatek: tekst, gdy cena celowo łamie regułę (znak stanu, egzotyka, materiał).",
+ "pozycje": [
+  {
+   "id": "miecz",
+   "nazwa": "Miecz",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": "MG: miecz nie ma Wad — symbol stanu. Zalety uzupełnić z „Pod Bronią”.",
+   "wzor_cech": "Miecz"
+  },
+  {
+   "id": "bron-reczna-topor-maczuga",
+   "nazwa": "Broń ręczna (topór, maczuga)",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Rąbiący"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Topór"
+  },
+  {
+   "id": "bulat",
+   "nazwa": "Bułat",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Krótka",
+   "zalety": [
+    {
+     "nazwa": "Sieczna (1P)"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Bułat"
+  },
+  {
+   "id": "szabla",
+   "nazwa": "Szabla",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Kawaleryjska",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Sieczna (1P)"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Szabla"
+  },
+  {
+   "id": "noz",
+   "nazwa": "Nóż",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+1",
+   "zasieg": "B. krótka",
+   "zalety": [],
+   "wady": [
+    {
+     "nazwa": "Tępy"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Nóż"
+  },
+  {
+   "id": "sztylet",
+   "nazwa": "Sztylet",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+2",
+   "zasieg": "B. krótka",
+   "zalety": [
+    {
+     "nazwa": "Sztylet"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Sztylet"
+  },
+  {
+   "id": "mizerykordia",
+   "nazwa": "Mizerykordia",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+1",
+   "zasieg": "B. krótka",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    },
+    {
+     "nazwa": "Precyzyjna"
+    },
+    {
+     "nazwa": "Przekłuwająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Mizerykordia"
+  },
+  {
+   "id": "kastet",
+   "nazwa": "Kastet",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Bijatyka",
+   "obrazenia": "+SB+2",
+   "zasieg": "Kontaktowa",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kastet"
+  },
+  {
+   "id": "kostur",
+   "nazwa": "Kostur",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający"
+    },
+    {
+     "nazwa": "Parujący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kostur"
+  },
+  {
+   "id": "palka",
+   "nazwa": "Pałka",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [],
+   "wady": [
+    {
+     "nazwa": "Niewyważona"
+    },
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pałka"
+  },
+  {
+   "id": "topor",
+   "nazwa": "Topór",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Rąbiący"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": "MG: tańszy od miecza, bo gorzej paruje i zużywa mniej materiału. Oficjalną nazwę Wady wpisać wg podręcznika.",
+   "wzor_cech": "Topór"
+  },
+  {
+   "id": "buzdygan",
+   "nazwa": "Buzdygan",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Buzdygan"
+  },
+  {
+   "id": "nadziak-jednoreczny",
+   "nazwa": "Nadziak jednoręczny",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Przekłuwający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Nadziak jednoręczny"
+  },
+  {
+   "id": "mlot-jednoreczny",
+   "nazwa": "Młot jednoręczny",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający albo Przekłuwający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Młot jednoręczny"
+  },
+  {
+   "id": "cep-bojowy",
+   "nazwa": "Cep bojowy",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Korbacz",
+   "obrazenia": "+SB+3",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Dekoncentrujący"
+    },
+    {
+     "nazwa": "Plączący"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Nieprecyzyjny"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Cep bojowy"
+  },
+  {
+   "id": "korbacz",
+   "nazwa": "Korbacz",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Korbacz",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Dekoncentrujący"
+    },
+    {
+     "nazwa": "Plączący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Korbacz"
+  },
+  {
+   "id": "kiscien",
+   "nazwa": "Kiścień",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Korbacz",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Dekoncentrujący"
+    },
+    {
+     "nazwa": "Druzgoczący"
+    },
+    {
+     "nazwa": "Plączący"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Ciężki"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kiścień"
+  },
+  {
+   "id": "lewak",
+   "nazwa": "Lewak",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Parująca",
+   "obrazenia": "+SB+2",
+   "zasieg": "B. krótka",
+   "zalety": [
+    {
+     "nazwa": "Parujący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Lewak"
+  },
+  {
+   "id": "lamacz-mieczy",
+   "nazwa": "Łamacz mieczy",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Parująca",
+   "obrazenia": "+SB+3",
+   "zasieg": "Krótka",
+   "zalety": [
+    {
+     "nazwa": "Łamacz mieczy"
+    },
+    {
+     "nazwa": "Parujący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Łamacz mieczy"
+  },
+  {
+   "id": "wlocznia",
+   "nazwa": "Włócznia",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "B. długa",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Włócznia"
+  },
+  {
+   "id": "pika",
+   "nazwa": "Pika",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Ogromna",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pika"
+  },
+  {
+   "id": "halabarda",
+   "nazwa": "Halabarda",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parująca"
+    },
+    {
+     "nazwa": "Nadziewająca albo Rąbiąca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Halabarda"
+  },
+  {
+   "id": "wielki-topor",
+   "nazwa": "Wielki topór",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+6",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Druzgoczący"
+    },
+    {
+     "nazwa": "Rąbiący"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Ciężki"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Wielki topór"
+  },
+  {
+   "id": "mlot-bojowy",
+   "nazwa": "Młot bojowy",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+6",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający"
+    },
+    {
+     "nazwa": "Przebijający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Powolny"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Młot bojowy"
+  },
+  {
+   "id": "poltorak",
+   "nazwa": "Półtorak",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parujący"
+    },
+    {
+     "nazwa": "Przebijający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Półtorak"
+  },
+  {
+   "id": "miecz-dwureczny",
+   "nazwa": "Miecz dwuręczny",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Przebijający"
+    },
+    {
+     "nazwa": "Rąbiący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Miecz dwuręczny"
+  },
+  {
+   "id": "floret",
+   "nazwa": "Floret",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Szermiercza",
+   "obrazenia": "+SB+3",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Nadziewający"
+    },
+    {
+     "nazwa": "Precyzyjny"
+    },
+    {
+     "nazwa": "Szybki"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Tępy"
+    }
+   ],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Floret"
+  },
+  {
+   "id": "rapier",
+   "nazwa": "Rapier",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Szermiercza",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Nadziewający"
+    },
+    {
+     "nazwa": "Szybki"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Rapier"
+  },
+  {
+   "id": "szpada",
+   "nazwa": "Szpada",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Szermiercza",
+   "obrazenia": "+SB+2",
+   "zasieg": "Krótka",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    },
+    {
+     "nazwa": "Precyzyjna"
+    },
+    {
+     "nazwa": "Szybka"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Szpada"
+  },
+  {
+   "id": "mlot-kawaleryjski",
+   "nazwa": "Młot kawaleryjski",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Kawaleryjska",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Młot kawaleryjski"
+  },
+  {
+   "id": "kopia",
+   "nazwa": "Kopia",
+   "kat": "Broń biała",
+   "zrodlo": "PG",
+   "grupa": "Kawaleryjska",
+   "obrazenia": "+SB+6",
+   "zasieg": "B. długa",
+   "zalety": [
+    {
+     "nazwa": "Druzgocząca"
+    },
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kopia"
+  },
+  {
+   "id": "lanca",
+   "nazwa": "Lanca",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Kawaleryjska",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Druzgocząca"
+    },
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Lanca"
+  },
+  {
+   "id": "tarcza-puklerz",
+   "nazwa": "Tarcza (puklerz)",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+1",
+   "zasieg": "Kontaktowa",
+   "zalety": [
+    {
+     "nazwa": "Tarcza 1"
+    },
+    {
+     "nazwa": "Parująca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Puklerz"
+  },
+  {
+   "id": "tarcza",
+   "nazwa": "Tarcza",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+2",
+   "zasieg": "B. krótka",
+   "zalety": [
+    {
+     "nazwa": "Tarcza 2"
+    },
+    {
+     "nazwa": "Parująca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Tarcza"
+  },
+  {
+   "id": "tarcza-duza",
+   "nazwa": "Tarcza (duża)",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+3",
+   "zasieg": "B. krótka",
+   "zalety": [
+    {
+     "nazwa": "Tarcza 3"
+    },
+    {
+     "nazwa": "Parująca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Tarcza duża"
+  },
+  {
+   "id": "pawez",
+   "nazwa": "Pawęż",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+2",
+   "zasieg": "—",
+   "zalety": [
+    {
+     "nazwa": "Tarcza 5"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pawęż"
+  },
+  {
+   "id": "garota",
+   "nazwa": "Garota",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Bijatyka",
+   "obrazenia": "+SB+2",
+   "zasieg": "Kontaktowa",
+   "zalety": [
+    {
+     "nazwa": "Unieruchamiająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważona"
+    },
+    {
+     "nazwa": "Powolna"
+    },
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Garota"
+  },
+  {
+   "id": "tluk",
+   "nazwa": "Tłuk",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Bijatyka",
+   "obrazenia": "+SB+1",
+   "zasieg": "Kontaktowa",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważony"
+    },
+    {
+     "nazwa": "Tępy"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Tłuk"
+  },
+  {
+   "id": "kolczasta-rekawica",
+   "nazwa": "Kolczasta rękawica",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Bijatyka",
+   "obrazenia": "+SB+3",
+   "zasieg": "Kontaktowa",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niewyważona"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kolczasta rękawica"
+  },
+  {
+   "id": "zamykana-rekawica",
+   "nazwa": "Zamykana rękawica",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Bijatyka",
+   "obrazenia": "+SB+2",
+   "zasieg": "Kontaktowa",
+   "zalety": [],
+   "wady": [
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Zamykana rękawica"
+  },
+  {
+   "id": "obciazona-siec",
+   "nazwa": "Obciążona sieć",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Parująca",
+   "obrazenia": "+SB+0",
+   "zasieg": "Krótka",
+   "zalety": [
+    {
+     "nazwa": "Parująca"
+    },
+    {
+     "nazwa": "Plącząca"
+    },
+    {
+     "nazwa": "Tarcza 1"
+    },
+    {
+     "nazwa": "Unieruchamiająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Powolna"
+    },
+    {
+     "nazwa": "Tępa"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Obciążona sieć"
+  },
+  {
+   "id": "lapacz",
+   "nazwa": "Łapacz",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+2",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parujący"
+    },
+    {
+     "nazwa": "Unieruchamiający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Łapacz"
+  },
+  {
+   "id": "partyzana-glewia",
+   "nazwa": "Partyzana / glewia",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parująca"
+    },
+    {
+     "nazwa": "Nadziewająca albo Sieczna (2P)"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Partyzana / glewia"
+  },
+  {
+   "id": "sierpak",
+   "nazwa": "Sierpak",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parujący"
+    },
+    {
+     "nazwa": "Przewracający albo Rąbiący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Sierpak"
+  },
+  {
+   "id": "szydlo",
+   "nazwa": "Szydło",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+3",
+   "zasieg": "B. długa",
+   "zalety": [
+    {
+     "nazwa": "Nadziewające"
+    },
+    {
+     "nazwa": "Przekłuwające"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Szydło"
+  },
+  {
+   "id": "topor-drzewcowy",
+   "nazwa": "Topór drzewcowy",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Drzewcowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Parujący"
+    },
+    {
+     "nazwa": "Nadziewający albo Ogłuszający albo Rąbiący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Topór drzewcowy"
+  },
+  {
+   "id": "flamberg",
+   "nazwa": "Flamberg",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Przebijający"
+    },
+    {
+     "nazwa": "Rąbiący"
+    },
+    {
+     "nazwa": "Sieczny (2P)"
+    }
+   ],
+   "wady": [],
+   "wyjatek": "znak stanu (premia ×1,5)",
+   "uwagi": null,
+   "wzor_cech": "Flamberg"
+  },
+  {
+   "id": "nadziak-dwureczny",
+   "nazwa": "Nadziak dwuręczny",
+   "kat": "Broń biała",
+   "zrodlo": "PB",
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+5",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Nadziewający"
+    },
+    {
+     "nazwa": "Przebijający"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Powolny"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Nadziak"
+  },
+  {
+   "id": "krotki-luk",
+   "nazwa": "Krótki łuk",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Łuk",
+   "obrazenia": "+SB+2",
+   "zasieg": "20",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Krótki łuk"
+  },
+  {
+   "id": "luk",
+   "nazwa": "Łuk",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Łuk",
+   "obrazenia": "+SB+3",
+   "zasieg": "50",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Łuk"
+  },
+  {
+   "id": "luk-dlugi",
+   "nazwa": "Łuk długi",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Łuk",
+   "obrazenia": "+SB+4",
+   "zasieg": "100",
+   "zalety": [
+    {
+     "nazwa": "Przebijający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Łuk długi"
+  },
+  {
+   "id": "luk-elfi",
+   "nazwa": "Łuk elfi",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Łuk",
+   "obrazenia": "+SB+4",
+   "zasieg": "150",
+   "zalety": [
+    {
+     "nazwa": "Przebijający"
+    },
+    {
+     "nazwa": "Precyzyjny"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Łuk elfi"
+  },
+  {
+   "id": "kusza",
+   "nazwa": "Kusza",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Kusza",
+   "obrazenia": "+8",
+   "zasieg": "60",
+   "zalety": [],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 1"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kusza"
+  },
+  {
+   "id": "ciezka-kusza",
+   "nazwa": "Ciężka kusza",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Kusza",
+   "obrazenia": "+9",
+   "zasieg": "100",
+   "zalety": [
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 2"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Ciężka kusza"
+  },
+  {
+   "id": "kusza-pistoletowa",
+   "nazwa": "Kusza pistoletowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Kusza",
+   "obrazenia": "+5",
+   "zasieg": "10",
+   "zalety": [
+    {
+     "nazwa": "Pistolet"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Kusza pistoletowa"
+  },
+  {
+   "id": "rusznica",
+   "nazwa": "Rusznica",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "50",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Przeładowanie 3"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Rusznica"
+  },
+  {
+   "id": "garlacz",
+   "nazwa": "Garłacz",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Prochowa",
+   "obrazenia": "+8",
+   "zasieg": "20",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Odłamkowy 3"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Przeładowanie 2"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Garłacz"
+  },
+  {
+   "id": "muszkiet-kaliwer",
+   "nazwa": "Muszkiet (kaliwer)",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "40",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Nieprecyzyjny"
+    },
+    {
+     "nazwa": "Przeładowanie 5"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Arkebuz"
+  },
+  {
+   "id": "muszkiet-hochlandzki",
+   "nazwa": "Muszkiet hochlandzki",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "100",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Celny"
+    },
+    {
+     "nazwa": "Precyzyjny"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Muszkiet hochlandzki"
+  },
+  {
+   "id": "pistolet",
+   "nazwa": "Pistolet",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Prochowa",
+   "obrazenia": "+8",
+   "zasieg": "20",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Pistolet"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 1"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pistolet"
+  },
+  {
+   "id": "pieprzniczka",
+   "nazwa": "Pieprzniczka",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Eksperymentalna",
+   "obrazenia": "+8",
+   "zasieg": "10",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Pistolet"
+    },
+    {
+     "nazwa": "Wielostrzał 4"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pieprzniczka"
+  },
+  {
+   "id": "rusznica-samopowtarzalna",
+   "nazwa": "Rusznica samopowtarzalna",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Eksperymentalna",
+   "obrazenia": "+9",
+   "zasieg": "30",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Wielostrzał 4"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Przeładowanie 5"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Rusznica samopowtarzalna"
+  },
+  {
+   "id": "pistolet-samopowtarzalny",
+   "nazwa": "Pistolet samopowtarzalny",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Eksperymentalna",
+   "obrazenia": "+8",
+   "zasieg": "10",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Pistolet"
+    },
+    {
+     "nazwa": "Wielostrzał 4"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Pistolet samopowtarzalny"
+  },
+  {
+   "id": "bomba",
+   "nazwa": "Bomba",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": null,
+   "obrazenia": null,
+   "zasieg": null,
+   "zalety": null,
+   "wady": null,
+   "wyjatek": null,
+   "uwagi": null
+  },
+  {
+   "id": "ladunek-zapalajacy",
+   "nazwa": "Ładunek zapalający",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": null,
+   "obrazenia": null,
+   "zasieg": null,
+   "zalety": null,
+   "wady": null,
+   "wyjatek": null,
+   "uwagi": null
+  },
+  {
+   "id": "proca",
+   "nazwa": "Proca",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Proca",
+   "obrazenia": "+6",
+   "zasieg": "60",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Proca"
+  },
+  {
+   "id": "proca-drzewcowa",
+   "nazwa": "Proca drzewcowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Proca",
+   "obrazenia": "+7",
+   "zasieg": "100",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Proca drzewcowa"
+  },
+  {
+   "id": "oszczep",
+   "nazwa": "Oszczep",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Miotana",
+   "obrazenia": "+SB+3",
+   "zasieg": "BS×3",
+   "zalety": [
+    {
+     "nazwa": "Nadziewający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Oszczep"
+  },
+  {
+   "id": "noz-do-rzucania",
+   "nazwa": "Nóż do rzucania",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Miotana",
+   "obrazenia": "+SB+2",
+   "zasieg": "BS×2",
+   "zalety": [],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Nóż do rzucania"
+  },
+  {
+   "id": "topor-do-rzucania",
+   "nazwa": "Topór do rzucania",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Miotana",
+   "obrazenia": "+SB+3",
+   "zasieg": "BS×2",
+   "zalety": [
+    {
+     "nazwa": "Rąbiący"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Topór do rzucania"
+  },
+  {
+   "id": "strzalka",
+   "nazwa": "Strzałka",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Miotana",
+   "obrazenia": "+SB+1",
+   "zasieg": "BS×2",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Strzałka"
+  },
+  {
+   "id": "bolas",
+   "nazwa": "Bolas",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Miotana",
+   "obrazenia": "+None",
+   "zasieg": "BS×3",
+   "zalety": [
+    {
+     "nazwa": "Unieruchamiające"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Bolas"
+  },
+  {
+   "id": "arkan",
+   "nazwa": "Arkan",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Oplątująca",
+   "obrazenia": "+None",
+   "zasieg": "BS×2",
+   "zalety": [
+    {
+     "nazwa": "Unieruchamiający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Arkan"
+  },
+  {
+   "id": "bicz",
+   "nazwa": "Bicz",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PG",
+   "grupa": "Oplątująca",
+   "obrazenia": "+SB+2",
+   "zasieg": "6",
+   "zalety": [
+    {
+     "nazwa": "Unieruchamiający"
+    }
+   ],
+   "wady": [],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Bicz"
+  },
+  {
+   "id": "arkebuz",
+   "nazwa": "Arkebuz",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "40",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Nieprecyzyjny"
+    },
+    {
+     "nazwa": "Przeładowanie 5"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Arkebuz"
+  },
+  {
+   "id": "rusznica-lontowa",
+   "nazwa": "Rusznica lontowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+8",
+   "zasieg": "50",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Rusznica lontowa"
+  },
+  {
+   "id": "rusznica-dwulufowa",
+   "nazwa": "Rusznica dwulufowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "50",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Wielostrzał 2"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Rusznica dwulufowa"
+  },
+  {
+   "id": "garlacz-lontowy",
+   "nazwa": "Garłacz lontowy",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+7",
+   "zasieg": "20",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Rozrzucający 3"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Przeładowanie 3"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Garłacz lontowy"
+  },
+  {
+   "id": "gryfia-lapa",
+   "nazwa": "Gryfia łapa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+7",
+   "zasieg": "10",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Rozrzucająca 5"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Nieprecyzyjna"
+    },
+    {
+     "nazwa": "Przeładowanie 6"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Gryfia łapa"
+  },
+  {
+   "id": "halabarda-pistoletowa",
+   "nazwa": "Halabarda pistoletowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "30",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Nieprecyzyjna"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Halabarda pistoletowa"
+  },
+  {
+   "id": "topor-pistoletowy",
+   "nazwa": "Topór pistoletowy",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Prochowa",
+   "obrazenia": "+9",
+   "zasieg": "30",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Nieprecyzyjny"
+    },
+    {
+     "nazwa": "Przeładowanie 4"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Topór pistoletowy"
+  },
+  {
+   "id": "laska-pistoletowa",
+   "nazwa": "Laska pistoletowa",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Eksperymentalna",
+   "obrazenia": "+8",
+   "zasieg": "10",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczna"
+    },
+    {
+     "nazwa": "Nieprecyzyjna"
+    },
+    {
+     "nazwa": "Przeładowanie 6"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Laska pistoletowa"
+  },
+  {
+   "id": "mozdzierz-reczny",
+   "nazwa": "Moździerz ręczny",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "PB",
+   "grupa": "Eksperymentalna",
+   "obrazenia": "+7",
+   "zasieg": "30",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Niebezpieczny"
+    },
+    {
+     "nazwa": "Nieprecyzyjny"
+    },
+    {
+     "nazwa": "Przeładowanie 2"
+    }
+   ],
+   "wyjatek": null,
+   "uwagi": null,
+   "wzor_cech": "Moździerz ręczny"
+  },
+  {
+   "id": "krasnoludzki-topor",
+   "nazwa": "Krasnoludzki topór",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Rąbiąca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Krasnoludzki topór"
+  },
+  {
+   "id": "krasnoludzki-mlot-bojowy",
+   "nazwa": "Krasnoludzki młot bojowy",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Podstawowa",
+   "obrazenia": "+SB+4",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Ogłuszająca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Krasnoludzki młot bojowy"
+  },
+  {
+   "id": "wirujace-ostrza-smierci",
+   "nazwa": "Wirujące ostrza śmierci",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Korbacz",
+   "obrazenia": "+SB+5",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Dekoncentrująca"
+    },
+    {
+     "nazwa": "Rąbiąca"
+    },
+    {
+     "nazwa": "Druzgocząca"
+    },
+    {
+     "nazwa": "Plącząca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Ciężka"
+    }
+   ],
+   "wzor_cech": "Wirujące ostrza śmierci"
+  },
+  {
+   "id": "krasnoludzki-wielki-topor",
+   "nazwa": "Krasnoludzki wielki topór",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+6",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Rąbiąca"
+    },
+    {
+     "nazwa": "Druzgocząca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Ciężka"
+    }
+   ],
+   "wzor_cech": "Krasnoludzki wielki topór"
+  },
+  {
+   "id": "krasnoludzki-wielki-mlot",
+   "nazwa": "Krasnoludzki wielki młot",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+7",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Ogłuszająca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Krasnoludzki wielki młot"
+  },
+  {
+   "id": "krasnoludzki-kilof",
+   "nazwa": "Krasnoludzki kilof",
+   "kat": "Broń biała",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+6",
+   "zasieg": "Średnia",
+   "zalety": [
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Krasnoludzki kilof"
+  },
+  {
+   "id": "wielki-miecz-hoetha",
+   "nazwa": "Wielki miecz Hoetha",
+   "kat": "Broń biała",
+   "zrodlo": "WE",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Dwuręczna",
+   "obrazenia": "+SB+6",
+   "zasieg": "Długa",
+   "zalety": [
+    {
+     "nazwa": "Druzgocząca"
+    },
+    {
+     "nazwa": "Rąbiąca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Wielki miecz Hoetha"
+  },
+  {
+   "id": "krasnoludzka-kusza",
+   "nazwa": "Krasnoludzka kusza",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Kusza",
+   "obrazenia": "+10",
+   "zasieg": "60",
+   "zalety": [
+    {
+     "nazwa": "Nadziewająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 1"
+    }
+   ],
+   "wzor_cech": "Krasnoludzka kusza"
+  },
+  {
+   "id": "krasnoludzka-hakownica",
+   "nazwa": "Krasnoludzka hakownica",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Prochowa",
+   "obrazenia": "+10",
+   "zasieg": "50",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Nadziewająca"
+    },
+    {
+     "nazwa": "Przekłuwająca"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 3"
+    }
+   ],
+   "wzor_cech": "Krasnoludzka hakownica"
+  },
+  {
+   "id": "krasnoludzki-pistolet",
+   "nazwa": "Krasnoludzki pistolet",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Prochowa",
+   "obrazenia": "+10",
+   "zasieg": "20",
+   "zalety": [
+    {
+     "nazwa": "Prochowa"
+    },
+    {
+     "nazwa": "Przebijająca"
+    },
+    {
+     "nazwa": "Nadziewająca"
+    },
+    {
+     "nazwa": "Przekłuwająca"
+    },
+    {
+     "nazwa": "Pistolet"
+    }
+   ],
+   "wady": [
+    {
+     "nazwa": "Przeładowanie 1"
+    }
+   ],
+   "wzor_cech": "Krasnoludzki pistolet"
+  },
+  {
+   "id": "krasnoludzki-topor-do-rzucania",
+   "nazwa": "Krasnoludzki topór do rzucania",
+   "kat": "Broń zasięgowa",
+   "zrodlo": "KR",
+   "wyjatek": null,
+   "uwagi": null,
+   "grupa": "Miotana",
+   "obrazenia": "+SB+4",
+   "zasieg": "BS×2",
+   "zalety": [
+    {
+     "nazwa": "Rąbiąca"
+    }
+   ],
+   "wady": [],
+   "wzor_cech": "Krasnoludzki topór do rzucania"
+  }
+ ]
+}

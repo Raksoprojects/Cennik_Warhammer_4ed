@@ -1,0 +1,570 @@
+{
+ "preset": "zalecany",
+ "pozycji": 365,
+ "ze_zrodlem": 186,
+ "bez_zrodla": 179,
+ "porownywalne_ze_zrodlem": 65,
+ "w_przedziale_zrodla": 46,
+ "ponad_zrodlo": [
+  [
+   "miecz",
+   "3 ZK 9 s",
+   "ponad źródło ×1.7"
+  ],
+  [
+   "poltorak",
+   "12 ZK",
+   "ponad źródło ×1.7"
+  ],
+  [
+   "rusznica",
+   "6 ZK",
+   "ponad źródło ×2.2"
+  ],
+  [
+   "muszkiet-kaliwer",
+   "14 ZK",
+   "ponad źródło ×2.0"
+  ],
+  [
+   "helm-zamkniety",
+   "16 ZK",
+   "skrajne wobec RAW ×5.33; ponad źródło ×2.8"
+  ],
+  [
+   "pelna-plytowka-4-elementy",
+   "96 ZK",
+   "ponad źródło ×1.7"
+  ],
+  [
+   "rumak",
+   "825 ZK",
+   "ponad źródło ×1.5"
+  ],
+  [
+   "dom-mistrza-z-warsztatem-rok",
+   "40 ZK",
+   "ponad źródło ×1.7"
+  ],
+  [
+   "kupno-prosty-dom",
+   "120 ZK",
+   "ponad źródło ×1.7"
+  ],
+  [
+   "kupno-dom-rzemieslnika",
+   "320 ZK",
+   "ponad źródło ×1.4"
+  ],
+  [
+   "kupno-kamienica-patrycjuszowska",
+   "3600 ZK",
+   "ponad źródło ×2.0"
+  ],
+  [
+   "buty",
+   "18 s",
+   "ponad źródło ×1.6"
+  ],
+  [
+   "kapelusz",
+   "10 s 6 p",
+   "ponad źródło ×1.8"
+  ],
+  [
+   "siekiera",
+   "4 s",
+   "ponad źródło ×1.4"
+  ],
+  [
+   "przescieradlo",
+   "12 s",
+   "ponad źródło ×5.2"
+  ],
+  [
+   "siennik",
+   "4 s",
+   "ponad źródło ×3.5"
+  ],
+  [
+   "recznik",
+   "8 s 6 p",
+   "ponad źródło ×2.5"
+  ]
+ ],
+ "ponizej_zrodla": [
+  [
+   "noz",
+   "1 s",
+   "skrajne wobec RAW ×0.12; poniżej źródła ×0.57"
+  ],
+  [
+   "woz",
+   "18 ZK",
+   "skrajne wobec RAW ×0.24; poniżej źródła ×0.53"
+  ]
+ ],
+ "baza_ne_raw_bez_zrodla": 127,
+ "skrajne_raw": [
+  [
+   "noz",
+   0.12
+  ],
+  [
+   "kostur",
+   0.19
+  ],
+  [
+   "palka",
+   0.15
+  ],
+  [
+   "krotki-luk",
+   0.27
+  ],
+  [
+   "luk",
+   0.24
+  ],
+  [
+   "luk-dlugi",
+   0.26
+  ],
+  [
+   "kolczuga",
+   6.67
+  ],
+  [
+   "kaftan-kolczy",
+   6.0
+  ],
+  [
+   "nogawice-kolcze",
+   6.0
+  ],
+  [
+   "czepiec-kolczy",
+   6.0
+  ],
+  [
+   "helm-zamkniety",
+   5.33
+  ],
+  [
+   "furmanka",
+   0.3
+  ],
+  [
+   "woz",
+   0.24
+  ],
+  [
+   "prywatny-pokoj-na-1-noc",
+   0.3
+  ],
+  [
+   "kielich-wina",
+   6.0
+  ],
+  [
+   "butelka-wina",
+   6.6
+  ],
+  [
+   "ubranie",
+   7.0
+  ],
+  [
+   "wysokie-buty",
+   6.0
+  ],
+  [
+   "sierp",
+   0.17
+  ],
+  [
+   "grabie",
+   0.26
+  ],
+  [
+   "szpadel",
+   0.23
+  ],
+  [
+   "drag-3-m",
+   0.31
+  ],
+  [
+   "pioro-do-pisania",
+   0.14
+  ],
+  [
+   "mlotek-sedziego",
+   0.3
+  ],
+  [
+   "kompas",
+   4.8
+  ],
+  [
+   "ksiega-religia",
+   5.0
+  ],
+  [
+   "ksiega-magia",
+   6.0
+  ],
+  [
+   "koc",
+   36.0
+  ],
+  [
+   "zwijane-poslanie",
+   5.33
+  ],
+  [
+   "namiot",
+   6.0
+  ]
+ ],
+ "klasy": [
+  {
+   "klasa": "alchemia_skladnik",
+   "pozycji": 10,
+   "ze_zrodlem_liczbowym": 0,
+   "bez_zrodla": 8,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": null,
+   "mediana_baza_do_zrodla": null,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "alchemia_wyrob",
+   "pozycji": 6,
+   "ze_zrodlem_liczbowym": 0,
+   "bez_zrodla": 5,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": null,
+   "mediana_baza_do_zrodla": null,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "bron",
+   "pozycji": 67,
+   "ze_zrodlem_liczbowym": 15,
+   "bez_zrodla": 38,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 1.16,
+   "mediana_baza_do_zrodla": 0.57,
+   "mnoznik_z_testu_rzemieslnika": 2.56
+  },
+  {
+   "klasa": "codzienne",
+   "pozycji": 103,
+   "ze_zrodlem_liczbowym": 7,
+   "bez_zrodla": 62,
+   "mnoznik": 1.2,
+   "mediana_cennik_do_zrodla": 1.4,
+   "mediana_baza_do_zrodla": 1.24,
+   "mnoznik_z_testu_rzemieslnika": 1.15
+  },
+  {
+   "klasa": "konie",
+   "pozycji": 4,
+   "ze_zrodlem_liczbowym": 2,
+   "bez_zrodla": 2,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 0.97,
+   "mediana_baza_do_zrodla": 0.97,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "konie_bojowe",
+   "pozycji": 2,
+   "ze_zrodlem_liczbowym": 1,
+   "bez_zrodla": 0,
+   "mnoznik": 1.5,
+   "mediana_cennik_do_zrodla": 1.5,
+   "mediana_baza_do_zrodla": 1.0,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "kruszec",
+   "pozycji": 6,
+   "ze_zrodlem_liczbowym": 1,
+   "bez_zrodla": 1,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 0.71,
+   "mediana_baza_do_zrodla": 0.71,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "ksiega",
+   "pozycji": 9,
+   "ze_zrodlem_liczbowym": 1,
+   "bez_zrodla": 5,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 0.69,
+   "mediana_baza_do_zrodla": 0.34,
+   "mnoznik_z_testu_rzemieslnika": 1.42
+  },
+  {
+   "klasa": "kupno",
+   "pozycji": 4,
+   "ze_zrodlem_liczbowym": 3,
+   "bez_zrodla": 0,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 1.99,
+   "mediana_baza_do_zrodla": 1.0,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "najem",
+   "pozycji": 6,
+   "ze_zrodlem_liczbowym": 1,
+   "bez_zrodla": 0,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 1.74,
+   "mediana_baza_do_zrodla": 0.87,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "najem_dolny",
+   "pozycji": 3,
+   "ze_zrodlem_liczbowym": 0,
+   "bez_zrodla": 0,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": null,
+   "mediana_baza_do_zrodla": null,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "odziez",
+   "pozycji": 15,
+   "ze_zrodlem_liczbowym": 3,
+   "bez_zrodla": 9,
+   "mnoznik": 1.5,
+   "mediana_cennik_do_zrodla": 1.57,
+   "mediana_baza_do_zrodla": 1.04,
+   "mnoznik_z_testu_rzemieslnika": 1.57
+  },
+  {
+   "klasa": "palna",
+   "pozycji": 29,
+   "ze_zrodlem_liczbowym": 2,
+   "bez_zrodla": 22,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 2.1,
+   "mediana_baza_do_zrodla": 1.05,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "pancerz",
+   "pozycji": 15,
+   "ze_zrodlem_liczbowym": 3,
+   "bez_zrodla": 4,
+   "mnoznik": 2,
+   "mediana_cennik_do_zrodla": 1.68,
+   "mediana_baza_do_zrodla": 0.84,
+   "mnoznik_z_testu_rzemieslnika": 1.99
+  },
+  {
+   "klasa": "pancerz_skorzany",
+   "pozycji": 5,
+   "ze_zrodlem_liczbowym": 1,
+   "bez_zrodla": 1,
+   "mnoznik": 1.5,
+   "mediana_cennik_do_zrodla": 1.61,
+   "mediana_baza_do_zrodla": 1.07,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "pojazd",
+   "pozycji": 7,
+   "ze_zrodlem_liczbowym": 3,
+   "bez_zrodla": 2,
+   "mnoznik": 1.5,
+   "mediana_cennik_do_zrodla": 0.53,
+   "mediana_baza_do_zrodla": 0.35,
+   "mnoznik_z_testu_rzemieslnika": 1.2
+  },
+  {
+   "klasa": "prestiz",
+   "pozycji": 8,
+   "ze_zrodlem_liczbowym": 0,
+   "bez_zrodla": 4,
+   "mnoznik": 1.5,
+   "mediana_cennik_do_zrodla": null,
+   "mediana_baza_do_zrodla": null,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "robocze",
+   "pozycji": 6,
+   "ze_zrodlem_liczbowym": 2,
+   "bez_zrodla": 3,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 1.04,
+   "mediana_baza_do_zrodla": 1.04,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "rzezne",
+   "pozycji": 6,
+   "ze_zrodlem_liczbowym": 5,
+   "bez_zrodla": 1,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 1.0,
+   "mediana_baza_do_zrodla": 1.0,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "surowiec",
+   "pozycji": 4,
+   "ze_zrodlem_liczbowym": 2,
+   "bez_zrodla": 2,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 1.0,
+   "mediana_baza_do_zrodla": 1.01,
+   "mnoznik_z_testu_rzemieslnika": null
+  },
+  {
+   "klasa": "utrzymanie",
+   "pozycji": 50,
+   "ze_zrodlem_liczbowym": 13,
+   "bez_zrodla": 10,
+   "mnoznik": 1,
+   "mediana_cennik_do_zrodla": 1.02,
+   "mediana_baza_do_zrodla": 1.02,
+   "mnoznik_z_testu_rzemieslnika": null
+  }
+ ],
+ "rzemieslnik": [
+  {
+   "id": "noz",
+   "klasa": "codzienne",
+   "warsztat": "kuznia_wiejska",
+   "dni": 0.1,
+   "q_baza": 0.97,
+   "q_cennik": 1.16,
+   "m_dla_1_4": 1.45
+  },
+  {
+   "id": "sierp",
+   "klasa": "codzienne",
+   "warsztat": "kuznia_wiejska",
+   "dni": 0.25,
+   "q_baza": 1.37,
+   "q_cennik": 1.59,
+   "m_dla_1_4": 1.02
+  },
+  {
+   "id": "siekiera",
+   "klasa": "codzienne",
+   "warsztat": "kuznia_wiejska",
+   "dni": 0.3,
+   "q_baza": 1.24,
+   "q_cennik": 1.41,
+   "m_dla_1_4": 1.13
+  },
+  {
+   "id": "topor",
+   "klasa": "bron",
+   "warsztat": "zbrojmistrz",
+   "dni": 0.5,
+   "q_baza": 0.55,
+   "q_cennik": 1.09,
+   "m_dla_1_4": 2.56
+  },
+  {
+   "id": "miecz",
+   "klasa": "bron",
+   "warsztat": "zbrojmistrz",
+   "dni": 1.5,
+   "q_baza": 0.54,
+   "q_cennik": 1.63,
+   "m_dla_1_4": 2.57
+  },
+  {
+   "id": "kolczuga",
+   "klasa": "pancerz",
+   "warsztat": "zbrojmistrz",
+   "dni": 10,
+   "q_baza": 0.7,
+   "q_cennik": 1.4,
+   "m_dla_1_4": 1.99
+  },
+  {
+   "id": "napiersnik",
+   "klasa": "pancerz",
+   "warsztat": "platnernia",
+   "dni": 5,
+   "q_baza": 0.91,
+   "q_cennik": 1.82,
+   "m_dla_1_4": 1.54
+  },
+  {
+   "id": "pelna-plytowka-4-elementy",
+   "klasa": "pancerz",
+   "warsztat": "platnernia",
+   "dni": 25,
+   "q_baza": 0.63,
+   "q_cennik": 1.26,
+   "m_dla_1_4": 2.23
+  },
+  {
+   "id": "buty",
+   "klasa": "odziez",
+   "warsztat": "szewc_krawiec",
+   "dni": 1,
+   "q_baza": 1.02,
+   "q_cennik": 1.52,
+   "m_dla_1_4": 1.38
+  },
+  {
+   "id": "ubranie",
+   "klasa": "odziez",
+   "warsztat": "szewc_krawiec",
+   "dni": 1.5,
+   "q_baza": 0.79,
+   "q_cennik": 1.18,
+   "m_dla_1_4": 1.77
+  },
+  {
+   "id": "koc",
+   "klasa": "codzienne",
+   "warsztat": "tkacz",
+   "dni": 1,
+   "q_baza": 1.19,
+   "q_cennik": 1.42,
+   "m_dla_1_4": 1.18
+  },
+  {
+   "id": "luk-dlugi",
+   "klasa": "bron",
+   "warsztat": "luczarz",
+   "dni": 2,
+   "q_baza": 0.7,
+   "q_cennik": 1.4,
+   "m_dla_1_4": 2.0
+  },
+  {
+   "id": "ksiega-medycyna",
+   "klasa": "ksiega",
+   "warsztat": "skryba",
+   "dni": 100,
+   "q_baza": 0.99,
+   "q_cennik": 1.97,
+   "m_dla_1_4": 1.42
+  },
+  {
+   "id": "woz",
+   "klasa": "pojazd",
+   "warsztat": "kolodziej",
+   "dni": 12,
+   "q_baza": 1.17,
+   "q_cennik": 1.75,
+   "m_dla_1_4": 1.2
+  }
+ ]
+}

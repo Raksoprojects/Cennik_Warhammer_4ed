@@ -1,0 +1,273 @@
+{
+ "zapas": {
+  "rzut": "1k10",
+  "progi": [
+   {
+    "do": 2,
+    "id": 0,
+    "nazwa": "pełen skład"
+   },
+   {
+    "do": 7,
+    "id": 1,
+    "nazwa": "normalny zapas"
+   },
+   {
+    "do": 9,
+    "id": 2,
+    "nazwa": "ostatnie sztuki"
+   },
+   {
+    "do": 10,
+    "id": 3,
+    "nazwa": "brak — na zamówienie"
+   }
+  ]
+ },
+ "popyt": {
+  "start": 1,
+  "nazwy": [
+   "niski popyt",
+   "normalny popyt",
+   "wysoki popyt"
+  ],
+  "rzut": "1k10",
+  "przesuniecie": [
+   {
+    "do": 2,
+    "zmiana": -1
+   },
+   {
+    "do": 8,
+    "zmiana": 0
+   },
+   {
+    "do": 10,
+    "zmiana": 1
+   }
+  ],
+  "min": 0,
+  "max": 2,
+  "opis": "popyt = clamp(1 + koniunktura.popyt + przesunięcie z rzutu, 0, 2)"
+ },
+ "macierz_zapas_x_popyt": {
+  "wiersze": "zapas 0..3",
+  "kolumny": "popyt 0..2",
+  "wartosci": [
+   [
+    0.65,
+    0.8,
+    0.95
+   ],
+   [
+    0.85,
+    1.0,
+    1.2
+   ],
+   [
+    0.75,
+    1.05,
+    1.5
+   ],
+   [
+    1.05,
+    1.25,
+    1.7
+   ]
+  ]
+ },
+ "asortyment": {
+  "rdzen_szansa": 0.72,
+  "boczne_ile": {
+   "min": 2,
+   "max": 5,
+   "opis": "2 + losowa 0..3, nie więcej niż dostępnych"
+  },
+  "wykluczone_kategorie": [
+   "Czynsze i mieszkanie",
+   "Najmici i usługi (za tydzień)"
+  ],
+  "sortowanie": "malejąco po cenie wytwórcy",
+  "wykluczone_typy": [
+   "usluga",
+   "nieruchomosc",
+   "nocleg"
+  ],
+  "uwaga_typy": "Handlarz nie trzyma na stanie noclegu, posiłku w gospodzie ani cudzej pracy. Ceny tych pozycji są już detaliczne (karczmarz JEST detalistą), więc marża kupca podwajałaby narzut. Kategorie zostają w cenniku i w wyszukiwarce — wypadają tylko z asortymentu, skupu i zamówień."
+ },
+ "ilosc": {
+  "progi_p": [
+   {
+    "ponizej": 12,
+    "baza_min": 20,
+    "baza_losowa": 60
+   },
+   {
+    "ponizej": 120,
+    "baza_min": 6,
+    "baza_losowa": 18
+   },
+   {
+    "ponizej": 240,
+    "baza_min": 3,
+    "baza_losowa": 8
+   },
+   {
+    "ponizej": 2400,
+    "baza_min": 1,
+    "baza_losowa": 5
+   },
+   {
+    "ponizej": 12000,
+    "baza_min": 1,
+    "baza_losowa": 2
+   },
+   {
+    "ponizej": null,
+    "baza_min": 1,
+    "baza_losowa": 0
+   }
+  ],
+  "opis": "baza = baza_min + losowa(0..baza_losowa−1) (gdy baza_losowa = 0 – bez rzutu); pełen skład ceil(baza×2,5); ostatnie sztuki max(1, ceil(baza×0,15)); brak = 0",
+  "mnozniki_zapasu": {
+   "0": 2.5,
+   "1": 1,
+   "2": 0.15,
+   "3": 0
+  }
+ },
+ "skup": {
+  "opis": "cena skupu = jego cena × max(0,20; kupiec.skup + korekta popytu)",
+  "popyt_wysoki": 0.15,
+  "popyt_niski": -0.15,
+  "minimum": 0.2
+ },
+ "targowanie": {
+  "test": "Przeciwstawny Test Targowania (gracz vs handlarz)",
+  "za_ps": 0.1,
+  "max": 0.3,
+  "max_zamowienie": 0.2,
+  "modyfikatory_testu": [
+   {
+    "warunek": "pełen skład",
+    "mod": 10
+   },
+   {
+    "warunek": "ostatnie sztuki i wysoki popyt",
+    "mod": -20
+   }
+  ],
+  "dolna_granica": "v5: cena minimalna kupca (cena_min_p z generatora). Bez niej — jak dawniej: nie poniżej ceny z cennika × jakość."
+ },
+ "jakosc": {
+  "opis": "HR-024: każda Wada ×½, każda Zaleta ×2 (PG s.292). W oryginalnym artefakcie Tandetna = ×¼ – błąd poprawiony.",
+  "opcje": [
+   {
+    "id": "2wady",
+    "nazwa": "Tandetna i Brzydka (2 Wady)",
+    "mnoznik": 0.25
+   },
+   {
+    "id": "wada",
+    "nazwa": "Tandetna albo Brzydka (1 Wada)",
+    "mnoznik": 0.5
+   },
+   {
+    "id": "zwykla",
+    "nazwa": "Zwykła",
+    "mnoznik": 1
+   },
+   {
+    "id": "wysmienita",
+    "nazwa": "Wyśmienita (1 Zaleta)",
+    "mnoznik": 2
+   },
+   {
+    "id": "mistrzowska",
+    "nazwa": "Mistrzowska (2 Zalety)",
+    "mnoznik": 4
+   }
+  ]
+ },
+ "zamowienie": {
+  "narzut_robota": 1.25,
+  "narzut_sprowadzenie": 1.45,
+  "zaliczka": 0.5,
+  "termin": [
+   {
+    "ponizej_p": 240,
+    "opis": "1k5 dni"
+   },
+   {
+    "ponizej_p": 2400,
+    "opis": "1k3 tygodni"
+   },
+   {
+    "ponizej_p": 12000,
+    "opis": "4 + 1k6 tygodni"
+   },
+   {
+    "ponizej_p": null,
+    "opis": "3 + 1k4 miesięcy"
+   }
+  ],
+  "uwaga_termin": "progi liczone od ceny KOŃCOWEJ zamówienia",
+  "poza_skala": "cena > 2 × limit kupca (min(kupiec, osada)) → żąda całości z góry",
+  "zalety": "Wyroby z Zaletami: Test Rzemiosła wytwórcy; porażka = termin ×2, porażka z dubletem = zwykła jakość za pełną cenę",
+  "odmowa": "kategoria spoza rdzenia, bocznych i roboty → odsyła do kupców, którzy mają ją w robocie (albo w rdzeniu)"
+ },
+ "preferencje": {
+  "opis": "v5: mnożnik kupca za kategorię. Rdzeń taniej (specjalista, kupuje hurtem), boczny asortyment drożej. Kupiec może nadpisać per kategoria w kupcy.json → preferencje.",
+  "rdzen": 0.95,
+  "boczne": 1.1
+ },
+ "kaprys": {
+  "opis": "v5: 1k10 na pozycję (osobny strumień losowania, nie zmienia rzutów zapasu i popytu). Preferencja × kaprys mieści się w granicach.",
+  "rzut": "1k10",
+  "progi": [
+   {
+    "do": 1,
+    "mnoznik": 0.9,
+    "opis": "chce się tego pozbyć"
+   },
+   {
+    "do": 3,
+    "mnoznik": 0.95,
+    "opis": "zalega"
+   },
+   {
+    "do": 7,
+    "mnoznik": 1,
+    "opis": "zwykła cena"
+   },
+   {
+    "do": 9,
+    "mnoznik": 1.05,
+    "opis": "lubi tę rzecz"
+   },
+   {
+    "do": 10,
+    "mnoznik": 1.1,
+    "opis": "„to najlepsza sztuka w mieście”"
+   }
+  ],
+  "granice": [
+   0.85,
+   1.2
+  ]
+ },
+ "cena_minimalna": {
+  "opis": "v5: koszt nabycia = cennik × osada × koniunktura (wytwórca: × koszt_wlasny). Cena minimalna = koszt × narzut_min; przy wyprzedaży (rynek < 1) koszt × wyprzedaz. Dolna granica targowania.",
+  "narzut_min": 1.05,
+  "wyprzedaz": 0.9,
+  "koszt_wlasny": 0.8
+ },
+ "uplyw_czasu": {
+  "opis": "v6: zapisany kupiec z upływem tygodni (src/kupcy_trwali.js → uplywCzasu). sprzedaz = udział sztuk sprzedanych w tygodniu przy popycie niskim / normalnym / wysokim. dokupienie = szansa w tygodniu, że kupiec uzupełni brakującą pozycję rdzenia do normy (płaci koszt nabycia). nowy_towar = szansa w tygodniu na nową pozycję z asortymentu. Boczny towar dokupuje z połową tej szansy. rynek_co = co ile tygodni nowy rzut popytu i kaprysu. gotowka_max = sufit gotówki jako wielokrotność gotówki startowej (albo tygodniowego brutto Statusu, jeśli większe); nadwyżkę kupiec odkłada — to jego zysk na życie.",
+  "sprzedaz": [0.05, 0.12, 0.25],
+  "dokupienie": 0.5,
+  "nowy_towar": 0.25,
+  "rynek_co": 4,
+  "gotowka_max": 2
+ }
+}

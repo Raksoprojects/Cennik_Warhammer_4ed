@@ -1,0 +1,6 @@
+{
+  "files.encoding": "utf8",
+  "editor.tabSize": 2,
+  "files.associations": { "AGENTS.md": "markdown" },
+  "search.exclude": { "test/fixtures/**": true, "reference/dane_oryginal.json": true, "propozycja/**": true }
+}

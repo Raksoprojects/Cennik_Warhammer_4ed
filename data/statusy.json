@@ -1,0 +1,238 @@
+{
+ "opis": "Średnie wg wzorów: Brąz N = 2N k10 p, Srebro N = N k10 s, Złoto N = N k5 ZK (HR-021). Netto = rzut za jedną Robotę; brutto = 5 × netto; rok = brutto × 52.",
+ "wzory": {
+  "Brąz": {
+   "kosci": "2N",
+   "k": 10,
+   "moneta_p": 1
+  },
+  "Srebro": {
+   "kosci": "N",
+   "k": 10,
+   "moneta_p": 12
+  },
+  "Złoto": {
+   "kosci": "N",
+   "k": 5,
+   "moneta_p": 240
+  }
+ },
+ "majetny": {
+  "opis": "HR-018: +1k5 monet szczebla za każdy poziom Talentu",
+  "k": 5,
+  "moneta_p": {
+   "Brąz": 1,
+   "Srebro": 12,
+   "Złoto": 240
+  },
+  "srednia_p": {
+   "Brąz": 3,
+   "Srebro": 36,
+   "Złoto": 720
+  }
+ },
+ "brutto_mnoznik": 5,
+ "tygodni_w_roku": 52,
+ "robotnik_brutto_p": 165,
+ "dniowka_p": 27.5,
+ "poziomy": [
+  {
+   "tier": "Brąz",
+   "lvl": 0,
+   "kostka": "brak",
+   "netto_p": 0.0,
+   "brutto_p": 0.0,
+   "netto_rok": 0.0,
+   "brutto_rok": 0.0,
+   "tyg_robotnika": 0.0,
+   "opis": "Żebrak, pokutnik, kaleka. Dochód wyłącznie z jałmużny."
+  },
+  {
+   "tier": "Brąz",
+   "lvl": 1,
+   "kostka": "2k10 pensów",
+   "netto_p": 11.0,
+   "brutto_p": 55.0,
+   "netto_rok": 572.0,
+   "brutto_rok": 2860.0,
+   "tyg_robotnika": 0.3,
+   "opis": "Nędzarz z pracą dorywczą. Zimą głoduje."
+  },
+  {
+   "tier": "Brąz",
+   "lvl": 2,
+   "kostka": "4k10 pensów",
+   "netto_p": 22.0,
+   "brutto_p": 110.0,
+   "netto_rok": 1144.0,
+   "brutto_rok": 5720.0,
+   "tyg_robotnika": 0.7,
+   "opis": "Parobek, wyrobnik, komornik, sługa bez ziemi."
+  },
+  {
+   "tier": "Brąz",
+   "lvl": 3,
+   "kostka": "6k10 pensów",
+   "netto_p": 33.0,
+   "brutto_p": 165.0,
+   "netto_rok": 1716.0,
+   "brutto_rok": 8580.0,
+   "tyg_robotnika": 1.0,
+   "opis": "JEDNOSTKA ODNIESIENIA: robotnik niewykwalifikowany, chłop małorolny. Kraków 1526–35: 1,5 gr dziennie, 9 gr tygodniowo, 13,5 zł rocznie."
+  },
+  {
+   "tier": "Brąz",
+   "lvl": 4,
+   "kostka": "8k10 pensów",
+   "netto_p": 44.0,
+   "brutto_p": 220.0,
+   "netto_rok": 2288.0,
+   "brutto_rok": 11440.0,
+   "tyg_robotnika": 1.3,
+   "opis": "Robotnik wykwalifikowany, młodszy czeladnik."
+  },
+  {
+   "tier": "Brąz",
+   "lvl": 5,
+   "kostka": "10k10 pensów",
+   "netto_p": 55.0,
+   "brutto_p": 275.0,
+   "netto_rok": 2860.0,
+   "brutto_rok": 14300.0,
+   "tyg_robotnika": 1.7,
+   "opis": "Czeladnik cechowy (Kraków: 2,5 gr dziennie = 15 gr tygodniowo), kmieć z pełnym łanem, wolny gwarek."
+  },
+  {
+   "tier": "Srebro",
+   "lvl": 1,
+   "kostka": "1k10 szylingów",
+   "netto_p": 66.0,
+   "brutto_p": 330.0,
+   "netto_rok": 3432.0,
+   "brutto_rok": 17160.0,
+   "tyg_robotnika": 2.0,
+   "opis": "Mistrz rzemieślnik z własnym warsztatem, drobny kupiec. Dwa razy tyle, co robotnik."
+  },
+  {
+   "tier": "Srebro",
+   "lvl": 2,
+   "kostka": "2k10 szylingów",
+   "netto_p": 132.0,
+   "brutto_p": 660.0,
+   "netto_rok": 6864.0,
+   "brutto_rok": 34320.0,
+   "tyg_robotnika": 4.0,
+   "opis": "Zamożny mistrz cechowy, niższy urzędnik miejski, lancknecht (4 guldeny reńskie miesięcznie)."
+  },
+  {
+   "tier": "Srebro",
+   "lvl": 3,
+   "kostka": "3k10 szylingów",
+   "netto_p": 198.0,
+   "brutto_p": 990.0,
+   "netto_rok": 10296.0,
+   "brutto_rok": 51480.0,
+   "tyg_robotnika": 6.0,
+   "opis": "Mistrz z kilkoma czeladnikami, przedsiębiorca budowlany (Kraków: murarz 60 gr/tydzień), trębacz miejski."
+  },
+  {
+   "tier": "Srebro",
+   "lvl": 4,
+   "kostka": "4k10 szylingów",
+   "netto_p": 264.0,
+   "brutto_p": 1320.0,
+   "netto_rok": 13728.0,
+   "brutto_rok": 68640.0,
+   "tyg_robotnika": 8.0,
+   "opis": "Kupiec hurtowy, notariusz, oficer najemny."
+  },
+  {
+   "tier": "Srebro",
+   "lvl": 5,
+   "kostka": "5k10 szylingów",
+   "netto_p": 330.0,
+   "brutto_p": 1650.0,
+   "netto_rok": 17160.0,
+   "brutto_rok": 85800.0,
+   "tyg_robotnika": 10.0,
+   "opis": "Kupiec dalekomorski, lekarz miejski, Doppelsöldner (8 guldenów miesięcznie). Ok. 156 florenów rocznie – więcej niż golibroda królewski (100 fl.)."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 1,
+   "kostka": "1k5 ZK",
+   "netto_p": 720,
+   "brutto_p": 3600,
+   "netto_rok": 37440,
+   "brutto_rok": 187200,
+   "tyg_robotnika": 21.8,
+   "opis": "Patrycjusz, kanonik, profesor, drobna szlachta. Ok. 340 florenów rocznie brutto – poziom doktora teologii w Krakowie (400 fl.)."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 2,
+   "kostka": "2k5 ZK",
+   "netto_p": 1440,
+   "brutto_p": 7200,
+   "netto_rok": 74880,
+   "brutto_rok": 374400,
+   "tyg_robotnika": 43.6,
+   "opis": "Wielki kupiec, rycerz z lennem, arcykapłan, arcymag Kolegium."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 3,
+   "kostka": "3k5 ZK",
+   "netto_p": 2160,
+   "brutto_p": 10800,
+   "netto_rok": 112320,
+   "brutto_rok": 561600,
+   "tyg_robotnika": 65.5,
+   "opis": "Baron, wysoki urzędnik prowincji, Lektor, lekarz nadworny (700 fl./rok). Ok. 1000 florenów – tyle, co marszałek nadworny."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 4,
+   "kostka": "4k5 ZK",
+   "netto_p": 2880,
+   "brutto_p": 14400,
+   "netto_rok": 149760,
+   "brutto_rok": 748800,
+   "tyg_robotnika": 87.3,
+   "opis": "Hrabia, arcybiskup, patrycjat kupiecki formatu Fuggerów, mistrz szpiegów."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 5,
+   "kostka": "5k5 ZK",
+   "netto_p": 3600,
+   "brutto_p": 18000,
+   "netto_rok": 187200,
+   "brutto_rok": 936000,
+   "tyg_robotnika": 109.1,
+   "opis": "Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 6,
+   "kostka": "6k5 ZK",
+   "netto_p": 4320,
+   "brutto_p": 21600,
+   "netto_rok": 224640,
+   "brutto_rok": 1123200,
+   "tyg_robotnika": 130.9,
+   "opis": "Książę prowincji, Najwyższy Lektor zasiadający w kolegium elektorskim."
+  },
+  {
+   "tier": "Złoto",
+   "lvl": 7,
+   "kostka": "7k5 ZK",
+   "netto_p": 5040,
+   "brutto_p": 25200,
+   "netto_rok": 262080,
+   "brutto_rok": 1310400,
+   "tyg_robotnika": 152.7,
+   "opis": "Elektor Imperium. UWAGA: przy wzorze Nk5 szczyt drabiny wciąż jest skromny (2380 fl. rocznie) – realny elektor miał dziesiątki tysięcy. Dla figur państwowych użyj wariantu ×10 (patrz zasady)."
+  }
+ ]
+}

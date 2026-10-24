@@ -1,0 +1,21 @@
+{
+ "wersja": 1,
+ "opis": "Ustawienia MG nakładane na dane przez zastosujUstawienia() w src/silnik.js. Puste = cennik v5 bez zmian. Panel MG zapisuje swoją kopię w przeglądarce (localStorage) i eksportuje ją w tym samym formacie — wklej eksport tutaj, żeby stał się domyślny dla wszystkich.",
+ "preset": "zalecany",
+ "mnozniki": {},
+ "premia_znak_stanu": null,
+ "pozycje": {},
+ "osady": {},
+ "koniunktury": {},
+ "kupcy": {},
+ "rynek": {},
+ "przyklad": {
+  "opis": "Przykład — nie jest stosowany. Konie bojowe ×2, miecz 4 ZK, Altdorf +40%, w czasie wojny pancerze ×2, zbrojmistrz marża 1,2, kaprys węższy.",
+  "mnozniki": { "konie_bojowe": 2 },
+  "pozycje": { "miecz": { "cena_p": 960 } },
+  "osady": { "altdorf": { "mnoznik": 1.4 } },
+  "koniunktury": { "wojna": { "kategorie": { "Pancerze": { "cena": 2 } } } },
+  "kupcy": { "zbrojmistrz": { "marza": 1.2 } },
+  "rynek": { "kaprys": { "granice": [0.9, 1.1] } }
+ }
+}

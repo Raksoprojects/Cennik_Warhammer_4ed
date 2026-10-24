@@ -1,0 +1,337 @@
+profesja;poziom;nazwa;dochod;skad;netto_tydz_p;brutto_tydz_p;zakup;cena_p;cena;rob_netto;tyg_brutto;proc_rocznego_brutto
+Aptekarz;1;Uczennica Aptekarki;Brąz 1;doch;11.0;55.0;mozdzierz-z-tluczkiem;204;17 s;18.5;3.7;7.1
+Aptekarz;1;Uczennica Aptekarki;Brąz 1;doch;11.0;55.0;ksiega-aptekarstwo;7200;30 ZK;654.5;130.9;251.7
+Aptekarz;2;Aptekarka;Srebro 1;raw;66.0;330.0;mozdzierz-z-tluczkiem;204;17 s;3.1;0.6;1.2
+Aptekarz;2;Aptekarka;Srebro 1;raw;66.0;330.0;ksiega-aptekarstwo;7200;30 ZK;109.1;21.8;42.0
+Aptekarz;3;Farmaceutka;Srebro 3;raw;198.0;990.0;mozdzierz-z-tluczkiem;204;17 s;1.0;0.2;0.4
+Aptekarz;3;Farmaceutka;Srebro 3;raw;198.0;990.0;ksiega-aptekarstwo;7200;30 ZK;36.4;7.3;14.0
+Aptekarz;4;Mistrzyni Aptekarstwa;Złoto 1;raw;720.0;3600.0;mozdzierz-z-tluczkiem;204;17 s;0.3;0.1;0.1
+Aptekarz;4;Mistrzyni Aptekarstwa;Złoto 1;raw;720.0;3600.0;ksiega-aptekarstwo;7200;30 ZK;10.0;2.0;3.8
+Czarodziej;1;Uczeń Czarodzieja;Brąz 3;raw;33.0;165.0;ksiega-magia;28800;120 ZK;872.7;174.5;335.7
+Czarodziej;2;Czarodziej;Srebro 4;poz;264.0;1320.0;ksiega-magia;28800;120 ZK;109.1;21.8;42.0
+Czarodziej;3;Mistrz Magii;Złoto 1;raw;720.0;3600.0;ksiega-magia;28800;120 ZK;40.0;8.0;15.4
+Czarodziej;4;Arcymag;Złoto 2;poz;1440.0;7200.0;ksiega-magia;28800;120 ZK;20.0;4.0;7.7
+Inżynier;1;Student Inżynierii;Brąz 1;doch;11.0;55.0;ksiega-inzynieria;2880;12 ZK;261.8;52.4;100.7
+Inżynier;1;Student Inżynierii;Brąz 1;doch;11.0;55.0;teodolit;3480;14 ZK 10 s;316.4;63.3;121.7
+Inżynier;2;Inżynier;Srebro 3;poz;198.0;990.0;ksiega-inzynieria;2880;12 ZK;14.5;2.9;5.6
+Inżynier;2;Inżynier;Srebro 3;poz;198.0;990.0;teodolit;3480;14 ZK 10 s;17.6;3.5;6.8
+Inżynier;3;Renomowany Inżynier;Srebro 4;raw;264.0;1320.0;ksiega-inzynieria;2880;12 ZK;10.9;2.2;4.2
+Inżynier;3;Renomowany Inżynier;Srebro 4;raw;264.0;1320.0;teodolit;3480;14 ZK 10 s;13.2;2.6;5.1
+Inżynier;4;Mistrz Inżynierii;Złoto 2;raw;1440.0;7200.0;ksiega-inzynieria;2880;12 ZK;2.0;0.4;0.8
+Inżynier;4;Mistrz Inżynierii;Złoto 2;raw;1440.0;7200.0;teodolit;3480;14 ZK 10 s;2.4;0.5;0.9
+Medyk;1;Studentka Medycyny;Brąz 1;doch;11.0;55.0;ksiega-medycyna;14400;60 ZK;1309.1;261.8;503.5
+Medyk;1;Studentka Medycyny;Brąz 1;doch;11.0;55.0;zestaw-na-zatrucia;1152;4 ZK 16 s;104.7;20.9;40.3
+Medyk;2;Medyczka;Srebro 3;raw;198.0;990.0;ksiega-medycyna;14400;60 ZK;72.7;14.5;28.0
+Medyk;2;Medyczka;Srebro 3;raw;198.0;990.0;zestaw-na-zatrucia;1152;4 ZK 16 s;5.8;1.2;2.2
+Medyk;3;Doktor;Srebro 5;raw;330.0;1650.0;ksiega-medycyna;14400;60 ZK;43.6;8.7;16.8
+Medyk;3;Doktor;Srebro 5;raw;330.0;1650.0;zestaw-na-zatrucia;1152;4 ZK 16 s;3.5;0.7;1.3
+Medyk;4;Nadworna Medyczka;Złoto 2;poz;1440.0;7200.0;ksiega-medycyna;14400;60 ZK;10.0;2.0;3.8
+Medyk;4;Nadworna Medyczka;Złoto 2;poz;1440.0;7200.0;zestaw-na-zatrucia;1152;4 ZK 16 s;0.8;0.2;0.3
+Prawnik;1;Studentka Prawa;Brąz 1;doch;11.0;55.0;ksiega-prawo;14400;60 ZK;1309.1;261.8;503.5
+Prawnik;1;Studentka Prawa;Brąz 1;doch;11.0;55.0;zestaw-do-pisania;576;2 ZK 8 s;52.4;10.5;20.1
+Prawnik;2;Prawniczka;Srebro 3;raw;198.0;990.0;ksiega-prawo;14400;60 ZK;72.7;14.5;28.0
+Prawnik;2;Prawniczka;Srebro 3;raw;198.0;990.0;zestaw-do-pisania;576;2 ZK 8 s;2.9;0.6;1.1
+Prawnik;3;Obrońca;Złoto 1;raw;720.0;3600.0;ksiega-prawo;14400;60 ZK;20.0;4.0;7.7
+Prawnik;3;Obrońca;Złoto 1;raw;720.0;3600.0;zestaw-do-pisania;576;2 ZK 8 s;0.8;0.2;0.3
+Prawnik;4;Sędzia;Złoto 3;poz;2160.0;10800.0;ksiega-prawo;14400;60 ZK;6.7;1.3;2.6
+Prawnik;4;Sędzia;Złoto 3;poz;2160.0;10800.0;zestaw-do-pisania;576;2 ZK 8 s;0.3;0.1;0.1
+Uczony;1;Student;Brąz 1;doch;11.0;55.0;ksiega-sztuka;4800;20 ZK;436.4;87.3;167.8
+Uczony;1;Student;Brąz 1;doch;11.0;55.0;zestaw-do-pisania;576;2 ZK 8 s;52.4;10.5;20.1
+Uczony;2;Uczony;Srebro 2;raw;132.0;660.0;ksiega-sztuka;4800;20 ZK;36.4;7.3;14.0
+Uczony;2;Uczony;Srebro 2;raw;132.0;660.0;zestaw-do-pisania;576;2 ZK 8 s;4.4;0.9;1.7
+Uczony;3;Wykładowca;Srebro 5;raw;330.0;1650.0;ksiega-sztuka;4800;20 ZK;14.5;2.9;5.6
+Uczony;3;Wykładowca;Srebro 5;raw;330.0;1650.0;zestaw-do-pisania;576;2 ZK 8 s;1.7;0.3;0.7
+Uczony;4;Profesor;Złoto 2;poz;1440.0;7200.0;ksiega-sztuka;4800;20 ZK;3.3;0.7;1.3
+Uczony;4;Profesor;Złoto 2;poz;1440.0;7200.0;zestaw-do-pisania;576;2 ZK 8 s;0.4;0.1;0.2
+Kupiec;1;Handlarz;Srebro 2;raw;132.0;660.0;woz;4320;18 ZK;32.7;6.5;12.6
+Kupiec;1;Handlarz;Srebro 2;raw;132.0;660.0;kon-pociagowy;3600;15 ZK;27.3;5.5;10.5
+Kupiec;2;Kupiec;Srebro 5;raw;330.0;1650.0;woz;4320;18 ZK;13.1;2.6;5.0
+Kupiec;2;Kupiec;Srebro 5;raw;330.0;1650.0;kon-pociagowy;3600;15 ZK;10.9;2.2;4.2
+Kupiec;3;Mistrz Kupiectwa;Złoto 1;raw;720.0;3600.0;woz;4320;18 ZK;6.0;1.2;2.3
+Kupiec;3;Mistrz Kupiectwa;Złoto 1;raw;720.0;3600.0;kon-pociagowy;3600;15 ZK;5.0;1.0;1.9
+Kupiec;4;Patrycjusz;Złoto 4;poz;2880.0;14400.0;woz;4320;18 ZK;1.5;0.3;0.6
+Kupiec;4;Patrycjusz;Złoto 4;poz;2880.0;14400.0;kon-pociagowy;3600;15 ZK;1.2;0.2;0.5
+Mieszczanin;1;Przekupka;Brąz 4;poz;44.0;220.0;ubranie;504;2 ZK 2 s;11.5;2.3;4.4
+Mieszczanin;1;Przekupka;Brąz 4;poz;44.0;220.0;izba-w-kamienicy-miesiac;288;1 ZK 4 s;6.5;1.3;2.5
+Mieszczanin;2;Mieszczka;Srebro 2;raw;132.0;660.0;ubranie;504;2 ZK 2 s;3.8;0.8;1.5
+Mieszczanin;2;Mieszczka;Srebro 2;raw;132.0;660.0;izba-w-kamienicy-miesiac;288;1 ZK 4 s;2.2;0.4;0.8
+Mieszczanin;3;Rajczyni Miejska;Srebro 5;raw;330.0;1650.0;ubranie;504;2 ZK 2 s;1.5;0.3;0.6
+Mieszczanin;3;Rajczyni Miejska;Srebro 5;raw;330.0;1650.0;izba-w-kamienicy-miesiac;288;1 ZK 4 s;0.9;0.2;0.3
+Mieszczanin;4;Burmistrz;Złoto 1;raw;720.0;3600.0;ubranie;504;2 ZK 2 s;0.7;0.1;0.3
+Mieszczanin;4;Burmistrz;Złoto 1;raw;720.0;3600.0;izba-w-kamienicy-miesiac;288;1 ZK 4 s;0.4;0.1;0.2
+Rzemieślnik;1;Czeladniczka;Brąz 2;raw;22.0;110.0;narzedzia-pracy;1728;7 ZK 4 s;78.5;15.7;30.2
+Rzemieślnik;1;Czeladniczka;Brąz 2;raw;22.0;110.0;warsztat;76800;320 ZK;3490.9;698.2;1342.7
+Rzemieślnik;2;Rzemieślniczka;Srebro 1;raw;66.0;330.0;narzedzia-pracy;1728;7 ZK 4 s;26.2;5.2;10.1
+Rzemieślnik;2;Rzemieślniczka;Srebro 1;raw;66.0;330.0;warsztat;76800;320 ZK;1163.6;232.7;447.6
+Rzemieślnik;3;Mistrzyni Rzemiosła;Srebro 3;raw;198.0;990.0;narzedzia-pracy;1728;7 ZK 4 s;8.7;1.7;3.4
+Rzemieślnik;3;Mistrzyni Rzemiosła;Srebro 3;raw;198.0;990.0;warsztat;76800;320 ZK;387.9;77.6;149.2
+Rzemieślnik;4;Mistrzyni Cechu;Złoto 1;raw;720.0;3600.0;narzedzia-pracy;1728;7 ZK 4 s;2.4;0.5;0.9
+Rzemieślnik;4;Mistrzyni Cechu;Złoto 1;raw;720.0;3600.0;warsztat;76800;320 ZK;106.7;21.3;41.0
+Strażnik;1;Rekrut Straży;Brąz 3;raw;33.0;165.0;halabarda;384;1 ZK 12 s;11.6;2.3;4.5
+Strażnik;1;Rekrut Straży;Brąz 3;raw;33.0;165.0;skorzana-kurta;396;1 ZK 13 s;12.0;2.4;4.6
+Strażnik;1;Rekrut Straży;Brąz 3;raw;33.0;165.0;helm-otwarty-morion;288;1 ZK 4 s;8.7;1.7;3.4
+Strażnik;2;Strażnik;Srebro 1;raw;66.0;330.0;halabarda;384;1 ZK 12 s;5.8;1.2;2.2
+Strażnik;2;Strażnik;Srebro 1;raw;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Strażnik;2;Strażnik;Srebro 1;raw;66.0;330.0;helm-otwarty-morion;288;1 ZK 4 s;4.4;0.9;1.7
+Strażnik;3;Sierżant Straży;Srebro 2;doch;132.0;660.0;halabarda;384;1 ZK 12 s;2.9;0.6;1.1
+Strażnik;3;Sierżant Straży;Srebro 2;doch;132.0;660.0;skorzana-kurta;396;1 ZK 13 s;3.0;0.6;1.2
+Strażnik;3;Sierżant Straży;Srebro 2;doch;132.0;660.0;helm-otwarty-morion;288;1 ZK 4 s;2.2;0.4;0.8
+Strażnik;4;Kapitan Straży;Srebro 4;doch;264.0;1320.0;halabarda;384;1 ZK 12 s;1.5;0.3;0.6
+Strażnik;4;Kapitan Straży;Srebro 4;doch;264.0;1320.0;skorzana-kurta;396;1 ZK 13 s;1.5;0.3;0.6
+Strażnik;4;Kapitan Straży;Srebro 4;doch;264.0;1320.0;helm-otwarty-morion;288;1 ZK 4 s;1.1;0.2;0.4
+Doradca;1;Asystent;Srebro 2;raw;132.0;660.0;stroj-dworski;10800;45 ZK;81.8;16.4;31.5
+Doradca;2;Doradca;Srebro 4;raw;264.0;1320.0;stroj-dworski;10800;45 ZK;40.9;8.2;15.7
+Doradca;3;Radca;Złoto 1;raw;720.0;3600.0;stroj-dworski;10800;45 ZK;15.0;3.0;5.8
+Doradca;4;Kanclerz;Złoto 4;poz;2880.0;14400.0;stroj-dworski;10800;45 ZK;3.8;0.8;1.4
+Szlachcic;1;Dziedzic;Złoto 1;poz;720.0;3600.0;stroj-dworski;10800;45 ZK;15.0;3.0;5.8
+Szlachcic;1;Dziedzic;Złoto 1;poz;720.0;3600.0;kon-wierzchowy;9120;38 ZK;12.7;2.5;4.9
+Szlachcic;1;Dziedzic;Złoto 1;poz;720.0;3600.0;miecz;828;3 ZK 9 s;1.1;0.2;0.4
+Szlachcic;2;Szlachcic;Złoto 3;raw;2160.0;10800.0;stroj-dworski;10800;45 ZK;5.0;1.0;1.9
+Szlachcic;2;Szlachcic;Złoto 3;raw;2160.0;10800.0;kon-wierzchowy;9120;38 ZK;4.2;0.8;1.6
+Szlachcic;2;Szlachcic;Złoto 3;raw;2160.0;10800.0;miecz;828;3 ZK 9 s;0.4;0.1;0.1
+Szlachcic;3;Magnat;Złoto 5;raw;3600.0;18000.0;stroj-dworski;10800;45 ZK;3.0;0.6;1.2
+Szlachcic;3;Magnat;Złoto 5;raw;3600.0;18000.0;kon-wierzchowy;9120;38 ZK;2.5;0.5;1.0
+Szlachcic;3;Magnat;Złoto 5;raw;3600.0;18000.0;miecz;828;3 ZK 9 s;0.2;0.0;0.1
+Szlachcic;4;Lord;Złoto 7;raw;5040.0;25200.0;stroj-dworski;10800;45 ZK;2.1;0.4;0.8
+Szlachcic;4;Lord;Złoto 7;raw;5040.0;25200.0;kon-wierzchowy;9120;38 ZK;1.8;0.4;0.7
+Szlachcic;4;Lord;Złoto 7;raw;5040.0;25200.0;miecz;828;3 ZK 9 s;0.2;0.0;0.1
+Zwadźca;1;Szermierz;Srebro 3;raw;198.0;990.0;rapier;3300;13 ZK 15 s;16.7;3.3;6.4
+Zwadźca;1;Szermierz;Srebro 3;raw;198.0;990.0;lewak;264;1 ZK 2 s;1.3;0.3;0.5
+Zwadźca;1;Szermierz;Srebro 3;raw;198.0;990.0;ubranie;504;2 ZK 2 s;2.5;0.5;1.0
+Zwadźca;2;Zwadźca;Srebro 5;raw;330.0;1650.0;rapier;3300;13 ZK 15 s;10.0;2.0;3.8
+Zwadźca;2;Zwadźca;Srebro 5;raw;330.0;1650.0;lewak;264;1 ZK 2 s;0.8;0.2;0.3
+Zwadźca;2;Zwadźca;Srebro 5;raw;330.0;1650.0;ubranie;504;2 ZK 2 s;1.5;0.3;0.6
+Zwadźca;3;Mistrz Pojedynków;Złoto 1;raw;720.0;3600.0;rapier;3300;13 ZK 15 s;4.6;0.9;1.8
+Zwadźca;3;Mistrz Pojedynków;Złoto 1;raw;720.0;3600.0;lewak;264;1 ZK 2 s;0.4;0.1;0.1
+Zwadźca;3;Mistrz Pojedynków;Złoto 1;raw;720.0;3600.0;ubranie;504;2 ZK 2 s;0.7;0.1;0.3
+Zwadźca;4;Szampierz Sądowy;Złoto 2;poz;1440.0;7200.0;rapier;3300;13 ZK 15 s;2.3;0.5;0.9
+Zwadźca;4;Szampierz Sądowy;Złoto 2;poz;1440.0;7200.0;lewak;264;1 ZK 2 s;0.2;0.0;0.1
+Zwadźca;4;Szampierz Sądowy;Złoto 2;poz;1440.0;7200.0;ubranie;504;2 ZK 2 s;0.3;0.1;0.1
+Chłop;1;Wyrobnica;Brąz 2;raw;22.0;110.0;wol;1440;6 ZK;65.5;13.1;25.2
+Chłop;1;Wyrobnica;Brąz 2;raw;22.0;110.0;krowa;1200;5 ZK;54.5;10.9;21.0
+Chłop;1;Wyrobnica;Brąz 2;raw;22.0;110.0;sierp;42;3 s 6 p;1.9;0.4;0.7
+Chłop;2;Chłopka;Brąz 3;raw;33.0;165.0;wol;1440;6 ZK;43.6;8.7;16.8
+Chłop;2;Chłopka;Brąz 3;raw;33.0;165.0;krowa;1200;5 ZK;36.4;7.3;14.0
+Chłop;2;Chłopka;Brąz 3;raw;33.0;165.0;sierp;42;3 s 6 p;1.3;0.3;0.5
+Chłop;3;Gospodyni;Brąz 4;raw;44.0;220.0;wol;1440;6 ZK;32.7;6.5;12.6
+Chłop;3;Gospodyni;Brąz 4;raw;44.0;220.0;krowa;1200;5 ZK;27.3;5.5;10.5
+Chłop;3;Gospodyni;Brąz 4;raw;44.0;220.0;sierp;42;3 s 6 p;1.0;0.2;0.4
+Chłop;4;Starsza Wioski;Brąz 5;poz;55.0;275.0;wol;1440;6 ZK;26.2;5.2;10.1
+Chłop;4;Starsza Wioski;Brąz 5;poz;55.0;275.0;krowa;1200;5 ZK;21.8;4.4;8.4
+Chłop;4;Starsza Wioski;Brąz 5;poz;55.0;275.0;sierp;42;3 s 6 p;0.8;0.2;0.3
+Łowczy;1;Traperka;Brąz 2;raw;22.0;110.0;luk-dlugi;312;1 ZK 6 s;14.2;2.8;5.5
+Łowczy;1;Traperka;Brąz 2;raw;22.0;110.0;sidla-na-zwierzeta;42;3 s 6 p;1.9;0.4;0.7
+Łowczy;1;Traperka;Brąz 2;raw;22.0;110.0;pies-mysliwski;720;3 ZK;32.7;6.5;12.6
+Łowczy;2;Łowczyni;Brąz 4;raw;44.0;220.0;luk-dlugi;312;1 ZK 6 s;7.1;1.4;2.7
+Łowczy;2;Łowczyni;Brąz 4;raw;44.0;220.0;sidla-na-zwierzeta;42;3 s 6 p;1.0;0.2;0.4
+Łowczy;2;Łowczyni;Brąz 4;raw;44.0;220.0;pies-mysliwski;720;3 ZK;16.4;3.3;6.3
+Łowczy;3;Tropicielka;Srebro 1;raw;66.0;330.0;luk-dlugi;312;1 ZK 6 s;4.7;0.9;1.8
+Łowczy;3;Tropicielka;Srebro 1;raw;66.0;330.0;sidla-na-zwierzeta;42;3 s 6 p;0.6;0.1;0.2
+Łowczy;3;Tropicielka;Srebro 1;raw;66.0;330.0;pies-mysliwski;720;3 ZK;10.9;2.2;4.2
+Łowczy;4;Nadworna Łowczyni;Srebro 3;raw;198.0;990.0;luk-dlugi;312;1 ZK 6 s;1.6;0.3;0.6
+Łowczy;4;Nadworna Łowczyni;Srebro 3;raw;198.0;990.0;sidla-na-zwierzeta;42;3 s 6 p;0.2;0.0;0.1
+Łowczy;4;Nadworna Łowczyni;Srebro 3;raw;198.0;990.0;pies-mysliwski;720;3 ZK;3.6;0.7;1.4
+Zwiadowca;1;Przewodnik;Brąz 3;raw;33.0;165.0;kon-wierzchowy;9120;38 ZK;276.4;55.3;106.3
+Zwiadowca;1;Przewodnik;Brąz 3;raw;33.0;165.0;luk;228;19 s;6.9;1.4;2.7
+Zwiadowca;1;Przewodnik;Brąz 3;raw;33.0;165.0;namiot;864;3 ZK 12 s;26.2;5.2;10.1
+Zwiadowca;2;Zwiadowca;Brąz 5;raw;55.0;275.0;kon-wierzchowy;9120;38 ZK;165.8;33.2;63.8
+Zwiadowca;2;Zwiadowca;Brąz 5;raw;55.0;275.0;luk;228;19 s;4.1;0.8;1.6
+Zwiadowca;2;Zwiadowca;Brąz 5;raw;55.0;275.0;namiot;864;3 ZK 12 s;15.7;3.1;6.0
+Zwiadowca;3;Przepatrywacz;Srebro 1;raw;66.0;330.0;kon-wierzchowy;9120;38 ZK;138.2;27.6;53.1
+Zwiadowca;3;Przepatrywacz;Srebro 1;raw;66.0;330.0;luk;228;19 s;3.5;0.7;1.3
+Zwiadowca;3;Przepatrywacz;Srebro 1;raw;66.0;330.0;namiot;864;3 ZK 12 s;13.1;2.6;5.0
+Zwiadowca;4;Odkrywca;Srebro 3;poz;198.0;990.0;kon-wierzchowy;9120;38 ZK;46.1;9.2;17.7
+Zwiadowca;4;Odkrywca;Srebro 3;poz;198.0;990.0;luk;228;19 s;1.2;0.2;0.4
+Zwiadowca;4;Odkrywca;Srebro 3;poz;198.0;990.0;namiot;864;3 ZK 12 s;4.4;0.9;1.7
+Domokrążca;1;Powsinoga;Brąz 1;raw;11.0;55.0;furmanka;1440;6 ZK;130.9;26.2;50.3
+Domokrążca;1;Powsinoga;Brąz 1;raw;11.0;55.0;mul;2880;12 ZK;261.8;52.4;100.7
+Domokrążca;2;Domokrążca;Brąz 4;raw;44.0;220.0;furmanka;1440;6 ZK;32.7;6.5;12.6
+Domokrążca;2;Domokrążca;Brąz 4;raw;44.0;220.0;mul;2880;12 ZK;65.5;13.1;25.2
+Domokrążca;3;Doświadczony Domokrążca;Srebro 1;raw;66.0;330.0;furmanka;1440;6 ZK;21.8;4.4;8.4
+Domokrążca;3;Doświadczony Domokrążca;Srebro 1;raw;66.0;330.0;mul;2880;12 ZK;43.6;8.7;16.8
+Domokrążca;4;Wędrowny Handlarz;Srebro 3;raw;198.0;990.0;furmanka;1440;6 ZK;7.3;1.5;2.8
+Domokrążca;4;Wędrowny Handlarz;Srebro 3;raw;198.0;990.0;mul;2880;12 ZK;14.5;2.9;5.6
+Kuglarz;1;Muzykantka;Brąz 3;raw;33.0;165.0;instrument;1152;4 ZK 16 s;34.9;7.0;13.4
+Kuglarz;1;Muzykantka;Brąz 3;raw;33.0;165.0;kostium;720;3 ZK;21.8;4.4;8.4
+Kuglarz;2;Kuglarka;Brąz 5;raw;55.0;275.0;instrument;1152;4 ZK 16 s;20.9;4.2;8.1
+Kuglarz;2;Kuglarka;Brąz 5;raw;55.0;275.0;kostium;720;3 ZK;13.1;2.6;5.0
+Kuglarz;3;Trubadurka;Srebro 3;raw;198.0;990.0;instrument;1152;4 ZK 16 s;5.8;1.2;2.2
+Kuglarz;3;Trubadurka;Srebro 3;raw;198.0;990.0;kostium;720;3 ZK;3.6;0.7;1.4
+Kuglarz;4;Przywódczyni Trupy;Srebro 5;poz;330.0;1650.0;instrument;1152;4 ZK 16 s;3.5;0.7;1.3
+Kuglarz;4;Przywódczyni Trupy;Srebro 5;poz;330.0;1650.0;kostium;720;3 ZK;2.2;0.4;0.8
+Łowca Czarownic;1;Oprawca;Srebro 1;raw;66.0;330.0;pistolet;4800;20 ZK;72.7;14.5;28.0
+Łowca Czarownic;1;Oprawca;Srebro 1;raw;66.0;330.0;rapier;3300;13 ZK 15 s;50.0;10.0;19.2
+Łowca Czarownic;1;Oprawca;Srebro 1;raw;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Łowca Czarownic;1;Oprawca;Srebro 1;raw;66.0;330.0;kon-wierzchowy;9120;38 ZK;138.2;27.6;53.1
+Łowca Czarownic;2;Łowca Czarownic;Srebro 3;raw;198.0;990.0;pistolet;4800;20 ZK;24.2;4.8;9.3
+Łowca Czarownic;2;Łowca Czarownic;Srebro 3;raw;198.0;990.0;rapier;3300;13 ZK 15 s;16.7;3.3;6.4
+Łowca Czarownic;2;Łowca Czarownic;Srebro 3;raw;198.0;990.0;skorzana-kurta;396;1 ZK 13 s;2.0;0.4;0.8
+Łowca Czarownic;2;Łowca Czarownic;Srebro 3;raw;198.0;990.0;kon-wierzchowy;9120;38 ZK;46.1;9.2;17.7
+Łowca Czarownic;3;Inkwizytor;Srebro 5;raw;330.0;1650.0;pistolet;4800;20 ZK;14.5;2.9;5.6
+Łowca Czarownic;3;Inkwizytor;Srebro 5;raw;330.0;1650.0;rapier;3300;13 ZK 15 s;10.0;2.0;3.8
+Łowca Czarownic;3;Inkwizytor;Srebro 5;raw;330.0;1650.0;skorzana-kurta;396;1 ZK 13 s;1.2;0.2;0.5
+Łowca Czarownic;3;Inkwizytor;Srebro 5;raw;330.0;1650.0;kon-wierzchowy;9120;38 ZK;27.6;5.5;10.6
+Łowca Czarownic;4;Generał Łowców Czarownic;Złoto 1;raw;720.0;3600.0;pistolet;4800;20 ZK;6.7;1.3;2.6
+Łowca Czarownic;4;Generał Łowców Czarownic;Złoto 1;raw;720.0;3600.0;rapier;3300;13 ZK 15 s;4.6;0.9;1.8
+Łowca Czarownic;4;Generał Łowców Czarownic;Złoto 1;raw;720.0;3600.0;skorzana-kurta;396;1 ZK 13 s;0.6;0.1;0.2
+Łowca Czarownic;4;Generał Łowców Czarownic;Złoto 1;raw;720.0;3600.0;kon-wierzchowy;9120;38 ZK;12.7;2.5;4.9
+Łowczy;1;Pogromczyni Złodziei;Srebro 1;raw;66.0;330.0;luk-dlugi;312;1 ZK 6 s;4.7;0.9;1.8
+Łowczy;1;Pogromczyni Złodziei;Srebro 1;raw;66.0;330.0;sidla-na-zwierzeta;42;3 s 6 p;0.6;0.1;0.2
+Łowczy;1;Pogromczyni Złodziei;Srebro 1;raw;66.0;330.0;pies-mysliwski;720;3 ZK;10.9;2.2;4.2
+Łowczy;2;Łowczyni Nagród;Srebro 3;raw;198.0;990.0;luk-dlugi;312;1 ZK 6 s;1.6;0.3;0.6
+Łowczy;2;Łowczyni Nagród;Srebro 3;raw;198.0;990.0;sidla-na-zwierzeta;42;3 s 6 p;0.2;0.0;0.1
+Łowczy;2;Łowczyni Nagród;Srebro 3;raw;198.0;990.0;pies-mysliwski;720;3 ZK;3.6;0.7;1.4
+Łowczy;3;Doświadczona Łowczyni Nagród;Srebro 5;raw;330.0;1650.0;luk-dlugi;312;1 ZK 6 s;0.9;0.2;0.4
+Łowczy;3;Doświadczona Łowczyni Nagród;Srebro 5;raw;330.0;1650.0;sidla-na-zwierzeta;42;3 s 6 p;0.1;0.0;0.0
+Łowczy;3;Doświadczona Łowczyni Nagród;Srebro 5;raw;330.0;1650.0;pies-mysliwski;720;3 ZK;2.2;0.4;0.8
+Łowczy;4;Legendarna Łowczyni Nagród;Złoto 1;raw;720.0;3600.0;luk-dlugi;312;1 ZK 6 s;0.4;0.1;0.2
+Łowczy;4;Legendarna Łowczyni Nagród;Złoto 1;raw;720.0;3600.0;sidla-na-zwierzeta;42;3 s 6 p;0.1;0.0;0.0
+Łowczy;4;Legendarna Łowczyni Nagród;Złoto 1;raw;720.0;3600.0;pies-mysliwski;720;3 ZK;1.0;0.2;0.4
+Posłaniec;1;Goniec;Brąz 3;raw;33.0;165.0;kon-wierzchowy;9120;38 ZK;276.4;55.3;106.3
+Posłaniec;1;Goniec;Brąz 3;raw;33.0;165.0;uprzaz-z-siodlem;1800;7 ZK 10 s;54.5;10.9;21.0
+Posłaniec;2;Posłaniec;Srebro 1;raw;66.0;330.0;kon-wierzchowy;9120;38 ZK;138.2;27.6;53.1
+Posłaniec;2;Posłaniec;Srebro 1;raw;66.0;330.0;uprzaz-z-siodlem;1800;7 ZK 10 s;27.3;5.5;10.5
+Posłaniec;3;Kurier;Srebro 3;raw;198.0;990.0;kon-wierzchowy;9120;38 ZK;46.1;9.2;17.7
+Posłaniec;3;Kurier;Srebro 3;raw;198.0;990.0;uprzaz-z-siodlem;1800;7 ZK 10 s;9.1;1.8;3.5
+Posłaniec;4;Kapitan Kurierów;Srebro 5;raw;330.0;1650.0;kon-wierzchowy;9120;38 ZK;27.6;5.5;10.6
+Posłaniec;4;Kapitan Kurierów;Srebro 5;raw;330.0;1650.0;uprzaz-z-siodlem;1800;7 ZK 10 s;5.5;1.1;2.1
+Strażnik Dróg;1;Mytniczka;Brąz 5;raw;55.0;275.0;kon-wierzchowy;9120;38 ZK;165.8;33.2;63.8
+Strażnik Dróg;1;Mytniczka;Brąz 5;raw;55.0;275.0;pistolet;4800;20 ZK;87.3;17.5;33.6
+Strażnik Dróg;1;Mytniczka;Brąz 5;raw;55.0;275.0;kusza;1656;6 ZK 18 s;30.1;6.0;11.6
+Strażnik Dróg;2;Strażniczka Dróg;Srebro 2;raw;132.0;660.0;kon-wierzchowy;9120;38 ZK;69.1;13.8;26.6
+Strażnik Dróg;2;Strażniczka Dróg;Srebro 2;raw;132.0;660.0;pistolet;4800;20 ZK;36.4;7.3;14.0
+Strażnik Dróg;2;Strażniczka Dróg;Srebro 2;raw;132.0;660.0;kusza;1656;6 ZK 18 s;12.5;2.5;4.8
+Strażnik Dróg;3;Sierżant Strażników Dróg;Srebro 3;doch;198.0;990.0;kon-wierzchowy;9120;38 ZK;46.1;9.2;17.7
+Strażnik Dróg;3;Sierżant Strażników Dróg;Srebro 3;doch;198.0;990.0;pistolet;4800;20 ZK;24.2;4.8;9.3
+Strażnik Dróg;3;Sierżant Strażników Dróg;Srebro 3;doch;198.0;990.0;kusza;1656;6 ZK 18 s;8.4;1.7;3.2
+Strażnik Dróg;4;Kapitan Strażników Dróg;Srebro 5;doch;330.0;1650.0;kon-wierzchowy;9120;38 ZK;27.6;5.5;10.6
+Strażnik Dróg;4;Kapitan Strażników Dróg;Srebro 5;doch;330.0;1650.0;pistolet;4800;20 ZK;14.5;2.9;5.6
+Strażnik Dróg;4;Kapitan Strażników Dróg;Srebro 5;doch;330.0;1650.0;kusza;1656;6 ZK 18 s;5.0;1.0;1.9
+Woźnica;1;Foryś;Brąz 4;poz;44.0;220.0;woz;4320;18 ZK;98.2;19.6;37.8
+Woźnica;1;Foryś;Brąz 4;poz;44.0;220.0;kon-pociagowy;3600;15 ZK;81.8;16.4;31.5
+Woźnica;1;Foryś;Brąz 4;poz;44.0;220.0;kon-pociagowy;3600;15 ZK;81.8;16.4;31.5
+Woźnica;2;Woźnica;Srebro 2;raw;132.0;660.0;woz;4320;18 ZK;32.7;6.5;12.6
+Woźnica;2;Woźnica;Srebro 2;raw;132.0;660.0;kon-pociagowy;3600;15 ZK;27.3;5.5;10.5
+Woźnica;2;Woźnica;Srebro 2;raw;132.0;660.0;kon-pociagowy;3600;15 ZK;27.3;5.5;10.5
+Woźnica;3;Mistrz Woźniców;Srebro 3;raw;198.0;990.0;woz;4320;18 ZK;21.8;4.4;8.4
+Woźnica;3;Mistrz Woźniców;Srebro 3;raw;198.0;990.0;kon-pociagowy;3600;15 ZK;18.2;3.6;7.0
+Woźnica;3;Mistrz Woźniców;Srebro 3;raw;198.0;990.0;kon-pociagowy;3600;15 ZK;18.2;3.6;7.0
+Woźnica;4;Mistrz Szlaków;Srebro 5;raw;330.0;1650.0;woz;4320;18 ZK;13.1;2.6;5.0
+Woźnica;4;Mistrz Szlaków;Srebro 5;raw;330.0;1650.0;kon-pociagowy;3600;15 ZK;10.9;2.2;4.2
+Woźnica;4;Mistrz Szlaków;Srebro 5;raw;330.0;1650.0;kon-pociagowy;3600;15 ZK;10.9;2.2;4.2
+Flisak;1;Rybak;Brąz 2;raw;22.0;110.0;lodz-wioslowa;4320;18 ZK;196.4;39.3;75.5
+Flisak;2;Flisak;Brąz 3;raw;33.0;165.0;lodz-wioslowa;4320;18 ZK;130.9;26.2;50.3
+Flisak;3;Znawca Rzeki;Brąz 5;raw;55.0;275.0;lodz-wioslowa;4320;18 ZK;78.5;15.7;30.2
+Flisak;4;Starszy Rzeczny;Srebro 2;raw;132.0;660.0;lodz-wioslowa;4320;18 ZK;32.7;6.5;12.6
+Pilot Rzeczny;1;Przewodniczka Rzeczna;Brąz 4;raw;44.0;220.0;lodz-wioslowa;4320;18 ZK;98.2;19.6;37.8
+Pilot Rzeczny;2;Pilotka Rzeczna;Srebro 1;raw;66.0;330.0;lodz-wioslowa;4320;18 ZK;65.5;13.1;25.2
+Pilot Rzeczny;3;Starsza Pilotka;Srebro 3;raw;198.0;990.0;lodz-wioslowa;4320;18 ZK;21.8;4.4;8.4
+Pilot Rzeczny;4;Legendarna Pilotka;Srebro 5;raw;330.0;1650.0;lodz-wioslowa;4320;18 ZK;13.1;2.6;5.0
+Przewoźnik;1;Chłopiec Pokładowy;Brąz 2;poz;22.0;110.0;barka-rzeczna;54000;225 ZK;2454.5;490.9;944.1
+Przewoźnik;2;Przewoźnik;Srebro 2;raw;132.0;660.0;barka-rzeczna;54000;225 ZK;409.1;81.8;157.3
+Przewoźnik;3;Sternik;Srebro 3;raw;198.0;990.0;barka-rzeczna;54000;225 ZK;272.7;54.5;104.9
+Przewoźnik;4;Kapitan Barki;Srebro 5;raw;330.0;1650.0;barka-rzeczna;54000;225 ZK;163.6;32.7;62.9
+Strażnik;1;Rekrut Rzeczny;Srebro 1;raw;66.0;330.0;halabarda;384;1 ZK 12 s;5.8;1.2;2.2
+Strażnik;1;Rekrut Rzeczny;Srebro 1;raw;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Strażnik;1;Rekrut Rzeczny;Srebro 1;raw;66.0;330.0;helm-otwarty-morion;288;1 ZK 4 s;4.4;0.9;1.7
+Strażnik;2;Strażnik Rzeczny;Srebro 1;doch;66.0;330.0;halabarda;384;1 ZK 12 s;5.8;1.2;2.2
+Strażnik;2;Strażnik Rzeczny;Srebro 1;doch;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Strażnik;2;Strażnik Rzeczny;Srebro 1;doch;66.0;330.0;helm-otwarty-morion;288;1 ZK 4 s;4.4;0.9;1.7
+Strażnik;3;Żołnierz Okrętowy;Srebro 2;doch;132.0;660.0;halabarda;384;1 ZK 12 s;2.9;0.6;1.1
+Strażnik;3;Żołnierz Okrętowy;Srebro 2;doch;132.0;660.0;skorzana-kurta;396;1 ZK 13 s;3.0;0.6;1.2
+Strażnik;3;Żołnierz Okrętowy;Srebro 2;doch;132.0;660.0;helm-otwarty-morion;288;1 ZK 4 s;2.2;0.4;0.8
+Strażnik;4;Mistrz Żołnierzy Okrętowych;Srebro 4;doch;264.0;1320.0;halabarda;384;1 ZK 12 s;1.5;0.3;0.6
+Strażnik;4;Mistrz Żołnierzy Okrętowych;Srebro 4;doch;264.0;1320.0;skorzana-kurta;396;1 ZK 13 s;1.5;0.3;0.6
+Strażnik;4;Mistrz Żołnierzy Okrętowych;Srebro 4;doch;264.0;1320.0;helm-otwarty-morion;288;1 ZK 4 s;1.1;0.2;0.4
+Złodziej;1;Bandzior;Brąz 1;raw;11.0;55.0;wytrychy;288;1 ZK 4 s;26.2;5.2;10.1
+Złodziej;1;Bandzior;Brąz 1;raw;11.0;55.0;sztylet;132;11 s;12.0;2.4;4.6
+Złodziej;2;Złodziej;Brąz 3;raw;33.0;165.0;wytrychy;288;1 ZK 4 s;8.7;1.7;3.4
+Złodziej;2;Złodziej;Brąz 3;raw;33.0;165.0;sztylet;132;11 s;4.0;0.8;1.5
+Złodziej;3;Mistrz Złodziejski;Brąz 5;raw;55.0;275.0;wytrychy;288;1 ZK 4 s;5.2;1.0;2.0
+Złodziej;3;Mistrz Złodziejski;Brąz 5;raw;55.0;275.0;sztylet;132;11 s;2.4;0.5;0.9
+Złodziej;4;Włamywacz;Srebro 3;raw;198.0;990.0;wytrychy;288;1 ZK 4 s;1.5;0.3;0.6
+Złodziej;4;Włamywacz;Srebro 3;raw;198.0;990.0;sztylet;132;11 s;0.7;0.1;0.3
+Gladiator;1;Pięściarz;Brąz 4;raw;44.0;220.0;tarcza;264;1 ZK 2 s;6.0;1.2;2.3
+Gladiator;1;Pięściarz;Brąz 4;raw;44.0;220.0;miecz;828;3 ZK 9 s;18.8;3.8;7.2
+Gladiator;1;Pięściarz;Brąz 4;raw;44.0;220.0;helm-zamkniety;3840;16 ZK;87.3;17.5;33.6
+Gladiator;2;Gladiator;Srebro 2;raw;132.0;660.0;tarcza;264;1 ZK 2 s;2.0;0.4;0.8
+Gladiator;2;Gladiator;Srebro 2;raw;132.0;660.0;miecz;828;3 ZK 9 s;6.3;1.3;2.4
+Gladiator;2;Gladiator;Srebro 2;raw;132.0;660.0;helm-zamkniety;3840;16 ZK;29.1;5.8;11.2
+Gladiator;3;Mistrz Areny;Srebro 5;raw;330.0;1650.0;tarcza;264;1 ZK 2 s;0.8;0.2;0.3
+Gladiator;3;Mistrz Areny;Srebro 5;raw;330.0;1650.0;miecz;828;3 ZK 9 s;2.5;0.5;1.0
+Gladiator;3;Mistrz Areny;Srebro 5;raw;330.0;1650.0;helm-zamkniety;3840;16 ZK;11.6;2.3;4.5
+Gladiator;4;Legenda Areny;Złoto 2;raw;1440.0;7200.0;tarcza;264;1 ZK 2 s;0.2;0.0;0.1
+Gladiator;4;Legenda Areny;Złoto 2;raw;1440.0;7200.0;miecz;828;3 ZK 9 s;0.6;0.1;0.2
+Gladiator;4;Legenda Areny;Złoto 2;raw;1440.0;7200.0;helm-zamkniety;3840;16 ZK;2.7;0.5;1.0
+Kapłan Bitewny;1;Nowicjusz Kapłanów Bitewnych;Brąz 2;raw;22.0;110.0;mlot-bojowy;552;2 ZK 6 s;25.1;5.0;9.7
+Kapłan Bitewny;1;Nowicjusz Kapłanów Bitewnych;Brąz 2;raw;22.0;110.0;kolczuga;4800;20 ZK;218.2;43.6;83.9
+Kapłan Bitewny;2;Kapłan Bitewny;Srebro 2;raw;132.0;660.0;mlot-bojowy;552;2 ZK 6 s;4.2;0.8;1.6
+Kapłan Bitewny;2;Kapłan Bitewny;Srebro 2;raw;132.0;660.0;kolczuga;4800;20 ZK;36.4;7.3;14.0
+Kapłan Bitewny;3;Kapłan-sierżant;Srebro 3;raw;198.0;990.0;mlot-bojowy;552;2 ZK 6 s;2.8;0.6;1.1
+Kapłan Bitewny;3;Kapłan-sierżant;Srebro 3;raw;198.0;990.0;kolczuga;4800;20 ZK;24.2;4.8;9.3
+Kapłan Bitewny;4;Kapłan-kapitan;Srebro 4;poz;264.0;1320.0;mlot-bojowy;552;2 ZK 6 s;2.1;0.4;0.8
+Kapłan Bitewny;4;Kapłan-kapitan;Srebro 4;poz;264.0;1320.0;kolczuga;4800;20 ZK;18.2;3.6;7.0
+Kawalerzysta;1;Jeździec;Srebro 2;raw;132.0;660.0;lekki-kon-bojowy;63000;262 ZK 10 s;477.3;95.5;183.6
+Kawalerzysta;1;Jeździec;Srebro 2;raw;132.0;660.0;kon-wierzchowy;9120;38 ZK;69.1;13.8;26.6
+Kawalerzysta;1;Jeździec;Srebro 2;raw;132.0;660.0;kolczuga;4800;20 ZK;36.4;7.3;14.0
+Kawalerzysta;1;Jeździec;Srebro 2;raw;132.0;660.0;pistolet;4800;20 ZK;36.4;7.3;14.0
+Kawalerzysta;2;Kawalerzysta;Srebro 4;raw;264.0;1320.0;lekki-kon-bojowy;63000;262 ZK 10 s;238.6;47.7;91.8
+Kawalerzysta;2;Kawalerzysta;Srebro 4;raw;264.0;1320.0;kon-wierzchowy;9120;38 ZK;34.5;6.9;13.3
+Kawalerzysta;2;Kawalerzysta;Srebro 4;raw;264.0;1320.0;kolczuga;4800;20 ZK;18.2;3.6;7.0
+Kawalerzysta;2;Kawalerzysta;Srebro 4;raw;264.0;1320.0;pistolet;4800;20 ZK;18.2;3.6;7.0
+Kawalerzysta;3;Sierżant Kawalerii;Srebro 5;doch;330.0;1650.0;lekki-kon-bojowy;63000;262 ZK 10 s;190.9;38.2;73.4
+Kawalerzysta;3;Sierżant Kawalerii;Srebro 5;doch;330.0;1650.0;kon-wierzchowy;9120;38 ZK;27.6;5.5;10.6
+Kawalerzysta;3;Sierżant Kawalerii;Srebro 5;doch;330.0;1650.0;kolczuga;4800;20 ZK;14.5;2.9;5.6
+Kawalerzysta;3;Sierżant Kawalerii;Srebro 5;doch;330.0;1650.0;pistolet;4800;20 ZK;14.5;2.9;5.6
+Kawalerzysta;4;Oficer Kawalerii;Złoto 1;doch;720.0;3600.0;lekki-kon-bojowy;63000;262 ZK 10 s;87.5;17.5;33.7
+Kawalerzysta;4;Oficer Kawalerii;Złoto 1;doch;720.0;3600.0;kon-wierzchowy;9120;38 ZK;12.7;2.5;4.9
+Kawalerzysta;4;Oficer Kawalerii;Złoto 1;doch;720.0;3600.0;kolczuga;4800;20 ZK;6.7;1.3;2.6
+Kawalerzysta;4;Oficer Kawalerii;Złoto 1;doch;720.0;3600.0;pistolet;4800;20 ZK;6.7;1.3;2.6
+Ochroniarz;1;Stróż;Srebro 1;raw;66.0;330.0;miecz;828;3 ZK 9 s;12.5;2.5;4.8
+Ochroniarz;1;Stróż;Srebro 1;raw;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Ochroniarz;1;Stróż;Srebro 1;raw;66.0;330.0;tarcza;264;1 ZK 2 s;4.0;0.8;1.5
+Ochroniarz;2;Ochroniarz;Srebro 2;raw;132.0;660.0;miecz;828;3 ZK 9 s;6.3;1.3;2.4
+Ochroniarz;2;Ochroniarz;Srebro 2;raw;132.0;660.0;skorzana-kurta;396;1 ZK 13 s;3.0;0.6;1.2
+Ochroniarz;2;Ochroniarz;Srebro 2;raw;132.0;660.0;tarcza;264;1 ZK 2 s;2.0;0.4;0.8
+Ochroniarz;3;Gwardzista;Srebro 3;raw;198.0;990.0;miecz;828;3 ZK 9 s;4.2;0.8;1.6
+Ochroniarz;3;Gwardzista;Srebro 3;raw;198.0;990.0;skorzana-kurta;396;1 ZK 13 s;2.0;0.4;0.8
+Ochroniarz;3;Gwardzista;Srebro 3;raw;198.0;990.0;tarcza;264;1 ZK 2 s;1.3;0.3;0.5
+Ochroniarz;4;Oficer Gwardii;Srebro 5;raw;330.0;1650.0;miecz;828;3 ZK 9 s;2.5;0.5;1.0
+Ochroniarz;4;Oficer Gwardii;Srebro 5;raw;330.0;1650.0;skorzana-kurta;396;1 ZK 13 s;1.2;0.2;0.5
+Ochroniarz;4;Oficer Gwardii;Srebro 5;raw;330.0;1650.0;tarcza;264;1 ZK 2 s;0.8;0.2;0.3
+Oprych;1;Tani Drań;Brąz 2;raw;22.0;110.0;topor;192;16 s;8.7;1.7;3.4
+Oprych;1;Tani Drań;Brąz 2;raw;22.0;110.0;skorzana-kurta;396;1 ZK 13 s;18.0;3.6;6.9
+Oprych;2;Oprych;Srebro 1;raw;66.0;330.0;topor;192;16 s;2.9;0.6;1.1
+Oprych;2;Oprych;Srebro 1;raw;66.0;330.0;skorzana-kurta;396;1 ZK 13 s;6.0;1.2;2.3
+Oprych;3;Płatny Morderca;Srebro 4;raw;264.0;1320.0;topor;192;16 s;0.7;0.1;0.3
+Oprych;3;Płatny Morderca;Srebro 4;raw;264.0;1320.0;skorzana-kurta;396;1 ZK 13 s;1.5;0.3;0.6
+Oprych;4;Skrytobójca;Złoto 1;doch;720.0;3600.0;topor;192;16 s;0.3;0.1;0.1
+Oprych;4;Skrytobójca;Złoto 1;doch;720.0;3600.0;skorzana-kurta;396;1 ZK 13 s;0.6;0.1;0.2
+Rycerz;1;Giermek;Srebro 3;raw;198.0;990.0;rumak;198000;825 ZK;1000.0;200.0;384.6
+Rycerz;1;Giermek;Srebro 3;raw;198.0;990.0;pelna-plytowka-4-elementy;23040;96 ZK;116.4;23.3;44.8
+Rycerz;1;Giermek;Srebro 3;raw;198.0;990.0;kopia;264;1 ZK 2 s;1.3;0.3;0.5
+Rycerz;1;Giermek;Srebro 3;raw;198.0;990.0;miecz;828;3 ZK 9 s;4.2;0.8;1.6
+Rycerz;2;Rycerz;Srebro 5;poz;330.0;1650.0;rumak;198000;825 ZK;600.0;120.0;230.8
+Rycerz;2;Rycerz;Srebro 5;poz;330.0;1650.0;pelna-plytowka-4-elementy;23040;96 ZK;69.8;14.0;26.9
+Rycerz;2;Rycerz;Srebro 5;poz;330.0;1650.0;kopia;264;1 ZK 2 s;0.8;0.2;0.3
+Rycerz;2;Rycerz;Srebro 5;poz;330.0;1650.0;miecz;828;3 ZK 9 s;2.5;0.5;1.0
+Rycerz;3;Pierwszy Rycerz;Złoto 2;raw;1440.0;7200.0;rumak;198000;825 ZK;137.5;27.5;52.9
+Rycerz;3;Pierwszy Rycerz;Złoto 2;raw;1440.0;7200.0;pelna-plytowka-4-elementy;23040;96 ZK;16.0;3.2;6.2
+Rycerz;3;Pierwszy Rycerz;Złoto 2;raw;1440.0;7200.0;kopia;264;1 ZK 2 s;0.2;0.0;0.1
+Rycerz;3;Pierwszy Rycerz;Złoto 2;raw;1440.0;7200.0;miecz;828;3 ZK 9 s;0.6;0.1;0.2
+Rycerz;4;Rycerz Wewnętrznego Kręgu;Złoto 4;poz;2880.0;14400.0;rumak;198000;825 ZK;68.8;13.8;26.4
+Rycerz;4;Rycerz Wewnętrznego Kręgu;Złoto 4;poz;2880.0;14400.0;pelna-plytowka-4-elementy;23040;96 ZK;8.0;1.6;3.1
+Rycerz;4;Rycerz Wewnętrznego Kręgu;Złoto 4;poz;2880.0;14400.0;kopia;264;1 ZK 2 s;0.1;0.0;0.0
+Rycerz;4;Rycerz Wewnętrznego Kręgu;Złoto 4;poz;2880.0;14400.0;miecz;828;3 ZK 9 s;0.3;0.1;0.1
+Żołnierz;1;Rekrut;Srebro 1;poz;66.0;330.0;polzbroja-municyjna-napiersnik-morion;3480;14 ZK 10 s;52.7;10.5;20.3
+Żołnierz;1;Rekrut;Srebro 1;poz;66.0;330.0;halabarda;384;1 ZK 12 s;5.8;1.2;2.2
+Żołnierz;1;Rekrut;Srebro 1;poz;66.0;330.0;kolczuga;4800;20 ZK;72.7;14.5;28.0
+Żołnierz;2;Żołnierz;Srebro 2;doch;132.0;660.0;polzbroja-municyjna-napiersnik-morion;3480;14 ZK 10 s;26.4;5.3;10.1
+Żołnierz;2;Żołnierz;Srebro 2;doch;132.0;660.0;halabarda;384;1 ZK 12 s;2.9;0.6;1.1
+Żołnierz;2;Żołnierz;Srebro 2;doch;132.0;660.0;kolczuga;4800;20 ZK;36.4;7.3;14.0
+Żołnierz;3;Sierżant;Srebro 3;doch;198.0;990.0;polzbroja-municyjna-napiersnik-morion;3480;14 ZK 10 s;17.6;3.5;6.8
+Żołnierz;3;Sierżant;Srebro 3;doch;198.0;990.0;halabarda;384;1 ZK 12 s;1.9;0.4;0.7
+Żołnierz;3;Sierżant;Srebro 3;doch;198.0;990.0;kolczuga;4800;20 ZK;24.2;4.8;9.3
+Żołnierz;4;Oficer;Złoto 1;raw;720.0;3600.0;polzbroja-municyjna-napiersnik-morion;3480;14 ZK 10 s;4.8;1.0;1.9
+Żołnierz;4;Oficer;Złoto 1;raw;720.0;3600.0;halabarda;384;1 ZK 12 s;0.5;0.1;0.2
+Żołnierz;4;Oficer;Złoto 1;raw;720.0;3600.0;kolczuga;4800;20 ZK;6.7;1.3;2.6

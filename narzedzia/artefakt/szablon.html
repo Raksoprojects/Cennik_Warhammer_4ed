@@ -1,0 +1,1011 @@
+<title>Skarbiec Imperium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>/*__CSS__*/
+/* --- v3 --- */
+.seedrow{display:flex;gap:8px;align-items:end;flex-wrap:wrap}
+.seedrow input{width:150px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 7px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2);white-space:nowrap}
+.warn{background:var(--zmiana-bg);color:var(--zmiana)}
+.nohandel{background:var(--nowe-bg);color:var(--nowe)}
+.nosrc{background:var(--surface-2);color:var(--ink-3)}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line-soft);font-size:13.5px}
+.kv:last-child{border-bottom:0}
+.kv b{font-family:var(--mono);font-variant-numeric:tabular-nums}
+/* --- v5 --- */
+.baza{color:var(--ink-3);font-size:12px}
+.minp{color:var(--ink-2)}
+.targ{color:var(--ok);font-weight:700}
+.mods{font-size:12px;color:var(--ink-2);margin-top:6px}
+.ustgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.rule,.ustgrid>*,.rules>*{min-width:0}
+#ustawienia .genbar{grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))!important}
+.ust input.numin{padding:5px 7px;width:84px;text-align:right;font-family:var(--mono)}
+.ust td{vertical-align:middle}
+.ust .wide{width:100%;text-align:left}
+.zr-dane{background:var(--ok-bg);color:var(--ok)}
+.zr-zasada{background:var(--nowe-bg);color:var(--nowe)}
+.zr-brak{background:var(--surface-2);color:var(--ink-3)}
+.zr-sprzeczne{background:var(--zmiana-bg);color:var(--zmiana)}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn2{padding:7px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px;font:inherit;font-size:13px;cursor:pointer}
+.btn2:hover{border-color:var(--accent)}
+textarea.json{width:100%;min-height:180px;font-family:var(--mono);font-size:12px;padding:8px;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink)}
+.okline{color:var(--ok)} .errline{color:var(--gora)}
+.ustbadge{display:inline-block;margin-left:8px;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--zmiana-bg);color:var(--zmiana);font-weight:700}
+
+details.src{margin-top:10px;font-size:13px;color:var(--ink-2)}
+details.src summary{cursor:pointer;font-weight:600;color:var(--accent)}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="eyebrow">Warhammer Fantasy Roleplay 4 ed. &middot; cennik v5 &middot; 24 października 2026<span class="ustbadge" id="ustBadge" hidden>własne ustawienia</span></div>
+    <h1>Skarbiec <em>Imperium</em></h1>
+    <p class="lede">Cennik, zarobki i generator kupców na jednych danych z repozytorium kampanii.
+      W v5 każdy mnożnik ceny ma podane źródło. Tam, gdzie źródła nie było, mnożnik zniknął.
+      Cena z cennika stoi teraz zawsze obok ceny kupca, a miasto i sytuacja pokazują, ile dokładają.</p>
+    <div class="keystats">
+      <div class="keystat"><b>365</b><span>pozycji cennika, preset „zalecany” v5.2</span></div>
+      <div class="keystat"><b>134 / 42</b><span>pozycji tańszych / droższych niż w v4</span></div>
+      <div class="keystat"><b>186</b><span>pozycji ze źródłem; 179 bez &mdash; oznaczone</span></div>
+      <div class="keystat"><b>34</b><span>testów, wszystkie przechodzą</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky">
+  <div class="nav-in">
+    <a href="#v5">Co nowego</a>
+    <a href="#kurs">Kurs</a>
+    <a href="#status">Zarobki</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#kupcy">Kupiec</a>
+    <a href="#zamowienie">Zamówienie</a>
+    <a href="#czynsze">Czynsze</a>
+    <a href="#modyfikatory">Modyfikatory</a>
+    <a href="#ustawienia">Ustawienia MG</a>
+    <a href="#historia">Historia</a>
+    <a href="#audyt">Audyt</a>
+    <a href="#zasady">Zasady</a>
+    <button id="themeBtn" type="button">tryb</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<section id="v5">
+  <div class="sec-head"><h2>Co się zmieniło w v5</h2><span class="note">analiza wszystkich 364 pozycji</span></div>
+  <div class="findings">
+    <div class="finding err">
+      <div class="fnum">DROŻEJ DLA DROŻEJ</div>
+      <div>
+        <h3>Pięć mnożników nie miało żadnej podstawy &mdash; zniknęły</h3>
+        <p>Sprawdziłem każdą klasę cenową wobec źródeł i testu rzemieślnika. Codzienne ×1,5, broń palna ×1,5,
+          alchemia ×1,5, prestiż ×3 i konie robocze ×1,5 nie wynikały z niczego. Teraz: codzienne ×1,2
+          (źródła i test kowala dają 1,15), palna ×1 (baza = źródło = RAW), alchemia ×1 (brak danych),
+          prestiż ×1,5, konie robocze ×1 (Kraków trafia co do floreny). Konie bojowe zostają ×1,5.</p>
+        <p>Prestiż ×3 łamał też Twoją zasadę: strój dworski kosztował 90 ZK, płytówka 96 ZK. Teraz 45 ZK,
+          a nowa reguła pilnuje, żeby płytówka była co najmniej 2× droższa.</p>
+        <p><strong>168 pozycji potaniało, żadna nie podrożała.</strong> Preset „zalecany v4” jest w Ustawieniach MG &mdash; jedno kliknięcie przywraca stare ceny.</p>
+      </div>
+    </div>
+    <div class="finding fix">
+      <div class="fnum">NOWE</div>
+      <div>
+        <h3>Cena bazowa obok ceny kupca. Osada i sytuacja z modyfikatorem w nawiasie</h3>
+        <p>U kupca każda pozycja ma teraz trzy ceny: <strong>bazową</strong> (z cennika),
+          <strong>jego</strong> (z wszystkimi mnożnikami) i <strong>minimalną</strong> &mdash; poniżej niej nie zejdzie
+          przy targowaniu, bo traci na transakcji. Lista wyboru pokazuje np. „Altdorf (+30%)” i
+          „Wojna (broń, strzelecka, amunicja, pancerze +80% · jedzenie +30% · reszta +5% · czynsz +30%)”.</p>
+        <p>Kupiec ma też <strong>osobowość</strong>: swój rdzeń sprzedaje 5% taniej, boczny asortyment 10% drożej,
+          a na każdą pozycję rzuca 1k10 na kaprys (od −10% do +10%). Razem nigdy poza −15% … +20%.
+          Kaprys ma osobny strumień losowania: stare seedy dają ten sam asortyment.</p>
+      </div>
+    </div>
+    <div class="finding fix">
+      <div class="fnum">SPRAWDZONE</div>
+      <div>
+        <h3>Zarobki profesji pasują do cen</h3>
+        <p>Codzienne życie Brązu 3 mieści się w 80% brutto. Narzędzia zawodu kosztują 1&ndash;8 tygodni brutto
+          profesji, która ich używa (halabarda strażnika, łuk łowczyni, pistolet łowcy czarownic). Kapitał
+          kosztuje od pół roku do 2,5 roku: płytówka = 27% roku rycerza (źródła 20&ndash;40%), rumak = 2,3 roku
+          (źródła 1&ndash;4), wół = 8,7 tygodnia chłopa (Kraków 8,3).</p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="fnum">DECYZJE MG</div>
+      <div>
+        <h3>Konie i broń palna drogie, alchemia osiągalna, kramarz bez 47 namiotów</h3>
+        <p><strong>Konie bojowe</strong>: rumak 825 ZK. <strong>Wozy ×1,5</strong>: furmanka 6 ZK, wóz 18 ZK.
+          <strong>Łuk elfi</strong> = 5× łuk długi. <strong>Broń palna ×2</strong>: pistolet 20 ZK, rusznica 6 ZK.
+          <strong>Alchemia</strong>: składniki po cenach podręcznika, mikstury i eliksiry ×2 (mikstura lecznicza 1 ZK 10 s).</p>
+        <p><strong>Kupiec ma majątek</strong>: towar na stanie i gotówkę zależne od Statusu. Kramarz trzyma drobiazgi po sztuce,
+          płatnerz kilka zbroi; skup ponad gotówkę oznaczony. <strong>Trzy ceny</strong> po kolei: podręcznik, cennik, kupiec.
+          <strong>Wspólna izba</strong> to ława albo podłoga; doszedł nocleg w stajni na sianie.
+          <strong>Dochód</strong> 17 poziomów profesji obniżony (służba, straż, wojsko, dokerzy) &mdash; Pozycja bez zmian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kurs">
+  <div class="sec-head"><h2>Kurs wymiany</h2><span class="note">kotwica: 165 p brutto tygodniowo</span></div>
+  <div class="callout">
+    <p><strong>Kotwica się nie zmienia.</strong> Brąz 3 to prosty robotnik: rzut
+      <span class="mono">6k10 = śr. 33 p</span> netto, brutto <span class="mono">165 p</span> tygodniowo,
+      <span class="mono">dniówka 27,5 p</span>. Historyczny robotnik krakowski brał 1,5 grosza dziennie.</p>
+    <p><strong>Zmienia się przeliczanie cen angielskich.</strong> Każdą cenę trzeba podzielić przez płacę
+      robotnika <em>z jej dekady</em>, a dopiero wynik w dniówkach mnożyć przez 27,5 p.</p>
+  </div>
+  <div class="split">
+    <div>
+      <h3 style="font-family:var(--ui);font-size:15px;font-weight:700;margin-bottom:8px">Płaca dzienna w Anglii</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Dekada</th><th>Strzecharz</th><th>Pomocnik = robotnik</th></tr></thead>
+        <tbody>
+          <tr><td>1301&ndash;10</td><td class="num">2,5 d</td><td class="num"><strong>1 d</strong></td></tr>
+          <tr><td>1341&ndash;50</td><td class="num">3 d</td><td class="num"><strong>1,25 d</strong></td></tr>
+          <tr><td>1351&ndash;60</td><td class="num">3,5 d</td><td class="num"><strong>2 d</strong></td></tr>
+          <tr><td>1441&ndash;50</td><td class="num">5,25 d</td><td class="num"><strong>4 d</strong></td></tr>
+          <tr><td>1501&ndash;20</td><td class="num">5,25&ndash;5,75 d</td><td class="num"><strong>4 d</strong></td></tr>
+          <tr><td>1560&ndash;90</td><td class="num">10&ndash;12 d</td><td class="num"><strong>7 d</strong></td></tr>
+          <tr><td>1580&ndash;1600</td><td class="num">&mdash;</td><td class="num"><strong>8 d</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:8px">Do 1520 r. tabela Dyera (<em>Standards of Living in the
+        Later Middle Ages</em>, s. 206). Dalej Phelps Brown i Hopkins; UC Davis potwierdza niezależnie,
+        podając żołd piechoty 8 d dziennie w końcu XVI w.</p>
+    </div>
+    <div>
+      <h3 style="font-family:var(--ui);font-size:15px;font-weight:700;margin-bottom:8px">Waluty historyczne</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Waluta</th><th>Kontekst</th><th>Dniówek</th><th>Imperium</th></tr></thead>
+        <tbody>
+          <tr><td>1 grosz krakowski</td><td>1526&ndash;1535</td><td class="num">0,67</td><td class="num">1 s 6 p</td></tr>
+          <tr><td>1 złoty polski</td><td>30 groszy</td><td class="num">20</td><td class="num">2 ZK 5 s 10 p</td></tr>
+          <tr><td>1 gulden reński</td><td>Rzesza XVI w. <span class="pill warn">±30%</span></td><td class="num">≈20</td><td class="num">≈2 ZK 6 s</td></tr>
+          <tr><td>1 pens ang. (1441&ndash;1520)</td><td>dniówka 4 d</td><td class="num">0,25</td><td class="num">7 p</td></tr>
+          <tr><td>1 pens ang. (1560&ndash;90)</td><td>dniówka 7 d</td><td class="num">0,14</td><td class="num">4 p</td></tr>
+          <tr><td>1 pens ang. (ok. 1300)</td><td>dniówka 1 d</td><td class="num">1,0</td><td class="num">27 p</td></tr>
+          <tr><td>1 funt (1441&ndash;1520)</td><td>20 szylingów</td><td class="num">60</td><td class="num">6 ZK 17 s 6 p</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:8px">Ten sam pens angielski jest wart 4 p albo 27 p
+        w zależności od tego, z którego stulecia pochodzi cena. To właśnie przeoczyłem.</p>
+    </div>
+  </div>
+</section>
+
+<section id="status">
+  <div class="sec-head"><h2>Zarobki wg Statusu</h2><span class="note">rzut = netto za jedną Robotę</span></div>
+  <p class="muted">Rzut to <strong>netto</strong> &mdash; co zostaje po jednej Robocie, czyli tygodniu pracy
+    ponad normę. <strong>Nie mnożyć przez 52</strong>: między przygodami postać ma zwykle 1&ndash;3 Roboty.
+    Brutto to pięciokrotność rzutu i to ono mówi, czy cena ma sens.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Status</th><th>Rzut (netto)</th><th>Netto / Robotę</th><th>3 Roboty</th>
+      <th>Brutto / tydz.</th><th>Brutto / rok</th><th>× robotnik</th><th>Majętny +1</th><th>Odpowiednik historyczny</th></tr></thead>
+    <tbody id="statusBody"></tbody>
+  </table></div>
+  <div class="calc" style="margin-top:18px">
+    <div>
+      <label class="lab" for="calcSel">Status postaci</label>
+      <select id="calcSel"></select>
+      <label class="lab" for="calcMaj" style="margin-top:14px">Poziomy Talentu Majętny</label>
+      <select id="calcMaj"><option value="0" selected>brak</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+      <div class="seedrow" style="margin-top:14px"><button class="genbtn" id="calcRzut" type="button">Rzuć na Dochód</button></div>
+      <p class="calcdesc" id="calcDesc"></p>
+    </div>
+    <div>
+      <div class="calcgrid" id="calcGrid"></div>
+      <div class="buys" id="calcBuys"></div>
+    </div>
+  </div>
+</section>
+
+<section id="cennik">
+  <div class="sec-head"><h2>Cennik</h2><span class="note" id="cenyNote">364 pozycji &middot; ceny bazowe</span></div>
+  <p class="muted"><strong>Cena bazowa</strong> to cena wytwórcy w obowiązującym presecie &mdash; u źródła, hurtem.
+    Cena, którą zapłaci gracz, powstaje dopiero w zakładce <a href="#kupcy">Kupiec</a>. „×1” to poziom przed
+    mnożnikiem klasy. „Tyg. pracy” to liczba tygodni <em>całego</em> dochodu prostego robotnika (165 p).</p>
+  <div class="controls">
+    <input class="search" id="cenySearch" type="text" placeholder="Szukaj przedmiotu…" autocomplete="off">
+    <span class="count" id="cenyCount"></span>
+  </div>
+  <div class="controls" id="cenyFlagi"></div>
+  <div class="controls" id="cenyChips"></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Przedmiot</th><th>Podręcznik (RAW)</th><th>Cena bazowa (cennik)</th><th>Klasa cenowa</th><th>Tyg. pracy</th><th>Podstawa historyczna</th><th>Komentarz</th></tr></thead>
+    <tbody id="cenyBody"></tbody>
+  </table></div>
+</section>
+
+<section id="kupcy">
+  <div class="sec-head"><h2>Generator kupców</h2><span class="note">ten sam seed = ten sam kupiec</span></div>
+  <div class="genbar">
+    <div><label class="lab" for="genTyp">Kto handluje</label><select id="genTyp"></select></div>
+    <div><label class="lab" for="genLok">Gdzie</label><select id="genLok"></select></div>
+    <div><label class="lab" for="genKon">Koniunktura</label><select id="genKon"></select></div>
+    <div class="seedrow">
+      <div style="flex:1"><label class="lab" for="genSeed">Seed</label><input class="numin" id="genSeed" type="text" inputmode="numeric"></div>
+      <button class="genbtn" id="genBtn" type="button">Losuj</button>
+    </div>
+    <div><label class="lab" for="genPS">PS gracza w Targowaniu</label><input class="numin" id="genPS" type="number" min="0" max="10" step="1" value="0"></div>
+  </div>
+  <p class="mods" id="genMods"></p>
+  <div class="shop" id="shop"></div>
+</section>
+
+<section id="zamowienie">
+  <div class="sec-head"><h2>Zamówienie na miarę</h2><span class="note">u aktualnego handlarza</span></div>
+  <div class="genbar" style="grid-template-columns:2fr 1fr auto">
+    <div><label class="lab" for="zamText">Co zamawiasz</label>
+      <input class="numin" id="zamText" list="zamLista" type="text" placeholder="np. kolczuga, rapier, teleskop…" autocomplete="off">
+      <datalist id="zamLista"></datalist></div>
+    <div><label class="lab" for="zamJakosc">Jakość</label><select id="zamJakosc"></select></div>
+    <div><button class="genbtn" id="zamBtn" type="button">Wyceń</button></div>
+  </div>
+  <div id="zamWynik"></div>
+</section>
+
+<section id="czynsze">
+  <div class="sec-head"><h2>Czynsze</h2><span class="note">osada × koniunktura</span></div>
+  <div class="genbar" style="grid-template-columns:1fr 1fr">
+    <div><label class="lab" for="czLok">Osada</label><select id="czLok"></select></div>
+    <div><label class="lab" for="czKon">Koniunktura</label><select id="czKon"></select></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Kwatera</th><th>Tydzień</th><th>Miesiąc</th><th>Rok</th><th>Mnożnik</th></tr></thead>
+    <tbody id="czBody"></tbody>
+  </table></div>
+  <div class="split" style="margin-top:16px">
+    <div class="rule"><h3>Kupno</h3><div id="czKupno"></div></div>
+    <div class="rule"><h3>Mnożnik czynszu wg koniunktury</h3><div id="czKonDoc"></div></div>
+  </div>
+</section>
+
+<section id="modyfikatory">
+  <div class="sec-head"><h2>Jak liczona jest cena</h2><span class="note">wszystko z danych</span></div>
+  <div class="callout"><p class="mono" style="font-size:14px">cena u kupca = cena bazowa × marża zawodu ×
+    preferencja × kaprys × osada × koniunktura[kategoria] × macierz[zapas][popyt]</p>
+    <p class="mono" style="font-size:13px">cena minimalna = koszt nabycia × 1,05 (przy wyprzedaży × 0,9) &middot;
+    koszt nabycia = cena bazowa × osada × koniunktura (wytwórca: × 0,8)</p></div>
+  <div class="rules">
+    <div class="rule"><h3>1. Marża zawodu</h3>
+      <div class="tablewrap" style="margin-top:8px"><table>
+        <thead><tr><th>Handlarz</th><th>Status</th><th>Marża</th><th>Limit</th><th>Skup</th><th>Rdzeń</th><th>Robota na zamówienie</th></tr></thead>
+        <tbody id="kupcyDoc"></tbody></table></div></div>
+    <div class="rule"><h3>2. Mnożnik osady</h3>
+      <div class="tablewrap" style="margin-top:8px"><table>
+        <thead><tr><th>Osada</th><th>Mnożnik</th><th>Limit towaru</th><th>Uwagi</th></tr></thead>
+        <tbody id="lokDoc"></tbody></table></div></div>
+    <div class="rule"><h3>3. Koniunktura</h3>
+      <p>Działa różnie na różne kategorie, a dla czynszu ma osobny mnożnik.</p>
+      <div class="tablewrap" style="margin-top:8px"><table>
+        <thead><tr><th>Sytuacja</th><th>Ceny towarów</th><th>Popyt</th><th>Czynsz</th></tr></thead>
+        <tbody id="konDoc"></tbody></table></div></div>
+    <div class="rule"><h3>2a. Osobowość kupca (v5)</h3>
+      <p>Specjalista sprzedaje swój rdzeń taniej, a to, czym handluje przy okazji, drożej. Na każdą pozycję
+        rzuca 1k10 na kaprys. Iloczyn preferencji i kaprysu mieści się w granicach poniżej.</p>
+      <div id="osobDoc"></div></div>
+    <div class="rule"><h3>4. Popyt i zapas</h3>
+      <p>Ostatnie sztuki czegoś, czego nikt nie chce, to zaległy towar &mdash; handlarz odda go taniej.
+        Ostatnie sztuki czegoś, po co ustawia się kolejka, to jego najlepszy dzień w miesiącu.</p>
+      <div class="tablewrap" style="margin-top:8px"><table>
+        <thead><tr><th>Zapas \ Popyt</th><th>Niski</th><th>Normalny</th><th>Wysoki</th></tr></thead>
+        <tbody id="macierzDoc"></tbody></table></div></div>
+  </div>
+</section>
+
+<section id="ustawienia">
+  <div class="sec-head"><h2>Ustawienia MG</h2><span class="note">zapisywane w tej przeglądarce</span></div>
+  <p class="muted">Zmieniasz mnożnik klasy, marżę kupca, osadę albo cenę jednej pozycji &mdash; cała strona przelicza się od razu.
+    Ustawienia zostają w tej przeglądarce. <strong>Eksport</strong> daje plik w formacie <span class="mono">data/ustawienia.json</span>:
+    wklej go do repozytorium, żeby stał się domyślny dla aplikacji.</p>
+  <div class="genbar" style="grid-template-columns:1fr 1fr auto">
+    <div><label class="lab" for="ustPreset">Preset cennika</label><select id="ustPreset"></select></div>
+    <div><label class="lab" for="ustPremia">Premia znaku stanu (miecze)</label><input class="numin" id="ustPremia" type="number" step="0.05" min="0.5" max="5"></div>
+    <div><button class="genbtn" id="ustSpoj" type="button">Sprawdź spójność</button></div>
+  </div>
+  <div id="ustSpojWynik"></div>
+  <div class="ustgrid ust" style="margin-top:14px">
+    <div class="rule" style="grid-column:1/-1"><h3>Mnożniki klas</h3>
+      <p class="small muted">Tag mówi, skąd jest mnożnik: <span class="pill zr-dane">dane</span> źródło albo test rzemieślnika,
+        <span class="pill zr-zasada">zasada domowa</span> Twoja kotwica, <span class="pill zr-brak">brak danych</span>,
+        <span class="pill zr-sprzeczne">sprzeczne</span>.</p>
+      <div class="tablewrap" style="margin-top:8px"><table><thead><tr><th>Klasa</th><th>Poz.</th><th>Mnożnik</th><th>Skąd</th></tr></thead>
+      <tbody id="ustKlasy"></tbody></table></div></div>
+    <div class="rule"><h3>Osady</h3>
+      <div class="tablewrap" style="margin-top:8px"><table><thead><tr><th>Osada</th><th>Mnożnik</th></tr></thead>
+      <tbody id="ustOsady"></tbody></table></div>
+      <h3 style="margin-top:16px">Kupcy &mdash; marża</h3>
+      <div class="tablewrap" style="margin-top:8px"><table><thead><tr><th>Kupiec</th><th>Marża</th><th>Skup</th></tr></thead>
+      <tbody id="ustKupcy"></tbody></table></div></div>
+    <div class="rule"><h3>Rynek</h3>
+      <div class="tablewrap" style="margin-top:8px"><table><tbody id="ustRynek"></tbody></table></div>
+      <h3 style="margin-top:16px">Koniunktura &mdash; mnożnik kategorii</h3>
+      <div class="genbar" style="grid-template-columns:1fr;padding:0;border:0;background:none;margin:6px 0">
+        <select id="ustKon"></select></div>
+      <div class="tablewrap"><table><tbody id="ustKonKat"></tbody></table></div></div>
+    <div class="rule"><h3>Cena jednej pozycji</h3>
+      <p class="small muted">Nadpisuje cenę bazową. Wpisz np. „4 ZK”, „15 s 6 p” albo samą liczbę pensów. Puste pole usuwa nadpisanie.</p>
+      <div class="genbar" style="grid-template-columns:2fr 1fr auto;padding:0;border:0;background:none;margin:6px 0">
+        <div><input class="numin wide" id="ustPozNazwa" list="ustPozLista" placeholder="pozycja…" autocomplete="off"><datalist id="ustPozLista"></datalist></div>
+        <div><input class="numin wide" id="ustPozCena" placeholder="cena"></div>
+        <div><button class="btn2" id="ustPozBtn" type="button">Ustaw</button></div>
+      </div>
+      <div id="ustPozLista2"></div></div>
+  </div>
+  <div class="rule" style="margin-top:14px"><h3>Zmienione ceny względem cennika v5</h3><div id="ustRoznice" class="small"></div></div>
+  <div class="rule" style="margin-top:14px"><h3>Ustawienia jako JSON</h3>
+    <textarea class="json" id="ustJson" spellcheck="false"></textarea>
+    <div class="btnrow">
+      <button class="btn2" id="ustJsonBtn" type="button">Zastosuj JSON</button>
+      <button class="btn2" id="ustEksport" type="button">Eksportuj plik</button>
+      <label class="btn2" for="ustImport" style="display:inline-block">Importuj plik<input id="ustImport" type="file" accept="application/json,.json" hidden></label>
+      <button class="btn2" id="ustReset" type="button">Przywróć domyślne</button>
+    </div>
+    <p class="small" id="ustMsg" style="margin-top:6px"></p></div>
+</section>
+
+<section id="historia">
+  <div class="sec-head"><h2>Tabela historyczna</h2><span class="note">dane źródłowe</span></div>
+  <div class="controls">
+    <input class="search" id="histSearch" type="text" placeholder="Szukaj pozycji, miasta lub roku…" autocomplete="off">
+    <span class="count" id="histCount"></span>
+  </div>
+  <div class="controls" id="histChips"></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Pozycja</th><th>Oryginalnie</th><th>Źródło</th><th>Dniówek</th><th>Imperium</th></tr></thead>
+    <tbody id="histBody"></tbody>
+  </table></div>
+  <details class="src"><summary>Źródła</summary>
+    <ul>
+      <li><a href="https://historia.org.pl/2025/08/09/ile-kosztowalo-zycie-w-zlotym-wieku-w-krakowie-ceny-i-zarobki-w-xvi-wieku/">Ceny i zarobki w Krakowie w XVI wieku</a> &mdash; za J. Pelcem, <em>Ceny w Krakowie 1369&ndash;1600</em></li>
+      <li><a href="https://wielkahistoria.pl/ceny-i-pensje-w-xvi-wieku-ile-zarabiali-polacy-500-lat-temu/">Ceny i pensje w XVI wieku</a></li>
+      <li><a href="https://medieval.ucdavis.edu/120D/Money.html">Medieval price list &mdash; UC Davis</a> (tabela Dyera, żołd, zbroje, czynsze)</li>
+      <li><a href="https://bowvsmusket.com/2015/07/01/16th-century-prices-of-weapons/">16th Century Prices of Weapons</a> &mdash; lista milicji Robertsa</li>
+      <li><a href="https://de.wikipedia.org/wiki/Preise_im_Mittelalter">Preise im Mittelalter</a> &mdash; Frankfurt, Kolonia, Norymberga</li>
+      <li><a href="https://www.kriegsreisende.de/neuzeit/landsknechte.htm">Landsknechte &mdash; żołd</a></li>
+      <li><a href="https://freepages.rootsweb.com/~stanier/family/N-Money.html">Phelps Brown &amp; Hopkins</a> &mdash; płace w Anglii XVI w.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="audyt">
+  <div class="sec-head"><h2>Audyt profesji</h2><span class="note">264 poziomy</span></div>
+  <p class="muted">Status zapisuj jako parę <span class="mono">Pozycja / Dochód</span>. U większości profesji
+    obie wartości są równe.</p>
+  <div class="controls">
+    <input class="search" id="audSearch" type="text" placeholder="Szukaj profesji lub poziomu…" autocomplete="off">
+    <span class="count" id="audCount"></span>
+  </div>
+  <div class="controls" id="audChips"></div>
+  <div class="controls" id="audVerdicts"></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Klasa</th><th>Profesja</th><th>Poziom</th><th>RAW</th><th>Werdykt</th><th>Pozycja</th><th>Dochód</th><th>Uzasadnienie</th></tr></thead>
+    <tbody id="audBody"></tbody>
+  </table></div>
+</section>
+
+<section id="zasady">
+  <div class="sec-head"><h2>Zasady</h2><span class="note">liczby zgodne z danymi</span></div>
+  <div class="rules">
+    <div class="rule"><h3>1. Pozycja i Dochód to dwie liczby</h3>
+      <p>Pozycja rządzi tym, kto z tobą rozmawia i gdzie cię wpuszczą. Dochód rządzi sakiewką.</p>
+      <div id="pozDochDoc"></div></div>
+    <div class="rule"><h3>2. Utrzymanie płacisz w mieście, nie na szlaku</h3>
+      <p>80% brutto to opłata za bycie kimś w danym miejscu: czynsz, czeladź, strój, składka cechowa.
+        Naliczaj je tylko za tygodnie spędzone w osadzie. W trasie postać płaci realne ceny z cennika.</p></div>
+    <div class="rule"><h3>3. Jakość zamiast przecen (HR-024)</h3>
+      <p>Każda <strong>Wada ×½</strong>, każda <strong>Zaleta ×2</strong> &mdash; tak jak w podręczniku.
+        Wcześniejsza wersja tej strony podawała błędnie „Wada = ¼ ceny".</p>
+      <div class="tablewrap" style="margin-top:8px"><table>
+        <thead><tr><th>Wykonanie</th><th>Mnożnik</th><th>Pełna płytówka</th><th>Kto nosi</th></tr></thead>
+        <tbody id="jakoscDoc"></tbody></table></div></div>
+    <div class="rule"><h3>4. Dochód ryzykowny dla Łotrów</h3>
+      <p>Rzuć jak za Status o <strong>dwa szczeble wyżej na drabinie</strong> (Brąz 5 → Srebro 2),
+        potem Test Kradzieży, Zastraszania, Hazardu albo Oszustwa. Porażka &mdash; połowa i ktoś cię szuka.
+        Porażka z dubletem &mdash; zero i oskarżenie. Dotyczy 36 poziomów profesji.</p></div>
+    <div class="rule"><h3>5. Jałmużna zamiast martwego Brązu 0</h3>
+      <p>Test Charyzmy albo Plotkowania: za każde 2 PS <span class="mono">1k10 pensów</span>,
+        podwojone w święto i podczas zarazy.</p></div>
+    <div class="rule"><h3>6. Figury państwowe</h3>
+      <p>Elektorowie, Wielki Teogonista, Patriarchowie bogatych Kolegiów, Cesarz: dochód <span class="mono">×10</span>
+        i bez rzutu. Na tym poziomie liczy się wojsko i wierzyciele, a nie monety.</p></div>
+    <div class="rule"><h3>7. Targowanie</h3>
+      <p>Przeciwstawny Test Targowania. Każdy PS gracza <span class="mono">−10%</span>, maksymalnie
+        <span class="mono">−30%</span> (zamówienia −20%). Pełen skład: premia +10 dla gracza.
+        Ostatnie sztuki przy wysokim popycie: kara −20. <strong>Dolna granica to cena minimalna kupca</strong>
+        (koszt nabycia + 5%, przy wyprzedaży koszt − 10%) &mdash; kto już sprzedaje taniej (paser), nie schodzi dalej.</p></div>
+    <div class="rule"><h3>8. Co nie jest towarem</h3>
+      <p>Nocleg, posiłek w gospodzie, stajnia, praca najmitów i czynsze mają ceny <strong>już detaliczne</strong>.
+        Nie mają stanu magazynowego, nie da się ich odkupić i nie przechodzą przez marżę handlarza.
+        W cenniku są oznaczone <span class="pill nohandel">nie w handlu</span>.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Dane i silnik: repozytorium <strong>skarbiec-imperium</strong>, cennik v5 (24.10.2026), 364 pozycje.
+    Ta strona liczy dokładnie tym samym kodem co <span class="mono">src/silnik.js</span> i <span class="mono">src/spojnosc.js</span>
+    i czyta te same pliki <span class="mono">data/*.json</span> &mdash; nie da się ich rozjechać.</p>
+  <p style="margin-top:10px">Ceny podręcznikowe za: <em>Warhammer Fantasy Roleplay 4 ed.</em>, rozdz. XI
+    (s. 292&ndash;309) oraz <em>Pod Bronią</em>, rozdz. VIII (s. 88&ndash;103). Gdzie oba podają to samo,
+    obowiązuje <em>Pod Bronią</em>.</p>
+</footer>
+</div>
+
+<script id="dane" type="application/json">/*__DANE__*/</script>
+<script>
+/*__SILNIK__*/
+/*__SPOJNOSC__*/
+</script>
+<script>
+(function(){
+"use strict";
+var D_BAZA = JSON.parse(document.getElementById('dane').textContent);
+var KLUCZ_UST = 'skarbiec-ustawienia-v5';
+function ustPuste(){ return {wersja:1,preset:D_BAZA.klasy.domyslny,mnozniki:{},premia_znak_stanu:null,pozycje:{},osady:{},koniunktury:{},kupcy:{},rynek:{}}; }
+function wczytajUst(){ try{ var s=localStorage.getItem(KLUCZ_UST); if(s) return Object.assign(ustPuste(),JSON.parse(s)); }catch(e){} return ustPuste(); }
+function zapiszUst(){ try{ localStorage.setItem(KLUCZ_UST,JSON.stringify(UST)); }catch(e){} }
+var UST = wczytajUst(), D, poId, ODSWIEZ = [];
+function przelicz(){
+  try{ D = zastosujUstawienia(D_BAZA, UST); }
+  catch(e){ UST = ustPuste(); D = zastosujUstawienia(D_BAZA, UST); }
+  poId = {}; D.cennik.pozycje.forEach(function(p){ poId[p.id] = p; });
+}
+przelicz();
+var ROBOTNIK = D.statusy.robotnik_brutto_p;
+function odswiez(){ przelicz(); ODSWIEZ.forEach(function(f){ f(); }); zapiszUst();
+  var wlasne=JSON.stringify(UST)!==JSON.stringify(ustPuste()); document.getElementById('ustBadge').hidden=!wlasne; }
+function etOsady(o){ return etykietaOsady(o); }
+function etKon(k){ return etykietaKoniunktury(D,k,{krotko:true}); }
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+function pl(n,dec){ var s=n.toFixed(dec==null?2:dec); return s.replace(/[.,]?0+$/,'').replace('.',',')||'0'; }
+function tyg(p){ return pl(p/ROBOTNIK,2); }
+function metalClass(t){ return t==='Brąz'?'m-B':t==='Srebro'?'m-S':t==='Złoto'?'m-Z':''; }
+
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var cur=document.documentElement.getAttribute('data-theme');
+  var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+});
+
+function fill(sel,arr,val,lab,def){
+  if(def==null && sel.value) def=sel.value;
+  sel.innerHTML=arr.map(function(x,i){
+    var v=val?val(x,i):i, t=lab(x,i);
+    return '<option value="'+esc(v)+'"'+(def!=null&&v===def?' selected':'')+'>'+esc(t)+'</option>';
+  }).join('');
+}
+function chips(container,values,state,onChange,allLabel){
+  container.innerHTML='<button class="chip" data-v="" aria-pressed="true">'+(allLabel||'Wszystkie')+'</button>'
+    +values.map(function(v){return '<button class="chip" data-v="'+esc(v)+'" aria-pressed="false">'+esc(v)+'</button>';}).join('');
+  container.addEventListener('click',function(e){
+    var b=e.target.closest('.chip'); if(!b) return;
+    Array.prototype.forEach.call(container.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',c===b?'true':'false');});
+    state.val=b.dataset.v; onChange();
+  });
+}
+
+/* ---------------- zarobki ---------------- */
+(function(){
+  var S=D.statusy;
+  document.getElementById('statusBody').innerHTML=S.poziomy.map(function(s){
+    var maj=S.majetny.srednia_p[s.tier];
+    return '<tr><td><span class="metal '+metalClass(s.tier)+'">'+s.tier+' '+s.lvl+'</span></td>'
+      +'<td class="num" style="color:var(--ink-2)">'+esc(s.kostka)+'</td>'
+      +'<td class="num" style="font-weight:600">'+mon(s.netto_p)+'</td>'
+      +'<td class="num">'+mon(s.netto_p*3)+'</td>'
+      +'<td class="num">'+mon(s.brutto_p)+'</td>'
+      +'<td class="num">'+mon(s.brutto_rok)+'</td>'
+      +'<td class="num" style="color:var(--ink-2)">'+pl(s.tyg_robotnika,1)+'×</td>'
+      +'<td class="num" style="color:var(--ink-3)">+'+mon(maj)+'</td>'
+      +'<td style="color:var(--ink-2)">'+esc(s.opis)+'</td></tr>';
+  }).join('');
+
+  var sel=document.getElementById('calcSel'), maj=document.getElementById('calcMaj');
+  fill(sel,S.poziomy,function(s){return s.tier+' '+s.lvl;},function(s){return s.tier+' '+s.lvl;},'Srebro 3');
+  var KOSZYK=['miecz','kolczuga','pelna-plytowka-4-elementy','kon-wierzchowy','rumak'];
+  function cell(b,s){ return '<div class="calccell"><b>'+b+'</b><span>'+s+'</span></div>'; }
+  var ostatniRzut=null;
+  function render(){
+    var st=sel.value, m=+maj.value;
+    var sr=sredniDochod(D,st,m);
+    var poz=S.poziomy.find(function(x){return x.tier+' '+x.lvl===st;});
+    document.getElementById('calcDesc').textContent=poz?poz.opis:'';
+    document.getElementById('calcGrid').innerHTML=
+        cell(mon(sr.netto_p),'netto za Robotę (średnia)')
+      + cell(ostatniRzut?mon(ostatniRzut.netto_p):'—','ostatni rzut')
+      + cell(mon(sr.netto_p*3),'trzy Roboty')
+      + cell(mon(sr.brutto_p),'brutto tygodniowo')
+      + cell(pl(sr.x_robotnik,1)+'×','dochód robotnika');
+    var n=sr.netto_p;
+    document.getElementById('calcBuys').innerHTML='<strong>Ile Robót trzeba odłożyć</strong> '
+      +'<span class="small" style="color:var(--ink-3)">(ceny czytane z cennika)</span><ul>'
+      + KOSZYK.map(function(id){
+          var p=poId[id]; if(!p) return '';
+          if(n<=0) return '<li>'+esc(p.nazwa)+' &mdash; <strong>nigdy</strong></li>';
+          var t=p.cena_p/n;
+          var txt=t<=1?'jedna Robota':t<40?Math.round(t)+' Robót':'ponad 40 Robót — realnie tylko z łupu albo spadku';
+          return '<li>'+esc(p.nazwa)+' ('+mon(p.cena_p)+') &mdash; <strong>'+txt+'</strong></li>';
+        }).join('')+'</ul>';
+  }
+  sel.addEventListener('change',function(){ostatniRzut=null;render();});
+  maj.addEventListener('change',function(){ostatniRzut=null;render();});
+  ODSWIEZ.push(render);
+  document.getElementById('calcRzut').addEventListener('click',function(){
+    ostatniRzut=rzutDochodu(D,{status:sel.value,majetny:+maj.value,seed:(Math.random()*1e9)|0});
+    render();
+  });
+  render();
+})();
+
+/* ---------------- cennik ---------------- */
+(function(){
+  var kats=[],seen={};
+  D.cennik.pozycje.forEach(function(c){ if(!seen[c.kat]){seen[c.kat]=1;kats.push(c.kat);} });
+  var stK={val:''}, stF={val:''};
+  var search=document.getElementById('cenySearch'), body=document.getElementById('cenyBody'), count=document.getElementById('cenyCount');
+  var TYPNAZWA={towar:'towar',nocleg:'nocleg',usluga:'usługa',nieruchomosc:'nieruchomość'};
+  function render(){
+    var q=norm(search.value.trim());
+    var rows=D.cennik.pozycje.filter(function(c){
+      if(stK.val && c.kat!==stK.val) return false;
+      if(stF.val==='bez źródła' && (c.podstawa_hist||'').trim()) return false;
+      if(stF.val==='nie w handlu' && c.typ==='towar') return false;
+      if(stF.val==='zmienione wobec RAW' && (c.cena_raw_p==null || c.cena_raw_p===c.cena_p)) return false;
+      if(stF.val==='dopisane' && !c.dopisane) return false;
+      if(stF.val==='zmienione w v5' && !(c.id in D.zmiany_v5)) return false;
+      if(stF.val==='nadpisane' && !c.nadpisane) return false;
+      if(q && norm(c.nazwa+' '+c.kat+' '+(c.komentarz||'')+' '+(c.podstawa_hist||'')).indexOf(q)<0) return false;
+      return true;
+    });
+    count.textContent=rows.length+' z '+D.cennik.pozycje.length;
+    var PR=D.klasy.presety[UST.preset]||D.klasy.presety[D.klasy.domyslny];
+    body.innerHTML=rows.map(function(c){
+      var zm=c.cena_raw_p!=null&&c.cena_raw_p!==c.cena_p;
+      var m=(UST.mnozniki&&UST.mnozniki[c.klasa]!=null)?UST.mnozniki[c.klasa]:(PR.mnozniki[c.klasa]||1);
+      var v4=D.zmiany_v5[c.id];
+      var flagi='';
+      if(c.nadpisane) flagi+=' <span class="pill warn">nadpisane</span>';
+      if(c.typ!=='towar') flagi+=' <span class="pill nohandel">nie w handlu</span>';
+      if(!(c.podstawa_hist||'').trim()) flagi+=' <span class="pill nosrc">bez źródła</span>';
+      return '<tr><td><strong>'+esc(c.nazwa)+'</strong>'
+        +(c.zrodlo?' <span class="src">'+esc(c.zrodlo)+'</span>':'')+flagi
+        +'<div class="small" style="color:var(--ink-3)">'+esc(c.kat)+' · '+TYPNAZWA[c.typ]+'</div></td>'
+        +'<td class="num" style="color:var(--ink-2)">'+(c.cena_raw_p==null?'&mdash;':mon(c.cena_raw_p))+'</td>'
+        +'<td class="num" style="font-weight:600">'+mon(c.cena_p)+(c.cena_raw_p?'<div class="baza">'+proc(c.cena_p/c.cena_raw_p)+' wobec RAW</div>':'')+(v4!=null?'<div class="baza">v4: '+mon(v4)+'</div>':'')+'</td>'
+        +'<td class="small" style="color:var(--ink-2)">'+esc(c.klasa||'')+' <span class="mono">×'+pl(m,2)+'</span><div class="baza">×1 = '+mon(c.cena_ref_p||c.cena_p)+'</div></td>'
+        +'<td class="num" style="color:var(--ink-2)">'+tyg(c.cena_p)+'</td>'
+        +'<td class="small" style="color:var(--ink-2)">'+esc(c.podstawa_hist||'—')+'</td>'
+        +'<td class="small">'+esc(c.komentarz||'')+(c.uwagi_danych?'<div class="small" style="color:var(--ink-3);margin-top:3px">'+esc(c.uwagi_danych)+'</div>':'')+'</td></tr>';
+    }).join('')||'<tr><td colspan="7" style="color:var(--ink-3);padding:20px">Nic nie pasuje.</td></tr>';
+  }
+  chips(document.getElementById('cenyFlagi'),['zmienione w v5','nadpisane','zmienione wobec RAW','dopisane','bez źródła','nie w handlu'],stF,render,'Wszystko');
+  ODSWIEZ.push(render);
+  chips(document.getElementById('cenyChips'),kats,stK,render);
+  search.addEventListener('input',render);
+  render();
+})();
+
+/* ---------------- generator kupców ---------------- */
+var AKT=null;
+(function(){
+  var selT=document.getElementById('genTyp'), selL=document.getElementById('genLok'),
+      selK=document.getElementById('genKon'), inS=document.getElementById('genSeed');
+  var inPS=document.getElementById('genPS');
+  function wypelnij(){
+    fill(selT,D.kupcy.kupcy,function(k){return k.id;},function(k){return k.nazwa+' (marża '+proc(k.marza)+')';},selT.value||null);
+    fill(selL,D.osady.osady,function(o){return o.id;},etOsady,selL.value||'miasteczko');
+    fill(selK,D.koniunktura.koniunktury,function(k){return k.id;},etKon,selK.value||'normalna');
+  }
+  wypelnij();
+  function opisKaprysu(k){ var P=D.rynek.kaprys&&D.rynek.kaprys.progi; if(!P) return ''; var p=P.find(function(x){return Math.abs(x.mnoznik-k)<1e-9;}); return p?p.opis:''; }
+
+  function czytajURL(){
+    var h=location.hash, m=/[?&]k=([^&]+)/.exec(h), o=/[?&]o=([^&]+)/.exec(h),
+        n=/[?&]n=([^&]+)/.exec(h), s=/[?&]s=(\d+)/.exec(h);
+    if(m) selT.value=decodeURIComponent(m[1]);
+    if(o) selL.value=decodeURIComponent(o[1]);
+    if(n) selK.value=decodeURIComponent(n[1]);
+    return s?+s[1]:null;
+  }
+  function zapiszURL(seed){
+    try{ history.replaceState(null,'','#kupcy?k='+selT.value+'&o='+selL.value+'&n='+selK.value+'&s='+seed); }catch(e){}
+  }
+  function render(seed){
+    inS.value=seed;
+    zapiszURL(seed);
+    var sk=generujKupca(D,{kupiec:selT.value,osada:selL.value,koniunktura:selK.value,seed:seed});
+    AKT={kupiec:selT.value,osada:selL.value,koniunktura:selK.value};
+    var ps=Math.max(0,parseInt(inPS.value,10)||0);
+    document.getElementById('genMods').innerHTML='<strong>'+esc(sk.etykiety.osada)+'</strong> &middot; '+esc(sk.etykiety.koniunktura);
+    var rows=sk.towar.map(function(t){
+      var s=t.skladowe, tg=ps?targuj(D,{cena_p:t.cena_p,cena_cennik_p:t.cena_wytworcy_p,cena_min_p:t.cena_min_p,ps:ps}):null;
+      var modT=modyfikatorTargowania(t);
+      var pref=s.preferencja===1?'':' · '+(s.preferencja<1?'rdzeń ':'boczny ')+proc(s.preferencja);
+      var kap=s.kaprys===1?'':' · kaprys '+proc(s.kaprys)+' („'+esc(opisKaprysu(s.kaprys))+'”)';
+      return '<tr><td><strong>'+esc(t.nazwa)+'</strong><div class="small" style="color:var(--ink-3)">'+esc(t.kat)+'</div></td>'
+        +'<td class="num">'+(t.sztuk?t.sztuk:'<span style="color:var(--ink-3)">0</span>')+'</td>'
+        +'<td class="num" style="color:var(--ink-3)">'+(t.cena_raw_p==null?'&mdash;':mon(t.cena_raw_p))+'</td>'
+        +'<td class="num" style="color:var(--ink-2)">'+mon(t.cena_wytworcy_p)+'</td>'
+        +'<td class="num" style="font-weight:600">'+mon(t.cena_p)+'<div class="small '+(t.mnoznik>1.08?'up':t.mnoznik<0.92?'down':'same')+'">'+proc(t.mnoznik)+'</div></td>'
+        +'<td class="num minp">'+mon(t.cena_min_p)+(t.wyprzedaz?'<div class="small down">wyprzedaż</div>':'')+'</td>'
+        +(ps?'<td class="num targ">'+mon(tg.cena_p)+(tg.upust>0?'<div class="small">−'+Math.round(tg.upust*100)+'%</div>':'<div class="small" style="color:var(--ink-3)">nie zejdzie</div>')+'</td>':'')
+        +'<td class="num" style="color:var(--ink-2)">'+mon(t.skup_p)+(t.skup_ponad_gotowke?'<div class="small up">brak gotówki</div>':'')+'</td>'
+        +'<td class="small" style="color:var(--ink-2)">'+esc(t.zapas_nazwa)+' · '+esc(t.popyt_nazwa)
+          +(modT?' · <strong>test '+(modT>0?'+':'')+modT+'</strong>':'')
+          +'<div class="small" style="color:var(--ink-3)">marża '+proc(s.marza)+pref+kap+' · osada '+proc(s.osada)
+          +(s.koniunktura!==1?' · koniunktura '+proc(s.koniunktura):'')+' · rynek '+proc(s.rynek)
+          +' · koszt '+mon(t.koszt_p)+'</div></td></tr>';
+    }).join('');
+    document.getElementById('shop').innerHTML='<div class="shophead">'
+      +'<h3>'+esc(sk.imie)+'</h3>'
+      +'<div class="shopmeta">'+esc(sk.kupiec.nazwa)+' &middot; Status '+esc(sk.kupiec.status)+' &middot; '
+        +esc(sk.osada.nazwa)+' &middot; '+esc(sk.kupiec.rdzen.join(', '))+'</div>'
+      +'<p class="shopquirk">'+esc(sk.kupiec.opis)+' '+esc(sk.dziwactwo)+'</p>'
+      +'<div class="shopflags">'
+        +'<span class="tag '+(sk.kupiec.marza>1?'t-gora':'t-dol')+'">marża '+proc(sk.kupiec.marza)+'</span>'
+        +'<span class="tag '+(sk.osada.mnoznik>1?'t-gora':'t-dol')+'">'+esc(sk.etykiety.osada)+'</span>'
+        +(sk.gotowka_p!=null?'<span class="tag t-ok">gotówka '+mon(sk.gotowka_p)+'</span>':'')
+        +(sk.budzet_towaru_p!=null?'<span class="tag t-nowe">towar '+mon(sk.wartosc_towaru_p)+'</span>':'')
+        +'<span class="tag '+(sk.koniunktura.id==='normalna'?'t-ok':'t-zmiana')+'">'+esc(sk.koniunktura.nazwa)+'</span>'
+        +'<span class="tag t-nowe">'+sk.towar.length+' pozycji</span>'
+        +(isFinite(sk.limit_p)?'<span class="tag t-dol">nic powyżej '+mon(sk.limit_p)+'</span>':'')
+        +'<span class="pill">seed '+seed+'</span>'
+      +'</div></div>'
+      +'<div class="tablewrap" style="border:0;border-radius:0"><table>'
+      +'<thead><tr><th>Towar</th><th>Sztuk</th><th>Podręcznik</th><th>Cena bazowa</th><th>Jego cena</th><th>Minimalna</th>'+(ps?'<th>Po targu ('+ps+' PS)</th>':'')+'<th>Odkupi za</th><th>Dlaczego tyle</th></tr></thead>'
+      +'<tbody>'+rows+'</tbody></table></div>';
+    document.getElementById('zamWynik').innerHTML='';
+  }
+  function losuj(){ render((Math.random()*1e9)|0); }
+  document.getElementById('genBtn').addEventListener('click',losuj);
+  [selT,selL,selK].forEach(function(s){ s.addEventListener('change',losuj); });
+  inS.addEventListener('change',function(){ var v=parseInt(inS.value,10); render(isNaN(v)?(Math.random()*1e9)|0:v); });
+  inPS.addEventListener('input',function(){ render(+inS.value); });
+  var z=czytajURL();
+  render(z==null?20261024:z);
+  ODSWIEZ.push(function(){ wypelnij(); render(+inS.value); });
+})();
+
+/* ---------------- zamówienie ---------------- */
+(function(){
+  var inp=document.getElementById('zamText'), selJ=document.getElementById('zamJakosc'), box=document.getElementById('zamWynik');
+  document.getElementById('zamLista').innerHTML=D.cennik.pozycje.filter(function(c){return c.typ==='towar';})
+    .map(function(c){return '<option value="'+esc(c.nazwa)+'"></option>';}).join('');
+  fill(selJ,D.rynek.jakosc.opcje,function(j){return j.id;},function(j){return j.nazwa+' — ×'+pl(j.mnoznik,2);},'zwykla');
+  function wycen(){
+    if(!AKT) return;
+    var r=wycenZamowienie(D,{kupiec:AKT.kupiec,osada:AKT.osada,koniunktura:AKT.koniunktura,
+      przedmiot:inp.value,jakosc:selJ.value,seed:(Math.random()*1e9)|0});
+    if(r.status==='brak_w_cenniku'){
+      box.innerHTML='<div class="callout"><p>Nie ma takiej pozycji wśród towarów. Nocleg, usługi i czynsze '
+        +'nie są towarem — ich się nie zamawia u rzemieślnika.</p></div>'; return;
+    }
+    if(r.status==='odmowa'){
+      box.innerHTML='<div class="callout"><p><strong>Nie tknie tego.</strong> '+esc(r.przedmiot.nazwa)
+        +' to kategoria „'+esc(r.przedmiot.kat)+'". Odeśle was do kogoś, kto się tym para: <strong>'
+        +esc(r.odsyla_do.join(', '))+'</strong>.</p></div>'; return;
+    }
+    var s=r.skladowe;
+    box.innerHTML='<div class="shop" style="margin-top:14px"><div class="shophead">'
+      +'<h3 style="font-size:18px">'+esc(r.przedmiot.nazwa)+' &mdash; '+esc(r.jakosc.nazwa.toLowerCase())+'</h3>'
+      +'<div class="shopmeta">'+(r.status==='wykonuje'?'Wykonuje u siebie':'Musi sprowadzić od wytwórcy')+'</div></div>'
+      +'<div class="tablewrap" style="border:0;border-radius:0"><table><tbody>'
+      +'<tr><td style="color:var(--ink-3)">Podręcznik (RAW), do porównania</td><td class="num" style="color:var(--ink-3)">'+(r.przedmiot.cena_raw_p==null?'&mdash;':mon(r.przedmiot.cena_raw_p))+'</td></tr>'
+      +'<tr><td>Cena bazowa</td><td class="num">'+mon(r.przedmiot.cena_p)+'</td></tr>'
+      +'<tr><td>Jakość</td><td class="num">×'+pl(r.jakosc.mnoznik,2)+' → '+mon(r.baza_p)+'</td></tr>'
+      +'<tr><td>Marża zawodu</td><td class="num">'+proc(s.marza)+'</td></tr>'
+      +'<tr><td>'+esc(etOsady(D.osady.osady.find(function(o){return o.id===AKT.osada;})))+'</td><td class="num">'+proc(s.osada)+'</td></tr>'
+      +'<tr><td>'+esc(D.koniunktura.koniunktury.find(function(k){return k.id===AKT.koniunktura;}).nazwa)+' ('+esc(r.przedmiot.kat)+')</td><td class="num">'+proc(s.koniunktura)+'</td></tr>'
+      +'<tr><td>'+(r.status==='wykonuje'?'Narzut za robotę na miarę':'Narzut za sprowadzenie')+'</td><td class="num">'+proc(s.narzut)+'</td></tr>'
+      +'<tr style="background:var(--surface-2)"><td><strong>Razem</strong></td><td class="num" style="font-weight:700">'+proc(r.mnoznik)+' → '+mon(r.cena_p)+'</td></tr>'
+      +'<tr><td>Zaliczka 50%</td><td class="num">'+mon(r.zaliczka_p)+'</td></tr>'
+      +'<tr><td>Termin</td><td class="num">'+esc(r.termin)+'</td></tr>'
+      +'</tbody></table></div>'
+      +'<div style="padding:14px 18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)">'
+      +(r.calosc_z_gory?'<strong>Uwaga:</strong> to wykracza poza to, czym ten handlarz zwykle obraca — zażąda całości z góry. ':'')
+      +(r.test_rzemiosla?'Wyroby z Zaletami wymagają Testu Rzemiosła: porażka podwaja termin, porażka z dubletem daje zwykłą jakość za pełną cenę. ':'')
+      +'Targowanie o zamówienie: maksymalnie −'+Math.round(r.max_targowanie*100)+'%.'
+      +'</div></div>';
+  }
+  document.getElementById('zamBtn').addEventListener('click',wycen);
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter') wycen(); });
+  selJ.addEventListener('change',function(){ if(inp.value.trim()) wycen(); });
+})();
+
+/* ---------------- czynsze ---------------- */
+(function(){
+  var selL=document.getElementById('czLok'), selK=document.getElementById('czKon');
+  function wypelnij(){
+    fill(selL,D.osady.osady,function(o){return o.id;},etOsady,selL.value||'miasteczko');
+    fill(selK,D.koniunktura.koniunktury,function(k){return k.id;},function(k){var m=k.czynsz?k.czynsz.mnoznik:1;return k.nazwa+' (czynsz '+(m===1?'bez zmian':proc(m))+')';},selK.value||'normalna');
+  }
+  wypelnij();
+  function render(){
+    var rows=D.czynsze.najem.map(function(k){
+      var c=czynsz(D,{kwatera:k.kwatera,okres:'miesiac',osada:selL.value,koniunktura:selK.value});
+      var t=czynsz(D,{kwatera:k.kwatera,okres:'tydzien',osada:selL.value,koniunktura:selK.value});
+      var r=czynsz(D,{kwatera:k.kwatera,okres:'rok',osada:selL.value,koniunktura:selK.value});
+      return '<tr><td><strong>'+esc(k.kwatera)+'</strong></td>'
+        +'<td class="num">'+mon(t.cena_p)+'</td><td class="num" style="font-weight:600">'+mon(c.cena_p)+'</td>'
+        +'<td class="num">'+mon(r.cena_p)+'</td>'
+        +'<td class="num '+(c.mnoznik>1.02?'up':c.mnoznik<0.98?'down':'same')+'">'+proc(c.mnoznik)+'</td></tr>';
+    }).join('');
+    document.getElementById('czBody').innerHTML=rows;
+    var rok=D.czynsze.najem.find(function(k){return /mistrza/.test(k.kwatera);});
+    document.getElementById('czKupno').innerHTML=D.czynsze.kupno.map(function(k){
+      var lat=rok?Math.round(k.cena_p/rok.rok_p):null;
+      return '<div class="kv"><span>'+esc(k.nazwa)+'</span><b>'+mon(k.cena_p)+'</b></div>';
+    }).join('')+'<p class="small" style="margin-top:8px;color:var(--ink-3)">Dom rzemieślnika zwraca się w '
+      +Math.round(D.czynsze.kupno[1].cena_p/rok.rok_p)+' latach najmu domu mistrza.</p>';
+  }
+  document.getElementById('czKonDoc').innerHTML=D.koniunktura.koniunktury.map(function(k){
+    var m=k.czynsz?k.czynsz.mnoznik:1;
+    return '<div class="kv"><span>'+esc(k.nazwa)+(k.czynsz&&k.czynsz.uwaga?'<div class="small" style="color:var(--ink-3)">'+esc(k.czynsz.uwaga)+'</div>':'')
+      +'</span><b class="'+(m>1?'up':m<1?'down':'same')+'">'+proc(m)+'</b></div>';
+  }).join('');
+  [selL,selK].forEach(function(s){s.addEventListener('change',render);});
+  render();
+  ODSWIEZ.push(function(){ wypelnij(); render(); });
+})();
+
+/* ---------------- modyfikatory ---------------- */
+(function(){
+function render(){
+  var R_=D.rynek, osob='';
+  if(R_.preferencje) osob+='<div class="kv"><span>Rdzeń asortymentu</span><b>'+proc(R_.preferencje.rdzen)+'</b></div>'
+    +'<div class="kv"><span>Boczny asortyment</span><b>'+proc(R_.preferencje.boczne)+'</b></div>';
+  if(R_.kaprys) osob+=R_.kaprys.progi.map(function(p,i,a){var od=i?a[i-1].do+1:1;return '<div class="kv"><span>kaprys '+(od===p.do?p.do:od+'–'+p.do)+': '+esc(p.opis)+'</span><b>'+proc(p.mnoznik)+'</b></div>';}).join('')
+    +'<div class="kv"><span>Granice preferencja × kaprys</span><b>'+proc(R_.kaprys.granice[0])+' … '+proc(R_.kaprys.granice[1])+'</b></div>';
+  if(R_.cena_minimalna) osob+='<div class="kv"><span>Cena minimalna: narzut na koszt</span><b>'+proc(R_.cena_minimalna.narzut_min)+'</b></div>'
+    +'<div class="kv"><span>Przy wyprzedaży (rynek &lt; 1)</span><b>'+proc(R_.cena_minimalna.wyprzedaz)+'</b></div>'
+    +'<div class="kv"><span>Koszt własny wytwórcy</span><b>'+proc(R_.cena_minimalna.koszt_wlasny)+'</b></div>';
+  document.getElementById('osobDoc').innerHTML=osob;
+  document.getElementById('kupcyDoc').innerHTML=D.kupcy.kupcy.map(function(k){
+    return '<tr><td><strong>'+esc(k.nazwa)+'</strong></td><td class="num">'+esc(k.status)+'</td>'
+      +'<td class="num '+(k.marza>1.1?'up':k.marza<1?'down':'same')+'">'+proc(k.marza)+'</td>'
+      +'<td class="num">'+mon(k.limit_p)+'</td><td class="num">'+Math.round(k.skup*100)+'%</td>'
+      +'<td class="small">'+esc(k.rdzen.join(', '))+'</td>'
+      +'<td class="small" style="color:var(--ink-2)">'+(k.robota.length?esc(k.robota.join(', ')):'<span style="color:var(--ink-3)">nie wykonuje</span>')+'</td></tr>';
+  }).join('');
+  document.getElementById('lokDoc').innerHTML=D.osady.osady.map(function(o){
+    return '<tr><td><strong>'+esc(o.nazwa)+'</strong></td>'
+      +'<td class="num '+(o.mnoznik>1?'up':o.mnoznik<1?'down':'same')+'">'+proc(o.mnoznik)+'</td>'
+      +'<td class="num">'+(o.limit_p==null?'bez limitu':mon(o.limit_p))+'</td>'
+      +'<td class="small" style="color:var(--ink-2)">'+esc(o.uwaga||(o.rzadkie_latwiej?'Rzadkie o stopień łatwiej':''))+'</td></tr>';
+  }).join('');
+  document.getElementById('konDoc').innerHTML=D.koniunktura.koniunktury.map(function(k){
+    var kat=k.kategorie||{}, ceny={}, pop={};
+    Object.keys(kat).forEach(function(n){
+      var c=kat[n].cena, p=kat[n].popyt;
+      if(c!==1){ (ceny[c]=ceny[c]||[]).push(n); }
+      if(p){ (pop[p]=pop[p]||[]).push(n); }
+    });
+    function opis(m){ return Object.keys(m).map(function(v){
+      return '×'+pl(+v,2)+': '+m[v].length+' kat.'; }).join(' · ')||'bez zmian'; }
+    function opisP(m){ return Object.keys(m).map(function(v){
+      return (v>0?'+':'')+v+': '+m[v].length+' kat.'; }).join(' · ')||'bez zmian'; }
+    var cz=k.czynsz?k.czynsz.mnoznik:1;
+    return '<tr><td><strong>'+esc(k.nazwa)+'</strong></td><td class="small">'+opis(ceny)+'</td>'
+      +'<td class="small">'+opisP(pop)+'</td>'
+      +'<td class="num '+(cz>1?'up':cz<1?'down':'same')+'">'+proc(cz)+'</td></tr>';
+  }).join('');
+  var M=D.rynek.macierz_zapas_x_popyt.wartosci, ZN=D.rynek.zapas.progi;
+  document.getElementById('macierzDoc').innerHTML=M.map(function(w,i){
+    return '<tr><td><strong>'+esc(ZN[i].nazwa)+'</strong></td>'+w.map(function(v){
+      return '<td class="num '+(v>1?'up':v<1?'down':'same')+'">'+proc(v)+'</td>'; }).join('')+'</tr>';
+  }).join('');
+}
+render(); ODSWIEZ.push(render);
+function render2(){
+  var J=D.rynek.jakosc.opcje, plyt=poId['pelna-plytowka-4-elementy'];
+  var KTO={'0.25':'pikinier z poboru','0.5':'milicja miejska','1':'zawodowy żołnierz, zamożny mieszczanin','2':'oficer, rycerz z lennem','4':'magnat, kapitan chorągwi'};
+  document.getElementById('jakoscDoc').innerHTML=J.map(function(j){
+    return '<tr><td>'+esc(j.nazwa)+'</td><td class="num">×'+pl(j.mnoznik,2)+'</td>'
+      +'<td class="num">'+(plyt?mon(plyt.cena_p*j.mnoznik):'—')+'</td>'
+      +'<td class="small" style="color:var(--ink-2)">'+(KTO[String(j.mnoznik)]||'')+'</td></tr>';
+  }).join('');
+  var PD=D.pozycja_dochod&&D.pozycja_dochod.przyklady;
+  if(PD) document.getElementById('pozDochDoc').innerHTML=PD.map(function(p){
+    return '<div class="kv"><span>'+esc(p.kto||p.nazwa||'')+'</span><b>'+esc((p.pozycja||'')+' / '+(p.dochod||''))+'</b></div>';
+  }).join('');
+}
+render2(); ODSWIEZ.push(render2);
+})();
+
+/* ---------------- ustawienia MG ---------------- */
+(function(){
+  var K=D_BAZA.klasy;
+  var selP=document.getElementById('ustPreset'), inPrem=document.getElementById('ustPremia'), msg=document.getElementById('ustMsg');
+  fill(selP,Object.keys(K.presety),function(n){return n;},function(n){return n+(n===K.domyslny?' (domyślny)':'')+' — '+(K.presety[n].opis||'').slice(0,70)+'…';},UST.preset);
+  function parsujCene(s){
+    s=String(s).trim().toLowerCase().replace(',','.'); if(!s) return null;
+    if(/^\d+(\.\d+)?$/.test(s)) return Math.round(+s);
+    var p=0, ok=false, re=/(\d+(?:\.\d+)?)\s*(zk|s|p)\b/g, m;
+    while((m=re.exec(s))){ ok=true; p+=+m[1]*({zk:240,s:12,p:1})[m[2]]; }
+    return ok?Math.round(p):NaN;
+  }
+  function liczba(v){ var x=parseFloat(String(v).replace(',','.')); return isFinite(x)&&x>0?x:null; }
+  function pole(id,val,step){ return '<input class="numin" data-k="'+esc(id)+'" type="number" step="'+(step||0.05)+'" min="0" value="'+val+'">'; }
+  function zrTag(z){ var c=/brak/.test(z)?'zr-brak':/sprzecz/.test(z)?'zr-sprzeczne':/zasada/.test(z)?'zr-zasada':'zr-dane'; return '<span class="pill '+c+'">'+esc(z)+'</span>'; }
+  function render(){
+    var PR=K.presety[UST.preset]||K.presety[K.domyslny];
+    selP.value=UST.preset;
+    inPrem.value=UST.premia_znak_stanu!=null?UST.premia_znak_stanu:PR.premia_znak_stanu;
+    var ile={}; D.cennik.pozycje.forEach(function(c){ile[c.klasa]=(ile[c.klasa]||0)+1;});
+    document.getElementById('ustKlasy').innerHTML=Object.keys(PR.mnozniki).filter(function(k){return ile[k];}).map(function(k){
+      var u=K.uzasadnienia&&K.uzasadnienia[k], v=UST.mnozniki[k]!=null?UST.mnozniki[k]:PR.mnozniki[k];
+      return '<tr><td><strong>'+esc(k)+'</strong>'+(UST.mnozniki[k]!=null?' <span class="pill warn">zmienione</span>':'')
+        +(u?'<div class="small" style="color:var(--ink-3)">'+esc(u.tekst)+'</div>':'')+'</td><td class="num">'+ile[k]+'</td>'
+        +'<td class="num">'+pole('klasa:'+k,v)+'</td><td>'+(u?zrTag(u.zrodlo):'')+'</td></tr>';
+    }).join('');
+    document.getElementById('ustOsady').innerHTML=D.osady.osady.map(function(o){
+      return '<tr><td>'+esc(o.nazwa)+'</td><td class="num">'+pole('osada:'+o.id,o.mnoznik)+'</td></tr>'; }).join('');
+    document.getElementById('ustKupcy').innerHTML=D.kupcy.kupcy.map(function(k){
+      return '<tr><td>'+esc(k.nazwa)+'</td><td class="num">'+pole('marza:'+k.id,k.marza)+'</td><td class="num">'+pole('skup:'+k.id,k.skup)+'</td></tr>'; }).join('');
+    var RY=D.rynek;
+    document.getElementById('ustRynek').innerHTML=[
+      ['Rdzeń asortymentu','rynek:preferencje:rdzen',RY.preferencje.rdzen],['Boczny asortyment','rynek:preferencje:boczne',RY.preferencje.boczne],
+      ['Kaprys: dolna granica','rynek:kaprys:granice:0',RY.kaprys.granice[0]],['Kaprys: górna granica','rynek:kaprys:granice:1',RY.kaprys.granice[1]],
+      ['Cena minimalna: narzut','rynek:cena_minimalna:narzut_min',RY.cena_minimalna.narzut_min],['Przy wyprzedaży','rynek:cena_minimalna:wyprzedaz',RY.cena_minimalna.wyprzedaz],
+      ['Koszt własny wytwórcy','rynek:cena_minimalna:koszt_wlasny',RY.cena_minimalna.koszt_wlasny]
+    ].map(function(r){ return '<tr><td>'+r[0]+'</td><td class="num">'+pole(r[1],r[2])+'</td></tr>'; }).join('');
+    var selK=document.getElementById('ustKon');
+    fill(selK,D.koniunktura.koniunktury,function(k){return k.id;},etKon,selK.value||'wojna');
+    var kon=D.koniunktura.koniunktury.find(function(k){return k.id===selK.value;});
+    document.getElementById('ustKonKat').innerHTML=D.koniunktura.kategorie.map(function(kat){
+      return '<tr><td>'+esc(kat)+'</td><td class="num">'+pole('kon:'+kon.id+':'+kat,cenaKoniunktury(kon,kat))+'</td></tr>'; }).join('')
+      +'<tr><td><strong>Czynsz</strong></td><td class="num">'+pole('konczynsz:'+kon.id,kon.czynsz?kon.czynsz.mnoznik:1)+'</td></tr>';
+    document.getElementById('ustPozLista').innerHTML=D_BAZA.cennik.pozycje.map(function(c){return '<option value="'+esc(c.nazwa)+'"></option>';}).join('');
+    var nad=Object.keys(UST.pozycje);
+    document.getElementById('ustPozLista2').innerHTML=nad.length?nad.map(function(id){
+      var b=D_BAZA.cennik.pozycje.find(function(c){return c.id===id;});
+      return '<div class="kv"><span>'+esc(b?b.nazwa:id)+'</span><b>'+mon(poId[id]?poId[id].cena_p:0)+' <button class="btn2" data-usun="'+esc(id)+'" type="button" style="padding:2px 8px">×</button></b></div>'; }).join('')
+      :'<p class="small muted">Brak nadpisanych pozycji.</p>';
+    var r=roznicaCen(D_BAZA,D);
+    document.getElementById('ustRoznice').innerHTML=r.length?('<p>'+r.length+' pozycji ma inną cenę niż cennik v5.</p>'
+      +'<div class="tablewrap" style="margin-top:6px;max-height:320px;overflow:auto"><table><thead><tr><th>Pozycja</th><th>Cennik v5</th><th>Teraz</th><th>Zmiana</th></tr></thead><tbody>'
+      +r.slice(0,400).map(function(x){return '<tr><td>'+esc(x.nazwa)+'</td><td class="num">'+mon(x.przed_p)+'</td><td class="num" style="font-weight:600">'+mon(x.po_p)+'</td><td class="num '+(x.po_p>x.przed_p?'up':'down')+'">'+proc(x.po_p/x.przed_p)+'</td></tr>';}).join('')
+      +'</tbody></table></div>'):'<p class="muted">Bez zmian &mdash; obowiązuje cennik v5.</p>';
+    document.getElementById('ustJson').value=JSON.stringify(UST,null,1);
+  }
+  function ustaw(k,v){
+    var p=k.split(':'), x=liczba(v); if(x==null) return;
+    if(p[0]==='klasa') UST.mnozniki[p[1]]=x;
+    else if(p[0]==='osada') (UST.osady[p[1]]=UST.osady[p[1]]||{}).mnoznik=x;
+    else if(p[0]==='marza') (UST.kupcy[p[1]]=UST.kupcy[p[1]]||{}).marza=x;
+    else if(p[0]==='skup') (UST.kupcy[p[1]]=UST.kupcy[p[1]]||{}).skup=x;
+    else if(p[0]==='kon'){ var o=UST.koniunktury[p[1]]=UST.koniunktury[p[1]]||{}; o.kategorie=o.kategorie||{}; o.kategorie[p.slice(2).join(':')]={cena:x}; }
+    else if(p[0]==='konczynsz') (UST.koniunktury[p[1]]=UST.koniunktury[p[1]]||{}).czynsz=x;
+    else if(p[0]==='rynek'){
+      var sek=UST.rynek[p[1]]=UST.rynek[p[1]]||{};
+      if(p[2]==='granice'){ var g=(sek.granice||D.rynek.kaprys.granice).slice(); g[+p[3]]=x; sek.granice=g; } else sek[p[2]]=x;
+    }
+    odswiez();
+  }
+  document.getElementById('ustawienia').addEventListener('change',function(e){
+    var el=e.target;
+    if(el.dataset&&el.dataset.k){ ustaw(el.dataset.k,el.value); return; }
+    if(el.id==='ustKon'){ render(); }
+  });
+  selP.addEventListener('change',function(){ UST.preset=selP.value; UST.mnozniki={}; odswiez(); msg.textContent='Preset: '+selP.value+'. Własne mnożniki klas wyczyszczone.'; });
+  inPrem.addEventListener('change',function(){ var x=liczba(inPrem.value); UST.premia_znak_stanu=x; odswiez(); });
+  document.getElementById('ustPozBtn').addEventListener('click',function(){
+    var n=document.getElementById('ustPozNazwa').value, c=document.getElementById('ustPozCena').value;
+    var poz=D_BAZA.cennik.pozycje.find(function(x){return norm(x.nazwa)===norm(n.trim());})||znajdzPozycje(D_BAZA,n);
+    if(!poz){ msg.innerHTML='<span class="errline">Nie znam pozycji „'+esc(n)+'”.</span>'; return; }
+    var p=parsujCene(c);
+    if(p===null){ delete UST.pozycje[poz.id]; msg.textContent='Usunięto nadpisanie: '+poz.nazwa+'.'; }
+    else if(!(p>0)){ msg.innerHTML='<span class="errline">Nie rozumiem ceny „'+esc(c)+'”.</span>'; return; }
+    else { UST.pozycje[poz.id]={cena_p:p}; msg.textContent=poz.nazwa+': '+mon(p)+'.'; }
+    odswiez();
+  });
+  document.getElementById('ustPozLista2').addEventListener('click',function(e){ var b=e.target.closest('[data-usun]'); if(!b) return; delete UST.pozycje[b.dataset.usun]; odswiez(); });
+  document.getElementById('ustJsonBtn').addEventListener('click',function(){
+    try{ var j=JSON.parse(document.getElementById('ustJson').value); zastosujUstawienia(D_BAZA,j); UST=Object.assign(ustPuste(),j); odswiez(); msg.innerHTML='<span class="okline">Zastosowano.</span>'; }
+    catch(e){ msg.innerHTML='<span class="errline">Błąd: '+esc(e.message)+'</span>'; }
+  });
+  document.getElementById('ustEksport').addEventListener('click',function(){
+    var out=Object.assign({opis:'Ustawienia MG wyeksportowane ze Skarbca '+new Date().toISOString().slice(0,10)+'. Format: data/ustawienia.json.'},UST);
+    var tekst=JSON.stringify(out,null,1);
+    function lokalnie(){ var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([tekst],{type:'application/json'}));
+      a.download='ustawienia.json'; document.body.appendChild(a); a.click(); a.remove(); }
+    // Na claude.ai plik oddaje przeglądarka przez capability „downloads”; otwarta lokalnie strona — zwykłym linkiem.
+    if(window.claude&&window.claude.use){
+      window.claude.use('downloads').then(function(dl){
+        if(!dl){ msg.textContent='Zapis pliku niedostępny w tym widoku — skopiuj JSON z pola powyżej.'; return; }
+        return dl.save({filename:'ustawienia.json',data:tekst}).then(function(){ msg.innerHTML='<span class="okline">Zapisano ustawienia.json.</span>'; })
+          .catch(function(e){ msg.textContent=e&&e.code==='declined'?'Zapis anulowany.':'Nie udało się zapisać — skopiuj JSON z pola powyżej.'; });
+      });
+    } else lokalnie();
+  });
+  document.getElementById('ustImport').addEventListener('change',function(e){
+    var f=e.target.files[0]; if(!f) return; var r=new FileReader();
+    r.onload=function(){ try{ var j=JSON.parse(r.result); zastosujUstawienia(D_BAZA,j); delete j.przyklad; UST=Object.assign(ustPuste(),j); odswiez(); msg.innerHTML='<span class="okline">Wczytano '+esc(f.name)+'.</span>'; }
+      catch(err){ msg.innerHTML='<span class="errline">Błąd pliku: '+esc(err.message)+'</span>'; } };
+    r.readAsText(f); e.target.value='';
+  });
+  document.getElementById('ustReset').addEventListener('click',function(){ UST=ustPuste(); odswiez(); msg.textContent='Przywrócono cennik v5.'; });
+  document.getElementById('ustSpoj').addEventListener('click',function(){
+    var w=sprawdzWszystko(D.cennik,{reguly:D.spojnosc.reguly,testy:D.spojnosc_v4,czynsze:D.czynsze});
+    var bl=w.filter(function(x){return !x.ostrzezenie;}).reduce(function(s,x){return s+x.bledy.length;},0);
+    document.getElementById('ustSpojWynik').innerHTML='<div class="callout">'+w.map(function(x){
+      return '<p class="'+(x.bledy.length?(x.ostrzezenie?'':'errline'):'okline')+'"><strong>'+(x.bledy.length?(x.ostrzezenie?'uwaga':'BŁĄD'):'OK')+'</strong> &middot; '+esc(x.nazwa)
+        +(x.bledy.length?'<br><span class="small">'+x.bledy.map(esc).join('<br>')+'</span>':'')+'</p>';
+    }).join('')+'<p><strong>'+(bl?bl+' błędów — cennik pozwala na arbitraż albo łamie zasadę.':'Cennik spójny.')+'</strong></p></div>';
+  });
+  render(); ODSWIEZ.push(render);
+  document.getElementById('ustBadge').hidden=JSON.stringify(UST)===JSON.stringify(ustPuste());
+})();
+
+/* ---------------- historia ---------------- */
+(function(){
+  var H=D.historia.pozycje||D.historia;
+  var kats=[],seen={};
+  H.forEach(function(h){ if(!seen[h.kat]){seen[h.kat]=1;kats.push(h.kat);} });
+  var st={val:''};
+  var search=document.getElementById('histSearch'), body=document.getElementById('histBody'), count=document.getElementById('histCount');
+  function render(){
+    var q=norm(search.value.trim());
+    var rows=H.filter(function(h){
+      if(st.val&&h.kat!==st.val) return false;
+      if(q&&norm(h.poz+' '+h.zrodlo+' '+h.orig+' '+h.kat).indexOf(q)<0) return false;
+      return true;
+    });
+    count.textContent=rows.length+' z '+H.length;
+    body.innerHTML=rows.map(function(h){
+      return '<tr><td><strong>'+esc(h.poz)+'</strong><div class="small" style="color:var(--ink-3)">'+esc(h.kat)+'</div></td>'
+        +'<td class="num">'+esc(h.orig)+'</td><td class="small" style="color:var(--ink-2)">'+esc(h.zrodlo)+'</td>'
+        +'<td class="num">'+pl(h.dniowki,2)+'</td><td class="num" style="font-weight:600">'+esc(h.wfrp)+'</td></tr>';
+    }).join('')||'<tr><td colspan="5" style="color:var(--ink-3);padding:20px">Nic nie pasuje.</td></tr>';
+  }
+  chips(document.getElementById('histChips'),kats,st,render);
+  search.addEventListener('input',render);
+  render();
+})();
+
+/* ---------------- audyt ---------------- */
+(function(){
+  var A=D.audyt.profesje||D.audyt;
+  var flat=[];
+  A.forEach(function(p){ p.poziomy.forEach(function(l,i){
+    flat.push({klasa:p.klasa,profesja:p.profesja,idx:i+1,nazwa:l.nazwa,raw:l.raw,w:l.w,poz:l.poz,doch:l.doch,powod:l.powod});
+  }); });
+  var klasy=[],seen={};
+  flat.forEach(function(f){ if(!seen[f.klasa]){seen[f.klasa]=1;klasy.push(f.klasa);} });
+  var stK={val:''},stW={val:''};
+  var search=document.getElementById('audSearch'), body=document.getElementById('audBody'), count=document.getElementById('audCount');
+  var LAB={ok:'bez zmian',zmiana:'zmień szczebel',dochod:'rozdziel',ryzyko:'dochód ryzykowny'};
+  function render(){
+    var q=norm(search.value.trim());
+    var rows=flat.filter(function(f){
+      if(stK.val&&f.klasa!==stK.val) return false;
+      if(stW.val&&LAB[f.w]!==stW.val) return false;
+      if(q&&norm(f.profesja+' '+f.nazwa+' '+f.klasa+' '+(f.powod||'')).indexOf(q)<0) return false;
+      return true;
+    });
+    count.textContent=rows.length+' z '+flat.length;
+    body.innerHTML=rows.map(function(f){
+      var t=String(f.raw).split(' ')[0];
+      return '<tr><td class="small" style="color:var(--ink-3)">'+esc(f.klasa)+'</td><td>'+esc(f.profesja)+'</td>'
+        +'<td><strong>'+esc(f.nazwa)+'</strong> <span class="small" style="color:var(--ink-3)">· '+f.idx+'</span></td>'
+        +'<td class="num"><span class="metal '+metalClass(t)+'">'+esc(f.raw)+'</span></td>'
+        +'<td><span class="tag t-'+f.w+'">'+LAB[f.w]+'</span></td>'
+        +'<td class="num">'+(f.poz?'<span class="up">'+esc(f.poz)+'</span>':'<span style="color:var(--ink-3)">bez zmian</span>')+'</td>'
+        +'<td class="num">'+(f.doch?'<span class="down">'+esc(f.doch)+'</span>':'<span style="color:var(--ink-3)">= Pozycja</span>')+'</td>'
+        +'<td class="small" style="color:var(--ink-2)">'+esc(f.powod||'')+'</td></tr>';
+    }).join('')||'<tr><td colspan="8" style="color:var(--ink-3);padding:20px">Nic nie pasuje.</td></tr>';
+  }
+  chips(document.getElementById('audChips'),klasy,stK,render);
+  chips(document.getElementById('audVerdicts'),['zmień szczebel','rozdziel','dochód ryzykowny','bez zmian'],stW,render);
+  search.addEventListener('input',render);
+  render();
+})();
+})();
+</script>

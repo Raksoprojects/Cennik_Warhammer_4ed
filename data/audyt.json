@@ -1,0 +1,2510 @@
+[
+ {
+  "klasa": "Uczeni",
+  "profesja": "Aptekarz",
+  "poziomy": [
+   {
+    "nazwa": "Uczennica Aptekarki",
+    "raw": "Brąz 3",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 1",
+    "powod": "Uczeń terminuje za wikt i opierunek. Pozycja Brąz 3 zostaje, gotówki nie ma."
+   },
+   {
+    "nazwa": "Aptekarka",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Farmaceutka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrzyni Aptekarstwa",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Czarodziej",
+  "poziomy": [
+   {
+    "nazwa": "Uczeń Czarodzieja",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Czarodziej",
+    "raw": "Srebro 3",
+    "w": "zmiana",
+    "poz": "Srebro 4",
+    "doch": "",
+    "powod": "Licencjonowany mag jest rzadkością, na którą jest popyt – astrologowie i medycy dworscy zarabiali jak zamożni kupcy."
+   },
+   {
+    "nazwa": "Mistrz Magii",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Arcymag",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "Złoto 2",
+    "doch": "",
+    "powod": "POPRAWKA: Arcymag stoi bezpośrednio POD Patriarchą Kolegium, nie na jego czele. Złoto 2 jest właściwe. Patriarcha to osobna ranga BN – patrz niżej."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Inżynier",
+  "poziomy": [
+   {
+    "nazwa": "Student Inżynierii",
+    "raw": "Brąz 4",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 1",
+    "powod": "Student Akademii płaci czesne. Por. Uczeń Czarodzieja."
+   },
+   {
+    "nazwa": "Inżynier",
+    "raw": "Srebro 2",
+    "w": "zmiana",
+    "poz": "Srebro 3",
+    "doch": "",
+    "powod": "Inżynier po Akademii to mistrz z licencją, nie czeladnik."
+   },
+   {
+    "nazwa": "Renomowany Inżynier",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Inżynierii",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Kapłan",
+  "poziomy": [
+   {
+    "nazwa": "Kleryk",
+    "raw": "Brąz 2",
+    "w": "zmiana",
+    "poz": "Brąz 3",
+    "doch": "",
+    "powod": "Ksiądz altarysta, Anglia 1379: £4 13 s 4 d rocznie ≈ 32 ZK. To Brąz 3, nie Brąz 2."
+   },
+   {
+    "nazwa": "Kapłan",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Srebro 2",
+    "doch": "",
+    "powod": "Pleban z beneficjum utrzymuje dom, służbę i kościół."
+   },
+   {
+    "nazwa": "Arcykapłan",
+    "raw": "Złoto 1",
+    "w": "zmiana",
+    "poz": "Złoto 2",
+    "doch": "",
+    "powod": "Arcykapłan świątyni prowincjonalnej to odpowiednik biskupa."
+   },
+   {
+    "nazwa": "Lektor",
+    "raw": "Złoto 2",
+    "w": "zmiana",
+    "poz": "Złoto 3",
+    "doch": "",
+    "powod": "POPRAWKA: Lektor NIE zasiada automatycznie w kolegium elektorskim. Złoto 3 dla zwykłego Lektora; Najwyżsi Lektorzy (Altdorf, Nuln) – Złoto 6."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Medyk",
+  "poziomy": [
+   {
+    "nazwa": "Studentka Medycyny",
+    "raw": "Brąz 4",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 1",
+    "powod": "Student płaci czesne, nie pobiera pensji."
+   },
+   {
+    "nazwa": "Medyczka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Doktor",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Nadworna Medyczka",
+    "raw": "Złoto 1",
+    "w": "zmiana",
+    "poz": "Złoto 2",
+    "doch": "",
+    "powod": "Lekarz królewski w Krakowie: 700 florenów rocznie ≈ 1600 ZK. To górny zakres Złota 2."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Mnich",
+  "poziomy": [
+   {
+    "nazwa": "Nowicjuszka",
+    "raw": "Brąz 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": "POPRAWKA: w Imperium zakonnicy nie muszą składać ślubów ubóstwa. Drabina RAW zostaje."
+   },
+   {
+    "nazwa": "Mniszka",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Przeorysza",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Matka Przełożona",
+    "raw": "Srebro 5",
+    "w": "dochod",
+    "poz": "Srebro 5",
+    "doch": "zależnie od kultu",
+    "powod": "Dochód rozstrzyga kult: dom Shallyi żyje z jałmużny (Brąz 2), dom Vereny albo Sigmara obraca majątkiem ziemskim (Złoto 1–2)."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Prawnik",
+  "poziomy": [
+   {
+    "nazwa": "Studentka Prawa",
+    "raw": "Brąz 4",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 1",
+    "powod": "Student płaci czesne."
+   },
+   {
+    "nazwa": "Prawniczka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Obrońca",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Sędzia",
+    "raw": "Złoto 2",
+    "w": "zmiana",
+    "poz": "Złoto 3",
+    "doch": "",
+    "powod": "Sergeant at Law, Anglia 1455: £300 rocznie ≈ 2060 ZK."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Uczony",
+  "poziomy": [
+   {
+    "nazwa": "Student",
+    "raw": "Brąz 3",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 1",
+    "powod": "Student żyje z zapomóg i korepetycji."
+   },
+   {
+    "nazwa": "Uczony",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Wykładowca",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Profesor",
+    "raw": "Złoto 1",
+    "w": "zmiana",
+    "poz": "Złoto 2",
+    "doch": "",
+    "powod": "Doktor teologii w Krakowie: 400 florenów rocznie ≈ 916 ZK."
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Agitator",
+  "poziomy": [
+   {
+    "nazwa": "Pamflecista",
+    "raw": "Brąz 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Agitator",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Podżegacz",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Demagog",
+    "raw": "Brąz 5",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 5",
+    "powod": "Demagog nie ma pieniędzy, ma tłum. Pozycja Brąz 5, ale wpływy jak Srebro 3."
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Kupiec",
+  "poziomy": [
+   {
+    "nazwa": "Handlarz",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kupiec",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Kupiectwa",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Patrycjusz",
+    "raw": "Złoto 3",
+    "w": "zmiana",
+    "poz": "Złoto 4",
+    "doch": "",
+    "powod": "Patrycjat kupiecki (Fuggerowie, Welserowie) był bogatszy od książąt, którym pożyczał."
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Mieszczanin",
+  "poziomy": [
+   {
+    "nazwa": "Przekupka",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 4",
+    "doch": "",
+    "powod": "Przekupka na targu to nie mistrz cechowy. Srebro 1 na wejściu wywraca hierarchię miejską."
+   },
+   {
+    "nazwa": "Mieszczka",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Rajczyni Miejska",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Burmistrz",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Rzemieślnik",
+  "poziomy": [
+   {
+    "nazwa": "Czeladniczka",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Rzemieślniczka",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrzyni Rzemiosła",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrzyni Cechu",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": "Wzorcowa ścieżka – Brąz 2 / Srebro 1 / Srebro 3 / Złoto 1 pokrywa się z historyczną drogą czeladnik → mistrz → cechmistrz. W metropolii daj +1."
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Strażnik",
+  "poziomy": [
+   {
+    "nazwa": "Rekrut Straży",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Strażnik",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Sierżant Straży",
+    "raw": "Srebro 3",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 2",
+    "powod": "v5.2: Dochód Srebro 2. Straż miejska płaciła mniej niż wojsko: sierżant ≈ 4× robotnik."
+   },
+   {
+    "nazwa": "Kapitan Straży",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 4",
+    "powod": "v5.2: Dochód Srebro 4. Kapitan straży miejskiej to urzędnik rady, nie oficer polowy: ≈ 8× robotnik."
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Szczurołap",
+  "poziomy": [
+   {
+    "nazwa": "Uczeń Szczurołapa",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Szczurołap",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Strażnik Kanałów",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Tępiciel",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Śledczy",
+  "poziomy": [
+   {
+    "nazwa": "Szpicel",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 4",
+    "doch": "",
+    "powod": "Szpicel jest opłacany od informacji, nie na etacie."
+   },
+   {
+    "nazwa": "Śledczy",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Starszy Śledczy",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Detektyw",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Mieszczanie",
+  "profesja": "Żebrak",
+  "poziomy": [
+   {
+    "nazwa": "Biedak",
+    "raw": "Brąz 0",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Żebrak",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Żebraków",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Król Żebraków",
+    "raw": "Srebro 2",
+    "w": "zmiana",
+    "poz": "Srebro 4",
+    "doch": "",
+    "powod": "Król Żebraków ściąga haracz z setek żebraków. Bractwa żebracze były zorganizowanym reketem."
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Artysta",
+  "poziomy": [
+   {
+    "nazwa": "Uczennica Artysty",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Uczeń malarza PŁACIŁ mistrzowi za naukę."
+   },
+   {
+    "nazwa": "Artystka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrzyni Sztuki",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Maestro",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Doradca",
+  "poziomy": [
+   {
+    "nazwa": "Asystent",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Doradca",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Radca",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kanclerz",
+    "raw": "Złoto 3",
+    "w": "zmiana",
+    "poz": "Złoto 4",
+    "doch": "",
+    "powod": "Kanclerz prowincji to drugi człowiek po elektorze."
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Namiestnik",
+  "poziomy": [
+   {
+    "nazwa": "Nadzorca",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Namiestnik",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Seneszal",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Gubernator",
+    "raw": "Złoto 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Poseł",
+  "poziomy": [
+   {
+    "nazwa": "Herold",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Poseł",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Dyplomata",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Ambasador",
+    "raw": "Złoto 5",
+    "w": "dochod",
+    "poz": "Złoto 5",
+    "doch": "Złoto 3",
+    "powod": "Ambasador ma rangę magnata, bo zwykle sam nim jest. Pensja z urzędu jest niższa od jego pozycji."
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Służąca",
+  "poziomy": [
+   {
+    "nazwa": "Posługaczka",
+    "raw": "Srebro 1",
+    "w": "dochod",
+    "poz": "Srebro 1",
+    "doch": "Brąz 1 + wikt",
+    "powod": "NAJWIĘKSZY ROZJAZD W PODRĘCZNIKU. Służba kuchenna, Anglia XIV w.: 2–4 SZYLINGI ROCZNIE plus utrzymanie. Pozycja przy dworze jest wysoka – gotówki nie ma żadnej."
+   },
+   {
+    "nazwa": "Służąca",
+    "raw": "Srebro 3",
+    "w": "dochod",
+    "poz": "Srebro 3",
+    "doch": "Brąz 2 + wikt",
+    "powod": "j.w. v5.2: Dochód Brąz 2 + wikt. Służba z wiktem dostaje 4–6 zł rocznie gotówką (Kraków XVI w.) — ok. 0,4× robotnika."
+   },
+   {
+    "nazwa": "Pokojowa",
+    "raw": "Srebro 5",
+    "w": "dochod",
+    "poz": "Srebro 5",
+    "doch": "Brąz 3 + wikt",
+    "powod": "Pokojowa przy damie dostaje odzież i prezenty, nie pensję kupca. v5.2: Dochód Brąz 3 + wikt. Pokojowa pani domu: gotówka jak robotnik, reszta w wikcie, stroju i podarkach."
+   },
+   {
+    "nazwa": "Ochmistrzyni",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "Złoto 1",
+    "doch": "Srebro 1 + wikt",
+    "powod": "Ochmistrzyni zarządza budżetem domu – to władza nad cudzym majątkiem, nie własny dochód. v5.2: Dochód Srebro 1 + wikt. Ochmistrzyni bogatego domu: 2× robotnik gotówką plus pełne utrzymanie."
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Szlachcic",
+  "poziomy": [
+   {
+    "nazwa": "Dziedzic",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "Złoto 1",
+    "doch": "od Brąz 3 do Złoto 1",
+    "powod": "Zubożały dziedzic bez lenna to gotowy zaczep kampanii: pozycja Złoto 1, sakiewka pusta."
+   },
+   {
+    "nazwa": "Szlachcic",
+    "raw": "Złoto 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Magnat",
+    "raw": "Złoto 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Lord",
+    "raw": "Złoto 7",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Szpieg",
+  "poziomy": [
+   {
+    "nazwa": "Informator",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Szpieg",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Agent",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "Srebro 5",
+    "doch": "Złoto 1 (fundusz)",
+    "powod": "Agent dysponuje funduszem operacyjnym i przykrywką, a nie majątkiem. Rozliczaj mu wydatki osobno."
+   },
+   {
+    "nazwa": "Mistrz Szpiegów",
+    "raw": "Złoto 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Dworzanie",
+  "profesja": "Zwadźca",
+  "poziomy": [
+   {
+    "nazwa": "Szermierz",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Zwadźca",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Pojedynków",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Szampierz Sądowy",
+    "raw": "Złoto 3",
+    "w": "zmiana",
+    "poz": "Złoto 2",
+    "doch": "",
+    "powod": "Szampierz sądowy to płatny zawodowiec na kontrakcie, nie baron."
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Chłop",
+  "poziomy": [
+   {
+    "nazwa": "Wyrobnica",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Chłopka",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Gospodyni",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Starsza Wioski",
+    "raw": "Srebro 2",
+    "w": "zmiana",
+    "poz": "Brąz 5",
+    "doch": "",
+    "powod": "Sołtys żyje lepiej niż sąsiedzi, ale nie na poziomie mistrza cechowego w mieście."
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Górnik",
+  "poziomy": [
+   {
+    "nazwa": "Poszukiwacz",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Górnik",
+    "raw": "Brąz 4",
+    "w": "zmiana",
+    "poz": "Brąz 5",
+    "doch": "",
+    "powod": "Wolni gwarkowie (Kutná Hora, Saksonia) byli najlepiej opłacaną grupą robotników w Europie."
+   },
+   {
+    "nazwa": "Sztygar",
+    "raw": "Brąz 5",
+    "w": "zmiana",
+    "poz": "Srebro 1",
+    "doch": "",
+    "powod": "Sztygar dowodzi szybem."
+   },
+   {
+    "nazwa": "Mistrz Górnictwa",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Guślarz",
+  "poziomy": [
+   {
+    "nazwa": "Uczeń Guślarza",
+    "raw": "Brąz 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Guślarz",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Starszy Guślarzy",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Wiedzący",
+    "raw": "Brąz 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Łowczy",
+  "poziomy": [
+   {
+    "nazwa": "Traperka",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Łowczyni",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Tropicielka",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Nadworna Łowczyni",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Mistyk",
+  "poziomy": [
+   {
+    "nazwa": "Wróżbiarka",
+    "raw": "Brąz 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistyczka",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Widząca",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Prorokini",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Zarządca",
+  "poziomy": [
+   {
+    "nazwa": "Poborca Podatków",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Srebro 3",
+    "doch": "",
+    "powod": "Poborca podatkowy żyje z prowizji i z tego, co przylgnie do rąk. Srebro 1 zaniża go i mechanicznie, i fabularnie."
+   },
+   {
+    "nazwa": "Zarządca",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Włodarz",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Komornik",
+    "raw": "Złoto 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Zielarz",
+  "poziomy": [
+   {
+    "nazwa": "Zbieraczka Ziół",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Zielarka",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrzyni Ziołolecznictwa",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Arcyzielarka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Pospólstwo",
+  "profesja": "Zwiadowca",
+  "poziomy": [
+   {
+    "nazwa": "Przewodnik",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Zwiadowca",
+    "raw": "Brąz 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Przepatrywacz",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Odkrywca",
+    "raw": "Srebro 5",
+    "w": "zmiana",
+    "poz": "Srebro 3",
+    "doch": "",
+    "powod": "Skok Srebro 1 → Srebro 5 to cztery szczeble w jednym awansie. Nic innego w podręczniku tak nie skacze."
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Biczownik",
+  "poziomy": [
+   {
+    "nazwa": "Gorliwiec",
+    "raw": "Brąz 0",
+    "w": "dochod",
+    "poz": "Brąz 0",
+    "doch": "Dochód z Jałmużny",
+    "powod": "Cztery poziomy Brązu 0 to mechaniczny ślepy zaułek. Zastąp rzut Testem Charyzmy – patrz zasady."
+   },
+   {
+    "nazwa": "Biczownik",
+    "raw": "Brąz 0",
+    "w": "dochod",
+    "poz": "Brąz 0",
+    "doch": "Dochód z Jałmużny",
+    "powod": "Cztery poziomy Brązu 0 to mechaniczny ślepy zaułek. Zastąp rzut Testem Charyzmy – patrz zasady."
+   },
+   {
+    "nazwa": "Pokutnik",
+    "raw": "Brąz 0",
+    "w": "dochod",
+    "poz": "Brąz 0",
+    "doch": "Dochód z Jałmużny",
+    "powod": "Cztery poziomy Brązu 0 to mechaniczny ślepy zaułek. Zastąp rzut Testem Charyzmy – patrz zasady."
+   },
+   {
+    "nazwa": "Piewca Zagłady",
+    "raw": "Brąz 0",
+    "w": "dochod",
+    "poz": "Brąz 0",
+    "doch": "Dochód z Jałmużny",
+    "powod": "Cztery poziomy Brązu 0 to mechaniczny ślepy zaułek. Zastąp rzut Testem Charyzmy – patrz zasady."
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Domokrążca",
+  "poziomy": [
+   {
+    "nazwa": "Powsinoga",
+    "raw": "Brąz 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Domokrążca",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Doświadczony Domokrążca",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Wędrowny Handlarz",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Kuglarz",
+  "poziomy": [
+   {
+    "nazwa": "Muzykantka",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kuglarka",
+    "raw": "Brąz 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Trubadurka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Przywódczyni Trupy",
+    "raw": "Złoto 1",
+    "w": "zmiana",
+    "poz": "Srebro 5",
+    "doch": "",
+    "powod": "Trupa teatralna żyje z patrona i wpływów z przedstawień."
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Łowca Czarownic",
+  "poziomy": [
+   {
+    "nazwa": "Oprawca",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Łowca Czarownic",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Inkwizytor",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Generał Łowców Czarownic",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Łowczy",
+  "poziomy": [
+   {
+    "nazwa": "Pogromczyni Złodziei",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Łowczyni Nagród",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Doświadczona Łowczyni Nagród",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Legendarna Łowczyni Nagród",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Posłaniec",
+  "poziomy": [
+   {
+    "nazwa": "Goniec",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Posłaniec",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kurier",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kapitan Kurierów",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Strażnik Dróg",
+  "poziomy": [
+   {
+    "nazwa": "Mytniczka",
+    "raw": "Brąz 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Strażniczka Dróg",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Sierżant Strażników Dróg",
+    "raw": "Srebro 4",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 3",
+    "powod": "v5.2: Dochód Srebro 3. Jak sierżant wojska (Doppelsold)."
+   },
+   {
+    "nazwa": "Kapitan Strażników Dróg",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 5",
+    "powod": "v5.2: Dochód Srebro 5. Dowódca kilku posterunków: ≈ 10× robotnik, nie 22×."
+   }
+  ]
+ },
+ {
+  "klasa": "Wędrowcy",
+  "profesja": "Woźnica",
+  "poziomy": [
+   {
+    "nazwa": "Foryś",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 4",
+    "doch": "",
+    "powod": "Foryś to chłopak od koni, nie rzemieślnik."
+   },
+   {
+    "nazwa": "Woźnica",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Woźniców",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Szlaków",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Doker",
+  "poziomy": [
+   {
+    "nazwa": "Pomocnik Dokera",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Doker",
+    "raw": "Srebro 1",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Brąz 5",
+    "powod": "v5.2: Dochód Brąz 5. Tragarz portowy zarabiał jak czeladnik, nie jak mistrz."
+   },
+   {
+    "nazwa": "Brygadzista",
+    "raw": "Srebro 3",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 2",
+    "powod": "v5.2: Dochód Srebro 2. Brygadzista tragarzy: ≈ 4× robotnik."
+   },
+   {
+    "nazwa": "Mistrz Dokerów",
+    "raw": "Srebro 5",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 3",
+    "powod": "v5.2: Dochód Srebro 3. Starszy cechu tragarzy: ≈ 6× robotnik."
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Flisak",
+  "poziomy": [
+   {
+    "nazwa": "Rybak",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Flisak",
+    "raw": "Brąz 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Znawca Rzeki",
+    "raw": "Brąz 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Starszy Rzeczny",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Pilot Rzeczny",
+  "poziomy": [
+   {
+    "nazwa": "Przewodniczka Rzeczna",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Pilotka Rzeczna",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Starsza Pilotka",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Legendarna Pilotka",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Pirat Rzeczny",
+  "poziomy": [
+   {
+    "nazwa": "Szabrownik",
+    "raw": "Brąz 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 2 (z łupu)",
+    "powod": "Piraci nie dostają pensji. Użyj zasady Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Pirat Rzeczny",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 3 (z łupu)",
+    "powod": "Piraci nie dostają pensji. Użyj zasady Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Łupieżca",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 5 (z łupu)",
+    "powod": "Piraci nie dostają pensji. Użyj zasady Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Kapitan Łupieżców",
+    "raw": "Srebro 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Srebro 2 (z łupu)",
+    "powod": "Piraci nie dostają pensji. Użyj zasady Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Przemytnik",
+  "poziomy": [
+   {
+    "nazwa": "Szmuglerka Rzeczna",
+    "raw": "Brąz 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 2 (z przemytu)",
+    "powod": "Dochód z przemytu bywa świetny albo żaden – zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Przemytniczka",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 3 (z przemytu)",
+    "powod": "Dochód z przemytu bywa świetny albo żaden – zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Doświadczona Przemytniczka",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Brąz 5 (z przemytu)",
+    "powod": "Dochód z przemytu bywa świetny albo żaden – zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Królowa Przemytników",
+    "raw": "Srebro 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "Srebro 2 (z przemytu)",
+    "powod": "Dochód z przemytu bywa świetny albo żaden – zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Przewoźnik",
+  "poziomy": [
+   {
+    "nazwa": "Chłopiec Pokładowy",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Chłopiec pokładowy pracuje za wikt i kąt do spania."
+   },
+   {
+    "nazwa": "Przewoźnik",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Sternik",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kapitan Barki",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Strażnik",
+  "poziomy": [
+   {
+    "nazwa": "Rekrut Rzeczny",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Strażnik Rzeczny",
+    "raw": "Srebro 2",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 1",
+    "powod": "v5.2: Dochód Srebro 1. Straż rzeczna płaciła jak straż miejska."
+   },
+   {
+    "nazwa": "Żołnierz Okrętowy",
+    "raw": "Srebro 4",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 2",
+    "powod": "v5.2: Dochód Srebro 2. Jak lancknecht."
+   },
+   {
+    "nazwa": "Mistrz Żołnierzy Okrętowych",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 4",
+    "powod": "v5.2: Dochód Srebro 4. Jak kapitan straży."
+   }
+  ]
+ },
+ {
+  "klasa": "Wodniacy",
+  "profesja": "Żeglarz",
+  "poziomy": [
+   {
+    "nazwa": "Szczur Lądowy",
+    "raw": "Srebro 1",
+    "w": "zmiana",
+    "poz": "Brąz 3",
+    "doch": "",
+    "powod": "„Szczur lądowy\" to nowicjusz. Srebro 1 na wejściu psuje całą ścieżkę."
+   },
+   {
+    "nazwa": "Żeglarz",
+    "raw": "Srebro 3",
+    "w": "zmiana",
+    "poz": "Srebro 2",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Bosman",
+    "raw": "Srebro 5",
+    "w": "zmiana",
+    "poz": "Srebro 4",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kapitan Statku",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Banita",
+  "poziomy": [
+   {
+    "nazwa": "Zbój",
+    "raw": "Brąz 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Banita",
+    "raw": "Brąz 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Herszt Banitów",
+    "raw": "Brąz 4",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Król Banitów",
+    "raw": "Srebro 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Czarownica",
+  "poziomy": [
+   {
+    "nazwa": "Szeptucha",
+    "raw": "Brąz 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Czarownica",
+    "raw": "Brąz 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Wiedźma",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Arcyczarownica",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Hiena Cmentarna",
+  "poziomy": [
+   {
+    "nazwa": "Porywaczka Zwłok",
+    "raw": "Brąz 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Hiena Cmentarna",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Rabuś Grobowców",
+    "raw": "Srebro 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Łowczyni Skarbów",
+    "raw": "Srebro 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Paser",
+  "poziomy": [
+   {
+    "nazwa": "Pośrednik",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Paser",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Paserów",
+    "raw": "Srebro 3",
+    "w": "zmiana",
+    "poz": "Srebro 5",
+    "doch": "",
+    "powod": "Paser obraca cudzym majątkiem i bierze z tego 50–70%."
+   },
+   {
+    "nazwa": "Broker Informacji",
+    "raw": "Srebro 4",
+    "w": "zmiana",
+    "poz": "Złoto 1",
+    "doch": "",
+    "powod": "Broker informacji w Imperium to odpowiednik bankiera."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Rajfur",
+  "poziomy": [
+   {
+    "nazwa": "Naganiacz",
+    "raw": "Brąz 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Rajfur",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Stręczyciel",
+    "raw": "Srebro 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Herszt Rajfurów",
+    "raw": "Srebro 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Rekietier",
+  "poziomy": [
+   {
+    "nazwa": "Zakapiorka",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Rekietierka",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Głowa Gangu",
+    "raw": "Srebro 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Królowa Podziemia",
+    "raw": "Srebro 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Szarlatan",
+  "poziomy": [
+   {
+    "nazwa": "Kanciarz",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Szarlatan",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Oszust",
+    "raw": "Srebro 2",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Łajdak",
+    "raw": "Srebro 4",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Łotrzy",
+  "profesja": "Złodziej",
+  "poziomy": [
+   {
+    "nazwa": "Bandzior",
+    "raw": "Brąz 1",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Złodziej",
+    "raw": "Brąz 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Mistrz Złodziejski",
+    "raw": "Brąz 5",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   },
+   {
+    "nazwa": "Włamywacz",
+    "raw": "Srebro 3",
+    "w": "ryzyko",
+    "poz": "",
+    "doch": "bez zmian, rzut ryzykowny",
+    "powod": "Cała klasa Łotrów: dochód nie jest pensją. Patrz zasada Dochodu Ryzykownego."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Gladiator",
+  "poziomy": [
+   {
+    "nazwa": "Pięściarz",
+    "raw": "Brąz 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Gladiator",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Mistrz Areny",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Legenda Areny",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Kapłan Bitewny",
+  "poziomy": [
+   {
+    "nazwa": "Nowicjusz Kapłanów Bitewnych",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": "POPRAWKA: to rangi POLOWE, nie hierarchia świątynna. Kapłan-kapitan dowodzi oddziałem, a nie diecezją – Srebro 2–4 jest trafione. Nie mylić ze ścieżką Kapłana."
+   },
+   {
+    "nazwa": "Kapłan Bitewny",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kapłan-sierżant",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kapłan-kapitan",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "Srebro 4",
+    "doch": "",
+    "powod": "Odpowiednik kapitana najemnego. Drabina RAW zostaje."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Kawalerzysta",
+  "poziomy": [
+   {
+    "nazwa": "Jeździec",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Kawalerzysta",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Sierżant Kawalerii",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Srebro 5",
+    "powod": "v5.2: Dochód Srebro 5. Rajtar z koniem ≈ 9× robotnik; sierżant nieco więcej. Złoto 1 (22×) to płaca rotmistrza."
+   },
+   {
+    "nazwa": "Oficer Kawalerii",
+    "raw": "Złoto 2",
+    "w": "dochod",
+    "poz": "",
+    "doch": "Złoto 1",
+    "powod": "v5.2: Dochód Złoto 1. Rotmistrz: ≈ 20× robotnik."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Ochroniarz",
+  "poziomy": [
+   {
+    "nazwa": "Stróż",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Ochroniarz",
+    "raw": "Srebro 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Gwardzista",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Oficer Gwardii",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Oprych",
+  "poziomy": [
+   {
+    "nazwa": "Tani Drań",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Oprych",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Płatny Morderca",
+    "raw": "Srebro 4",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Skrytobójca",
+    "raw": "Złoto 1",
+    "w": "dochod",
+    "poz": "Srebro 3",
+    "doch": "Złoto 1",
+    "powod": "Skrytobójca ma pieniądze, nie ma pozycji. Na bankiet go nie wpuszczą."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Rycerz",
+  "poziomy": [
+   {
+    "nazwa": "Giermek",
+    "raw": "Srebro 3",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Rycerz",
+    "raw": "Srebro 5",
+    "w": "ok",
+    "poz": "Srebro 5",
+    "doch": "",
+    "powod": "ZWERYFIKOWANE: rycerz z lennem, Anglia XIV–XV w.: £20–40 rocznie = 138–275 ZK. Srebro 5 daje 358 ZK brutto. Trafione."
+   },
+   {
+    "nazwa": "Pierwszy Rycerz",
+    "raw": "Złoto 2",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   },
+   {
+    "nazwa": "Rycerz Wewnętrznego Kręgu",
+    "raw": "Złoto 4",
+    "w": "ok",
+    "poz": "Złoto 4",
+    "doch": "",
+    "powod": "Na tym poziomie liczy się lenno, nie rzut na zarobek."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Zabójca",
+  "poziomy": [
+   {
+    "nazwa": "Zabójca Trolli",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Celowe i słuszne: Zabójca odrzucił majątek razem z klanem. Nie ruszaj."
+   },
+   {
+    "nazwa": "Zabójca Olbrzymów",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Celowe i słuszne: Zabójca odrzucił majątek razem z klanem. Nie ruszaj."
+   },
+   {
+    "nazwa": "Zabójca Smoków",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Celowe i słuszne: Zabójca odrzucił majątek razem z klanem. Nie ruszaj."
+   },
+   {
+    "nazwa": "Zabójca Demonów",
+    "raw": "Brąz 2",
+    "w": "ok",
+    "poz": "Brąz 2",
+    "doch": "",
+    "powod": "Celowe i słuszne: Zabójca odrzucił majątek razem z klanem. Nie ruszaj."
+   }
+  ]
+ },
+ {
+  "klasa": "Wojownicy",
+  "profesja": "Żołnierz",
+  "poziomy": [
+   {
+    "nazwa": "Rekrut",
+    "raw": "Srebro 1",
+    "w": "ok",
+    "poz": "Srebro 1",
+    "doch": "",
+    "powod": "ZWERYFIKOWANE: żołd lancknechta to 4 guldeny reńskie miesięcznie ≈ 2 ZK 2 s tygodniowo brutto. Ścieżka Żołnierza jest skalibrowana poprawnie."
+   },
+   {
+    "nazwa": "Żołnierz",
+    "raw": "Srebro 3",
+    "w": "dochod",
+    "poz": "Srebro 3",
+    "doch": "Srebro 2",
+    "powod": "j.w. v5.2: Dochód Srebro 2. Lancknecht: 4 guldeny miesięcznie ≈ 3× robotnik. Srebro 3 (6×) to żołd Doppelsöldnera."
+   },
+   {
+    "nazwa": "Sierżant",
+    "raw": "Srebro 5",
+    "w": "dochod",
+    "poz": "Srebro 5",
+    "doch": "Srebro 3",
+    "powod": "Doppelsöldner brał podwójny żołd – 8 guldenów miesięcznie. Zgadza się. v5.2: Dochód Srebro 3. Podoficer: podwójny żołd (Doppelsold) ≈ 6× robotnik."
+   },
+   {
+    "nazwa": "Oficer",
+    "raw": "Złoto 1",
+    "w": "ok",
+    "poz": "",
+    "doch": "",
+    "powod": ""
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Patriarcha Kolegium (BN)",
+  "poziomy": [
+   {
+    "nazwa": "Patriarcha Złota",
+    "raw": "—",
+    "w": "dochod",
+    "poz": "Złoto 5",
+    "doch": "Złoto 5",
+    "powod": "Alchemicy Kolegium Złota obracają majątkiem – bogaty jak elektor."
+   },
+   {
+    "nazwa": "Patriarcha Bursztynu",
+    "raw": "—",
+    "w": "dochod",
+    "poz": "Złoto 5",
+    "doch": "Brąz 3",
+    "powod": "Siedzi w lesie. Pozycja najwyższa, dochodu praktycznie żadnego. Wzorcowy przykład rozdziału Pozycji i Dochodu."
+   },
+   {
+    "nazwa": "Patriarcha Szarej / Jasnej / Niebios",
+    "raw": "—",
+    "w": "dochod",
+    "poz": "Złoto 5",
+    "doch": "Złoto 2",
+    "powod": "Utrzymanie z dotacji Kolegium i zleceń Imperium."
+   },
+   {
+    "nazwa": "Patriarcha Cienia / Śmierci",
+    "raw": "—",
+    "w": "dochod",
+    "poz": "Złoto 5",
+    "doch": "Srebro 5",
+    "powod": "Pozycja formalna wysoka, finansowanie skromne i dyskretne."
+   }
+  ]
+ },
+ {
+  "klasa": "Uczeni",
+  "profesja": "Najwyższy Lektor (BN)",
+  "poziomy": [
+   {
+    "nazwa": "Najwyższy Lektor Altdorfu",
+    "raw": "—",
+    "w": "zmiana",
+    "poz": "Złoto 6",
+    "doch": "",
+    "powod": "Ten zasiada w kolegium elektorskim. Zwykły Lektor ze ścieżki Kapłana – Złoto 3."
+   },
+   {
+    "nazwa": "Najwyższy Lektor Nuln",
+    "raw": "—",
+    "w": "zmiana",
+    "poz": "Złoto 6",
+    "doch": "",
+    "powod": "j.w."
+   },
+   {
+    "nazwa": "Wielki Teogonista",
+    "raw": "—",
+    "w": "zmiana",
+    "poz": "Złoto 7",
+    "doch": "",
+    "powod": "Formalnie elektor; realnie poza skalą pieniężną."
+   },
+   {
+    "nazwa": "Lektor prowincjonalny",
+    "raw": "—",
+    "w": "ok",
+    "poz": "Złoto 3",
+    "doch": "",
+    "powod": "Większość Lektorów. Bez miejsca w radzie elektorskiej."
+   }
+  ]
+ }
+]

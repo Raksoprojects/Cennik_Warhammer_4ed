@@ -1,0 +1,848 @@
+[
+ {
+  "id": "miecz",
+  "nazwa": "Miecz",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "bron-reczna-topor-maczuga",
+  "nazwa": "Broń ręczna (topór, maczuga)",
+  "kat": "Broń biała",
+  "stara_p": 360,
+  "nowa_p": 204,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "bulat",
+  "nazwa": "Bułat",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "szabla",
+  "nazwa": "Szabla",
+  "kat": "Broń biała",
+  "stara_p": 720,
+  "nowa_p": 408,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "noz",
+  "nazwa": "Nóż",
+  "kat": "Broń biała",
+  "stara_p": 18,
+  "nowa_p": 10,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "sztylet",
+  "nazwa": "Sztylet",
+  "kat": "Broń biała",
+  "stara_p": 120,
+  "nowa_p": 66,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "mizerykordia",
+  "nazwa": "Mizerykordia",
+  "kat": "Broń biała",
+  "stara_p": 120,
+  "nowa_p": 66,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "kastet",
+  "nazwa": "Kastet",
+  "kat": "Broń biała",
+  "stara_p": 30,
+  "nowa_p": 17,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "topor",
+  "nazwa": "Topór",
+  "kat": "Broń biała",
+  "stara_p": 168,
+  "nowa_p": 96,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "buzdygan",
+  "nazwa": "Buzdygan",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "nadziak-jednoreczny",
+  "nazwa": "Nadziak jednoręczny",
+  "kat": "Broń biała",
+  "stara_p": 180,
+  "nowa_p": 102,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "mlot-jednoreczny",
+  "nazwa": "Młot jednoręczny",
+  "kat": "Broń biała",
+  "stara_p": 360,
+  "nowa_p": 204,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "cep-bojowy",
+  "nazwa": "Cep bojowy",
+  "kat": "Broń biała",
+  "stara_p": 144,
+  "nowa_p": 84,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "korbacz",
+  "nazwa": "Korbacz",
+  "kat": "Broń biała",
+  "stara_p": 360,
+  "nowa_p": 204,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "kiscien",
+  "nazwa": "Kiścień",
+  "kat": "Broń biała",
+  "stara_p": 720,
+  "nowa_p": 408,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "lewak",
+  "nazwa": "Lewak",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "lamacz-mieczy",
+  "nazwa": "Łamacz mieczy",
+  "kat": "Broń biała",
+  "stara_p": 270,
+  "nowa_p": 156,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "wlocznia",
+  "nazwa": "Włócznia",
+  "kat": "Broń biała",
+  "stara_p": 168,
+  "nowa_p": 96,
+  "typ": "spójność",
+  "uzasadnienie": "Włócznia ≤ pika (krótsze drzewce, ten sam grot)."
+ },
+ {
+  "id": "pika",
+  "nazwa": "Pika",
+  "kat": "Broń biała",
+  "stara_p": 168,
+  "nowa_p": 108,
+  "typ": "historyczna",
+  "uzasadnienie": "Pika 2 s (Anglia elżb.) = 3,4 dniówki ≈ 8 s; podniesione do 9 s, żeby pika (5 m drzewca) była droższa od włóczni."
+ },
+ {
+  "id": "halabarda",
+  "nazwa": "Halabarda",
+  "kat": "Broń biała",
+  "stara_p": 336,
+  "nowa_p": 192,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "wielki-topor",
+  "nazwa": "Wielki topór",
+  "kat": "Broń biała",
+  "stara_p": 720,
+  "nowa_p": 408,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "mlot-bojowy",
+  "nazwa": "Młot bojowy",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "poltorak",
+  "nazwa": "Półtorak",
+  "kat": "Broń biała",
+  "stara_p": 1680,
+  "nowa_p": 960,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "miecz-dwureczny",
+  "nazwa": "Miecz dwuręczny",
+  "kat": "Broń biała",
+  "stara_p": 2400,
+  "nowa_p": 1368,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "floret",
+  "nazwa": "Floret",
+  "kat": "Broń biała",
+  "stara_p": 1920,
+  "nowa_p": 828,
+  "typ": "spójność",
+  "uzasadnienie": "Floret (+BS+3, Tępy) słabszy od rapiera → cena szpady."
+ },
+ {
+  "id": "rapier",
+  "nazwa": "Rapier",
+  "kat": "Broń biała",
+  "stara_p": 1920,
+  "nowa_p": 1092,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "szpada",
+  "nazwa": "Szpada",
+  "kat": "Broń biała",
+  "stara_p": 1440,
+  "nowa_p": 828,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "mlot-kawaleryjski",
+  "nazwa": "Młot kawaleryjski",
+  "kat": "Broń biała",
+  "stara_p": 720,
+  "nowa_p": 408,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "kopia",
+  "nazwa": "Kopia",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "lanca",
+  "nazwa": "Lanca",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "tarcza-puklerz",
+  "nazwa": "Tarcza (puklerz)",
+  "kat": "Broń biała",
+  "stara_p": 84,
+  "nowa_p": 48,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "tarcza",
+  "nazwa": "Tarcza",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "tarcza-duza",
+  "nazwa": "Tarcza (duża)",
+  "kat": "Broń biała",
+  "stara_p": 360,
+  "nowa_p": 204,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "pawez",
+  "nazwa": "Pawęż",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "kolczasta-rekawica",
+  "nazwa": "Kolczasta rękawica",
+  "kat": "Broń biała",
+  "stara_p": 720,
+  "nowa_p": 408,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "zamykana-rekawica",
+  "nazwa": "Zamykana rękawica",
+  "kat": "Broń biała",
+  "stara_p": 360,
+  "nowa_p": 204,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "obciazona-siec",
+  "nazwa": "Obciążona sieć",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "lapacz",
+  "nazwa": "Łapacz",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "partyzana-glewia",
+  "nazwa": "Partyzana / glewia",
+  "kat": "Broń biała",
+  "stara_p": 336,
+  "nowa_p": 192,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "sierpak",
+  "nazwa": "Sierpak",
+  "kat": "Broń biała",
+  "stara_p": 240,
+  "nowa_p": 132,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "szydlo",
+  "nazwa": "Szydło",
+  "kat": "Broń biała",
+  "stara_p": 336,
+  "nowa_p": 192,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "topor-drzewcowy",
+  "nazwa": "Topór drzewcowy",
+  "kat": "Broń biała",
+  "stara_p": 480,
+  "nowa_p": 276,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "nadziak-dwureczny",
+  "nazwa": "Nadziak dwuręczny",
+  "kat": "Broń biała",
+  "stara_p": 300,
+  "nowa_p": 168,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "krotki-luk",
+  "nazwa": "Krótki łuk",
+  "kat": "Broń zasięgowa",
+  "stara_p": 168,
+  "nowa_p": 96,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "luk",
+  "nazwa": "Łuk",
+  "kat": "Broń zasięgowa",
+  "stara_p": 204,
+  "nowa_p": 114,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "luk-dlugi",
+  "nazwa": "Łuk długi",
+  "kat": "Broń zasięgowa",
+  "stara_p": 276,
+  "nowa_p": 156,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "kusza",
+  "nazwa": "Kusza",
+  "kat": "Broń zasięgowa",
+  "stara_p": 1440,
+  "nowa_p": 828,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "ciezka-kusza",
+  "nazwa": "Ciężka kusza",
+  "kat": "Broń zasięgowa",
+  "stara_p": 2160,
+  "nowa_p": 1236,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "proca-drzewcowa",
+  "nazwa": "Proca drzewcowa",
+  "kat": "Broń zasięgowa",
+  "stara_p": 48,
+  "nowa_p": 30,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "oszczep",
+  "nazwa": "Oszczep",
+  "kat": "Broń zasięgowa",
+  "stara_p": 144,
+  "nowa_p": 84,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "noz-do-rzucania",
+  "nazwa": "Nóż do rzucania",
+  "kat": "Broń zasięgowa",
+  "stara_p": 72,
+  "nowa_p": 42,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "topor-do-rzucania",
+  "nazwa": "Topór do rzucania",
+  "kat": "Broń zasięgowa",
+  "stara_p": 168,
+  "nowa_p": 96,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "strzalka",
+  "nazwa": "Strzałka",
+  "kat": "Broń zasięgowa",
+  "stara_p": 24,
+  "nowa_p": 14,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "bolas",
+  "nazwa": "Bolas",
+  "kat": "Broń zasięgowa",
+  "stara_p": 72,
+  "nowa_p": 42,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "arkan",
+  "nazwa": "Arkan",
+  "kat": "Broń zasięgowa",
+  "stara_p": 72,
+  "nowa_p": 120,
+  "typ": "spójność",
+  "uzasadnienie": "= lina 10 m."
+ },
+ {
+  "id": "bicz",
+  "nazwa": "Bicz",
+  "kat": "Broń zasięgowa",
+  "stara_p": 96,
+  "nowa_p": 54,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "strzala-12",
+  "nazwa": "Strzała (12)",
+  "kat": "Amunicja",
+  "stara_p": 96,
+  "nowa_p": 60,
+  "typ": "historyczna",
+  "uzasadnienie": "Snop 24 strzał 2 s 4 d – 5 s (Anglia elżb.) = 2–4 dniówki za tuzin → 5 s (= RAW)."
+ },
+ {
+  "id": "belt-12",
+  "nazwa": "Bełt (12)",
+  "kat": "Amunicja",
+  "stara_p": 96,
+  "nowa_p": 60,
+  "typ": "spójność",
+  "uzasadnienie": "Bełty jak strzały."
+ },
+ {
+  "id": "strzala-przebijajaca-12",
+  "nazwa": "Strzała przebijająca (12)",
+  "kat": "Amunicja",
+  "stara_p": 144,
+  "nowa_p": 84,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "strzala-zabkowana-12",
+  "nazwa": "Strzała ząbkowana (12)",
+  "kat": "Amunicja",
+  "stara_p": 144,
+  "nowa_p": 84,
+  "typ": "historyczna",
+  "uzasadnienie": "Ceny broni z angielskich list milicji (kaliwer, korselet → ok. 1560–90) artefakt liczył po 4 d za dniówkę; w tym okresie robotnik brał 7–8 d. Cała grupa ×4/7 (miecz 6 s = 10 dniówek → 1 ZK 3 s 7 p)."
+ },
+ {
+  "id": "helm-otwarty-morion",
+  "nazwa": "Hełm otwarty (morion)",
+  "kat": "Pancerze",
+  "stara_p": 276,
+  "nowa_p": 144,
+  "typ": "historyczna",
+  "uzasadnienie": "Morion 3 s 4 d, burgonet 4 s (Anglia 1590) = 5–6 dniówek → 12 s."
+ },
+ {
+  "id": "helm-zamkniety",
+  "nazwa": "Hełm zamknięty",
+  "kat": "Pancerze",
+  "stara_p": 1440,
+  "nowa_p": 1920,
+  "typ": "historyczna",
+  "uzasadnienie": "Basinet z podszyciem 16 s 8 d (Anglia 1369) = 80 dniówek ≈ 9 ZK; 8 ZK domyka sumę płytówki: 14 + 12 + 14 + 8 = 48 ZK."
+ },
+ {
+  "id": "koc",
+  "nazwa": "Koc",
+  "kat": "Wyposażenie różne",
+  "stara_p": 18,
+  "nowa_p": 180,
+  "typ": "historyczna",
+  "uzasadnienie": "Koc w inwentarzu z 1349–52: ok. 16 d = 8 dniówek ≈ 18 s; sukno w Krakowie 23 gr/łokieć. Wełniany koc nie może kosztować mniej niż dniówka. → 15 s."
+ },
+ {
+  "id": "zwijane-poslanie",
+  "nazwa": "Zwijane posłanie",
+  "kat": "Wyposażenie różne",
+  "stara_p": 96,
+  "nowa_p": 216,
+  "typ": "spójność",
+  "uzasadnienie": "Posłanie = koc + siennik (2 d w 1457 ≈ 1 s 5 p) + rzemienie → 18 s."
+ },
+ {
+  "id": "plocienna-plandeka",
+  "nazwa": "Płócienna plandeka",
+  "kat": "Wyposażenie różne",
+  "stara_p": 180,
+  "nowa_p": 300,
+  "typ": "historyczna",
+  "uzasadnienie": "Płótno 1 gr/łokieć (Kraków) ≈ 1 s 6 p; plandeka ok. 3×3 m to ~15 łokci + nasycenie → 1 ZK 5 s."
+ },
+ {
+  "id": "namiot",
+  "nazwa": "Namiot",
+  "kat": "Wyposażenie różne",
+  "stara_p": 360,
+  "nowa_p": 720,
+  "typ": "spójność",
+  "uzasadnienie": "Namiot = ok. dwie plandeki płótna + szycie, maszty, linki, śledzie → 3 ZK."
+ },
+ {
+  "id": "butelka-wina",
+  "nazwa": "Butelka wina",
+  "kat": "Jedzenie, picie, nocleg",
+  "stara_p": 24,
+  "nowa_p": 60,
+  "typ": "historyczna",
+  "uzasadnienie": "Wino: garniec (3,77 l) 6–7 gr → 0,75 l ≈ 2 s (to jest dotychczasowa cena – sama zawartość). Pusta butelka 3 s (Anglia 1457: 4 d ≈ 2 s 10 p). Razem 5 s."
+ },
+ {
+  "id": "kielich-wina",
+  "nazwa": "Kielich wina",
+  "kat": "Jedzenie, picie, nocleg",
+  "stara_p": 2,
+  "nowa_p": 6,
+  "typ": "historyczna",
+  "uzasadnienie": "Kielich 0,15 l wina = 5 p w hurcie (Kraków) → 6 p w gospodzie. Wino nie może być tańsze od piwa (3 p za 0,5 l) w przeliczeniu na łyk."
+ },
+ {
+  "id": "beczulka-45-l",
+  "nazwa": "Beczułka (45 l)",
+  "kat": "Wyposażenie różne",
+  "stara_p": 72,
+  "nowa_p": 36,
+  "typ": "historyczna",
+  "uzasadnienie": "Beczka 3 d (Anglia 1457) ≈ 2 s; powrót do RAW 3 s."
+ },
+ {
+  "id": "beczka-145-l",
+  "nazwa": "Beczka (145 l)",
+  "kat": "Wyposażenie różne",
+  "stara_p": 180,
+  "nowa_p": 96,
+  "typ": "spójność",
+  "uzasadnienie": "Powrót do RAW 8 s; ok. 2,7× beczułki 45 l."
+ },
+ {
+  "id": "beczulka-piwa-10-l",
+  "nazwa": "Beczułka piwa (10 l)",
+  "kat": "Jedzenie, picie, nocleg",
+  "stara_p": 18,
+  "nowa_p": 30,
+  "typ": "spójność",
+  "uzasadnienie": "Piwo 10 l w hurcie 1 s 6 p (Kraków: achtel 137 l za 13–14 gr) + mała beczułka ok. 1 s → 2 s 6 p."
+ },
+ {
+  "id": "owca-baran",
+  "nazwa": "Owca / baran",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 360,
+  "nowa_p": 216,
+  "typ": "historyczna",
+  "uzasadnienie": "Baran 7–10 gr (Kraków) = 6 dniówek ≈ 13 s; Anglia XIV w. 19–24 s → 18 s."
+ },
+ {
+  "id": "kucyk",
+  "nazwa": "Kucyk",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 4320,
+  "nowa_p": 2400,
+  "typ": "spójność",
+  "uzasadnienie": "Kucyk nie może być droższy niż koń pociągowy (15 ZK, potwierdzony: 6–7 zł) ani muł (12 ZK) → 10 ZK."
+ },
+ {
+  "id": "ubranie",
+  "nazwa": "Ubranie",
+  "kat": "Ubranie i dodatki",
+  "stara_p": 240,
+  "nowa_p": 336,
+  "typ": "historyczna",
+  "uzasadnienie": "Kitel + nogawice 36 s (Kolonia 1390) = 12 dniówek ≈ 1 ZK 8 s; tunika chłopska z 1313 jeszcze droższa."
+ },
+ {
+  "id": "plaszcz",
+  "nazwa": "Płaszcz",
+  "kat": "Ubranie i dodatki",
+  "stara_p": 384,
+  "nowa_p": 300,
+  "typ": "spójność",
+  "uzasadnienie": "Płaszcz (prostszy krój) ≤ opończa; RAW 10 s < 18 s. Kożuch 21 gr (Kraków) ≈ 1 ZK 12 s."
+ },
+ {
+  "id": "oponcza",
+  "nazwa": "Opończa",
+  "kat": "Ubranie i dodatki",
+  "stara_p": 300,
+  "nowa_p": 384,
+  "typ": "spójność",
+  "uzasadnienie": "Zamiana z płaszczem – jak w RAW opończa droższa."
+ },
+ {
+  "id": "szpadel",
+  "nazwa": "Szpadel",
+  "kat": "Narzędzia i zestawy",
+  "stara_p": 48,
+  "nowa_p": 18,
+  "typ": "historyczna",
+  "uzasadnienie": "Łopata i szufla 3 d za parę (Anglia 1457) ≈ 1 s 1 p za sztukę → 1 s 6 p."
+ },
+ {
+  "id": "motyka",
+  "nazwa": "Motyka",
+  "kat": "Narzędzia i zestawy",
+  "stara_p": 24,
+  "nowa_p": 18,
+  "typ": "spójność",
+  "uzasadnienie": "≤ szpadel."
+ },
+ {
+  "id": "grabie",
+  "nazwa": "Grabie",
+  "kat": "Narzędzia i zestawy",
+  "stara_p": 24,
+  "nowa_p": 12,
+  "typ": "spójność",
+  "uzasadnienie": "Drewniane, tańsze od żelaznej motyki."
+ },
+ {
+  "id": "lina-10-metrow",
+  "nazwa": "Lina, 10 metrów",
+  "kat": "Narzędzia i zestawy",
+  "stara_p": 240,
+  "nowa_p": 120,
+  "typ": "spójność",
+  "uzasadnienie": "Arkan to lina z pętlą; lina 1 ZK kosztowała tyle co buzdygan. Lina 10 s (RAW 8 s 4 p)."
+ },
+ {
+  "id": "furmanka",
+  "nazwa": "Furmanka",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 2400,
+  "nowa_p": 720,
+  "typ": "historyczna",
+  "uzasadnienie": "Wóz okuty żelazem 4 s (Anglia ok. 1350) = 24 dniówki ≈ 2 ZK 15 s → 3 ZK."
+ },
+ {
+  "id": "woz",
+  "nazwa": "Wóz",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 8400,
+  "nowa_p": 2880,
+  "typ": "spójność",
+  "uzasadnienie": "Duży wóz czterokołowy ≈ 4× furmanka → 12 ZK."
+ },
+ {
+  "id": "powoz",
+  "nazwa": "Powóz",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 60000,
+  "nowa_p": 24000,
+  "typ": "historyczna",
+  "uzasadnienie": "Powóz £8 (Anglia 1381) = 850 dniówek ≈ 98 ZK → 100 ZK; królewskie £400–1000 to osobna liga."
+ },
+ {
+  "id": "barka-rzeczna",
+  "nazwa": "Barka rzeczna",
+  "kat": "Zwierzęta i pojazdy",
+  "stara_p": 120000,
+  "nowa_p": 36000,
+  "typ": "historyczna",
+  "uzasadnienie": "Barka £10 (Anglia XIV w.) = 1200 dniówek ≈ 137 ZK → 150 ZK."
+ },
+ {
+  "id": "wpis-ucznia-do-cechu",
+  "nazwa": "Wpis ucznia do cechu",
+  "kat": "Najmici i usługi (za tydzień)",
+  "stara_p": 720,
+  "nowa_p": 240,
+  "typ": "historyczna",
+  "uzasadnienie": "Wpisowe ucznia 1–2 s (Anglia XIV w.) = 6–12 dniówek ≈ 1 ZK."
+ },
+ {
+  "id": "wykup-licencji-cechowej",
+  "nazwa": "Wykup licencji cechowej",
+  "kat": "Najmici i usługi (za tydzień)",
+  "stara_p": 6000,
+  "nowa_p": 3600,
+  "typ": "historyczna",
+  "uzasadnienie": "Przyjęcie do cechu 6 s 8 d – £3, bławatnicy 20 s (= 120 dniówek ≈ 14 ZK); list mistrzowski 2 fl (Frankfurt) ≈ 4 ZK → 15 ZK."
+ },
+ {
+  "id": "polzbroja-municyjna-napiersnik-morion",
+  "nazwa": "Półzbroja municyjna (napierśnik + morion)",
+  "kat": "Pancerze",
+  "stara_p": 2676,
+  "nowa_p": 1752,
+  "typ": "spójność",
+  "uzasadnienie": "1 Wada (×½) od napierśnika + morionu (HR-024). Korselet 30 s (Anglia 1590) = 45–51 dniówek ≈ 5–6 ZK – zgodne."
+ },
+ {
+  "id": "izba-na-poddaszu-miesiac",
+  "nazwa": "Izba na poddaszu / miesiąc",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 168,
+  "nowa_p": 96,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "izba-w-kamienicy-miesiac",
+  "nazwa": "Izba w kamienicy / miesiąc",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 336,
+  "nowa_p": 144,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "izba-w-kamienicy-rok",
+  "nazwa": "Izba w kamienicy / rok",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 3600,
+  "nowa_p": 1440,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "mieszkanie-mieszczanskie-23-izby-miesiac",
+  "nazwa": "Mieszkanie mieszczańskie (2–3 izby) / miesiąc",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 720,
+  "nowa_p": 240,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "mieszkanie-mieszczanskie-rok",
+  "nazwa": "Mieszkanie mieszczańskie / rok",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 7680,
+  "nowa_p": 2400,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "dom-mistrza-z-warsztatem-rok",
+  "nazwa": "Dom mistrza z warsztatem / rok",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 18000,
+  "nowa_p": 4800,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ },
+ {
+  "id": "kamienica-kupiecka-rok",
+  "nazwa": "Kamienica kupiecka / rok",
+  "kat": "Czynsze i mieszkanie",
+  "stara_p": 45600,
+  "nowa_p": 13200,
+  "typ": "historyczna",
+  "uzasadnienie": "Czynsze roczne w źródłach: chata 5 s, dom rzemieślnika 20 s, dom kupca 40–60 s (Anglia XIV w.); murarz 1,6 fl, piwowar 4 fl, złotnik 10 fl (Frankfurt 1450) – 3–5× mniej niż w cenniku. Ceny kupna domów zgadzają się ze źródłami, więc obniżam czynsz, nie podnoszę kupna. Zwrot z najmu wychodzi 7–15 lat."
+ }
+]

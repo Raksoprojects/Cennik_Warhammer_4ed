@@ -1,0 +1,55 @@
+{
+ "opis": "Czynsze v4 (presety „zalecany” i „x3”): najem ×2 poza kątem i poddaszem (×1 — budżet Brązu 3 i 4), kupno ×2 — stosunek kupna do najmu bez zmian. Mnóż przez osadę i koniunkturę.",
+ "najem": [
+  {
+   "kwatera": "Kąt w izbie czeladnej",
+   "tydzien_p": 24,
+   "miesiac_p": 84,
+   "rok_p": 720
+  },
+  {
+   "kwatera": "Izba na poddaszu",
+   "tydzien_p": 36,
+   "miesiac_p": 96,
+   "rok_p": 960
+  },
+  {
+   "kwatera": "Izba w kamienicy",
+   "tydzien_p": 96,
+   "miesiac_p": 288,
+   "rok_p": 2880
+  },
+  {
+   "kwatera": "Mieszkanie mieszczańskie (2–3 izby)",
+   "tydzien_p": 144,
+   "miesiac_p": 480,
+   "rok_p": 4800
+  },
+  {
+   "kwatera": "Dom mistrza z warsztatem",
+   "tydzien_p": 288,
+   "miesiac_p": 960,
+   "rok_p": 9600
+  },
+  {
+   "kwatera": "Kamienica kupiecka",
+   "tydzien_p": 720,
+   "miesiac_p": 2640,
+   "rok_p": 26400
+  }
+ ],
+ "kupno": [
+  {
+   "nazwa": "Prosty dom",
+   "cena_p": 28800
+  },
+  {
+   "nazwa": "Dom rzemieślnika",
+   "cena_p": 76800
+  },
+  {
+   "nazwa": "Kamienica patrycjuszowska",
+   "cena_p": 864000
+  }
+ ]
+}

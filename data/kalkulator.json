@@ -1,0 +1,32 @@
+{
+ "opis": "Kalkulator 'ile Robót trzeba odłożyć' z artefaktu.",
+ "pozycje": [
+  {
+   "nazwa": "prowiant + wspólna izba, tydzień w drodze",
+   "cena_p": 238,
+   "tryb": "czy jedna Robota pokrywa"
+  },
+  {
+   "nazwa": "miecz",
+   "cena_p": 480
+  },
+  {
+   "nazwa": "kolczuga",
+   "cena_p": 1680,
+   "uwaga": "w oryginale 1680 p = 7 ZK, ale cennik ma kolczugę 10 ZK (2400 p) — rozbieżność"
+  },
+  {
+   "nazwa": "pełna płytówka",
+   "cena_p": 11520
+  },
+  {
+   "nazwa": "koń wierzchowy",
+   "cena_p": 9120
+  },
+  {
+   "nazwa": "rumak",
+   "cena_p": 132000
+  }
+ ],
+ "progi": "≤1 → 'jedna Robota'; <40 → 'N Robót' (zaokrąglone); ≥40 → 'ponad 40 Robót — realnie tylko z łupu lub spadku'; netto ≤ 0 → 'nigdy'"
+}

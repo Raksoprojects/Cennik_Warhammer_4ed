@@ -1,0 +1,524 @@
+{
+ "opis": "Dla każdej kategorii: cena = mnożnik ceny, popyt = przesunięcie stopnia popytu (−1/0/+1).",
+ "kategorie": [
+  "Broń biała",
+  "Broń zasięgowa",
+  "Amunicja",
+  "Pancerze",
+  "Zwierzęta i pojazdy",
+  "Jedzenie, picie, nocleg",
+  "Czynsze i mieszkanie",
+  "Ubranie i dodatki",
+  "Narzędzia i zestawy",
+  "Księgi i dokumenty",
+  "Zioła, mikstury, narkotyki",
+  "Wyposażenie różne",
+  "Protezy",
+  "Najmici i usługi (za tydzień)"
+ ],
+ "koniunktury": [
+  {
+   "id": "normalna",
+   "nazwa": "Normalna",
+   "opis_cen": "bez zmian",
+   "opis_popytu": "bez zmian",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Protezy": {
+     "cena": 1,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.0,
+    "uwaga": "bez zmian"
+   }
+  },
+  {
+   "id": "nadmiar",
+   "nazwa": "Nadmiar towaru po jarmarku",
+   "opis_cen": "wszystko ×0,80",
+   "opis_popytu": "popyt o stopień niżej",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Broń zasięgowa": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Amunicja": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Pancerze": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Ubranie i dodatki": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Wyposażenie różne": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Protezy": {
+     "cena": 0.8,
+     "popyt": -1
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 0.8,
+     "popyt": -1
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.0,
+    "uwaga": "jarmark nie rusza czynszu"
+   }
+  },
+  {
+   "id": "niedobor",
+   "nazwa": "Niedobór na rynku",
+   "opis_cen": "wszystko ×1,40",
+   "opis_popytu": "popyt o stopień wyżej",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Amunicja": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Pancerze": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Ubranie i dodatki": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Protezy": {
+     "cena": 1.4,
+     "popyt": 1
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1.4,
+     "popyt": 1
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.1,
+    "uwaga": "drożyzna przenosi się na komorne z opóźnieniem"
+   }
+  },
+  {
+   "id": "wojna",
+   "nazwa": "Wojna",
+   "opis_cen": "broń, pancerz i amunicja ×1,80 · prowiant ×1,30 · reszta ×1,05",
+   "opis_popytu": "broń i pancerz +1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.8,
+     "popyt": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1.8,
+     "popyt": 1
+    },
+    "Amunicja": {
+     "cena": 1.8,
+     "popyt": 1
+    },
+    "Pancerze": {
+     "cena": 1.8,
+     "popyt": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.3,
+     "popyt": 0
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Protezy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1.05,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.3,
+    "uwaga": "napływ uchodźców ze wsi, kwaterunek wojska"
+   }
+  },
+  {
+   "id": "zaraza",
+   "nazwa": "Zaraza",
+   "opis_cen": "leki i protezy ×2,50 · prowiant ×1,60 · reszta ×0,85",
+   "opis_popytu": "leki i prowiant +1, reszta −1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Broń zasięgowa": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Amunicja": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Pancerze": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.6,
+     "popyt": 1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Ubranie i dodatki": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 2.5,
+     "popyt": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Protezy": {
+     "cena": 2.5,
+     "popyt": 1
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 0.85,
+     "popyt": -1
+    }
+   },
+   "czynsz": {
+    "mnoznik": 0.6,
+    "uwaga": "puste izby po zmarłych — czynsze lecą w dół, tak jak po czarnej śmierci"
+   }
+  },
+  {
+   "id": "oblezenie",
+   "nazwa": "Oblężenie",
+   "opis_cen": "prowiant ×3,50 · broń ×1,40 · reszta ×0,70",
+   "opis_popytu": "prowiant +1, broń 0, reszta −1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.4,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 1.4,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 1.4,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 1.4,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 3.5,
+     "popyt": 1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Ubranie i dodatki": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Wyposażenie różne": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Protezy": {
+     "cena": 0.7,
+     "popyt": -1
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 0.7,
+     "popyt": -1
+    }
+   },
+   "czynsz": {
+    "mnoznik": 2.0,
+    "uwaga": "nikt nie wychodzi, nikt nie buduje"
+   }
+  },
+  {
+   "id": "szlaki",
+   "nazwa": "Zamknięte szlaki (bandyci, lód)",
+   "opis_cen": "import ×1,60 (ubranie, księgi, zioła) · miejscowy ×1,05",
+   "opis_popytu": "ubranie i księgi +1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 1.6,
+     "popyt": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.6,
+     "popyt": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.6,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Protezy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1.05,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.1,
+    "uwaga": "kupcy utknęli w mieście na dłużej, zajmują kwatery"
+   }
+  },
+  {
+   "id": "kryzys_mieszkaniowy",
+   "nazwa": "Kryzys mieszkaniowy",
+   "opis": "Pożar dzielnicy, napływ uchodźców, zajęcie kwater przez wojsko albo blokada portu. Dotyczy wyłącznie dachu nad głową.",
+   "kategorie": {},
+   "czynsz": {
+    "mnoznik": 1.7,
+    "uwaga": "Przy czynszach v4 (×2): Marienburg, mieszkanie 2 ZK × 1,45 × 1,7 ≈ 4 ZK 18 s — tyle, ile płacą gracze."
+   }
+  }
+ ],
+ "uwaga_czynsz": "Czynsz ma własny mnożnik, niezależny od cen towarów: dach nad głową jest najbardziej nieelastycznym dobrem, jakie istnieje, i reaguje odwrotnie niż żywność.",
+ "skroty": {
+  "Broń biała": "broń",
+  "Broń zasięgowa": "strzelecka",
+  "Amunicja": "amunicja",
+  "Pancerze": "pancerze",
+  "Zwierzęta i pojazdy": "zwierzęta",
+  "Jedzenie, picie, nocleg": "jedzenie",
+  "Czynsze i mieszkanie": "czynsze",
+  "Ubranie i dodatki": "ubrania",
+  "Narzędzia i zestawy": "narzędzia",
+  "Księgi i dokumenty": "księgi",
+  "Zioła, mikstury, narkotyki": "zioła",
+  "Wyposażenie różne": "wyposażenie",
+  "Protezy": "protezy",
+  "Najmici i usługi (za tydzień)": "usługi"
+ }
+}

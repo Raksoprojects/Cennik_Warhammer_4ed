@@ -1,0 +1,58 @@
+{
+ "opis": "Status zapisywany jako Pozycja / Dochód (HR-024).",
+ "przyklady": [
+  {
+   "kto": "Służba dworska",
+   "pozycja": "Srebro 3",
+   "dochod": "Brąz 3",
+   "uwaga": "+ wikt"
+  },
+  {
+   "kto": "Patriarcha Kolegium Bursztynu",
+   "pozycja": "Złoto 5",
+   "dochod": "Brąz 3"
+  },
+  {
+   "kto": "Skrytobójca",
+   "pozycja": "Srebro 3",
+   "dochod": "Złoto 1"
+  },
+  {
+   "kto": "Zubożały dziedzic",
+   "pozycja": "Złoto 1",
+   "dochod": "Brąz 3"
+  },
+  {
+   "kto": "Agent wywiadu",
+   "pozycja": "Srebro 5",
+   "dochod": "Złoto 1",
+   "uwaga": "fundusz operacyjny, nie majątek"
+  },
+  {
+   "kto": "Opat/przeorysza bogatego klasztoru",
+   "pozycja": "Złoto 1",
+   "dochod": "zależnie od kultu"
+  }
+ ],
+ "dochod_ryzykowny": {
+  "dotyczy": "Łotrzy i Wodniacy (36 poziomów, wg audytu: werdykt 'ryzyko')",
+  "rzut": "jak za Status o 2 szczeble wyższy",
+  "test": "Kradzież / Zastraszanie / Hazard / Oszustwo",
+  "porazka": "połowa dochodu, ktoś cię szuka",
+  "porazka_dublet": "zero i oskarżenie"
+ },
+ "jalmuzna": {
+  "dotyczy": "Biczownik, Żebrak, Mistyk/Mistyczka, wędrowni kaznodzieje",
+  "test": "Charyzma albo Plotkowanie",
+  "za_kazde_2_PS": "1k10 p",
+  "podwojenie": "tydzień święta lub zaraza"
+ },
+ "instytucje": {
+  "dotyczy": "elektorowie, Wielki Teogonista, Patriarchowie bogatych Kolegiów, Cesarz",
+  "zasada": "dochód ×10, bez rzutu"
+ },
+ "utrzymanie": {
+  "udzial_brutto": 0.8,
+  "zasada": "tylko za tygodnie spędzone w osadzie; w trasie realne ceny z cennika"
+ }
+}
