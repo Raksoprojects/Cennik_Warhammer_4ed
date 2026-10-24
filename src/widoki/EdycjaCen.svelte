@@ -59,7 +59,7 @@
     catch (err) { msg = 'Nie udało się wczytać: ' + (err as Error).message; zly = true; }
   }
   function sprawdz() {
-    spojnosc = sprawdzWszystko(d.cennik, { reguly: d.spojnosc.reguly, testy: d.spojnosc_v4, czynsze: d.czynsze, rynek: d.rynek, bronCechy: d.bron_cechy });
+    spojnosc = sprawdzWszystko(d.cennik, { reguly: d.spojnosc.reguly, testy: d.spojnosc_v4, czynsze: d.czynsze, rynek: d.rynek });
   }
 </script>
 

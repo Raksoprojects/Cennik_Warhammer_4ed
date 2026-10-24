@@ -7,6 +7,7 @@
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
   import Potwierdz from '../komponenty/Potwierdz.svelte';
+  import WyborCech from '../komponenty/WyborCech.svelte';
 
   let { uid }: { uid: string } = $props();
   const d = $derived(stan.d);
@@ -58,13 +59,13 @@
     skupTxt = skupCena = ''; skupIle = 1;
   }
   // ---- zamówienia
-  let zamTxt = $state(''), zamJak = $state('zwykla'), zamDla = $state(''), zamCena = $state('');
+  let zamTxt = $state(''), zamJak = $state<Record<string, number>>({}), zamDla = $state(''), zamCena = $state('');
   function zamow() {
     const c = poNazwie(zamTxt); if (!c) { msg = 'Nie ma takiego towaru w cenniku.'; zly = true; return; }
     const cena = parsujCene(zamCena);
     zDecyzja('Kupiec tego nie robi', w => T.zamow(d, $state.snapshot(K), { id: c.id, jakosc: zamJak, dla: zamDla.trim(), wymus: w, cena_p: Number.isNaN(cena) ? null : cena }),
       `Zamówiono: ${c.nazwa}.`);
-    zamTxt = zamDla = zamCena = '';
+    zamTxt = zamDla = zamCena = ''; zamJak = {};
   }
   const STATUS: Record<string, string> = { w_toku: 'w toku', gotowe: 'gotowe do odbioru', odebrane: 'odebrane', anulowane: 'anulowane' };
   let notatkaWpis = $state('');
@@ -178,11 +179,11 @@
     <h3>Zamówienia</h3>
     <div class="pasek nie-drukuj">
       <label class="pole"><span>Co</span><input bind:value={zamTxt} list="towary-cennika" placeholder="np. rapier" /></label>
-      <label class="pole"><span>Jakość</span><select bind:value={zamJak}>{#each d.rynek.jakosc.opcje as j}<option value={j.id}>{j.nazwa}</option>{/each}</select></label>
       <label class="pole waskie"><span>Dla kogo</span><input bind:value={zamDla} placeholder="postać" /></label>
       <label class="pole waskie"><span>Cena <Podpowiedz tekst="Puste = cena z wyliczenia (jak w zakładce Zamówienie, z Twoim modyfikatorem). Wpisz, jeśli umówiliście się inaczej." /></span><input bind:value={zamCena} placeholder="auto" /></label>
       <button onclick={zamow}>Zamów</button>
     </div>
+    <details class="opis nie-drukuj"><summary>Jakość zamówienia (Zalety i Wady przedmiotu)</summary><WyborCech bind:cechy={zamJak} /></details>
     {#each [...K.zamowienia].reverse() as z (z.uid)}
       <div style="border-top:1px solid var(--linia);padding:8px 0">
         <b>{z.nazwa}</b> <span class="drugi male">{z.jakosc}{z.dla ? ', dla ' + z.dla : ''}</span>

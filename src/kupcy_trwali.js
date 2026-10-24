@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, etykietaOsady, etykietaKoniunktury, mon, sredniDochod,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -78,7 +78,10 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
 export function wycen(d, K) {
   const kup = kupiecZ(d, K), lok = osadaZ(d, K), kon = konZ(d, K), R = d.rynek, mod = K.modyfikator ?? 1;
   const towar = K.towar.map((w, ix) => {
-    const c = pozycja(d, w.id) ?? { id: w.id, nazwa: w.nazwa, kat: w.kat, cena_p: w.cena_wytworcy_p, cena_raw_p: null };
+    const c0 = pozycja(d, w.id) ?? { id: w.id, nazwa: w.nazwa, kat: w.kat, cena_p: w.cena_wytworcy_p, cena_raw_p: null };
+    // v6: egzemplarz z Zaletami / Wadami przedmiotu — cena bazowa egzemplarza = cena z cennika × jakość.
+    const jak = w.cechy && Object.keys(w.cechy).length ? jakoscZ(d, w.cechy) : null;
+    const c = jak ? { ...c0, cena_p: Math.round(c0.cena_p * jak.mnoznik) } : c0;
     const popyt = clamp(R.popyt.start + popytKoniunktury(kon, c.kat) + w.przes_popytu, 0, 2);
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, w.zapas, popyt);
     const os = osobowoscKupca(d, kup, c, w.rzut_kaprysu);
@@ -87,6 +90,7 @@ export function wycen(d, K) {
     const skupU = Math.max(R.skup.minimum, kup.skup + (popyt === 2 ? R.skup.popyt_wysoki : popyt === 0 ? R.skup.popyt_niski : 0));
     const min = cenaMinimalna(d, { kupiec: kup, pozycja: c, osada: lok, koniunktura: kon, mRynek, cena_p });
     return { ...w, ix, nazwa: c.nazwa, kat: c.kat, cena_raw_p: c.cena_raw_p ?? null, cena_wytworcy_p: c.cena_p, mnoznik, cena_p,
+      cena_cennik_p: c0.cena_p, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null,
       skup_p: Math.round((w.cena_reczna_p ?? cenaW) * skupU), koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       popyt, zapas_nazwa: R.zapas.progi[w.zapas].nazwa, popyt_nazwa: R.popyt.nazwy[popyt], rzuty: { kaprys: os.rzut },
       skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod },
@@ -208,13 +212,13 @@ export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, c
   let cena, termin, stan = w.status;
   if (w.status === 'odmowa') {
     if (!wymus) return { blad: 'odmowa', powod: `${kupiecZ(d, K).nazwa} tego nie robi ani nie sprowadza. Odsyła do: ${w.odsyla_do.join(', ') || '—'}` };
-    const kup = kupiecZ(d, K), jak = d.rynek.jakosc.opcje.find(j => j.id === jakosc);
-    cena = w.przedmiot.cena_p * jak.mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
+    const kup = kupiecZ(d, K);
+    cena = w.przedmiot.cena_p * jakoscZ(d, jakosc).mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
     termin = 4 + r.ri(6); stan = 'sprowadza';
   } else { cena = w.cena_p; termin = terminTygodnie(w.termin); }
   const cenaP = cena_p ?? Math.round(cena * mod), zaliczka = Math.round(cenaP * d.rynek.zamowienie.zaliczka);
-  const jak = d.rynek.jakosc.opcje.find(j => j.id === jakosc);
-  K.zamowienia.push({ uid: nowyUid(), id, nazwa: w.przedmiot.nazwa, jakosc: jak.nazwa, sposob: stan, dla, cena_p: cenaP, zaliczka_p: zaliczka,
+  const jak = jakoscZ(d, jakosc);
+  K.zamowienia.push({ uid: nowyUid(), id, nazwa: w.przedmiot.nazwa, jakosc: jak.nazwa, cechy: jak.cechy ?? null, sposob: stan, dla, cena_p: cenaP, zaliczka_p: zaliczka,
     tydzien_zlozenia: K.tydzien, tydzien_gotowe: K.tydzien + termin, status: 'w_toku', wymuszone: w.status === 'odmowa' });
   K.gotowka_p += zaliczka;
   wpis(K, `Zamówienie: ${w.przedmiot.nazwa} (${jak.nazwa})${dla ? ' dla ' + dla : ''}, ${mon(cenaP)}, zaliczka ${mon(zaliczka)}, za ${termin} tyg.`);

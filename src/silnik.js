@@ -264,11 +264,12 @@ export function ktoRobi(d, kat) {
   if (!m.length) m = d.kupcy.kupcy.filter(k => k.rdzen.includes(kat));
   return m;
 }
+/** @param {any} d @param {Record<string, any>} opcje — jakosc: id opcji albo cechy { Wytrzymały: 2 } */
 export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', przedmiot, jakosc = 'zwykla', seed = losowySeed() }) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
   const c = typeof przedmiot === 'object' ? przedmiot : (pozycje(d).find(x => x.id === przedmiot) || znajdzPozycje(d, przedmiot));
   if (!c || !wTowarze(d, c)) return { status: 'brak_w_cenniku' };   // czynsze i usługi się nie zamawia
-  const jak = byId(d.rynek.jakosc.opcje, jakosc, 'jakość');
+  const jak = jakoscZ(d, jakosc);
   const robi = kup.robota.includes(c.kat);
   const handluje = kup.rdzen.includes(c.kat) || kup.boczne.includes(c.kat);
   if (!robi && !handluje) return { status: 'odmowa', przedmiot: c, odsyla_do: ktoRobi(d, c.kat).map(k => k.nazwa) };
@@ -285,7 +286,7 @@ export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', pr
     status: robi ? 'wykonuje' : 'sprowadza', przedmiot: c, jakosc: jak,
     baza_p: baza, skladowe: { marza: kup.marza, osada: lok.mnoznik, koniunktura: mKon, narzut }, mnoznik,
     cena_p: Math.round(cena), zaliczka_p: Math.round(cena * Z.zaliczka), termin,
-    calosc_z_gory: cena > cap * 2, test_rzemiosla: jak.mnoznik >= 2, max_targowanie: d.rynek.targowanie.max_zamowienie,
+    calosc_z_gory: cena > cap * 2, test_rzemiosla: (jak.zalety ?? 0) > 0 || jak.mnoznik >= 2, max_targowanie: d.rynek.targowanie.max_zamowienie,
   };
 }
 
@@ -352,7 +353,24 @@ export function cenaMagiczna(d, { rodzaj, cena_p = 0, wlasciwosci = 1, zalety = 
 }
 
 /* ------------------------------------------------------------ jakość */
-export function cenaZJakoscia(d, cena_p, jakosc) { return cena_p * byId(d.rynek.jakosc.opcje, jakosc, 'jakość').mnoznik; }
+export function cenaZJakoscia(d, cena_p, jakosc) { return cena_p * jakoscZ(d, jakosc).mnoznik; }
+// v6: jakość jako id gotowej opcji („wysmienita”) albo jako cechy przedmiotu { Wytrzymały: 2, Wyśmienity: 2, Tandetny: 1 }.
+// PG s. 292: każda Zaleta przedmiotu ×2 (Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to Zaleta),
+// każda Wada ×½. Cena w cenniku to wariant podstawowy, bez Zalet i Wad przedmiotu (cechy broni są już w niej).
+export function jakoscZ(d, jakosc) {
+  if (jakosc == null || typeof jakosc === 'string') return byId(d.rynek.jakosc.opcje, jakosc ?? 'zwykla', 'jakość');
+  const J = d.rynek.jakosc, nazwy = [];
+  let zalety = 0, wady = 0;
+  for (const [nazwa, ile] of Object.entries(jakosc)) {
+    const n = Math.max(0, ile | 0); if (!n) continue;
+    if (J.zalety.some(z => z.nazwa === nazwa)) zalety += n;
+    else if (J.wady.some(z => z.nazwa === nazwa)) wady += n;
+    else throw new Error('Nieznana Zaleta ani Wada przedmiotu: ' + nazwa);
+    nazwy.push(n > 1 ? `${nazwa} ${n}` : nazwa);
+  }
+  return { id: 'cechy', nazwa: nazwy.join(', ') || 'Zwykła', zalety, wady, cechy: jakosc,
+    mnoznik: (J.za_zalete ?? 2) ** zalety * (J.za_wade ?? 0.5) ** wady };
+}
 
 /* ------------------------------------------------------------ czynsz (v3) */
 // Czynsz ma własny mnożnik koniunktury, niezależny od cen towarów: po zarazie

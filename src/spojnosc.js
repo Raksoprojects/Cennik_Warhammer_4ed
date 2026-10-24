@@ -120,27 +120,11 @@ export function sprawdzStrukture(cennik, { rynek, czynsze } = {}) {
   return b;
 }
 
-/* ------------------------------------------------------------ v6: Zalety i Wady broni (T11) */
-// W tej samej grupie broń z wyższym bilansem (Zalety − Wady) nie powinna być tańsza.
-// Pary z `wyjatek` po którejkolwiek stronie są pomijane. To raport dla MG, nie automatyczna poprawka.
-export function sprawdzCechyBroni(cennik, bronCechy) {
-  const C = mapaCen(cennik), b = [];
-  const bilans = p => p.zalety.length - p.wady.length;
-  const poz = bronCechy.pozycje.filter(p => p.grupa && p.zalety && p.wady && p.id in C);
-  for (const a of poz) for (const x of poz) {
-    if (a.grupa !== x.grupa || a.wyjatek || x.wyjatek) continue;
-    if (bilans(a) > bilans(x) && C[a.id] < C[x.id])
-      b.push(`${a.grupa}: ${a.nazwa} (bilans ${bilans(a)}, ${C[a.id]} p) tańsza niż ${x.nazwa} (bilans ${bilans(x)}, ${C[x.id]} p)`);
-  }
-  return b;
-}
-
 /* ------------------------------------------------------------ wszystko naraz (panel MG) */
-export function sprawdzWszystko(cennik, { reguly, testy, czynsze, rynek, bronCechy } = {}) {
+export function sprawdzWszystko(cennik, { reguly, testy, czynsze, rynek } = {}) {
   const out = [];
   if (reguly) out.push({ id: 'reguly', nazwa: `reguły spójności (${reguly.length})`, bledy: sprawdzReguly(cennik, reguly), ostrzezenie: false });
   if (testy) out.push(...sprawdzArbitraz(cennik, testy));
   out.push({ id: 'struktura', nazwa: 'struktura cennika i czynsze', bledy: sprawdzStrukture(cennik, { rynek, czynsze }), ostrzezenie: false });
-  if (bronCechy) out.push({ id: 'bron_cechy', nazwa: 'Zalety i Wady broni a cena', bledy: sprawdzCechyBroni(cennik, bronCechy), ostrzezenie: true });
   return out;
 }

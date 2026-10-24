@@ -50,8 +50,11 @@
       <ul class="male">{#each d.pozycja_dochod.przyklady as p}<li>{p.kto}: Pozycja {p.pozycja} / Dochód {p.dochod}{p.uwaga ? ` (${p.uwaga})` : ''}</li>{/each}</ul></div>
     <div class="panel"><h3>2. Utrzymanie płacisz w mieście</h3><p>80% brutto to opłata za bycie kimś w danym miejscu: czynsz, czeladź, strój, składka cechowa.
       Naliczaj je tylko za tygodnie w osadzie. W trasie postać płaci realne ceny z cennika.</p></div>
-    <div class="panel"><h3>3. Jakość (HR-024)</h3><p>Każda Wada ×½, każda Zaleta ×2.</p>
-      <ul class="male">{#each d.rynek.jakosc.opcje as j}<li>{j.nazwa}: {mnoz(j.mnoznik)}</li>{/each}</ul></div>
+    <div class="panel"><h3>3. Jakość (PG s. 292, HR-024)</h3><p>Cena w cenniku to wariant podstawowy; cechy broni są w niej wliczone.
+      Każda Zaleta przedmiotu ×{d.rynek.jakosc.za_zalete}, każda Wada ×{String(d.rynek.jakosc.za_wade).replace('.', ',')}.
+      Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to osobna Zaleta: miecz Wytrzymały 2, Wyśmienity 2 kosztuje ×16.</p>
+      <ul class="male">{#each d.rynek.jakosc.zalety as z}<li><b>{z.nazwa}</b>{z.wielokrotna ? ' (wielokrotna)' : ''}: {z.opis}</li>{/each}
+        {#each d.rynek.jakosc.wady as z}<li><b>{z.nazwa}</b> (Wada): {z.opis}</li>{/each}</ul></div>
     <div class="panel"><h3>4. Dochód ryzykowny dla Łotrów</h3><p>Rzuć jak za Status o dwa szczeble wyżej (Brąz 5 → Srebro 2), potem Test
       Kradzieży, Zastraszania, Hazardu albo Oszustwa. Porażka — połowa i ktoś cię szuka. Porażka z dubletem — zero i oskarżenie.</p></div>
     <div class="panel"><h3>5. Jałmużna zamiast martwego Brązu 0</h3><p>Test Charyzmy albo Plotkowania: za każde 2 PS 1k10 pensów, podwojone w święto i podczas zarazy.</p></div>

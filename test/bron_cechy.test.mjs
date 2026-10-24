@@ -1,9 +1,10 @@
-// T11: Zalety i Wady broni (data/bron_cechy.json, z narzedzia/dodaj_v6.py).
-// Struktura musi się zgadzać. Naruszenia „więcej Zalet = nie taniej” to raport dla MG — test je wypisuje, nie blokuje.
+// Cechy broni (data/bron_cechy.json, z narzedzia/dodaj_v6.py) i jakość egzemplarza (PG s. 292, HR-024).
+// Cechy broni (Szybka, Precyzyjna…) są w cenie wariantu podstawowego — nie porównuje się po nich cen różnych broni.
+// Cenę zmieniają Zalety i Wady PRZEDMIOTU: każda Zaleta (każdy poziom Wyśmienity / Wytrzymały) ×2, każda Wada ×½.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { sprawdzCechyBroni } from '../src/spojnosc.js';
+import * as S from '../src/silnik.js';
 const rd = f => JSON.parse(fs.readFileSync(new URL('../' + f, import.meta.url)));
 
 test('cechy broni: każda broń z cennika ma wpis, wpisy wskazują istniejące pozycje', () => {
@@ -14,8 +15,12 @@ test('cechy broni: każda broń z cennika ma wpis, wpisy wskazują istniejące p
   assert.deepEqual([...wpisy].filter(i => !ids.has(i)), []);
 });
 
-test('cechy broni: raport naruszeń dla MG', t => {
-  const bledy = sprawdzCechyBroni(rd('data/cennik.json'), rd('data/bron_cechy.json'));
-  t.diagnostic(`${bledy.length} par do przejrzenia`);
-  for (const b of bledy) t.diagnostic(b);
+test('jakość egzemplarza: poziomy Zalet mnożą, Wady dzielą (PG s. 292)', () => {
+  const d = { rynek: rd('data/rynek.json') };
+  assert.equal(S.jakoscZ(d, { 'Wytrzymały': 2, 'Wyśmienity': 2 }).mnoznik, 16);
+  assert.equal(S.jakoscZ(d, { 'Wyśmienity': 1, 'Wytrzymały': 1 }).mnoznik, 4);   // przykład ze szpadą
+  assert.equal(S.jakoscZ(d, { 'Nieporęczny': 1, 'Zawodny': 1 }).mnoznik, 0.25);  // przykład z kolczugą
+  assert.equal(S.jakoscZ(d, { 'Poręczny': 1, 'Tandetny': 1 }).mnoznik, 1);
+  assert.equal(S.jakoscZ(d, 'wysmienita').mnoznik, 2);
+  assert.throws(() => S.jakoscZ(d, { 'Ostra': 1 }));
 });

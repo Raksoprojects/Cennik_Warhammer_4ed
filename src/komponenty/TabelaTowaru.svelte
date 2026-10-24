@@ -4,6 +4,7 @@
   import { mon, proc, mnoz, parsujCene } from '../lib/format';
   import { stan } from '../lib/stan.svelte';
   import { targuj, modyfikatorTargowania } from '../silnik.js';
+  import WyborCech from './WyborCech.svelte';
 
   let { towar, ps = 0, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
     towar: any[]; ps?: number; gotowka?: number | null; edycja?: boolean;
@@ -34,6 +35,7 @@
         <tr class="klik" class:otwarty={otwarte === t.id} onclick={() => otworz(t.id)}>
           <td class="tytul">{t.nazwa}
             {#if t.sztuk === 0}<span class="znacznik">brak — na zamówienie</span>{:else if t.zapas === 2}<span class="znacznik czerwony">ostatnie sztuki</span>{:else if t.zapas === 0}<span class="znacznik zielony">pełen skład</span>{/if}
+            {#if t.jakosc}<span class="znacznik zielony">{t.jakosc.nazwa} {mnoz(t.jakosc.mnoznik)}</span>{/if}
             {#if t.cena_reczna_p != null}<span class="znacznik zloty">cena MG</span>{/if}
             {#if t.poza_asortymentem}<span class="znacznik fiolet">spoza asortymentu</span>{/if}
           </td>
@@ -56,6 +58,7 @@
                 {#if t.rzuty?.kaprys != null}<span class="drugi">(1k10 = {t.rzuty.kaprys}: {kaprysOpis(t.rzuty.kaprys)})</span>{/if}
                 · osada {mnoz(s.osada)} · sytuacja {mnoz(s.koniunktura)}{#if s.modyfikator != null && s.modyfikator !== 1} · MG {mnoz(s.modyfikator)}{/if}
                 = <b>{mnoz(t.mnoznik)}</b></dd></div>
+              {#if t.jakosc}<div><dt>Jakość egzemplarza</dt><dd>{t.jakosc.nazwa}: cena z cennika {mon(t.cena_cennik_p)} × {mnoz(t.jakosc.mnoznik)} = {mon(t.cena_wytworcy_p)}</dd></div>{/if}
               <div><dt>Koszt nabycia · minimalna</dt><dd>{mon(t.koszt_p)} · {mon(t.cena_min_p)}
                 <span class="drugi male">— poniżej minimalnej nie zejdzie w targowaniu</span></dd></div>
             </dl>
@@ -68,6 +71,9 @@
                 <button onclick={() => onPrzelosuj?.(t.id)}>Przelosuj</button>
                 <button class="niebezp" onclick={() => onUsun?.(t.id)}>Usuń</button>
               </div>
+              <details class="opis nie-drukuj"><summary>Jakość egzemplarza (Zalety i Wady przedmiotu)</summary>
+                <WyborCech bind:cechy={() => t.cechy ?? {}, c => onZmien?.(t.id, { cechy: c })} />
+              </details>
               <div class="pasek nie-drukuj">
                 <label class="pole waskie"><span>Ile</span><input type="number" min="1" bind:value={ile} /></label>
                 <button class="glowny" disabled={t.sztuk < ile} onclick={() => onTransakcja?.(t.id, 'kupno', ile, ps > 0 ? poTargu(t) : t.cena_p)}>

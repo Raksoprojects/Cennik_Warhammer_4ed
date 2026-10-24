@@ -3,9 +3,10 @@
   import { mon, mnoz } from '../lib/format';
   import { wycenZamowienie, etykietaOsady, etykietaKoniunktury, modyfikatorKoniunktury } from '../silnik.js';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
+  import WyborCech from '../komponenty/WyborCech.svelte';
 
   const d = $derived(stan.d);
-  let k = $state('kowal'), o = $state('miasteczko'), n = $state('normalna'), co = $state(''), jakosc = $state('zwykla');
+  let k = $state('kowal'), o = $state('miasteczko'), n = $state('normalna'), co = $state(''), jakosc = $state<Record<string, number>>({});
   let wynik = $state<any>(null);
   const towary = $derived(d.cennik.pozycje.filter((c: any) => c.typ === 'towar'));
   function wycen() { wynik = co.trim() ? wycenZamowienie(d, { kupiec: k, osada: o, koniunktura: n, przedmiot: co, jakosc }) : null; }
@@ -27,10 +28,10 @@
   <div class="pasek">
     <label class="pole"><span>Co</span><input bind:value={co} list="zam-towary" placeholder="np. kolczuga, rapier, teleskop" onkeydown={e => e.key === 'Enter' && wycen()} />
       <datalist id="zam-towary">{#each towary as c}<option value={c.nazwa}></option>{/each}</datalist></label>
-    <label class="pole"><span>Jakość <Podpowiedz tekst="HR-024: każda Wada ×½, każda Zaleta ×2. Wyroby z Zaletami wymagają Testu Rzemiosła wytwórcy." /></span>
-      <select bind:value={jakosc} onchange={wycen}>{#each d.rynek.jakosc.opcje as j}<option value={j.id}>{j.nazwa} ({mnoz(j.mnoznik)})</option>{/each}</select></label>
     <button class="glowny" onclick={wycen}>Wyceń</button>
   </div>
+  <p class="male drugi">Jakość <Podpowiedz tekst="PG s. 292 i HR-024: cena z cennika to wariant podstawowy. Każda Zaleta przedmiotu ×2 (każdy poziom Wyśmienity i Wytrzymały to osobna Zaleta), każda Wada ×½. Wyroby z Zaletami wymagają Testu Rzemiosła wytwórcy." /></p>
+  <WyborCech bind:cechy={() => jakosc, c => { jakosc = c; wycen(); }} />
 </div>
 
 {#if wynik}

@@ -160,7 +160,21 @@
   "dolna_granica": "v5: cena minimalna kupca (cena_min_p z generatora). Bez niej — jak dawniej: nie poniżej ceny z cennika × jakość."
  },
  "jakosc": {
-  "opis": "HR-024: każda Wada ×½, każda Zaleta ×2 (PG s.292). W oryginalnym artefakcie Tandetna = ×¼ – błąd poprawiony.",
+  "opis": "HR-024: każda Wada ×½, każda Zaleta ×2 (PG s.292). W oryginalnym artefakcie Tandetna = ×¼ – błąd poprawiony. v6: cechy przedmiotu z poziomami (jakoscZ w silniku); cena w cenniku = wariant podstawowy bez Zalet i Wad przedmiotu.",
+  "za_zalete": 2,
+  "za_wade": 0.5,
+  "zalety": [
+   { "nazwa": "Poręczny", "wielokrotna": false, "opis": "Obciążenie −1." },
+   { "nazwa": "Praktyczny", "wielokrotna": false, "opis": "Nieudany Test z tym przedmiotem +1 PS; kary za noszenie pancerza o poziom niżej." },
+   { "nazwa": "Wyśmienity", "wielokrotna": true, "opis": "Oznaka pozycji społecznej; im wyższy poziom, tym bardziej imponuje." },
+   { "nazwa": "Wytrzymały", "wielokrotna": true, "opis": "+1 Punkt Uszkodzeń na poziom; rzut obronny przeciw złamaniu 9+, łatwiejszy o 1 na poziom." }
+  ],
+  "wady": [
+   { "nazwa": "Brzydki", "wielokrotna": false, "opis": "Testy Ogłady nawet −10." },
+   { "nazwa": "Nieporęczny", "wielokrotna": false, "opis": "Obciążenie +1; w zbroi kary za Zmęczenie podwojone." },
+   { "nazwa": "Tandetny", "wielokrotna": false, "opis": "Łamie się przy nieudanym Teście z dublem; pancerz pęka od Trafienia Krytycznego." },
+   { "nazwa": "Zawodny", "wielokrotna": false, "opis": "Nieudany Test −1 PS; kary za noszenie pancerza podwojone." }
+  ],
   "opcje": [
    {
     "id": "2wady",

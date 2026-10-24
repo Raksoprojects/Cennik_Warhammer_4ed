@@ -2,8 +2,10 @@
   import { stan } from '../lib/stan.svelte';
   import { mon, norm, pl, mnoz, parsujCene, parsujMnoznik } from '../lib/format';
   import { mnoznikKlasy, cenaTypowa, handlujacy, tygodniePracy, zrodloNazwa, TYPY } from '../lib/ceny';
-  import { etykietaOsady, etykietaKoniunktury } from '../silnik.js';
+  import { etykietaOsady, etykietaKoniunktury, jakoscZ } from '../silnik.js';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
+  import WyborCech from '../komponenty/WyborCech.svelte';
+  let jakosc = $state<Record<string, number>>({});
 
   const d = $derived(stan.d);
   let q = $state(''), kat = $state(''), otwarte = $state<string | null>(null);
@@ -143,8 +145,11 @@
                   {#if c.uwagi_danych}<div><dt>Uwagi</dt><dd class="drugi">{c.uwagi_danych}</dd></div>{/if}
                   <div><dt>Klasa cenowa</dt><dd>{c.klasa} {mnoz(mk.m)}{#if mk.znak !== 1} × znak stanu {mnoz(mk.znak)}{/if}
                     <span class="drugi male">{d.klasy.uzasadnienia[c.klasa]?.tekst ?? ''}</span></dd></div>
-                  {#if bc?.grupa}<div><dt>Cechy broni</dt><dd>{bc.grupa} · {bc.obrazenia}{bc.zasieg ? ' · ' + bc.zasieg : ''}<br />
+                  {#if bc?.grupa}<div><dt>Cechy broni (w cenie podstawowej)</dt><dd>{bc.grupa} · {bc.obrazenia}{bc.zasieg ? ' · ' + bc.zasieg : ''}<br />
                     Zalety: {bc.zalety.map((x: any) => x.nazwa).join(', ') || '—'}<br />Wady: {bc.wady.map((x: any) => x.nazwa).join(', ') || '—'}</dd></div>{/if}
+                  {#if c.typ === 'towar'}<div><dt>Egzemplarz lepszy albo gorszy</dt><dd>
+                    <WyborCech bind:cechy={jakosc} />
+                    <span class="male">Cena bazowa egzemplarza: <b class="cena">{mon(Math.round(c.cena_p * jakoscZ(d, jakosc).mnoznik))}</b></span></dd></div>{/if}
                   {#if c.typ === 'towar'}
                     <div><dt>U kupców (typowo, {lok.nazwa}, {kon.nazwa})</dt><dd>
                       {#each handlujacy(d, c.kat) as k}<div class="male">{k.nazwa}: <span class="cena">{mon(cenaTypowa(d, k, lok, kon, c))}</span></div>{:else}—{/each}
