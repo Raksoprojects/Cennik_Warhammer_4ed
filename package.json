@@ -1,0 +1,25 @@
+{
+  "name": "skarbiec-imperium",
+  "version": "6.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cennik, kupcy, zarobki i czynsze dla kampanii WFRP 4 ed. (Imperium XV–XVI w.)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "svelte-check --tsconfig ./tsconfig.json && vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^4.0.4",
+    "@tsconfig/svelte": "^5.0.8",
+    "svelte": "^5.56.3",
+    "svelte-check": "^4.6.0",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}
