@@ -6,15 +6,15 @@
   import { targuj, modyfikatorTargowania } from '../silnik.js';
   import WyborCech from './WyborCech.svelte';
 
-  let { towar, ps = 0, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
-    towar: any[]; ps?: number; gotowka?: number | null; edycja?: boolean;
+  let { towar, ps = 0, talent = 0, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
+    towar: any[]; ps?: number; talent?: number; gotowka?: number | null; edycja?: boolean;
     onZmien?: (id: string, z: any) => void; onUsun?: (id: string) => void; onPrzelosuj?: (id: string) => void;
     onTransakcja?: (id: string, typ: 'kupno' | 'sprzedaz', ilosc: number, cena_p: number) => void;
   } = $props();
   const d = $derived(stan.d);
   let otwarte = $state<string | null>(null), ile = $state(1), cenaReczna = $state('');
   const kaprysOpis = (rzut: number | null) => rzut == null ? '' : d.rynek.kaprys.progi.find((p: any) => rzut <= p.do)?.opis ?? '';
-  const poTargu = (t: any) => targuj(d, { cena_p: t.cena_p, cena_cennik_p: t.cena_wytworcy_p, cena_min_p: t.cena_min_p, ps }).cena_p;
+  const poTargu = (t: any) => targuj(d, { cena_p: t.cena_p, cena_cennik_p: t.cena_wytworcy_p, cena_min_p: t.cena_min_p, ps, talent }).cena_p;
   function otworz(id: string) { otwarte = otwarte === id ? null : id; ile = 1; cenaReczna = ''; }
   function ustawCene(t: any) {
     const p = parsujCene(cenaReczna);

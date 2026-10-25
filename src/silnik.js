@@ -93,22 +93,34 @@ export function ilosc(d, ri, cena, zapas) {
 }
 
 /* ------------------------------------------------------------ generator kupca */
-// Pozycje z kategorii `kats`, które kupiec może mieć na stanie w tej osadzie (limit ceny, Dostępność we wsi).
+// Pozycje z kategorii `kats`, które kupiec może mieć na stanie w tej osadzie (limit ceny, branże kupca).
+// v6b: kupiec.branze = { kategoria: [tagi] } — z tej kategorii tylko pozycje z jednym z tagów (cennik → branze).
 export function pulaTowaru(d, { kupiec, osada, kats, stosujDostepnosc = true }) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada);
   const cap = Math.min(kup.limit_p, limitOsady(lok));
   return pozycje(d).filter(c => {
     if (!kats.includes(c.kat) || !wTowarze(d, c)) return false;
+    const br = stosujDostepnosc && kup.branze?.[c.kat];
+    if (br && !c.branze?.some(t => br.includes(t))) return false;
     if (omijaLimitWsi(lok, c)) return true;                     // krowa we wsi mimo limitu
     // v4: limit liczony od ceny bazowej (cena_ref_p), żeby poziom cen nie wycinał asortymentu
     if ((c.cena_ref_p ?? c.cena_p) > cap) return false;
-    if (stosujDostepnosc && lok.tylko_powszechna && c.dostepnosc && c.dostepnosc !== 'Powszechna') return false;
     return true;
   });
 }
 
-// opcje.stosujDostepnosc: wieś trzyma tylko Dostępność Powszechną (opisane w zasadach,
-// w oryginalnym artefakcie niezaimplementowane). false = zachowanie 1:1 z artefaktem.
+// v6b: szansa, że rzecz jest w sprzedaży (PG s. 290: Dostępność × wielkość osady). Towar krasnoludzki u krasnoluda
+// jest Powszechny, u kupca innej rasy szansa × rynek.dostepnosc.obce_pochodzenie. Brak tabeli w danych = 1.
+const WLASNE_POCHODZENIE = { krasnolud: 'krasnoludzkie', elf: 'elfie' };
+export function szansaDostepnosci(d, { kupiec, osada, pozycja }) {
+  const T = d.rynek.dostepnosc;
+  if (!T) return 1;
+  if (pozycja.pochodzenie && WLASNE_POCHODZENIE[kupiec.rasa] === pozycja.pochodzenie) return 1;
+  const p = T.tabela[osada.dostepnosc ?? 'miasto']?.[pozycja.dostepnosc ?? 'Powszechna'] ?? 1;
+  return p * (pozycja.pochodzenie ? (T.obce_pochodzenie ?? 1) : 1);
+}
+
+// opcje.stosujDostepnosc: branże kupca i test Dostępności (v6b). false = zachowanie 1:1 z artefaktem.
 /** @param {any} d @param {Record<string, any>} [opcje] */
 export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed = losowySeed(), stosujDostepnosc = true, osobowosc = true } = {}) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
@@ -116,8 +128,11 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
   const cap = Math.min(kup.limit_p, limitOsady(lok));
   const pula = kats => pulaTowaru(d, { kupiec: kup, osada: lok, kats, stosujDostepnosc });
 
+  // v6b: test Dostępności — osobny strumień, więc rzuty asortymentu idą w tej samej kolejności.
+  const dostRnd = kosci((seed ^ 0x2545f491) >>> 0);
+  const dostepny = c => !stosujDostepnosc || omijaLimitWsi(lok, c) || dostRnd.rnd() < szansaDostepnosci(d, { kupiec: kup, osada: lok, pozycja: c });
   const wybor = [], uzyte = new Set();
-  for (const c of pula(kup.rdzen)) if (rnd() < d.rynek.asortyment.rdzen_szansa) { uzyte.add(c.id); wybor.push(c); }
+  for (const c of pula(kup.rdzen)) if (rnd() < d.rynek.asortyment.rdzen_szansa && dostepny(c)) { uzyte.add(c.id); wybor.push(c); }
   for (const kat of kup.boczne) {
     const p = pula([kat]); const ile = Math.min(2 + ri(4), p.length);
     let n = 0, prob = 0;
@@ -125,7 +140,9 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
       prob++;
       const c = p[ri(p.length)];
       if (uzyte.has(c.id)) continue;
-      uzyte.add(c.id); wybor.push(c); n++;
+      uzyte.add(c.id);
+      if (!dostepny(c)) continue;
+      wybor.push(c); n++;
     }
   }
   wybor.sort((a, b) => b.cena_p - a.cena_p);           // stabilne sortowanie
@@ -187,8 +204,8 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
 // kupcy.json → jakosc: { zalety, wady } = szansa na pozycję z kategorii rynek.jakosc.kategorie. Rzuty: zalety, wady, 1k10 na liczbę,
 // potem wybór cech. Poręczny i Nieporęczny tylko dla rzeczy z Obciążeniem ≥ 1 (PG: małe szpargały nie mają tej Wady).
 export function jakoscLosowa(d, kup, c, r) {
-  const J = d.rynek.jakosc, sz = kup.jakosc;
-  if (!sz || !J.kategorie?.includes(c.kat)) return null;
+  const J = d.rynek.jakosc, sz = kup.jakosc_kat?.[c.kat] ?? kup.jakosc;   // v6b: jakość osobno dla kategorii
+  if (!sz || !J.kategorie?.includes(c.kat) || c.branze?.some(t => J.bez_jakosci?.includes(t))) return null;
   const a = r.rnd(), b = r.rnd(), n = J.losowanie.ile.find(x => r.k(10) <= x.do).n;
   const lista = a < (sz.zalety ?? 0) ? J.zalety : b < (sz.wady ?? 0) ? J.wady : null;
   if (!lista) return null;
@@ -301,9 +318,14 @@ export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', pr
   const robi = robiTo(kup, c);
   const handluje = kup.rdzen.includes(c.kat) || kup.boczne.includes(c.kat);
   if (!robi && !handluje) return { status: 'odmowa', przedmiot: c, odsyla_do: ktoRobi(d, c.kat, c.id).map(k => k.nazwa) };
+  // v6b: rzecz, której w tej osadzie zwykle nie ma (Dostępność), trwa dłużej i kosztuje więcej; egzotyk we wsi — odmowa.
+  const RZ = d.rynek.dostepnosc?.zamowienie, szansa = szansaDostepnosci(d, { kupiec: kup, osada: lok, pozycja: c });
+  const rzadkosc = RZ && szansa < (RZ.prog ?? 1) ? (c.dostepnosc ?? 'Powszechna') : null;
+  if (rzadkosc && lok.dostepnosc === 'wioska' && RZ.wioska_bez?.includes(rzadkosc))
+    return { status: 'odmowa', przedmiot: c, odsyla_do: ['kupca w mieście'], powod: RZ.wioska_opis };
   const Z = d.rynek.zamowienie, { ri } = kosci(seed);
   const baza = c.cena_p * jak.mnoznik;
-  const narzut = robi ? Z.narzut_robota : Z.narzut_sprowadzenie;
+  const narzut = (robi ? Z.narzut_robota : Z.narzut_sprowadzenie) * (rzadkosc ? RZ.narzut[rzadkosc] ?? 1 : 1);
   const mKon = cenaKoniunktury(kon, c.kat);
   const mnoznik = kup.marza * lok.mnoznik * mKon * narzut;
   const cena = baza * mnoznik;
@@ -313,6 +335,7 @@ export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', pr
   const mat = material && robi ? (Z.material_wlasny ?? 1) : 1, razem = cena * mat;
   return {
     status: robi ? 'wykonuje' : 'sprowadza', przedmiot: c, jakosc: jak, material: mat < 1 ? mat : null,
+    rzadkosc: rzadkosc ? { dostepnosc: rzadkosc, szansa, termin_tyg: RZ.termin_tyg[rzadkosc] ?? 0, narzut: RZ.narzut[rzadkosc] ?? 1 } : null,
     baza_p: baza, skladowe: { marza: kup.marza, osada: lok.mnoznik, koniunktura: mKon, narzut }, mnoznik,
     cena_p: Math.round(razem), zaliczka_p: Math.round(razem * Z.zaliczka), termin,
     calosc_z_gory: razem > cap * 2, test_rzemiosla: (jak.zalety ?? 0) > 0 || jak.mnoznik >= 2, max_targowanie: d.rynek.targowanie.max_zamowienie,
@@ -328,9 +351,12 @@ export function modyfikatorTargowania({ zapas, popyt }) {
   return 0;
 }
 // v5: jeśli podasz cena_min_p (z generujKupca), to ona jest dolną granicą zamiast ceny z cennika.
-export function targuj(d, { cena_p, cena_cennik_p, cena_min_p, ps, zamowienie = false }) {
+// v6b: talent = dodatkowy upust (np. Żyłka Handlowa, 0,04 = −4%) ponad limit z PS, gdy gracz wygrał test (PS > 0).
+// Cena minimalna kupca nadal obowiązuje.
+/** @param {any} d @param {Record<string, any>} opcje */
+export function targuj(d, { cena_p, cena_cennik_p, cena_min_p, ps, zamowienie = false, talent = 0 }) {
   const T = d.rynek.targowanie;
-  const upust = clamp(Math.max(0, ps) * T.za_ps, 0, zamowienie ? T.max_zamowienie : T.max);
+  const upust = clamp(Math.max(0, ps) * T.za_ps, 0, zamowienie ? T.max_zamowienie : T.max) + (ps > 0 ? Math.max(0, talent) : 0);
   const granica = Math.min(cena_p, cena_min_p ?? cena_cennik_p);
   const po = Math.max(granica, Math.round(cena_p * (1 - upust)));
   return { cena_p: po, upust: 1 - po / cena_p, granica_p: granica };
@@ -386,13 +412,16 @@ export function cenaZJakoscia(d, cena_p, jakosc) { return cena_p * jakoscZ(d, ja
 // v6: jakość jako id gotowej opcji („wysmienita”) albo jako cechy przedmiotu { Wytrzymały: 2, Wyśmienity: 2, Tandetny: 1 }.
 // PG s. 292: każda Zaleta przedmiotu ×2 (Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to Zaleta),
 // każda Wada ×½. Cena w cenniku to wariant podstawowy, bez Zalet i Wad przedmiotu (cechy broni są już w niej).
+// v6b (MG): mnożniki z danych — rynek.jakosc.za_zalete ×1,6, za_wade ×0,6. Niezwykłe cechy („Zaleta broni: Szybka”,
+// „Bez Wady: Tępa”, prefiksy z rynek.jakosc.niezwykle) liczą się jak Zaleta przedmiotu.
 export function jakoscZ(d, jakosc) {
   if (jakosc == null || typeof jakosc === 'string') return byId(d.rynek.jakosc.opcje, jakosc ?? 'zwykla', 'jakość');
-  const J = d.rynek.jakosc, nazwy = [];
+  const J = d.rynek.jakosc, N = J.niezwykle, nazwy = [];
   let zalety = 0, wady = 0;
   for (const [nazwa, ile] of Object.entries(jakosc)) {
     const n = Math.max(0, ile | 0); if (!n) continue;
-    if (J.zalety.some(z => z.nazwa === nazwa)) zalety += n;
+    if (N && (nazwa.startsWith(N.prefiks_zalety) || nazwa.startsWith(N.prefiks_bez_wady))) zalety += n;
+    else if (J.zalety.some(z => z.nazwa === nazwa)) zalety += n;
     else if (J.wady.some(z => z.nazwa === nazwa)) wady += n;
     else throw new Error('Nieznana Zaleta ani Wada przedmiotu: ' + nazwa);
     nazwy.push(n > 1 ? `${nazwa} ${n}` : nazwa);

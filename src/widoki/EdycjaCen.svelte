@@ -162,10 +162,14 @@
         <td class="num"><input class="w-tabeli" value={pl(o.mnoznik)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.osady[o.id] = { ...(x.osady[o.id] || {}), mnoznik: m }; }))} /></td></tr>{/each}</tbody>
     </table></div>
     <div class="tabela"><table>
-      <thead><tr><th>Kupiec</th><th class="num">Marża</th><th class="num">Skup</th></tr></thead>
+      <thead><tr><th>Kupiec</th><th class="num">Marża</th><th class="num">Skup</th><th class="num">Zalety %</th><th class="num">Wady %</th></tr></thead>
       <tbody>{#each d.kupcy.kupcy as k}<tr><td>{k.nazwa}{#if u.kupcy[k.id]}<span class="znacznik zloty">MG</span>{/if}</td>
         <td class="num"><input class="w-tabeli" value={pl(k.marza)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.kupcy[k.id] = { ...(x.kupcy[k.id] || {}), marza: m }; }))} /></td>
-        <td class="num"><input class="w-tabeli" value={pl(k.skup)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.kupcy[k.id] = { ...(x.kupcy[k.id] || {}), skup: m }; }))} /></td></tr>{/each}</tbody>
+        <td class="num"><input class="w-tabeli" value={pl(k.skup)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.kupcy[k.id] = { ...(x.kupcy[k.id] || {}), skup: m }; }))} /></td>
+        {#each ['zalety', 'wady'] as pole}
+          <td class="num"><input class="w-tabeli" value={Math.round((k.jakosc?.[pole] ?? 0) * 100)} title="Szansa na pozycję z {pole === 'zalety' ? 'Zaletami' : 'Wadami'} przedmiotu (%)"
+            onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { const o = x.kupcy[k.id] ??= {}; o.jakosc = { zalety: k.jakosc?.zalety ?? 0, wady: k.jakosc?.wady ?? 0, ...(o.jakosc || {}), [pole]: m / 100 }; }))} /></td>
+        {/each}</tr>{/each}</tbody>
     </table></div>
   </div>
   <div class="przyciski"><button class="maly" onclick={() => ustaw(x => { x.osady = {}; x.kupcy = {}; })}>Przywróć osady i kupców</button></div>
@@ -200,6 +204,9 @@
       ['cena_minimalna', 'koszt_wlasny', 'Koszt własny wytwórcy'], ['uplyw_czasu', 'dokupienie', 'Szansa dokupienia rdzenia / tydz.'],
       ['uplyw_czasu', 'nowy_towar', 'Szansa nowego towaru / tydz.'], ['uplyw_czasu', 'rynek_co', 'Nowy popyt i kaprys co (tyg.)'],
       ['uplyw_czasu', 'gotowka_max', 'Sufit gotówki kupca (× gotówka startowa)'],
+      ['jakosc', 'za_zalete', 'Jakość: mnożnik za każdą Zaletę przedmiotu'], ['jakosc', 'za_wade', 'Jakość: mnożnik za każdą Wadę przedmiotu'],
+      ['targowanie', 'za_ps', 'Targowanie: upust za 1 PS (0,04 = −4%)'], ['targowanie', 'max', 'Targowanie: największy upust ze sklepu'],
+      ['targowanie', 'max_zamowienie', 'Targowanie: największy upust z zamówienia'],
     ] as [sek, pole, nazwa]}
       <tr><td>{nazwa}</td><td class="num"><input class="w-tabeli" value={pl(d.rynek[sek][pole])}
         onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.rynek[sek] = { ...(x.rynek[sek] || {}), [pole]: m }; }))} /></td></tr>

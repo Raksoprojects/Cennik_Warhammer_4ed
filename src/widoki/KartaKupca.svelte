@@ -13,7 +13,7 @@
   const d = $derived(stan.d);
   const K = $derived(stan.kupiec(uid));
   const W = $derived(T.wycen(d, K));
-  let ps = $state(0), tygodnie = $state(1), msg = $state(''), zly = $state(false);
+  let ps = $state(0), talent = $state(0), tygodnie = $state(1), msg = $state(''), zly = $state(false);
   let decyzja = $state<{ tytul: string; tekst: string; tak: () => void } | null>(null);
   const grupy = $derived([...new Set(stan.kupcy.map(x => x.grupa).filter(Boolean))]);
   const towaryCennika = $derived(d.cennik.pozycje.filter((c: any) => c.typ === 'towar'));
@@ -132,6 +132,7 @@
     <div class="pasek">
       <label class="pole waskie"><span>Gotówka</span><input placeholder={mon(K.gotowka_p)} onchange={e => { const p = parsujCene(e.currentTarget.value); if (p != null && !Number.isNaN(p)) pole('gotowka_p', p); e.currentTarget.value = ''; }} /></label>
       <label class="pole waskie"><span>PS z Targowania</span><input type="number" min="0" max="10" bind:value={ps} /></label>
+      <label class="pole waskie"><span>Talent, −%</span><input type="number" min="0" max="30" bind:value={() => Math.round(talent * 100), v => (talent = Math.max(0, +v || 0) / 100)} /></label>
     </div>
   </div>
 
@@ -169,7 +170,7 @@
 <h3 style="margin-top:6px">Na stanie <span class="szary male">{W.towar.length} pozycji</span>
   <button class="maly nie-drukuj" onclick={() => print()}>Drukuj</button></h3>
 <p class="male drugi nie-drukuj">Kliknij wiersz: rozbicie ceny, ilość, cena ręczna, przelosowanie, kupno i sprzedaż.</p>
-<TabelaTowaru towar={W.towar} {ps} gotowka={K.gotowka_p} edycja
+<TabelaTowaru towar={W.towar} {ps} {talent} gotowka={K.gotowka_p} edycja
   onZmien={(id, z) => zapisz(T.zmienPozycje($state.snapshot(K), id, z))}
   onUsun={id => zapisz(T.usunPozycje($state.snapshot(K), id))}
   onPrzelosuj={id => zapisz(T.przelosujPozycje(d, $state.snapshot(K), id))}

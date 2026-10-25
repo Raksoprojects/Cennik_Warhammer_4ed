@@ -21,7 +21,7 @@ ale po namyśle. Tabela z `narzedzia/balans_v6.py` (CSV: `docs/analiza_v6/balans
 | Broń ręczna (topór, maczuga) | 1 ZK 14 s | 37 | 19 | 12 | 7 | 6 | 2 | 1 | <1 | <1 |
 | Włócznia | 16 s | 17 | 9 | 6 | 3 | 3 | <1 | <1 | <1 | <1 |
 | Łuk | 2 ZK | 44 | 22 | 15 | 9 | 7 | 2 | 1 | <1 | <1 |
-| Miecz | 3 ZK 9 s | 75 | 38 | 25 | 15 | 13 | 4 | 3 | 1 | <1 |
+| Miecz | 3 ZK | 65 | 33 | 22 | 13 | 11 | 4 | 2 | 1 | <1 |
 | Kusza | 4 ZK | 87 | 44 | 29 | 17 | 15 | 5 | 3 | 1 | <1 |
 | Rusznica lontowa | 4 ZK | 87 | 44 | 29 | 17 | 15 | 5 | 3 | 1 | <1 |
 | Pistolet | 20 ZK | 400+ | 218 | 145 | 87 | 73 | 24 | 15 | 7 | 2 |

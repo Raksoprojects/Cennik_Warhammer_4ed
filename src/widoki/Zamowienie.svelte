@@ -43,7 +43,7 @@
       <p class="blad">Tego nie ma w cenniku albo to nie jest towar (usługi, nocleg i czynsze się nie zamawia).</p>
     {:else if wynik.status === 'odmowa'}
       <h3>{wynik.przedmiot.nazwa}: odmowa</h3>
-      <p>{d.kupcy.kupcy.find((x: any) => x.id === k).nazwa} tego nie robi ani nie sprowadza.
+      <p>{wynik.powod ?? `${d.kupcy.kupcy.find((x: any) => x.id === k).nazwa} tego nie robi ani nie sprowadza.`}
         Odsyła do: <b>{wynik.odsyla_do.join(', ') || '—'}</b>.</p>
     {:else}
       {@const s = wynik.skladowe}
@@ -60,6 +60,8 @@
         {etykietaOsady(lok)} {mnoz(s.osada)} × {kon.nazwa} ({modyfikatorKoniunktury(kon, wynik.przedmiot.kat)}) {mnoz(s.koniunktura)} ×
         narzut {wynik.status === 'wykonuje' ? 'roboty' : 'sprowadzenia'} {mnoz(s.narzut)}{#if wynik.material} × materiał zamawiającego {mnoz(wynik.material)}{/if}
         = {mnoz(wynik.mnoznik * wynik.jakosc.mnoznik * (wynik.material ?? 1))}</p>
+      {#if wynik.rzadkosc}<p class="komunikat male">Tu rzadkość ({wynik.rzadkosc.dostepnosc}, w sprzedaży {Math.round(wynik.rzadkosc.szansa * 100)}%):
+        termin + {wynik.rzadkosc.termin_tyg} tyg., narzut {mnoz(wynik.rzadkosc.narzut)} (już w cenie).</p>{/if}
       {#if wynik.calosc_z_gory}<p class="komunikat">Rzecz poza skalą sklepu: kupiec żąda całości z góry.</p>{/if}
       {#if wynik.test_rzemiosla}<p class="male">{d.rynek.zamowienie.zalety}</p>{/if}
     {/if}

@@ -210,7 +210,7 @@
    "netto_rok": 187200,
    "brutto_rok": 936000,
    "tyg_robotnika": 109.1,
-   "opis": "Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji."
+   "opis": "Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji, Najwyższy Lektor."
   },
   {
    "tier": "Złoto",
@@ -221,7 +221,7 @@
    "netto_rok": 224640,
    "brutto_rok": 1123200,
    "tyg_robotnika": 130.9,
-   "opis": "Książę prowincji, Najwyższy Lektor zasiadający w kolegium elektorskim."
+   "opis": "Książę prowincji, wielki ród arystokratyczny."
   },
   {
    "tier": "Złoto",
@@ -232,7 +232,7 @@
    "netto_rok": 262080,
    "brutto_rok": 1310400,
    "tyg_robotnika": 152.7,
-   "opis": "Elektor Imperium. UWAGA: przy wzorze Nk5 szczyt drabiny wciąż jest skromny (2380 fl. rocznie) – realny elektor miał dziesiątki tysięcy. Dla figur państwowych użyj wariantu ×10 (patrz zasady)."
+   "opis": "Arystokrata najwyższego rzędu: elektor, wielki książę. Dochód to przybliżenie po wydatkach stanu — utrzymanie dworu, świty i pozycji pochłania większość przychodu. Do tego poziomy Talentu Majętny (+1k5 ZK za poziom); figury państwowe ×10 (zasady)."
   }
  ]
 }

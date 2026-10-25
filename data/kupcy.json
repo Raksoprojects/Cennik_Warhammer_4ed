@@ -1,5 +1,5 @@
 {
- "opis": "marza = mnożnik ceny wytwórcy; limit_p = najdroższa rzecz trzymana na stanie; skup = ułamek JEGO ceny sprzedaży, za jaki odkupuje. v5.2: towar_tyg = wartość towaru na stanie w tygodniach brutto Statusu kupca; gotowka_tyg = gotówka przy sobie (× 0,5–1,4 z rzutu). v6: robota_pozycje = id pozycji, które kupiec robi na zamówienie poza swoimi kategoriami (wozy u kowala i kołodzieja); jakosc = szansa na pozycję z Zaletami / Wadami przedmiotu w sklepie.",
+ "opis": "marza = mnożnik ceny wytwórcy; limit_p = najdroższa rzecz trzymana na stanie; skup = ułamek JEGO ceny sprzedaży, za jaki odkupuje. v5.2: towar_tyg = wartość towaru na stanie w tygodniach brutto Statusu kupca; gotowka_tyg = gotówka przy sobie (× 0,5–1,4 z rzutu). v6: robota_pozycje = id pozycji, które kupiec robi na zamówienie poza swoimi kategoriami (wozy u kowala i kołodzieja); jakosc = szansa na pozycję z Zaletami / Wadami przedmiotu w sklepie. v6b: branze = { kategoria: [tagi] } — z tej kategorii kupiec bierze tylko pozycje z tymi tagami (tagi w cennik.json → branze); bez wpisu = cała kategoria. jakosc_kat = szansa na Zalety / Wady dla jednej kategorii (nadpisuje jakosc). rasa = krasnolud: towar krasnoludzki traktuje jak Powszechny.",
  "kupcy": [
   {
    "id": "domokrazca",
@@ -25,6 +25,39 @@
    "jakosc": {
     "zalety": 0,
     "wady": 0.35
+   },
+   "branze": {
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "podroz",
+     "rozrywka",
+     "medyczne",
+     "posciel"
+    ],
+    "Amunicja": [
+     "amunicja_prosta"
+    ],
+    "Narzędzia i zestawy": [
+     "domowe",
+     "linowe",
+     "toaletowe",
+     "rolnicze"
+    ],
+    "Ubranie i dodatki": [
+     "odziez",
+     "dewocjonalia",
+     "tkaniny"
+    ],
+    "Jedzenie, picie, nocleg": [
+     "zywnosc",
+     "trunki"
+    ]
+   },
+   "jakosc_kat": {
+    "Ubranie i dodatki": {
+     "zalety": 0,
+     "wady": 0.7
+    }
    }
   },
   {
@@ -49,6 +82,36 @@
    "jakosc": {
     "zalety": 0,
     "wady": 0.15
+   },
+   "branze": {
+    "Jedzenie, picie, nocleg": [
+     "zywnosc",
+     "trunki",
+     "zboze"
+    ],
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "podroz",
+     "pojemniki",
+     "posciel",
+     "rozrywka",
+     "medyczne"
+    ],
+    "Ubranie i dodatki": [
+     "odziez",
+     "dewocjonalia",
+     "tkaniny"
+    ],
+    "Narzędzia i zestawy": [
+     "rolnicze",
+     "domowe"
+    ]
+   },
+   "jakosc_kat": {
+    "Ubranie i dodatki": {
+     "zalety": 0,
+     "wady": 0.7
+    }
    }
   },
   {
@@ -79,6 +142,21 @@
    "jakosc": {
     "zalety": 0.05,
     "wady": 0.1
+   },
+   "branze": {
+    "Narzędzia i zestawy": [
+     "rolnicze",
+     "warsztatowe",
+     "domowe",
+     "linowe"
+    ],
+    "Broń biała": [
+     "prosta",
+     "tarcze"
+    ],
+    "Amunicja": [
+     "amunicja_prosta"
+    ]
    }
   },
   {
@@ -107,6 +185,33 @@
    "jakosc": {
     "zalety": 0.1,
     "wady": 0.05
+   },
+   "branze": {
+    "Narzędzia i zestawy": [
+     "warsztatowe",
+     "domowe",
+     "rolnicze",
+     "linowe"
+    ],
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "podroz",
+     "pojemniki",
+     "posciel"
+    ],
+    "Broń biała": [
+     "prosta",
+     "tarcze"
+    ],
+    "Ubranie i dodatki": [
+     "odziez"
+    ]
+   },
+   "jakosc_kat": {
+    "Ubranie i dodatki": {
+     "zalety": 0,
+     "wady": 0.3
+    }
    }
   },
   {
@@ -137,6 +242,29 @@
    "jakosc": {
     "zalety": 0.35,
     "wady": 0
+   },
+   "branze": {
+    "Narzędzia i zestawy": [
+     "warsztatowe",
+     "pisarskie",
+     "naukowe",
+     "toaletowe",
+     "domowe"
+    ],
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "rozrywka",
+     "podroz"
+    ],
+    "Ubranie i dodatki": [
+     "odziez",
+     "luksus",
+     "kosztownosci"
+    ],
+    "Broń biała": [
+     "szermiercza",
+     "wojskowa"
+    ]
    }
   },
   {
@@ -165,6 +293,27 @@
    "jakosc": {
     "zalety": 0.1,
     "wady": 0.05
+   },
+   "branze": {
+    "Broń biała": [
+     "prosta",
+     "wojskowa",
+     "szermiercza",
+     "tarcze",
+     "rycerska"
+    ],
+    "Broń zasięgowa": [
+     "mysliwska",
+     "kusze",
+     "prochowa"
+    ],
+    "Amunicja": [
+     "amunicja_prosta",
+     "prochowa"
+    ],
+    "Wyposażenie różne": [
+     "podroz"
+    ]
    }
   },
   {
@@ -190,6 +339,14 @@
    "jakosc": {
     "zalety": 0.25,
     "wady": 0
+   },
+   "branze": {
+    "Broń biała": [
+     "wojskowa",
+     "rycerska",
+     "tarcze",
+     "szermiercza"
+    ]
    }
   },
   {
@@ -217,6 +374,17 @@
    "jakosc": {
     "zalety": 0.1,
     "wady": 0.05
+   },
+   "branze": {
+    "Narzędzia i zestawy": [
+     "warsztatowe",
+     "strzeleckie",
+     "naukowe"
+    ],
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "pojemniki"
+    ]
    }
   },
   {
@@ -239,7 +407,20 @@
    "skup": 0.4,
    "opis": "Biały moździerz z czarnym tłuczkiem nad drzwiami. Część asortymentu trzyma pod ladą.",
    "towar_tyg": 10,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "branze": {
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "pojemniki",
+     "medyczne"
+    ],
+    "Narzędzia i zestawy": [
+     "aptekarskie",
+     "pisarskie",
+     "naukowe",
+     "medyczne"
+    ]
+   }
   },
   {
    "id": "konie",
@@ -257,7 +438,13 @@
    "skup": 0.5,
    "opis": "Zagroda za rogatkami. Każdego konia opisuje jako najlepszego, jakiego miał w życiu.",
    "towar_tyg": 40,
-   "gotowka_tyg": 6
+   "gotowka_tyg": 6,
+   "branze": {
+    "Narzędzia i zestawy": [
+     "rolnicze",
+     "linowe"
+    ]
+   }
   },
   {
    "id": "blawatny",
@@ -282,6 +469,18 @@
    "jakosc": {
     "zalety": 0.2,
     "wady": 0
+   },
+   "branze": {
+    "Wyposażenie różne": [
+     "posciel",
+     "podroz"
+    ]
+   },
+   "jakosc_kat": {
+    "Ubranie i dodatki": {
+     "zalety": 0.25,
+     "wady": 0
+    }
    }
   },
   {
@@ -303,7 +502,17 @@
    "skup": 0.35,
    "opis": "Prasa w zapleczu, zapach farby. Pyta, po co komu ta konkretna księga.",
    "towar_tyg": 10,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "branze": {
+    "Narzędzia i zestawy": [
+     "pisarskie",
+     "naukowe"
+    ],
+    "Wyposażenie różne": [
+     "oswietlenie",
+     "pisarskie"
+    ]
+   }
   },
   {
    "id": "paser",
@@ -331,6 +540,30 @@
    "jakosc": {
     "zalety": 0.05,
     "wady": 0.3
+   },
+   "branze": {
+    "Broń biała": [
+     "prosta",
+     "wojskowa",
+     "szermiercza",
+     "zlodziejska"
+    ],
+    "Ubranie i dodatki": [
+     "odziez",
+     "luksus",
+     "kosztownosci"
+    ],
+    "Narzędzia i zestawy": [
+     "zlodziejskie",
+     "warsztatowe",
+     "naukowe",
+     "toaletowe"
+    ],
+    "Broń zasięgowa": [
+     "mysliwska",
+     "kusze",
+     "prochowa"
+    ]
    }
   },
   {
@@ -358,6 +591,35 @@
    "jakosc": {
     "zalety": 0.05,
     "wady": 0.15
+   },
+   "branze": {
+    "Broń biała": [
+     "prosta",
+     "wojskowa",
+     "tarcze"
+    ],
+    "Broń zasięgowa": [
+     "mysliwska",
+     "kusze",
+     "prochowa"
+    ],
+    "Amunicja": [
+     "amunicja_prosta",
+     "prochowa"
+    ],
+    "Jedzenie, picie, nocleg": [
+     "zywnosc",
+     "trunki",
+     "zboze",
+     "hurt"
+    ],
+    "Wyposażenie różne": [
+     "podroz",
+     "oswietlenie",
+     "pojemniki",
+     "medyczne",
+     "posciel"
+    ]
    }
   },
   {
@@ -380,7 +642,13 @@
    "skup": 0.35,
    "opis": "Miska, brzytwa i pijawki w słoju. Leczy, goli i wyrywa zęby, w tej kolejności.",
    "towar_tyg": 8,
-   "gotowka_tyg": 3
+   "gotowka_tyg": 3,
+   "branze": {
+    "Narzędzia i zestawy": [
+     "aptekarskie",
+     "medyczne"
+    ]
+   }
   },
   {
    "id": "kolodziej",
@@ -408,6 +676,69 @@
    "jakosc": {
     "zalety": 0.05,
     "wady": 0.1
+   },
+   "branze": {
+    "Narzędzia i zestawy": [
+     "rolnicze",
+     "warsztatowe"
+    ],
+    "Wyposażenie różne": [
+     "pojemniki"
+    ]
+   }
+  },
+  {
+   "id": "krasnolud",
+   "nazwa": "Krasnoludzki kupiec (Dawi)",
+   "status": "Srebro 3",
+   "rasa": "krasnolud",
+   "marza": 1.2,
+   "limit_p": 36000,
+   "rdzen": [
+    "Broń biała",
+    "Narzędzia i zestawy"
+   ],
+   "boczne": [
+    "Pancerze",
+    "Broń zasięgowa",
+    "Jedzenie, picie, nocleg",
+    "Amunicja"
+   ],
+   "robota": [
+    "Broń biała",
+    "Narzędzia i zestawy",
+    "Pancerze"
+   ],
+   "skup": 0.4,
+   "towar_tyg": 10,
+   "gotowka_tyg": 3,
+   "jakosc": {
+    "zalety": 0.3,
+    "wady": 0
+   },
+   "opis": "Kantor przy krasnoludzkiej kuźni. Towar porządny i drogi, targuje się zażarcie, ludziom nie ufa. Piwo Bugmana trzyma pod ladą.",
+   "branze": {
+    "Broń biała": [
+     "krasnoludzka",
+     "prosta",
+     "tarcze",
+     "wojskowa"
+    ],
+    "Narzędzia i zestawy": [
+     "warsztatowe"
+    ],
+    "Broń zasięgowa": [
+     "krasnoludzka",
+     "kusze",
+     "prochowa"
+    ],
+    "Jedzenie, picie, nocleg": [
+     "trunki"
+    ],
+    "Amunicja": [
+     "amunicja_prosta",
+     "prochowa"
+    ]
    }
   }
  ]

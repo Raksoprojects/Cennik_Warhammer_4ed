@@ -5,19 +5,26 @@
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
 
   const d = $derived(stan.d);
-  let status = $state('Srebro 3'), majetny = $state(0), rzut = $state<any>(null), wlasne = $state<string[]>([]), dodaj = $state('');
+  let status = $state('Srebro 3'), majetny = $state(0), rzut = $state<any>(null), dodaj = $state('');
   let psJal = $state(2), swieto = $state(false), jal = $state<number | null>(null);
-  const KOSZYK = ['miecz', 'kolczuga', 'pelna-plytowka-4-elementy', 'kon-wierzchowy', 'rumak'];
+  let koszykIds = $state(['miecz', 'kolczuga', 'pelna-plytowka-4-elementy', 'kon-wierzchowy', 'rumak']);
   const sr = $derived(sredniDochod(d, status, majetny));
   const poz = $derived(d.statusy.poziomy.find((s: any) => s.tier + ' ' + s.lvl === status));
-  const koszyk = $derived([...KOSZYK, ...wlasne].map(id => d.cennik.pozycje.find((c: any) => c.id === id)).filter(Boolean));
+  const koszyk = $derived(koszykIds.map(id => d.cennik.pozycje.find((c: any) => c.id === id)).filter(Boolean));
+  // Zarobki profesji: Pozycja / Dochód z audytu (data/audyt.json). Dochód decyduje o rzucie.
+  let qProf = $state('');
+  const STATUS_RE = /^(Brąz|Srebro|Złoto) \d+$/;
+  const profesje = $derived(d.audyt.flatMap((p: any) => p.poziomy.map((l: any) => {
+    const pozycja = l.poz || l.raw, dochod = l.doch || l.poz || l.raw;
+    return { ...l, profesja: p.profesja, klasa: p.klasa, pozycja, dochod, netto: STATUS_RE.test(dochod) ? sredniDochod(d, dochod).netto_p : null };
+  })).filter((l: any) => !qProf || norm(`${l.profesja} ${l.nazwa} ${l.klasa}`).includes(norm(qProf))));
   const ileRobot = (p: number) => {
     const n = sr.netto_p; if (n <= 0) return 'nigdy';
     const t = p / n; return t <= 1 ? 'jedna Robota' : t < 40 ? Math.round(t) + ' Robót' : 'ponad 40 Robót — realnie tylko z łupu albo spadku';
   };
   function dodajDoKoszyka() {
     const n = norm(dodaj.trim()), c = d.cennik.pozycje.find((x: any) => norm(x.nazwa) === n);
-    if (c && !wlasne.includes(c.id) && !KOSZYK.includes(c.id)) wlasne = [...wlasne, c.id];
+    if (c && !koszykIds.includes(c.id)) koszykIds = [...koszykIds, c.id];
     dodaj = '';
   }
 </script>
@@ -37,7 +44,7 @@
       <label class="pole"><span>Status</span><select bind:value={status} onchange={() => (rzut = null)}>
         {#each d.statusy.poziomy as s}<option>{s.tier} {s.lvl}</option>{/each}</select></label>
       <label class="pole waskie"><span>Majętny</span><select bind:value={majetny} onchange={() => (rzut = null)}>
-        {#each [0, 1, 2, 3] as m}<option value={m}>{m || 'brak'}</option>{/each}</select></label>
+        {#each [0, 1, 2, 3, 4, 5] as m}<option value={m}>{m || 'brak'}</option>{/each}</select></label>
       <button class="glowny" onclick={() => (rzut = rzutDochodu(d, { status, majetny }))}>Rzuć na Dochód</button>
     </div>
     {#if poz}<p class="drugi male">{poz.opis}</p>{/if}
@@ -51,7 +58,8 @@
   </div>
   <div class="panel">
     <h3>Ile Robót odłożyć <Podpowiedz tekst="Ceny z cennika po Twoich zmianach w Edycji cen. To cena bazowa — u kupca dojdzie marża." /></h3>
-    <ul>{#each koszyk as c (c.id)}<li>{c.nazwa} ({mon(c.cena_p)}) — <b>{ileRobot(c.cena_p)}</b></li>{/each}</ul>
+    <ul>{#each koszyk as c (c.id)}<li>{c.nazwa} ({mon(c.cena_p)}) — <b>{ileRobot(c.cena_p)}</b>
+      <button class="maly" aria-label="Usuń {c.nazwa}" onclick={() => (koszykIds = koszykIds.filter(i => i !== c.id))}>✕</button></li>{/each}</ul>
     <div class="pasek">
       <label class="pole"><span>Dodaj rzecz</span><input bind:value={dodaj} list="zar-towary" onkeydown={e => e.key === 'Enter' && dodajDoKoszyka()} />
         <datalist id="zar-towary">{#each d.cennik.pozycje as c}<option value={c.nazwa}></option>{/each}</datalist></label>
@@ -81,6 +89,23 @@
           <td class="num" data-l="Brutto / tydz.">{mon(s.brutto_p)}</td><td class="num zwin" data-l="Brutto / rok">{mon(s.brutto_rok)}</td>
           <td class="num" data-l="× robotnik">{pl(s.tyg_robotnika, 1)}×</td><td class="pelna drugi male">{s.opis}</td>
         </tr>
+      {/each}
+    </tbody>
+  </table>
+</div>
+
+<h3 style="margin-top:18px">Zarobki profesji <Podpowiedz tekst="Status zapisany jako Pozycja / Dochód (audyt profesji, data/audyt.json). Pozycja = kto z tobą rozmawia, Dochód = sakiewka i rzut na zarobek. Dochód ryzykowny (Łotrzy, Wodniacy): rzut jak za 2 szczeble wyżej i Test — porażka = połowa." /></h3>
+<div class="pasek"><label class="pole"><span>Szukaj profesji</span><input type="search" bind:value={qProf} placeholder="np. aptekarz, żołnierz, łowca" /></label></div>
+<div class="tabela karty">
+  <table class="karty">
+    <thead><tr><th>Poziom</th><th>Profesja</th><th>Pozycja</th><th>Dochód</th><th class="num">Netto / Robotę</th><th>Uwagi</th></tr></thead>
+    <tbody>
+      {#each profesje as l}
+        <tr><td class="tytul">{l.nazwa}</td><td data-l="Profesja">{l.profesja} <span class="szary male">({l.klasa})</span></td>
+          <td data-l="Pozycja">{l.pozycja}</td>
+          <td data-l="Dochód"><span class:cena={l.dochod !== l.pozycja}>{l.dochod}</span>{#if l.w === 'ryzyko'}<span class="znacznik czerwony">ryzykowny</span>{/if}</td>
+          <td class="num" data-l="Netto / Robotę">{l.netto == null ? '—' : mon(l.netto)}</td>
+          <td class="pelna male drugi">{l.powod}</td></tr>
       {/each}
     </tbody>
   </table>

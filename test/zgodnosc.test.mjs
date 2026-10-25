@@ -10,7 +10,11 @@ const dane = Object.fromEntries(['kupcy', 'osady', 'koniunktura', 'rynek', 'nazw
   .map(n => [n, wczytaj(`data/${n}.json`)]));
 // cennik w wersji z artefaktu (302 pozycje), żeby porównać 1:1
 const orig = wczytaj('reference/dane_oryginal.json');
-const daneOrig = { ...dane, cennik: { pozycje: orig.ceny.map(c => ({ id: c.nazwa, kat: c.kat, nazwa: c.nazwa, cena_p: c.nowa })) } };
+// v6b: MG zmienił jakość (×1,6 / ×0,6) i targowanie (−4%/PS) — porównanie z oryginałem idzie na jego parametrach.
+const rynekOrig = { ...dane.rynek,
+  jakosc: { ...dane.rynek.jakosc, opcje: [['2wady', 0.25], ['wada', 0.5], ['zwykla', 1], ['wysmienita', 2], ['mistrzowska', 4]].map(([id, mnoznik]) => ({ id, nazwa: id, mnoznik })) },
+  targowanie: { ...dane.rynek.targowanie, za_ps: 0.1, max: 0.3, max_zamowienie: 0.2 } };
+const daneOrig = { ...dane, rynek: rynekOrig, cennik: { pozycje: orig.ceny.map(c => ({ id: c.nazwa, kat: c.kat, nazwa: c.nazwa, cena_p: c.nowa })) } };
 const przypadki = wczytaj('test/fixtures/oryginal_przypadki.json');
 
 test('generator kupców daje to samo co oryginał', () => {
@@ -52,16 +56,17 @@ test('magiczne przedmioty wg HR-026', () => {
   assert.equal(S.cenaMagiczna(dane, { rodzaj: 'kostur' }), null);
 });
 
-test('jakość: Wada ×½ (HR-024)', () => {
-  assert.equal(S.cenaZJakoscia(dane, 11520, 'wada'), 5760);
-  assert.equal(S.cenaZJakoscia(dane, 11520, '2wady'), 2880);
+test('jakość: Wada ×½ (HR-024, oryginał); v6b: ×0,6', () => {
+  assert.equal(S.cenaZJakoscia(daneOrig, 11520, 'wada'), 5760);
+  assert.equal(S.cenaZJakoscia(daneOrig, 11520, '2wady'), 2880);
+  assert.equal(S.cenaZJakoscia(dane, 11520, 'wada'), 6912);
 });
 
-test('targowanie: 10%/PS, maks. 30%, nie poniżej cennika', () => {
-  assert.equal(S.targuj(dane, { cena_p: 1000, cena_cennik_p: 500, ps: 2 }).cena_p, 800);
-  assert.equal(S.targuj(dane, { cena_p: 1000, cena_cennik_p: 500, ps: 9 }).cena_p, 700);
-  assert.equal(S.targuj(dane, { cena_p: 1000, cena_cennik_p: 900, ps: 3 }).cena_p, 900);
-  assert.equal(S.targuj(dane, { cena_p: 1000, cena_cennik_p: 500, ps: 5, zamowienie: true }).cena_p, 800);
+test('targowanie: 10%/PS, maks. 30%, nie poniżej cennika (oryginał)', () => {
+  assert.equal(S.targuj(daneOrig, { cena_p: 1000, cena_cennik_p: 500, ps: 2 }).cena_p, 800);
+  assert.equal(S.targuj(daneOrig, { cena_p: 1000, cena_cennik_p: 500, ps: 9 }).cena_p, 700);
+  assert.equal(S.targuj(daneOrig, { cena_p: 1000, cena_cennik_p: 900, ps: 3 }).cena_p, 900);
+  assert.equal(S.targuj(daneOrig, { cena_p: 1000, cena_cennik_p: 500, ps: 5, zamowienie: true }).cena_p, 800);
 });
 
 test('zamówienia na miarę: ta sama cena, zaliczka i odmowy co w oryginale', () => {

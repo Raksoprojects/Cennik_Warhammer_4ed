@@ -12,18 +12,21 @@
    "nazwa": "Miecz",
    "zrodlo": "PB",
    "cena_raw_p": 240,
-   "cena_p": 828,
+   "cena_p": 720,
    "obc": 1,
    "dostepnosc": "Powszechna",
    "podstawa_hist": "Miecz, Anglia XVI w. – 6 s = 2 ZK 1 s",
    "komentarz": "Podniesione. Miecz to dwa tygodnie brutto rzemieślnika.",
    "dopisane": null,
-   "uwagi_danych": null,
+   "uwagi_danych": "v6b: decyzja MG — miecz 3 ZK (×1 = 1 ZK).",
    "pozycja_kampanii": false,
    "typ": "towar",
    "podtyp": null,
-   "cena_ref_p": 276,
-   "klasa": "bron"
+   "cena_ref_p": 240,
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "bron-reczna-topor-maczuga",
@@ -42,7 +45,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "bulat",
@@ -61,7 +67,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "szabla",
@@ -80,7 +89,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "noz",
@@ -99,7 +111,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 10,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "sztylet",
@@ -118,7 +133,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 66,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "mizerykordia",
@@ -137,7 +155,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 66,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "kastet",
@@ -156,7 +177,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 17,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "zlodziejska"
+   ]
   },
   {
    "id": "kostur",
@@ -175,7 +199,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "palka",
@@ -194,7 +221,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "topor",
@@ -213,7 +243,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "buzdygan",
@@ -232,7 +265,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "nadziak-jednoreczny",
@@ -251,7 +287,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 102,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "mlot-jednoreczny",
@@ -270,7 +309,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "cep-bojowy",
@@ -289,7 +331,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "korbacz",
@@ -308,7 +353,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "kiscien",
@@ -327,7 +375,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "lewak",
@@ -346,7 +397,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "szermiercza"
+   ]
   },
   {
    "id": "lamacz-mieczy",
@@ -365,7 +419,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 156,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "szermiercza"
+   ]
   },
   {
    "id": "wlocznia",
@@ -384,7 +441,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "prosta"
+   ]
   },
   {
    "id": "pika",
@@ -403,7 +463,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 108,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "halabarda",
@@ -422,7 +485,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 192,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "wielki-topor",
@@ -441,7 +507,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "mlot-bojowy",
@@ -460,7 +529,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "poltorak",
@@ -479,7 +551,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "miecz-dwureczny",
@@ -498,7 +573,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1368,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "floret",
@@ -517,7 +595,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 828,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "szermiercza"
+   ]
   },
   {
    "id": "rapier",
@@ -536,7 +617,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1092,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "szermiercza"
+   ]
   },
   {
    "id": "szpada",
@@ -555,7 +639,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 828,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "szermiercza"
+   ]
   },
   {
    "id": "mlot-kawaleryjski",
@@ -574,7 +661,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "rycerska"
+   ]
   },
   {
    "id": "kopia",
@@ -593,7 +683,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "rycerska"
+   ]
   },
   {
    "id": "lanca",
@@ -612,7 +705,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "rycerska"
+   ]
   },
   {
    "id": "tarcza-puklerz",
@@ -631,7 +727,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "tarcze"
+   ]
   },
   {
    "id": "tarcza",
@@ -650,7 +749,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "tarcze"
+   ]
   },
   {
    "id": "tarcza-duza",
@@ -669,7 +771,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "tarcze"
+   ]
   },
   {
    "id": "pawez",
@@ -688,7 +793,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "tarcze"
+   ]
   },
   {
    "id": "garota",
@@ -707,7 +815,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "zlodziejska"
+   ]
   },
   {
    "id": "tluk",
@@ -726,7 +837,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "zlodziejska"
+   ]
   },
   {
    "id": "kolczasta-rekawica",
@@ -745,7 +859,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "zamykana-rekawica",
@@ -764,7 +881,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "obciazona-siec",
@@ -783,7 +903,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "zlodziejska"
+   ]
   },
   {
    "id": "lapacz",
@@ -802,7 +925,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "partyzana-glewia",
@@ -821,7 +947,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 192,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "sierpak",
@@ -840,7 +969,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "szydlo",
@@ -859,7 +991,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 192,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "topor-drzewcowy",
@@ -878,7 +1013,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 276,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "flamberg",
@@ -897,7 +1035,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 4080,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "nadziak-dwureczny",
@@ -916,7 +1057,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 168,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "wojskowa"
+   ]
   },
   {
    "id": "krasnoludzki-topor",
@@ -935,7 +1079,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-mlot-bojowy",
@@ -954,7 +1102,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "wirujace-ostrza-smierci",
@@ -973,7 +1125,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 680,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-wielki-topor",
@@ -992,7 +1148,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 408,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-wielki-mlot",
@@ -1011,7 +1171,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 368,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-kilof",
@@ -1030,7 +1194,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 204,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "wielki-miecz-hoetha",
@@ -1049,7 +1217,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 273600,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "elfia"
+   ],
+   "pochodzenie": "elfie"
   },
   {
    "id": "krotki-luk",
@@ -1068,7 +1240,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 202,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "luk",
@@ -1087,7 +1262,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "luk-dlugi",
@@ -1106,7 +1284,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 328,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "luk-elfi",
@@ -1125,7 +1306,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1642,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "elfia"
+   ],
+   "pochodzenie": "elfie"
   },
   {
    "id": "kusza",
@@ -1144,7 +1329,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "kusze"
+   ]
   },
   {
    "id": "ciezka-kusza",
@@ -1163,7 +1351,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 717,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "kusze"
+   ]
   },
   {
    "id": "kusza-pistoletowa",
@@ -1182,7 +1373,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 696,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "kusze"
+   ]
   },
   {
    "id": "rusznica",
@@ -1201,7 +1395,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "garlacz",
@@ -1220,7 +1417,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "muszkiet-kaliwer",
@@ -1239,7 +1439,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1680,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "muszkiet-hochlandzki",
@@ -1258,7 +1461,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24000,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "pistolet",
@@ -1277,7 +1483,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "pieprzniczka",
@@ -1296,7 +1505,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "rusznica-samopowtarzalna",
@@ -1315,7 +1527,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 4800,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "pistolet-samopowtarzalny",
@@ -1334,7 +1549,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6000,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "bomba",
@@ -1353,7 +1571,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "ladunek-zapalajacy",
@@ -1372,7 +1593,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "proca",
@@ -1391,7 +1615,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "proca-drzewcowa",
@@ -1410,7 +1637,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 30,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "oszczep",
@@ -1429,7 +1659,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "noz-do-rzucania",
@@ -1448,7 +1681,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "topor-do-rzucania",
@@ -1467,7 +1703,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "strzalka",
@@ -1486,7 +1725,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 14,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "bolas",
@@ -1505,7 +1747,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "arkan",
@@ -1524,7 +1769,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "bicz",
@@ -1543,7 +1791,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 54,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "mysliwska"
+   ]
   },
   {
    "id": "arkebuz",
@@ -1562,7 +1813,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "rusznica-lontowa",
@@ -1581,7 +1835,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "rusznica-dwulufowa",
@@ -1600,7 +1857,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1680,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "garlacz-lontowy",
@@ -1619,7 +1879,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "gryfia-lapa",
@@ -1638,7 +1901,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6000,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "halabarda-pistoletowa",
@@ -1657,7 +1923,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "topor-pistoletowy",
@@ -1676,7 +1945,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2880,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "laska-pistoletowa",
@@ -1695,7 +1967,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 4800,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "mozdzierz-reczny",
@@ -1714,7 +1989,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12000,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "krasnoludzka-kusza",
@@ -1733,7 +2011,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzka-hakownica",
@@ -1752,7 +2034,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 864,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-pistolet",
@@ -1771,7 +2057,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "krasnoludzki-topor-do-rzucania",
@@ -1790,7 +2080,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "krasnoludzka"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "strzala-12",
@@ -1809,7 +2103,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "belt-12",
@@ -1828,7 +2125,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "strzala-elfia-1",
@@ -1847,7 +2147,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "elfia"
+   ],
+   "pochodzenie": "elfie"
   },
   {
    "id": "srut-i-proch-12",
@@ -1866,7 +2170,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "pocisk-i-proch-12",
@@ -1885,7 +2192,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "improwizowany-srut-i-proch-1",
@@ -1904,7 +2214,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "pocisk-olowiany-12",
@@ -1923,7 +2236,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "pocisk-kamienny-12",
@@ -1942,7 +2258,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "strzala-przebijajaca-12",
@@ -1961,7 +2280,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "strzala-zabkowana-12",
@@ -1980,7 +2302,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "bron"
+   "klasa": "bron",
+   "branze": [
+    "amunicja_prosta"
+   ]
   },
   {
    "id": "patron-12",
@@ -1999,7 +2324,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 66,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "precyzyjny-pocisk-i-proch",
@@ -2018,7 +2346,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "szmelc-i-proch-12",
@@ -2037,7 +2368,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 40,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "duzy-pocisk-i-proch-12",
@@ -2056,7 +2390,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "nasaczony-aqshy-proch-12",
@@ -2075,7 +2412,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "eksperymentalna"
+   ]
   },
   {
    "id": "pocisk-hakowy-1",
@@ -2094,7 +2434,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 840,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "prochowa"
+   ]
   },
   {
    "id": "skorzana-kurta",
@@ -2948,7 +3291,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 24,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "cieply-posilek-w-gospodzie",
@@ -2988,7 +3334,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 10,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "nocleg-w-stajni-na-sianie",
@@ -3085,7 +3434,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 3,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ]
   },
   {
    "id": "pol-litra-mocnego-trunku",
@@ -3104,7 +3456,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ]
   },
   {
    "id": "kielich-wina",
@@ -3123,7 +3478,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ]
   },
   {
    "id": "butelka-wina",
@@ -3142,7 +3500,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ]
   },
   {
    "id": "beczulka-piwa-10-l",
@@ -3163,7 +3524,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 31,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ]
   },
   {
    "id": "pol-litra-piwa-bugmana",
@@ -3173,7 +3537,7 @@
    "cena_raw_p": 9,
    "cena_p": 18,
    "obc": 0,
-   "dostepnosc": "Egzotyczna",
+   "dostepnosc": "Rzadka",
    "podstawa_hist": null,
    "komentarz": "Krasnoludzki import. Podniesione.",
    "dopisane": null,
@@ -3182,7 +3546,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "trunki"
+   ],
+   "pochodzenie": "krasnoludzkie"
   },
   {
    "id": "prowiant-wojskowy-na-1-tydzien",
@@ -3201,7 +3569,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "kat-w-izbie-czeladnej-tydzien",
@@ -3448,7 +3819,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 336,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "buty",
@@ -3467,7 +3841,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 144,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "wysokie-buty",
@@ -3486,7 +3863,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "plaszcz",
@@ -3505,7 +3885,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 312,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "oponcza",
@@ -3524,7 +3907,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 432,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "kapelusz",
@@ -3543,7 +3929,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "kaptur-lub-maska",
@@ -3562,7 +3951,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 78,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "rekawiczki",
@@ -3581,7 +3973,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "szata",
@@ -3600,7 +3995,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "mundur",
@@ -3619,7 +4017,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "kostium",
@@ -3638,7 +4039,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "odziez"
+   ]
   },
   {
    "id": "stroj-dworski",
@@ -3657,7 +4061,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 7200,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "stroj-ceremonialny-aksamit-zlotoglow-futra",
@@ -3676,7 +4083,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 52800,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "laska",
@@ -3695,7 +4105,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "berlo",
@@ -3714,7 +4127,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "kosztownosci"
+   ]
   },
   {
    "id": "sygnet",
@@ -3733,7 +4149,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "kosztownosci"
+   ]
   },
   {
    "id": "pierscien-srebrny",
@@ -3752,7 +4171,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "kosztownosci"
+   ]
   },
   {
    "id": "pierscien-zloty",
@@ -3771,7 +4193,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "kosztownosci"
+   ]
   },
   {
    "id": "pierscien-z-klejnotem",
@@ -3790,7 +4215,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 10800,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "kosztownosci"
+   ]
   },
   {
    "id": "symbol-religijny",
@@ -3809,7 +4237,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "dewocjonalia"
+   ]
   },
   {
    "id": "amulet",
@@ -3828,7 +4259,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "dewocjonalia"
+   ]
   },
   {
    "id": "perfumy",
@@ -3847,7 +4281,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "puder-do-twarzy",
@@ -3866,7 +4303,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 180,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "zapinki-6",
@@ -3885,7 +4325,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "tatuaz",
@@ -3901,7 +4344,7 @@
    "dopisane": null,
    "uwagi_danych": null,
    "pozycja_kampanii": false,
-   "typ": "towar",
+   "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 72,
    "klasa": "utrzymanie"
@@ -3923,7 +4366,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "focza-skora",
@@ -3942,7 +4388,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "odziez"
+   "klasa": "odziez",
+   "branze": [
+    "futra"
+   ]
   },
   {
    "id": "narzedzia-pracy",
@@ -3961,7 +4410,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "warsztat",
@@ -3980,7 +4432,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 38400,
-   "klasa": "kupno"
+   "klasa": "kupno",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "sierp",
@@ -3999,7 +4454,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "motyka",
@@ -4018,7 +4476,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "grabie",
@@ -4037,7 +4498,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "szpadel",
@@ -4056,7 +4520,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "kilof",
@@ -4075,7 +4542,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "mlotek",
@@ -4094,7 +4564,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "pila",
@@ -4113,7 +4586,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "dluto",
@@ -4132,7 +4608,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "gwozdzie-12",
@@ -4151,7 +4630,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe",
+    "zuzywalne"
+   ]
   },
   {
    "id": "lom",
@@ -4170,7 +4653,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "drag-3-m",
@@ -4189,7 +4675,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "bosak",
@@ -4208,7 +4697,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "linowe"
+   ]
   },
   {
    "id": "lina-10-metrow",
@@ -4227,7 +4719,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "linowe"
+   ]
   },
   {
    "id": "kotwiczka",
@@ -4246,7 +4741,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "linowe"
+   ]
   },
   {
    "id": "wiadro",
@@ -4265,7 +4763,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "miotla",
@@ -4284,7 +4785,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 10,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "mop",
@@ -4303,7 +4807,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "szczotka-do-podlogi",
@@ -4322,7 +4829,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "kociolek-do-gotowania",
@@ -4341,7 +4851,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "patelnia",
@@ -4360,7 +4873,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 180,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "miska",
@@ -4379,7 +4895,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "talerz",
@@ -4398,7 +4917,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "kubek",
@@ -4417,7 +4939,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 8,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "kufel-cynowy",
@@ -4436,7 +4961,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "sztucce",
@@ -4455,7 +4983,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "domowe"
+   ]
   },
   {
    "id": "mozdzierz-z-tluczkiem",
@@ -4474,7 +5005,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 168,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "aptekarskie"
+   ]
   },
   {
    "id": "wytrychy",
@@ -4493,7 +5027,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "zlodziejskie"
+   ]
   },
   {
    "id": "kajdany",
@@ -4512,7 +5049,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "stalowe-szczypce",
@@ -4531,7 +5071,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "haczyki-na-ryby-12",
@@ -4550,7 +5093,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "linowe"
+   ]
   },
   {
    "id": "sidla-na-zwierzeta",
@@ -4569,7 +5115,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "kule",
@@ -4588,7 +5137,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "medyczne"
+   ]
   },
   {
    "id": "klucz",
@@ -4607,7 +5159,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "kolek",
@@ -4626,7 +5181,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "liczydlo",
@@ -4645,7 +5203,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "grzebien",
@@ -4664,7 +5225,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "toaletowe"
+   ]
   },
   {
    "id": "pinceta",
@@ -4683,7 +5247,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "aptekarskie"
+   ]
   },
   {
    "id": "pioro-do-pisania",
@@ -4702,7 +5269,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 4,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "pedzel-do-malowania",
@@ -4721,7 +5291,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "grawerowana-pieczec",
@@ -4740,7 +5313,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1920,
-   "klasa": "kruszec"
+   "klasa": "kruszec",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "mlotek-sedziego",
@@ -4759,7 +5335,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "soczewki-do-czytania",
@@ -4778,7 +5357,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "naukowe"
+   ]
   },
   {
    "id": "teleskop",
@@ -4797,7 +5379,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "naukowe"
+   ]
   },
   {
    "id": "zestaw-do-pisania",
@@ -4816,7 +5401,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "zestaw-do-charakteryzacji",
@@ -4835,7 +5423,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 180,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "zlodziejskie"
+   ]
   },
   {
    "id": "zestaw-na-zatrucia",
@@ -4854,7 +5445,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "aptekarskie"
+   ]
   },
   {
    "id": "oselka",
@@ -4873,7 +5467,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 30,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "warsztatowe"
+   ]
   },
   {
    "id": "bandolier",
@@ -4892,7 +5489,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "strzeleckie"
+   ]
   },
   {
    "id": "cieciwa",
@@ -4911,7 +5511,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "strzeleckie"
+   ]
   },
   {
    "id": "lont-prochowy-1-m",
@@ -4930,7 +5533,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2,
-   "klasa": "palna"
+   "klasa": "palna",
+   "branze": [
+    "strzeleckie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "kompas",
@@ -4949,7 +5556,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "naukowe"
+   ]
   },
   {
    "id": "teodolit",
@@ -4968,7 +5578,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2880,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "naukowe"
+   ]
   },
   {
    "id": "strusie-pioro",
@@ -4987,7 +5600,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "luksus"
+   ]
   },
   {
    "id": "lusterko-reczne",
@@ -5006,7 +5622,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 258,
-   "klasa": "prestiz"
+   "klasa": "prestiz",
+   "branze": [
+    "toaletowe"
+   ]
   },
   {
    "id": "narzedzie-do-czyszczenia-uszu",
@@ -5025,7 +5644,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "toaletowe"
+   ]
   },
   {
    "id": "arkusz-pergaminu",
@@ -5576,7 +6198,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "zapalka",
@@ -5595,7 +6221,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "lampa-oliwna",
@@ -5614,7 +6244,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie"
+   ]
   },
   {
    "id": "latarnia",
@@ -5633,7 +6266,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 180,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie"
+   ]
   },
   {
    "id": "lampa-sztormowa",
@@ -5652,7 +6288,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie"
+   ]
   },
   {
    "id": "lampa-davricha",
@@ -5671,7 +6310,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie"
+   ]
   },
   {
    "id": "koc",
@@ -5690,7 +6332,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz",
+    "posciel"
+   ]
   },
   {
    "id": "zwijane-poslanie",
@@ -5709,7 +6355,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 324,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "namiot",
@@ -5728,7 +6377,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "plocienna-plandeka",
@@ -5747,7 +6399,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 300,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "pudelko-na-hubke-i-krzesiwo",
@@ -5766,7 +6421,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie"
+   ]
   },
   {
    "id": "kosci-do-gry",
@@ -5785,7 +6443,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "talia-kart",
@@ -5804,7 +6465,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "instrument",
@@ -5823,7 +6487,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "bandaz",
@@ -5842,7 +6509,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "medyczne",
+    "zuzywalne"
+   ]
   },
   {
    "id": "kreda-wegiel-do-rysowania",
@@ -5861,7 +6532,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "szmaty",
@@ -5880,7 +6555,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "medyczne",
+    "zuzywalne"
+   ]
   },
   {
    "id": "lalka",
@@ -5899,7 +6578,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "pilka",
@@ -5918,7 +6600,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 5,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "afisz",
@@ -5937,7 +6622,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "fajka-i-tyton",
@@ -5956,7 +6645,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "rozrywka"
+   ]
   },
   {
    "id": "beczka-145-l",
@@ -5975,7 +6667,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pojemniki"
+   ]
   },
   {
    "id": "beczulka-45-l",
@@ -5994,7 +6689,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pojemniki"
+   ]
   },
   {
    "id": "buklak",
@@ -6013,7 +6711,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "butelka",
@@ -6032,7 +6733,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pojemniki"
+   ]
   },
   {
    "id": "dzban",
@@ -6051,7 +6755,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pojemniki"
+   ]
   },
   {
    "id": "plecak",
@@ -6070,7 +6777,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 96,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "sakiewka",
@@ -6089,7 +6799,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "duzy-worek",
@@ -6108,7 +6821,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "worek",
@@ -6127,7 +6843,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "torba-na-ramie",
@@ -6146,7 +6865,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "juki",
@@ -6165,7 +6887,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 300,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "podroz"
+   ]
   },
   {
    "id": "tuba-na-zwoje",
@@ -6184,7 +6909,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "pisarskie"
+   ]
   },
   {
    "id": "hak",
@@ -6564,7 +7292,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 288,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "cynamon-funt",
@@ -6583,7 +7314,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1008,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "szafran-funt",
@@ -6602,7 +7336,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2520,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "gozdziki-kamien",
@@ -6621,7 +7358,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 732,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "cukier-kamien",
@@ -6640,7 +7380,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2196,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "ryz-kamien",
@@ -6659,7 +7402,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 636,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "migdaly-kamien",
@@ -6678,7 +7424,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1488,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "rodzynki-kamien",
@@ -6697,7 +7446,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1008,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "kolonialne"
+   ]
   },
   {
    "id": "sledzie-beczka",
@@ -6716,7 +7468,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2760,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "hurt"
+   ]
   },
   {
    "id": "maslo-garniec-3-77-l",
@@ -6737,7 +7492,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 528,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "sery-kopa-60-szt",
@@ -6758,7 +7516,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 348,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "jaja-kopa-60-szt",
@@ -6779,7 +7540,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 54,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "zyto-cwiertnia",
@@ -6800,7 +7564,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 264,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zboze"
+   ]
   },
   {
    "id": "pszenica-cwiertnia",
@@ -6821,7 +7588,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 420,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zboze"
+   ]
   },
   {
    "id": "jeczmien-cwiertnia",
@@ -6842,7 +7612,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 252,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zboze"
+   ]
   },
   {
    "id": "owies-cwiertnia-obrok",
@@ -6863,7 +7636,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 132,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zboze"
+   ]
   },
   {
    "id": "groch-korzec-43-7-l",
@@ -6884,7 +7660,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 108,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "chleb-zytni-bochenek",
@@ -6905,7 +7684,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 2,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "mieso-kg",
@@ -6926,7 +7708,10 @@
     "zywnosc_podstawowa"
    ],
    "cena_ref_p": 18,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "zywnosc"
+   ]
   },
   {
    "id": "ges",
@@ -7008,7 +7793,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 420,
-   "klasa": "surowiec"
+   "klasa": "surowiec",
+   "branze": [
+    "tkaniny"
+   ]
   },
   {
    "id": "plotno-lokiec",
@@ -7027,7 +7815,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 18,
-   "klasa": "surowiec"
+   "klasa": "surowiec",
+   "branze": [
+    "tkaniny"
+   ]
   },
   {
    "id": "oliwa-litr",
@@ -7046,7 +7837,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "domowe",
+    "zuzywalne"
+   ]
   },
   {
    "id": "swieca-woskowa-sztuka",
@@ -7065,7 +7860,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "oswietlenie",
+    "zuzywalne"
+   ]
   },
   {
    "id": "siekiera",
@@ -7084,7 +7883,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "rolnicze"
+   ]
   },
   {
    "id": "przescieradlo",
@@ -7103,7 +7905,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "posciel"
+   ]
   },
   {
    "id": "siennik",
@@ -7122,7 +7927,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "posciel"
+   ]
   },
   {
    "id": "recznik",
@@ -7141,7 +7949,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 84,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "branze": [
+    "posciel"
+   ]
   },
   {
    "id": "sukno-szare-lokiec",
@@ -7160,7 +7971,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "surowiec"
+   "klasa": "surowiec",
+   "branze": [
+    "tkaniny"
+   ]
   },
   {
    "id": "plotno-zgrzebne-lokiec",
@@ -7179,7 +7993,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 8,
-   "klasa": "surowiec"
+   "klasa": "surowiec",
+   "branze": [
+    "tkaniny"
+   ]
   },
   {
    "id": "olej-do-lampy-litr",
@@ -7198,7 +8015,11 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "branze": [
+    "oswietlenie",
+    "zuzywalne"
+   ]
   }
  ],
  "wersja": "v5-zalecany"

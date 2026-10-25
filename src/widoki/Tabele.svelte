@@ -53,7 +53,8 @@
       Naliczaj je tylko za tygodnie w osadzie. W trasie postać płaci realne ceny z cennika.</p></div>
     <div class="panel"><h3>3. Jakość (PG s. 292, HR-024)</h3><p>Cena w cenniku to wariant podstawowy; cechy broni są w niej wliczone.
       Każda Zaleta przedmiotu ×{d.rynek.jakosc.za_zalete}, każda Wada ×{String(d.rynek.jakosc.za_wade).replace('.', ',')}.
-      Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to osobna Zaleta: miecz Wytrzymały 2, Wyśmienity 2 kosztuje ×16.</p>
+      Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to osobna Zaleta: miecz Wytrzymały 2, Wyśmienity 2 kosztuje
+      ×{String(+(d.rynek.jakosc.za_zalete ** 4).toFixed(2)).replace('.', ',')}.</p>
       <ul class="male">{#each d.rynek.jakosc.zalety as z}<li><b>{z.nazwa}</b>{z.wielokrotna ? ' (wielokrotna)' : ''}: {z.opis}</li>{/each}
         {#each d.rynek.jakosc.wady as z}<li><b>{z.nazwa}</b> (Wada): {z.opis}</li>{/each}</ul></div>
     <div class="panel"><h3>4. Dochód ryzykowny dla Łotrów</h3><p>Rzuć jak za Status o dwa szczeble wyżej (Brąz 5 → Srebro 2), potem Test

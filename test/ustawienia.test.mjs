@@ -108,8 +108,17 @@ test('etykiety: miasto i sytuacja pokazują modyfikator w nawiasie', () => {
 });
 
 test('targowanie z ceną minimalną nie schodzi poniżej niej', () => {
-  const r = S.targuj(d, { cena_p: 1000, cena_cennik_p: 1000, cena_min_p: 800, ps: 5 });
+  const r = S.targuj(d, { cena_p: 1000, cena_cennik_p: 1000, cena_min_p: 800, ps: 9 });
   assert.equal(r.cena_p, 800);
-  const r2 = S.targuj(d, { cena_p: 1000, cena_cennik_p: 1000, cena_min_p: 950, ps: 1 });
-  assert.equal(r2.cena_p, 950);
+  const r2 = S.targuj(d, { cena_p: 1000, cena_cennik_p: 1000, cena_min_p: 970, ps: 1 });
+  assert.equal(r2.cena_p, 970);
+});
+
+test('targowanie v6b: −4% za PS, najwyżej −24%, talent ponad limit, przegrany test bez upustu', () => {
+  const t = x => S.targuj(d, { cena_p: 1000, cena_cennik_p: 100, ...x }).cena_p;
+  assert.equal(t({ ps: 1 }), 960);
+  assert.equal(t({ ps: 6 }), 760);
+  assert.equal(t({ ps: 9 }), 760);
+  assert.equal(t({ ps: 6, talent: 0.04 }), 720);
+  assert.equal(t({ ps: -2, talent: 0.04 }), 1000);
 });

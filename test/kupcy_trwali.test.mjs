@@ -111,6 +111,28 @@ test('jakość w sklepie: mistrz cechu ma Zalety, paser Wady; zapisany kupiec li
   assert.equal(w.cena_p, t.cena_p);
 });
 
+test('asortyment v6b: branże, Dostępność, pochodzenie', () => {
+  const sklepy = (kupiec, osada = 'miasto') => Array.from({ length: 40 }, (_, i) => S.generujKupca(d, { kupiec, osada, seed: i + 1 }).towar).flat();
+  const P = Object.fromEntries(d.cennik.pozycje.map(c => [c.id, c]));
+  const wszystko = d.kupcy.kupcy.flatMap(k => sklepy(k.id));
+  assert.ok(!wszystko.some(t => t.id === 'tatuaz'), 'tatuaż to usługa');
+  assert.ok(!wszystko.some(t => P[t.id].dostepnosc === 'Egzotyczna' && !P[t.id].pochodzenie), 'egzotyki tylko na zamówienie');
+  assert.ok(!sklepy('blawatny').some(t => /beczk|beczu/.test(t.id)), 'bławatny bez beczek');
+  assert.ok(!sklepy('kowal', 'wies').some(t => ['teleskop', 'lusterko-reczne', 'rapier'].includes(t.id)));
+  const bugman = k => sklepy(k).filter(t => t.id === 'pol-litra-piwa-bugmana').length;
+  assert.ok(bugman('krasnolud') > bugman('kramarz'), 'Bugman częściej u krasnoluda');
+  const wies = sklepy('kramarz', 'wies').map(t => P[t.id].dostepnosc);
+  assert.ok(wies.filter(x => x === 'Ograniczona').length < wies.filter(x => x === 'Powszechna').length);
+});
+
+test('zamówienie rzadkiej rzeczy: dłużej i drożej, egzotyk we wsi — odmowa', () => {
+  const miasto = S.wycenZamowienie(d, { kupiec: 'zbrojmistrz', osada: 'miasto', przedmiot: 'rapier', seed: 1 });
+  const wies = S.wycenZamowienie(d, { kupiec: 'zbrojmistrz', osada: 'wies', przedmiot: 'rapier', seed: 1 });
+  assert.ok(wies.rzadkosc && wies.rzadkosc.termin_tyg > 0);
+  assert.ok(wies.skladowe.narzut > miasto.skladowe.narzut, 'we wsi narzut za rzadkość');
+  assert.equal(S.wycenZamowienie(d, { kupiec: 'zbrojmistrz', osada: 'wies', przedmiot: 'flamberg', seed: 1 }).status, 'odmowa');
+});
+
 test('ustawienia v6: mnożnik kategorii i nowe pozycje MG', () => {
   const C = Object.fromEntries(d.cennik.pozycje.map(c => [c.id, c.cena_p]));
   const n = S.zastosujUstawienia(d, { kategorie: { 'Pancerze': 1.5 },

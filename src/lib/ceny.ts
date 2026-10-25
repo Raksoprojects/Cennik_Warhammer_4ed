@@ -23,3 +23,6 @@ export function cenaTypowa(d: Dane, kup: any, lok: any, kon: any, c: any) {
 export const handlujacy = (d: Dane, kat: string) =>
   d.kupcy.kupcy.filter((k: any) => k.rdzen.includes(kat) || k.boczne.includes(kat));
 export const tygodniePracy = (d: Dane, p: number) => p / d.statusy.robotnik_brutto_p;
+// Roboty (netto) do odłożenia: chłop / robotnik (Brąz 3) i mistrz z czeladnikami (Srebro 3).
+export const POROWNANIE = ['Brąz 3', 'Srebro 3'];
+export const robot = (d: Dane, p: number, status: string) => p / d.statusy.poziomy.find((s: any) => `${s.tier} ${s.lvl}` === status).netto_p;

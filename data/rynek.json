@@ -144,9 +144,9 @@
  },
  "targowanie": {
   "test": "Przeciwstawny Test Targowania (gracz vs handlarz)",
-  "za_ps": 0.1,
-  "max": 0.3,
-  "max_zamowienie": 0.2,
+  "za_ps": 0.04,
+  "max": 0.24,
+  "max_zamowienie": 0.16,
   "modyfikatory_testu": [
    {
     "warunek": "pełen skład",
@@ -157,39 +157,92 @@
     "mod": -20
    }
   ],
-  "dolna_granica": "v5: cena minimalna kupca (cena_min_p z generatora). Bez niej — jak dawniej: nie poniżej ceny z cennika × jakość."
+  "dolna_granica": "v5: cena minimalna kupca (cena_min_p z generatora). Bez niej — jak dawniej: nie poniżej ceny z cennika × jakość.",
+  "opis_v6b": "Decyzja MG: −4% za każdy PS, najwyżej −24% (6 PS); zamówienia −16%. Talenty (np. Żyłka Handlowa) dodają upust ponad to."
  },
  "jakosc": {
-  "opis": "HR-024: każda Wada ×½, każda Zaleta ×2 (PG s.292). W oryginalnym artefakcie Tandetna = ×¼ – błąd poprawiony. v6: cechy przedmiotu z poziomami (jakoscZ w silniku); cena w cenniku = wariant podstawowy bez Zalet i Wad przedmiotu.",
-  "za_zalete": 2,
-  "za_wade": 0.5,
-  "kategorie": ["Broń biała", "Broń zasięgowa", "Pancerze", "Ubranie i dodatki", "Narzędzia i zestawy", "Wyposażenie różne"],
+  "opis": "HR-024 (v6b, MG): każda Zaleta przedmiotu ×1,6, każda Wada ×0,6 (PG: ×2 i ×½ — przy kilku Zaletach wymykało się spod kontroli). Cena w cenniku = wariant podstawowy bez Zalet i Wad przedmiotu.",
+  "za_zalete": 1.6,
+  "za_wade": 0.6,
+  "kategorie": [
+   "Broń biała",
+   "Broń zasięgowa",
+   "Pancerze",
+   "Ubranie i dodatki",
+   "Narzędzia i zestawy",
+   "Wyposażenie różne"
+  ],
   "losowanie": {
    "opis": "v6: generator — szansa z kupcy.json → jakosc (zalety / wady) na pozycję z kategorii powyżej. Liczba Zalet albo Wad z tabeli ile (1k10). Osobny strumień losowania, nie zmienia reszty sklepu.",
-   "ile": [ { "do": 7, "n": 1 }, { "do": 9, "n": 2 }, { "do": 10, "n": 3 } ]
+   "ile": [
+    {
+     "do": 7,
+     "n": 1
+    },
+    {
+     "do": 9,
+     "n": 2
+    },
+    {
+     "do": 10,
+     "n": 3
+    }
+   ]
   },
   "zalety": [
-   { "nazwa": "Poręczny", "wielokrotna": false, "opis": "Obciążenie −1." },
-   { "nazwa": "Praktyczny", "wielokrotna": false, "opis": "Nieudany Test z tym przedmiotem +1 PS; kary za noszenie pancerza o poziom niżej." },
-   { "nazwa": "Wyśmienity", "wielokrotna": true, "opis": "Oznaka pozycji społecznej; im wyższy poziom, tym bardziej imponuje." },
-   { "nazwa": "Wytrzymały", "wielokrotna": true, "opis": "+1 Punkt Uszkodzeń na poziom; rzut obronny przeciw złamaniu 9+, łatwiejszy o 1 na poziom." }
+   {
+    "nazwa": "Poręczny",
+    "wielokrotna": false,
+    "opis": "Obciążenie −1."
+   },
+   {
+    "nazwa": "Praktyczny",
+    "wielokrotna": false,
+    "opis": "Nieudany Test z tym przedmiotem +1 PS; kary za noszenie pancerza o poziom niżej."
+   },
+   {
+    "nazwa": "Wyśmienity",
+    "wielokrotna": true,
+    "opis": "Oznaka pozycji społecznej; im wyższy poziom, tym bardziej imponuje."
+   },
+   {
+    "nazwa": "Wytrzymały",
+    "wielokrotna": true,
+    "opis": "+1 Punkt Uszkodzeń na poziom; rzut obronny przeciw złamaniu 9+, łatwiejszy o 1 na poziom."
+   }
   ],
   "wady": [
-   { "nazwa": "Brzydki", "wielokrotna": false, "opis": "Testy Ogłady nawet −10." },
-   { "nazwa": "Nieporęczny", "wielokrotna": false, "opis": "Obciążenie +1; w zbroi kary za Zmęczenie podwojone." },
-   { "nazwa": "Tandetny", "wielokrotna": false, "opis": "Łamie się przy nieudanym Teście z dublem; pancerz pęka od Trafienia Krytycznego." },
-   { "nazwa": "Zawodny", "wielokrotna": false, "opis": "Nieudany Test −1 PS; kary za noszenie pancerza podwojone." }
+   {
+    "nazwa": "Brzydki",
+    "wielokrotna": false,
+    "opis": "Testy Ogłady nawet −10."
+   },
+   {
+    "nazwa": "Nieporęczny",
+    "wielokrotna": false,
+    "opis": "Obciążenie +1; w zbroi kary za Zmęczenie podwojone."
+   },
+   {
+    "nazwa": "Tandetny",
+    "wielokrotna": false,
+    "opis": "Łamie się przy nieudanym Teście z dublem; pancerz pęka od Trafienia Krytycznego."
+   },
+   {
+    "nazwa": "Zawodny",
+    "wielokrotna": false,
+    "opis": "Nieudany Test −1 PS; kary za noszenie pancerza podwojone."
+   }
   ],
   "opcje": [
    {
     "id": "2wady",
     "nazwa": "Tandetna i Brzydka (2 Wady)",
-    "mnoznik": 0.25
+    "mnoznik": 0.36
    },
    {
     "id": "wada",
     "nazwa": "Tandetna albo Brzydka (1 Wada)",
-    "mnoznik": 0.5
+    "mnoznik": 0.6
    },
    {
     "id": "zwykla",
@@ -199,13 +252,22 @@
    {
     "id": "wysmienita",
     "nazwa": "Wyśmienita (1 Zaleta)",
-    "mnoznik": 2
+    "mnoznik": 1.6
    },
    {
     "id": "mistrzowska",
     "nazwa": "Mistrzowska (2 Zalety)",
-    "mnoznik": 4
+    "mnoznik": 2.56
    }
+  ],
+  "niezwykle": {
+   "opis": "Niezwykle rzadko: Zaleta innej broni albo usunięta Wada broni. Każda liczy się jak Zaleta przedmiotu.",
+   "prefiks_zalety": "Zaleta broni: ",
+   "prefiks_bez_wady": "Bez Wady: "
+  },
+  "bez_jakosci": [
+   "zuzywalne",
+   "tkaniny"
   ]
  },
  "zamowienie": {
@@ -285,10 +347,57 @@
  },
  "uplyw_czasu": {
   "opis": "v6: zapisany kupiec z upływem tygodni (src/kupcy_trwali.js → uplywCzasu). sprzedaz = udział sztuk sprzedanych w tygodniu przy popycie niskim / normalnym / wysokim. dokupienie = szansa w tygodniu, że kupiec uzupełni brakującą pozycję rdzenia do normy (płaci koszt nabycia). nowy_towar = szansa w tygodniu na nową pozycję z asortymentu. Boczny towar dokupuje z połową tej szansy. rynek_co = co ile tygodni nowy rzut popytu i kaprysu. gotowka_max = sufit gotówki jako wielokrotność gotówki startowej (albo tygodniowego brutto Statusu, jeśli większe); nadwyżkę kupiec odkłada — to jego zysk na życie.",
-  "sprzedaz": [0.05, 0.12, 0.25],
+  "sprzedaz": [
+   0.05,
+   0.12,
+   0.25
+  ],
   "dokupienie": 0.5,
   "nowy_towar": 0.25,
   "rynek_co": 4,
   "gotowka_max": 2
+ },
+ "dostepnosc": {
+  "opis": "PG s. 290: szansa, że przedmiot jest w sprzedaży, wg wielkości osady. Egzotyczne tylko na zamówienie (Zlecenie).",
+  "tabela": {
+   "wioska": {
+    "Powszechna": 1,
+    "Ograniczona": 0.3,
+    "Rzadka": 0.15,
+    "Egzotyczna": 0
+   },
+   "miasteczko": {
+    "Powszechna": 1,
+    "Ograniczona": 0.6,
+    "Rzadka": 0.3,
+    "Egzotyczna": 0
+   },
+   "miasto": {
+    "Powszechna": 1,
+    "Ograniczona": 0.9,
+    "Rzadka": 0.45,
+    "Egzotyczna": 0
+   }
+  },
+  "obce_pochodzenie": 0.3,
+  "obce_opis": "Towar krasnoludzki albo elfi u kupca innej rasy: szansa × 0,3.",
+  "zamowienie": {
+   "opis": "Szacunek MG: rzecz, której tu zwykle nie ma (szansa z tabeli poniżej progu), kupiec sprowadza dłużej i drożej: termin + tyle tygodni, narzut × tyle.",
+   "prog": 0.5,
+   "termin_tyg": {
+    "Ograniczona": 2,
+    "Rzadka": 4,
+    "Egzotyczna": 8
+   },
+   "narzut": {
+    "Ograniczona": 1.1,
+    "Rzadka": 1.25,
+    "Egzotyczna": 1.5
+   },
+   "wioska_bez": [
+    "Egzotyczna"
+   ],
+   "wioska_opis": "We wsi nikt nie sprowadzi rzeczy egzotycznej — trzeba jechać do miasta."
+  }
  }
 }

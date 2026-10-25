@@ -217,7 +217,7 @@ export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, c
     const kup = kupiecZ(d, K);
     cena = w.przedmiot.cena_p * jakoscZ(d, jakosc).mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
     termin = 4 + r.ri(6); stan = 'sprowadza';
-  } else { cena = w.cena_p; termin = terminTygodnie(w.termin); }
+  } else { cena = w.cena_p; termin = terminTygodnie(w.termin) + (w.rzadkosc?.termin_tyg ?? 0); }
   const cenaP = cena_p ?? Math.round(cena * mod), zaliczka = Math.round(cenaP * d.rynek.zamowienie.zaliczka);
   const jak = jakoscZ(d, jakosc);
   K.zamowienia.push({ uid: nowyUid(), id, nazwa: w.przedmiot.nazwa, jakosc: jak.nazwa, cechy: jak.cechy ?? null, sposob: stan, dla, cena_p: cenaP, zaliczka_p: zaliczka,

@@ -502,6 +502,278 @@
     "mnoznik": 1.7,
     "uwaga": "Przy czynszach v4 (×2): Marienburg, mieszkanie 2 ZK × 1,45 × 1,7 ≈ 4 ZK 18 s — tyle, ile płacą gracze."
    }
+  },
+  {
+   "id": "naplyw",
+   "nazwa": "Napływ ludzi (pielgrzymi, uchodźcy, święto)",
+   "opis_cen": "jedzenie ×1,25 · ubranie i wyposażenie ×1,10 · reszta ×1,05",
+   "opis_popytu": "jedzenie, ubranie, wyposażenie +1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.25,
+     "popyt": 1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 1.1,
+     "popyt": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 1.1,
+     "popyt": 1
+    },
+    "Protezy": {
+     "cena": 1.05,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1.05,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.4,
+    "uwaga": "każdy kąt wynajęty, gospody pełne"
+   }
+  },
+  {
+   "id": "braki",
+   "nazwa": "Braki w dostawach (zła droga, cło, zima)",
+   "opis_cen": "jedzenie ×1,30 · narzędzia i zioła ×1,20 · reszta ×1,10",
+   "opis_popytu": "jedzenie +1",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.3,
+     "popyt": 1
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.2,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.2,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Protezy": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 1.1,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.0,
+    "uwaga": "czynsze się nie ruszają"
+   }
+  },
+  {
+   "id": "kryzys",
+   "nazwa": "Kryzys (podatki, bankructwa, zła moneta)",
+   "opis_cen": "luksus i ubranie ×0,85 · jedzenie ×1,10 · reszta ×0,95",
+   "opis_popytu": "popyt o stopień niżej, jedzenie bez zmian",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Broń zasięgowa": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Amunicja": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Pancerze": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.1,
+     "popyt": 0
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Ubranie i dodatki": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.85,
+     "popyt": -1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Wyposażenie różne": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Protezy": {
+     "cena": 0.95,
+     "popyt": -1
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 0.95,
+     "popyt": -1
+    }
+   },
+   "czynsz": {
+    "mnoznik": 0.9,
+    "uwaga": "ludzie się wyprowadzają, właściciele obniżają komorne"
+   }
+  },
+  {
+   "id": "dobry_sezon",
+   "nazwa": "Dobry sezon (urodzaj, spokój na szlakach)",
+   "opis_cen": "jedzenie ×0,80 · zwierzęta ×0,90 · reszta ×0,95",
+   "opis_popytu": "ubranie, wyposażenie, księgi +1 — ludzie mają pieniądze",
+   "kategorie": {
+    "Broń biała": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Broń zasięgowa": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Amunicja": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Pancerze": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.9,
+     "popyt": 0
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 0.8,
+     "popyt": 0
+    },
+    "Czynsze i mieszkanie": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Ubranie i dodatki": {
+     "cena": 0.95,
+     "popyt": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.95,
+     "popyt": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Wyposażenie różne": {
+     "cena": 0.95,
+     "popyt": 1
+    },
+    "Protezy": {
+     "cena": 0.95,
+     "popyt": 0
+    },
+    "Najmici i usługi (za tydzień)": {
+     "cena": 0.95,
+     "popyt": 0
+    }
+   },
+   "czynsz": {
+    "mnoznik": 1.05,
+    "uwaga": "dobrze płacą, więc i czynsz idzie lekko w górę"
+   }
   }
  ],
  "uwaga_czynsz": "Czynsz ma własny mnożnik, niezależny od cen towarów: dach nad głową jest najbardziej nieelastycznym dobrem, jakie istnieje, i reaguje odwrotnie niż żywność.",

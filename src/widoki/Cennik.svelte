@@ -1,8 +1,11 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, norm, pl, mnoz, parsujCene, parsujMnoznik } from '../lib/format';
-  import { mnoznikKlasy, cenaTypowa, handlujacy, tygodniePracy, zrodloNazwa, TYPY } from '../lib/ceny';
+  import { mnoznikKlasy, cenaTypowa, handlujacy, robot, POROWNANIE, zrodloNazwa, TYPY } from '../lib/ceny';
   import { etykietaOsady, etykietaKoniunktury, jakoscZ } from '../silnik.js';
+  import { daneBazowe } from '../lib/dane';
+  // Ceny domyślne (bez ustawień MG) — komentarz i podstawa historyczna opisują właśnie je.
+  const DOMYSLNE: Record<string, number> = Object.fromEntries(daneBazowe.cennik.pozycje.map((c: any) => [c.id, c.cena_p]));
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
   import WyborCech from '../komponenty/WyborCech.svelte';
   let jakosc = $state<Record<string, number>>({});
@@ -64,7 +67,7 @@
   <p><b>×1</b> — poziom przed mnożnikiem klasy cenowej. Od niego liczą się limity osad i ilości w sklepie.</p>
   <p><b>Cena bazowa</b> — cena wytwórcy w obowiązującym cenniku: u źródła, hurtem. Gracz nigdy jej nie płaci wprost —
     kupiec dolicza marżę. Cenę kupca pokazuje przełącznik „Ceny u kupca” i zakładka Kupcy.</p>
-  <p><b>Tyg. pracy</b> — ile tygodni całego dochodu prostego robotnika (Brąz 3, 165 p brutto) to kosztuje.</p>
+  <p><b>Robót</b> — ile Robót (netto, tyle realnie się odkłada) trzeba zebrać: chłop / robotnik (Brąz 3) — mistrz z czeladnikami (Srebro 3).</p>
   <p>Kliknij wiersz, żeby zobaczyć źródło, komentarz, cechy broni, kto to sprzedaje i zmienić cenę.</p>
 </details>
 
@@ -114,7 +117,7 @@
         <thead><tr>
           <th>Przedmiot</th><th class="num">Podręcznik</th><th class="num">×1</th>
           {#if uKupca}<th class="num">U kupca</th>{:else}<th>Klasa</th>{/if}
-          <th class="num">Cena bazowa</th><th class="num">Tyg. pracy</th>
+          <th class="num">Cena bazowa</th><th class="num">Robót: chłop / Srebro 3</th>
         </tr></thead>
         <tbody>
           {#each lista as c (c.id)}
@@ -133,18 +136,24 @@
                 <td class="zwin" data-l="Klasa">{c.klasa} {mnoz(mk.m)}{#if mk.znak !== 1} · znak stanu {mnoz(mk.znak)}{/if}</td>
               {/if}
               <td class="num" data-l="Cena bazowa"><span class="cena">{mon(c.cena_p)}</span></td>
-              <td class="num zwin" data-l="Tyg. pracy">{pl(tygodniePracy(d, c.cena_p), 1)}</td>
+              <td class="num zwin" data-l="Robót: chłop / Srebro 3">{POROWNANIE.map(s => pl(robot(d, c.cena_p, s), 1)).join(' / ')}</td>
             </tr>
             {#if otwarte === c.id}
               {@const bc = cechy[c.id]}
               <tr class="szczegoly"><td class="pelna" colspan="6">
+                {#if DOMYSLNE[c.id] != null && DOMYSLNE[c.id] !== c.cena_p}
+                  <p class="komunikat male">Cena zmieniona w Edycji cen: {mon(DOMYSLNE[c.id])} → {mon(c.cena_p)} ({mnoz(c.cena_p / DOMYSLNE[c.id])}).
+                    Podstawa historyczna, komentarz i uzasadnienie klasy poniżej opisują cenę domyślną {mon(DOMYSLNE[c.id])}.</p>
+                {/if}
                 <dl class="szczegoly-siatka">
                   <div><dt>Źródło ceny</dt><dd>{zrodloNazwa(c.zrodlo)} · {TYPY[c.typ] ?? c.typ}{c.dostepnosc ? ' · ' + c.dostepnosc : ''}{c.obc != null ? ' · Obc. ' + c.obc : ''}</dd></div>
                   <div><dt>Podstawa historyczna</dt><dd>{c.podstawa_hist || '— (szacunek)'}</dd></div>
                   {#if c.komentarz}<div><dt>Komentarz</dt><dd>{c.komentarz}</dd></div>{/if}
                   {#if c.uwagi_danych}<div><dt>Uwagi</dt><dd class="drugi">{c.uwagi_danych}</dd></div>{/if}
                   <div><dt>Klasa cenowa</dt><dd>{c.klasa} {mnoz(mk.m)}{#if mk.znak !== 1} × znak stanu {mnoz(mk.znak)}{/if}
-                    <span class="drugi male">{d.klasy.uzasadnienia[c.klasa]?.tekst ?? ''}</span></dd></div>
+                    <span class="drugi male">{d.klasy.uzasadnienia[c.klasa]?.tekst ?? ''}</span>
+                    {#if d.klasy.presety[d.klasy.domyslny].mnozniki[c.klasa] != null && d.klasy.presety[d.klasy.domyslny].mnozniki[c.klasa] !== mk.m}
+                      <span class="blad male">Uzasadnienie dotyczy mnożnika domyślnego {mnoz(d.klasy.presety[d.klasy.domyslny].mnozniki[c.klasa])}, nie obecnego {mnoz(mk.m)}.</span>{/if}</dd></div>
                   {#if bc?.grupa}<div><dt>Cechy broni (w cenie podstawowej)</dt><dd>{bc.grupa} · {bc.obrazenia}{bc.zasieg ? ' · ' + bc.zasieg : ''}<br />
                     Zalety: {bc.zalety.map((x: any) => x.nazwa).join(', ') || '—'}<br />Wady: {bc.wady.map((x: any) => x.nazwa).join(', ') || '—'}</dd></div>{/if}
                   {#if c.typ === 'towar'}<div><dt>Egzemplarz lepszy albo gorszy</dt><dd>

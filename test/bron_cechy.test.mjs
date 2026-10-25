@@ -15,12 +15,14 @@ test('cechy broni: każda broń z cennika ma wpis, wpisy wskazują istniejące p
   assert.deepEqual([...wpisy].filter(i => !ids.has(i)), []);
 });
 
-test('jakość egzemplarza: poziomy Zalet mnożą, Wady dzielą (PG s. 292)', () => {
+test('jakość egzemplarza: poziomy Zalet mnożą, Wady dzielą (PG s. 292; v6b: ×1,6 i ×0,6)', () => {
   const d = { rynek: rd('data/rynek.json') };
-  assert.equal(S.jakoscZ(d, { 'Wytrzymały': 2, 'Wyśmienity': 2 }).mnoznik, 16);
-  assert.equal(S.jakoscZ(d, { 'Wyśmienity': 1, 'Wytrzymały': 1 }).mnoznik, 4);   // przykład ze szpadą
-  assert.equal(S.jakoscZ(d, { 'Nieporęczny': 1, 'Zawodny': 1 }).mnoznik, 0.25);  // przykład z kolczugą
-  assert.equal(S.jakoscZ(d, { 'Poręczny': 1, 'Tandetny': 1 }).mnoznik, 1);
-  assert.equal(S.jakoscZ(d, 'wysmienita').mnoznik, 2);
+  const m = c => +S.jakoscZ(d, c).mnoznik.toFixed(4);
+  assert.equal(m({ 'Wytrzymały': 2, 'Wyśmienity': 2 }), 6.5536);
+  assert.equal(m({ 'Wyśmienity': 1, 'Wytrzymały': 1 }), 2.56);   // przykład ze szpadą
+  assert.equal(m({ 'Nieporęczny': 1, 'Zawodny': 1 }), 0.36);     // przykład z kolczugą
+  assert.equal(m({ 'Poręczny': 1, 'Tandetny': 1 }), 0.96);
+  assert.equal(m({ 'Zaleta broni: Szybka': 1, 'Bez Wady: Tępa': 1 }), 2.56);  // niezwykłe = Zalety
+  assert.equal(S.jakoscZ(d, 'wysmienita').mnoznik, 1.6);
   assert.throws(() => S.jakoscZ(d, { 'Ostra': 1 }));
 });
