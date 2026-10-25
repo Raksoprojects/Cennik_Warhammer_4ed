@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -42,15 +42,24 @@ function normaPozycji(d, K, c, ri) {
 }
 const zapasZeStanu = w => w.sztuk <= 0 ? 3 : w.sztuk < w.norma * 0.5 ? 2 : w.sztuk >= w.norma * 2 ? 0 : 1;
 
-// losujJakosc: jak w generatorze — szansa kupca na Zalety albo Wady przedmiotu (ręcznie dodany towar jest zwykły).
+// losujJakosc: jak w generatorze — szansa kupca na Zalety albo Wady przedmiotu i na towar trefny (ręcznie dodany towar jest zwykły).
 function nowyWiersz(d, K, c, r, { zapas, sztuk, poza = false, losujJakosc = false } = {}) {
   const jak = losujJakosc ? jakoscLosowa(d, kupiecZ(d, K), c, r) : null;
+  const trefny = losujJakosc ? trefnyLosowy(d, kupiecZ(d, K), c, r, K.postac?.cecha?.efekt) : null;
   const z = zapas ?? zapasZRzutu(d, r.k(10));
   const norma = normaPozycji(d, K, c, r.ri);
   const szt = sztuk ?? (z === 1 ? norma : Math.max(z === 3 ? 0 : 1, Math.min(ilosc(d, r.ri, c.cena_ref_p ?? c.cena_p, z),
     Math.floor(budzetPozycji(d, K, c.kat) * (z === 0 ? 1.5 : 1) / c.cena_p))));
   return { id: c.id, nazwa: c.nazwa, kat: c.kat, sztuk: szt, norma, zapas: z, przes_popytu: przesunieciePopytu(d, r.k(10)),
-    rzut_kaprysu: r.k(10), cena_wytworcy_p: c.cena_p, cena_reczna_p: null, poza_asortymentem: poza, cechy: jak?.cechy ?? null };
+    rzut_kaprysu: r.k(10), cena_wytworcy_p: c.cena_p, cena_reczna_p: null, poza_asortymentem: poza, cechy: jak?.cechy ?? null, trefny };
+}
+
+// v6c: nowa osobowość (charakter, motywacja, cecha kupiecka…) dla zapisanego kupca. charaktery = dozwolone.
+export function przelosujPostac(d, K0, { charaktery = null, seed = (Math.random() * 1e9) | 0 } = {}) {
+  const K = kopia(K0);
+  K.postac = generujPostac(d, kosci(seed >>> 0), { charaktery });
+  wpis(K, `Nowa osobowość: ${K.postac?.motywacja?.nazwa ?? '—'}, ${K.postac?.cecha?.nazwa ?? '—'}.`);
+  return K;
 }
 
 /* ------------------------------------------------------------ zapis wygenerowanego sklepu */
@@ -64,7 +73,8 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
   };
   K.towar = sklep.towar.map(t => ({ id: t.id, nazwa: t.nazwa, kat: t.kat, sztuk: t.sztuk, norma: 0, zapas: t.zapas,
     przes_popytu: przesunieciePopytu(d, t.rzuty.popyt), rzut_kaprysu: t.rzuty.kaprys, cena_wytworcy_p: t.cena_cennik_p ?? t.cena_wytworcy_p,
-    cena_reczna_p: null, poza_asortymentem: false, cechy: t.cechy ?? null }));
+    cena_reczna_p: null, poza_asortymentem: false, cechy: t.cechy ?? null, trefny: t.trefny ?? null }));
+  K.postac = sklep.postac ?? null;
   const r = rzuty(K);
   for (const w of K.towar) {
     const c = pozycja(d, w.id);
@@ -79,6 +89,7 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
 // plus modyfikator MG kupca (np. 0,9 dla zaprzyjaźnionego, 1,2 dla wrogiego).
 export function wycen(d, K) {
   const kup = kupiecZ(d, K), lok = osadaZ(d, K), kon = konZ(d, K), R = d.rynek, mod = K.modyfikator ?? 1;
+  const E = K.postac?.cecha?.efekt ?? {};   // v6c: cecha kupiecka (Chciwy: ceny ×1,1, skup ×0,85…)
   const towar = K.towar.map((w, ix) => {
     const c0 = pozycja(d, w.id) ?? { id: w.id, nazwa: w.nazwa, kat: w.kat, cena_p: w.cena_wytworcy_p, cena_raw_p: null };
     // v6: egzemplarz z Zaletami / Wadami przedmiotu — cena bazowa egzemplarza = cena z cennika × jakość.
@@ -86,16 +97,16 @@ export function wycen(d, K) {
     const c = jak ? { ...c0, cena_p: Math.round(c0.cena_p * jak.mnoznik) } : c0;
     const popyt = clamp(R.popyt.start + popytKoniunktury(kon, c.kat) + w.przes_popytu, 0, 2);
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, w.zapas, popyt);
-    const os = osobowoscKupca(d, kup, c, w.rzut_kaprysu);
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod;
+    const os = osobowoscKupca(d, kup, c, E.kaprys === false ? null : w.rzut_kaprysu);
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod * (E.ceny ?? 1);
     const cenaW = c.cena_p * mnoznik, cena_p = w.cena_reczna_p ?? Math.round(cenaW);
-    const skupU = Math.max(R.skup.minimum, kup.skup + (popyt === 2 ? R.skup.popyt_wysoki : popyt === 0 ? R.skup.popyt_niski : 0));
+    const skupU = Math.max(R.skup.minimum, kup.skup + (popyt === 2 ? R.skup.popyt_wysoki : popyt === 0 ? R.skup.popyt_niski : 0)) * (E.skup ?? 1);
     const min = cenaMinimalna(d, { kupiec: kup, pozycja: c, osada: lok, koniunktura: kon, mRynek, cena_p });
     return { ...w, ix, nazwa: c.nazwa, kat: c.kat, cena_raw_p: c.cena_raw_p ?? null, cena_wytworcy_p: c.cena_p, mnoznik, cena_p,
       cena_cennik_p: c0.cena_p, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null,
       skup_p: Math.round((w.cena_reczna_p ?? cenaW) * skupU), koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       popyt, zapas_nazwa: R.zapas.progi[w.zapas].nazwa, popyt_nazwa: R.popyt.nazwy[popyt], rzuty: { kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod, charakter: E.ceny ?? 1 },
       brak_w_cenniku: !pozycja(d, w.id) };
   }).sort((a, b) => b.cena_cennik_p - a.cena_cennik_p);   // jak w generatorze: po cenie z cennika, bez jakości
   return { kupiec: kup, osada: lok, koniunktura: kon, towar,
@@ -218,6 +229,8 @@ export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, c
     cena = w.przedmiot.cena_p * jakoscZ(d, jakosc).mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
     termin = 4 + r.ri(6); stan = 'sprowadza';
   } else { cena = w.cena_p; termin = terminTygodnie(w.termin) + (w.rzadkosc?.termin_tyg ?? 0); }
+  termin = Math.max(1, Math.round(termin * (K.postac?.cecha?.efekt?.termin ?? 1)));   // v6c: Obieżyświat szybciej, Leniwy wolniej
+  cena *= K.postac?.cecha?.efekt?.ceny ?? 1;
   const cenaP = cena_p ?? Math.round(cena * mod), zaliczka = Math.round(cenaP * d.rynek.zamowienie.zaliczka);
   const jak = jakoscZ(d, jakosc);
   K.zamowienia.push({ uid: nowyUid(), id, nazwa: w.przedmiot.nazwa, jakosc: jak.nazwa, cechy: jak.cechy ?? null, sposob: stan, dla, cena_p: cenaP, zaliczka_p: zaliczka,

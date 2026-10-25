@@ -5,16 +5,17 @@
   import { stan } from '../lib/stan.svelte';
   import { targuj, modyfikatorTargowania } from '../silnik.js';
   import WyborCech from './WyborCech.svelte';
+  import Podpowiedz from './Podpowiedz.svelte';
 
-  let { towar, ps = 0, talent = 0, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
-    towar: any[]; ps?: number; talent?: number; gotowka?: number | null; edycja?: boolean;
+  let { towar, ps = 0, talent = 0, bezTargu = false, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
+    towar: any[]; ps?: number; talent?: number; bezTargu?: boolean; gotowka?: number | null; edycja?: boolean;
     onZmien?: (id: string, z: any) => void; onUsun?: (id: string) => void; onPrzelosuj?: (id: string) => void;
     onTransakcja?: (id: string, typ: 'kupno' | 'sprzedaz', ilosc: number, cena_p: number) => void;
   } = $props();
   const d = $derived(stan.d);
   let otwarte = $state<string | null>(null), ile = $state(1), cenaReczna = $state('');
   const kaprysOpis = (rzut: number | null) => rzut == null ? '' : d.rynek.kaprys.progi.find((p: any) => rzut <= p.do)?.opis ?? '';
-  const poTargu = (t: any) => targuj(d, { cena_p: t.cena_p, cena_cennik_p: t.cena_wytworcy_p, cena_min_p: t.cena_min_p, ps, talent }).cena_p;
+  const poTargu = (t: any) => bezTargu ? t.cena_p : targuj(d, { cena_p: t.cena_p, cena_cennik_p: t.cena_wytworcy_p, cena_min_p: t.cena_min_p, ps, talent }).cena_p;
   function otworz(id: string) { otwarte = otwarte === id ? null : id; ile = 1; cenaReczna = ''; }
   function ustawCene(t: any) {
     const p = parsujCene(cenaReczna);
@@ -37,6 +38,8 @@
             {#if t.sztuk === 0}<span class="znacznik">brak — na zamówienie</span>{:else if t.zapas === 2}<span class="znacznik czerwony">ostatnie sztuki</span>{:else if t.zapas === 0}<span class="znacznik zielony">pełen skład</span>{/if}
             {#if t.jakosc}<span class="znacznik" class:zielony={t.jakosc.mnoznik > 1} class:czerwony={t.jakosc.mnoznik < 1}>{t.jakosc.nazwa} (cena {mnoz(t.jakosc.mnoznik)})</span>{/if}
             {#if t.cena_reczna_p != null}<span class="znacznik zloty">cena MG</span>{/if}
+            {#if t.trefny}<span class="znacznik czerwony">trefny: {t.trefny.nazwa.toLowerCase()}</span><Podpowiedz
+              tekst={`${t.trefny.opis} Kupiec ${t.trefny.swiadomy ? 'WIE i próbuje oszukać' : 'nie wie — sam został oszukany'}. Prawdziwa wartość: ${mon(Math.round(t.cena_p * t.trefny.wartosc))} za sztukę (${Math.round(t.trefny.wartosc * 100)}% ceny). ${t.trefny.test}`} />{/if}
             {#if t.poza_asortymentem}<span class="znacznik fiolet">spoza asortymentu</span>{/if}
           </td>
           <td class="num" data-l="Sztuk">{t.sztuk}</td>
@@ -69,6 +72,7 @@
                 <label class="pole waskie"><span>Cena ręczna</span><input bind:value={cenaReczna} placeholder={mon(t.cena_p)} /></label>
                 <button onclick={() => ustawCene(t)}>{cenaReczna ? 'Ustaw cenę' : 'Cena z wyliczenia'}</button>
                 <button onclick={() => onPrzelosuj?.(t.id)}>Przelosuj</button>
+                {#if t.trefny}<button onclick={() => onZmien?.(t.id, { trefny: null })}>Nie jest trefny</button>{/if}
                 <button class="niebezp" onclick={() => onUsun?.(t.id)}>Usuń</button>
               </div>
               <details class="opis nie-drukuj"><summary>Jakość egzemplarza (Zalety i Wady przedmiotu)</summary>

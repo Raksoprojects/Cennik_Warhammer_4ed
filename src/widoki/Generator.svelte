@@ -6,6 +6,7 @@
   import { utworzKupca, dodajPozycje, czyWAsortymencie, wycen } from '../kupcy_trwali.js';
   import { norm } from '../lib/format';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
+  import PostacKupca from '../komponenty/PostacKupca.svelte';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
 
   const d = $derived(stan.d);
@@ -14,13 +15,14 @@
   let seed = $state(+(p.get('s') || 0) || ((Math.random() * 1e6) | 0)), ps = $state(0), talent = $state(0);
   let nazwa = $state(''), grupa = $state(''), notatka = $state('');
 
-  const sklep = $derived.by(() => { try { return generujKupca(d, { kupiec: k, osada: o, koniunktura: n, seed }); } catch { return null; } });
+  let charaktery = $state<string[]>(['dobry', 'neutralny', 'zly']);
+  const sklep = $derived.by(() => { try { return generujKupca(d, { kupiec: k, osada: o, koniunktura: n, seed, charaktery }); } catch { return null; } });
   $effect(() => { history.replaceState(null, '', `#kupcy?k=${k}&o=${o}&n=${n}&s=${seed}`); });
   const grupy = $derived([...new Set(stan.kupcy.map(x => x.grupa).filter(Boolean))]);
 
   // Dodatkowy towar MG w wygenerowanym sklepie: cena liczona jak u tego kupca, także spoza asortymentu (ze znacznikiem).
   let dodane = $state<string[]>([]), dodajTxt = $state('');
-  $effect(() => { k; o; n; seed; dodane = []; });
+  $effect(() => { k; o; n; seed; charaktery; dodane = []; });
   const Kdod = $derived.by(() => {
     if (!sklep) return null;
     let K: any = utworzKupca(d, sklep);
@@ -59,12 +61,19 @@
     <label class="pole waskie"><span>Talent, dodatkowe −% <Podpowiedz tekst="Np. Żyłka Handlowa: dodatkowy upust ponad limit z PS, gdy drużyna wygrała test. Wpisz procent, np. 4." /></span>
       <input type="number" min="0" max="30" bind:value={() => Math.round(talent * 100), v => (talent = Math.max(0, +v || 0) / 100)} /></label>
   </div>
+  <div class="chipy"><span class="male drugi" style="align-self:center">Charakter kupca:</span>
+    {#each [['dobry', 'dobry'], ['neutralny', 'neutralny'], ['zly', 'zły']] as [id, nazwa]}
+      <button class="chip" aria-pressed={charaktery.includes(id)} onclick={() => (charaktery = charaktery.includes(id) ? charaktery.filter(x => x !== id) : [...charaktery, id])}>{nazwa}</button>
+    {/each}
+    <Podpowiedz tekst="Losuje tylko z zaznaczonych. Motywacja, cecha kupiecka, potrzeba i sekret pasują do charakteru. Nic nie zaznaczone = wszystkie." />
+  </div>
 </div>
 
 {#if sklep}
   <div class="panel">
     <h3>{sklep.imie} <span class="drugi male">— {sklep.kupiec.nazwa}, {sklep.kupiec.status}</span></h3>
     <p class="drugi">{sklep.kupiec.opis} <i>{sklep.dziwactwo}</i></p>
+    <PostacKupca postac={sklep.postac} />
     <p class="male">{sklep.etykiety.osada} · {sklep.etykiety.koniunktura}</p>
     <div class="liczby">
       <div><span>Gotówka</span><b class="cena">{mon(sklep.gotowka_p ?? 0)}</b></div>
@@ -73,7 +82,7 @@
       <div><span>Skup</span><b>{Math.round(sklep.kupiec.skup * 100)}% jego ceny</b></div>
     </div>
   </div>
-  <TabelaTowaru {towar} {ps} {talent} gotowka={sklep.gotowka_p} />
+  <TabelaTowaru {towar} {ps} {talent} bezTargu={!!sklep.postac?.cecha?.efekt?.bez_targu} gotowka={sklep.gotowka_p} />
 
   <div class="panel nie-drukuj" style="margin-top:14px">
     <h3>Dodaj towar do tego sklepu <Podpowiedz tekst="Cena liczona jak u tego kupca (marża, osada, sytuacja, kaprys). Rzecz spoza jego asortymentu dostaje znacznik. Dodany towar zapisuje się razem z kupcem." /></h3>

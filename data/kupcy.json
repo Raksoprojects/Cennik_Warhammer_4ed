@@ -53,6 +53,7 @@
      "trunki"
     ]
    },
+   "trefne": 0.12,
    "jakosc_kat": {
     "Ubranie i dodatki": {
      "zalety": 0,
@@ -107,6 +108,7 @@
      "domowe"
     ]
    },
+   "trefne": 0.06,
    "jakosc_kat": {
     "Ubranie i dodatki": {
      "zalety": 0,
@@ -265,7 +267,8 @@
      "szermiercza",
      "wojskowa"
     ]
-   }
+   },
+   "trefne": 0.01
   },
   {
    "id": "zbrojmistrz",
@@ -347,7 +350,8 @@
      "tarcze",
      "szermiercza"
     ]
-   }
+   },
+   "trefne": 0.02
   },
   {
    "id": "rusznikarz",
@@ -512,6 +516,11 @@
      "oswietlenie",
      "pisarskie"
     ]
+   },
+   "trefne": 0.03,
+   "trefne_wagi": {
+    "podrobka": 3,
+    "kradziony": 1
    }
   },
   {
@@ -564,6 +573,12 @@
      "kusze",
      "prochowa"
     ]
+   },
+   "trefne": 0.75,
+   "trefne_wagi": {
+    "kradziony": 8,
+    "podrobka": 1,
+    "ukryta_wada": 1
    }
   },
   {
@@ -620,6 +635,12 @@
      "medyczne",
      "posciel"
     ]
+   },
+   "trefne": 0.08,
+   "trefne_wagi": {
+    "kradziony": 3,
+    "ukryta_wada": 2,
+    "miara": 2
    }
   },
   {
@@ -739,7 +760,8 @@
      "amunicja_prosta",
      "prochowa"
     ]
-   }
+   },
+   "trefne": 0.01
   }
  ]
 }

@@ -89,6 +89,9 @@ pr = K['presety'][K['domyslny']]
 P['miecz']['cena_ref_p'] = 240
 P['miecz']['cena_p'] = ladna(240 * pr['mnozniki']['bron'] * pr['premia_znak_stanu'])
 P['miecz']['uwagi_danych'] = 'v6b: decyzja MG — miecz 3 ZK (×1 = 1 ZK).'
+P['bulat']['cena_ref_p'] = 240
+P['bulat']['cena_p'] = ladna(240 * pr['mnozniki']['bron'] * pr['premia_znak_stanu'])
+P['bulat']['uwagi_danych'] = 'v6c: decyzja MG — bułat 3 ZK, jak miecz.'
 # tatuaż to usługa, nie towar na półce
 P['tatuaz']['typ'] = 'usluga'
 # Piwo Bugmana: u ludzi rzadko, u krasnoludów zwykły trunek
@@ -134,7 +137,15 @@ if not any(k['id'] == 'krasnolud' for k in KU['kupcy']): KU['kupcy'].append(KRAS
 # Ubrania u kramarza i domokrążcy: odzież dla gawiedzi — zwykle z Wadami (Brzydki, Nieporęczny…), u bławatnego porządna.
 JAK_KAT = {'kramarz': {'Ubranie i dodatki': {'zalety': 0, 'wady': 0.7}}, 'domokrazca': {'Ubranie i dodatki': {'zalety': 0, 'wady': 0.7}},
            'rzemieslnik': {'Ubranie i dodatki': {'zalety': 0, 'wady': 0.3}}, 'blawatny': {'Ubranie i dodatki': {'zalety': 0.25, 'wady': 0}}}
+# v6c: szansa na trefny towar; paser — większość z niewiadomego pochodzenia (dlatego skupuje tanio).
+TREFNE = {'paser': (0.75, {'kradziony': 8, 'podrobka': 1, 'ukryta_wada': 1}), 'domokrazca': (0.12, None), 'kramarz': (0.06, None),
+          'kwatermistrz': (0.08, {'kradziony': 3, 'ukryta_wada': 2, 'miara': 2}), 'mistrzcechu': (0.01, None), 'krasnolud': (0.01, None),
+          'platnerz': (0.02, None), 'ksiegarz': (0.03, {'podrobka': 3, 'kradziony': 1})}
 for k in KU['kupcy']:
+    k.pop('trefne', None); k.pop('trefne_wagi', None)
+    if k['id'] in TREFNE:
+        k['trefne'] = TREFNE[k['id']][0]
+        if TREFNE[k['id']][1]: k['trefne_wagi'] = TREFNE[k['id']][1]
     k['branze'] = BR.get(k['id'], {})
     k.pop('jakosc_kat', None)
     if k['id'] in JAK_KAT: k['jakosc_kat'] = JAK_KAT[k['id']]
@@ -191,6 +202,34 @@ RY['dostepnosc'] = {
                    'prog': 0.5,
                    'termin_tyg': {'Ograniczona': 2, 'Rzadka': 4, 'Egzotyczna': 8}, 'narzut': {'Ograniczona': 1.1, 'Rzadka': 1.25, 'Egzotyczna': 1.5},
                    'wioska_bez': ['Egzotyczna'], 'wioska_opis': 'We wsi nikt nie sprowadzi rzeczy egzotycznej — trzeba jechać do miasta.'},
+}
+# v6c: towar trefny. Skala oszustwa i trudność Testu Wyceny wg Poradnika Staroświatowca (2 ed.), s. 41.
+JAK_KATS = JK['kategorie']
+RY['trefne'] = {
+    'opis': 'v6c: szansa na pozycję z kupcy.json → trefne (domyślnie domyslna_szansa); cecha kupiecka może ją podnieść (Szarlatan, Powiązania przestępcze) albo wyzerować (Skrupulatnie uczciwy). '
+            'wartosc = prawdziwa wartość ÷ cena, jaką kupiec podaje. swiadomosc = szansa, że kupiec wie (oszust wie zawsze). Widoczne tylko dla MG.',
+    'domyslna_szansa': 0.04,
+    'rodzaje': {
+        'kradziony': {'nazwa': 'Kradziony', 'wartosc': 1, 'test_mod': None,
+                      'opis': 'Towar z kradzieży albo niewiadomego pochodzenia. Wart tyle, ile kosztuje, ale prawowity właściciel albo straż może go rozpoznać.',
+                      'test_opis': 'Wycena tego nie wykaże. Rozpoznanie: Intuicja, Wiedza (lokalna) albo świadek.'},
+        'podrobka': {'nazwa': 'Podróbka', 'wartosc': 0.2, 'test_mod': -20, 'tagi': ['kosztownosci', 'luksus', 'dewocjonalia', 'pisarskie', 'naukowe'],
+                     'kategorie': ['Księgi i dokumenty', 'Zioła, mikstury, narkotyki'],
+                     'opis': 'Udaje coś cenniejszego: cyna zamiast srebra, farbowane sukno, fałszywa pieczęć, rozcieńczona mikstura.',
+                     'test_opis': 'Trudny (−20) Test Wyceny.'},
+        'ukryta_wada': {'nazwa': 'Ukryta Wada', 'wartosc': 0.6, 'test_mod': -10, 'kategorie': JAK_KATS,
+                        'opis': 'Wygląda porządnie, ale ma Wadę przedmiotu (Tandetny albo Zawodny) — np. jeden z dziesięciu płaszczy.',
+                        'test_opis': 'Wymagający (−10) Test Wyceny albo Rzemiosła.'},
+        'miara': {'nazwa': 'Oszukana miara', 'wartosc': 'skala', 'tagi': ['tkaniny', 'pojemniki', 'zuzywalne', 'amunicja_prosta'],
+                  'kategorie': ['Jedzenie, picie, nocleg', 'Amunicja'],
+                  'opis': 'Niepełne skrzynie, zawyżona waga, zepsute sztuki na dnie, nadmiar opakowania.',
+                  'test_opis': 'Test Wyceny wg skali oszustwa.'},
+    },
+    'wagi': {'kradziony': 1, 'podrobka': 1, 'ukryta_wada': 3, 'miara': 2},
+    'skala_oszustwa': [{'udzial': 0.05, 'test': 'Prosty (+10)', 'mod': 10}, {'udzial': 0.1, 'test': 'Przeciętny (+0)', 'mod': 0},
+                       {'udzial': 0.2, 'test': 'Wymagający (−10)', 'mod': -10}, {'udzial': 0.3, 'test': 'Trudny (−20)', 'mod': -20},
+                       {'udzial': 0.4, 'test': 'Bardzo trudny (−30)', 'mod': -30}],
+    'swiadomosc': {'kradziony': 0.9, 'podrobka': 0.6, 'ukryta_wada': 0.3, 'miara': 0.8},
 }
 W('data/rynek.json', RY)
 

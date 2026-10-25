@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import * as S from '../src/silnik.js';
 import * as T from '../src/kupcy_trwali.js';
 const rd = f => JSON.parse(fs.readFileSync(new URL('../' + f, import.meta.url)));
-const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze']
+const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie']
   .map(n => [n, rd(`data/${n}.json`)]));
 d.klasy = rd('data/klasy_cenowe.json');
 const sklep = S.generujKupca(d, { kupiec: 'zbrojmistrz', osada: 'altdorf', koniunktura: 'wojna', seed: 48213 });
@@ -131,6 +131,34 @@ test('zamówienie rzadkiej rzeczy: dłużej i drożej, egzotyk we wsi — odmowa
   assert.ok(wies.rzadkosc && wies.rzadkosc.termin_tyg > 0);
   assert.ok(wies.skladowe.narzut > miasto.skladowe.narzut, 'we wsi narzut za rzadkość');
   assert.equal(S.wycenZamowienie(d, { kupiec: 'zbrojmistrz', osada: 'wies', przedmiot: 'flamberg', seed: 1 }).status, 'odmowa');
+});
+
+test('postać kupca: filtr charakteru, cecha działa na ceny, zapisany kupiec liczy tak samo', () => {
+  for (const ch of ['dobry', 'neutralny', 'zly']) for (let s = 1; s <= 15; s++) {
+    const p = S.generujKupca(d, { kupiec: 'kramarz', osada: 'miasto', seed: s, charaktery: [ch] }).postac;
+    assert.equal(p.charakter, ch);
+    assert.ok(!p.motywacja.charakter || p.motywacja.charakter === ch);
+    assert.equal(p.wyglad.length, 2);
+  }
+  const chciwy = Array.from({ length: 300 }, (_, i) => S.generujKupca(d, { kupiec: 'zbrojmistrz', osada: 'miasto', seed: i, charaktery: ['zly'] }))
+    .find(s => s.postac.cecha.nazwa === 'Chciwy');
+  assert.ok(chciwy, 'jest Chciwy wśród złych');
+  assert.ok(chciwy.towar.every(t => t.skladowe.charakter === 1.1));
+  const w = T.wycen(d, T.utworzKupca(d, chciwy));
+  chciwy.towar.forEach(t => assert.equal(w.towar.find(x => x.id === t.id).cena_p, t.cena_p));
+});
+
+test('towar trefny: paser większość, szarlatan ponad połowę i świadomie, uczciwy nigdy', () => {
+  const udzial = sklepy => { const t = sklepy.flatMap(s => s.towar); return t.filter(x => x.trefny).length / t.length; };
+  const gen = (kupiec, n = 40, x = {}) => Array.from({ length: n }, (_, i) => S.generujKupca(d, { kupiec, osada: 'miasto', seed: i + 1, ...x }));
+  assert.ok(udzial(gen('paser')) > 0.6);
+  assert.ok(udzial(gen('rzemieslnik')) < 0.1);
+  const zli = gen('kramarz', 300, { charaktery: ['zly'] });
+  const szarlatan = zli.filter(s => s.postac.cecha.nazwa === 'Szarlatan');
+  assert.ok(szarlatan.length && udzial(szarlatan) > 0.5);
+  assert.ok(szarlatan.flatMap(s => s.towar).filter(t => t.trefny).every(t => t.trefny.swiadomy));
+  const uczciwi = gen('paser', 300, { charaktery: ['dobry'] }).filter(s => s.postac.cecha.nazwa === 'Skrupulatnie uczciwy');
+  assert.ok(uczciwi.length && udzial(uczciwi) === 0);
 });
 
 test('ustawienia v6: mnożnik kategorii i nowe pozycje MG', () => {

@@ -399,5 +399,106 @@
    ],
    "wioska_opis": "We wsi nikt nie sprowadzi rzeczy egzotycznej — trzeba jechać do miasta."
   }
+ },
+ "trefne": {
+  "opis": "v6c: szansa na pozycję z kupcy.json → trefne (domyślnie domyslna_szansa); cecha kupiecka może ją podnieść (Szarlatan, Powiązania przestępcze) albo wyzerować (Skrupulatnie uczciwy). wartosc = prawdziwa wartość ÷ cena, jaką kupiec podaje. swiadomosc = szansa, że kupiec wie (oszust wie zawsze). Widoczne tylko dla MG.",
+  "domyslna_szansa": 0.04,
+  "rodzaje": {
+   "kradziony": {
+    "nazwa": "Kradziony",
+    "wartosc": 1,
+    "test_mod": null,
+    "opis": "Towar z kradzieży albo niewiadomego pochodzenia. Wart tyle, ile kosztuje, ale prawowity właściciel albo straż może go rozpoznać.",
+    "test_opis": "Wycena tego nie wykaże. Rozpoznanie: Intuicja, Wiedza (lokalna) albo świadek."
+   },
+   "podrobka": {
+    "nazwa": "Podróbka",
+    "wartosc": 0.2,
+    "test_mod": -20,
+    "tagi": [
+     "kosztownosci",
+     "luksus",
+     "dewocjonalia",
+     "pisarskie",
+     "naukowe"
+    ],
+    "kategorie": [
+     "Księgi i dokumenty",
+     "Zioła, mikstury, narkotyki"
+    ],
+    "opis": "Udaje coś cenniejszego: cyna zamiast srebra, farbowane sukno, fałszywa pieczęć, rozcieńczona mikstura.",
+    "test_opis": "Trudny (−20) Test Wyceny."
+   },
+   "ukryta_wada": {
+    "nazwa": "Ukryta Wada",
+    "wartosc": 0.6,
+    "test_mod": -10,
+    "kategorie": [
+     "Broń biała",
+     "Broń zasięgowa",
+     "Pancerze",
+     "Ubranie i dodatki",
+     "Narzędzia i zestawy",
+     "Wyposażenie różne"
+    ],
+    "opis": "Wygląda porządnie, ale ma Wadę przedmiotu (Tandetny albo Zawodny) — np. jeden z dziesięciu płaszczy.",
+    "test_opis": "Wymagający (−10) Test Wyceny albo Rzemiosła."
+   },
+   "miara": {
+    "nazwa": "Oszukana miara",
+    "wartosc": "skala",
+    "tagi": [
+     "tkaniny",
+     "pojemniki",
+     "zuzywalne",
+     "amunicja_prosta"
+    ],
+    "kategorie": [
+     "Jedzenie, picie, nocleg",
+     "Amunicja"
+    ],
+    "opis": "Niepełne skrzynie, zawyżona waga, zepsute sztuki na dnie, nadmiar opakowania.",
+    "test_opis": "Test Wyceny wg skali oszustwa."
+   }
+  },
+  "wagi": {
+   "kradziony": 1,
+   "podrobka": 1,
+   "ukryta_wada": 3,
+   "miara": 2
+  },
+  "skala_oszustwa": [
+   {
+    "udzial": 0.05,
+    "test": "Prosty (+10)",
+    "mod": 10
+   },
+   {
+    "udzial": 0.1,
+    "test": "Przeciętny (+0)",
+    "mod": 0
+   },
+   {
+    "udzial": 0.2,
+    "test": "Wymagający (−10)",
+    "mod": -10
+   },
+   {
+    "udzial": 0.3,
+    "test": "Trudny (−20)",
+    "mod": -20
+   },
+   {
+    "udzial": 0.4,
+    "test": "Bardzo trudny (−30)",
+    "mod": -30
+   }
+  ],
+  "swiadomosc": {
+   "kradziony": 0.9,
+   "podrobka": 0.6,
+   "ukryta_wada": 0.3,
+   "miara": 0.8
+  }
  }
 }

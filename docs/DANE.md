@@ -36,7 +36,9 @@ Dwie drogi zmian:
 | Pozycja / Dochód profesji | `data/audyt.json` | `poziomy[].poz`, `doch`, `w`, `powod` | Puste = jak w podręczniku (`raw`). |
 | Czynsze | `data/czynsze.json` | `najem`, `kupno` | Muszą się zgadzać z cennikiem (test). |
 | Cechy broni | `data/bron_cechy.json` | `zalety`, `wady`, `grupa` | Z `Generator_NPC/public/data/weapons.json`. |
-| Imiona, dziwactwa kupców | `data/nazwy.json` | | |
+| Imiona, dziwactwa kupców | `data/nazwy.json` | | Pierwsze dziwactwo (stare, z artefaktu). |
+| Osobowość kupca | `data/postacie.json` | `charaktery` (wagi), `motywacje`, `cechy_kupieckie` (z `efekt`), `wyglad`, `znaki`, `manieryzmy`, `potrzeby`, `sekrety`, `dziwactwa`, `imiona`, `nazwiska` | Pole `charakter` (dobry / neutralny / zly) — bez niego pasuje do każdego. Efekty cechy: `ceny`, `skup`, `targowanie`, `bez_targu`, `trefne`, `oszust`, `gotowka`, `termin`. Nazwy Motywacji wg Ekranu MG, cechy kupieckie wg Poradnika Staroświatowca (tab. 3-7); opisy własne. |
+| Towar trefny | `data/rynek.json` → `trefne`; `data/kupcy.json` → `trefne`, `trefne_wagi` | rodzaje (kradziony, podróbka, ukryta Wada, oszukana miara), skala oszustwa i trudność Testu Wyceny (Poradnik s. 41), szansa, że kupiec wie | Paser 75% (głównie kradziony), domokrążca 12%, reszta zwykle 1–6%; Szarlatan ≥ 60%, Skrupulatnie uczciwy 0%. |
 | Twoje bieżące zmiany | `data/ustawienia.json` | jak eksport z Edycji cen | Puste = cennik domyślny. |
 
 Po każdej zmianie w `data/` uruchom `npm test` — testy spójności pilnują arbitrażu (np. koc tańszy niż jego sukno).

@@ -122,7 +122,7 @@ export function szansaDostepnosci(d, { kupiec, osada, pozycja }) {
 
 // opcje.stosujDostepnosc: branże kupca i test Dostępności (v6b). false = zachowanie 1:1 z artefaktem.
 /** @param {any} d @param {Record<string, any>} [opcje] */
-export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed = losowySeed(), stosujDostepnosc = true, osobowosc = true } = {}) {
+export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed = losowySeed(), stosujDostepnosc = true, osobowosc = true, charaktery = null } = {}) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
   const { rnd, ri, k, pick } = kosci(seed);
   const cap = Math.min(kup.limit_p, limitOsady(lok));
@@ -156,14 +156,20 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
   // Budżet towaru dzieli się na pozycje (rdzeń waży 2, boczne 1) i ogranicza liczbę sztuk: kramarz nie ma 47 namiotów.
   const mjt = osobowosc ? majatekKupca(d, kup, seed) : null;
   const jakRnd = kosci((seed ^ 0x68e31da4) >>> 0);
+  // v6c: postać kupca (charakter, motywacja, cecha kupiecka…) i towar trefny — osobne strumienie losowania.
+  const postac = osobowosc ? generujPostac(d, kosci((seed ^ 0x3c6ef372) >>> 0), { charaktery }) : null;
+  const E = postac?.cecha?.efekt ?? {};
+  if (mjt && E.gotowka) mjt.gotowka_p = Math.round(mjt.gotowka_p * E.gotowka);
+  const trefRnd = kosci((seed ^ 0x1b873593) >>> 0);
   const wagi = wybor.map(c => kup.rdzen.includes(c.kat) ? 2 : 1), sumaWag = wagi.reduce((a, b) => a + b, 0) || 1;
   const towar = wybor.map((c, ix) => {
     const rz = k(10), zapas = zapasZRzutu(d, rz);
     const rp = k(10);
     const popyt = clamp(d.rynek.popyt.start + popytKoniunktury(kon, c.kat) + przesunieciePopytu(d, rp), 0, 2);
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, zapas, popyt);
-    const os = osobowosc ? osobowoscKupca(d, kup, c, kaprysRnd.k(10)) : { preferencja: 1, kaprys: 1, rzut: null, mnoznik: 1 };
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek;
+    const rk = osobowosc ? kaprysRnd.k(10) : null;
+    const os = osobowosc ? osobowoscKupca(d, kup, c, E.kaprys === false ? null : rk) : { preferencja: 1, kaprys: 1, rzut: null, mnoznik: 1 };
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * (E.ceny ?? 1);
     // v6: egzemplarz z Zaletami / Wadami przedmiotu (osobny strumień losowania, tylko z osobowością kupca).
     const jak = osobowosc ? jakoscLosowa(d, kup, c, jakRnd) : null;
     const baza = jak ? Math.round(c.cena_p * jak.mnoznik) : c.cena_p;
@@ -173,19 +179,20 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
       const budzet = mjt.towar_p * wagi[ix] / sumaWag * (zapas === 0 ? 1.5 : 1);
       sztuk = Math.min(sztuk, Math.max(1, Math.floor(budzet / c.cena_p)));
     }
-    const skupU = Math.max(d.rynek.skup.minimum, kup.skup + (popyt === 2 ? d.rynek.skup.popyt_wysoki : popyt === 0 ? d.rynek.skup.popyt_niski : 0));
+    const skupU = Math.max(d.rynek.skup.minimum, kup.skup + (popyt === 2 ? d.rynek.skup.popyt_wysoki : popyt === 0 ? d.rynek.skup.popyt_niski : 0)) * (E.skup ?? 1);
     const cenaP = Math.round(cena);
+    const trefny = osobowosc ? trefnyLosowy(d, kup, c, trefRnd, E) : null;
     const min = cenaMinimalna(d, { kupiec: kup, pozycja: jak ? { ...c, cena_p: baza } : c, osada: lok, koniunktura: kon, mRynek, cena_p: cenaP });
     return {
       id: c.id, nazwa: c.nazwa, kat: c.kat, sztuk,
       cena_raw_p: c.cena_raw_p ?? null,                              // v5.1: cena z podręcznika, do porównania
-      cechy: jak?.cechy ?? null, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null, cena_cennik_p: c.cena_p,
+      cechy: jak?.cechy ?? null, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null, cena_cennik_p: c.cena_p, trefny,
       cena_wytworcy_p: baza, mnoznik, cena_p: cenaP, skup_p: Math.round(cena * skupU),
       skup_ponad_gotowke: !!(mjt && mjt.gotowka_p != null && cena * skupU > mjt.gotowka_p),
       koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       zapas, zapas_nazwa: d.rynek.zapas.progi[zapas].nazwa, popyt, popyt_nazwa: d.rynek.popyt.nazwy[popyt],
       rzuty: { zapas: rz, popyt: rp, kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, charakter: E.ceny ?? 1 },
     };
   });
   // v5.2: rzecz, której jedna sztuka kosztuje ponad 4× budżet tej pozycji, jest poza zasięgiem sklepu — będzie na zamówienie.
@@ -195,9 +202,58 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     towar.length = 0; towar.push(...zostaw);
   }
   const wartosc_towaru_p = towar.reduce((s, t) => s + t.sztuk * t.cena_wytworcy_p, 0);
-  return { seed, imie, dziwactwo, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
+  return { seed, imie, dziwactwo, postac, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
     gotowka_p: mjt?.gotowka_p ?? null, budzet_towaru_p: mjt?.towar_p ?? null, wartosc_towaru_p,
     etykiety: { osada: etykietaOsady(lok), koniunktura: etykietaKoniunktury(d, kon) } };
+}
+
+/* ------------------------------------------------------------ v6c: postać kupca */
+// data/postacie.json: charakter (dobry / neutralny / zly, wagi), wygląd (2 z 4 grup), znak rozpoznawczy, manieryzm,
+// Motywacja, cecha kupiecka (z efektem), potrzeba, sekret, dziwactwo. Pozycje z polem charakter tylko dla tego charakteru;
+// bez pola — dla każdego. charaktery = lista dozwolonych (domyślnie wszystkie). Brak danych = null.
+export function generujPostac(d, r, { charaktery = null } = {}) {
+  const P = d.postacie;
+  if (!P) return null;
+  const dozwolone = Object.keys(P.charaktery).filter(c => !charaktery || charaktery.includes(c));
+  const lista = dozwolone.length ? dozwolone : Object.keys(P.charaktery);
+  let los = r.rnd() * lista.reduce((s, c) => s + P.charaktery[c].waga, 0), charakter = lista[0];
+  for (const c of lista) { los -= P.charaktery[c].waga; if (los < 0) { charakter = c; break; } }
+  const pasuje = arr => { const p = arr.filter(x => !x.charakter || x.charakter === charakter); return p.length ? p : arr; };
+  const wybierz = arr => arr[r.ri(arr.length)];
+  const grupy = Object.keys(P.wyglad), g1 = r.ri(grupy.length), g2 = (g1 + 1 + r.ri(grupy.length - 1)) % grupy.length;
+  return {
+    charakter,
+    wyglad: [wybierz(P.wyglad[grupy[g1]]), wybierz(P.wyglad[grupy[g2]])],
+    znak: wybierz(P.znaki).tekst,
+    manieryzm: wybierz(P.manieryzmy),
+    motywacja: wybierz(pasuje(P.motywacje)),
+    cecha: wybierz(pasuje(P.cechy_kupieckie)),
+    potrzeba: wybierz(pasuje(P.potrzeby)).tekst,
+    sekret: wybierz(pasuje(P.sekrety)).tekst,
+    dziwactwo: wybierz(P.dziwactwa),
+  };
+}
+
+/* ------------------------------------------------------------ v6c: towar trefny */
+// Szansa: kupcy.json → trefne (domyślnie rynek.trefne.domyslna_szansa); cecha kupca: trefne 0 = nigdy, wyższa = co najmniej tyle.
+// Rodzaj losowany z pasujących (kategoria albo tagi branż), wagi z kupcy.json → trefne_wagi albo rynek.trefne.wagi.
+// Zwraca { rodzaj, nazwa, opis, swiadomy, wartosc, test } albo null. Rzutów tyle samo dla każdej pozycji.
+export function trefnyLosowy(d, kup, c, r, E = {}) {
+  const T = d.rynek.trefne;
+  const a = r.rnd(), b = r.rnd(), s = r.rnd(), w = r.rnd();
+  if (!T || E.trefne === 0) return null;
+  const szansa = Math.max(kup.trefne ?? T.domyslna_szansa, E.trefne ?? 0);
+  if (a >= szansa) return null;
+  const wagi = kup.trefne_wagi ?? T.wagi;
+  const pasuje = Object.entries(T.rodzaje).filter(([id, R]) => (wagi[id] ?? 0) > 0 &&
+    (!R.kategorie && !R.tagi || R.kategorie?.includes(c.kat) || c.branze?.some(t => R.tagi?.includes(t))));
+  if (!pasuje.length) return null;
+  let los = b * pasuje.reduce((t, [id]) => t + wagi[id], 0), [id, R] = pasuje[0];
+  for (const p of pasuje) { los -= wagi[p[0]]; if (los < 0) { [id, R] = p; break; } }
+  const skala = R.wartosc === 'skala' ? T.skala_oszustwa[Math.floor(s * T.skala_oszustwa.length)] : null;
+  return { rodzaj: id, nazwa: R.nazwa, opis: R.opis, swiadomy: !!E.oszust || w < (T.swiadomosc[id] ?? 0.5),
+    wartosc: skala ? 1 - skala.udzial : R.wartosc,
+    test: skala ? `Test Wyceny: ${skala.test} (oszukane ${Math.round(skala.udzial * 100)}% towaru)` : R.test_opis };
 }
 
 /* ------------------------------------------------------------ v6: losowa jakość towaru */

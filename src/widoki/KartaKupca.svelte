@@ -7,6 +7,7 @@
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
   import Potwierdz from '../komponenty/Potwierdz.svelte';
+  import PostacKupca from '../komponenty/PostacKupca.svelte';
   import WyborCech from '../komponenty/WyborCech.svelte';
 
   let { uid }: { uid: string } = $props();
@@ -90,6 +91,8 @@
       <datalist id="grupy-karta">{#each grupy as g}<option value={g}></option>{/each}</datalist></label>
   </div>
   <p class="drugi">{W.kupiec.nazwa}, {W.kupiec.status}. {W.kupiec.opis} <i>{K.dziwactwo}</i></p>
+  {#if K.postac}<PostacKupca postac={K.postac} onPrzelosuj={() => zapisz(T.przelosujPostac(d, $state.snapshot(K)), 'Nowa osobowość.')} />
+  {:else}<button class="maly nie-drukuj" onclick={() => zapisz(T.przelosujPostac(d, $state.snapshot(K)), 'Dodano osobowość.')}>Dodaj osobowość</button>{/if}
   <label class="pole"><span>Notatka</span><textarea value={K.notatka} placeholder="Kim jest, co wie, jak traktuje drużynę…"
     onchange={e => pole('notatka', e.currentTarget.value)}></textarea></label>
   <div class="liczby" style="margin-top:10px">
@@ -170,7 +173,7 @@
 <h3 style="margin-top:6px">Na stanie <span class="szary male">{W.towar.length} pozycji</span>
   <button class="maly nie-drukuj" onclick={() => print()}>Drukuj</button></h3>
 <p class="male drugi nie-drukuj">Kliknij wiersz: rozbicie ceny, ilość, cena ręczna, przelosowanie, kupno i sprzedaż.</p>
-<TabelaTowaru towar={W.towar} {ps} {talent} gotowka={K.gotowka_p} edycja
+<TabelaTowaru towar={W.towar} {ps} {talent} bezTargu={!!K.postac?.cecha?.efekt?.bez_targu} gotowka={K.gotowka_p} edycja
   onZmien={(id, z) => zapisz(T.zmienPozycje($state.snapshot(K), id, z))}
   onUsun={id => zapisz(T.usunPozycje($state.snapshot(K), id))}
   onPrzelosuj={id => zapisz(T.przelosujPozycje(d, $state.snapshot(K), id))}
