@@ -2,7 +2,9 @@
   // Generator kupca. Stan w adresie: #kupcy?k=zbrojmistrz&o=altdorf&n=wojna&s=48213 — ten sam link = ten sam kupiec.
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz } from '../lib/format';
-  import { generujKupca, etykietaOsady, etykietaKoniunktury } from '../silnik.js';
+  import { generujKupca, etykietaKoniunktury } from '../silnik.js';
+  import WyborOsady from '../komponenty/WyborOsady.svelte';
+  import WyborRynku from '../komponenty/WyborRynku.svelte';
   import { utworzKupca, dodajPozycje, czyWAsortymencie, wycen } from '../kupcy_trwali.js';
   import { norm } from '../lib/format';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
@@ -16,13 +18,14 @@
   let nazwa = $state(''), grupa = $state(''), notatka = $state('');
 
   let charaktery = $state<string[]>(['dobry', 'neutralny', 'zly']);
-  const sklep = $derived.by(() => { try { return generujKupca(d, { kupiec: k, osada: o, koniunktura: n, seed, charaktery }); } catch { return null; } });
-  $effect(() => { history.replaceState(null, '', `#kupcy?k=${k}&o=${o}&n=${n}&s=${seed}`); });
+  let pora = $state<string | null>(p.get('p') || null), wahania = $state<string | null>(p.get('w') || null);
+  const sklep = $derived.by(() => { try { return generujKupca(d, { kupiec: k, osada: o, koniunktura: n, seed, charaktery, pora, wahania }); } catch { return null; } });
+  $effect(() => { history.replaceState(null, '', `#kupcy?k=${k}&o=${o}&n=${n}&s=${seed}${pora ? '&p=' + pora : ''}${wahania ? '&w=' + wahania : ''}`); });
   const grupy = $derived([...new Set(stan.kupcy.map(x => x.grupa).filter(Boolean))]);
 
   // Dodatkowy towar MG w wygenerowanym sklepie: cena liczona jak u tego kupca, także spoza asortymentu (ze znacznikiem).
   let dodane = $state<string[]>([]), dodajTxt = $state('');
-  $effect(() => { k; o; n; seed; charaktery; dodane = []; });
+  $effect(() => { k; o; n; seed; charaktery; pora; wahania; dodane = []; });
   const Kdod = $derived.by(() => {
     if (!sklep) return null;
     let K: any = utworzKupca(d, sklep);
@@ -47,11 +50,12 @@
   <div class="pasek">
     <label class="pole"><span>Kto handluje</span><select bind:value={k}>
       {#each d.kupcy.kupcy as x}<option value={x.id}>{x.nazwa} ({mnoz(x.marza)})</option>{/each}</select></label>
-    <label class="pole"><span>Gdzie</span><select bind:value={o}>
-      {#each d.osady.osady as x}<option value={x.id}>{etykietaOsady(x)}</option>{/each}</select></label>
+    <label class="pole"><span>Gdzie <Podpowiedz tekst="Typ osady albo konkretny ośrodek handlu z Poradnika Staroświatowca (tab. 3-2): wielkość wg populacji, ceny wg zamożności (1–5) i strefy handlowej (co tam tanie, co drogie)." /></span>
+      <WyborOsady bind:value={o} /></label>
     <label class="pole"><span>Sytuacja</span><select bind:value={n}>
       {#each d.koniunktura.koniunktury as x}<option value={x.id}>{etykietaKoniunktury(d, x, { krotko: true })}</option>{/each}</select></label>
   </div>
+  <div class="pasek"><WyborRynku bind:pora bind:wahania /></div>
   <div class="pasek">
     <label class="pole waskie"><span>Seed <Podpowiedz tekst="Ten sam seed, kupiec, osada i sytuacja dają zawsze tego samego kupca. Link z paska adresu odtwarza sklep." /></span>
       <input type="number" bind:value={seed} /></label>

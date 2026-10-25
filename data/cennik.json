@@ -6046,7 +6046,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 48,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "nielegalny": true
   },
   {
    "id": "rozkosz-ranalda",
@@ -6065,7 +6066,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "nielegalny": true
   },
   {
    "id": "korzen-mandragory",
@@ -6141,7 +6143,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1200,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "nielegalny": true
   },
   {
    "id": "czarny-lotos",
@@ -6160,7 +6163,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 7200,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "nielegalny": true
   },
   {
    "id": "sercoboj",
@@ -6179,7 +6183,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 14400,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "nielegalny": true
   },
   {
    "id": "swiece-tuzin",

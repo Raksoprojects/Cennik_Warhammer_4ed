@@ -39,6 +39,11 @@ Dwie drogi zmian:
 | Imiona, dziwactwa kupców | `data/nazwy.json` | | Pierwsze dziwactwo (stare, z artefaktu). |
 | Osobowość kupca | `data/postacie.json` | `charaktery` (wagi), `motywacje`, `cechy_kupieckie` (z `efekt`), `wyglad`, `znaki`, `manieryzmy`, `potrzeby`, `sekrety`, `dziwactwa`, `imiona`, `nazwiska` | Pole `charakter` (dobry / neutralny / zly) — bez niego pasuje do każdego. Efekty cechy: `ceny`, `skup`, `targowanie`, `bez_targu`, `trefne`, `oszust`, `gotowka`, `termin`. Nazwy Motywacji wg Ekranu MG, cechy kupieckie wg Poradnika Staroświatowca (tab. 3-7); opisy własne. |
 | Towar trefny | `data/rynek.json` → `trefne`; `data/kupcy.json` → `trefne`, `trefne_wagi` | rodzaje (kradziony, podróbka, ukryta Wada, oszukana miara), skala oszustwa i trudność Testu Wyceny (Poradnik s. 41), szansa, że kupiec wie | Paser 75% (głównie kradziony), domokrążca 12%, reszta zwykle 1–6%; Szarlatan ≥ 60%, Skrupulatnie uczciwy 0%. |
+| Handel wg Poradnika Staroświatowca | `data/handel.json` | `pory_roku`, `wahania`, `strefy` (siatka stopni), `mnozniki_stopni`, `kategorie_z_towarow`, `miasta`, `zamoznosc`, `zagrozenia`, `oplaty`, `nielegalne`, `handel_lokalny`, `bogowie`, `zasady_dodatkowe` | Teksty z Poradnika (rozdz. III), bez cen 2. edycji. Mnożniki stopni dostępności i statusy dochodu interesu to szacunek MG. |
+| Ośrodki handlu jako osady | `data/osady.json` (wpisy `miasto-*`) | `mnoznik` (typ × zamożność), `kategorie` (ceny strefy), `dostepnosc`, `populacja`, `zamoznosc`, `strefa` | Budowane przez `narzedzia/dane_v6c.py` z `data/handel.json` — zmieniaj tam i uruchom skrypt. |
+| Nielegalne towary | `data/cennik.json` → `nielegalny`; `data/kupcy.json` → `nielegalne` | | Tylko paser i kupiec z cechą „Powiązania przestępcze”; cena × zamożność (tab. 3-11). |
 | Twoje bieżące zmiany | `data/ustawienia.json` | jak eksport z Edycji cen | Puste = cennik domyślny. |
+
+Kolejność skryptów danych: `narzedzia/dodaj_v6.py` → `narzedzia/dane_v6b.py` → `narzedzia/dane_v6c.py` (każdy idempotentny).
 
 Po każdej zmianie w `data/` uruchom `npm test` — testy spójności pilnują arbitrażu (np. koc tańszy niż jego sukno).

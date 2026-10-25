@@ -1,11 +1,16 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz, norm, proc } from '../lib/format';
-  import { etykietaKoniunktury } from '../silnik.js';
+  import { etykietaKoniunktury, podrozKupiecka } from '../silnik.js';
 
   const d = $derived(stan.d);
   let pod = $state('modyfikatory'), q = $state(''), filtr = $state('');
-  const POD = [['modyfikatory', 'Jak liczona jest cena'], ['zasady', 'Zasady domowe'], ['audyt', 'Audyt profesji'], ['historia', 'Źródła historyczne']];
+  const POD = [['modyfikatory', 'Jak liczona jest cena'], ['zasady', 'Zasady domowe'], ['handel', 'Handel (Poradnik)'], ['podroz', 'Podróż kupiecka'],
+    ['audyt', 'Audyt profesji'], ['historia', 'Źródła historyczne']];
+  // Podróż kupiecka (Poradnik s. 39–40)
+  let km = $state(200), teren = $state<'lad' | 'woda'>('lad'), poraPodr = $state(''), slaby = $state(false), zdarzenia = $state<any[] | null>(null);
+  const H = $derived(d.handel);
+  const NAZWA_ST = $derived(H.stopnie_nazwy);
   const WERDYKT: Record<string, string> = { ok: 'bez zmian', dochod: 'inny Dochód', ryzyko: 'dochód ryzykowny', zmiana: 'zmiana Statusu' };
   const audyt = $derived(d.audyt.flatMap((p: any) => p.poziomy.map((l: any) => ({ ...l, klasa: p.klasa, profesja: p.profesja })))
     .filter((l: any) => (!filtr || l.w === filtr) && (!q || norm(`${l.klasa} ${l.profesja} ${l.nazwa}`).includes(norm(q)))));
@@ -29,7 +34,7 @@
           {#if k.jakosc}<br /><span class="szary">jakość: Zalety {Math.round((k.jakosc.zalety ?? 0) * 100)}%, Wady {Math.round((k.jakosc.wady ?? 0) * 100)}% pozycji</span>{/if}</td></tr>{/each}</tbody></table></div></details>
   <details class="sekcja"><summary><span>2. Osady</span></summary>
     <div class="tabela karty"><table class="karty"><thead><tr><th>Osada</th><th class="num">Mnożnik</th><th class="num">Limit towaru</th><th>Uwagi</th></tr></thead>
-      <tbody>{#each d.osady.osady as o}<tr><td class="tytul">{o.nazwa}</td><td class="num" data-l="Mnożnik">{proc(o.mnoznik)}</td>
+      <tbody>{#each d.osady.osady.filter((o: any) => !o.grupa) as o}<tr><td class="tytul">{o.nazwa}</td><td class="num" data-l="Mnożnik">{proc(o.mnoznik)}</td>
         <td class="num" data-l="Limit">{o.limit_p == null ? 'bez limitu' : mon(o.limit_p)}</td><td class="pelna male drugi">{o.uwaga ?? ''}</td></tr>{/each}</tbody></table></div></details>
   <details class="sekcja"><summary><span>3. Sytuacje</span></summary>
     <div class="tabela karty"><table class="karty"><thead><tr><th>Sytuacja</th><th>Ceny i czynsz</th><th>Popyt</th></tr></thead>
@@ -69,6 +74,58 @@
     <div class="panel"><h3>9. Ceny w cenniku to ceny wytwórcy</h3><p>Kupiec dolicza marżę. Gracz nigdy nie płaci ceny z cennika wprost.
       Kotwica: robotnik niewykwalifikowany (Brąz 3) zarabia {mon(d.statusy.robotnik_brutto_p)} brutto tygodniowo.</p></div>
   </div>
+{:else if pod === 'handel'}
+  <p class="drugi">{H.opis}</p>
+  <details class="sekcja" open><summary><span>Pora roku i wahania rynku</span></summary>
+    <div class="panel"><p class="male">{H.pory_roku.opis}</p>
+      <ul class="male">{#each H.pory_roku.lista as p}<li><b>{p.nazwa}</b>: ceny {mnoz(p.ceny)}{#each Object.entries(p.kategorie) as [k, v]} · {k} {mnoz((v as any).cena)}{(v as any).popyt ? ', popyt +' + (v as any).popyt : ''}{/each} · zagrożenia w podróży +{p.zagrozenia} — {p.uwaga}</li>{/each}</ul>
+      <p class="male">{H.wahania.opis}</p>
+      <ul class="male">{#each H.wahania.lista as w}<li>1k10 {w.od}–{w.do}: <b>{w.nazwa}</b> — ceny {mnoz(w.ceny)}, popyt {w.popyt > 0 ? '+' : ''}{w.popyt}</li>{/each}</ul></div></details>
+  <details class="sekcja"><summary><span>Strefy handlowe: co tanie, co drogie</span></summary>
+    <p class="male drugi" style="margin:8px 0">Stopnie z Poradnika (s. 41) uśrednione na kategorie Skarbca. Mnożnik ceny: {Object.entries(H.mnozniki_stopni).map(([s, m]) => `${NAZWA_ST[s]} ${mnoz(m as number)}`).join(' · ')}.</p>
+    <div class="tabela"><table><thead><tr><th>Strefa</th>{#each H.towary_poradnika as t}<th title={t} style="writing-mode:vertical-rl;font-size:.7rem">{t}</th>{/each}</tr></thead>
+      <tbody>{#each H.strefy as s}<tr><td><b>{s.nazwa}</b><div class="male szary">{s.szlak}{s.zagranica ? ' · import: ' + s.zagranica : ''}</div></td>
+        {#each s.siatka.split(' ') as l}<td class="num" title={NAZWA_ST[l]} class:plus={['Z', 'R', 'S'].includes(l)} class:minus={['D', 'Po'].includes(l)}>{l}</td>{/each}</tr>{/each}</tbody></table></div></details>
+  <details class="sekcja"><summary><span>Ośrodki handlu Imperium</span><span class="szary male">{H.miasta.length}</span></summary>
+    <div class="tabela karty"><table class="karty"><thead><tr><th>Miasto</th><th class="num">Populacja</th><th class="num">Zamożność</th><th>Prowincja</th><th>Strefa</th><th class="num">Ceny</th></tr></thead>
+      <tbody>{#each H.miasta as [nazwa, pop, zam, prow, strefa, wolne]}
+        {@const o = d.osady.osady.find((x: any) => x.nazwa === nazwa)}
+        <tr><td class="tytul">{nazwa}{#if wolne}<span class="znacznik zloty">wolne miasto</span>{/if}</td><td class="num" data-l="Populacja">{pop.toLocaleString('pl')}</td>
+          <td class="num" data-l="Zamożność">{zam}</td><td data-l="Prowincja">{prow}</td><td data-l="Strefa">{H.strefy.find((s: any) => s.id === strefa)?.nazwa}</td>
+          <td class="num" data-l="Ceny">{o ? proc(o.mnoznik) : '—'}</td></tr>{/each}</tbody></table></div></details>
+  <details class="sekcja"><summary><span>Myto, taryfy, opłaty i kary</span></summary>
+    <div class="panel"><p class="male drugi">{H.oplaty.opis}</p>
+      <ul class="male">{#each H.oplaty.lista as o}<li><span class="szary">{o.grupa}:</span> {o.nazwa} — <b>{o.stawka}</b></li>{/each}</ul>
+      <p class="male">{H.oplaty.unikanie}</p></div></details>
+  <details class="sekcja"><summary><span>Nielegalne towary i przemyt</span></summary>
+    <div class="panel"><p class="male">{H.nielegalne.opis}</p><p class="male">Rodzaje: {H.nielegalne.rodzaje.join(', ')}. {H.nielegalne.uwaga}</p>
+      <div class="tabela"><table><thead><tr><th class="num">Zamożność</th><th>Test Plotkowania</th><th class="num">Cena ×</th><th>Dostępność</th></tr></thead>
+        <tbody>{#each Object.entries(H.zamoznosc.nielegalne) as [z, v]}<tr><td class="num">{z}</td><td>{(v as any).plotkowanie}</td><td class="num">{mnoz((v as any).cena)}</td><td>{(v as any).dostepnosc}</td></tr>{/each}</tbody></table></div>
+      <p class="male drugi" style="margin-top:8px">{H.zamoznosc.nielegalne_opis} W Skarbcu nielegalny towar ma tylko paser i kupiec z cechą „Powiązania przestępcze”.</p></div></details>
+  <details class="sekcja"><summary><span>Bogowie kupców</span></summary>
+    <div class="siatka" style="padding-top:8px">{#each H.bogowie as b}<div class="panel"><h3>{b.nazwa}</h3><p class="male drugi">{b.domena}. Symbol: {b.symbol}. {b.charakter}.</p>
+      <ul class="male">{#each b.przykazania as p}<li>{p}</li>{/each}</ul><p class="male">{b.swiatynie} Kult: {b.kult}. Święto: {b.swieto}.</p></div>{/each}</div></details>
+  <details class="sekcja"><summary><span>Zasady dodatkowe: spekulacje, lichwa, gildia…</span></summary>
+    <div class="siatka" style="padding-top:8px">{#each H.zasady_dodatkowe as z}<div class="panel"><h3>{z.nazwa}</h3><p class="male">{z.tekst}</p></div>{/each}</div></details>
+{:else if pod === 'podroz'}
+  <p class="drugi">{H.zagrozenia.opis}</p>
+  <div class="panel">
+    <div class="pasek">
+      <label class="pole waskie"><span>Odległość (km)</span><input type="number" min="50" step="50" bind:value={km} /></label>
+      <label class="pole"><span>Droga</span><select bind:value={teren}><option value="lad">lądem (karawana)</option><option value="woda">wodą (łódź, statek)</option></select></label>
+      <label class="pole"><span>Pora roku</span><select bind:value={poraPodr}><option value="">—</option>{#each H.pory_roku.lista as p}<option value={p.id}>{p.nazwa} (+{p.zagrozenia})</option>{/each}</select></label>
+      <label style="display:flex;gap:6px;align-items:center"><input type="checkbox" bind:checked={slaby} /> mało uczęszczany szlak</label>
+      <button class="glowny" onclick={() => (zdarzenia = podrozKupiecka(d, { km, teren, pora: poraPodr || null, slaby_szlak: slaby }))}>Losuj podróż</button>
+    </div>
+    {#if zdarzenia}
+      {#each zdarzenia as z}<div style="border-top:1px solid var(--linia);padding:6px 0"><span class="szary">{z.km} km, 1k100 = {z.rzut}:</span> <b>{z.nazwa}</b> — {z.opis}</div>
+      {:else}<p class="ok">Spokojna podróż — bez zdarzeń.</p>{/each}
+    {/if}
+  </div>
+  <details class="sekcja"><summary><span>Tabela zagrożeń</span><span class="szary male">{H.zagrozenia.lista.length}</span></summary>
+    <div class="tabela karty"><table class="karty"><thead><tr><th class="num">Ląd</th><th class="num">Woda</th><th>Zagrożenie</th></tr></thead>
+      <tbody>{#each H.zagrozenia.lista as z}<tr><td class="num" data-l="Ląd">{z.lad ? z.lad.join('–') : '—'}</td><td class="num" data-l="Woda">{z.woda ? z.woda.join('–') : '—'}</td>
+        <td class="pelna"><b>{z.nazwa}.</b> {z.opis}</td></tr>{/each}</tbody></table></div></details>
 {:else if pod === 'audyt'}
   <p class="drugi">Status zapisuj jako parę Pozycja / Dochód. U większości profesji obie wartości są równe.</p>
   <div class="pasek"><label class="pole"><span>Szukaj</span><input type="search" bind:value={q} placeholder="profesja, poziom…" /></label></div>

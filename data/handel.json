@@ -1,0 +1,183 @@
+{
+ "opis": "v6c: zasady handlu wg Poradnika Staroświatowca (WFRP 2 ed.), rozdz. III. Bez cen z 2. edycji — tylko modyfikatory, tabele zdarzeń i teksty. „JH” (jednostka handlowa) zastąpiona częścią ładunku. Mnożniki cen tam, gdzie Poradnik podaje stopnie dostępności, to szacunek MG (pole mnozniki_stopni).",
+ "pory_roku": {
+  "opis": "Poradnik s. 38: latem rynek nasycony (podaż +10%, popyt −10%), zimą odwrotnie. Jesień: żniwa — jedzenie tanieje (szacunek). Zagrożenia w podróży: wiosna +10, jesień +10, zima +20 do rzutu.",
+  "lista": [
+   { "id": "wiosna", "nazwa": "Wiosna", "ceny": 1, "popyt": 0, "kategorie": { "Jedzenie, picie, nocleg": { "cena": 1.1 } }, "zagrozenia": 10, "uwaga": "przednówek: zapasy z zimy się kończą" },
+   { "id": "lato", "nazwa": "Lato", "ceny": 0.95, "popyt": 0, "kategorie": { "Jedzenie, picie, nocleg": { "cena": 0.95 } }, "zagrozenia": 0, "uwaga": "podaż +10%, popyt −10%" },
+   { "id": "jesien", "nazwa": "Jesień", "ceny": 1, "popyt": 0, "kategorie": { "Jedzenie, picie, nocleg": { "cena": 0.85 }, "Zwierzęta i pojazdy": { "cena": 0.9 } }, "zagrozenia": 10, "uwaga": "żniwa i ubój przed zimą" },
+   { "id": "zima", "nazwa": "Zima", "ceny": 1.05, "popyt": 0, "kategorie": { "Jedzenie, picie, nocleg": { "cena": 1.2, "popyt": 1 }, "Ubranie i dodatki": { "cena": 1.1, "popyt": 1 } }, "zagrozenia": 20, "uwaga": "podaż −10%, popyt +10%" }
+  ]
+ },
+ "wahania": {
+  "opis": "Poradnik s. 39 (opcjonalnie): 1k10 przed testem popytu. Rynek Byka: towaru mniej, drożej. Rynek Niedźwiedzia: towaru więcej, taniej.",
+  "lista": [
+   { "id": "stabilny", "nazwa": "Rynek stabilny", "do": 8, "od": 3, "ceny": 1, "popyt": 0 },
+   { "id": "hossa", "nazwa": "Rynek Byka (hossa)", "od": 1, "do": 2, "ceny": 1.1, "popyt": 1 },
+   { "id": "bessa", "nazwa": "Rynek Niedźwiedzia (bessa)", "od": 9, "do": 10, "ceny": 0.9, "popyt": -1 }
+  ]
+ },
+ "stopnie": ["Z", "R", "S", "M", "P", "D", "Po"],
+ "stopnie_nazwy": { "Z": "znikoma", "R": "rzadka", "S": "sporadyczna", "M": "mała", "P": "przeciętna", "D": "duża", "Po": "powszechna" },
+ "mnozniki_stopni": { "Z": 1.4, "R": 1.25, "S": 1.12, "M": 1.05, "P": 1, "D": 0.93, "Po": 0.85 },
+ "towary_poradnika": ["Tkaniny", "Futra", "Barwniki", "Oleje", "Słodziki", "Zboża i ziarna", "Mąka", "Towary egzotyczne", "Owoce morza", "Sól", "Przysmaki", "Wyroby garncarskie", "Klejnoty", "Żywy inwentarz", "Trunki", "Wyroby wełniane", "Wyroby metalowe", "Wyroby drewniane", "Wyroby skórzane", "Surowce naturalne", "Perfumy"],
+ "kategorie_z_towarow": {
+  "opis": "Które towary Poradnika decydują o cenie naszej kategorii w danej strefie (średnia stopni).",
+  "Ubranie i dodatki": ["Tkaniny", "Futra", "Wyroby wełniane", "Perfumy", "Klejnoty"],
+  "Jedzenie, picie, nocleg": ["Zboża i ziarna", "Mąka", "Owoce morza", "Sól", "Przysmaki", "Trunki", "Słodziki"],
+  "Narzędzia i zestawy": ["Wyroby metalowe", "Wyroby drewniane"],
+  "Wyposażenie różne": ["Wyroby garncarskie", "Wyroby drewniane", "Oleje", "Wyroby skórzane"],
+  "Broń biała": ["Wyroby metalowe"],
+  "Broń zasięgowa": ["Wyroby drewniane", "Wyroby metalowe"],
+  "Amunicja": ["Wyroby metalowe", "Wyroby drewniane"],
+  "Pancerze": ["Wyroby metalowe", "Wyroby skórzane"],
+  "Zwierzęta i pojazdy": ["Żywy inwentarz", "Wyroby drewniane"],
+  "Zioła, mikstury, narkotyki": ["Surowce naturalne", "Towary egzotyczne", "Barwniki"],
+  "Księgi i dokumenty": ["Wyroby drewniane"]
+ },
+ "strefy": [
+  { "id": "reik", "nazwa": "Dorzecze Reiklandzkie", "szlak": "Reik, Bögen, Talabek, Góry Szare", "zagranica": "Bretonia", "siatka": "D S S S R D P M P M Po P P P D P D P S S P" },
+  { "id": "kemperbad", "nazwa": "Enklawa Kemperbadu", "szlak": "Reik, Teufel, Dolny Stir", "zagranica": "", "siatka": "P M R R S P M S P S D M M M P M P P M R M" },
+  { "id": "nuln", "nazwa": "Strefa Handlowa Nuln", "szlak": "Górny Reik, Dolny Aver", "zagranica": "", "siatka": "M P S R M M M M P R P P M P M P P P M S M" },
+  { "id": "sol", "nazwa": "Dolina Górnego Solu", "szlak": "Sol, Górny Reik", "zagranica": "Tilea, Arabia, Kataj", "siatka": "P D M S P P M P P R M P P P R P P M M M P" },
+  { "id": "krasnoludzki", "nazwa": "Stary Trakt Krasnoludzki", "szlak": "Stary Trakt Krasnoludzki, Stir, Aver", "zagranica": "Księstwa Graniczne, inne", "siatka": "M P S R M P M P P M P D P D P D P P P R S" },
+  { "id": "zhufbar", "nazwa": "Trakt do Zhufbaru", "szlak": "Trakt do Zhufbaru, Górny Aver", "zagranica": "", "siatka": "S M Z R P M P D D S D P P P M P M M P Z R" },
+  { "id": "lesna", "nazwa": "Stara Droga Leśna", "szlak": "Stara Droga Leśna, Talabek", "zagranica": "", "siatka": "P M R S S P M M P P P P M P M P P D M S M" },
+  { "id": "polnocny_wschod", "nazwa": "Przejście Północno-Wschodnie", "szlak": "Górny Talabek", "zagranica": "Kislev", "siatka": "S M Z M Z S R Z M P S S R P P P D Po M M R" },
+  { "id": "salzenmund", "nazwa": "Wybrzeże Salzenmund", "szlak": "Morze Szponów, Middenheim, Trakt Erengradzki", "zagranica": "Norska, Kislev", "siatka": "M M Z M Z P M R P D P S R M P D P D S S R" },
+  { "id": "drakwald", "nazwa": "Korytarz Drakwaldzki", "szlak": "Stara Droga Leśna, Delb", "zagranica": "", "siatka": "P M S S R M S S P P P M M M P P D D S R M" },
+  { "id": "marienburg", "nazwa": "Delta Marienburga", "szlak": "Dolny Reik, Morze Szponów", "zagranica": "Bretonia, Kataj, Tilea, Arabia, Estalia, Norska, Nowy Świat", "siatka": "D S M M P D M P D P Po M P M D M P M S M D" }
+ ],
+ "zamoznosc": {
+  "opis": "Zamożność ośrodka 1–5 (Poradnik, tab. 3-2). Mnożnik cen osady i nielegalnych towarów (tab. 3-11).",
+  "mnoznik_cen": { "1": 0.9, "2": 0.95, "3": 1, "4": 1.05, "5": 1.1 },
+  "nielegalne": {
+   "1": { "plotkowanie": "Trudny (−20)", "cena": 0.25, "dostepnosc": "znikoma" },
+   "2": { "plotkowanie": "Trudny (−20)", "cena": 0.5, "dostepnosc": "znikoma" },
+   "3": { "plotkowanie": "Wymagający (−10)", "cena": 0.75, "dostepnosc": "znikoma" },
+   "4": { "plotkowanie": "Przeciętny (+0)", "cena": 1, "dostepnosc": "rzadka" },
+   "5": { "plotkowanie": "Przeciętny (+0)", "cena": 1.5, "dostepnosc": "rzadka" }
+  },
+  "nielegalne_szansa": { "znikoma": 0.1, "rzadka": 0.3 },
+  "nielegalne_szansa_opis": "Szacunek MG: szansa, że nielegalny towar jest u pasera na półce (zamiast zwykłej Dostępności przedmiotu).",
+  "nielegalne_opis":"Test Plotkowania, by znaleźć kupca lub sprzedawcę nielegalnych towarów (zdolność Łotrzyk +10). Porażka w ośrodku o zamożności 4–5: szansa równa wartości, o którą test nie wyszedł, że handlem zainteresuje się władza."
+ },
+ "miasta": [
+  ["Altdorf", 105000, 5, "Reikland", "reik", false], ["Carroburg", 12000, 4, "Middenland", "reik", true], ["Bögenhafen", 5000, 3, "Reikland", "reik", true],
+  ["Helmgart", 2200, 2, "Reikland", "reik", false], ["Ubersreik", 3500, 4, "Reikland", "reik", false], ["Weissbruck", 272, 2, "Reikland", "reik", false],
+  ["Kemperbad", 7500, 4, "Reikland", "kemperbad", true], ["Auerswald", 5000, 3, "Reikland", "kemperbad", true], ["Grunburg", 2400, 2, "Reikland", "kemperbad", false],
+  ["Stimmigen", 1750, 3, "Reikland", "kemperbad", false],
+  ["Nuln", 85000, 5, "Wissenland", "nuln", true], ["Ambosstein", 80, 3, "Wissenland", "nuln", true], ["Furtzhausen", 74, 3, "Wissenland", "nuln", false],
+  ["Kotzenheim", 61, 3, "Wissenland", "nuln", false], ["Wissenburg", 9000, 4, "Wissenland", "nuln", false],
+  ["Pfeildorf", 6800, 3, "Wissenland", "sol", true], ["Geschburg", 600, 3, "Wissenland", "sol", false], ["Kreutzhofen", 515, 4, "Wissenland", "sol", false],
+  ["Kroppenleben", 85, 3, "Wissenland", "sol", false], ["Wuppertal", 1100, 3, "Averland", "sol", false], ["Wusterburg", 800, 3, "Wissenland", "sol", false],
+  ["Averheim", 9400, 4, "Averland", "krasnoludzki", false], ["Wurtbad", 8800, 4, "Stirland", "krasnoludzki", false], ["Gersdorf", 425, 3, "Talabekland", "krasnoludzki", false],
+  ["Hocheleben", 375, 3, "Averland", "krasnoludzki", false], ["Krugenheim", 4500, 4, "Talabekland", "krasnoludzki", false], ["Pfungzig", 3580, 3, "Averland", "krasnoludzki", false],
+  ["Streissen", 5500, 3, "Averland", "krasnoludzki", false],
+  ["Eicheschatten", 3375, 3, "Kraina Zgromadzenia", "zhufbar", true], ["Schramleben", 675, 3, "Stirland", "zhufbar", true], ["Waldenhof", 4200, 2, "Stirland", "zhufbar", false],
+  ["Talabheim", 72000, 4, "Talabekland", "lesna", true], ["Ahlenhof", 4200, 3, "Middenland", "lesna", false], ["Hergig", 500, 3, "Hochland", "lesna", false],
+  ["Küsel", 6500, 4, "Talabekland", "lesna", false], ["Talagaad", 450, 3, "Talabekland", "lesna", false],
+  ["Bechafen", 7600, 4, "Ostermark", "polnocny_wschod", false], ["Wolfenburg", 1100, 3, "Ostland", "polnocny_wschod", false], ["Wurzen", 1450, 2, "Ostland", "polnocny_wschod", false],
+  ["Salzenmund", 7500, 4, "Nordland", "salzenmund", true], ["Ferlangen", 130, 3, "Ostland", "salzenmund", false], ["Grafenrich", 252, 2, "Nordland", "salzenmund", false],
+  ["Neue Emskrank", 895, 3, "Nordland", "salzenmund", false], ["Norden", 3200, 3, "Nordland", "salzenmund", false],
+  ["Middenheim", 15000, 5, "Middenland", "drakwald", false], ["Beeckerhoven", 408, 3, "Nordland", "drakwald", false], ["Delberz", 4500, 3, "Middenland", "drakwald", false],
+  ["Schoninghagen", 980, 3, "Middenland", "drakwald", false],
+  ["Marienburg", 135000, 5, "Jałowa Kraina", "marienburg", false], ["Scheinfeld", 850, 3, "Middenland", "marienburg", false], ["Schilderheim", 5500, 3, "Reikland", "marienburg", false]
+ ],
+ "miasta_kolumny": ["nazwa", "populacja", "zamoznosc", "prowincja", "strefa", "wolne_miasto"],
+ "zagrozenia": {
+  "opis": "Poradnik s. 39–40. Na każde 100 km podróży 50% szans na zagrożenie; na mało uczęszczanych szlakach test co 50 km. Rzut 1k100 + modyfikator pory roku (tab. 3-8).",
+  "lista": [
+   { "lad": null, "woda": [1, 10], "nazwa": "Flauta", "opis": "Brak wiatru uniemożliwia dalszą podróż pod żaglami." },
+   { "lad": [1, 5], "woda": [11, 15], "nazwa": "Nasycenie rynku", "opis": "Po dotarciu do celu okazuje się, że kupiec może sprzedać jedynie połowę swojego towaru." },
+   { "lad": null, "woda": [16, 16], "nazwa": "Wichura", "opis": "Tylko udany Trudny (−20) Test Żeglarstwa może uratować statek przed zatonięciem, o ile kapitan był na tyle lekkomyślny, by wypłynąć w taką pogodę. Żegluga rzeczna podczas wichury jest niemożliwa." },
+   { "lad": [6, 9], "woda": [17, 20], "nazwa": "Kwarantanna", "opis": "Handel wstrzymany na 1k10/2 tygodni." },
+   { "lad": [10, 25], "woda": [21, 29], "nazwa": "Szkodniki", "opis": "Ziarno i żywność mogą zwabić zwierzęta — od myszy i szczurów po wilki, a nawet niedźwiedzie (gdy kupiec wiezie mięso). Bez środków zaradczych kupiec traci pokaźną część ładunku." },
+   { "lad": [26, 31], "woda": null, "nazwa": "Rozbójnicy", "opis": "Rozbójnicy zatrzymują karawanę i w czarujący, skuteczny sposób pozbawiają kupca towarów. Gdy karawana ma straż, może dojść do walki." },
+   { "lad": null, "woda": [30, 33], "nazwa": "Piraci", "opis": "Na statek napadają piraci. Może się to skończyć utratą towaru, a nawet życia." },
+   { "lad": [32, 41], "woda": [34, 43], "nazwa": "Wypadek", "opis": "Mniejszy: odpadnięcie koła, złamany dyszel — zwykle strata niewielkiej części ładunku. Większy: kolizja z inną łodzią, utrata wozu — nawet połowa ładunku. Katastrofa (pożar statku) — cały transport, a nawet życie." },
+   { "lad": [42, 43], "woda": null, "nazwa": "Zwierzoludzie / mutanci", "opis": "Stwory Chaosu atakują karawanę. Towarom grozi mniejsze niebezpieczeństwo niż samemu kupcowi." },
+   { "lad": [44, 50], "woda": [44, 50], "nazwa": "Silny wiatr", "opis": "Karawana zwalnia (Szybkość zwierząt pociągowych −1). Łodzie płyną szybciej z wiatrem (+1 Szybkość), wolniej pod wiatr (−1)." },
+   { "lad": [51, 60], "woda": null, "nazwa": "Strażnicy dróg", "opis": "Karawana zostaje dokładnie przeszukana pod kątem przemycanych towarów i/lub trzeba uiścić dodatkowe opłaty." },
+   { "lad": [61, 62], "woda": [51, 52], "nazwa": "Pomniejszy sabotaż", "opis": "Konkurent sabotuje karawanę lub łódź: odpada zębatka, łamie się maszt, szpieg w szeregach. Strata części ładunku albo opóźnienie na naprawy." },
+   { "lad": [63, 64], "woda": [53, 54], "nazwa": "Potwór", "opis": "Paskudny stwór atakuje karawanę lub statek (Bestiariusz)." },
+   { "lad": null, "woda": [55, 62], "nazwa": "Przeciek", "opis": "Poluzowane poszycie, dno statku zalane. Strata niewielkiej części ładunku." },
+   { "lad": null, "woda": [63, 72], "nazwa": "Strażnicy rzeczni", "opis": "Barka zostaje dokładnie przeszukana pod kątem przemytu i/lub trzeba uiścić dodatkowe opłaty." },
+   { "lad": [65, 66], "woda": [73, 76], "nazwa": "Porywacze", "opis": "Zdesperowani porywacze próbują porwać kupca dla okupu." },
+   { "lad": [67, 73], "woda": [77, 83], "nazwa": "Kłopoty z gildią", "opis": "W miejscu docelowym gildia kupiecka żąda dodatkowych podatków albo wojna celna krzyżuje plany — kupiec czeka 1k10/2 tygodni." },
+   { "lad": [74, 77], "woda": [84, 87], "nazwa": "Skorumpowani urzędnicy", "opis": "Mytnicy lub strażnicy dróg żądają dodatkowych opłat, w przeciwnym razie zarekwirują towary (patrz Konfiskata)." },
+   { "lad": [78, 88], "woda": null, "nazwa": "Bandyci", "opis": "Zgraja zbójów postanawia przywłaszczyć sobie towary kupca." },
+   { "lad": [89, 89], "woda": [88, 88], "nazwa": "Konfiskata", "opis": "Towary skonfiskowane w toku śledztwa — szukają znanego przemytnika albo konkurencja przekupiła urzędnika. Nie da się ich odzyskać przed upływem 1k10 dni, o ile w ogóle." },
+   { "lad": [90, 90], "woda": [89, 89], "nazwa": "Poważny sabotaż", "opis": "Podpalenie, eksplozja, przeciek, a nawet zatopienie statku." },
+   { "lad": [91, 94], "woda": [90, 94], "nazwa": "Kryzys", "opis": "W celu podróży recesja: wszystkie testy podaży z modyfikatorem −20 (w Skarbcu: sytuacja „Kryzys”)." },
+   { "lad": [95, 98], "woda": null, "nazwa": "Ulewa", "opis": "Droga staje się niebezpieczna, tempo karawany spada, wozy mogą ugrzęznąć w błocie." },
+   { "lad": [99, 109], "woda": null, "nazwa": "Ugrzęźnięcie w błocie", "opis": "Kilka godzin, zanim można ruszyć dalej. 20% szans na utratę części ładunku." },
+   { "lad": [110, 114], "woda": null, "nazwa": "Przeszkoda", "opis": "Powalone drzewa w poprzek drogi — cały dzień straty. Blokada może oznaczać zasadzkę." },
+   { "lad": null, "woda": [95, 98], "nazwa": "Niepomyślne prądy", "opis": "Prądy lub bystrzyny wymuszają Test Żeglarstwa lub Wioślarstwa. Porażka: statek może pójść na dno lub rozbić się o skały." },
+   { "lad": null, "woda": [99, 107], "nazwa": "Gigantyczna fala", "opis": "Trudny (−20) Test Żeglarstwa lub Wioślarstwa, inaczej utrata połowy ładunku." },
+   { "lad": [115, 115], "woda": null, "nazwa": "Osunięcie się ziemi", "opis": "Przeprawa niemożliwa. Przy wyjątkowym pechu osuwają się wozy — porażeni otrzymują trafienie o Sile 2, kupiec traci połowę towaru." },
+   { "lad": null, "woda": [108, 115], "nazwa": "Sztorm", "opis": "Utrzymanie kursu wymaga Testów Nawigacji i Żeglarstwa. Porażka: utrata towaru lub zboczenie z kursu." },
+   { "lad": [116, 120], "woda": [116, 120], "nazwa": "Zamieć", "opis": "Dalsza podróż niemożliwa. Z dala od cywilizacji wychłodzenie grozi zdrowiu podróżnych." }
+  ]
+ },
+ "oplaty": {
+  "opis": "Poradnik s. 46: stawki przeciętne — zmieniaj wg regionu, polityki i pory roku. Kwoty z 2. edycji przeliczone na ceny Skarbca (mnożnik ×1 ≈ 1 ZK 2. ed. = 1 ZK; MG może skorygować).",
+  "lista": [
+   { "grupa": "Myto", "nazwa": "Myto drogowe lub rzeczne", "stawka": "1 s za część ładunku (ok. wóz: 1 s za każde 10% ładunku)" },
+   { "grupa": "Myto", "nazwa": "Kara za unikanie myta", "stawka": "chłosta lub piętnowanie" },
+   { "grupa": "Taryfy kupieckie", "nazwa": "Opłata gildyjna", "stawka": "0–5 s za część ładunku" },
+   { "grupa": "Taryfy kupieckie", "nazwa": "Kara za nieopłaconą taryfę", "stawka": "40 ZK" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Pełne członkostwo", "stawka": "50–100 ZK wpisowego" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Coroczna składka", "stawka": "10% zysków" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Przekroczenie tygodniowego limitu zysku przez niezrzeszonego (20 ZK)", "stawka": "10–20 ZK" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Przekroczenie limitu przez aplikanta (200 ZK)", "stawka": "40 ZK albo nadwyżka zysku (wyższa kwota)" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Naruszenie protokołu gildyjnego", "stawka": "40 ZK" },
+   { "grupa": "Gildia kupiecka", "nazwa": "Nieuczciwe praktyki handlowe", "stawka": "utrata członkostwa" }
+  ],
+  "unikanie": "Podatki są proste: za każdą część ładunku w bramie miejskiej i budce celnej 1 s, plus szyling za każdą nogę wchodzącą do miasta. Taryfy na wybrane towary pobiera gildia. Celnicy znajdują ukryte towary udanym testem Przeszukiwania; fałszywe papiery wymagają testu Wyceny celnika. Unikanie opłat: chłosta lub piętnowanie, taryf: 40 ZK grzywny na rzecz gildii."
+ },
+ "nielegalne": {
+  "opis": "Poradnik s. 46–47: na terenie Imperium zakaz handlu wieloma towarami. Kupiec musi najpierw znaleźć zaufanego odbiorcę (Test Plotkowania, patrz zamożność). Ukryte schowki pomagają (−20 do Przeszukiwania), ale najlepszy jest plan, łapówka i modlitwa do Ranalda.",
+  "rodzaje": ["Narkotyki i trucizny", "Niewolnicy", "Zwłoki", "Broń, zbroje i konie bez pozwolenia wojskowego", "Zakazane księgi", "Spaczeń", "Artefakty Chaosu"],
+  "uwaga": "Spaczeń, zakazane księgi i artefakty Chaosu: posiadanie karane torturami i śmiercią. Większość BN-ów nie zbliży się do nich za żadne pieniądze."
+ },
+ "handel_lokalny": {
+  "opis": "Poradnik s. 47–48. Handel lokalny: promień ok. 40 km, między osadami nie dalej niż 2 dni drogi. Własne przedsięwzięcie: co tydzień Test Rzemiosła (handel); wynik mnoży dochód i zmienia jakość działalności. Zarządzanie: 3 dni w tygodniu (albo zarządca — Test Dowodzenia, każda porażka zwiększa trudność). Gdy jakość spadnie poniżej kiepskiej — bankructwo.",
+  "jakosc": [
+   { "id": "kiepska", "nazwa": "Kiepska", "status_handel": "Brąz 4", "status_dzialalnosc": "Srebro 1" },
+   { "id": "przecietna", "nazwa": "Przeciętna", "status_handel": "Brąz 5", "status_dzialalnosc": "Srebro 2" },
+   { "id": "dobra", "nazwa": "Dobra", "status_handel": "Srebro 1", "status_dzialalnosc": "Srebro 3" },
+   { "id": "najlepsza", "nazwa": "Najlepsza", "status_handel": "Srebro 2", "status_dzialalnosc": "Srebro 4" }
+  ],
+  "jakosc_opis": "Dochód tygodniowy = brutto podanego Statusu (Skarbiec; w Poradniku 120–400 p handel lokalny, 2–8 ZK lokalna działalność). Handel lokalny: kram, stragan, skup. Lokalna działalność: tartak, bank, kopalnia — większe przedsięwzięcie.",
+  "test": [
+   { "ps": 5, "mnoznik": 2, "jakosc": 2, "opis": "5+ PS" }, { "ps": 4, "mnoznik": 1.5, "jakosc": 1, "opis": "4 PS" },
+   { "ps": 3, "mnoznik": 1.3, "jakosc": 0, "opis": "3 PS" }, { "ps": 2, "mnoznik": 1.2, "jakosc": 0, "opis": "2 PS" },
+   { "ps": 1, "mnoznik": 1.1, "jakosc": 0, "opis": "1 PS" }, { "ps": 0, "mnoznik": 1, "jakosc": 0, "opis": "udany" },
+   { "ps": -0.5, "mnoznik": 0.8, "jakosc": 0, "opis": "nieudany" }, { "ps": -1, "mnoznik": 0.6, "jakosc": 0, "opis": "1 PP" },
+   { "ps": -2, "mnoznik": 0.4, "jakosc": -1, "opis": "2 PP" }, { "ps": -3, "mnoznik": 0.2, "jakosc": -2, "opis": "3 PP" },
+   { "ps": -4, "mnoznik": 0.1, "jakosc": -2, "opis": "4 PP" }, { "ps": -5, "mnoznik": 0, "jakosc": -2, "opis": "5+ PP" }
+  ],
+  "nietrwale": "Nietrwałe artykuły (owoce, warzywa, świeże mięso, ryby, pieczywo) za każdy dzień podróży ponad 2 dni: Test Rzemiosła (handel), porażka = utrata części ładunku."
+ },
+ "bogowie": [
+  { "nazwa": "Händrich", "domena": "Bóg kupców, koniunktury i handlu", "symbol": "Złoty dysk", "kult": "Marienburg, małe kaplice w Imperium", "charakter": "Radosny, jowialny, charyzmatyczny",
+    "przykazania": ["Zakaz nieuczciwego handlu", "Obowiązek codziennego zarobku", "Obowiązek umowy między partnerami", "Obowiązek dawania jałmużny"],
+    "swiatynie": "Kapłani urzędują tylko w świątyniach w dużych miastach. Kaplice pod pieczą cywilnych braci-kupców.", "swieto": "Marktag (Dzień Targowy)" },
+  { "nazwa": "Ranald Handlarz", "domena": "Bóg oszustów, przemytników i złodziei", "symbol": "Skrzyżowane palce", "kult": "Marienburg, małe kaplice w Imperium", "charakter": "Przebiegły, skryty, charyzmatyczny",
+    "przykazania": ["Zakaz używania przemocy w celu osiągnięcia zysku", "Nie daj się przyłapać na oszustwie", "Obowiązek codziennego zysku"],
+    "swiatynie": "Świątynia w Marienburgu. Kapłani są domokrążcami. Brak formalnych struktur poza Marienburgiem.", "swieto": "Marktag (Dzień Targowy)" }
+ ],
+ "zasady_dodatkowe": [
+  { "nazwa": "Spekulacje rynkowe", "tekst": "Wartość towaru zależy od wahań rynku. Bohater, który spędzi kilka dni w gildii kupieckiej, może wykonać Test Plotkowania — sukces daje wiedzę o obecnej wartości towaru i przewidywanych wahaniach. Test modyfikuj zależnie od odległości i czasu. Kupcy z Rzemiosłem (handel) mogą użyć go zamiast Plotkowania." },
+  { "nazwa": "Handel zakulisowy", "tekst": "Członkowie gildii mogą korzystać z jej zakamarków do manipulowania rynkiem. Udany Test Rzemiosła (handel) albo Przekonywania pozwala przerzucić test podaży lub popytu; Plotkowanie — rozpuścić pogłoski i chwilowo wpłynąć na rynek. Nieumiejętne próby grożą wykluczeniem z gildii, a nawet więzieniem." },
+  { "nazwa": "Konsorcja handlowe", "tekst": "Kupcy wspólnie inwestują w przedsięwzięcie i dzielą zyski oraz straty. Wspólny interes jednoczy nawet rywali. Bohater może dołączyć do konsorcjum ofertą handlową (Rzemiosło (handel)) lub Przekonywaniem, zależnie od atrakcyjności oferty." },
+  { "nazwa": "Lichwiarze", "tekst": "Odsetki od pożyczek: kupiec jest prawnie chroniony przed niespłacającymi (więzienie za długi). Typowa pożyczka trzymiesięczna do 200 ZK — 20%. Dłuższe terminy, większe kwoty i niższe stawki wymagają dużej zdolności kredytowej i zabezpieczenia. Zadłużeni szlachcice spłacają kupców przywilejami i ulgami podatkowymi." },
+  { "nazwa": "Agenci handlowi, maklerzy, księgowi", "tekst": "W Marienburgu, Altdorfie i Nuln maklerzy sprzedają kupcom wiadomości o ofertach. Kupcy zatrudniają jednego pełnoetatowego księgowego na każdy tysiąc ZK rocznego utargu. Bycie maklerem wymaga Plotkowania i Gadaniny." },
+  { "nazwa": "Sztauerzy i gildia woźniców", "tekst": "W Imperium ustawa każe zatrudniać gildyjnych dokerów i woźniców — monopol na ładunek i rozładunek. Jedna osoba przenosi ok. 5000 punktów Obciążenia na godzinę; płaci się im jak robotnikom." },
+  { "nazwa": "Sprzęt wojskowy", "tekst": "Broń, zbroje i konie to sprzęt wojskowy. Legalny handel nimi wymaga pozwolenia wojskowego i pełnego członkostwa w gildii kupieckiej. Bez tego — przemyt." },
+  { "nazwa": "Przywileje gildii", "tekst": "Tygodniowy utarg osoby spoza gildii (także straganiarzy) nie może przekroczyć 20 ZK; aplikanta — 200 ZK. Transakcje w mieście innej gildii trzeba zgłosić i opłacić. Członkostwo: staż aplikanta (zwykle od roku do sześciu lat), poparcie mentora, ziemia lub dom i magazyn w mieście, składki." },
+  { "nazwa": "Opakowania", "tekst": "Typowa pojemność (w punktach Obciążenia): baryłka 40, beczka 300, bela tkaniny 100, flaszka 20, sakiewka 25, skrzynia 300, słój 100, worek 200." },
+  { "nazwa": "Ukryty schowek i waga towarowa", "tekst": "Ukryty schowek w budynku albo pojeździe mieści ok. 500 punktów Obciążenia i daje −20 do testów Przeszukiwania; ukryte przedmioty nie liczą się do Obciążenia pojazdu. Waga towarowa (w magazynie) daje +20 do testu Wyceny." }
+ ]
+}

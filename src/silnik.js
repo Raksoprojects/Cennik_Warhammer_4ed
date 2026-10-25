@@ -95,11 +95,13 @@ export function ilosc(d, ri, cena, zapas) {
 /* ------------------------------------------------------------ generator kupca */
 // Pozycje z kategorii `kats`, które kupiec może mieć na stanie w tej osadzie (limit ceny, branże kupca).
 // v6b: kupiec.branze = { kategoria: [tagi] } — z tej kategorii tylko pozycje z jednym z tagów (cennik → branze).
-export function pulaTowaru(d, { kupiec, osada, kats, stosujDostepnosc = true }) {
+// v6c: towar nielegalny tylko u kupca z nielegalne: true (paser) albo z cechą, która na to pozwala (opcja nielegalne).
+export function pulaTowaru(d, { kupiec, osada, kats, stosujDostepnosc = true, nielegalne = false }) {
   const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada);
   const cap = Math.min(kup.limit_p, limitOsady(lok));
   return pozycje(d).filter(c => {
     if (!kats.includes(c.kat) || !wTowarze(d, c)) return false;
+    if (stosujDostepnosc && c.nielegalny && !kup.nielegalne && !nielegalne) return false;
     const br = stosujDostepnosc && kup.branze?.[c.kat];
     if (br && !c.branze?.some(t => br.includes(t))) return false;
     if (omijaLimitWsi(lok, c)) return true;                     // krowa we wsi mimo limitu
@@ -116,17 +118,73 @@ export function szansaDostepnosci(d, { kupiec, osada, pozycja }) {
   const T = d.rynek.dostepnosc;
   if (!T) return 1;
   if (pozycja.pochodzenie && WLASNE_POCHODZENIE[kupiec.rasa] === pozycja.pochodzenie) return 1;
+  const Z = d.handel?.zamoznosc;   // v6c: nielegalny towar — szansa z zamożności osady (Poradnik, tab. 3-11)
+  if (pozycja.nielegalny && Z) return Z.nielegalne_szansa[Z.nielegalne[osada.zamoznosc ?? 3].dostepnosc] ?? 0;
   const p = T.tabela[osada.dostepnosc ?? 'miasto']?.[pozycja.dostepnosc ?? 'Powszechna'] ?? 1;
   return p * (pozycja.pochodzenie ? (T.obce_pochodzenie ?? 1) : 1);
 }
 
+// v6c: sytuacja + pora roku + wahania rynku (1k10) + ceny strefy handlowej osady = jedna „koniunktura efektywna”.
+// Dalej liczy się tak samo (cenaKoniunktury, popytKoniunktury, cena minimalna). Dane: data/handel.json, osady → kategorie.
+/** @param {any} d @param {any} kon @param {Record<string, any>} [opcje] */
+export function koniunkturaEfektywna(d, kon, { osada = null, pora = null, wahania = null } = {}) {
+  const H = d.handel;
+  const P = pora ? H?.pory_roku.lista.find(x => x.id === pora) : null;
+  const Wa = wahania ? H?.wahania.lista.find(x => x.id === wahania) : null;
+  if (!P && !Wa && !osada?.kategorie) return kon;
+  const kategorie = {};
+  for (const k of d.koniunktura.kategorie ?? Object.keys(kon.kategorie)) {
+    const b = kon.kategorie[k] ?? { cena: 1, popyt: 0 };
+    kategorie[k] = { cena: b.cena * (P?.ceny ?? 1) * (P?.kategorie?.[k]?.cena ?? 1) * (Wa?.ceny ?? 1) * (osada?.kategorie?.[k]?.cena ?? 1),
+      popyt: (b.popyt ?? 0) + (P?.popyt ?? 0) + (P?.kategorie?.[k]?.popyt ?? 0) + (Wa?.popyt ?? 0) };
+  }
+  const nazwa = [kon.nazwa, P?.nazwa, Wa && Wa.ceny !== 1 ? Wa.nazwa : null].filter(Boolean).join(' · ');
+  return { ...kon, nazwa, kategorie, pora: P, wahania: Wa };
+}
+// v6c: podróż kupiecka (Poradnik s. 39–40). Na każde 100 km (50 km na mało uczęszczanym szlaku) 50% szans
+// na zagrożenie; rzut 1k100 + modyfikator pory roku, tabela lądowa albo wodna. Zwraca listę zdarzeń.
+/** @param {any} d @param {Record<string, any>} opcje */
+export function podrozKupiecka(d, { km, teren = 'lad', pora = null, slaby_szlak = false, seed = losowySeed() }) {
+  const H = d.handel, { rnd, k } = kosci(seed), odcinek = slaby_szlak ? 50 : 100;
+  const mod = H.pory_roku.lista.find(p => p.id === pora)?.zagrozenia ?? 0, out = [];
+  for (let i = 1; i * odcinek <= km; i++) {
+    if (rnd() >= 0.5) continue;
+    const rzut = Math.min(120, k(100) + mod);
+    const z = H.zagrozenia.lista.find(x => x[teren] && rzut >= x[teren][0] && rzut <= x[teren][1]);
+    if (z) out.push({ km: i * odcinek, rzut, nazwa: z.nazwa, opis: z.opis });
+  }
+  return out;
+}
+// v6c: własny interes (handel lokalny, Poradnik s. 47–48). Dochód = brutto Statusu jakości × mnożnik z Testu Rzemiosła (handel).
+/** @param {any} d @param {Record<string, any>} opcje */
+export function dochodInteresu(d, { rodzaj = 'handel', jakosc = 'przecietna', ps = 0 }) {
+  const L = d.handel.handel_lokalny, J = L.jakosc, i = J.findIndex(j => j.id === jakosc);
+  const status = J[i][rodzaj === 'handel' ? 'status_handel' : 'status_dzialalnosc'];
+  const w = L.test.find(t => ps >= t.ps) ?? L.test.at(-1);
+  const ni = i + w.jakosc;
+  return { status, baza_p: sredniDochod(d, status).brutto_p, mnoznik: w.mnoznik, opis: w.opis,
+    dochod_p: Math.round(sredniDochod(d, status).brutto_p * w.mnoznik),
+    nowa_jakosc: ni < 0 ? 'bankructwo' : J[Math.min(J.length - 1, ni)].id };
+}
+// Rzut 1k10 na wahania rynku (Poradnik s. 39).
+export function wahaniaZRzutu(d, rzut) { return d.handel?.wahania.lista.find(w => rzut >= w.od && rzut <= w.do)?.id ?? 'stabilny'; }
+// Nielegalny towar: cena × zamożność osady (Poradnik, tab. 3-11).
+export function mnoznikNielegalny(d, lok, c) {
+  return c.nielegalny ? d.handel?.zamoznosc.nielegalne[lok.zamoznosc ?? 3]?.cena ?? 1 : 1;
+}
+
 // opcje.stosujDostepnosc: branże kupca i test Dostępności (v6b). false = zachowanie 1:1 z artefaktem.
 /** @param {any} d @param {Record<string, any>} [opcje] */
-export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed = losowySeed(), stosujDostepnosc = true, osobowosc = true, charaktery = null } = {}) {
-  const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
+export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed = losowySeed(), stosujDostepnosc = true, osobowosc = true,
+  charaktery = null, pora = null, wahania = null } = {}) {
+  const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada);
+  const kon = koniunkturaEfektywna(d, konZ(d, koniunktura), { osada: lok, pora, wahania });
   const { rnd, ri, k, pick } = kosci(seed);
   const cap = Math.min(kup.limit_p, limitOsady(lok));
-  const pula = kats => pulaTowaru(d, { kupiec: kup, osada: lok, kats, stosujDostepnosc });
+  // v6c: postać kupca (charakter, motywacja, cecha kupiecka…) — osobny strumień losowania.
+  const postac = osobowosc ? generujPostac(d, kosci((seed ^ 0x3c6ef372) >>> 0), { charaktery }) : null;
+  const E = postac?.cecha?.efekt ?? {};
+  const pula = kats => pulaTowaru(d, { kupiec: kup, osada: lok, kats, stosujDostepnosc, nielegalne: !!E.nielegalne });
 
   // v6b: test Dostępności — osobny strumień, więc rzuty asortymentu idą w tej samej kolejności.
   const dostRnd = kosci((seed ^ 0x2545f491) >>> 0);
@@ -145,6 +203,10 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
       wybor.push(c); n++;
     }
   }
+  // v6c: nielegalny towar (każda kategoria) u pasera i kupca z powiązaniami przestępczymi — osobny przebieg na strumieniu
+  // Dostępności, więc reszta sklepu losuje się tak samo.
+  if (stosujDostepnosc && (kup.nielegalne || E.nielegalne))
+    for (const c of pozycje(d)) if (c.nielegalny && !uzyte.has(c.id) && wTowarze(d, c) && dostepny(c)) { uzyte.add(c.id); wybor.push(c); }
   wybor.sort((a, b) => b.cena_p - a.cena_p);           // stabilne sortowanie
 
   const imie = pick(d.nazwy.imiona) + ' ' + pick(d.nazwy.nazwiska);
@@ -156,9 +218,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
   // Budżet towaru dzieli się na pozycje (rdzeń waży 2, boczne 1) i ogranicza liczbę sztuk: kramarz nie ma 47 namiotów.
   const mjt = osobowosc ? majatekKupca(d, kup, seed) : null;
   const jakRnd = kosci((seed ^ 0x68e31da4) >>> 0);
-  // v6c: postać kupca (charakter, motywacja, cecha kupiecka…) i towar trefny — osobne strumienie losowania.
-  const postac = osobowosc ? generujPostac(d, kosci((seed ^ 0x3c6ef372) >>> 0), { charaktery }) : null;
-  const E = postac?.cecha?.efekt ?? {};
+  // v6c: towar trefny — osobny strumień losowania.
   if (mjt && E.gotowka) mjt.gotowka_p = Math.round(mjt.gotowka_p * E.gotowka);
   const trefRnd = kosci((seed ^ 0x1b873593) >>> 0);
   const wagi = wybor.map(c => kup.rdzen.includes(c.kat) ? 2 : 1), sumaWag = wagi.reduce((a, b) => a + b, 0) || 1;
@@ -169,7 +229,8 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, zapas, popyt);
     const rk = osobowosc ? kaprysRnd.k(10) : null;
     const os = osobowosc ? osobowoscKupca(d, kup, c, E.kaprys === false ? null : rk) : { preferencja: 1, kaprys: 1, rzut: null, mnoznik: 1 };
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * (E.ceny ?? 1);
+    const mNiel = mnoznikNielegalny(d, lok, c);
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * (E.ceny ?? 1) * mNiel;
     // v6: egzemplarz z Zaletami / Wadami przedmiotu (osobny strumień losowania, tylko z osobowością kupca).
     const jak = osobowosc ? jakoscLosowa(d, kup, c, jakRnd) : null;
     const baza = jak ? Math.round(c.cena_p * jak.mnoznik) : c.cena_p;
@@ -192,7 +253,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
       koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       zapas, zapas_nazwa: d.rynek.zapas.progi[zapas].nazwa, popyt, popyt_nazwa: d.rynek.popyt.nazwy[popyt],
       rzuty: { zapas: rz, popyt: rp, kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, charakter: E.ceny ?? 1 },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, charakter: E.ceny ?? 1, nielegalny: mNiel },
     };
   });
   // v5.2: rzecz, której jedna sztuka kosztuje ponad 4× budżet tej pozycji, jest poza zasięgiem sklepu — będzie na zamówienie.
@@ -202,7 +263,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     towar.length = 0; towar.push(...zostaw);
   }
   const wartosc_towaru_p = towar.reduce((s, t) => s + t.sztuk * t.cena_wytworcy_p, 0);
-  return { seed, imie, dziwactwo, postac, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
+  return { seed, imie, dziwactwo, postac, pora, wahania, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
     gotowka_p: mjt?.gotowka_p ?? null, budzet_towaru_p: mjt?.towar_p ?? null, wartosc_towaru_p,
     etykiety: { osada: etykietaOsady(lok), koniunktura: etykietaKoniunktury(d, kon) } };
 }
@@ -366,8 +427,9 @@ export function ktoRobi(d, kat, id = null) {
 // material: true — zamawiający daje materiał (v6: wieś składa się na wóz i daje drewno). Tylko u wytwórcy;
 // płaci rynek.zamowienie.material_wlasny ceny (robociznę). Termin bez zmian — robota trwa tyle samo.
 /** @param {any} d @param {Record<string, any>} opcje — jakosc: id opcji albo cechy { Wytrzymały: 2 } */
-export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', przedmiot, jakosc = 'zwykla', material = false, seed = losowySeed() }) {
-  const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada), kon = konZ(d, koniunktura);
+export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', przedmiot, jakosc = 'zwykla', material = false, pora = null, wahania = null, seed = losowySeed() }) {
+  const kup = kupiecZ(d, kupiec), lok = osadaZ(d, osada);
+  const kon = koniunkturaEfektywna(d, konZ(d, koniunktura), { osada: lok, pora, wahania });
   const c = typeof przedmiot === 'object' ? przedmiot : (pozycje(d).find(x => x.id === przedmiot) || znajdzPozycje(d, przedmiot));
   if (!c || !wTowarze(d, c)) return { status: 'brak_w_cenniku' };   // czynsze i usługi się nie zamawia
   const jak = jakoscZ(d, jakosc);

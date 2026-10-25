@@ -10,28 +10,32 @@
     "zywnosc_podstawowa"
    ],
    "uwaga": "Limit 2 ZK i wymóg Dostępności Powszechnej nie dotyczą żywego inwentarza ani podstawowej żywności — wieś jest właśnie tym miejscem, gdzie kupuje się krowę.",
-   "dostepnosc": "wioska"
+   "dostepnosc": "wioska",
+   "zamoznosc": 2
   },
   {
    "id": "miasteczko",
    "nazwa": "Miasteczko",
    "mnoznik": 1.0,
    "limit_p": 3600,
-   "dostepnosc": "miasteczko"
+   "dostepnosc": "miasteczko",
+   "zamoznosc": 3
   },
   {
    "id": "miasto",
    "nazwa": "Miasto",
    "mnoznik": 1.1,
    "limit_p": 14400,
-   "dostepnosc": "miasto"
+   "dostepnosc": "miasto",
+   "zamoznosc": 3
   },
   {
    "id": "metropolia",
    "nazwa": "Metropolia (Nuln, Middenheim)",
    "mnoznik": 1.2,
    "limit_p": null,
-   "dostepnosc": "miasto"
+   "dostepnosc": "miasto",
+   "zamoznosc": 4
   },
   {
    "id": "altdorf",
@@ -39,7 +43,44 @@
    "mnoznik": 1.3,
    "limit_p": null,
    "rzadkie_latwiej": true,
-   "dostepnosc": "miasto"
+   "dostepnosc": "miasto",
+   "zamoznosc": 5,
+   "strefa": "reik",
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
   },
   {
    "id": "marienburg",
@@ -47,7 +88,2533 @@
    "mnoznik": 1.45,
    "limit_p": null,
    "uwaga": "wszystko z importu (tylko opis)",
-   "dostepnosc": "miasto"
+   "dostepnosc": "miasto",
+   "zamoznosc": 5,
+   "strefa": "marienburg",
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 0.93
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   }
+  },
+  {
+   "id": "miasto-carroburg",
+   "nazwa": "Carroburg",
+   "grupa": "Dorzecze Reiklandzkie",
+   "mnoznik": 1.155,
+   "limit_p": 14400,
+   "dostepnosc": "miasto",
+   "typ": "miasto",
+   "populacja": 12000,
+   "zamoznosc": 4,
+   "prowincja": "Middenland",
+   "strefa": "reik",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-bogenhafen",
+   "nazwa": "Bögenhafen",
+   "grupa": "Dorzecze Reiklandzkie",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 5000,
+   "zamoznosc": 3,
+   "prowincja": "Reikland",
+   "strefa": "reik",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-helmgart",
+   "nazwa": "Helmgart",
+   "grupa": "Dorzecze Reiklandzkie",
+   "mnoznik": 0.95,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 2200,
+   "zamoznosc": 2,
+   "prowincja": "Reikland",
+   "strefa": "reik",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-ubersreik",
+   "nazwa": "Ubersreik",
+   "grupa": "Dorzecze Reiklandzkie",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 3500,
+   "zamoznosc": 4,
+   "prowincja": "Reikland",
+   "strefa": "reik",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-weissbruck",
+   "nazwa": "Weissbruck",
+   "grupa": "Dorzecze Reiklandzkie",
+   "mnoznik": 0.807,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 272,
+   "zamoznosc": 2,
+   "prowincja": "Reikland",
+   "strefa": "reik",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-kemperbad",
+   "nazwa": "Kemperbad",
+   "grupa": "Enklawa Kemperbadu",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 7500,
+   "zamoznosc": 4,
+   "prowincja": "Reikland",
+   "strefa": "kemperbad",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-auerswald",
+   "nazwa": "Auerswald",
+   "grupa": "Enklawa Kemperbadu",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 5000,
+   "zamoznosc": 3,
+   "prowincja": "Reikland",
+   "strefa": "kemperbad",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-grunburg",
+   "nazwa": "Grunburg",
+   "grupa": "Enklawa Kemperbadu",
+   "mnoznik": 0.95,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 2400,
+   "zamoznosc": 2,
+   "prowincja": "Reikland",
+   "strefa": "kemperbad",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-stimmigen",
+   "nazwa": "Stimmigen",
+   "grupa": "Enklawa Kemperbadu",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 1750,
+   "zamoznosc": 3,
+   "prowincja": "Reikland",
+   "strefa": "kemperbad",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-nuln",
+   "nazwa": "Nuln",
+   "grupa": "Strefa Handlowa Nuln",
+   "mnoznik": 1.32,
+   "limit_p": null,
+   "dostepnosc": "miasto",
+   "typ": "metropolia",
+   "populacja": 85000,
+   "zamoznosc": 5,
+   "prowincja": "Wissenland",
+   "strefa": "nuln",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-ambosstein",
+   "nazwa": "Ambosstein",
+   "grupa": "Strefa Handlowa Nuln",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 80,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "nuln",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ],
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-furtzhausen",
+   "nazwa": "Furtzhausen",
+   "grupa": "Strefa Handlowa Nuln",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 74,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "nuln",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-kotzenheim",
+   "nazwa": "Kotzenheim",
+   "grupa": "Strefa Handlowa Nuln",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 61,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "nuln",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-wissenburg",
+   "nazwa": "Wissenburg",
+   "grupa": "Strefa Handlowa Nuln",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 9000,
+   "zamoznosc": 4,
+   "prowincja": "Wissenland",
+   "strefa": "nuln",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-pfeildorf",
+   "nazwa": "Pfeildorf",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 6800,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "sol",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-geschburg",
+   "nazwa": "Geschburg",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 600,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "sol",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-kreutzhofen",
+   "nazwa": "Kreutzhofen",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 0.892,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 515,
+   "zamoznosc": 4,
+   "prowincja": "Wissenland",
+   "strefa": "sol",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-kroppenleben",
+   "nazwa": "Kroppenleben",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 85,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "sol",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-wuppertal",
+   "nazwa": "Wuppertal",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 1100,
+   "zamoznosc": 3,
+   "prowincja": "Averland",
+   "strefa": "sol",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   }
+  },
+  {
+   "id": "miasto-wusterburg",
+   "nazwa": "Wusterburg",
+   "grupa": "Dolina Górnego Solu",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 800,
+   "zamoznosc": 3,
+   "prowincja": "Wissenland",
+   "strefa": "sol",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-averheim",
+   "nazwa": "Averheim",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 9400,
+   "zamoznosc": 4,
+   "prowincja": "Averland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-wurtbad",
+   "nazwa": "Wurtbad",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 8800,
+   "zamoznosc": 4,
+   "prowincja": "Stirland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-gersdorf",
+   "nazwa": "Gersdorf",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 425,
+   "zamoznosc": 3,
+   "prowincja": "Talabekland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-hocheleben",
+   "nazwa": "Hocheleben",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 375,
+   "zamoznosc": 3,
+   "prowincja": "Averland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-krugenheim",
+   "nazwa": "Krugenheim",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 4500,
+   "zamoznosc": 4,
+   "prowincja": "Talabekland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-pfungzig",
+   "nazwa": "Pfungzig",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 3580,
+   "zamoznosc": 3,
+   "prowincja": "Averland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-streissen",
+   "nazwa": "Streissen",
+   "grupa": "Stary Trakt Krasnoludzki",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 5500,
+   "zamoznosc": 3,
+   "prowincja": "Averland",
+   "strefa": "krasnoludzki",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1
+    }
+   }
+  },
+  {
+   "id": "miasto-eicheschatten",
+   "nazwa": "Eicheschatten",
+   "grupa": "Trakt do Zhufbaru",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 3375,
+   "zamoznosc": 3,
+   "prowincja": "Kraina Zgromadzenia",
+   "strefa": "zhufbar",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1.05
+    },
+    "Broń zasięgowa": {
+     "cena": 1.05
+    },
+    "Amunicja": {
+     "cena": 1.05
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-schramleben",
+   "nazwa": "Schramleben",
+   "grupa": "Trakt do Zhufbaru",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 675,
+   "zamoznosc": 3,
+   "prowincja": "Stirland",
+   "strefa": "zhufbar",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1.05
+    },
+    "Broń zasięgowa": {
+     "cena": 1.05
+    },
+    "Amunicja": {
+     "cena": 1.05
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ],
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-waldenhof",
+   "nazwa": "Waldenhof",
+   "grupa": "Trakt do Zhufbaru",
+   "mnoznik": 0.95,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 4200,
+   "zamoznosc": 2,
+   "prowincja": "Stirland",
+   "strefa": "zhufbar",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1.05
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1.05
+    },
+    "Broń zasięgowa": {
+     "cena": 1.05
+    },
+    "Amunicja": {
+     "cena": 1.05
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   }
+  },
+  {
+   "id": "miasto-talabheim",
+   "nazwa": "Talabheim",
+   "grupa": "Stara Droga Leśna",
+   "mnoznik": 1.26,
+   "limit_p": null,
+   "dostepnosc": "miasto",
+   "typ": "metropolia",
+   "populacja": 72000,
+   "zamoznosc": 4,
+   "prowincja": "Talabekland",
+   "strefa": "lesna",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-ahlenhof",
+   "nazwa": "Ahlenhof",
+   "grupa": "Stara Droga Leśna",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 4200,
+   "zamoznosc": 3,
+   "prowincja": "Middenland",
+   "strefa": "lesna",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   }
+  },
+  {
+   "id": "miasto-hergig",
+   "nazwa": "Hergig",
+   "grupa": "Stara Droga Leśna",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 500,
+   "zamoznosc": 3,
+   "prowincja": "Hochland",
+   "strefa": "lesna",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-kusel",
+   "nazwa": "Küsel",
+   "grupa": "Stara Droga Leśna",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 6500,
+   "zamoznosc": 4,
+   "prowincja": "Talabekland",
+   "strefa": "lesna",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   }
+  },
+  {
+   "id": "miasto-talagaad",
+   "nazwa": "Talagaad",
+   "grupa": "Stara Droga Leśna",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 450,
+   "zamoznosc": 3,
+   "prowincja": "Talabekland",
+   "strefa": "lesna",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-bechafen",
+   "nazwa": "Bechafen",
+   "grupa": "Przejście Północno-Wschodnie",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 7600,
+   "zamoznosc": 4,
+   "prowincja": "Ostermark",
+   "strefa": "polnocny_wschod",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.12
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.12
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.85
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.85
+    },
+    "Amunicja": {
+     "cena": 0.85
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.93
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.85
+    }
+   }
+  },
+  {
+   "id": "miasto-wolfenburg",
+   "nazwa": "Wolfenburg",
+   "grupa": "Przejście Północno-Wschodnie",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 1100,
+   "zamoznosc": 3,
+   "prowincja": "Ostland",
+   "strefa": "polnocny_wschod",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.12
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.12
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.85
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.85
+    },
+    "Amunicja": {
+     "cena": 0.85
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.93
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.85
+    }
+   }
+  },
+  {
+   "id": "miasto-wurzen",
+   "nazwa": "Wurzen",
+   "grupa": "Przejście Północno-Wschodnie",
+   "mnoznik": 0.95,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 1450,
+   "zamoznosc": 2,
+   "prowincja": "Ostland",
+   "strefa": "polnocny_wschod",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.12
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.12
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.85
+    },
+    "Wyposażenie różne": {
+     "cena": 1
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.85
+    },
+    "Amunicja": {
+     "cena": 0.85
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 0.93
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.85
+    }
+   }
+  },
+  {
+   "id": "miasto-salzenmund",
+   "nazwa": "Salzenmund",
+   "grupa": "Wybrzeże Salzenmund",
+   "mnoznik": 1.05,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 7500,
+   "zamoznosc": 4,
+   "prowincja": "Nordland",
+   "strefa": "salzenmund",
+   "wolne_miasto": true,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "uwaga": "Wolne miasto."
+  },
+  {
+   "id": "miasto-ferlangen",
+   "nazwa": "Ferlangen",
+   "grupa": "Wybrzeże Salzenmund",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 130,
+   "zamoznosc": 3,
+   "prowincja": "Ostland",
+   "strefa": "salzenmund",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-grafenrich",
+   "nazwa": "Grafenrich",
+   "grupa": "Wybrzeże Salzenmund",
+   "mnoznik": 0.807,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 252,
+   "zamoznosc": 2,
+   "prowincja": "Nordland",
+   "strefa": "salzenmund",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-neue-emskrank",
+   "nazwa": "Neue Emskrank",
+   "grupa": "Wybrzeże Salzenmund",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 895,
+   "zamoznosc": 3,
+   "prowincja": "Nordland",
+   "strefa": "salzenmund",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-norden",
+   "nazwa": "Norden",
+   "grupa": "Wybrzeże Salzenmund",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 3200,
+   "zamoznosc": 3,
+   "prowincja": "Nordland",
+   "strefa": "salzenmund",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.25
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   }
+  },
+  {
+   "id": "miasto-middenheim",
+   "nazwa": "Middenheim",
+   "grupa": "Korytarz Drakwaldzki",
+   "mnoznik": 1.21,
+   "limit_p": 14400,
+   "dostepnosc": "miasto",
+   "typ": "miasto",
+   "populacja": 15000,
+   "zamoznosc": 5,
+   "prowincja": "Middenland",
+   "strefa": "drakwald",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.93
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.93
+    },
+    "Amunicja": {
+     "cena": 0.93
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   }
+  },
+  {
+   "id": "miasto-beeckerhoven",
+   "nazwa": "Beeckerhoven",
+   "grupa": "Korytarz Drakwaldzki",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 408,
+   "zamoznosc": 3,
+   "prowincja": "Nordland",
+   "strefa": "drakwald",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.93
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.93
+    },
+    "Amunicja": {
+     "cena": 0.93
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-delberz",
+   "nazwa": "Delberz",
+   "grupa": "Korytarz Drakwaldzki",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 4500,
+   "zamoznosc": 3,
+   "prowincja": "Middenland",
+   "strefa": "drakwald",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.93
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.93
+    },
+    "Amunicja": {
+     "cena": 0.93
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   }
+  },
+  {
+   "id": "miasto-schoninghagen",
+   "nazwa": "Schoninghagen",
+   "grupa": "Korytarz Drakwaldzki",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 980,
+   "zamoznosc": 3,
+   "prowincja": "Middenland",
+   "strefa": "drakwald",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1.05
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 1.05
+    },
+    "Narzędzia i zestawy": {
+     "cena": 0.93
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 0.93
+    },
+    "Broń zasięgowa": {
+     "cena": 0.93
+    },
+    "Amunicja": {
+     "cena": 0.93
+    },
+    "Pancerze": {
+     "cena": 1
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.12
+    },
+    "Księgi i dokumenty": {
+     "cena": 0.93
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-scheinfeld",
+   "nazwa": "Scheinfeld",
+   "grupa": "Delta Marienburga",
+   "mnoznik": 0.85,
+   "limit_p": 480,
+   "dostepnosc": "wioska",
+   "typ": "wies",
+   "populacja": 850,
+   "zamoznosc": 3,
+   "prowincja": "Middenland",
+   "strefa": "marienburg",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 0.93
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   },
+   "limit_omijaja_podtypy": [
+    "zwierze_hodowlane",
+    "zywnosc_podstawowa"
+   ]
+  },
+  {
+   "id": "miasto-schilderheim",
+   "nazwa": "Schilderheim",
+   "grupa": "Delta Marienburga",
+   "mnoznik": 1.0,
+   "limit_p": 3600,
+   "dostepnosc": "miasteczko",
+   "typ": "miasteczko",
+   "populacja": 5500,
+   "zamoznosc": 3,
+   "prowincja": "Reikland",
+   "strefa": "marienburg",
+   "wolne_miasto": false,
+   "kategorie": {
+    "Ubranie i dodatki": {
+     "cena": 1
+    },
+    "Jedzenie, picie, nocleg": {
+     "cena": 0.93
+    },
+    "Narzędzia i zestawy": {
+     "cena": 1
+    },
+    "Wyposażenie różne": {
+     "cena": 1.05
+    },
+    "Broń biała": {
+     "cena": 1
+    },
+    "Broń zasięgowa": {
+     "cena": 1
+    },
+    "Amunicja": {
+     "cena": 1
+    },
+    "Pancerze": {
+     "cena": 1.05
+    },
+    "Zwierzęta i pojazdy": {
+     "cena": 1.05
+    },
+    "Zioła, mikstury, narkotyki": {
+     "cena": 1.05
+    },
+    "Księgi i dokumenty": {
+     "cena": 1.05
+    }
+   }
   }
- ]
+ ],
+ "opis": "Osady. v6c: ośrodki handlu z Poradnika Staroświatowca (tab. 3-2) — mnożnik = typ osady × zamożność, kategorie = ceny wg strefy handlowej (narzedzia/dane_v6c.py, data/handel.json)."
 }

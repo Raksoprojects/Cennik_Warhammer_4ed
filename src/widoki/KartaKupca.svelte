@@ -1,7 +1,9 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz, parsujCene, parsujMnoznik, pobierzPlik, norm } from '../lib/format';
-  import { etykietaOsady, etykietaKoniunktury } from '../silnik.js';
+  import { etykietaKoniunktury } from '../silnik.js';
+  import WyborOsady from '../komponenty/WyborOsady.svelte';
+  import WyborRynku from '../komponenty/WyborRynku.svelte';
   import { cenaTypowa } from '../lib/ceny';
   import * as T from '../kupcy_trwali.js';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
@@ -108,8 +110,9 @@
 <div class="siatka nie-drukuj">
   <div class="panel">
     <h3>Gdzie i kiedy</h3>
-    <label class="pole"><span>Osada</span><select value={K.osada} onchange={e => zapisz(T.przenies(d, $state.snapshot(K), { osada: e.currentTarget.value }), 'Ceny przeliczone dla nowej osady.')}>
-      {#each d.osady.osady as o}<option value={o.id}>{etykietaOsady(o)}</option>{/each}</select></label>
+    <label class="pole"><span>Osada</span><WyborOsady value={K.osada} onchange={v => zapisz(T.przenies(d, $state.snapshot(K), { osada: v }), 'Ceny przeliczone dla nowej osady.')} /></label>
+    <div class="pasek" style="margin-top:8px"><WyborRynku pora={K.pora ?? null} wahania={K.wahania ?? null}
+      onchange={z => zapisz(T.przenies(d, $state.snapshot(K), z), 'Ceny przeliczone.')} /></div>
     <label class="pole" style="margin-top:8px"><span>Sytuacja</span><select value={K.koniunktura} onchange={e => zapisz(T.przenies(d, $state.snapshot(K), { koniunktura: e.currentTarget.value }), 'Ceny przeliczone dla nowej sytuacji.')}>
       {#each d.koniunktura.koniunktury as k}<option value={k.id}>{etykietaKoniunktury(d, k, { krotko: true })}</option>{/each}</select></label>
     <p class="male drugi" style="margin-top:6px">{W.etykiety.koniunktura}</p>

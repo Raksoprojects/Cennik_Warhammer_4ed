@@ -1,5 +1,5 @@
 // Pomocnicze wyliczenia do widoków (bez losowania). Wzory jak w silniku.
-import { osobowoscKupca, cenaKoniunktury } from '../silnik.js';
+import { osobowoscKupca, cenaKoniunktury, koniunkturaEfektywna } from '../silnik.js';
 import type { Dane } from './dane';
 
 export const ZRODLA: Record<string, string> = {
@@ -15,10 +15,10 @@ export function mnoznikKlasy(d: Dane, ust: any, c: any) {
   const znak = K.znak_stanu.includes(c.id) ? (ust.premia_znak_stanu ?? pr.premia_znak_stanu ?? 1) : 1;
   return { m, znak };
 }
-// Cena u kupca bez losowych składników (kaprys = 1, zapas i popyt normalne).
+// Cena u kupca bez losowych składników (kaprys = 1, zapas i popyt normalne). Uwzględnia strefę handlową osady (v6c).
 export function cenaTypowa(d: Dane, kup: any, lok: any, kon: any, c: any) {
   const os = osobowoscKupca(d, kup, c, null);
-  return Math.round(c.cena_p * kup.marza * os.mnoznik * lok.mnoznik * cenaKoniunktury(kon, c.kat));
+  return Math.round(c.cena_p * kup.marza * os.mnoznik * lok.mnoznik * cenaKoniunktury(koniunkturaEfektywna(d, kon, { osada: lok }), c.kat));
 }
 export const handlujacy = (d: Dane, kat: string) =>
   d.kupcy.kupcy.filter((k: any) => k.rdzen.includes(kat) || k.boczne.includes(kat));

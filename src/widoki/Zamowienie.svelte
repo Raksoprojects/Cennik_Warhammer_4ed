@@ -4,13 +4,15 @@
   import { wycenZamowienie, etykietaOsady, etykietaKoniunktury, modyfikatorKoniunktury } from '../silnik.js';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
   import WyborCech from '../komponenty/WyborCech.svelte';
+  import WyborOsady from '../komponenty/WyborOsady.svelte';
+  import WyborRynku from '../komponenty/WyborRynku.svelte';
 
   const d = $derived(stan.d);
   let k = $state('kowal'), o = $state('miasteczko'), n = $state('normalna'), co = $state(''), jakosc = $state<Record<string, number>>({});
   let wynik = $state<any>(null);
   const towary = $derived(d.cennik.pozycje.filter((c: any) => c.typ === 'towar'));
-  let material = $state(false);
-  function wycen() { wynik = co.trim() ? wycenZamowienie(d, { kupiec: k, osada: o, koniunktura: n, przedmiot: co, jakosc, material }) : null; }
+  let material = $state(false), pora = $state<string | null>(null), wahania = $state<string | null>(null);
+  function wycen() { wynik = co.trim() ? wycenZamowienie(d, { kupiec: k, osada: o, koniunktura: n, przedmiot: co, jakosc, material, pora, wahania }) : null; }
   const kon = $derived(d.koniunktura.koniunktury.find((x: any) => x.id === n));
   const lok = $derived(d.osady.osady.find((x: any) => x.id === o));
 </script>
@@ -21,11 +23,11 @@
   <div class="pasek">
     <label class="pole"><span>U kogo</span><select bind:value={k} onchange={wycen}>
       {#each d.kupcy.kupcy as x}<option value={x.id}>{x.nazwa} ({mnoz(x.marza)})</option>{/each}</select></label>
-    <label class="pole"><span>Gdzie</span><select bind:value={o} onchange={wycen}>
-      {#each d.osady.osady as x}<option value={x.id}>{etykietaOsady(x)}</option>{/each}</select></label>
+    <label class="pole"><span>Gdzie</span><WyborOsady bind:value={o} onchange={wycen} /></label>
     <label class="pole"><span>Sytuacja</span><select bind:value={n} onchange={wycen}>
       {#each d.koniunktura.koniunktury as x}<option value={x.id}>{etykietaKoniunktury(d, x, { krotko: true })}</option>{/each}</select></label>
   </div>
+  <div class="pasek"><WyborRynku bind:pora bind:wahania onchange={() => queueMicrotask(wycen)} /></div>
   <div class="pasek">
     <label class="pole"><span>Co</span><input bind:value={co} list="zam-towary" placeholder="np. kolczuga, rapier, teleskop" onkeydown={e => e.key === 'Enter' && wycen()} />
       <datalist id="zam-towary">{#each towary as c}<option value={c.nazwa}></option>{/each}</datalist></label>
@@ -33,7 +35,7 @@
   </div>
   <label class="male" style="display:flex;gap:6px;align-items:center;margin-bottom:8px"><input type="checkbox" bind:checked={material} onchange={wycen} />
     Materiał zamawiającego <Podpowiedz tekst={`Zamawiający daje drewno, żelazo, sukno (np. wieś składa się na wóz). Wytwórca bierze ${Math.round(d.rynek.zamowienie.material_wlasny * 100)}% ceny za robotę. Nie dotyczy rzeczy sprowadzanych.`} /></label>
-  <p class="male drugi">Jakość <Podpowiedz tekst="PG s. 292 i HR-024: cena z cennika to wariant podstawowy. Każda Zaleta przedmiotu ×2 (każdy poziom Wyśmienity i Wytrzymały to osobna Zaleta), każda Wada ×½. Wyroby z Zaletami wymagają Testu Rzemiosła wytwórcy." /></p>
+  <p class="male drugi">Jakość <Podpowiedz tekst={`PG s. 292 i HR-024: cena z cennika to wariant podstawowy. Każda Zaleta przedmiotu ×${String(d.rynek.jakosc.za_zalete).replace('.', ',')} (każdy poziom Wyśmienity i Wytrzymały to osobna Zaleta), każda Wada ×${String(d.rynek.jakosc.za_wade).replace('.', ',')}. Wyroby z Zaletami wymagają Testu Rzemiosła wytwórcy.`} /></p>
   <WyborCech bind:cechy={() => jakosc, c => { jakosc = c; wycen(); }} />
 </div>
 

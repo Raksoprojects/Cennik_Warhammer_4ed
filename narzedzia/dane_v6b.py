@@ -237,6 +237,7 @@ W('data/rynek.json', RY)
 OS = J('data/osady.json')
 TYP = {'wies': 'wioska', 'miasteczko': 'miasteczko'}
 for o in OS['osady']:
+    if o['id'].startswith('miasto-'): continue   # ośrodki z Poradnika: typ ustawia narzedzia/dane_v6c.py
     o['dostepnosc'] = TYP.get(o['id'], 'miasto')
     o.pop('tylko_powszechna', None)
 W('data/osady.json', OS)

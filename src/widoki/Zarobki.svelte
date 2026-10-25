@@ -1,7 +1,7 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, pl, norm } from '../lib/format';
-  import { sredniDochod, rzutDochodu, jalmuzna } from '../silnik.js';
+  import { sredniDochod, rzutDochodu, jalmuzna, dochodInteresu } from '../silnik.js';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
 
   const d = $derived(stan.d);
@@ -9,6 +9,10 @@
   let psJal = $state(2), swieto = $state(false), jal = $state<number | null>(null);
   let koszykIds = $state(['miecz', 'kolczuga', 'pelna-plytowka-4-elementy', 'kon-wierzchowy', 'rumak']);
   const sr = $derived(sredniDochod(d, status, majetny));
+  // Własny interes (Poradnik s. 47–48): jakość działalności, Test Rzemiosła (handel), dochód tygodniowy.
+  let rodzaj = $state('handel'), jakoscInt = $state('przecietna'), wynikTestu = $state(0);
+  const HL = $derived(d.handel.handel_lokalny);
+  const interes = $derived(dochodInteresu(d, { rodzaj, jakosc: jakoscInt, ps: wynikTestu }));
   const poz = $derived(d.statusy.poziomy.find((s: any) => s.tier + ' ' + s.lvl === status));
   const koszyk = $derived(koszykIds.map(id => d.cennik.pozycje.find((c: any) => c.id === id)).filter(Boolean));
   // Zarobki profesji: Pozycja / Dochód z audytu (data/audyt.json). Dochód decyduje o rzucie.
@@ -65,6 +69,20 @@
         <datalist id="zar-towary">{#each d.cennik.pozycje as c}<option value={c.nazwa}></option>{/each}</datalist></label>
       <button onclick={dodajDoKoszyka}>Dodaj</button>
     </div>
+  </div>
+  <div class="panel">
+    <h3>Własny interes <Podpowiedz tekst={HL.opis + ' ' + HL.jakosc_opis} /></h3>
+    <div class="pasek">
+      <label class="pole"><span>Rodzaj</span><select bind:value={rodzaj}><option value="handel">handel lokalny (kram, skup)</option><option value="dzialalnosc">lokalna działalność (tartak, bank)</option></select></label>
+      <label class="pole waskie"><span>Jakość</span><select bind:value={jakoscInt}>{#each HL.jakosc as j}<option value={j.id}>{j.nazwa}</option>{/each}</select></label>
+      <label class="pole waskie"><span>Test Rzemiosła (handel)</span><select bind:value={wynikTestu}>{#each HL.test as t}<option value={t.ps}>{t.opis}</option>{/each}</select></label>
+    </div>
+    <div class="liczby">
+      <div><span>Dochód w tym tygodniu</span><b class="cena">{mon(interes.dochod_p)}</b></div>
+      <div><span>Podstawa ({interes.status})</span><b>{mon(interes.baza_p)} × {String(interes.mnoznik).replace('.', ',')}</b></div>
+      <div><span>Jakość od przyszłego tygodnia</span><b class:blad={interes.nowa_jakosc === 'bankructwo'}>{HL.jakosc.find((j: any) => j.id === interes.nowa_jakosc)?.nazwa ?? 'BANKRUCTWO'}</b></div>
+    </div>
+    <p class="male drugi" style="margin-top:8px">{HL.nietrwale}</p>
   </div>
   <div class="panel">
     <h3>Jałmużna (Brąz 0)</h3>

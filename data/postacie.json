@@ -47,7 +47,7 @@
   { "nazwa": "Przebiegły", "charakter": "neutralny", "opis": "Twardy negocjator. Testy Targowania przeciw niemu −10.", "efekt": { "targowanie": -10 } },
   { "nazwa": "Chciwy", "charakter": "zly", "opis": "Zawyża ceny i zaniża skup. Uczciwa transakcja wymaga Testu Wyceny.", "efekt": { "ceny": 1.1, "skup": 0.85 } },
   { "nazwa": "Przedsiębiorczy", "charakter": "neutralny", "opis": "Pożycza na procent i robi interesy na boku.", "efekt": {} },
-  { "nazwa": "Powiązania przestępcze", "charakter": "zly", "opis": "Handluje też towarem z nielegalnych źródeł. Wie, gdzie kupić zakazane rzeczy.", "efekt": { "trefne": 0.25 } },
+  { "nazwa": "Powiązania przestępcze", "charakter": "zly", "opis": "Handluje też towarem z nielegalnych źródeł. Wie, gdzie kupić zakazane rzeczy. Przy szukaniu nielegalnych towarów Bohaterowie dostają +10.", "efekt": { "trefne": 0.25, "nielegalne": true } },
   { "nazwa": "Obieżyświat", "charakter": "neutralny", "opis": "Zna kupców w całym Imperium. Zamówienia sprowadza szybciej.", "efekt": { "termin": 0.75 } },
   { "nazwa": "Szarlatan", "charakter": "zly", "opis": "Oszust. Ponad połowa towaru jest trefna, a on o tym wie. Jeśli może, ucieknie z pieniędzmi.", "efekt": { "trefne": 0.6, "oszust": true } },
   { "nazwa": "Bogaty", "charakter": "neutralny", "opis": "Ma pieniądze na każdy zakup. Skupi wszystko, co mu przyniesiecie.", "efekt": { "gotowka": 3 } },

@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, koniunkturaEfektywna, mnoznikNielegalny, wahaniaZRzutu, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -17,6 +17,8 @@ const znajdz = (arr, id, co) => { const x = arr.find(e => e.id === id); if (!x) 
 const kupiecZ = (d, K) => znajdz(d.kupcy.kupcy, K.kupiec, 'kupiec');
 const osadaZ = (d, K) => znajdz(d.osady.osady, K.osada, 'osada');
 const konZ = (d, K) => znajdz(d.koniunktura.koniunktury, K.koniunktura, 'koniunktura');
+// v6c: sytuacja z porą roku, wahaniami rynku i strefą handlową osady.
+const konEf = (d, K) => koniunkturaEfektywna(d, konZ(d, K), { osada: osadaZ(d, K), pora: K.pora ?? null, wahania: K.wahania ?? null });
 const pozycja = (d, id) => d.cennik.pozycje.find(c => c.id === id);
 export const nowyUid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
 
@@ -75,6 +77,7 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
     przes_popytu: przesunieciePopytu(d, t.rzuty.popyt), rzut_kaprysu: t.rzuty.kaprys, cena_wytworcy_p: t.cena_cennik_p ?? t.cena_wytworcy_p,
     cena_reczna_p: null, poza_asortymentem: false, cechy: t.cechy ?? null, trefny: t.trefny ?? null }));
   K.postac = sklep.postac ?? null;
+  K.pora = sklep.pora ?? null; K.wahania = sklep.wahania ?? null;
   const r = rzuty(K);
   for (const w of K.towar) {
     const c = pozycja(d, w.id);
@@ -88,7 +91,7 @@ export function utworzKupca(d, sklep, { nazwa, grupa = '', notatka = '', data = 
 // Ten sam wzór co generujKupca: cena bazowa × marża × (preferencja × kaprys) × osada × koniunktura × rynek,
 // plus modyfikator MG kupca (np. 0,9 dla zaprzyjaźnionego, 1,2 dla wrogiego).
 export function wycen(d, K) {
-  const kup = kupiecZ(d, K), lok = osadaZ(d, K), kon = konZ(d, K), R = d.rynek, mod = K.modyfikator ?? 1;
+  const kup = kupiecZ(d, K), lok = osadaZ(d, K), kon = konEf(d, K), R = d.rynek, mod = K.modyfikator ?? 1;
   const E = K.postac?.cecha?.efekt ?? {};   // v6c: cecha kupiecka (Chciwy: ceny ×1,1, skup ×0,85…)
   const towar = K.towar.map((w, ix) => {
     const c0 = pozycja(d, w.id) ?? { id: w.id, nazwa: w.nazwa, kat: w.kat, cena_p: w.cena_wytworcy_p, cena_raw_p: null };
@@ -98,7 +101,8 @@ export function wycen(d, K) {
     const popyt = clamp(R.popyt.start + popytKoniunktury(kon, c.kat) + w.przes_popytu, 0, 2);
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, w.zapas, popyt);
     const os = osobowoscKupca(d, kup, c, E.kaprys === false ? null : w.rzut_kaprysu);
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod * (E.ceny ?? 1);
+    const mNiel = mnoznikNielegalny(d, lok, c);
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod * (E.ceny ?? 1) * mNiel;
     const cenaW = c.cena_p * mnoznik, cena_p = w.cena_reczna_p ?? Math.round(cenaW);
     const skupU = Math.max(R.skup.minimum, kup.skup + (popyt === 2 ? R.skup.popyt_wysoki : popyt === 0 ? R.skup.popyt_niski : 0)) * (E.skup ?? 1);
     const min = cenaMinimalna(d, { kupiec: kup, pozycja: c, osada: lok, koniunktura: kon, mRynek, cena_p });
@@ -106,7 +110,7 @@ export function wycen(d, K) {
       cena_cennik_p: c0.cena_p, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null,
       skup_p: Math.round((w.cena_reczna_p ?? cenaW) * skupU), koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       popyt, zapas_nazwa: R.zapas.progi[w.zapas].nazwa, popyt_nazwa: R.popyt.nazwy[popyt], rzuty: { kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod, charakter: E.ceny ?? 1 },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod, charakter: E.ceny ?? 1, nielegalny: mNiel },
       brak_w_cenniku: !pozycja(d, w.id) };
   }).sort((a, b) => b.cena_cennik_p - a.cena_cennik_p);   // jak w generatorze: po cenie z cennika, bez jakości
   return { kupiec: kup, osada: lok, koniunktura: kon, towar,
@@ -122,7 +126,7 @@ export function czyWAsortymencie(d, K, id) {
   if (!wTowarze(d, c)) return { ok: false, powod: 'to nie towar (usługa, nocleg, nieruchomość)' };
   const kup = kupiecZ(d, K);
   if (!kup.rdzen.includes(c.kat) && !kup.boczne.includes(c.kat)) return { ok: false, powod: `${kup.nazwa} nie handluje kategorią „${c.kat}”` };
-  if (!pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: [c.kat] }).some(x => x.id === id))
+  if (!pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: [c.kat], nielegalne: !!K.postac?.cecha?.efekt?.nielegalne }).some(x => x.id === id))
     return { ok: false, powod: 'za droga albo za rzadka na ten sklep i tę osadę' };
   return { ok: true, powod: null };
 }
@@ -163,7 +167,7 @@ export function przelosujPozycje(d, K0, id) {
 export function dogeneruj(d, K0, { kat = null, ile = 2 } = {}) {
   const K = kopia(K0), kup = kupiecZ(d, K), r = rzuty(K);
   const mam = new Set(K.towar.map(w => w.id));
-  const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: kat ? [kat] : [...kup.rdzen, ...kup.boczne] }).filter(c => !mam.has(c.id));
+  const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: kat ? [kat] : [...kup.rdzen, ...kup.boczne], nielegalne: !!K.postac?.cecha?.efekt?.nielegalne }).filter(c => !mam.has(c.id));
   const nowe = [];
   while (nowe.length < ile && pula.length) nowe.push(pula.splice(r.ri(pula.length), 1)[0]);
   for (const c of nowe) K.towar.push(nowyWiersz(d, K, c, r, { losujJakosc: true }));
@@ -181,10 +185,17 @@ export function przelosujWszystko(d, K0, seed = (Math.random() * 1e9) | 0) {
 }
 // Przenosiny do innej osady albo zmiana sytuacji. Ceny przeliczą się same w wycen(); ręczne zostają.
 /** @param {any} d @param {any} K0 @param {Record<string, any>} opcje */
-export function przenies(d, K0, { osada, koniunktura }) {
-  const K = kopia(K0), zm = [];
+// v6c: także pora roku i wahania rynku (null = bez).
+export function przenies(d, K0, { osada, koniunktura, ...reszta }) {
+  const K = kopia(K0), zm = [], H = d.handel;
   if (osada && osada !== K.osada) { K.osada = osada; zm.push('przeniósł się: ' + osadaZ(d, K).nazwa); }
   if (koniunktura && koniunktura !== K.koniunktura) { K.koniunktura = koniunktura; zm.push('sytuacja: ' + konZ(d, K).nazwa); }
+  if ('pora' in reszta && reszta.pora !== (K.pora ?? null)) {
+    K.pora = reszta.pora; zm.push('pora roku: ' + (H?.pory_roku.lista.find(p => p.id === K.pora)?.nazwa ?? 'bez'));
+  }
+  if ('wahania' in reszta && reszta.wahania !== (K.wahania ?? null)) {
+    K.wahania = reszta.wahania; zm.push('rynek: ' + (H?.wahania.lista.find(w => w.id === K.wahania)?.nazwa ?? 'bez wahań'));
+  }
   if (zm.length) wpis(K, zm.join(', ') + '.');
   return K;
 }
@@ -220,13 +231,13 @@ export function terminTygodnie(txt) {
 /** @param {any} d @param {any} K0 @param {Record<string, any>} opcje */
 export function zamow(d, K0, { id, jakosc = 'zwykla', dla = '', wymus = false, cena_p = null, material = false }) {
   const K = kopia(K0), r = rzuty(K), mod = K.modyfikator ?? 1;
-  const w = wycenZamowienie(d, { kupiec: K.kupiec, osada: K.osada, koniunktura: K.koniunktura, przedmiot: id, jakosc, material, seed: r.ri(1e9) });
+  const w = wycenZamowienie(d, { kupiec: K.kupiec, osada: K.osada, koniunktura: K.koniunktura, przedmiot: id, jakosc, material, pora: K.pora ?? null, wahania: K.wahania ?? null, seed: r.ri(1e9) });
   if (w.status === 'brak_w_cenniku') return { blad: 'brak_w_cenniku', powod: 'tej rzeczy nie da się zamówić' };
   let cena, termin, stan = w.status;
   if (w.status === 'odmowa') {
     if (!wymus) return { blad: 'odmowa', powod: `${kupiecZ(d, K).nazwa} tego nie robi ani nie sprowadza. Odsyła do: ${w.odsyla_do.join(', ') || '—'}` };
     const kup = kupiecZ(d, K);
-    cena = w.przedmiot.cena_p * jakoscZ(d, jakosc).mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
+    cena = w.przedmiot.cena_p * jakoscZ(d, jakosc).mnoznik * kup.marza * osadaZ(d, K).mnoznik * cenaKoniunktury(konEf(d, K), w.przedmiot.kat) * d.rynek.zamowienie.narzut_sprowadzenie;
     termin = 4 + r.ri(6); stan = 'sprowadza';
   } else { cena = w.cena_p; termin = terminTygodnie(w.termin) + (w.rzadkosc?.termin_tyg ?? 0); }
   termin = Math.max(1, Math.round(termin * (K.postac?.cecha?.efekt?.termin ?? 1)));   // v6c: Obieżyświat szybciej, Leniwy wolniej
@@ -266,7 +277,7 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
   const sprzedal = new Map(), dokupil = new Map(), nowe = [], gotowe = [];
   const dodaj = (m, nazwa, n, p) => { const x = m.get(nazwa) ?? { n: 0, p: 0 }; m.set(nazwa, { n: x.n + n, p: x.p + n * p }); };
   const sufit = Math.round(Math.max(K.gotowka_start_p ?? K.gotowka_p, sredniDochod(d, kup.status).brutto_p) * P.gotowka_max);
-  const g0 = K.gotowka_p;
+  const g0 = K.gotowka_p, zmianyRynku = [];
   let wydal = 0;
   for (let t = 0; t < tygodnie; t++) {
     K.tydzien++;
@@ -294,15 +305,23 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
     K.towar = K.towar.filter(w => w.sztuk > 0 || kup.rdzen.includes(w.kat));
     if (r.rnd() < P.nowy_towar) {
       const mam = new Set(K.towar.map(w => w.id));
-      const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: [...kup.rdzen, ...kup.boczne] }).filter(c => !mam.has(c.id));
+      const pula = pulaTowaru(d, { kupiec: K.kupiec, osada: K.osada, kats: [...kup.rdzen, ...kup.boczne], nielegalne: !!K.postac?.cecha?.efekt?.nielegalne }).filter(c => !mam.has(c.id));
       if (pula.length) {
         const c = pula[r.ri(pula.length)], w = nowyWiersz(d, K, c, r, { zapas: 1, losujJakosc: true });
-        const koszt = Math.round(c.cena_p * (w.cechy ? jakoscZ(d, w.cechy).mnoznik : 1) * osadaZ(d, K).mnoznik * cenaKoniunktury(konZ(d, K), c.kat)) * w.sztuk;
+        const koszt = Math.round(c.cena_p * (w.cechy ? jakoscZ(d, w.cechy).mnoznik : 1) * osadaZ(d, K).mnoznik * cenaKoniunktury(konEf(d, K), c.kat)) * w.sztuk;
         if (koszt <= K.gotowka_p) { K.towar.push(w); K.gotowka_p -= koszt; nowe.push(c.nazwa); }
       }
     }
-    if (K.tydzien % P.rynek_co === 0)
+    if (K.tydzien % P.rynek_co === 0) {
       for (const w of K.towar) if (w.cena_reczna_p == null) { w.przes_popytu = przesunieciePopytu(d, r.k(10)); w.rzut_kaprysu = r.k(10); }
+      // v6c: wahania rynku — nowy rzut 1k10, jeśli kupiec je śledzi (pole wahania ustawione).
+      if (K.wahania) { const nw = wahaniaZRzutu(d, r.k(10)); if (nw !== K.wahania) zmianyRynku.push(d.handel.wahania.lista.find(x => x.id === nw).nazwa); K.wahania = nw; }
+    }
+    // v6c: pora roku zmienia się co 13 tygodni (jeśli ustawiona).
+    if (K.pora && K.tydzien % 13 === 0) {
+      const L = d.handel.pory_roku.lista, i = L.findIndex(p => p.id === K.pora);
+      K.pora = L[(i + 1) % L.length].id; zmianyRynku.push(L[(i + 1) % L.length].nazwa);
+    }
     for (const w of K.towar) w.zapas = zapasZeStanu(w);
     for (const z of K.zamowienia) if (z.status === 'w_toku' && z.tydzien_gotowe <= K.tydzien) { z.status = 'gotowe'; gotowe.push(z.nazwa); }
     if (K.gotowka_p > sufit) { wydal += K.gotowka_p - sufit; K.gotowka_p = sufit; }
@@ -314,6 +333,7 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
     return `${szt} szt. za ${mon(suma)} (${v.length > 5 ? 'najwięcej: ' : ''}${top}${v.length > 5 ? ', …' : ''})`;
   };
   const czesci = [`Minęło ${tygodnie} tyg.`];
+  if (zmianyRynku.length) czesci.push('Rynek: ' + zmianyRynku.join(' → ') + '.');
   if (sprzedal.size) czesci.push('Sprzedał ' + lista(sprzedal) + '.');
   if (dokupil.size) czesci.push('Dokupił ' + lista(dokupil) + '.');
   if (wydal) czesci.push(`Odłożył zysk ponad zapas gotówki: ${mon(wydal)}.`);

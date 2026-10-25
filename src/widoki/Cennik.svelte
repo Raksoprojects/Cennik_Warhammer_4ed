@@ -2,7 +2,8 @@
   import { stan } from '../lib/stan.svelte';
   import { mon, norm, pl, mnoz, parsujCene, parsujMnoznik } from '../lib/format';
   import { mnoznikKlasy, cenaTypowa, handlujacy, robot, POROWNANIE, zrodloNazwa, TYPY } from '../lib/ceny';
-  import { etykietaOsady, etykietaKoniunktury, jakoscZ } from '../silnik.js';
+  import { etykietaKoniunktury, jakoscZ } from '../silnik.js';
+  import WyborOsady from '../komponenty/WyborOsady.svelte';
   import { daneBazowe } from '../lib/dane';
   // Ceny domyślne (bez ustawień MG) — komentarz i podstawa historyczna opisują właśnie je.
   const DOMYSLNE: Record<string, number> = Object.fromEntries(daneBazowe.cennik.pozycje.map((c: any) => [c.id, c.cena_p]));
@@ -88,8 +89,7 @@
     <div class="pasek">
       <label class="pole"><span>Kupiec</span><select bind:value={kupId}>
         {#each d.kupcy.kupcy as k}<option value={k.id}>{k.nazwa} ({mnoz(k.marza)})</option>{/each}</select></label>
-      <label class="pole"><span>Osada</span><select bind:value={osId}>
-        {#each d.osady.osady as o}<option value={o.id}>{etykietaOsady(o)}</option>{/each}</select></label>
+      <label class="pole"><span>Osada</span><WyborOsady bind:value={osId} /></label>
       <label class="pole"><span>Sytuacja</span><select bind:value={konId}>
         {#each d.koniunktura.koniunktury as k}<option value={k.id}>{etykietaKoniunktury(d, k, { krotko: true })}</option>{/each}</select></label>
     </div>

@@ -579,7 +579,8 @@
     "kradziony": 8,
     "podrobka": 1,
     "ukryta_wada": 1
-   }
+   },
+   "nielegalne": true
   },
   {
    "id": "kwatermistrz",
