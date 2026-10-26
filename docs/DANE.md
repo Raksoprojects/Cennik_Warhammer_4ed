@@ -1,3 +1,66 @@
+# Do rozpatrzenia przez MG (przegląd 2026-10-26)
+
+Rozbieżności i niejasności znalezione w przeglądzie aplikacji. Każdy punkt: co jest nie tak → propozycja.
+Nic z tego nie jest jeszcze zmienione.
+
+**Czas i kalendarz**
+
+1. **Tydzień ma 8 dni, a kotwica cen liczy 6 dniówek.** Robotnik: 27,5 p × 6 = 165 p brutto „tygodniowo”. Tydzień
+   imperialny ma 8 dni (Festag wolny → 7 dni pracy = 192,5 p). Robota, czynsze tygodniowe i upływ czasu kupca liczą już
+   tydzień 8-dniowy. → Albo kotwica = 7 dniówek (wszystkie zarobki +17%), albo przyjąć, że „tydzień pracy” to 6 dni roboczych.
+2. **Czynsz miesięczny jest tani wobec tygodniowego.** Miesiąc ma 33 dni (ponad 4 tygodnie), a czynsz za miesiąc to 2,7–3,7×
+   tygodniowego. → Zostawić (najem długoterminowy taniej) albo podnieść miesiąc do ok. 3,5–4×.
+3. **Pora roku ustawiona ręcznie nie zmienia daty.** Gdy kupiec ma datę, ręczna zmiana pory zostaje nadpisana przy upływie
+   czasu. → Ukrywać wybór pory, gdy data jest ustawiona.
+
+**Osady i ceny lokalne**
+
+4. **Nuln (×1,32) i Talabheim (×1,26) są droższe niż ogólna „Metropolia” (×1,2), a Nuln droższy niż Altdorf (×1,3).**
+   Zamożność 5 mnoży się na typ osady. → Ustalić hierarchię: czy Altdorf ma być najdroższy w Imperium poza Marienburgiem.
+5. **Middenheim wg Poradnika ma 15 000 mieszkańców, więc wychodzi „miasto”,** a ogólna osada nazywa się „Metropolia
+   (Nuln, Middenheim)”. → Wybrać: liczba z Poradnika albo Middenheim jako metropolia.
+6. **Flaga Altdorfu „Rzadkie o stopień łatwiej” nie działa** (`osady.json → rzadkie_latwiej` nie jest używane w silniku),
+   tak samo opis Marienburga „wszystko z importu”. → Wdrożyć: w Altdorfie Rzadka liczy się jak Ograniczona, w Marienburgu
+   import (Egzotyczne?) dostępny.
+7. **Pora roku nakłada się na sytuację.** „Zamknięte szlaki (bandyci, lód)” + zima liczy zimę dwa razy. → Opisać w sytuacji
+   „bez zimy” albo zostawić MG.
+8. **Wahania rynku to mój szacunek:** hossa ceny ×1,1 i popyt +1, bessa ×0,9 i popyt −1. W Poradniku Rynek Byka zmienia
+   dostępność, nie cenę. → Potwierdzić albo zamienić na zmianę Dostępności.
+9. **Strefa handlowa → kategorie Skarbca to uproszczenie** (np. broń biała = „wyroby metalowe”). Mnożniki stopni ×1,4…×0,85
+   to szacunek. → Przejrzeć tabelę w Zasady → Handel.
+
+**Asortyment i dostępność**
+
+10. **20 rzeczy Egzotycznych nigdy nie leży na półce** (flamberg, arkebuz, muszkiet hochlandzki, broń pistoletowa, księga
+    magii, lusterko, warsztat…), są tylko na zamówienie (PG s. 290). → Zostawić albo dopuścić je u rusznikarza
+    i płatnerza w metropoliach (np. 5%).
+11. **Jakość nie zmienia Dostępności w generatorze.** PG: każda Zaleta o stopień rzadsza. Mistrz cechu we wsi może mieć
+    przedmiot Wyśmienity 2. → Wdrożyć albo zostawić.
+12. **15 pozycji bez Dostępności** (zboże, mięso, nowe pozycje kampanii) liczy się jak Powszechne. → Uzupełnić.
+13. **Kupiec krasnoludzki pojawia się wszędzie, także we wsi** (śr. 35 pozycji). → Ograniczyć do metropolii i stref
+    krasnoludzkich (Stary Trakt, Trakt do Zhufbaru).
+14. **Nielegalne są tylko 4 narkotyki i trucizny.** Czy dodać: Księżycowy kwiat, Nocny cień, Księgę (magia) dla
+    nie-czarodziejów, broń prochową bez pozwolenia? → Decyzja MG.
+15. **Lekki koń bojowy (262 ZK) ma Dostępność Powszechną**, rumak Ograniczoną. → Ograniczona.
+16. **Sufit gotówki kupca (2× startowa) i sprzedaż 5/12/25% tygodniowo** to szacunki. → Sprawdzić przy stole.
+
+**Dokumenty i spójność**
+
+17. **Kompendium MG (PDF) jest nieaktualne wobec aplikacji:** targowanie 10%/PS (jest 4%), jakość ×2 / ×½ (jest ×1,6 /
+    ×0,6), pełna płytówka 48 ZK (jest 96 ZK), mistrzowska ×4 (jest ×2,56). → Wygenerować Kompendium na nowo z danych.
+18. **Utrzymanie:** Kompendium (PG s. 51) „połowa Statusu dziennie”, Skarbiec 80% brutto tygodniowo, a dziwactwo z
+    `nazwy.json` mówi o 10% zniżki za gotówkę. Dwie różne miary w użyciu. → Wybrać jedną.
+19. **`docs/AGENT_BRIEF.md`, `docs/ANALIZA_v5.md`, `TASKS.md` opisują stan v5** (targowanie 10%, jakość ×2). → Odświeżyć.
+20. **Edycja cen nie obejmuje `handel.json`, `postacie.json`, `kalendarz.json`** — zmiany tylko w plikach. → Dodać, jeśli
+    potrzebne przy stole.
+21. **Baza kupców jest tylko w przeglądarce.** Wyczyszczenie danych strony ją kasuje. → Eksportować regularnie
+    (Kupcy → Eksport wszystkich); ewentualnie przypomnienie w aplikacji.
+22. **Stare linki z seedem dają inne sklepy** po każdej zmianie cennika i kupców (v6–v6d). Zapisani kupcy są bezpieczni.
+23. **Kalkulator „ile Robót” i kolumna „Robót” w Cenniku liczą cenę bazową,** a gracz płaci u kupca o 5–45% więcej. → Dopisać
+    to w podpowiedzi albo liczyć od ceny typowej kupca.
+
+---
+
 # Gdzie co jest — mapa danych dla MG
 
 Wszystkie liczby i zasady są w plikach `data/*.json`. Aplikacja czyta je przy budowie, więc zmiana w pliku
@@ -39,6 +102,7 @@ Dwie drogi zmian:
 | Imiona, dziwactwa kupców | `data/nazwy.json` | | Pierwsze dziwactwo (stare, z artefaktu). |
 | Osobowość kupca | `data/postacie.json` | `charaktery` (wagi), `motywacje`, `cechy_kupieckie` (z `efekt`), `wyglad`, `znaki`, `manieryzmy`, `potrzeby`, `sekrety`, `dziwactwa`, `imiona`, `nazwiska` | Pole `charakter` (dobry / neutralny / zly) — bez niego pasuje do każdego. Efekty cechy: `ceny`, `skup`, `targowanie`, `bez_targu`, `trefne`, `oszust`, `gotowka`, `termin`. Nazwy Motywacji wg Ekranu MG, cechy kupieckie wg Poradnika Staroświatowca (tab. 3-7); opisy własne. |
 | Towar trefny | `data/rynek.json` → `trefne`; `data/kupcy.json` → `trefne`, `trefne_wagi` | rodzaje (kradziony, podróbka, ukryta Wada, oszukana miara), skala oszustwa i trudność Testu Wyceny (Poradnik s. 41), szansa, że kupiec wie | Paser 75% (głównie kradziony), domokrążca 12%, reszta zwykle 1–6%; Szarlatan ≥ 60%, Skrupulatnie uczciwy 0%. |
+| Kalendarz Imperium | `data/kalendarz.json` | `miesiace` (nazwa, staroświatowa, dni, święto, pora), `tydzien` (8 dni) | Księga Zbawienia s. 140–141 / Kompendium MG s. 31. Data kupca (`dzien` 1–400, `rok`) wyznacza porę roku; upływ czasu = 8 dni na tydzień. |
 | Handel wg Poradnika Staroświatowca | `data/handel.json` | `pory_roku`, `wahania`, `strefy` (siatka stopni), `mnozniki_stopni`, `kategorie_z_towarow`, `miasta`, `zamoznosc`, `zagrozenia`, `oplaty`, `nielegalne`, `handel_lokalny`, `bogowie`, `zasady_dodatkowe` | Teksty z Poradnika (rozdz. III), bez cen 2. edycji. Mnożniki stopni dostępności i statusy dochodu interesu to szacunek MG. |
 | Ośrodki handlu jako osady | `data/osady.json` (wpisy `miasto-*`) | `mnoznik` (typ × zamożność), `kategorie` (ceny strefy), `dostepnosc`, `populacja`, `zamoznosc`, `strefa` | Budowane przez `narzedzia/dane_v6c.py` z `data/handel.json` — zmieniaj tam i uruchom skrypt. |
 | Nielegalne towary | `data/cennik.json` → `nielegalny`; `data/kupcy.json` → `nielegalne` | | Tylko paser i kupiec z cechą „Powiązania przestępcze”; cena × zamożność (tab. 3-11). |

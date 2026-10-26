@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, koniunkturaEfektywna, mnoznikNielegalny, wahaniaZRzutu, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, koniunkturaEfektywna, dataImperialna, mnoznikNielegalny, wahaniaZRzutu, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -60,6 +60,7 @@ function nowyWiersz(d, K, c, r, { zapas, sztuk, poza = false, losujJakosc = fals
 export function przelosujPostac(d, K0, { charaktery = null, seed = (Math.random() * 1e9) | 0 } = {}) {
   const K = kopia(K0);
   K.postac = generujPostac(d, kosci(seed >>> 0), { charaktery });
+  if (K.postac?.dziwactwo) K.dziwactwo = K.postac.dziwactwo;
   wpis(K, `Nowa osobowość: ${K.postac?.motywacja?.nazwa ?? '—'}, ${K.postac?.cecha?.nazwa ?? '—'}.`);
   return K;
 }
@@ -193,6 +194,11 @@ export function przenies(d, K0, { osada, koniunktura, ...reszta }) {
   if ('pora' in reszta && reszta.pora !== (K.pora ?? null)) {
     K.pora = reszta.pora; zm.push('pora roku: ' + (H?.pory_roku.lista.find(p => p.id === K.pora)?.nazwa ?? 'bez'));
   }
+  // v6d: data kampanii { dzien: 1..400, rok } — pora roku idzie za datą.
+  if ('data' in reszta) {
+    K.data = reszta.data;
+    if (K.data) { const dt = dataImperialna(d, K.data); K.pora = dt.pora; zm.push('data: ' + dt.opis); }
+  }
   if ('wahania' in reszta && reszta.wahania !== (K.wahania ?? null)) {
     K.wahania = reszta.wahania; zm.push('rynek: ' + (H?.wahania.lista.find(w => w.id === K.wahania)?.nazwa ?? 'bez wahań'));
   }
@@ -278,6 +284,9 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
   const dodaj = (m, nazwa, n, p) => { const x = m.get(nazwa) ?? { n: 0, p: 0 }; m.set(nazwa, { n: x.n + n, p: x.p + n * p }); };
   const sufit = Math.round(Math.max(K.gotowka_start_p ?? K.gotowka_p, sredniDochod(d, kup.status).brutto_p) * P.gotowka_max);
   const g0 = K.gotowka_p, zmianyRynku = [];
+  // Pora bez daty: zaczynamy od pierwszego dnia tej pory (równonoc / przesilenie), dalej liczy kalendarz.
+  const POCZATEK = { wiosna: 67, lato: 167, jesien: 267, zima: 367 };
+  if (K.pora && !K.data && d.kalendarz) K.data = { dzien: POCZATEK[K.pora], rok: null };
   let wydal = 0;
   for (let t = 0; t < tygodnie; t++) {
     K.tydzien++;
@@ -317,10 +326,13 @@ export function uplywCzasu(d, K0, tygodnie = 1) {
       // v6c: wahania rynku — nowy rzut 1k10, jeśli kupiec je śledzi (pole wahania ustawione).
       if (K.wahania) { const nw = wahaniaZRzutu(d, r.k(10)); if (nw !== K.wahania) zmianyRynku.push(d.handel.wahania.lista.find(x => x.id === nw).nazwa); K.wahania = nw; }
     }
-    // v6c: pora roku zmienia się co 13 tygodni (jeśli ustawiona).
-    if (K.pora && K.tydzien % 13 === 0) {
-      const L = d.handel.pory_roku.lista, i = L.findIndex(p => p.id === K.pora);
-      K.pora = L[(i + 1) % L.length].id; zmianyRynku.push(L[(i + 1) % L.length].nazwa);
+    // v6d: data kampanii (kalendarz Imperium, tydzień = 8 dni). Pora roku wynika z daty.
+    if (K.data) {
+      K.data.dzien += d.kalendarz.dni_w_tygodniu;
+      if (K.data.dzien > d.kalendarz.dni_w_roku) { K.data.dzien -= d.kalendarz.dni_w_roku; if (K.data.rok != null) K.data.rok++; }
+      const np = dataImperialna(d, K.data).pora;
+      if (K.pora && np !== K.pora) zmianyRynku.push(d.handel.pory_roku.lista.find(p => p.id === np).nazwa);
+      if (K.pora) K.pora = np;
     }
     for (const w of K.towar) w.zapas = zapasZeStanu(w);
     for (const z of K.zamowienia) if (z.status === 'w_toku' && z.tydzien_gotowe <= K.tydzien) { z.status = 'gotowe'; gotowe.push(z.nazwa); }

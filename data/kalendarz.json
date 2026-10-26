@@ -1,0 +1,26 @@
+{
+ "opis": "Kalendarz Imperium (Księga Zbawienia, WFRP 2 ed., s. 140–141; Kompendium MG s. 31). 400 dni: 12 miesięcy (Powiedźmie i Po Tajemnicy po 32 dni, reszta po 33) i 6 dni świątecznych. Tydzień ma 8 dni, rok 50 tygodni. Równonoce i przesilenia co 100 dni wyznaczają pory roku: Uśpienie (zima) → Rozkwitanie (wiosna) → Dzień Słońca (lato) → Przekwitanie (jesień).",
+ "dni_w_roku": 400,
+ "dni_w_tygodniu": 8,
+ "tydzien": ["Wellentag (Dzień Pracy)", "Aubentag (Dzień Poboru)", "Marktag (Dzień Targowy)", "Backertag (Dzień Wypieków)", "Bezahltag (Dzień Podatków)", "Konigstag (Dzień Królewski)", "Angestag (Początek Tygodnia)", "Festag (Dzień Świąteczny)"],
+ "miesiace": [
+  { "nazwa": "Dzień Wiedźm", "staroswiatowa": "Hexentag", "dni": 1, "swieto": "Nowy Rok", "pora": "zima" },
+  { "nazwa": "Powiedźmie", "staroswiatowa": "Nachexen", "dni": 32, "pora": "zima" },
+  { "nazwa": "Zmiana Roku", "staroswiatowa": "Jahrdrung", "dni": 33, "pora": "zima" },
+  { "nazwa": "Rozkwitanie", "staroswiatowa": "Mitterfruhl", "dni": 1, "swieto": "Równonoc wiosenna", "pora": "wiosna" },
+  { "nazwa": "Czas Orki", "staroswiatowa": "Pflugzeit", "dni": 33, "pora": "wiosna" },
+  { "nazwa": "Czas Sigmara", "staroswiatowa": "Sigmarzeit", "dni": 33, "pora": "wiosna" },
+  { "nazwa": "Czas Lata", "staroswiatowa": "Sommerzeit", "dni": 33, "pora": "wiosna" },
+  { "nazwa": "Dzień Słońca", "staroswiatowa": "Sonnstill", "dni": 1, "swieto": "Przesilenie letnie", "pora": "lato" },
+  { "nazwa": "Przed Tajemnicą", "staroswiatowa": "Vorgeheim", "dni": 33, "pora": "lato" },
+  { "nazwa": "Dzień Tajemnicy", "staroswiatowa": "Geheimnistag", "dni": 1, "swieto": "Dzień Tajemnicy", "pora": "lato" },
+  { "nazwa": "Po Tajemnicy", "staroswiatowa": "Nachgeheim", "dni": 32, "pora": "lato" },
+  { "nazwa": "Czas Zbiorów", "staroswiatowa": "Erntezeit", "dni": 33, "pora": "lato" },
+  { "nazwa": "Przekwitanie", "staroswiatowa": "Mittherbst", "dni": 1, "swieto": "Równonoc jesienna", "pora": "jesien" },
+  { "nazwa": "Czas Warzenia", "staroswiatowa": "Brauzeit", "dni": 33, "pora": "jesien" },
+  { "nazwa": "Czas Mrozów", "staroswiatowa": "Kaldezeit", "dni": 33, "pora": "jesien" },
+  { "nazwa": "Czas Ulryka", "staroswiatowa": "Ulriczeit", "dni": 33, "pora": "jesien" },
+  { "nazwa": "Uśpienie", "staroswiatowa": "Mondstille", "dni": 1, "swieto": "Przesilenie zimowe", "pora": "zima" },
+  { "nazwa": "Przedwiedźmie", "staroswiatowa": "Vorhexen", "dni": 33, "pora": "zima" }
+ ]
+}

@@ -19,12 +19,13 @@ import spojnosc_v4 from '../../data/spojnosc_v4.json';
 import bron_cechy from '../../data/bron_cechy.json';
 import postacie from '../../data/postacie.json';
 import handel from '../../data/handel.json';
+import kalendarz from '../../data/kalendarz.json';
 
 // Dane BAZOWE — nigdy ich nie mutuj. Widoki dostają dane po ustawieniach MG (stan.d).
 // Typ luźny celowo: kształt danych opisuje docs/APLIKACJA.md § 4, a silnik jest w JS.
 export type Dane = any;
 export const daneBazowe: Dane = Object.freeze({
   cennik, kupcy, osady, koniunktura, rynek, nazwy, statusy, czynsze, audyt, historia,
-  pozycja_dochod, przedmioty_magiczne, kalkulator, klasy, spojnosc, spojnosc_v4, bron_cechy, postacie, handel,
+  pozycja_dochod, przedmioty_magiczne, kalkulator, klasy, spojnosc, spojnosc_v4, bron_cechy, postacie, handel, kalendarz,
 });
 export const ustawieniaDomyslne: any = ustawienia;

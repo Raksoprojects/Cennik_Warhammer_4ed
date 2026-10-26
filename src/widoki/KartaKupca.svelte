@@ -4,6 +4,7 @@
   import { etykietaKoniunktury } from '../silnik.js';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
   import WyborRynku from '../komponenty/WyborRynku.svelte';
+  import DataKampanii from '../komponenty/DataKampanii.svelte';
   import { cenaTypowa } from '../lib/ceny';
   import * as T from '../kupcy_trwali.js';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
@@ -113,6 +114,7 @@
     <label class="pole"><span>Osada</span><WyborOsady value={K.osada} onchange={v => zapisz(T.przenies(d, $state.snapshot(K), { osada: v }), 'Ceny przeliczone dla nowej osady.')} /></label>
     <div class="pasek" style="margin-top:8px"><WyborRynku pora={K.pora ?? null} wahania={K.wahania ?? null}
       onchange={z => zapisz(T.przenies(d, $state.snapshot(K), z), 'Ceny przeliczone.')} /></div>
+    <DataKampanii data={K.data ?? null} onUstaw={dt => zapisz(T.przenies(d, $state.snapshot(K), { data: dt }), dt ? 'Data ustawiona, pora roku z kalendarza.' : 'Bez daty.')} />
     <label class="pole" style="margin-top:8px"><span>Sytuacja</span><select value={K.koniunktura} onchange={e => zapisz(T.przenies(d, $state.snapshot(K), { koniunktura: e.currentTarget.value }), 'Ceny przeliczone dla nowej sytuacji.')}>
       {#each d.koniunktura.koniunktury as k}<option value={k.id}>{etykietaKoniunktury(d, k, { krotko: true })}</option>{/each}</select></label>
     <p class="male drugi" style="margin-top:6px">{W.etykiety.koniunktura}</p>

@@ -166,6 +166,26 @@ export function dochodInteresu(d, { rodzaj = 'handel', jakosc = 'przecietna', ps
     dochod_p: Math.round(sredniDochod(d, status).brutto_p * w.mnoznik),
     nowa_jakosc: ni < 0 ? 'bankructwo' : J[Math.min(J.length - 1, ni)].id };
 }
+// v6d: kalendarz Imperium (data/kalendarz.json). dzien = dzień roku 1..400. Zwraca miesiąc, dzień miesiąca,
+// porę roku (z równonocy i przesileń) i dzień tygodnia (Dzień Wiedźm = Festag, rok ma 50 tygodni).
+/** @param {any} d @param {{ dzien: number, rok?: number | null }} data */
+export function dataImperialna(d, { dzien, rok = null }) {
+  const K = d.kalendarz, n = ((Math.round(dzien) - 1) % K.dni_w_roku + K.dni_w_roku) % K.dni_w_roku + 1;
+  let reszta = n;
+  for (const m of K.miesiace) {
+    if (reszta <= m.dni) {
+      const tydz = K.tydzien[(n - 1 + K.dni_w_tygodniu - 1) % K.dni_w_tygodniu];
+      return { dzien: n, rok, miesiac: m, dzien_miesiaca: reszta, pora: m.pora, dzien_tygodnia: tydz,
+        opis: (m.dni === 1 ? m.nazwa : `${reszta} ${m.nazwa}`) + ` (${m.staroswiatowa})` + (rok != null ? ` ${rok} KI` : '') };
+    }
+    reszta -= m.dni;
+  }
+  return null;
+}
+// Pierwszy dzień miesiąca o danym indeksie (do ustawiania daty w UI).
+export function dzienRoku(d, iMiesiaca, dzienMiesiaca = 1) {
+  return d.kalendarz.miesiace.slice(0, iMiesiaca).reduce((s, m) => s + m.dni, 0) + Math.min(dzienMiesiaca, d.kalendarz.miesiace[iMiesiaca].dni);
+}
 // Rzut 1k10 na wahania rynku (Poradnik s. 39).
 export function wahaniaZRzutu(d, rzut) { return d.handel?.wahania.lista.find(w => rzut >= w.od && rzut <= w.do)?.id ?? 'stabilny'; }
 // Nielegalny towar: cena × zamożność osady (Poradnik, tab. 3-11).
@@ -263,7 +283,8 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     towar.length = 0; towar.push(...zostaw);
   }
   const wartosc_towaru_p = towar.reduce((s, t) => s + t.sztuk * t.cena_wytworcy_p, 0);
-  return { seed, imie, dziwactwo, postac, pora, wahania, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
+  // v6d: dziwactwo z osobowości (z wagami charakteru); stare losowanie zostaje, żeby nie przesuwać rzutów sklepu.
+  return { seed, imie, dziwactwo: postac?.dziwactwo ?? dziwactwo, postac, pora, wahania, kupiec: kup, osada: lok, koniunktura: kon, limit_p: cap, towar,
     gotowka_p: mjt?.gotowka_p ?? null, budzet_towaru_p: mjt?.towar_p ?? null, wartosc_towaru_p,
     etykiety: { osada: etykietaOsady(lok), koniunktura: etykietaKoniunktury(d, kon) } };
 }
@@ -281,6 +302,13 @@ export function generujPostac(d, r, { charaktery = null } = {}) {
   for (const c of lista) { los -= P.charaktery[c].waga; if (los < 0) { charakter = c; break; } }
   const pasuje = arr => { const p = arr.filter(x => !x.charakter || x.charakter === charakter); return p.length ? p : arr; };
   const wybierz = arr => arr[r.ri(arr.length)];
+  // v6d: dziwactwa z wagami charakteru ({ tekst, wagi: { dobry: 0.4 } }) — rzadziej, ale możliwe.
+  const wazone = arr => {
+    const w = arr.map(x => typeof x === 'string' ? 1 : x.wagi?.[charakter] ?? 1);
+    let los = r.rnd() * w.reduce((a, b) => a + b, 0);
+    for (let i = 0; i < arr.length; i++) { los -= w[i]; if (los < 0) return arr[i]; }
+    return arr[arr.length - 1];
+  };
   const grupy = Object.keys(P.wyglad), g1 = r.ri(grupy.length), g2 = (g1 + 1 + r.ri(grupy.length - 1)) % grupy.length;
   return {
     charakter,
@@ -291,7 +319,7 @@ export function generujPostac(d, r, { charaktery = null } = {}) {
     cecha: wybierz(pasuje(P.cechy_kupieckie)),
     potrzeba: wybierz(pasuje(P.potrzeby)).tekst,
     sekret: wybierz(pasuje(P.sekrety)).tekst,
-    dziwactwo: wybierz(P.dziwactwa),
+    dziwactwo: (x => typeof x === 'string' ? x : x.tekst)(wazone(P.dziwactwa)),
   };
 }
 

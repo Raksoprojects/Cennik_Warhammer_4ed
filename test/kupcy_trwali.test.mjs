@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import * as S from '../src/silnik.js';
 import * as T from '../src/kupcy_trwali.js';
 const rd = f => JSON.parse(fs.readFileSync(new URL('../' + f, import.meta.url)));
-const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel']
+const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel', 'kalendarz']
   .map(n => [n, rd(`data/${n}.json`)]));
 d.klasy = rd('data/klasy_cenowe.json');
 const sklep = S.generujKupca(d, { kupiec: 'zbrojmistrz', osada: 'altdorf', koniunktura: 'wojna', seed: 48213 });

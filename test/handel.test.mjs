@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import * as S from '../src/silnik.js';
 import * as T from '../src/kupcy_trwali.js';
 const rd = f => JSON.parse(fs.readFileSync(new URL('../' + f, import.meta.url)));
-const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel']
+const d = Object.fromEntries(['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel', 'kalendarz']
   .map(n => [n, rd(`data/${n}.json`)]));
 const kon = id => d.koniunktura.koniunktury.find(k => k.id === id);
 const os = id => d.osady.osady.find(o => o.id === id);
@@ -38,12 +38,29 @@ test('nielegalne towary tylko u pasera albo kupca z powiązaniami przestępczymi
   assert.ok(u.every(t => t.skladowe.nielegalny === d.handel.zamoznosc.nielegalne['4'].cena));
 });
 
-test('zapisany kupiec: pora co 13 tygodni, wahania co 4, ceny jak w generatorze', () => {
+test('kalendarz Imperium: 400 dni, dni świąteczne, pory roku, dzień tygodnia', () => {
+  assert.equal(d.kalendarz.miesiace.reduce((s, m) => s + m.dni, 0), 400);
+  assert.equal(S.dataImperialna(d, { dzien: 1 }).miesiac.staroswiatowa, 'Hexentag');
+  assert.equal(S.dataImperialna(d, { dzien: 1 }).dzien_tygodnia, d.kalendarz.tydzien[7]);          // Festag
+  assert.equal(S.dataImperialna(d, { dzien: 67 }).miesiac.staroswiatowa, 'Mitterfruhl');
+  assert.equal(S.dataImperialna(d, { dzien: 67 }).dzien_tygodnia, d.kalendarz.tydzien[1]);         // Aubentag
+  assert.equal(S.dataImperialna(d, { dzien: 167 }).dzien_tygodnia, d.kalendarz.tydzien[5]);        // Konigstag
+  assert.equal(S.dataImperialna(d, { dzien: 200 }).pora, 'lato');
+  assert.equal(S.dataImperialna(d, { dzien: 300, rok: 2522 }).opis, '33 Czas Warzenia (Brauzeit) 2522 KI');
+  assert.equal(S.dzienRoku(d, 5, 12), 1 + 32 + 33 + 1 + 33 + 12);
+});
+
+test('zapisany kupiec: data idzie po 8 dni, pora z kalendarza, wahania co 4 tygodnie, ceny jak w generatorze', () => {
   const sk = S.generujKupca(d, { kupiec: 'kramarz', osada: 'miasto', seed: 9, pora: 'zima', wahania: 'stabilny' });
   let K = T.utworzKupca(d, sk);
   const w = T.wycen(d, K);
   sk.towar.forEach(t => assert.equal(w.towar.find(x => x.id === t.id).cena_p, t.cena_p));
-  K = T.uplywCzasu(d, K, 13);
+  K = T.przenies(d, K, { data: { dzien: 390, rok: 2522 } });
+  assert.equal(K.pora, 'zima');
+  K = T.uplywCzasu(d, K, 2);
+  assert.deepEqual(K.data, { dzien: 6, rok: 2523 });
+  K = T.uplywCzasu(d, K, 8);
+  assert.equal(K.data.dzien, 70);
   assert.equal(K.pora, 'wiosna');
   assert.ok(['stabilny', 'hossa', 'bessa'].includes(K.wahania));
   assert.equal(T.przenies(d, K, { pora: null }).pora, null);

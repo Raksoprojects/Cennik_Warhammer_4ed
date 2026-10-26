@@ -1,158 +1,817 @@
 {
- "opis": "v6c: osobowość kupców i BN-ów. Szablon postaci wg Ekranu Mistrza Gry (rozdz. III): wygląd (2–3 cechy), znak rozpoznawczy, manieryzm i głos, Motywacja (nazwy wg Ekranu, s. 11–13), cecha kupiecka (wg Poradnika Staroświatowca, tab. 3-7, z efektem), potrzeba, sekret / problem, dziwactwo. Opisy własne. charakter: dobry / neutralny / zly — generator losuje tylko z zaznaczonych; pozycje bez pola charakter pasują do każdego.",
+ "opis": "v6c: osobowość kupców i BN-ów. Szablon postaci wg Ekranu Mistrza Gry (rozdz. III): wygląd (2–3 cechy), znak rozpoznawczy, manieryzm i głos, Motywacja (nazwy wg Ekranu, s. 11–13), cecha kupiecka (wg Poradnika Staroświatowca, tab. 3-7, z efektem), potrzeba, sekret / problem, dziwactwo. Opisy własne. charakter: dobry / neutralny / zly — generator losuje tylko z zaznaczonych; pozycje bez pola charakter pasują do każdego. Dziwactwa: wagi = { charakter: waga } — jak często to dziwactwo trafia kupcowi o danym charakterze (domyślnie 1; np. dobry kupiec rzadziej, ale może nie obsługiwać nieludzi). Lista zawiera też dziwactwa z artefaktu (data/nazwy.json).",
  "charaktery": {
-  "dobry": { "nazwa": "Dobry", "waga": 3 },
-  "neutralny": { "nazwa": "Neutralny", "waga": 5 },
-  "zly": { "nazwa": "Zły", "waga": 2 }
+  "dobry": {
+   "nazwa": "Dobry",
+   "waga": 3
+  },
+  "neutralny": {
+   "nazwa": "Neutralny",
+   "waga": 5
+  },
+  "zly": {
+   "nazwa": "Zły",
+   "waga": 2
+  }
  },
  "motywacje": [
-  { "nazwa": "Bogactwo", "charakter": "neutralny", "opis": "Liczy pensy nawet przez sen. Zysk to cel sam w sobie, nie środek." },
-  { "nazwa": "Chwała", "charakter": "neutralny", "opis": "Chce dokonać jednej wielkiej rzeczy, o której będą mówić." },
-  { "nazwa": "Doskonałość", "charakter": "neutralny", "opis": "Jego wyrób ma być najlepszy w mieście — i on o tym wie." },
-  { "nazwa": "Jedność", "charakter": "dobry", "opis": "Godzi zwaśnionych, łączy cechy i sąsiadów we wspólnej sprawie." },
-  { "nazwa": "Kontrola", "charakter": "neutralny", "opis": "Nie znosi niespodzianek. Wszystko musi iść po jego myśli." },
-  { "nazwa": "Miłosierdzie", "charakter": "dobry", "opis": "Daje biednym za darmo, choć ledwie wiąże koniec z końcem." },
-  { "nazwa": "Miłość", "charakter": "dobry", "opis": "Wszystko robi dla jednej osoby — dla niej zaryzykuje sklep." },
-  { "nazwa": "Nacjonalizm", "charakter": "neutralny", "opis": "Jego prowincja jest najlepsza, obcy towar podejrzany." },
-  { "nazwa": "Nadzieja", "charakter": "dobry", "opis": "Wierzy, że w przyszłym roku będzie lepiej. Zawsze." },
-  { "nazwa": "Niepohamowanie", "charakter": "neutralny", "opis": "Jedzenie, trunek albo hazard — potrzebuje tego dużo i często." },
-  { "nazwa": "Niesława", "charakter": "zly", "opis": "Chce, żeby się go bano. Plotki o nim karmią jego dumę." },
-  { "nazwa": "Porządek", "charakter": "neutralny", "opis": "Przepisy, miary, pieczęcie. Kto łamie reguły, ten traci." },
-  { "nazwa": "Potęga", "charakter": "zly", "opis": "Chce mieć ludzi w garści — dłużników, świadków, wspólników." },
-  { "nazwa": "Przemoc", "charakter": "zly", "opis": "Szuka zaczepki. Spory rozwiązuje pięścią albo pałką." },
-  { "nazwa": "Przetrwanie", "charakter": "neutralny", "opis": "Najpierw on i jego dom. Ryzyko podejmuje tylko pod przymusem." },
-  { "nazwa": "Rozpusta", "charakter": "zly", "opis": "Zarobione pieniądze wydaje na zakazane uciechy." },
-  { "nazwa": "Sława", "charakter": "neutralny", "opis": "Chce, żeby jego imię było na ustach całego miasta." },
-  { "nazwa": "Służba", "charakter": "dobry", "opis": "Wierny swojemu panu albo mistrzowi aż do przesady." },
-  { "nazwa": "Sprawiedliwość", "charakter": "dobry", "opis": "Oszust i złodziej muszą zapłacić — po jego myśli, nie po prawie." },
-  { "nazwa": "Szacunek", "charakter": "neutralny", "opis": "Liczy się uznanie w cechu i wśród kupców." },
-  { "nazwa": "Wiara", "charakter": "dobry", "opis": "Żyje przykazaniami swojego boga. Daje na świątynię co tydzień." },
-  { "nazwa": "Wiedza", "charakter": "neutralny", "opis": "Zbiera wiadomości, mapy i plotki — czasem cenniejsze od towaru." },
-  { "nazwa": "Władza", "charakter": "neutralny", "opis": "Szanuje urzędy i pieczęcie, marzy o własnym urzędzie." },
-  { "nazwa": "Wolność", "charakter": "neutralny", "opis": "Nie da się zapisać do żadnej gildii ani komukolwiek podporządkować." },
-  { "nazwa": "Zadowolenie", "charakter": "neutralny", "opis": "Dobre jedzenie, wino i towarzystwo. Interes ma być przyjemny." },
-  { "nazwa": "Zazdrość", "charakter": "zly", "opis": "Chce mieć to, co ma konkurent — sklep, żonę, klientów." },
-  { "nazwa": "Zemsta", "charakter": "zly", "opis": "Ktoś go zrujnował. Każdy grosz odkłada na odwet." },
-  { "nazwa": "Zmiana", "charakter": "neutralny", "opis": "Stary porządek musi upaść. Popiera każdego, kto go burzy." },
-  { "nazwa": "Zniszczenie", "charakter": "zly", "opis": "Chce upadku konkretnego rodu, gildii albo miasta." },
-  { "nazwa": "Zobowiązanie", "charakter": "dobry", "opis": "Ma długi wdzięczności i honoru — i spłaca je co do pensa." },
-  { "nazwa": "Rodzina", "charakter": "dobry", "opis": "Sklep ma przejść na syna. Każda decyzja jest dla dzieci." },
-  { "nazwa": "Awans w cechu", "charakter": "neutralny", "opis": "Chce zostać starszym cechu i zrobi wiele, by to osiągnąć." },
-  { "nazwa": "Spłata długu", "charakter": "neutralny", "opis": "Wisi pieniądze komuś groźnemu. Termin się zbliża." }
+  {
+   "nazwa": "Bogactwo",
+   "charakter": "neutralny",
+   "opis": "Liczy pensy nawet przez sen. Zysk to cel sam w sobie, nie środek."
+  },
+  {
+   "nazwa": "Chwała",
+   "charakter": "neutralny",
+   "opis": "Chce dokonać jednej wielkiej rzeczy, o której będą mówić."
+  },
+  {
+   "nazwa": "Doskonałość",
+   "charakter": "neutralny",
+   "opis": "Jego wyrób ma być najlepszy w mieście — i on o tym wie."
+  },
+  {
+   "nazwa": "Jedność",
+   "charakter": "dobry",
+   "opis": "Godzi zwaśnionych, łączy cechy i sąsiadów we wspólnej sprawie."
+  },
+  {
+   "nazwa": "Kontrola",
+   "charakter": "neutralny",
+   "opis": "Nie znosi niespodzianek. Wszystko musi iść po jego myśli."
+  },
+  {
+   "nazwa": "Miłosierdzie",
+   "charakter": "dobry",
+   "opis": "Daje biednym za darmo, choć ledwie wiąże koniec z końcem."
+  },
+  {
+   "nazwa": "Miłość",
+   "charakter": "dobry",
+   "opis": "Wszystko robi dla jednej osoby — dla niej zaryzykuje sklep."
+  },
+  {
+   "nazwa": "Nacjonalizm",
+   "charakter": "neutralny",
+   "opis": "Jego prowincja jest najlepsza, obcy towar podejrzany."
+  },
+  {
+   "nazwa": "Nadzieja",
+   "charakter": "dobry",
+   "opis": "Wierzy, że w przyszłym roku będzie lepiej. Zawsze."
+  },
+  {
+   "nazwa": "Niepohamowanie",
+   "charakter": "neutralny",
+   "opis": "Jedzenie, trunek albo hazard — potrzebuje tego dużo i często."
+  },
+  {
+   "nazwa": "Niesława",
+   "charakter": "zly",
+   "opis": "Chce, żeby się go bano. Plotki o nim karmią jego dumę."
+  },
+  {
+   "nazwa": "Porządek",
+   "charakter": "neutralny",
+   "opis": "Przepisy, miary, pieczęcie. Kto łamie reguły, ten traci."
+  },
+  {
+   "nazwa": "Potęga",
+   "charakter": "zly",
+   "opis": "Chce mieć ludzi w garści — dłużników, świadków, wspólników."
+  },
+  {
+   "nazwa": "Przemoc",
+   "charakter": "zly",
+   "opis": "Szuka zaczepki. Spory rozwiązuje pięścią albo pałką."
+  },
+  {
+   "nazwa": "Przetrwanie",
+   "charakter": "neutralny",
+   "opis": "Najpierw on i jego dom. Ryzyko podejmuje tylko pod przymusem."
+  },
+  {
+   "nazwa": "Rozpusta",
+   "charakter": "zly",
+   "opis": "Zarobione pieniądze wydaje na zakazane uciechy."
+  },
+  {
+   "nazwa": "Sława",
+   "charakter": "neutralny",
+   "opis": "Chce, żeby jego imię było na ustach całego miasta."
+  },
+  {
+   "nazwa": "Służba",
+   "charakter": "dobry",
+   "opis": "Wierny swojemu panu albo mistrzowi aż do przesady."
+  },
+  {
+   "nazwa": "Sprawiedliwość",
+   "charakter": "dobry",
+   "opis": "Oszust i złodziej muszą zapłacić — po jego myśli, nie po prawie."
+  },
+  {
+   "nazwa": "Szacunek",
+   "charakter": "neutralny",
+   "opis": "Liczy się uznanie w cechu i wśród kupców."
+  },
+  {
+   "nazwa": "Wiara",
+   "charakter": "dobry",
+   "opis": "Żyje przykazaniami swojego boga. Daje na świątynię co tydzień."
+  },
+  {
+   "nazwa": "Wiedza",
+   "charakter": "neutralny",
+   "opis": "Zbiera wiadomości, mapy i plotki — czasem cenniejsze od towaru."
+  },
+  {
+   "nazwa": "Władza",
+   "charakter": "neutralny",
+   "opis": "Szanuje urzędy i pieczęcie, marzy o własnym urzędzie."
+  },
+  {
+   "nazwa": "Wolność",
+   "charakter": "neutralny",
+   "opis": "Nie da się zapisać do żadnej gildii ani komukolwiek podporządkować."
+  },
+  {
+   "nazwa": "Zadowolenie",
+   "charakter": "neutralny",
+   "opis": "Dobre jedzenie, wino i towarzystwo. Interes ma być przyjemny."
+  },
+  {
+   "nazwa": "Zazdrość",
+   "charakter": "zly",
+   "opis": "Chce mieć to, co ma konkurent — sklep, żonę, klientów."
+  },
+  {
+   "nazwa": "Zemsta",
+   "charakter": "zly",
+   "opis": "Ktoś go zrujnował. Każdy grosz odkłada na odwet."
+  },
+  {
+   "nazwa": "Zmiana",
+   "charakter": "neutralny",
+   "opis": "Stary porządek musi upaść. Popiera każdego, kto go burzy."
+  },
+  {
+   "nazwa": "Zniszczenie",
+   "charakter": "zly",
+   "opis": "Chce upadku konkretnego rodu, gildii albo miasta."
+  },
+  {
+   "nazwa": "Zobowiązanie",
+   "charakter": "dobry",
+   "opis": "Ma długi wdzięczności i honoru — i spłaca je co do pensa."
+  },
+  {
+   "nazwa": "Rodzina",
+   "charakter": "dobry",
+   "opis": "Sklep ma przejść na syna. Każda decyzja jest dla dzieci."
+  },
+  {
+   "nazwa": "Awans w cechu",
+   "charakter": "neutralny",
+   "opis": "Chce zostać starszym cechu i zrobi wiele, by to osiągnąć."
+  },
+  {
+   "nazwa": "Spłata długu",
+   "charakter": "neutralny",
+   "opis": "Wisi pieniądze komuś groźnemu. Termin się zbliża."
+  }
  ],
  "cechy_kupieckie": [
-  { "nazwa": "Biurokrata", "charakter": "neutralny", "opis": "Każda transakcja na piśmie, w trzech egzemplarzach. Duża sprzedaż trwa 1k10 dni.", "efekt": {} },
-  { "nazwa": "Skrupulatnie uczciwy", "charakter": "dobry", "opis": "Uczciwa cena dla każdego — i ani pensa mniej. Nie targuje się, nigdy nie oszukuje.", "efekt": { "bez_targu": true, "trefne": 0, "kaprys": false } },
-  { "nazwa": "Fanatyk religijny", "charakter": "neutralny", "opis": "Należy do bractwa religijnego. Wypytuje, w co wierzysz, zanim sprzeda.", "efekt": {} },
-  { "nazwa": "Przebiegły", "charakter": "neutralny", "opis": "Twardy negocjator. Testy Targowania przeciw niemu −10.", "efekt": { "targowanie": -10 } },
-  { "nazwa": "Chciwy", "charakter": "zly", "opis": "Zawyża ceny i zaniża skup. Uczciwa transakcja wymaga Testu Wyceny.", "efekt": { "ceny": 1.1, "skup": 0.85 } },
-  { "nazwa": "Przedsiębiorczy", "charakter": "neutralny", "opis": "Pożycza na procent i robi interesy na boku.", "efekt": {} },
-  { "nazwa": "Powiązania przestępcze", "charakter": "zly", "opis": "Handluje też towarem z nielegalnych źródeł. Wie, gdzie kupić zakazane rzeczy. Przy szukaniu nielegalnych towarów Bohaterowie dostają +10.", "efekt": { "trefne": 0.25, "nielegalne": true } },
-  { "nazwa": "Obieżyświat", "charakter": "neutralny", "opis": "Zna kupców w całym Imperium. Zamówienia sprowadza szybciej.", "efekt": { "termin": 0.75 } },
-  { "nazwa": "Szarlatan", "charakter": "zly", "opis": "Oszust. Ponad połowa towaru jest trefna, a on o tym wie. Jeśli może, ucieknie z pieniędzmi.", "efekt": { "trefne": 0.6, "oszust": true } },
-  { "nazwa": "Bogaty", "charakter": "neutralny", "opis": "Ma pieniądze na każdy zakup. Skupi wszystko, co mu przyniesiecie.", "efekt": { "gotowka": 3 } },
-  { "nazwa": "Hojny", "charakter": "dobry", "opis": "Płaci uczciwie za przyniesiony towar, biednym dorzuca coś gratis.", "efekt": { "skup": 1.1 } },
-  { "nazwa": "Podejrzliwy", "charakter": "neutralny", "opis": "Obcym nie ufa. Pierwsza transakcja z drużyną: Targowanie −10.", "efekt": { "targowanie": -10 } },
-  { "nazwa": "Gaduła", "charakter": "neutralny", "opis": "Wie wszystko o wszystkich. Za drobny zakup dorzuci plotkę.", "efekt": {} },
-  { "nazwa": "Zadłużony", "charakter": "neutralny", "opis": "Potrzebuje gotówki od ręki. Za płatność w monecie zejdzie o 10%.", "efekt": { "targowanie": 10 } },
-  { "nazwa": "Leniwy", "charakter": "neutralny", "opis": "Nie chce mu się szukać towaru. Zamówienia trwają dłużej.", "efekt": { "termin": 1.5 } },
-  { "nazwa": "Dobroduszny", "charakter": "dobry", "opis": "Lubi ludzi. Testy Targowania z nim +10.", "efekt": { "targowanie": 10 } }
+  {
+   "nazwa": "Biurokrata",
+   "charakter": "neutralny",
+   "opis": "Każda transakcja na piśmie, w trzech egzemplarzach. Duża sprzedaż trwa 1k10 dni.",
+   "efekt": {}
+  },
+  {
+   "nazwa": "Skrupulatnie uczciwy",
+   "charakter": "dobry",
+   "opis": "Uczciwa cena dla każdego — i ani pensa mniej. Nie targuje się, nigdy nie oszukuje.",
+   "efekt": {
+    "bez_targu": true,
+    "trefne": 0,
+    "kaprys": false
+   }
+  },
+  {
+   "nazwa": "Fanatyk religijny",
+   "charakter": "neutralny",
+   "opis": "Należy do bractwa religijnego. Wypytuje, w co wierzysz, zanim sprzeda.",
+   "efekt": {}
+  },
+  {
+   "nazwa": "Przebiegły",
+   "charakter": "neutralny",
+   "opis": "Twardy negocjator. Testy Targowania przeciw niemu −10.",
+   "efekt": {
+    "targowanie": -10
+   }
+  },
+  {
+   "nazwa": "Chciwy",
+   "charakter": "zly",
+   "opis": "Zawyża ceny i zaniża skup. Uczciwa transakcja wymaga Testu Wyceny.",
+   "efekt": {
+    "ceny": 1.1,
+    "skup": 0.85
+   }
+  },
+  {
+   "nazwa": "Przedsiębiorczy",
+   "charakter": "neutralny",
+   "opis": "Pożycza na procent i robi interesy na boku.",
+   "efekt": {}
+  },
+  {
+   "nazwa": "Powiązania przestępcze",
+   "charakter": "zly",
+   "opis": "Handluje też towarem z nielegalnych źródeł. Wie, gdzie kupić zakazane rzeczy. Przy szukaniu nielegalnych towarów Bohaterowie dostają +10.",
+   "efekt": {
+    "trefne": 0.25,
+    "nielegalne": true
+   }
+  },
+  {
+   "nazwa": "Obieżyświat",
+   "charakter": "neutralny",
+   "opis": "Zna kupców w całym Imperium. Zamówienia sprowadza szybciej.",
+   "efekt": {
+    "termin": 0.75
+   }
+  },
+  {
+   "nazwa": "Szarlatan",
+   "charakter": "zly",
+   "opis": "Oszust. Ponad połowa towaru jest trefna, a on o tym wie. Jeśli może, ucieknie z pieniędzmi.",
+   "efekt": {
+    "trefne": 0.6,
+    "oszust": true
+   }
+  },
+  {
+   "nazwa": "Bogaty",
+   "charakter": "neutralny",
+   "opis": "Ma pieniądze na każdy zakup. Skupi wszystko, co mu przyniesiecie.",
+   "efekt": {
+    "gotowka": 3
+   }
+  },
+  {
+   "nazwa": "Hojny",
+   "charakter": "dobry",
+   "opis": "Płaci uczciwie za przyniesiony towar, biednym dorzuca coś gratis.",
+   "efekt": {
+    "skup": 1.1
+   }
+  },
+  {
+   "nazwa": "Podejrzliwy",
+   "charakter": "neutralny",
+   "opis": "Obcym nie ufa. Pierwsza transakcja z drużyną: Targowanie −10.",
+   "efekt": {
+    "targowanie": -10
+   }
+  },
+  {
+   "nazwa": "Gaduła",
+   "charakter": "neutralny",
+   "opis": "Wie wszystko o wszystkich. Za drobny zakup dorzuci plotkę.",
+   "efekt": {}
+  },
+  {
+   "nazwa": "Zadłużony",
+   "charakter": "neutralny",
+   "opis": "Potrzebuje gotówki od ręki. Za płatność w monecie zejdzie o 10%.",
+   "efekt": {
+    "targowanie": 10
+   }
+  },
+  {
+   "nazwa": "Leniwy",
+   "charakter": "neutralny",
+   "opis": "Nie chce mu się szukać towaru. Zamówienia trwają dłużej.",
+   "efekt": {
+    "termin": 1.5
+   }
+  },
+  {
+   "nazwa": "Dobroduszny",
+   "charakter": "dobry",
+   "opis": "Lubi ludzi. Testy Targowania z nim +10.",
+   "efekt": {
+    "targowanie": 10
+   }
+  }
  ],
  "wyglad": {
-  "sylwetka": ["chudy jak tyczka", "otyły, sapie przy każdym kroku", "niski i krępy", "wysoki, lekko zgarbiony", "barczysty jak tragarz", "drobny, ruchliwy", "brzuchaty, ale żwawy", "kościsty, długie ręce", "przysadzisty, krótka szyja", "wyprostowany jak żołnierz"],
-  "twarz": ["dziobata twarz po ospie", "czerwony nos pijaka", "nalana, rumiana twarz", "zapadnięte policzki", "brak dwóch przednich zębów", "krzywy, raz złamany nos", "piegi na całej twarzy", "zrośnięte brwi", "podwójny podbródek", "ogorzała, pokryta zmarszczkami skóra", "jedno oko mętne", "wyjątkowo urodziwy"],
-  "wlosy": ["łysy jak kolano", "rzadkie, zaczesane na łysinę włosy", "rudy, rozczochrany", "siwa broda do pasa", "starannie przystrzyżona bródka", "tłuste włosy w kucyku", "gęste czarne loki", "wąsy podkręcone na wosk", "ogolony na łyso, z tatuażem", "jasne, prawie białe włosy"],
-  "ubior": ["fartuch pełen łat i plam", "kapelusz z piórem, za duży o dwa numery", "aksamitny kaftan, lata świetności ma za sobą", "czysty, skromny strój mieszczański", "pierścień na każdym palcu", "kożuch, nawet latem", "mundur dawnej armii, bez naszywek", "brudne rękawice bez palców", "drewniane chodaki", "pas pełen kluczy"]
+  "sylwetka": [
+   "chudy jak tyczka",
+   "otyły, sapie przy każdym kroku",
+   "niski i krępy",
+   "wysoki, lekko zgarbiony",
+   "barczysty jak tragarz",
+   "drobny, ruchliwy",
+   "brzuchaty, ale żwawy",
+   "kościsty, długie ręce",
+   "przysadzisty, krótka szyja",
+   "wyprostowany jak żołnierz"
+  ],
+  "twarz": [
+   "dziobata twarz po ospie",
+   "czerwony nos pijaka",
+   "nalana, rumiana twarz",
+   "zapadnięte policzki",
+   "brak dwóch przednich zębów",
+   "krzywy, raz złamany nos",
+   "piegi na całej twarzy",
+   "zrośnięte brwi",
+   "podwójny podbródek",
+   "ogorzała, pokryta zmarszczkami skóra",
+   "jedno oko mętne",
+   "wyjątkowo urodziwy"
+  ],
+  "wlosy": [
+   "łysy jak kolano",
+   "rzadkie, zaczesane na łysinę włosy",
+   "rudy, rozczochrany",
+   "siwa broda do pasa",
+   "starannie przystrzyżona bródka",
+   "tłuste włosy w kucyku",
+   "gęste czarne loki",
+   "wąsy podkręcone na wosk",
+   "ogolony na łyso, z tatuażem",
+   "jasne, prawie białe włosy"
+  ],
+  "ubior": [
+   "fartuch pełen łat i plam",
+   "kapelusz z piórem, za duży o dwa numery",
+   "aksamitny kaftan, lata świetności ma za sobą",
+   "czysty, skromny strój mieszczański",
+   "pierścień na każdym palcu",
+   "kożuch, nawet latem",
+   "mundur dawnej armii, bez naszywek",
+   "brudne rękawice bez palców",
+   "drewniane chodaki",
+   "pas pełen kluczy"
+  ]
  },
  "znaki": [
-  { "tekst": "Brakuje mu dwóch palców u lewej dłoni.", "typ": "fizyczny" },
-  { "tekst": "Długa blizna przez policzek — mówi, że od niedźwiedzia.", "typ": "fizyczny" },
-  { "tekst": "Kuleje na prawą nogę i podpiera się laską.", "typ": "fizyczny" },
-  { "tekst": "Na ramieniu siedzi stara, łysiejąca papuga.", "typ": "fizyczny" },
-  { "tekst": "Nosi monokl, choć widzi na oba oczy.", "typ": "fizyczny" },
-  { "tekst": "Złoty ząb, który pokazuje przy każdym uśmiechu.", "typ": "fizyczny" },
-  { "tekst": "Pachnie goździkami — żuje je bez przerwy.", "typ": "fizyczny" },
-  { "tekst": "Zawsze ma przy sobie wielkiego, leniwego psa.", "typ": "fizyczny" },
-  { "tekst": "Ręce poplamione na niebiesko od barwnika.", "typ": "fizyczny" },
-  { "tekst": "Tatuaż kotwicy — był kiedyś flisakiem.", "typ": "fizyczny" },
-  { "tekst": "Nosi na szyi wisior z ząbkiem jakiegoś zwierzęcia.", "typ": "fizyczny" },
-  { "tekst": "Okulary na sznurku, ciągle je gubi.", "typ": "fizyczny" },
-  { "tekst": "Ma oczy w dwóch różnych kolorach.", "typ": "fizyczny" },
-  { "tekst": "Mówi o sobie w trzeciej osobie.", "typ": "zachowanie" },
-  { "tekst": "Po każdej transakcji całuje monetę.", "typ": "zachowanie" },
-  { "tekst": "Śmieje się z własnych dowcipów, zanim je skończy.", "typ": "zachowanie" },
-  { "tekst": "Każdemu klientowi nadaje przezwisko.", "typ": "zachowanie" },
-  { "tekst": "Nie patrzy w oczy — zawsze gdzieś nad ramieniem rozmówcy.", "typ": "zachowanie" },
-  { "tekst": "Nuci tę samą melodię od rana do wieczora.", "typ": "zachowanie" },
-  { "tekst": "Przelicza monety trzy razy, głośno.", "typ": "zachowanie" },
-  { "tekst": "Wszystko porównuje do czasów swojego dziadka.", "typ": "zachowanie" },
-  { "tekst": "Ciągle coś je — orzechy, suszone śliwki, kiełbasę.", "typ": "zachowanie" },
-  { "tekst": "Na powitanie zawsze pyta o zdrowie matki.", "typ": "zachowanie" },
-  { "tekst": "Wplata do zdań przysłowia, zwykle przekręcone.", "typ": "zachowanie" },
-  { "tekst": "Mruga, kiedy kłamie — i wszyscy o tym wiedzą.", "typ": "zachowanie" },
-  { "tekst": "Zapisuje imiona klientów kredą na tablicy za ladą.", "typ": "zachowanie" }
+  {
+   "tekst": "Brakuje mu dwóch palców u lewej dłoni.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Długa blizna przez policzek — mówi, że od niedźwiedzia.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Kuleje na prawą nogę i podpiera się laską.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Na ramieniu siedzi stara, łysiejąca papuga.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Nosi monokl, choć widzi na oba oczy.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Złoty ząb, który pokazuje przy każdym uśmiechu.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Pachnie goździkami — żuje je bez przerwy.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Zawsze ma przy sobie wielkiego, leniwego psa.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Ręce poplamione na niebiesko od barwnika.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Tatuaż kotwicy — był kiedyś flisakiem.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Nosi na szyi wisior z ząbkiem jakiegoś zwierzęcia.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Okulary na sznurku, ciągle je gubi.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Ma oczy w dwóch różnych kolorach.",
+   "typ": "fizyczny"
+  },
+  {
+   "tekst": "Mówi o sobie w trzeciej osobie.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Po każdej transakcji całuje monetę.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Śmieje się z własnych dowcipów, zanim je skończy.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Każdemu klientowi nadaje przezwisko.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Nie patrzy w oczy — zawsze gdzieś nad ramieniem rozmówcy.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Nuci tę samą melodię od rana do wieczora.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Przelicza monety trzy razy, głośno.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Wszystko porównuje do czasów swojego dziadka.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Ciągle coś je — orzechy, suszone śliwki, kiełbasę.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Na powitanie zawsze pyta o zdrowie matki.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Wplata do zdań przysłowia, zwykle przekręcone.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Mruga, kiedy kłamie — i wszyscy o tym wiedzą.",
+   "typ": "zachowanie"
+  },
+  {
+   "tekst": "Zapisuje imiona klientów kredą na tablicy za ladą.",
+   "typ": "zachowanie"
+  }
  ],
  "manieryzmy": [
-  "Mówi bardzo cicho, trzeba się nachylać.", "Krzyczy, jakby wszyscy byli głusi.", "Mówi szybko, połyka końcówki.", "Jąka się, gdy się denerwuje.",
-  "Gruby akcent z Ostlandu.", "Wtrąca słowa w języku klasycznym, często błędnie.", "Ochrypły głos palacza fajki.", "Sepleni.",
-  "Odpowiada pytaniem na pytanie.", "Długo milczy, zanim cokolwiek powie.", "Przesadnie uprzejmy, tytułuje każdego „jaśnie panem”.", "Opryskliwy i krótki.",
-  "Ciągle narzeka na podatki.", "Gestykuluje całym ciałem.", "Zdrabnia wszystko — „mieczyk”, „koniczek”.", "Śmieje się nerwowo po każdym zdaniu."
+  "Mówi bardzo cicho, trzeba się nachylać.",
+  "Krzyczy, jakby wszyscy byli głusi.",
+  "Mówi szybko, połyka końcówki.",
+  "Jąka się, gdy się denerwuje.",
+  "Gruby akcent z Ostlandu.",
+  "Wtrąca słowa w języku klasycznym, często błędnie.",
+  "Ochrypły głos palacza fajki.",
+  "Sepleni.",
+  "Odpowiada pytaniem na pytanie.",
+  "Długo milczy, zanim cokolwiek powie.",
+  "Przesadnie uprzejmy, tytułuje każdego „jaśnie panem”.",
+  "Opryskliwy i krótki.",
+  "Ciągle narzeka na podatki.",
+  "Gestykuluje całym ciałem.",
+  "Zdrabnia wszystko — „mieczyk”, „koniczek”.",
+  "Śmieje się nerwowo po każdym zdaniu."
  ],
  "potrzeby": [
-  { "tekst": "Potrzebuje eskorty dla transportu do sąsiedniego miasta." },
-  { "tekst": "Szuka kogoś, kto odzyska ukradziony towar." },
-  { "tekst": "Chce zdobyć list polecający do gildii w Altdorfie." },
-  { "tekst": "Musi szybko sprzedać zalegający towar, zanim przyjdzie kontrola." },
-  { "tekst": "Szuka męża dla córki — najlepiej z dobrego cechu.", "charakter": "dobry" },
-  { "tekst": "Potrzebuje rzadkiego składnika albo surowca, którego nikt nie dowozi." },
-  { "tekst": "Chce się pozbyć konkurenta — uczciwie albo nie.", "charakter": "zly" },
-  { "tekst": "Zbiera na wykup brata z niewoli u bandytów.", "charakter": "dobry" },
-  { "tekst": "Szuka świadka, który potwierdzi jego wersję w sporze sądowym." },
-  { "tekst": "Potrzebuje kogoś, kto dostarczy list i nie zada pytań.", "charakter": "zly" },
-  { "tekst": "Chce otworzyć drugi kram w większym mieście." },
-  { "tekst": "Szuka lekarza dla chorego dziecka.", "charakter": "dobry" },
-  { "tekst": "Musi spłacić lichwiarza do końca miesiąca." },
-  { "tekst": "Chce poznać sekret receptury konkurenta.", "charakter": "zly" },
-  { "tekst": "Potrzebuje ludzi do odbudowy spalonego magazynu." }
+  {
+   "tekst": "Potrzebuje eskorty dla transportu do sąsiedniego miasta."
+  },
+  {
+   "tekst": "Szuka kogoś, kto odzyska ukradziony towar."
+  },
+  {
+   "tekst": "Chce zdobyć list polecający do gildii w Altdorfie."
+  },
+  {
+   "tekst": "Musi szybko sprzedać zalegający towar, zanim przyjdzie kontrola."
+  },
+  {
+   "tekst": "Szuka męża dla córki — najlepiej z dobrego cechu.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Potrzebuje rzadkiego składnika albo surowca, którego nikt nie dowozi."
+  },
+  {
+   "tekst": "Chce się pozbyć konkurenta — uczciwie albo nie.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Zbiera na wykup brata z niewoli u bandytów.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Szuka świadka, który potwierdzi jego wersję w sporze sądowym."
+  },
+  {
+   "tekst": "Potrzebuje kogoś, kto dostarczy list i nie zada pytań.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Chce otworzyć drugi kram w większym mieście."
+  },
+  {
+   "tekst": "Szuka lekarza dla chorego dziecka.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Musi spłacić lichwiarza do końca miesiąca."
+  },
+  {
+   "tekst": "Chce poznać sekret receptury konkurenta.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Potrzebuje ludzi do odbudowy spalonego magazynu."
+  }
  ],
  "sekrety": [
-  { "tekst": "Część towaru kupuje od przemytników.", "charakter": "zly" },
-  { "tekst": "Jest szpiegiem konkurencyjnej gildii.", "charakter": "zly" },
-  { "tekst": "Ukrywa mutację pod ubraniem.", "charakter": "zly" },
-  { "tekst": "Potajemnie wspiera rodzinę zmarłego wspólnika.", "charakter": "dobry" },
-  { "tekst": "Nie ma licencji cechowej — handluje na cudzej.", "charakter": "neutralny" },
-  { "tekst": "Jest winien pieniądze lokalnemu hersztowi.", "charakter": "neutralny" },
-  { "tekst": "Prowadzi podwójne księgi, żeby nie płacić podatków.", "charakter": "zly" },
-  { "tekst": "Kocha się bez wzajemności w żonie burmistrza.", "charakter": "neutralny" },
-  { "tekst": "Kiedyś był żołnierzem i zdezerterował.", "charakter": "neutralny" },
-  { "tekst": "Czci zakazane bóstwo w piwnicy.", "charakter": "zly" },
-  { "tekst": "Przechowuje dla świątyni relikwię, o której nikt nie wie.", "charakter": "dobry" },
-  { "tekst": "Sprzedał kiedyś zatrute wino — trzech ludzi zmarło.", "charakter": "zly" },
-  { "tekst": "Jest nieślubnym synem miejscowego szlachcica.", "charakter": "neutralny" },
-  { "tekst": "Ukrywa w magazynie zbiega przed łowcami czarownic.", "charakter": "dobry" },
-  { "tekst": "Nie umie czytać — księgi prowadzi mu żona.", "charakter": "neutralny" }
+  {
+   "tekst": "Część towaru kupuje od przemytników.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Jest szpiegiem konkurencyjnej gildii.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Ukrywa mutację pod ubraniem.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Potajemnie wspiera rodzinę zmarłego wspólnika.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Nie ma licencji cechowej — handluje na cudzej.",
+   "charakter": "neutralny"
+  },
+  {
+   "tekst": "Jest winien pieniądze lokalnemu hersztowi.",
+   "charakter": "neutralny"
+  },
+  {
+   "tekst": "Prowadzi podwójne księgi, żeby nie płacić podatków.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Kocha się bez wzajemności w żonie burmistrza.",
+   "charakter": "neutralny"
+  },
+  {
+   "tekst": "Kiedyś był żołnierzem i zdezerterował.",
+   "charakter": "neutralny"
+  },
+  {
+   "tekst": "Czci zakazane bóstwo w piwnicy.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Przechowuje dla świątyni relikwię, o której nikt nie wie.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Sprzedał kiedyś zatrute wino — trzech ludzi zmarło.",
+   "charakter": "zly"
+  },
+  {
+   "tekst": "Jest nieślubnym synem miejscowego szlachcica.",
+   "charakter": "neutralny"
+  },
+  {
+   "tekst": "Ukrywa w magazynie zbiega przed łowcami czarownic.",
+   "charakter": "dobry"
+  },
+  {
+   "tekst": "Nie umie czytać — księgi prowadzi mu żona.",
+   "charakter": "neutralny"
+  }
  ],
  "dziwactwa": [
-  "Nie handluje w Dzień Tajemnicy — kram zamknięty na cztery spusty.",
-  "Waży towar na wadze, którą sam skalibrował. Nikt nie wie jak.",
-  "Wierzy, że rude kobiety przynoszą pecha. Nie obsłuży ich.",
-  "Trzyma w sklepie kota, który podobno wyczuwa złodziei.",
-  "Każdą monetę sprawdza zębem.",
-  "Oferuje herbatę z ziół każdemu, kto wejdzie, i obraża się, gdy ktoś odmówi.",
-  "Zbiera guziki. Za ciekawy guzik da zniżkę.",
-  "Opowiada każdemu tę samą historię o wilkołaku z Drakwaldu.",
-  "Nie znosi elfów, ale kupuje od nich wino.",
-  "Sprzedaje tylko do zmroku — po zmroku boi się otwierać drzwi.",
-  "Kłóci się z żoną na oczach klientów.",
-  "Zakłada się o wszystko — nawet o cenę.",
-  "Ma ulubionego klienta i każdego z nim porównuje.",
-  "Nie dotyka metalu gołą ręką.",
-  "Uważa się za poetę i wierszem zachwala towar.",
-  "Twierdzi, że widział Imperatora z bliska. Opowiada o tym każdemu."
+  {
+   "tekst": "Nie handluje w Dzień Tajemnicy — kram zamknięty na cztery spusty."
+  },
+  {
+   "tekst": "Waży towar na wadze, którą sam skalibrował. Nikt nie wie jak."
+  },
+  {
+   "tekst": "Wierzy, że rude kobiety przynoszą pecha. Nie obsłuży ich.",
+   "wagi": {
+    "dobry": 0.4
+   }
+  },
+  {
+   "tekst": "Trzyma w sklepie kota, który podobno wyczuwa złodziei."
+  },
+  {
+   "tekst": "Każdą monetę sprawdza zębem."
+  },
+  {
+   "tekst": "Oferuje herbatę z ziół każdemu, kto wejdzie, i obraża się, gdy ktoś odmówi.",
+   "wagi": {
+    "dobry": 1.5,
+    "zly": 0.5
+   }
+  },
+  {
+   "tekst": "Zbiera guziki. Za ciekawy guzik da zniżkę."
+  },
+  {
+   "tekst": "Opowiada każdemu tę samą historię o wilkołaku z Drakwaldu."
+  },
+  {
+   "tekst": "Nie znosi elfów, ale kupuje od nich wino.",
+   "wagi": {
+    "dobry": 0.6
+   }
+  },
+  {
+   "tekst": "Sprzedaje tylko do zmroku — po zmroku boi się otwierać drzwi."
+  },
+  {
+   "tekst": "Kłóci się z żoną na oczach klientów."
+  },
+  {
+   "tekst": "Zakłada się o wszystko — nawet o cenę."
+  },
+  {
+   "tekst": "Ma ulubionego klienta i każdego z nim porównuje."
+  },
+  {
+   "tekst": "Nie dotyka metalu gołą ręką."
+  },
+  {
+   "tekst": "Uważa się za poetę i wierszem zachwala towar."
+  },
+  {
+   "tekst": "Twierdzi, że widział Imperatora z bliska. Opowiada o tym każdemu."
+  },
+  {
+   "tekst": "Otwiera dopiero po południu — rano modli się w kaplicy Sigmara i nikt go stamtąd nie wyciągnie.",
+   "wagi": {
+    "dobry": 1.5,
+    "zly": 0.5
+   }
+  },
+  {
+   "tekst": "Ma dług u lichwiarza i widać to po nim. Przy gotówce na stole zejdzie o dodatkowe 10%."
+  },
+  {
+   "tekst": "Przysięga, że pamięta twarz jednego z was. Dopóki nie przypomni sobie skąd, będzie nerwowy."
+  },
+  {
+   "tekst": "Nie obsługuje nieludzi. Krasnoludom sprzeda, ale przez zaciśnięte zęby i o 20% drożej.",
+   "wagi": {
+    "dobry": 0.4,
+    "zly": 1.5
+   }
+  },
+  {
+   "tekst": "Zapisuje każdą transakcję w oprawnej księdze. Straż czyta ją raz na kwartał."
+  },
+  {
+   "tekst": "Ma córkę w wieku na wydaniu i ocenia każdego klienta pod tym kątem."
+  },
+  {
+   "tekst": "Zapłaci lepiej za towar, o który nie musi pytać, skąd pochodzi.",
+   "wagi": {
+    "dobry": 0.1,
+    "zly": 2
+   }
+  },
+  {
+   "tekst": "Dorzuca coś gratis do każdego zakupu powyżej 5 ZK. Zwykle to coś, czego nie może sprzedać.",
+   "wagi": {
+    "dobry": 1.5,
+    "zly": 0.3
+   }
+  },
+  {
+   "tekst": "Handluje też informacją. Plotka o mieście kosztuje 1 ZK i bywa prawdziwa.",
+   "wagi": {
+    "zly": 1.3
+   }
+  },
+  {
+   "tekst": "Jest w połowie przeprowadzki — połowa towaru zapakowana, więc schodzi z ceny, byle mniej dźwigać."
+  },
+  {
+   "tekst": "Odmawia sprzedaży, dopóki ktoś nie wypije z nim kufla. Potem robi się bardzo rozmowny.",
+   "wagi": {
+    "dobry": 1.2
+   }
+  },
+  {
+   "tekst": "Ma konkurenta po drugiej stronie ulicy i zbije cenę o 15%, jeśli wspomnisz jego nazwisko.",
+   "wagi": {
+    "zly": 1.2
+   }
+  },
+  {
+   "tekst": "Czeka na transport, który spóźnia się trzy tygodnie. Jest w fatalnym humorze i mówi o tym każdemu."
+  },
+  {
+   "tekst": "Właśnie odprawił poborcę podatkowego. Do końca dnia nie przyjmuje zapłaty w srebrze."
+  }
  ],
  "imiona": {
-  "m": ["Albrecht", "Anselm", "Bertold", "Dieter", "Eberhard", "Ernst", "Friedrich", "Gottfried", "Gunther", "Hans", "Heinrich", "Helmut", "Johann", "Jurgen", "Karl", "Konrad", "Kurt", "Lothar", "Ludwig", "Manfred", "Matthias", "Otto", "Reinhold", "Rudolf", "Sigismund", "Ulrich", "Volker", "Werner", "Wilhelm", "Wolfram"],
-  "k": ["Adelheid", "Agnes", "Anna", "Bertha", "Clara", "Dorothea", "Elsa", "Gertrud", "Greta", "Hedwig", "Hildegard", "Ilse", "Katarina", "Liesel", "Magda", "Margarete", "Marta", "Ottilie", "Ursula", "Walburga"]
+  "m": [
+   "Albrecht",
+   "Anselm",
+   "Bertold",
+   "Dieter",
+   "Eberhard",
+   "Ernst",
+   "Friedrich",
+   "Gottfried",
+   "Gunther",
+   "Hans",
+   "Heinrich",
+   "Helmut",
+   "Johann",
+   "Jurgen",
+   "Karl",
+   "Konrad",
+   "Kurt",
+   "Lothar",
+   "Ludwig",
+   "Manfred",
+   "Matthias",
+   "Otto",
+   "Reinhold",
+   "Rudolf",
+   "Sigismund",
+   "Ulrich",
+   "Volker",
+   "Werner",
+   "Wilhelm",
+   "Wolfram"
+  ],
+  "k": [
+   "Adelheid",
+   "Agnes",
+   "Anna",
+   "Bertha",
+   "Clara",
+   "Dorothea",
+   "Elsa",
+   "Gertrud",
+   "Greta",
+   "Hedwig",
+   "Hildegard",
+   "Ilse",
+   "Katarina",
+   "Liesel",
+   "Magda",
+   "Margarete",
+   "Marta",
+   "Ottilie",
+   "Ursula",
+   "Walburga"
+  ]
  },
- "nazwiska": ["Ackermann", "Bauer", "Becker", "Brandt", "Drexler", "Eichmann", "Fassbinder", "Gerber", "Grünwald", "Hartmann", "Holzer", "Jaeger", "Kessler", "Kohl", "Krause", "Lang", "Mahler", "Messner", "Novak", "Pfeiffer", "Reiter", "Rothfuss", "Schäfer", "Schuster", "Stahl", "Vogt", "Weber", "Winkler", "Zimmermann", "Zollner"]
+ "nazwiska": [
+  "Ackermann",
+  "Bauer",
+  "Becker",
+  "Brandt",
+  "Drexler",
+  "Eichmann",
+  "Fassbinder",
+  "Gerber",
+  "Grünwald",
+  "Hartmann",
+  "Holzer",
+  "Jaeger",
+  "Kessler",
+  "Kohl",
+  "Krause",
+  "Lang",
+  "Mahler",
+  "Messner",
+  "Novak",
+  "Pfeiffer",
+  "Reiter",
+  "Rothfuss",
+  "Schäfer",
+  "Schuster",
+  "Stahl",
+  "Vogt",
+  "Weber",
+  "Winkler",
+  "Zimmermann",
+  "Zollner"
+ ]
 }

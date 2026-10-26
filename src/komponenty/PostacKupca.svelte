@@ -19,7 +19,7 @@
       · <b>{postac.cecha.nazwa}</b> <Podpowiedz tekst={postac.cecha.opis + (efekt(postac.cecha.efekt) ? ` Efekt: ${efekt(postac.cecha.efekt)}.` : '')} />
       {#if onPrzelosuj}<button class="maly nie-drukuj" onclick={onPrzelosuj}>Przelosuj osobowość</button>{/if}</div>
     <div class="male"><span class="szary">Wygląd:</span> {postac.wyglad.join(', ')}. <span class="szary">Znak:</span> {postac.znak}</div>
-    <div class="male"><span class="szary">Mówi:</span> {postac.manieryzm} <span class="szary">Dziwactwo:</span> {postac.dziwactwo}</div>
+    <div class="male"><span class="szary">Mówi:</span> {postac.manieryzm}</div>
     <div class="male"><span class="szary">Potrzeba:</span> {postac.potrzeba} <span class="szary nie-drukuj">Sekret (MG):</span> <span class="nie-drukuj">{postac.sekret}</span></div>
   </div>
 {/if}
