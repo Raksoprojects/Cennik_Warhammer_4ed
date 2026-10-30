@@ -62,11 +62,12 @@
   </div>
   <div class="panel">
     <h3>Ile Robót odłożyć <Podpowiedz tekst="Ceny z cennika po Twoich zmianach w Edycji cen. To cena bazowa — u kupca dojdzie marża." /></h3>
+    <p class="male drugi">Liczone tylko z ceny bazowej (wytwórcy). U kupca zwykle o 5–45% drożej — zależnie od marży, osady i sytuacji.</p>
     <ul>{#each koszyk as c (c.id)}<li>{c.nazwa} ({mon(c.cena_p)}) — <b>{ileRobot(c.cena_p)}</b>
       <button class="maly" aria-label="Usuń {c.nazwa}" onclick={() => (koszykIds = koszykIds.filter(i => i !== c.id))}>✕</button></li>{/each}</ul>
     <div class="pasek">
       <label class="pole"><span>Dodaj rzecz</span><input bind:value={dodaj} list="zar-towary" onkeydown={e => e.key === 'Enter' && dodajDoKoszyka()} />
-        <datalist id="zar-towary">{#each d.cennik.pozycje as c}<option value={c.nazwa}></option>{/each}</datalist></label>
+        <datalist id="zar-towary">{#each d.cennik.pozycje as c}<option value={c.nazwa} label={c.dostepnosc ?? ''}></option>{/each}</datalist></label>
       <button onclick={dodajDoKoszyka}>Dodaj</button>
     </div>
   </div>

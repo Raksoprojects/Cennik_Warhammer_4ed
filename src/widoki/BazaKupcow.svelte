@@ -11,6 +11,10 @@
     for (const K of widoczni) m.set(K.grupa || 'Bez grupy', [...(m.get(K.grupa || 'Bez grupy') ?? []), K]);
     return [...m].sort(([a], [b]) => a === 'Bez grupy' ? 1 : b === 'Bez grupy' ? -1 : a.localeCompare(b, 'pl'));
   });
+  function eksportuj() {
+    pobierzPlik(`kupcy-${dzis()}.json`, { typ: 'skarbiec-kupcy', wersja: 1, kupcy: stan.kupcy });
+    stan.zapisanoEksport();
+  }
   async function importuj(e: Event) {
     try {
       const j = await wczytajPlik(e); if (!j) return;
@@ -25,7 +29,7 @@
 <div class="pasek nie-drukuj">
   <label class="pole"><span>Szukaj</span><input type="search" bind:value={q} placeholder="imię, grupa, notatka…" /></label>
   <button class="glowny" onclick={onNowy}>Nowy kupiec</button>
-  <button onclick={() => pobierzPlik(`kupcy-${dzis()}.json`, { typ: 'skarbiec-kupcy', wersja: 1, kupcy: stan.kupcy })} disabled={!stan.kupcy.length}>Eksport wszystkich</button>
+  <button onclick={eksportuj} disabled={!stan.kupcy.length}>Eksport wszystkich</button>
   <label class="chip" style="display:inline-flex;align-items:center;min-height:44px">Import z pliku<input type="file" accept=".json,application/json" hidden onchange={importuj} /></label>
 </div>
 {#if msg}<div class="komunikat">{msg}</div>{/if}

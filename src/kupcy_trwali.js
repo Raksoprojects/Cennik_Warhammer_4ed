@@ -8,7 +8,7 @@
 // (np. towar spoza asortymentu), zwraca { blad, powod } zamiast kupca.
 import {
   kosci, generujKupca, pulaTowaru, ilosc, zapasZRzutu, przesunieciePopytu, mnoznikRynku, cenaKoniunktury,
-  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, koniunkturaEfektywna, dataImperialna, mnoznikNielegalny, wahaniaZRzutu, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
+  popytKoniunktury, osobowoscKupca, cenaMinimalna, wycenZamowienie, wTowarze, jakoscLosowa, trefnyLosowy, generujPostac, koniunkturaEfektywna, dataImperialna, mnoznikNielegalny, mnoznikLokalny, wahaniaZRzutu, etykietaOsady, etykietaKoniunktury, mon, sredniDochod, jakoscZ,
 } from './silnik.js';
 
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -46,7 +46,7 @@ const zapasZeStanu = w => w.sztuk <= 0 ? 3 : w.sztuk < w.norma * 0.5 ? 2 : w.szt
 
 // losujJakosc: jak w generatorze — szansa kupca na Zalety albo Wady przedmiotu i na towar trefny (ręcznie dodany towar jest zwykły).
 function nowyWiersz(d, K, c, r, { zapas, sztuk, poza = false, losujJakosc = false } = {}) {
-  const jak = losujJakosc ? jakoscLosowa(d, kupiecZ(d, K), c, r) : null;
+  const jak = losujJakosc ? jakoscLosowa(d, kupiecZ(d, K), c, r, osadaZ(d, K)) : null;
   const trefny = losujJakosc ? trefnyLosowy(d, kupiecZ(d, K), c, r, K.postac?.cecha?.efekt) : null;
   const z = zapas ?? zapasZRzutu(d, r.k(10));
   const norma = normaPozycji(d, K, c, r.ri);
@@ -102,8 +102,8 @@ export function wycen(d, K) {
     const popyt = clamp(R.popyt.start + popytKoniunktury(kon, c.kat) + w.przes_popytu, 0, 2);
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, w.zapas, popyt);
     const os = osobowoscKupca(d, kup, c, E.kaprys === false ? null : w.rzut_kaprysu);
-    const mNiel = mnoznikNielegalny(d, lok, c);
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod * (E.ceny ?? 1) * mNiel;
+    const mNiel = mnoznikNielegalny(d, lok, c), mLok = mnoznikLokalny(lok, c);
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * mod * (E.ceny ?? 1) * mNiel * mLok;
     const cenaW = c.cena_p * mnoznik, cena_p = w.cena_reczna_p ?? Math.round(cenaW);
     const skupU = Math.max(R.skup.minimum, kup.skup + (popyt === 2 ? R.skup.popyt_wysoki : popyt === 0 ? R.skup.popyt_niski : 0)) * (E.skup ?? 1);
     const min = cenaMinimalna(d, { kupiec: kup, pozycja: c, osada: lok, koniunktura: kon, mRynek, cena_p });
@@ -111,7 +111,7 @@ export function wycen(d, K) {
       cena_cennik_p: c0.cena_p, jakosc: jak ? { nazwa: jak.nazwa, mnoznik: jak.mnoznik } : null,
       skup_p: Math.round((w.cena_reczna_p ?? cenaW) * skupU), koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       popyt, zapas_nazwa: R.zapas.progi[w.zapas].nazwa, popyt_nazwa: R.popyt.nazwy[popyt], rzuty: { kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod, charakter: E.ceny ?? 1, nielegalny: mNiel },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, modyfikator: mod, charakter: E.ceny ?? 1, nielegalny: mNiel, lokalny: mLok },
       brak_w_cenniku: !pozycja(d, w.id) };
   }).sort((a, b) => b.cena_cennik_p - a.cena_cennik_p);   // jak w generatorze: po cenie z cennika, bez jakości
   return { kupiec: kup, osada: lok, koniunktura: kon, towar,

@@ -32,3 +32,12 @@
   {#if stan.wynik.blad}<div class="komunikat zly">Błąd w ustawieniach MG: {stan.wynik.blad}. Pokazuję cennik domyślny.</div>{/if}
   <Widok />
 </main>
+{#if stan.przypomnijEksport}
+  <div class="dymek-eksport nie-drukuj" role="status">
+    Baza kupców jest tylko w tej przeglądarce. Zapisz kopię na dysku.
+    <div class="przyciski" style="margin-top:6px">
+      <button class="maly glowny" onclick={() => { stan.idz('#kupcy'); stan.odlozPrzypomnienie(); }}>Do eksportu</button>
+      <button class="maly" onclick={() => stan.odlozPrzypomnienie()}>Później</button>
+    </div>
+  </div>
+{/if}

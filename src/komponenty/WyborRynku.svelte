@@ -3,8 +3,9 @@
   import { stan } from '../lib/stan.svelte';
   import { wahaniaZRzutu } from '../silnik.js';
   import Podpowiedz from './Podpowiedz.svelte';
-  let { pora = $bindable(null), wahania = $bindable(null), onchange }:
-    { pora?: string | null; wahania?: string | null; onchange?: (z: { pora?: string | null; wahania?: string | null }) => void } = $props();
+  // poraZDaty: pora wynika z daty kampanii — wybór zablokowany (zmienia się datą).
+  let { pora = $bindable(null), wahania = $bindable(null), poraZDaty = false, onchange }:
+    { pora?: string | null; wahania?: string | null; poraZDaty?: boolean; onchange?: (z: { pora?: string | null; wahania?: string | null }) => void } = $props();
   const H = $derived(stan.d.handel);
   let rzut = $state<number | null>(null);
   function ustawPore(v: string) { pora = v || null; onchange?.({ pora }); }
@@ -12,8 +13,8 @@
   function losuj() { rzut = 1 + Math.floor(Math.random() * 10); ustawWahania(wahaniaZRzutu(stan.d, rzut)); }
 </script>
 
-<label class="pole"><span>Pora roku <Podpowiedz tekst={H.pory_roku.opis} /></span>
-  <select value={pora ?? ''} onchange={e => ustawPore(e.currentTarget.value)}>
+<label class="pole"><span>Pora roku{poraZDaty ? ' (z daty)' : ''} <Podpowiedz tekst={H.pory_roku.opis + (poraZDaty ? ' Pora wynika z daty kampanii — zmień datę.' : '')} /></span>
+  <select value={pora ?? ''} disabled={poraZDaty} onchange={e => ustawPore(e.currentTarget.value)}>
     <option value="">bez pory roku</option>
     {#each H.pory_roku.lista as p}<option value={p.id}>{p.nazwa} ({p.uwaga})</option>{/each}
   </select></label>

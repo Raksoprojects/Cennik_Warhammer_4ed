@@ -19,15 +19,17 @@ def slug(s):
 H = J('data/handel.json')
 ST = H['stopnie']
 STREFY = {s['id']: s for s in H['strefy']}
+# v6d: strefa daje ODCHYLENIE od średniej Imperium (inaczej rzeczy rzadkie wszędzie, np. zioła, drożałyby w całym kraju).
+# Cena = 1 − krok × (stopień strefy − średni stopień Imperium dla tej kategorii), w granicach [min, max].
+KROK, LO, HI = H['strefa_cena']['krok'], H['strefa_cena']['min'], H['strefa_cena']['max']
+def stopien(sid, kat):
+    st = dict(zip(H['towary_poradnika'], STREFY[sid]['siatka'].split()))
+    towary = H['kategorie_z_towarow'][kat]
+    return sum(ST.index(st[t]) for t in towary) / len(towary)
+KATY = [k for k in H['kategorie_z_towarow'] if k != 'opis']
+SREDNIA = {k: sum(stopien(s, k) for s in STREFY) / len(STREFY) for k in KATY}
 def ceny_strefy(sid):
-    s = STREFY[sid]; litery = s['siatka'].split()
-    st = dict(zip(H['towary_poradnika'], litery))
-    out = {}
-    for kat, towary in H['kategorie_z_towarow'].items():
-        if kat == 'opis': continue
-        sr = round(sum(ST.index(st[t]) for t in towary) / len(towary))
-        out[kat] = {'cena': H['mnozniki_stopni'][ST[sr]], 'stopien': ST[sr]}
-    return out
+    return {k: {'cena': round(min(HI, max(LO, 1 - KROK * (stopien(sid, k) - SREDNIA[k]))), 3)} for k in KATY}
 
 OS = J('data/osady.json')
 TYP = {o['id']: o for o in OS['osady'] if not o['id'].startswith('miasto-')}
@@ -38,7 +40,7 @@ for o in TYP.values():
     o.pop('kategorie', None); o.pop('strefa', None)
     if o['id'] in STREFA_TYPU:
         o['strefa'] = STREFA_TYPU[o['id']]
-        o['kategorie'] = {k: {'cena': v['cena']} for k, v in ceny_strefy(o['strefa']).items()}
+        o['kategorie'] = ceny_strefy(o['strefa'])
 nowe = []
 for nazwa, pop, zam, prow, strefa, wolne in H['miasta']:
     if nazwa in ('Altdorf', 'Marienburg'): continue
@@ -47,7 +49,7 @@ for nazwa, pop, zam, prow, strefa, wolne in H['miasta']:
     o = {'id': 'miasto-' + slug(nazwa), 'nazwa': nazwa, 'grupa': STREFY[strefa]['nazwa'],
          'mnoznik': round(t['mnoznik'] * H['zamoznosc']['mnoznik_cen'][str(zam)], 3), 'limit_p': t['limit_p'],
          'dostepnosc': t['dostepnosc'], 'typ': typ, 'populacja': pop, 'zamoznosc': zam, 'prowincja': prow, 'strefa': strefa,
-         'wolne_miasto': wolne, 'kategorie': {k: {'cena': v['cena']} for k, v in ceny_strefy(strefa).items()}}
+         'wolne_miasto': wolne, 'kategorie': ceny_strefy(strefa)}
     if 'limit_omijaja_podtypy' in t: o['limit_omijaja_podtypy'] = t['limit_omijaja_podtypy']
     if wolne: o['uwaga'] = 'Wolne miasto.'
     nowe.append(o)

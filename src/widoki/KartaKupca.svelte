@@ -5,6 +5,7 @@
   import WyborOsady from '../komponenty/WyborOsady.svelte';
   import WyborRynku from '../komponenty/WyborRynku.svelte';
   import DataKampanii from '../komponenty/DataKampanii.svelte';
+  import NaZamowienie from '../komponenty/NaZamowienie.svelte';
   import { cenaTypowa } from '../lib/ceny';
   import * as T from '../kupcy_trwali.js';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
@@ -112,7 +113,7 @@
   <div class="panel">
     <h3>Gdzie i kiedy</h3>
     <label class="pole"><span>Osada</span><WyborOsady value={K.osada} onchange={v => zapisz(T.przenies(d, $state.snapshot(K), { osada: v }), 'Ceny przeliczone dla nowej osady.')} /></label>
-    <div class="pasek" style="margin-top:8px"><WyborRynku pora={K.pora ?? null} wahania={K.wahania ?? null}
+    <div class="pasek" style="margin-top:8px"><WyborRynku pora={K.pora ?? null} wahania={K.wahania ?? null} poraZDaty={!!K.data}
       onchange={z => zapisz(T.przenies(d, $state.snapshot(K), z), 'Ceny przeliczone.')} /></div>
     <DataKampanii data={K.data ?? null} onUstaw={dt => zapisz(T.przenies(d, $state.snapshot(K), { data: dt }), dt ? 'Data ustawiona, pora roku z kalendarza.' : 'Bez daty.')} />
     <label class="pole" style="margin-top:8px"><span>Sytuacja</span><select value={K.koniunktura} onchange={e => zapisz(T.przenies(d, $state.snapshot(K), { koniunktura: e.currentTarget.value }), 'Ceny przeliczone dla nowej sytuacji.')}>
@@ -146,7 +147,7 @@
 
   <div class="panel">
     <h3>Towar</h3>
-    <datalist id="towary-cennika">{#each towaryCennika as c}<option value={c.nazwa}></option>{/each}</datalist>
+    <datalist id="towary-cennika">{#each towaryCennika as c}<option value={c.nazwa} label={c.dostepnosc ?? ''}></option>{/each}</datalist>
     <div class="pasek">
       <label class="pole"><span>Dodaj z cennika</span><input bind:value={dodajTxt} list="towary-cennika" placeholder="np. kolczuga" /></label>
       <label class="pole waskie"><span>Sztuk</span><input bind:value={dodajIle} type="number" min="1" placeholder="norma" /></label>
@@ -183,6 +184,8 @@
   onUsun={id => zapisz(T.usunPozycje($state.snapshot(K), id))}
   onPrzelosuj={id => zapisz(T.przelosujPozycje(d, $state.snapshot(K), id))}
   onTransakcja={(id, typ, ilosc, cena_p) => zDecyzja('Brak gotówki', w => T.transakcja(d, $state.snapshot(K), { id, typ, ilosc, cena_p, wymus: w }), typ === 'kupno' ? 'Sprzedane drużynie.' : 'Odkupione od drużyny.')} />
+<NaZamowienie kupiec={K.kupiec} osada={K.osada} koniunktura={K.koniunktura} pora={K.pora ?? null} wahania={K.wahania ?? null}
+  naStanie={W.towar.filter((t: any) => t.sztuk > 0).map((t: any) => t.id)} />
 
 <div class="siatka" style="margin-top:14px">
   <div class="panel">

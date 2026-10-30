@@ -2,7 +2,7 @@
   import { stan } from '../lib/stan.svelte';
   import { mon, norm, pl, mnoz, parsujCene, parsujMnoznik } from '../lib/format';
   import { mnoznikKlasy, cenaTypowa, handlujacy, robot, POROWNANIE, zrodloNazwa, TYPY } from '../lib/ceny';
-  import { etykietaKoniunktury, jakoscZ } from '../silnik.js';
+  import { etykietaKoniunktury, jakoscZ, szansaDostepnosci } from '../silnik.js';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
   import { daneBazowe } from '../lib/dane';
   // Ceny domyślne (bez ustawień MG) — komentarz i podstawa historyczna opisują właśnie je.
@@ -34,7 +34,12 @@
   const kup = $derived(d.kupcy.kupcy.find((k: any) => k.id === kupId));
   const lok = $derived(d.osady.osady.find((o: any) => o.id === osId));
   const kon = $derived(d.koniunktura.koniunktury.find((k: any) => k.id === konId));
-  const handluje = (c: any) => kup.rdzen.includes(c.kat) || kup.boczne.includes(c.kat);
+  const handluje = (c: any) => handlujacy(d, c).includes(kup);
+  // Szansa, że rzecz jest w sklepie w wybranej osadzie (PG s. 290 + zasady kampanii).
+  const DOST_OPIS = (c: any) => {
+    const p = szansaDostepnosci(d, { kupiec: kup, osada: lok, pozycja: c });
+    return `${lok.nazwa}: ${p >= 1 ? 'zawsze' : p >= 0.01 ? Math.round(p * 100) + '%' : (p * 100).toFixed(1) + '%'}` + (p < 0.5 ? ' (zwykle na zamówienie)' : '');
+  };
   const cechy = $derived(Object.fromEntries(d.bron_cechy.pozycje.map((p: any) => [p.id, p])));
 
   function zastosujGrupowy() {
@@ -123,7 +128,8 @@
           {#each lista as c (c.id)}
             {@const mk = mnoznikKlasy(d, stan.ust, c)}
             <tr class="klik" class:otwarty={otwarte === c.id} onclick={() => (otwarte = otwarte === c.id ? null : c.id)}>
-              <td class="tytul">{c.nazwa}
+              <td class="tytul">{c.nazwa} {#if c.dostepnosc}<span class="szary male">({c.dostepnosc})</span>{/if}
+                {#if c.nielegalny}<span class="znacznik czerwony">nielegalny</span>{/if}
                 {#if c.typ !== 'towar'}<span class="znacznik niebieski">nie w handlu</span>{/if}
                 {#if c.wlasna}<span class="znacznik fiolet">MG: nowa</span>{:else if c.nadpisane}<span class="znacznik zloty">MG</span>{/if}
                 {#if !c.podstawa_hist}<span class="znacznik">bez źródła</span>{/if}
@@ -146,7 +152,10 @@
                     Podstawa historyczna, komentarz i uzasadnienie klasy poniżej opisują cenę domyślną {mon(DOMYSLNE[c.id])}.</p>
                 {/if}
                 <dl class="szczegoly-siatka">
-                  <div><dt>Źródło ceny</dt><dd>{zrodloNazwa(c.zrodlo)} · {TYPY[c.typ] ?? c.typ}{c.dostepnosc ? ' · ' + c.dostepnosc : ''}{c.obc != null ? ' · Obc. ' + c.obc : ''}</dd></div>
+                  <div><dt>Źródło</dt><dd>{zrodloNazwa(c.zrodlo, c.strona)} · {TYPY[c.typ] ?? c.typ}{c.obc != null ? ' · Obc. ' + c.obc : ''}</dd></div>
+                  <div><dt>Dostępność</dt><dd>{c.dostepnosc ?? 'nie podana (jak Powszechna)'}
+                    <span class="drugi male">— w sklepie: {DOST_OPIS(c)}</span>
+                    {#if c.nielegalny}<div class="blad male">Nielegalny: tylko u pasera albo kupca z powiązaniami przestępczymi. {c.nielegalny_uwaga ?? ''}</div>{/if}</dd></div>
                   <div><dt>Podstawa historyczna</dt><dd>{c.podstawa_hist || '— (szacunek)'}</dd></div>
                   {#if c.komentarz}<div><dt>Komentarz</dt><dd>{c.komentarz}</dd></div>{/if}
                   {#if c.uwagi_danych}<div><dt>Uwagi</dt><dd class="drugi">{c.uwagi_danych}</dd></div>{/if}
@@ -160,9 +169,14 @@
                     <WyborCech bind:cechy={jakosc} />
                     <span class="male">Cena bazowa egzemplarza: <b class="cena">{mon(Math.round(c.cena_p * jakoscZ(d, jakosc).mnoznik))}</b></span></dd></div>{/if}
                   {#if c.typ === 'towar'}
-                    <div><dt>U kupców (typowo, {lok.nazwa}, {kon.nazwa})</dt><dd>
-                      {#each handlujacy(d, c.kat) as k}<div class="male">{k.nazwa}: <span class="cena">{mon(cenaTypowa(d, k, lok, kon, c))}</span></div>{:else}—{/each}
+                    {@const mj = jakoscZ(d, jakosc).mnoznik}
+                    <div><dt>U kupców (typowo, {lok.nazwa}, {kon.nazwa}{mj !== 1 ? `, jakość ${mnoz(mj)}` : ''})</dt><dd>
+                      {#each handlujacy(d, c) as k}<div class="male">{k.nazwa}: <span class="cena">{mon(Math.round(cenaTypowa(d, k, lok, kon, c) * mj))}</span></div>{:else}—{/each}
                     </dd></div>
+                  {:else}
+                    <div><dt>Na miejscu ({lok.nazwa}) wg gospody <Podpowiedz tekst={d.rynek.gospoda.opis} /></dt><dd>
+                      {#each d.rynek.gospoda.standardy as s}<div class="male">{s.nazwa}: <span class="cena">{mon(Math.round(c.cena_p * lok.mnoznik * s.mnoznik))}</span></div>{/each}
+                      <span class="szary male">Osadę zmienisz w „ceny u kupca”.</span></dd></div>
                   {/if}
                 </dl>
                 <div class="pasek nie-drukuj" style="margin-top:10px">

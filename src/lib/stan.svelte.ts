@@ -4,7 +4,7 @@ import { zastosujUstawienia } from '../silnik.js';
 import { daneBazowe, ustawieniaDomyslne, type Dane } from './dane';
 import { dzis } from './format';
 
-const KLUCZ_UST = 'skarbiec-ustawienia-v5', KLUCZ_KUPCY = 'skarbiec-kupcy-v1';
+const KLUCZ_UST = 'skarbiec-ustawienia-v5', KLUCZ_KUPCY = 'skarbiec-kupcy-v1', KLUCZ_ZNACZNIKI = 'skarbiec-znaczniki-v1';
 function czytaj<T>(klucz: string, dom: T): T {
   try { const s = localStorage.getItem(klucz); if (s) return JSON.parse(s); } catch { /* brak dostępu */ }
   return dom;
@@ -46,7 +46,17 @@ class Stan {
     const k = { ...K, zmieniony: dzis() }, i = this.kupcy.findIndex(x => x.uid === k.uid);
     this.kupcy = i < 0 ? [...this.kupcy, k] : this.kupcy.map((x, j) => j === i ? k : x);
     pisz(KLUCZ_KUPCY, this.kupcy);
+    this.znaczniki = { ...this.znaczniki, zmiana: Date.now() }; pisz(KLUCZ_ZNACZNIKI, this.znaczniki);
   }
+  // Przypomnienie o eksporcie bazy kupców: są zmiany od ostatniego eksportu, minął tydzień, a dymek nie był zamknięty od 3 dni.
+  znaczniki = $state<{ zmiana?: number; eksport?: number; odlozone?: number }>(czytaj(KLUCZ_ZNACZNIKI, {}));
+  get przypomnijEksport() {
+    const z = this.znaczniki, teraz = Date.now(), DZIEN = 864e5;
+    return this.kupcy.length > 0 && (z.zmiana ?? 0) > (z.eksport ?? 0) && teraz - (z.eksport ?? 0) > 7 * DZIEN
+      && teraz - (z.odlozone ?? 0) > 3 * DZIEN;
+  }
+  zapisanoEksport() { this.znaczniki = { ...this.znaczniki, eksport: Date.now() }; pisz(KLUCZ_ZNACZNIKI, this.znaczniki); }
+  odlozPrzypomnienie() { this.znaczniki = { ...this.znaczniki, odlozone: Date.now() }; pisz(KLUCZ_ZNACZNIKI, this.znaczniki); }
   usunKupca(uid: string) { this.kupcy = this.kupcy.filter(k => k.uid !== uid); pisz(KLUCZ_KUPCY, this.kupcy); }
   // Import pliku: kupcy o tym samym uid są zastępowani, reszta dopisana.
   importujKupcow(lista: any[]) {

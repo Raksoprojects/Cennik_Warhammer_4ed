@@ -74,3 +74,27 @@ test('podróż kupiecka i własny interes', () => {
   assert.equal(a.mnoznik, 2); assert.equal(a.nowa_jakosc, 'najlepsza');
   assert.equal(S.dochodInteresu(d, { jakosc: 'kiepska', ps: -2 }).nowa_jakosc, 'bankructwo');
 });
+
+test('v6d: Dostępność — Altdorf Rzadkie łatwiej, Egzotyczne w metropolii, hossa rzadziej, obcy towar we wsi', () => {
+  const k = d.kupcy.kupcy.find(x => x.id === 'zbrojmistrz'), kr = d.kupcy.kupcy.find(x => x.id === 'krasnolud');
+  const C = id => d.cennik.pozycje.find(c => c.id === id);
+  const sz = (osada, pozycja, x = {}) => S.szansaDostepnosci(d, { kupiec: k, osada: os(osada), pozycja: C(pozycja), ...x });
+  assert.equal(sz('altdorf', 'rumak'), d.rynek.dostepnosc.tabela.metropolia.Ograniczona);
+  assert.equal(sz('miasto', 'rumak'), d.rynek.dostepnosc.tabela.miasto.Rzadka);
+  assert.equal(sz('metropolia', 'flamberg'), 0.03);
+  assert.equal(sz('wies', 'flamberg'), 0.001);
+  assert.ok(sz('marienburg', 'flamberg') > 0.03);
+  const hossa = d.handel.wahania.lista.find(w => w.id === 'hossa');
+  assert.ok(sz('miasto', 'rumak', { wahania: hossa }) < sz('miasto', 'rumak'));
+  assert.equal(sz('miasto', 'miecz', { wahania: hossa }), 1, 'Powszechne bez zmian');
+  assert.equal(S.szansaDostepnosci(d, { kupiec: kr, osada: os('wies'), pozycja: C('krasnoludzki-topor') }), d.rynek.dostepnosc.tabela.wioska.Ograniczona);
+  assert.equal(S.szansaDostepnosci(d, { kupiec: kr, osada: os('miasto'), pozycja: C('krasnoludzki-topor') }), 1);
+});
+
+test('v6d: Middenheim — metropolia, tańsze futra i żelazo', () => {
+  const m = os('miasto-middenheim');
+  assert.equal(m.dostepnosc, 'metropolia');
+  const c = d.cennik.pozycje.find(x => x.id === 'focza-skora');
+  assert.equal(S.mnoznikLokalny(m, c), 0.8);
+  assert.equal(S.mnoznikLokalny(os('miasto'), c), 1);
+});

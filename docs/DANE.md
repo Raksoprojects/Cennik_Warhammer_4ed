@@ -1,7 +1,13 @@
 # Do rozpatrzenia przez MG (przegląd 2026-10-26)
 
 Rozbieżności i niejasności znalezione w przeglądzie aplikacji. Każdy punkt: co jest nie tak → propozycja.
-Nic z tego nie jest jeszcze zmienione.
+
+**Stan po v6d (2026-10-30):** rozwiązane 3 (pora z daty), 5 (Middenheim = metropolia, decyzja MG), 6 (Altdorf
+i Marienburg działają), 8 (wahania zmieniają cenę i Dostępność), 9 (strefa jako odchylenie od średniej Imperium),
+10 (Egzotyczne: metropolia 3%, Marienburg 6%, gdzie indziej 0,1%), 11 (Zalety rzadsze we wsi), 13 (krasnolud zostaje
+wszędzie, jego towar we wsi jak Ograniczony), 14 (nielegalne rozszerzone, broń prochowa legalna), 15 (konie),
+17 (dane do Kompendium: `docs/KOMPENDIUM_DANE.md`), 21 (dymek przypomnienia), 23 (dopisek w kalkulatorze).
+Otwarte: 1, 2 (propozycja czynszów czeka na zgodę), 4 (Nuln może być droższy — zostaje), 7, 12, 16, 18, 19, 20, 22.
 
 **Czas i kalendarz**
 
@@ -108,6 +114,10 @@ Dwie drogi zmian:
 | Nielegalne towary | `data/cennik.json` → `nielegalny`; `data/kupcy.json` → `nielegalne` | | Tylko paser i kupiec z cechą „Powiązania przestępcze”; cena × zamożność (tab. 3-11). |
 | Twoje bieżące zmiany | `data/ustawienia.json` | jak eksport z Edycji cen | Puste = cennik domyślny. |
 
-Kolejność skryptów danych: `narzedzia/dodaj_v6.py` → `narzedzia/dane_v6b.py` → `narzedzia/dane_v6c.py` (każdy idempotentny).
+| Dostępność, specjalności miast (v6d) | `narzedzia/dane_v6d.py` → `data/cennik.json`, `data/osady.json`, `data/rynek.json`, `data/handel.json` | cennik: `strona`, `nielegalny`, `nielegalny_uwaga`; osady: `tagi` (branża → mnożnik ceny, np. Middenheim futra ×0,8), `rzadkie_latwiej`, `import`; rynek: `dostepnosc.tabela.metropolia`, `import_egzotyczne`, `obce_wies`, `jakosc.osada_zalety`, `gospoda.standardy`; handel: `strefa_cena` (krok, min, max), `wahania[].dostepnosc` | Specjalności miast to szacunek MG (Poradnik s. 34/38 odsyła do „Dziedzictwa Sigmara”, 2. ed.). Strony z `narzedzia/strony_pg.json`. |
+| Dane do Kompendium MG | `docs/KOMPENDIUM_DANE.md` | | Generowany: `node narzedzia/eksport_kompendium.mjs`. Nie edytuj ręcznie. |
+
+Kolejność skryptów danych: `narzedzia/dodaj_v6.py` → `narzedzia/dane_v6b.py` → `narzedzia/dane_v6c.py` → `narzedzia/dane_v6d.py`
+(każdy idempotentny; v6c przebudowuje osady, więc v6d zawsze po nim).
 
 Po każdej zmianie w `data/` uruchom `npm test` — testy spójności pilnują arbitrażu (np. koc tańszy niż jego sukno).

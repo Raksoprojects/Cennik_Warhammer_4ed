@@ -9,6 +9,7 @@
   import { norm } from '../lib/format';
   import TabelaTowaru from '../komponenty/TabelaTowaru.svelte';
   import PostacKupca from '../komponenty/PostacKupca.svelte';
+  import NaZamowienie from '../komponenty/NaZamowienie.svelte';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
 
   const d = $derived(stan.d);
@@ -87,12 +88,13 @@
     </div>
   </div>
   <TabelaTowaru {towar} {ps} {talent} bezTargu={!!sklep.postac?.cecha?.efekt?.bez_targu} gotowka={sklep.gotowka_p} />
+  <NaZamowienie kupiec={k} osada={o} koniunktura={n} {pora} {wahania} naStanie={towar.filter((t: any) => t.sztuk > 0).map((t: any) => t.id)} />
 
   <div class="panel nie-drukuj" style="margin-top:14px">
     <h3>Dodaj towar do tego sklepu <Podpowiedz tekst="Cena liczona jak u tego kupca (marża, osada, sytuacja, kaprys). Rzecz spoza jego asortymentu dostaje znacznik. Dodany towar zapisuje się razem z kupcem." /></h3>
     <div class="pasek">
       <label class="pole"><span>Co</span><input bind:value={dodajTxt} list="gen-towary" placeholder="np. lutnia, kolczuga" />
-        <datalist id="gen-towary">{#each towary as c}<option value={c.nazwa}></option>{/each}</datalist></label>
+        <datalist id="gen-towary">{#each towary as c}<option value={c.nazwa} label={c.dostepnosc ?? ''}></option>{/each}</datalist></label>
       <button disabled={!wybrany} onclick={() => { if (wybrany && !dodane.includes(wybrany.id)) dodane = [...dodane, wybrany.id]; dodajTxt = ''; }}>Dodaj</button>
       {#if dodane.length}<button class="maly" onclick={() => (dodane = [])}>Usuń dodane ({dodane.length})</button>{/if}
     </div>

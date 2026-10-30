@@ -114,14 +114,26 @@ export function pulaTowaru(d, { kupiec, osada, kats, stosujDostepnosc = true, ni
 // v6b: szansa, że rzecz jest w sprzedaży (PG s. 290: Dostępność × wielkość osady). Towar krasnoludzki u krasnoluda
 // jest Powszechny, u kupca innej rasy szansa × rynek.dostepnosc.obce_pochodzenie. Brak tabeli w danych = 1.
 const WLASNE_POCHODZENIE = { krasnolud: 'krasnoludzkie', elf: 'elfie' };
-export function szansaDostepnosci(d, { kupiec, osada, pozycja }) {
+// v6d: Altdorf i Marienburg (rzadkie_latwiej) — Rzadkie jak Ograniczone; Marienburg (import) — Egzotyczne częściej;
+// własny towar kupca innej rasy we wsi — jak Ograniczony; wahania rynku (hossa / bessa) mnożą szansę rzeczy niepowszechnych.
+export function szansaDostepnosci(d, { kupiec, osada, pozycja, wahania = null }) {
   const T = d.rynek.dostepnosc;
   if (!T) return 1;
-  if (pozycja.pochodzenie && WLASNE_POCHODZENIE[kupiec.rasa] === pozycja.pochodzenie) return 1;
+  const tab = T.tabela[osada.dostepnosc ?? 'miasto'] ?? {};
+  if (pozycja.pochodzenie && WLASNE_POCHODZENIE[kupiec.rasa] === pozycja.pochodzenie)
+    return osada.dostepnosc === 'wioska' && T.obce_wies ? tab[T.obce_wies] ?? 1 : 1;
   const Z = d.handel?.zamoznosc;   // v6c: nielegalny towar — szansa z zamożności osady (Poradnik, tab. 3-11)
   if (pozycja.nielegalny && Z) return Z.nielegalne_szansa[Z.nielegalne[osada.zamoznosc ?? 3].dostepnosc] ?? 0;
-  const p = T.tabela[osada.dostepnosc ?? 'miasto']?.[pozycja.dostepnosc ?? 'Powszechna'] ?? 1;
+  let dost = pozycja.dostepnosc ?? 'Powszechna';
+  if (osada.rzadkie_latwiej && dost === 'Rzadka') dost = 'Ograniczona';
+  let p = dost === 'Egzotyczna' && osada.import ? T.import_egzotyczne ?? tab[dost] : tab[dost] ?? 1;
+  if (p < 1 && wahania?.dostepnosc) p = Math.min(1, p * wahania.dostepnosc);
   return p * (pozycja.pochodzenie ? (T.obce_pochodzenie ?? 1) : 1);
+}
+// v6d: lokalne specjalności osady (osady.json → tagi: { tag branży: mnożnik }) — np. futra w Middenheim ×0,8.
+export function mnoznikLokalny(lok, c) {
+  if (!lok.tagi || !c.branze) return 1;
+  return c.branze.reduce((m, t) => m * (lok.tagi[t] ?? 1), 1);
 }
 
 // v6c: sytuacja + pora roku + wahania rynku (1k10) + ceny strefy handlowej osady = jedna „koniunktura efektywna”.
@@ -208,7 +220,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
 
   // v6b: test Dostępności — osobny strumień, więc rzuty asortymentu idą w tej samej kolejności.
   const dostRnd = kosci((seed ^ 0x2545f491) >>> 0);
-  const dostepny = c => !stosujDostepnosc || omijaLimitWsi(lok, c) || dostRnd.rnd() < szansaDostepnosci(d, { kupiec: kup, osada: lok, pozycja: c });
+  const dostepny = c => !stosujDostepnosc || omijaLimitWsi(lok, c) || dostRnd.rnd() < szansaDostepnosci(d, { kupiec: kup, osada: lok, pozycja: c, wahania: kon.wahania });
   const wybor = [], uzyte = new Set();
   for (const c of pula(kup.rdzen)) if (rnd() < d.rynek.asortyment.rdzen_szansa && dostepny(c)) { uzyte.add(c.id); wybor.push(c); }
   for (const kat of kup.boczne) {
@@ -249,10 +261,10 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
     const mKon = cenaKoniunktury(kon, c.kat), mRynek = mnoznikRynku(d, zapas, popyt);
     const rk = osobowosc ? kaprysRnd.k(10) : null;
     const os = osobowosc ? osobowoscKupca(d, kup, c, E.kaprys === false ? null : rk) : { preferencja: 1, kaprys: 1, rzut: null, mnoznik: 1 };
-    const mNiel = mnoznikNielegalny(d, lok, c);
-    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * (E.ceny ?? 1) * mNiel;
+    const mNiel = mnoznikNielegalny(d, lok, c), mLok = mnoznikLokalny(lok, c);
+    const mnoznik = kup.marza * os.mnoznik * lok.mnoznik * mKon * mRynek * (E.ceny ?? 1) * mNiel * mLok;
     // v6: egzemplarz z Zaletami / Wadami przedmiotu (osobny strumień losowania, tylko z osobowością kupca).
-    const jak = osobowosc ? jakoscLosowa(d, kup, c, jakRnd) : null;
+    const jak = osobowosc ? jakoscLosowa(d, kup, c, jakRnd, lok) : null;
     const baza = jak ? Math.round(c.cena_p * jak.mnoznik) : c.cena_p;
     const cena = baza * mnoznik;
     let sztuk = ilosc(d, ri, c.cena_ref_p ?? c.cena_p, zapas);   // v4: ilość od ceny bazowej
@@ -273,7 +285,7 @@ export function generujKupca(d, { kupiec, osada, koniunktura = 'normalna', seed 
       koszt_p: min.koszt_p, cena_min_p: min.cena_min_p, wyprzedaz: min.wyprzedaz,
       zapas, zapas_nazwa: d.rynek.zapas.progi[zapas].nazwa, popyt, popyt_nazwa: d.rynek.popyt.nazwy[popyt],
       rzuty: { zapas: rz, popyt: rp, kaprys: os.rzut },
-      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, charakter: E.ceny ?? 1, nielegalny: mNiel },
+      skladowe: { marza: kup.marza, preferencja: os.preferencja, kaprys: os.kaprys, osada: lok.mnoznik, koniunktura: mKon, rynek: mRynek, charakter: E.ceny ?? 1, nielegalny: mNiel, lokalny: mLok },
     };
   });
   // v5.2: rzecz, której jedna sztuka kosztuje ponad 4× budżet tej pozycji, jest poza zasięgiem sklepu — będzie na zamówienie.
@@ -348,11 +360,11 @@ export function trefnyLosowy(d, kup, c, r, E = {}) {
 /* ------------------------------------------------------------ v6: losowa jakość towaru */
 // kupcy.json → jakosc: { zalety, wady } = szansa na pozycję z kategorii rynek.jakosc.kategorie. Rzuty: zalety, wady, 1k10 na liczbę,
 // potem wybór cech. Poręczny i Nieporęczny tylko dla rzeczy z Obciążeniem ≥ 1 (PG: małe szpargały nie mają tej Wady).
-export function jakoscLosowa(d, kup, c, r) {
+export function jakoscLosowa(d, kup, c, r, lok = null) {
   const J = d.rynek.jakosc, sz = kup.jakosc_kat?.[c.kat] ?? kup.jakosc;   // v6b: jakość osobno dla kategorii
   if (!sz || !J.kategorie?.includes(c.kat) || c.branze?.some(t => J.bez_jakosci?.includes(t))) return null;
   const a = r.rnd(), b = r.rnd(), n = J.losowanie.ile.find(x => r.k(10) <= x.do).n;
-  const lista = a < (sz.zalety ?? 0) ? J.zalety : b < (sz.wady ?? 0) ? J.wady : null;
+  const lista = a < (sz.zalety ?? 0) * (lok ? J.osada_zalety?.[lok.dostepnosc] ?? 1 : 1) ? J.zalety : b < (sz.wady ?? 0) ? J.wady : null;
   if (!lista) return null;
   const pula = lista.filter(z => !/porę/i.test(z.nazwa) || (c.obc ?? 0) >= 1);
   const cechy = {};
@@ -404,7 +416,7 @@ export function osobowoscKupca(d, kup, c, rzut) {
 export function cenaMinimalna(d, { kupiec, pozycja, osada, koniunktura, mRynek = 1, cena_p }) {
   const M = d.rynek.cena_minimalna ?? { narzut_min: 1, wyprzedaz: 1, koszt_wlasny: 1 };
   const robi = robiTo(kupiec, pozycja);
-  const koszt = pozycja.cena_p * osada.mnoznik * cenaKoniunktury(koniunktura, pozycja.kat) * (robi ? M.koszt_wlasny : 1);
+  const koszt = pozycja.cena_p * osada.mnoznik * mnoznikLokalny(osada, pozycja) * cenaKoniunktury(koniunktura, pozycja.kat) * (robi ? M.koszt_wlasny : 1);
   const wyprzedaz = mRynek < 1;
   const prog = Math.round(koszt * (wyprzedaz ? M.wyprzedaz : M.narzut_min));
   return { koszt_p: Math.round(koszt), cena_min_p: Math.min(cena_p, prog), wyprzedaz, wlasny_wyrob: !!robi };
@@ -473,7 +485,7 @@ export function wycenZamowienie(d, { kupiec, osada, koniunktura = 'normalna', pr
   const baza = c.cena_p * jak.mnoznik;
   const narzut = (robi ? Z.narzut_robota : Z.narzut_sprowadzenie) * (rzadkosc ? RZ.narzut[rzadkosc] ?? 1 : 1);
   const mKon = cenaKoniunktury(kon, c.kat);
-  const mnoznik = kup.marza * lok.mnoznik * mKon * narzut;
+  const mnoznik = kup.marza * lok.mnoznik * mKon * narzut * mnoznikLokalny(lok, c);
   const cena = baza * mnoznik;
   const termin = cena < 240 ? (1 + ri(5)) + ' dni' : cena < 2400 ? (1 + ri(3)) + ' tygodni'
     : cena < 12000 ? (4 + ri(6)) + ' tygodni' : (3 + ri(4)) + ' miesięcy';

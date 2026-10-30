@@ -48,7 +48,8 @@
    "klasa": "bron",
    "branze": [
     "prosta"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "bulat",
@@ -180,7 +181,8 @@
    "klasa": "bron",
    "branze": [
     "zlodziejska"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "kostur",
@@ -202,7 +204,8 @@
    "klasa": "codzienne",
    "branze": [
     "prosta"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "palka",
@@ -334,7 +337,8 @@
    "klasa": "bron",
    "branze": [
     "prosta"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "korbacz",
@@ -356,7 +360,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "kiscien",
@@ -378,7 +383,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "lewak",
@@ -400,7 +406,8 @@
    "klasa": "bron",
    "branze": [
     "szermiercza"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "lamacz-mieczy",
@@ -422,7 +429,8 @@
    "klasa": "bron",
    "branze": [
     "szermiercza"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "wlocznia",
@@ -444,7 +452,8 @@
    "klasa": "bron",
    "branze": [
     "prosta"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "pika",
@@ -466,7 +475,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "halabarda",
@@ -488,7 +498,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "wielki-topor",
@@ -510,7 +521,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "mlot-bojowy",
@@ -532,7 +544,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "poltorak",
@@ -554,7 +567,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "miecz-dwureczny",
@@ -576,7 +590,8 @@
    "klasa": "bron",
    "branze": [
     "wojskowa"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "floret",
@@ -598,7 +613,8 @@
    "klasa": "bron",
    "branze": [
     "szermiercza"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "rapier",
@@ -620,7 +636,8 @@
    "klasa": "bron",
    "branze": [
     "szermiercza"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "szpada",
@@ -664,7 +681,8 @@
    "klasa": "bron",
    "branze": [
     "rycerska"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "kopia",
@@ -686,7 +704,8 @@
    "klasa": "bron",
    "branze": [
     "rycerska"
-   ]
+   ],
+   "strona": 294
   },
   {
    "id": "lanca",
@@ -1083,7 +1102,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "krasnoludzki-mlot-bojowy",
@@ -1106,7 +1126,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "wirujace-ostrza-smierci",
@@ -1129,7 +1150,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "krasnoludzki-wielki-topor",
@@ -1152,7 +1174,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "krasnoludzki-wielki-mlot",
@@ -1175,7 +1198,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "krasnoludzki-kilof",
@@ -1198,7 +1222,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 93
   },
   {
    "id": "wielki-miecz-hoetha",
@@ -1221,7 +1246,8 @@
    "branze": [
     "elfia"
    ],
-   "pochodzenie": "elfie"
+   "pochodzenie": "elfie",
+   "strona": 31
   },
   {
    "id": "krotki-luk",
@@ -1243,7 +1269,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "luk",
@@ -1265,7 +1292,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "luk-dlugi",
@@ -1287,7 +1315,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "luk-elfi",
@@ -1310,7 +1339,8 @@
    "branze": [
     "elfia"
    ],
-   "pochodzenie": "elfie"
+   "pochodzenie": "elfie",
+   "strona": 295
   },
   {
    "id": "kusza",
@@ -1332,7 +1362,8 @@
    "klasa": "bron",
    "branze": [
     "kusze"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "ciezka-kusza",
@@ -1354,7 +1385,8 @@
    "klasa": "bron",
    "branze": [
     "kusze"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "kusza-pistoletowa",
@@ -1376,7 +1408,8 @@
    "klasa": "bron",
    "branze": [
     "kusze"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "rusznica",
@@ -1398,7 +1431,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "garlacz",
@@ -1420,7 +1454,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "muszkiet-kaliwer",
@@ -1464,7 +1499,8 @@
    "klasa": "palna",
    "branze": [
     "eksperymentalna"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "pistolet",
@@ -1486,7 +1522,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "pieprzniczka",
@@ -1530,7 +1567,8 @@
    "klasa": "palna",
    "branze": [
     "eksperymentalna"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "pistolet-samopowtarzalny",
@@ -1552,7 +1590,8 @@
    "klasa": "palna",
    "branze": [
     "eksperymentalna"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "bomba",
@@ -1574,7 +1613,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "ladunek-zapalajacy",
@@ -1596,7 +1636,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "proca",
@@ -1618,7 +1659,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "proca-drzewcowa",
@@ -1640,7 +1682,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "oszczep",
@@ -1662,7 +1705,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "noz-do-rzucania",
@@ -1684,7 +1728,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "topor-do-rzucania",
@@ -1706,7 +1751,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "strzalka",
@@ -1728,7 +1774,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "bolas",
@@ -1750,7 +1797,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "arkan",
@@ -1772,7 +1820,8 @@
    "klasa": "codzienne",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "bicz",
@@ -1794,7 +1843,8 @@
    "klasa": "bron",
    "branze": [
     "mysliwska"
-   ]
+   ],
+   "strona": 295
   },
   {
    "id": "arkebuz",
@@ -2015,7 +2065,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 94
   },
   {
    "id": "krasnoludzka-hakownica",
@@ -2038,7 +2089,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 94
   },
   {
    "id": "krasnoludzki-pistolet",
@@ -2061,7 +2113,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 94
   },
   {
    "id": "krasnoludzki-topor-do-rzucania",
@@ -2084,7 +2137,8 @@
    "branze": [
     "krasnoludzka"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 94
   },
   {
    "id": "strzala-12",
@@ -2106,7 +2160,8 @@
    "klasa": "bron",
    "branze": [
     "amunicja_prosta"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "belt-12",
@@ -2128,7 +2183,8 @@
    "klasa": "bron",
    "branze": [
     "amunicja_prosta"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "strzala-elfia-1",
@@ -2151,7 +2207,8 @@
    "branze": [
     "elfia"
    ],
-   "pochodzenie": "elfie"
+   "pochodzenie": "elfie",
+   "strona": 296
   },
   {
    "id": "srut-i-proch-12",
@@ -2173,7 +2230,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "pocisk-i-proch-12",
@@ -2195,7 +2253,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "improwizowany-srut-i-proch-1",
@@ -2217,7 +2276,8 @@
    "klasa": "palna",
    "branze": [
     "prochowa"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "pocisk-olowiany-12",
@@ -2239,7 +2299,8 @@
    "klasa": "bron",
    "branze": [
     "amunicja_prosta"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "pocisk-kamienny-12",
@@ -2261,7 +2322,8 @@
    "klasa": "bron",
    "branze": [
     "amunicja_prosta"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "strzala-przebijajaca-12",
@@ -2456,7 +2518,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 264,
-   "klasa": "pancerz_skorzany"
+   "klasa": "pancerz_skorzany",
+   "strona": 300
   },
   {
    "id": "skorzany-kaftan",
@@ -2475,7 +2538,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "pancerz_skorzany"
+   "klasa": "pancerz_skorzany",
+   "strona": 300
   },
   {
    "id": "skorzane-nogawice",
@@ -2494,7 +2558,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 264,
-   "klasa": "pancerz_skorzany"
+   "klasa": "pancerz_skorzany",
+   "strona": 300
   },
   {
    "id": "skorzany-helm",
@@ -2513,7 +2578,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 120,
-   "klasa": "pancerz_skorzany"
+   "klasa": "pancerz_skorzany",
+   "strona": 300
   },
   {
    "id": "kolet",
@@ -2532,7 +2598,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "pancerz_skorzany"
+   "klasa": "pancerz_skorzany",
+   "strona": 300
   },
   {
    "id": "kolczuga",
@@ -2551,7 +2618,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "kaftan-kolczy",
@@ -2570,7 +2638,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "nogawice-kolcze",
@@ -2589,7 +2658,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "czepiec-kolczy",
@@ -2608,7 +2678,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "helm-otwarty-morion",
@@ -2627,7 +2698,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 144,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "helm-zamkniety",
@@ -2646,7 +2718,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1920,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "napiersnik",
@@ -2665,7 +2738,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3360,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "naramienniki",
@@ -2684,7 +2758,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2880,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "nagolenniki-plytowe",
@@ -2703,7 +2778,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3360,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "pelna-plytowka-4-elementy",
@@ -2722,7 +2798,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 11520,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 300
   },
   {
    "id": "polzbroja-municyjna-napiersnik-morion",
@@ -2779,7 +2856,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 600,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 301
   },
   {
    "id": "sredni-pancerz-opcja",
@@ -2798,7 +2876,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1920,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 301
   },
   {
    "id": "ciezki-pancerz-opcja",
@@ -2817,7 +2896,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 11520,
-   "klasa": "pancerz"
+   "klasa": "pancerz",
+   "strona": 301
   },
   {
    "id": "kurczak",
@@ -2838,7 +2918,8 @@
     "zwierze_hodowlane"
    ],
    "cena_ref_p": 18,
-   "klasa": "rzezne"
+   "klasa": "rzezne",
+   "strona": 306
   },
   {
    "id": "golab-pocztowy",
@@ -2859,7 +2940,8 @@
     "zwierze_hodowlane"
    ],
    "cena_ref_p": 60,
-   "klasa": "robocze"
+   "klasa": "robocze",
+   "strona": 306
   },
   {
    "id": "robaki-6",
@@ -2878,7 +2960,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1,
-   "klasa": "rzezne"
+   "klasa": "rzezne",
+   "strona": 306
   },
   {
    "id": "owca-baran",
@@ -2981,7 +3064,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "robocze"
+   "klasa": "robocze",
+   "strona": 306
   },
   {
    "id": "malpa",
@@ -3000,7 +3084,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "robocze"
+   "klasa": "robocze",
+   "strona": 306
   },
   {
    "id": "mul",
@@ -3021,7 +3106,8 @@
     "zwierze_hodowlane"
    ],
    "cena_ref_p": 2880,
-   "klasa": "konie"
+   "klasa": "konie",
+   "strona": 306
   },
   {
    "id": "kucyk",
@@ -3040,7 +3126,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "konie"
+   "klasa": "konie",
+   "strona": 306
   },
   {
    "id": "kon-pociagowy",
@@ -3061,7 +3148,8 @@
     "zwierze_hodowlane"
    ],
    "cena_ref_p": 3600,
-   "klasa": "konie"
+   "klasa": "konie",
+   "strona": 306
   },
   {
    "id": "kon-wierzchowy",
@@ -3080,7 +3168,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 9120,
-   "klasa": "konie"
+   "klasa": "konie",
+   "strona": 306
   },
   {
    "id": "lekki-kon-bojowy",
@@ -3090,7 +3179,7 @@
    "cena_raw_p": 16800,
    "cena_p": 63000,
    "obc": null,
-   "dostepnosc": "Powszechna",
+   "dostepnosc": "Ograniczona",
    "podstawa_hist": "Koń bojowy – wielokrotność konia siodłowego",
    "komentarz": null,
    "dopisane": null,
@@ -3099,7 +3188,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 42000,
-   "klasa": "konie_bojowe"
+   "klasa": "konie_bojowe",
+   "strona": 306
   },
   {
    "id": "rumak",
@@ -3109,7 +3199,7 @@
    "cena_raw_p": 55200,
    "cena_p": 198000,
    "obc": null,
-   "dostepnosc": "Ograniczona",
+   "dostepnosc": "Rzadka",
    "podstawa_hist": "Destrier, Anglia XIII w. – do £80 = 550 ZK; koń husarski to kilkanaście kg srebra",
    "komentarz": "16 lat pracy robotnika. Dlatego niewielu stać na rycerstwo.",
    "dopisane": null,
@@ -3118,7 +3208,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 132000,
-   "klasa": "konie_bojowe"
+   "klasa": "konie_bojowe",
+   "strona": 306
   },
   {
    "id": "uprzaz-z-siodlem",
@@ -3137,7 +3228,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1200,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "obroza-i-smycz-dla-psa",
@@ -3156,7 +3248,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 306
   },
   {
    "id": "furmanka",
@@ -3175,7 +3268,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "woz",
@@ -3194,7 +3288,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2880,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "powoz",
@@ -3213,7 +3308,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 24000,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "lodka-dlubanka",
@@ -3232,7 +3328,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 960,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "lodz-wioslowa",
@@ -3251,7 +3348,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2880,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "barka-rzeczna",
@@ -3270,7 +3368,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36000,
-   "klasa": "pojazd"
+   "klasa": "pojazd",
+   "strona": 306
   },
   {
    "id": "prowiant-na-1-dzien",
@@ -3294,7 +3393,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "zywnosc"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "cieply-posilek-w-gospodzie",
@@ -3313,7 +3413,8 @@
    "typ": "nocleg",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 302
   },
   {
    "id": "jedzenie-na-zimno-na-1-dzien",
@@ -3337,7 +3438,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "zywnosc"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "nocleg-w-stajni-na-sianie",
@@ -3375,7 +3477,8 @@
    "typ": "nocleg",
    "podtyp": null,
    "cena_ref_p": 10,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 302
   },
   {
    "id": "prywatny-pokoj-na-1-noc",
@@ -3394,7 +3497,8 @@
    "typ": "nocleg",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 302
   },
   {
    "id": "stajnia-na-1-noc",
@@ -3413,7 +3517,8 @@
    "typ": "nocleg",
    "podtyp": null,
    "cena_ref_p": 14,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 302
   },
   {
    "id": "pol-litra-piwa",
@@ -3437,7 +3542,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "trunki"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "pol-litra-mocnego-trunku",
@@ -3459,7 +3565,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "trunki"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "kielich-wina",
@@ -3481,7 +3588,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "trunki"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "butelka-wina",
@@ -3503,7 +3611,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "trunki"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "beczulka-piwa-10-l",
@@ -3527,7 +3636,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "trunki"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "pol-litra-piwa-bugmana",
@@ -3550,7 +3660,8 @@
    "branze": [
     "trunki"
    ],
-   "pochodzenie": "krasnoludzkie"
+   "pochodzenie": "krasnoludzkie",
+   "strona": 302
   },
   {
    "id": "prowiant-wojskowy-na-1-tydzien",
@@ -3822,7 +3933,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "buty",
@@ -3844,7 +3956,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "wysokie-buty",
@@ -3866,7 +3979,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "plaszcz",
@@ -3888,7 +4002,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "oponcza",
@@ -3910,7 +4025,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "kapelusz",
@@ -3932,7 +4048,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "kaptur-lub-maska",
@@ -3954,7 +4071,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "rekawiczki",
@@ -3976,7 +4094,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "szata",
@@ -3998,7 +4117,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "mundur",
@@ -4020,7 +4140,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "kostium",
@@ -4042,7 +4163,8 @@
    "klasa": "odziez",
    "branze": [
     "odziez"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "stroj-dworski",
@@ -4064,7 +4186,8 @@
    "klasa": "prestiz",
    "branze": [
     "luksus"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "stroj-ceremonialny-aksamit-zlotoglow-futra",
@@ -4108,7 +4231,8 @@
    "klasa": "prestiz",
    "branze": [
     "luksus"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "berlo",
@@ -4130,7 +4254,8 @@
    "klasa": "kruszec",
    "branze": [
     "kosztownosci"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "sygnet",
@@ -4152,7 +4277,8 @@
    "klasa": "kruszec",
    "branze": [
     "kosztownosci"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "pierscien-srebrny",
@@ -4240,7 +4366,8 @@
    "klasa": "odziez",
    "branze": [
     "dewocjonalia"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "amulet",
@@ -4262,7 +4389,8 @@
    "klasa": "odziez",
    "branze": [
     "dewocjonalia"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "perfumy",
@@ -4284,7 +4412,8 @@
    "klasa": "prestiz",
    "branze": [
     "luksus"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "puder-do-twarzy",
@@ -4306,7 +4435,8 @@
    "klasa": "prestiz",
    "branze": [
     "luksus"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "zapinki-6",
@@ -4328,7 +4458,8 @@
    "klasa": "odziez",
    "branze": [
     "luksus"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "tatuaz",
@@ -4347,7 +4478,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 302
   },
   {
    "id": "jedwabna-bielizna",
@@ -4413,7 +4545,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "warsztat",
@@ -4435,7 +4568,8 @@
    "klasa": "kupno",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 296
   },
   {
    "id": "sierp",
@@ -4457,7 +4591,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "motyka",
@@ -4479,7 +4614,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "grabie",
@@ -4501,7 +4637,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "szpadel",
@@ -4523,7 +4660,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "kilof",
@@ -4545,7 +4683,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "mlotek",
@@ -4567,7 +4706,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "pila",
@@ -4589,7 +4729,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "dluto",
@@ -4611,7 +4752,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "gwozdzie-12",
@@ -4634,7 +4776,8 @@
    "branze": [
     "warsztatowe",
     "zuzywalne"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "lom",
@@ -4656,7 +4799,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "drag-3-m",
@@ -4678,7 +4822,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "bosak",
@@ -4722,7 +4867,8 @@
    "klasa": "codzienne",
    "branze": [
     "linowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "kotwiczka",
@@ -4744,7 +4890,8 @@
    "klasa": "codzienne",
    "branze": [
     "linowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "wiadro",
@@ -4766,7 +4913,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "miotla",
@@ -4788,7 +4936,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "mop",
@@ -4810,7 +4959,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "szczotka-do-podlogi",
@@ -4832,7 +4982,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "kociolek-do-gotowania",
@@ -4854,7 +5005,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "patelnia",
@@ -4876,7 +5028,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "miska",
@@ -4898,7 +5051,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "talerz",
@@ -4920,7 +5074,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "kubek",
@@ -4942,7 +5097,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 302
   },
   {
    "id": "kufel-cynowy",
@@ -4964,7 +5120,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "sztucce",
@@ -4986,7 +5143,8 @@
    "klasa": "codzienne",
    "branze": [
     "domowe"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "mozdzierz-z-tluczkiem",
@@ -5008,7 +5166,8 @@
    "klasa": "codzienne",
    "branze": [
     "aptekarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "wytrychy",
@@ -5030,7 +5189,8 @@
    "klasa": "codzienne",
    "branze": [
     "zlodziejskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "kajdany",
@@ -5052,7 +5212,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "stalowe-szczypce",
@@ -5074,7 +5235,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "haczyki-na-ryby-12",
@@ -5096,7 +5258,8 @@
    "klasa": "codzienne",
    "branze": [
     "linowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "sidla-na-zwierzeta",
@@ -5118,7 +5281,8 @@
    "klasa": "codzienne",
    "branze": [
     "rolnicze"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "kule",
@@ -5140,7 +5304,8 @@
    "klasa": "codzienne",
    "branze": [
     "medyczne"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "klucz",
@@ -5162,7 +5327,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "kolek",
@@ -5184,7 +5350,8 @@
    "klasa": "codzienne",
    "branze": [
     "warsztatowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "liczydlo",
@@ -5206,7 +5373,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "grzebien",
@@ -5228,7 +5396,8 @@
    "klasa": "codzienne",
    "branze": [
     "toaletowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "pinceta",
@@ -5250,7 +5419,8 @@
    "klasa": "codzienne",
    "branze": [
     "aptekarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "pioro-do-pisania",
@@ -5272,7 +5442,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "pedzel-do-malowania",
@@ -5294,7 +5465,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "grawerowana-pieczec",
@@ -5316,7 +5488,8 @@
    "klasa": "kruszec",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "mlotek-sedziego",
@@ -5338,7 +5511,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "soczewki-do-czytania",
@@ -5360,7 +5534,8 @@
    "klasa": "codzienne",
    "branze": [
     "naukowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "teleskop",
@@ -5382,7 +5557,8 @@
    "klasa": "codzienne",
    "branze": [
     "naukowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "zestaw-do-pisania",
@@ -5404,7 +5580,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "zestaw-do-charakteryzacji",
@@ -5426,7 +5603,8 @@
    "klasa": "codzienne",
    "branze": [
     "zlodziejskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "zestaw-na-zatrucia",
@@ -5448,7 +5626,8 @@
    "klasa": "codzienne",
    "branze": [
     "aptekarskie"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "oselka",
@@ -5625,7 +5804,8 @@
    "klasa": "prestiz",
    "branze": [
     "toaletowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "narzedzie-do-czyszczenia-uszu",
@@ -5647,7 +5827,8 @@
    "klasa": "codzienne",
    "branze": [
     "toaletowe"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "arkusz-pergaminu",
@@ -5666,7 +5847,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 304
   },
   {
    "id": "broszura",
@@ -5685,7 +5867,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 6,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 304
   },
   {
    "id": "dokument-prawny",
@@ -5704,7 +5887,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 304
   },
   {
    "id": "ksiega-religia",
@@ -5723,7 +5907,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 600,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-inzynieria",
@@ -5742,7 +5927,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-sztuka",
@@ -5761,7 +5947,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 2400,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-aptekarstwo",
@@ -5780,7 +5967,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-kryptografia",
@@ -5799,7 +5987,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 3600,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-medycyna",
@@ -5818,7 +6007,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 7200,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-prawo",
@@ -5837,7 +6027,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 7200,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "ksiega-magia",
@@ -5856,7 +6047,10 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 14400,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304,
+   "nielegalny": true,
+   "nielegalny_uwaga": "Legalna tylko dla magów Kolegiów (licencja); u innych — zakazana księga."
   },
   {
    "id": "mapa",
@@ -5875,7 +6069,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "ksiega"
+   "klasa": "ksiega",
+   "strona": 304
   },
   {
    "id": "mikstura-lecznicza",
@@ -5894,7 +6089,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 180,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "strona": 307
   },
   {
    "id": "kataplazm-leczniczy",
@@ -5913,7 +6109,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 144,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "strona": 307
   },
   {
    "id": "eliksir-zywotnosci",
@@ -5932,7 +6129,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "strona": 307
   },
   {
    "id": "salwort",
@@ -5951,7 +6149,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 144,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 307
   },
   {
    "id": "tonik-na-trawienie",
@@ -5970,7 +6169,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 36,
-   "klasa": "alchemia_wyrob"
+   "klasa": "alchemia_wyrob",
+   "strona": 307
   },
   {
    "id": "fakstoryl",
@@ -5989,7 +6189,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 307
   },
   {
    "id": "nocny-cien",
@@ -6008,7 +6209,9 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 307,
+   "nielegalny": true
   },
   {
    "id": "ziemny-korzen",
@@ -6027,7 +6230,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1200,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 307
   },
   {
    "id": "dziwnokorzen",
@@ -6047,6 +6251,7 @@
    "podtyp": null,
    "cena_ref_p": 48,
    "klasa": "alchemia_skladnik",
+   "strona": 306,
    "nielegalny": true
   },
   {
@@ -6067,6 +6272,7 @@
    "podtyp": null,
    "cena_ref_p": 240,
    "klasa": "alchemia_wyrob",
+   "strona": 306,
    "nielegalny": true
   },
   {
@@ -6086,7 +6292,9 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 306,
+   "nielegalny": true
   },
   {
    "id": "pluja",
@@ -6105,7 +6313,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 300,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 306
   },
   {
    "id": "ksiezycowy-kwiat",
@@ -6124,7 +6333,9 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 1440,
-   "klasa": "alchemia_skladnik"
+   "klasa": "alchemia_skladnik",
+   "strona": 306,
+   "nielegalny": true
   },
   {
    "id": "grzybki-szalonego-kapelusznika",
@@ -6144,6 +6355,7 @@
    "podtyp": null,
    "cena_ref_p": 1200,
    "klasa": "alchemia_skladnik",
+   "strona": 306,
    "nielegalny": true
   },
   {
@@ -6164,6 +6376,7 @@
    "podtyp": null,
    "cena_ref_p": 7200,
    "klasa": "alchemia_skladnik",
+   "strona": 306,
    "nielegalny": true
   },
   {
@@ -6184,6 +6397,7 @@
    "podtyp": null,
    "cena_ref_p": 14400,
    "klasa": "alchemia_wyrob",
+   "strona": 306,
    "nielegalny": true
   },
   {
@@ -6207,7 +6421,8 @@
    "branze": [
     "oswietlenie",
     "zuzywalne"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "zapalka",
@@ -6230,7 +6445,8 @@
    "branze": [
     "oswietlenie",
     "zuzywalne"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "lampa-oliwna",
@@ -6252,7 +6468,8 @@
    "klasa": "codzienne",
    "branze": [
     "oswietlenie"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "latarnia",
@@ -6274,7 +6491,8 @@
    "klasa": "codzienne",
    "branze": [
     "oswietlenie"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "lampa-sztormowa",
@@ -6296,7 +6514,8 @@
    "klasa": "codzienne",
    "branze": [
     "oswietlenie"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "lampa-davricha",
@@ -6318,7 +6537,8 @@
    "klasa": "codzienne",
    "branze": [
     "oswietlenie"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "koc",
@@ -6341,7 +6561,8 @@
    "branze": [
     "podroz",
     "posciel"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "zwijane-poslanie",
@@ -6363,7 +6584,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "namiot",
@@ -6385,7 +6607,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "plocienna-plandeka",
@@ -6407,7 +6630,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "pudelko-na-hubke-i-krzesiwo",
@@ -6429,7 +6653,8 @@
    "klasa": "codzienne",
    "branze": [
     "oswietlenie"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "kosci-do-gry",
@@ -6451,7 +6676,8 @@
    "klasa": "codzienne",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "talia-kart",
@@ -6473,7 +6699,8 @@
    "klasa": "codzienne",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "instrument",
@@ -6495,7 +6722,8 @@
    "klasa": "codzienne",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "bandaz",
@@ -6518,7 +6746,8 @@
    "branze": [
     "medyczne",
     "zuzywalne"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "kreda-wegiel-do-rysowania",
@@ -6541,7 +6770,8 @@
    "branze": [
     "pisarskie",
     "zuzywalne"
-   ]
+   ],
+   "strona": 303
   },
   {
    "id": "szmaty",
@@ -6564,7 +6794,8 @@
    "branze": [
     "medyczne",
     "zuzywalne"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "lalka",
@@ -6586,7 +6817,8 @@
    "klasa": "codzienne",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "pilka",
@@ -6608,7 +6840,8 @@
    "klasa": "codzienne",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "afisz",
@@ -6631,7 +6864,8 @@
    "branze": [
     "pisarskie",
     "zuzywalne"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "fajka-i-tyton",
@@ -6653,7 +6887,8 @@
    "klasa": "utrzymanie",
    "branze": [
     "rozrywka"
-   ]
+   ],
+   "strona": 308
   },
   {
    "id": "beczka-145-l",
@@ -6675,7 +6910,8 @@
    "klasa": "codzienne",
    "branze": [
     "pojemniki"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "beczulka-45-l",
@@ -6697,7 +6933,8 @@
    "klasa": "codzienne",
    "branze": [
     "pojemniki"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "buklak",
@@ -6719,7 +6956,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "butelka",
@@ -6741,7 +6979,8 @@
    "klasa": "codzienne",
    "branze": [
     "pojemniki"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "dzban",
@@ -6763,7 +7002,8 @@
    "klasa": "codzienne",
    "branze": [
     "pojemniki"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "plecak",
@@ -6785,7 +7025,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "sakiewka",
@@ -6807,7 +7048,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "duzy-worek",
@@ -6829,7 +7071,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "worek",
@@ -6851,7 +7094,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "torba-na-ramie",
@@ -6873,7 +7117,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "juki",
@@ -6895,7 +7140,8 @@
    "klasa": "codzienne",
    "branze": [
     "podroz"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "tuba-na-zwoje",
@@ -6917,7 +7163,8 @@
    "klasa": "codzienne",
    "branze": [
     "pisarskie"
-   ]
+   ],
+   "strona": 301
   },
   {
    "id": "hak",
@@ -6936,7 +7183,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 72,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "opaska-na-oko",
@@ -6955,7 +7203,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 12,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "drewniane-zeby",
@@ -6974,7 +7223,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 240,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "sztuczna-noga",
@@ -6993,7 +7243,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 360,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "sztuczne-oko",
@@ -7012,7 +7263,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "zloty-nos",
@@ -7031,7 +7283,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "cud-inzynierii",
@@ -7050,7 +7303,8 @@
    "typ": "towar",
    "podtyp": null,
    "cena_ref_p": 14400,
-   "klasa": "codzienne"
+   "klasa": "codzienne",
+   "strona": 308
   },
   {
    "id": "robotnik-niewykwalifikowany",
@@ -7126,7 +7380,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 168,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "miejscowy-zwiadowca",
@@ -7145,7 +7400,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 168,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "skryba",
@@ -7164,7 +7420,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 480,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "prawnik",
@@ -7183,7 +7440,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 864,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "doswiadczony-najemnik",
@@ -7202,7 +7460,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 720,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "doktor-jedna-wizyta",
@@ -7221,7 +7480,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 60,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "doktor-na-tydzien",
@@ -7240,7 +7500,8 @@
    "typ": "usluga",
    "podtyp": null,
    "cena_ref_p": 1200,
-   "klasa": "utrzymanie"
+   "klasa": "utrzymanie",
+   "strona": 309
   },
   {
    "id": "wpis-ucznia-do-cechu",

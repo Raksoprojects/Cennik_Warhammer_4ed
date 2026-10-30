@@ -268,7 +268,14 @@
   "bez_jakosci": [
    "zuzywalne",
    "tkaniny"
-  ]
+  ],
+  "osada_zalety": {
+   "wioska": 0.5,
+   "miasteczko": 0.8,
+   "miasto": 1,
+   "metropolia": 1.2
+  },
+  "osada_zalety_opis": "Szansa na Zalety przedmiotu × ten mnożnik wg osady (we wsi rzadziej, w metropolii częściej)."
  },
  "zamowienie": {
   "narzut_robota": 1.25,
@@ -358,25 +365,31 @@
   "gotowka_max": 2
  },
  "dostepnosc": {
-  "opis": "PG s. 290: szansa, że przedmiot jest w sprzedaży, wg wielkości osady. Egzotyczne tylko na zamówienie (Zlecenie).",
+  "opis": "PG s. 290: szansa, że przedmiot jest w sprzedaży, wg wielkości osady. v6d (MG): Egzotyczne — 3% w metropolii, 0,1% gdzie indziej, Marienburg (import) 6%. Altdorf i Marienburg: Rzadkie liczą się jak Ograniczone.",
   "tabela": {
    "wioska": {
     "Powszechna": 1,
     "Ograniczona": 0.3,
     "Rzadka": 0.15,
-    "Egzotyczna": 0
+    "Egzotyczna": 0.001
    },
    "miasteczko": {
     "Powszechna": 1,
     "Ograniczona": 0.6,
     "Rzadka": 0.3,
-    "Egzotyczna": 0
+    "Egzotyczna": 0.001
    },
    "miasto": {
     "Powszechna": 1,
     "Ograniczona": 0.9,
     "Rzadka": 0.45,
-    "Egzotyczna": 0
+    "Egzotyczna": 0.001
+   },
+   "metropolia": {
+    "Powszechna": 1,
+    "Ograniczona": 0.9,
+    "Rzadka": 0.45,
+    "Egzotyczna": 0.03
    }
   },
   "obce_pochodzenie": 0.3,
@@ -398,7 +411,10 @@
     "Egzotyczna"
    ],
    "wioska_opis": "We wsi nikt nie sprowadzi rzeczy egzotycznej — trzeba jechać do miasta."
-  }
+  },
+  "import_egzotyczne": 0.06,
+  "obce_wies": "Ograniczona",
+  "obce_wies_opis": "Kupiec innej rasy we wsi: jego własny towar (np. krasnoludzki u krasnoluda) dostępny jak Ograniczony."
  },
  "trefne": {
   "opis": "v6c: szansa na pozycję z kupcy.json → trefne (domyślnie domyslna_szansa); cecha kupiecka może ją podnieść (Szarlatan, Powiązania przestępcze) albo wyzerować (Skrupulatnie uczciwy). wartosc = prawdziwa wartość ÷ cena, jaką kupiec podaje. swiadomosc = szansa, że kupiec wie (oszust wie zawsze). Widoczne tylko dla MG.",
@@ -500,5 +516,30 @@
    "ukryta_wada": 0.3,
    "miara": 0.8
   }
+ },
+ "gospoda": {
+  "opis": "v6d: nocleg, posiłek i stajnia nie są towarem kupca, ale cena zależy od miejsca: osada × standard gospody (szacunek MG).",
+  "standardy": [
+   {
+    "id": "podla",
+    "nazwa": "Podła spelunka",
+    "mnoznik": 0.6
+   },
+   {
+    "id": "zwykla",
+    "nazwa": "Zwykła gospoda",
+    "mnoznik": 1
+   },
+   {
+    "id": "dobra",
+    "nazwa": "Dobra gospoda",
+    "mnoznik": 1.8
+   },
+   {
+    "id": "wytworna",
+    "nazwa": "Wytworny zajazd",
+    "mnoznik": 3.5
+   }
+  ]
  }
 }

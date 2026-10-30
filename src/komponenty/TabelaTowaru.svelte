@@ -6,6 +6,7 @@
   import { targuj, modyfikatorTargowania } from '../silnik.js';
   import WyborCech from './WyborCech.svelte';
   import Podpowiedz from './Podpowiedz.svelte';
+  import { zrodloNazwa } from '../lib/ceny';
 
   let { towar, ps = 0, talent = 0, bezTargu = false, gotowka = null, edycja = false, onZmien, onUsun, onPrzelosuj, onTransakcja }: {
     towar: any[]; ps?: number; talent?: number; bezTargu?: boolean; gotowka?: number | null; edycja?: boolean;
@@ -53,6 +54,7 @@
         </tr>
         {#if otwarte === t.id}
           {@const s = t.skladowe}
+          {@const poz = d.cennik.pozycje.find((c: any) => c.id === t.id)}
           <tr class="szczegoly"><td class="pelna" colspan="8">
             <dl class="szczegoly-siatka">
               <div><dt>Rynek</dt><dd>{t.zapas_nazwa}, {t.popyt_nazwa} → {mnoz(s.rynek)}<br />
@@ -61,6 +63,7 @@
                 {#if t.rzuty?.kaprys != null}<span class="drugi">(1k10 = {t.rzuty.kaprys}: {kaprysOpis(t.rzuty.kaprys)})</span>{/if}
                 · osada {mnoz(s.osada)} · sytuacja {mnoz(s.koniunktura)}{#if s.modyfikator != null && s.modyfikator !== 1} · MG {mnoz(s.modyfikator)}{/if}
                 = <b>{mnoz(t.mnoznik)}</b></dd></div>
+              {#if poz}<div><dt>Przedmiot</dt><dd>Dostępność: {poz.dostepnosc ?? 'Powszechna'} · {zrodloNazwa(poz.zrodlo, poz.strona)}{poz.obc != null ? ' · Obc. ' + poz.obc : ''}</dd></div>{/if}
               {#if t.jakosc}<div><dt>Jakość egzemplarza</dt><dd>{t.jakosc.nazwa}: cena z cennika {mon(t.cena_cennik_p)} × {mnoz(t.jakosc.mnoznik)} = {mon(t.cena_wytworcy_p)}</dd></div>{/if}
               <div><dt>Koszt nabycia · minimalna</dt><dd>{mon(t.koszt_p)} · {mon(t.cena_min_p)}
                 <span class="drugi male">— poniżej minimalnej nie zejdzie w targowaniu</span></dd></div>

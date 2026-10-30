@@ -30,7 +30,7 @@
   <div class="pasek"><WyborRynku bind:pora bind:wahania onchange={() => queueMicrotask(wycen)} /></div>
   <div class="pasek">
     <label class="pole"><span>Co</span><input bind:value={co} list="zam-towary" placeholder="np. kolczuga, rapier, teleskop" onkeydown={e => e.key === 'Enter' && wycen()} />
-      <datalist id="zam-towary">{#each towary as c}<option value={c.nazwa}></option>{/each}</datalist></label>
+      <datalist id="zam-towary">{#each towary as c}<option value={c.nazwa} label={c.dostepnosc ?? ''}></option>{/each}</datalist></label>
     <button class="glowny" onclick={wycen}>Wyceń</button>
   </div>
   <label class="male" style="display:flex;gap:6px;align-items:center;margin-bottom:8px"><input type="checkbox" bind:checked={material} onchange={wycen} />

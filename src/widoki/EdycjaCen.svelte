@@ -120,7 +120,7 @@
   <div class="panel" style="border-top:0;border-radius:0 0 var(--r) var(--r)">
     <div class="pasek">
       <label class="pole"><span>Pozycja</span><input bind:value={pozTxt} list="edycja-poz" placeholder="np. miecz" />
-        <datalist id="edycja-poz">{#each d.cennik.pozycje as c}<option value={c.nazwa}></option>{/each}</datalist></label>
+        <datalist id="edycja-poz">{#each d.cennik.pozycje as c}<option value={c.nazwa} label={c.dostepnosc ?? ''}></option>{/each}</datalist></label>
       <label class="pole waskie"><span>Cena albo ×mnożnik</span><input bind:value={pozCena} placeholder="4 ZK albo ×1,2" /></label>
       <button onclick={ustawPozycje}>Ustaw</button>
       {#if Object.keys(u.pozycje).length}<button class="niebezp" onclick={() => ustaw(x => { x.pozycje = {}; })}>Usuń wszystkie</button>{/if}

@@ -183,6 +183,12 @@ details.opis[open] { background: var(--panel); border: 1px solid var(--linia); b
 .liczby div span { display: block; font-size: .78rem; color: var(--tekst-3); text-transform: uppercase; letter-spacing: .04em; }
 .liczby div b { font-size: 1.1rem; }
 
+.dymek-eksport {
+  position: fixed; right: 12px; bottom: 12px; z-index: 25; max-width: 280px; font-size: .85rem;
+  background: var(--panel-2); border: 1px solid var(--linia-mocna); border-radius: var(--r); padding: 10px 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+}
+
 @media print {
   .naglowek, .nie-drukuj, button, input, select { display: none !important; }
   body, html { background: #fff; color: #000; }
