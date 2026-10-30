@@ -18,7 +18,7 @@
   <label class="pole"><span>Miesiąc</span><select bind:value={mies}>
     {#each K.miesiace as m, i}<option value={i}>{m.nazwa} ({m.staroswiatowa}){m.swieto ? ' — ' + m.swieto : ''}</option>{/each}</select></label>
   <label class="pole waskie"><span>Dzień</span><input type="number" min="1" max={K.miesiace[mies].dni} bind:value={dzien} disabled={K.miesiace[mies].dni === 1} /></label>
-  <label class="pole waskie"><span>Rok (KI)</span><input type="number" bind:value={rok} placeholder="2522" /></label>
+  <label class="pole waskie"><span>Rok (KI)</span><input type="number" bind:value={rok} placeholder="2525" /></label>
   <button onclick={() => onUstaw({ dzien: dzienRoku(stan.d, mies, Math.max(1, dzien | 0)), rok: rok === '' ? null : +rok })}>Ustaw datę</button>
   {#if data}<button class="maly" onclick={() => onUstaw(null)}>Bez daty</button>{/if}
 </div>

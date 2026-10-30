@@ -40,7 +40,7 @@ for i in ['metropolia', 'altdorf', 'marienburg', 'miasto-nuln', 'miasto-talabhei
     O[i]['dostepnosc'] = 'metropolia'
 m = O['miasto-middenheim']
 m.update(typ='metropolia', mnoznik=round(O['metropolia']['mnoznik'] * 1.1, 3), limit_p=None,
-         uwaga='MG: metropolia (Poradnik podaje 15 000 mieszkańców — odrzucone). Futra i żelazo z Middenlandu tanie.')
+         uwaga='')
 O['altdorf']['rzadkie_latwiej'] = True
 O['altdorf']['uwaga'] = 'Rzadkie o stopień łatwiej (szansa jak Ograniczonej).'
 O['marienburg']['rzadkie_latwiej'] = True
@@ -101,8 +101,16 @@ for o in OS['osady']:
             if any(s in o['dochody'] for s in slowa): t.update(tagi)
     t.update(TAGI.get(o['id'], {}))
     if t: o['tagi'] = t
-O['miasto-middenheim']['uwaga'] = ('MG: metropolia. Poradnik podaje 15 000 — to stan po oblężeniu w 2522 KI; wcześniej 95 000 '
-                                    '(Dziedzictwo Sigmara s. 70). Futra i żelazo z Middenlandu tanie, żywność droga.')
+# Populacje kampanii (MG, 2525 KI): liczby z Poradnika są za małe jak na skalę Imperium. Wartość z Poradnika zostaje obok.
+POPULACJA_MG = {'miasto-middenheim': 150000, 'altdorf': 1000000}
+for i, p in POPULACJA_MG.items():
+    O[i]['populacja_poradnik'] = O[i].get('populacja_poradnik', O[i].get('populacja'))
+    O[i]['populacja'] = p
+O['altdorf']['populacja_poradnik'] = O['altdorf']['populacja_poradnik'] or 105000
+O['altdorf']['uwaga'] = 'Ok. 1 000 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).'
+O['miasto-middenheim']['uwaga'] = ('MG (2525 KI): ok. 150 000 mieszkańców — uchodźcy z całego Middenlandu. Poradnik podaje 15 000 '
+                                    '(stan tuż po oblężeniu 2522; wcześniej 95 000, Dziedzictwo Sigmara s. 70). '
+                                    'Futra i żelazo z Middenlandu tanie, żywność droga.')
 W('data/osady.json', OS)
 
 # ---------------------------------------------------------------- 3. rynek

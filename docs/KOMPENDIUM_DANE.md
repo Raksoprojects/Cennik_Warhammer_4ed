@@ -66,7 +66,7 @@ Preferencja: rdzeń ×0,95, boczny ×1,1. Kaprys 1k10: ≤1 ×0,9, ≤3 ×0,95, 
 | Miasteczko | 0% | 15 ZK | miasteczko |  |
 | Miasto | +10% | 60 ZK | miasto |  |
 | Metropolia (Nuln, Middenheim) | +20% | bez limitu | metropolia |  |
-| Altdorf | +30% | bez limitu | metropolia | Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
+| Altdorf | +30% | bez limitu | metropolia | Ok. 1 000 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
 | Marienburg | +45% | bez limitu | metropolia | Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach. |
 
 ### Typ osady
@@ -137,7 +137,7 @@ Populacja i zamożność to stan po Burzy Chaosu (2522 KI). Specjalności: tag b
 | Grafenrich | Wybrzeże Salzenmund | 252 | 2 | wies | -19% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
 | Neue Emskrank | Wybrzeże Salzenmund | 895 | 3 | wies | -15% | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
 | Norden | Wybrzeże Salzenmund | 3200 | 3 | miasteczko | 0% | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
-| Middenheim | Korytarz Drakwaldzki | 15000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
+| Middenheim | Korytarz Drakwaldzki | 150000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
 | Beeckerhoven | Korytarz Drakwaldzki | 408 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
 | Delberz | Korytarz Drakwaldzki | 4500 | 3 | miasteczko | 0% | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
 | Schoninghagen | Korytarz Drakwaldzki | 980 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
