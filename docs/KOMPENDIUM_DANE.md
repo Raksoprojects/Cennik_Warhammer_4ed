@@ -69,59 +69,80 @@ Preferencja: rdzeń ×0,95, boczny ×1,1. Kaprys 1k10: ≤1 ×0,9, ≤3 ×0,95, 
 | Altdorf | +30% | bez limitu | metropolia | Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
 | Marienburg | +45% | bez limitu | metropolia | Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach. |
 
-### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2)
+### Typ osady
 
-| Miasto | Strefa | Populacja | Zamożność | Typ | Mnożnik | Specjalności |
-|---|---|---|---|---|---|---|
-| Carroburg | Dorzecze Reiklandzkie | 12000 | 4 | miasto | +16% |  |
-| Bögenhafen | Dorzecze Reiklandzkie | 5000 | 3 | miasteczko | 0% |  |
-| Helmgart | Dorzecze Reiklandzkie | 2200 | 2 | miasteczko | -5% |  |
-| Ubersreik | Dorzecze Reiklandzkie | 3500 | 4 | miasteczko | +5% |  |
-| Weissbruck | Dorzecze Reiklandzkie | 272 | 2 | wies | -19% |  |
-| Kemperbad | Enklawa Kemperbadu | 7500 | 4 | miasteczko | +5% |  |
-| Auerswald | Enklawa Kemperbadu | 5000 | 3 | miasteczko | 0% |  |
-| Grunburg | Enklawa Kemperbadu | 2400 | 2 | miasteczko | -5% |  |
-| Stimmigen | Enklawa Kemperbadu | 1750 | 3 | miasteczko | 0% |  |
-| Nuln | Strefa Handlowa Nuln | 85000 | 5 | metropolia | +32% | prochowa ×0,85, eksperymentalna ×0,85, warsztatowe ×0,92 |
-| Ambosstein | Strefa Handlowa Nuln | 80 | 3 | wies | -15% |  |
-| Furtzhausen | Strefa Handlowa Nuln | 74 | 3 | wies | -15% |  |
-| Kotzenheim | Strefa Handlowa Nuln | 61 | 3 | wies | -15% |  |
-| Wissenburg | Strefa Handlowa Nuln | 9000 | 4 | miasteczko | +5% |  |
-| Pfeildorf | Dolina Górnego Solu | 6800 | 3 | miasteczko | 0% |  |
-| Geschburg | Dolina Górnego Solu | 600 | 3 | wies | -15% |  |
-| Kreutzhofen | Dolina Górnego Solu | 515 | 4 | wies | -11% |  |
-| Kroppenleben | Dolina Górnego Solu | 85 | 3 | wies | -15% |  |
-| Wuppertal | Dolina Górnego Solu | 1100 | 3 | miasteczko | 0% |  |
-| Wusterburg | Dolina Górnego Solu | 800 | 3 | wies | -15% |  |
-| Averheim | Stary Trakt Krasnoludzki | 9400 | 4 | miasteczko | +5% |  |
-| Wurtbad | Stary Trakt Krasnoludzki | 8800 | 4 | miasteczko | +5% |  |
-| Gersdorf | Stary Trakt Krasnoludzki | 425 | 3 | wies | -15% |  |
-| Hocheleben | Stary Trakt Krasnoludzki | 375 | 3 | wies | -15% |  |
-| Krugenheim | Stary Trakt Krasnoludzki | 4500 | 4 | miasteczko | +5% |  |
-| Pfungzig | Stary Trakt Krasnoludzki | 3580 | 3 | miasteczko | 0% |  |
-| Streissen | Stary Trakt Krasnoludzki | 5500 | 3 | miasteczko | 0% |  |
-| Eicheschatten | Trakt do Zhufbaru | 3375 | 3 | miasteczko | 0% |  |
-| Schramleben | Trakt do Zhufbaru | 675 | 3 | wies | -15% |  |
-| Waldenhof | Trakt do Zhufbaru | 4200 | 2 | miasteczko | -5% |  |
-| Talabheim | Stara Droga Leśna | 72000 | 4 | metropolia | +26% |  |
-| Ahlenhof | Stara Droga Leśna | 4200 | 3 | miasteczko | 0% |  |
-| Hergig | Stara Droga Leśna | 500 | 3 | wies | -15% |  |
-| Küsel | Stara Droga Leśna | 6500 | 4 | miasteczko | +5% |  |
-| Talagaad | Stara Droga Leśna | 450 | 3 | wies | -15% |  |
-| Bechafen | Przejście Północno-Wschodnie | 7600 | 4 | miasteczko | +5% |  |
-| Wolfenburg | Przejście Północno-Wschodnie | 1100 | 3 | miasteczko | 0% |  |
-| Wurzen | Przejście Północno-Wschodnie | 1450 | 2 | miasteczko | -5% |  |
-| Salzenmund | Wybrzeże Salzenmund | 7500 | 4 | miasteczko | +5% |  |
-| Ferlangen | Wybrzeże Salzenmund | 130 | 3 | wies | -15% |  |
-| Grafenrich | Wybrzeże Salzenmund | 252 | 2 | wies | -19% |  |
-| Neue Emskrank | Wybrzeże Salzenmund | 895 | 3 | wies | -15% |  |
-| Norden | Wybrzeże Salzenmund | 3200 | 3 | miasteczko | 0% |  |
-| Middenheim | Korytarz Drakwaldzki | 15000 | 5 | metropolia | +32% | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92 |
-| Beeckerhoven | Korytarz Drakwaldzki | 408 | 3 | wies | -15% |  |
-| Delberz | Korytarz Drakwaldzki | 4500 | 3 | miasteczko | 0% |  |
-| Schoninghagen | Korytarz Drakwaldzki | 980 | 3 | wies | -15% |  |
-| Scheinfeld | Delta Marienburga | 850 | 3 | wies | -15% |  |
-| Schilderheim | Delta Marienburga | 5500 | 3 | miasteczko | 0% |  |
+v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Działa razem z mnożnikiem osady: wyroby rzemieślnicze w metropolii taniej niż na wsi, żywność odwrotnie. Szacunek MG, zakres 0,8–1,2.
+
+| Kategoria | wioska | miasteczko | miasto | metropolia |
+|---|---|---|---|---|
+| Broń biała | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Broń zasięgowa | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Amunicja | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Pancerze | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Zwierzęta i pojazdy | ×0,85 | ×1 | ×1,05 | ×1,15 |
+| Jedzenie, picie, nocleg | ×0,85 | ×1 | ×1,05 | ×1,15 |
+| Ubranie i dodatki | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Narzędzia i zestawy | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Księgi i dokumenty | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Zioła, mikstury, narkotyki | ×0,9 | ×1 | ×1,05 | ×1,1 |
+| Wyposażenie różne | ×1,2 | ×1 | ×0,9 | ×0,8 |
+| Protezy | ×1,2 | ×1 | ×0,9 | ×0,8 |
+
+### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)
+
+Populacja i zamożność to stan po Burzy Chaosu (2522 KI). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).
+
+| Miasto | Strefa | Populacja | Zamożność | Typ | Mnożnik | Dochody | Specjalności |
+|---|---|---|---|---|---|---|---|
+| Carroburg | Dorzecze Reiklandzkie | 12000 | 4 | miasto | +16% | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
+| Bögenhafen | Dorzecze Reiklandzkie | 5000 | 3 | miasteczko | 0% | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Helmgart | Dorzecze Reiklandzkie | 2200 | 2 | miasteczko | -5% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Ubersreik | Dorzecze Reiklandzkie | 3500 | 4 | miasteczko | +5% | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Weissbruck | Dorzecze Reiklandzkie | 272 | 2 | wies | -19% | handel, transport |  |
+| Kemperbad | Enklawa Kemperbadu | 7500 | 4 | miasteczko | +5% | handel, wino, brandy | trunki ×0,85 |
+| Auerswald | Enklawa Kemperbadu | 5000 | 3 | miasteczko | 0% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Grunburg | Enklawa Kemperbadu | 2400 | 2 | miasteczko | -5% | handel, szkutnictwo |  |
+| Stimmigen | Enklawa Kemperbadu | 1750 | 3 | miasteczko | 0% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Nuln | Strefa Handlowa Nuln | 85000 | 5 | metropolia | +32% | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
+| Ambosstein | Strefa Handlowa Nuln | 80 | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Furtzhausen | Strefa Handlowa Nuln | 74 | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Kotzenheim | Strefa Handlowa Nuln | 61 | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Wissenburg | Strefa Handlowa Nuln | 9000 | 4 | miasteczko | +5% | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Pfeildorf | Dolina Górnego Solu | 6800 | 3 | miasteczko | 0% | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
+| Geschburg | Dolina Górnego Solu | 600 | 3 | wies | -15% | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
+| Kreutzhofen | Dolina Górnego Solu | 515 | 4 | wies | -11% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Kroppenleben | Dolina Górnego Solu | 85 | 3 | wies | -15% | handel, futra | futra ×0,8, mysliwska ×0,95 |
+| Wuppertal | Dolina Górnego Solu | 1100 | 3 | miasteczko | 0% | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wusterburg | Dolina Górnego Solu | 800 | 3 | wies | -15% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Averheim | Stary Trakt Krasnoludzki | 9400 | 4 | miasteczko | +5% | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Wurtbad | Stary Trakt Krasnoludzki | 8800 | 4 | miasteczko | +5% | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Gersdorf | Stary Trakt Krasnoludzki | 425 | 3 | wies | -15% | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hocheleben | Stary Trakt Krasnoludzki | 375 | 3 | wies | -15% | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
+| Krugenheim | Stary Trakt Krasnoludzki | 4500 | 4 | miasteczko | +5% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Pfungzig | Stary Trakt Krasnoludzki | 3580 | 3 | miasteczko | 0% | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
+| Streissen | Stary Trakt Krasnoludzki | 5500 | 3 | miasteczko | 0% | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Eicheschatten | Trakt do Zhufbaru | 3375 | 3 | miasteczko | 0% | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
+| Schramleben | Trakt do Zhufbaru | 675 | 3 | wies | -15% | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Waldenhof | Trakt do Zhufbaru | 4200 | 2 | miasteczko | -5% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Talabheim | Stara Droga Leśna | 72000 | 4 | metropolia | +26% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Ahlenhof | Stara Droga Leśna | 4200 | 3 | miasteczko | 0% | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hergig | Stara Droga Leśna | 500 | 3 | wies | -15% | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Küsel | Stara Droga Leśna | 6500 | 4 | miasteczko | +5% | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Talagaad | Stara Droga Leśna | 450 | 3 | wies | -15% | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Bechafen | Przejście Północno-Wschodnie | 7600 | 4 | miasteczko | +5% | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wolfenburg | Przejście Północno-Wschodnie | 1100 | 3 | miasteczko | 0% | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
+| Wurzen | Przejście Północno-Wschodnie | 1450 | 2 | miasteczko | -5% | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Salzenmund | Wybrzeże Salzenmund | 7500 | 4 | miasteczko | +5% | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
+| Ferlangen | Wybrzeże Salzenmund | 130 | 3 | wies | -15% | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
+| Grafenrich | Wybrzeże Salzenmund | 252 | 2 | wies | -19% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Neue Emskrank | Wybrzeże Salzenmund | 895 | 3 | wies | -15% | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Norden | Wybrzeże Salzenmund | 3200 | 3 | miasteczko | 0% | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
+| Middenheim | Korytarz Drakwaldzki | 15000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
+| Beeckerhoven | Korytarz Drakwaldzki | 408 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Delberz | Korytarz Drakwaldzki | 4500 | 3 | miasteczko | 0% | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Schoninghagen | Korytarz Drakwaldzki | 980 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Scheinfeld | Delta Marienburga | 850 | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Schilderheim | Delta Marienburga | 5500 | 3 | miasteczko | 0% | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
 
 ### Dostępność (PG s. 290 + zasady kampanii)
 

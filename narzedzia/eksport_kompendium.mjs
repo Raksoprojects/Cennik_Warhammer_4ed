@@ -38,9 +38,14 @@ tab(['Kupiec', 'Status', 'Marża', 'Skup', 'Limit towaru', 'Rdzeń', 'Boczne', '
 w('### Osady', '');
 tab(['Osada', 'Mnożnik', 'Limit towaru', 'Dostępność jak', 'Uwagi'],
   d.osady.osady.filter(o => !o.grupa).map(o => [o.nazwa, proc(o.mnoznik), o.limit_p == null ? 'bez limitu' : mon(o.limit_p), o.dostepnosc, o.uwaga ?? '']));
-w('### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2)', '');
-tab(['Miasto', 'Strefa', 'Populacja', 'Zamożność', 'Typ', 'Mnożnik', 'Specjalności'],
-  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa, o.grupa, o.populacja, o.zamoznosc, o.typ, proc(o.mnoznik),
+w('### Typ osady', '', d.rynek.typ_osady.opis, '');
+const KT = d.rynek.typ_osady.kategorie;
+tab(['Kategoria', ...Object.keys(KT)], d.koniunktura.kategorie.filter(k => Object.values(KT).some(t => t[k] != null && t[k] !== 1))
+  .map(k => [k, ...Object.values(KT).map(t => `×${pl(t[k] ?? 1)}`)]));
+w('### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)', '',
+  'Populacja i zamożność to stan po Burzy Chaosu (2522 KI). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).', '');
+tab(['Miasto', 'Strefa', 'Populacja', 'Zamożność', 'Typ', 'Mnożnik', 'Dochody', 'Specjalności'],
+  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa, o.grupa, o.populacja, o.zamoznosc, o.typ, proc(o.mnoznik), o.dochody ?? '',
     o.tagi ? Object.entries(o.tagi).map(([t, m]) => `${t} ×${pl(m)}`).join(', ') : '']));
 w('### Dostępność (PG s. 290 + zasady kampanii)', '');
 tab(['Dostępność', ...Object.keys(d.rynek.dostepnosc.tabela)], ['Powszechna', 'Ograniczona', 'Rzadka', 'Egzotyczna'].map(x =>

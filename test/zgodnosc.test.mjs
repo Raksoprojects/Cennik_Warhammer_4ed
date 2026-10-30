@@ -13,9 +13,9 @@ const orig = wczytaj('reference/dane_oryginal.json');
 // v6b: MG zmienił jakość (×1,6 / ×0,6) i targowanie (−4%/PS) — porównanie z oryginałem idzie na jego parametrach.
 const rynekOrig = { ...dane.rynek,
   jakosc: { ...dane.rynek.jakosc, opcje: [['2wady', 0.25], ['wada', 0.5], ['zwykla', 1], ['wysmienita', 2], ['mistrzowska', 4]].map(([id, mnoznik]) => ({ id, nazwa: id, mnoznik })) },
-  targowanie: { ...dane.rynek.targowanie, za_ps: 0.1, max: 0.3, max_zamowienie: 0.2 } };
-// v6c: ceny strefy handlowej (osady → kategorie) to dodatek MG — oryginał ich nie miał.
-const osadyOrig = { ...dane.osady, osady: dane.osady.osady.map(({ kategorie, ...o }) => o) };
+  targowanie: { ...dane.rynek.targowanie, za_ps: 0.1, max: 0.3, max_zamowienie: 0.2 }, typ_osady: undefined };
+// v6c–v6e: ceny strefy (osady → kategorie), specjalności miast (tagi) i typ osady to dodatki MG — oryginał ich nie miał.
+const osadyOrig = { ...dane.osady, osady: dane.osady.osady.map(({ kategorie, tagi, ...o }) => o) };
 const daneOrig = { ...dane, osady: osadyOrig, rynek: rynekOrig, cennik: { pozycje: orig.ceny.map(c => ({ id: c.nazwa, kat: c.kat, nazwa: c.nazwa, cena_p: c.nowa })) } };
 const przypadki = wczytaj('test/fixtures/oryginal_przypadki.json');
 

@@ -133,7 +133,8 @@ export function szansaDostepnosci(d, { kupiec, osada, pozycja, wahania = null })
 // v6d: lokalne specjalności osady (osady.json → tagi: { tag branży: mnożnik }) — np. futra w Middenheim ×0,8.
 export function mnoznikLokalny(lok, c) {
   if (!lok.tagi || !c.branze) return 1;
-  return c.branze.reduce((m, t) => m * (lok.tagi[t] ?? 1), 1);
+  // v6e: kilka specjalności naraz (np. drewno i szkło) nie schodzi poniżej ×0,8 ani powyżej ×1,2 (decyzja MG)
+  return Math.min(1.2, Math.max(0.8, c.branze.reduce((m, t) => m * (lok.tagi[t] ?? 1), 1)));
 }
 
 // v6c: sytuacja + pora roku + wahania rynku (1k10) + ceny strefy handlowej osady = jedna „koniunktura efektywna”.
@@ -143,11 +144,13 @@ export function koniunkturaEfektywna(d, kon, { osada = null, pora = null, wahani
   const H = d.handel;
   const P = pora ? H?.pory_roku.lista.find(x => x.id === pora) : null;
   const Wa = wahania ? H?.wahania.lista.find(x => x.id === wahania) : null;
-  if (!P && !Wa && !osada?.kategorie) return kon;
+  // v6e: typ osady (rynek.json → typ_osady[dostepnosc]) — wyroby w mieście taniej, żywność na wsi taniej
+  const T = osada ? d.rynek.typ_osady?.kategorie?.[osada.dostepnosc] : null;
+  if (!P && !Wa && !osada?.kategorie && !T) return kon;
   const kategorie = {};
   for (const k of d.koniunktura.kategorie ?? Object.keys(kon.kategorie)) {
     const b = kon.kategorie[k] ?? { cena: 1, popyt: 0 };
-    kategorie[k] = { cena: b.cena * (P?.ceny ?? 1) * (P?.kategorie?.[k]?.cena ?? 1) * (Wa?.ceny ?? 1) * (osada?.kategorie?.[k]?.cena ?? 1),
+    kategorie[k] = { cena: b.cena * (P?.ceny ?? 1) * (P?.kategorie?.[k]?.cena ?? 1) * (Wa?.ceny ?? 1) * (osada?.kategorie?.[k]?.cena ?? 1) * (T?.[k] ?? 1),
       popyt: (b.popyt ?? 0) + (P?.popyt ?? 0) + (P?.kategorie?.[k]?.popyt ?? 0) + (Wa?.popyt ?? 0) };
   }
   const nazwa = [kon.nazwa, P?.nazwa, Wa && Wa.ceny !== 1 ? Wa.nazwa : null].filter(Boolean).join(' · ');

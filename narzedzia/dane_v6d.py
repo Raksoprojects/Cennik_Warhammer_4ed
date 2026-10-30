@@ -46,15 +46,63 @@ O['altdorf']['uwaga'] = 'Rzadkie o stopień łatwiej (szansa jak Ograniczonej).'
 O['marienburg']['rzadkie_latwiej'] = True
 O['marienburg']['import'] = True
 O['marienburg']['uwaga'] = 'Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach.'
-# Lokalne specjalności (szacunek MG): tag branży → mnożnik ceny. Tylko tam, gdzie lore jest jednoznaczny.
+# v6e: źródła dochodu ośrodków — kolumna „Dochody” z indeksów geograficznych Dziedzictwa Sigmara (WFRP 2 ed., rozdz. VI,
+# stan na 2522 KI, te same miasta co tab. 3-2 Poradnika). „Handel” i „administracja” nie zmieniają cen.
+DOCHODY = {
+    'altdorf': 'handel, administracja', 'miasto-carroburg': 'handel, szkło i ceramika', 'miasto-bogenhafen': 'handel, wino, drewno',
+    'miasto-helmgart': 'handel, rudy metali', 'miasto-ubersreik': 'handel, rudy i obróbka metali', 'miasto-weissbruck': 'handel, transport',
+    'miasto-kemperbad': 'handel, wino, brandy', 'miasto-auerswald': 'handel, rudy metali', 'miasto-grunburg': 'handel, szkutnictwo',
+    'miasto-stimmigen': 'handel, uprawy', 'miasto-nuln': 'handel, metalurgia, administracja, wino', 'miasto-ambosstein': 'handel, uprawy',
+    'miasto-furtzhausen': 'handel, uprawy', 'miasto-kotzenheim': 'handel, uprawy, rybołówstwo',
+    'miasto-wissenburg': 'administracja, handel, rudy metali', 'miasto-pfeildorf': 'handel, rybołówstwo, ubrania',
+    'miasto-geschburg': 'uprawy, handel, hodowla', 'miasto-kreutzhofen': 'uprawy, handel', 'miasto-kroppenleben': 'handel, futra',
+    'miasto-wuppertal': 'handel, uprawy, wyroby drewniane', 'miasto-wusterburg': 'uprawy, handel',
+    'miasto-averheim': 'handel, administracja, bydło, uprawy', 'miasto-wurtbad': 'handel, administracja, uprawy, wino',
+    'miasto-gersdorf': 'handel, drewno, rybołówstwo', 'miasto-hocheleben': 'handel, futra, rudy metali',
+    'miasto-krugenheim': 'handel, uprawy, rybołówstwo', 'miasto-pfungzig': 'uprawy, bydło, handel', 'miasto-streissen': 'uprawy, handel, wino',
+    'miasto-eicheschatten': 'uprawy, handel, piwo, administracja', 'miasto-schramleben': 'handel, piwo, bydło',
+    'miasto-waldenhof': 'handel, administracja, uprawy', 'miasto-talabheim': 'handel, administracja, uprawy',
+    'miasto-ahlenhof': 'drewno, handel, uprawy, bydło', 'miasto-hergig': 'handel, administracja, drewno, uprawy',
+    'miasto-kusel': 'handel, administracja, uprawy, rybołówstwo', 'miasto-talagaad': 'rybołówstwo, uprawy, drewno, handel',
+    'miasto-bechafen': 'handel, administracja, drewno, uprawy, budowa łodzi', 'miasto-wolfenburg': 'handel, drewno, administracja, wyroby z cyny',
+    'miasto-wurzen': 'bydło, drewno, handel, ser', 'miasto-salzenmund': 'handel, administracja, wyroby drewniane',
+    'miasto-ferlangen': 'antyki, handel, drewno', 'miasto-grafenrich': 'drewno, handel', 'miasto-neue-emskrank': 'handel, rybołówstwo, drewno',
+    'miasto-norden': 'rybołówstwo, handel, bursztyn, transport więźniów', 'miasto-middenheim': 'handel, usługi, administracja',
+    'miasto-beeckerhoven': 'drewno, handel', 'miasto-delberz': 'wino, drewno', 'miasto-schoninghagen': 'drewno, handel',
+    'miasto-scheinfeld': 'handel, uprawy, rybołówstwo', 'miasto-schilderheim': 'handel, rybołówstwo, uprawy',
+}
+# Słowo z „Dochodów” → tagi branż (cennik → branze) i mnożnik ceny. Szacunek MG.
+Z_DOCHODU = [
+    (('rudy', 'metal', 'żelazo'), {'warsztatowe': 0.92, 'prosta': 0.95, 'wojskowa': 0.95, 'tarcze': 0.95}),
+    (('wino', 'brandy', 'piwo'), {'trunki': 0.85}),
+    (('uprawy', 'bydło', 'hodowla', 'rybołówstwo', 'ser'), {'zywnosc': 0.92, 'zboze': 0.92}),
+    (('ubrania', 'wełna'), {'odziez': 0.92, 'tkaniny': 0.9}),
+    (('futra',), {'futra': 0.8, 'mysliwska': 0.95}),
+    (('drewn', 'cyny', 'szkło'), {'domowe': 0.92, 'pojemniki': 0.92}),
+    (('bursztyn', 'srebro'), {'kosztownosci': 0.9}),
+]
+# Ręcznie (MG i Zbrojownia Starego Świata s. 13) — nadpisują wyliczone z „Dochodów”.
 TAGI = {
-    'miasto-middenheim': {'futra': 0.8, 'warsztatowe': 0.9, 'prosta': 0.92, 'wojskowa': 0.92, 'tarcze': 0.92},
-    'miasto-nuln': {'prochowa': 0.85, 'eksperymentalna': 0.85, 'warsztatowe': 0.92},
+    'miasto-middenheim': {'futra': 0.8, 'warsztatowe': 0.9, 'prosta': 0.92, 'wojskowa': 0.92, 'tarcze': 0.92,
+                          'zywnosc': 1.1, 'zboze': 1.1},   # ZSŚ: okoliczne wsie ledwie wykarmiają miasto
+    'miasto-nuln': {'prochowa': 0.85, 'eksperymentalna': 0.85, 'warsztatowe': 0.92, 'trunki': 0.9},
     'marienburg': {'kolonialne': 0.8, 'luksus': 0.9, 'tkaniny': 0.9},
+    'miasto-hergig': {'futra': 0.85, 'mysliwska': 0.95},       # ZSŚ: łowcy i myśliwi z Hochlandu i Talabeklandu
+    'miasto-kusel': {'futra': 0.85, 'mysliwska': 0.95},
+    'miasto-talabheim': {'futra': 0.85, 'mysliwska': 0.95},
+    'miasto-eicheschatten': {'zywnosc': 0.85, 'tkaniny': 0.92},  # ZSŚ: najlepsze mięso i wełna w Krainie Zgromadzenia
 }
 for o in OS['osady']:
-    o.pop('tagi', None)
-    if o['id'] in TAGI: o['tagi'] = TAGI[o['id']]
+    o.pop('tagi', None); o.pop('dochody', None)
+    t = {}
+    if o['id'] in DOCHODY:
+        o['dochody'] = DOCHODY[o['id']]
+        for slowa, tagi in Z_DOCHODU:
+            if any(s in o['dochody'] for s in slowa): t.update(tagi)
+    t.update(TAGI.get(o['id'], {}))
+    if t: o['tagi'] = t
+O['miasto-middenheim']['uwaga'] = ('MG: metropolia. Poradnik podaje 15 000 — to stan po oblężeniu w 2522 KI; wcześniej 95 000 '
+                                    '(Dziedzictwo Sigmara s. 70). Futra i żelazo z Middenlandu tanie, żywność droga.')
 W('data/osady.json', OS)
 
 # ---------------------------------------------------------------- 3. rynek
@@ -73,6 +121,15 @@ RY['gospoda'] = {
     'opis': 'v6d: nocleg, posiłek i stajnia nie są towarem kupca, ale cena zależy od miejsca: osada × standard gospody (szacunek MG).',
     'standardy': [{'id': 'podla', 'nazwa': 'Podła spelunka', 'mnoznik': 0.6}, {'id': 'zwykla', 'nazwa': 'Zwykła gospoda', 'mnoznik': 1},
                   {'id': 'dobra', 'nazwa': 'Dobra gospoda', 'mnoznik': 1.8}, {'id': 'wytworna', 'nazwa': 'Wytworny zajazd', 'mnoznik': 3.5}]}
+# v6e: wyroby rzemieślnicze taniej w mieście (warsztaty, materiał na miejscu), żywność i zwierzęta taniej na wsi. Zakres 0,8–1,2 (MG).
+WYROBY = ['Broń biała', 'Broń zasięgowa', 'Amunicja', 'Pancerze', 'Ubranie i dodatki', 'Narzędzia i zestawy',
+          'Księgi i dokumenty', 'Wyposażenie różne', 'Protezy']
+TYP = {'wioska': (1.2, 0.85, 0.9), 'miasteczko': (1, 1, 1), 'miasto': (0.9, 1.05, 1.05), 'metropolia': (0.8, 1.15, 1.1)}
+RY['typ_osady'] = {
+    'opis': 'v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Działa razem z mnożnikiem osady: '
+            'wyroby rzemieślnicze w metropolii taniej niż na wsi, żywność odwrotnie. Szacunek MG, zakres 0,8–1,2.',
+    'kategorie': {typ: {**{k: w for k in WYROBY}, 'Jedzenie, picie, nocleg': z, 'Zwierzęta i pojazdy': z, 'Zioła, mikstury, narkotyki': zi}
+                  for typ, (w, z, zi) in TYP.items()}}
 W('data/rynek.json', RY)
 
 H = J('data/handel.json')

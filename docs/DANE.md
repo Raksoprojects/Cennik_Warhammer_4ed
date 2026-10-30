@@ -115,6 +115,7 @@ Dwie drogi zmian:
 | Twoje bieżące zmiany | `data/ustawienia.json` | jak eksport z Edycji cen | Puste = cennik domyślny. |
 
 | Dostępność, specjalności miast (v6d) | `narzedzia/dane_v6d.py` → `data/cennik.json`, `data/osady.json`, `data/rynek.json`, `data/handel.json` | cennik: `strona`, `nielegalny`, `nielegalny_uwaga`; osady: `tagi` (branża → mnożnik ceny, np. Middenheim futra ×0,8), `rzadkie_latwiej`, `import`; rynek: `dostepnosc.tabela.metropolia`, `import_egzotyczne`, `obce_wies`, `jakosc.osada_zalety`, `gospoda.standardy`; handel: `strefa_cena` (krok, min, max), `wahania[].dostepnosc` | Specjalności miast to szacunek MG (Poradnik s. 34/38 odsyła do „Dziedzictwa Sigmara”, 2. ed.). Strony z `narzedzia/strony_pg.json`. |
+| Typ osady, dochody miast (v6e) | `narzedzia/dane_v6d.py` → `data/rynek.json` → `typ_osady`, `data/osady.json` → `dochody`, `tagi` | `typ_osady.kategorie[wioska / miasteczko / miasto / metropolia][kategoria]` — wyroby ×1,2 → ×0,8, żywność ×0,85 → ×1,15; `dochody` z indeksów Dziedzictwa Sigmara (rozdz. VI) zamieniane na `tagi` (`Z_DOCHODU`), ręczne `TAGI` nadpisują | Łączny mnożnik specjalności przycięty do ×0,8–×1,2 (`mnoznikLokalny`). |
 | Dane do Kompendium MG | `docs/KOMPENDIUM_DANE.md` | | Generowany: `node narzedzia/eksport_kompendium.mjs`. Nie edytuj ręcznie. |
 
 Kolejność skryptów danych: `narzedzia/dodaj_v6.py` → `narzedzia/dane_v6b.py` → `narzedzia/dane_v6c.py` → `narzedzia/dane_v6d.py`

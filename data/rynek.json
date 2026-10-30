@@ -541,5 +541,66 @@
     "mnoznik": 3.5
    }
   ]
+ },
+ "typ_osady": {
+  "opis": "v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Działa razem z mnożnikiem osady: wyroby rzemieślnicze w metropolii taniej niż na wsi, żywność odwrotnie. Szacunek MG, zakres 0,8–1,2.",
+  "kategorie": {
+   "wioska": {
+    "Broń biała": 1.2,
+    "Broń zasięgowa": 1.2,
+    "Amunicja": 1.2,
+    "Pancerze": 1.2,
+    "Ubranie i dodatki": 1.2,
+    "Narzędzia i zestawy": 1.2,
+    "Księgi i dokumenty": 1.2,
+    "Wyposażenie różne": 1.2,
+    "Protezy": 1.2,
+    "Jedzenie, picie, nocleg": 0.85,
+    "Zwierzęta i pojazdy": 0.85,
+    "Zioła, mikstury, narkotyki": 0.9
+   },
+   "miasteczko": {
+    "Broń biała": 1,
+    "Broń zasięgowa": 1,
+    "Amunicja": 1,
+    "Pancerze": 1,
+    "Ubranie i dodatki": 1,
+    "Narzędzia i zestawy": 1,
+    "Księgi i dokumenty": 1,
+    "Wyposażenie różne": 1,
+    "Protezy": 1,
+    "Jedzenie, picie, nocleg": 1,
+    "Zwierzęta i pojazdy": 1,
+    "Zioła, mikstury, narkotyki": 1
+   },
+   "miasto": {
+    "Broń biała": 0.9,
+    "Broń zasięgowa": 0.9,
+    "Amunicja": 0.9,
+    "Pancerze": 0.9,
+    "Ubranie i dodatki": 0.9,
+    "Narzędzia i zestawy": 0.9,
+    "Księgi i dokumenty": 0.9,
+    "Wyposażenie różne": 0.9,
+    "Protezy": 0.9,
+    "Jedzenie, picie, nocleg": 1.05,
+    "Zwierzęta i pojazdy": 1.05,
+    "Zioła, mikstury, narkotyki": 1.05
+   },
+   "metropolia": {
+    "Broń biała": 0.8,
+    "Broń zasięgowa": 0.8,
+    "Amunicja": 0.8,
+    "Pancerze": 0.8,
+    "Ubranie i dodatki": 0.8,
+    "Narzędzia i zestawy": 0.8,
+    "Księgi i dokumenty": 0.8,
+    "Wyposażenie różne": 0.8,
+    "Protezy": 0.8,
+    "Jedzenie, picie, nocleg": 1.15,
+    "Zwierzęta i pojazdy": 1.15,
+    "Zioła, mikstury, narkotyki": 1.1
+   }
+  }
  }
 }
