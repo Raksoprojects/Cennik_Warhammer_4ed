@@ -79,9 +79,9 @@
      "cena": 0.982
     }
    },
-   "dochody": "handel, administracja",
    "populacja_poradnik": 105000,
-   "populacja": 1000000
+   "populacja": 1000000,
+   "dochody": "handel, administracja"
   },
   {
    "id": "marienburg",
@@ -140,7 +140,7 @@
    "limit_p": 14400,
    "dostepnosc": "miasto",
    "typ": "miasto",
-   "populacja": 12000,
+   "populacja": 60000,
    "zamoznosc": 4,
    "prowincja": "Middenland",
    "strefa": "reik",
@@ -178,6 +178,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 12000,
    "dochody": "handel, szkło i ceramika",
    "tagi": {
     "domowe": 0.92,
@@ -192,7 +193,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 5000,
+   "populacja": 25000,
    "zamoznosc": 3,
    "prowincja": "Reikland",
    "strefa": "reik",
@@ -230,6 +231,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 5000,
    "dochody": "handel, wino, drewno",
    "tagi": {
     "trunki": 0.85,
@@ -245,7 +247,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 2200,
+   "populacja": 11000,
    "zamoznosc": 2,
    "prowincja": "Reikland",
    "strefa": "reik",
@@ -282,6 +284,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 2200,
    "dochody": "handel, rudy metali",
    "tagi": {
     "warsztatowe": 0.92,
@@ -298,7 +301,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 3500,
+   "populacja": 17500,
    "zamoznosc": 4,
    "prowincja": "Reikland",
    "strefa": "reik",
@@ -335,6 +338,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 3500,
    "dochody": "handel, rudy i obróbka metali",
    "tagi": {
     "warsztatowe": 0.92,
@@ -351,7 +355,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 272,
+   "populacja": 1360,
    "zamoznosc": 2,
    "prowincja": "Reikland",
    "strefa": "reik",
@@ -392,6 +396,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 272,
    "dochody": "handel, transport"
   },
   {
@@ -402,7 +407,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 7500,
+   "populacja": 37500,
    "zamoznosc": 4,
    "prowincja": "Reikland",
    "strefa": "kemperbad",
@@ -440,6 +445,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 7500,
    "dochody": "handel, wino, brandy",
    "tagi": {
     "trunki": 0.85
@@ -453,7 +459,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 5000,
+   "populacja": 25000,
    "zamoznosc": 3,
    "prowincja": "Reikland",
    "strefa": "kemperbad",
@@ -491,6 +497,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 5000,
    "dochody": "handel, rudy metali",
    "tagi": {
     "warsztatowe": 0.92,
@@ -507,7 +514,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 2400,
+   "populacja": 12000,
    "zamoznosc": 2,
    "prowincja": "Reikland",
    "strefa": "kemperbad",
@@ -544,6 +551,7 @@
      "cena": 1.042
     }
    },
+   "populacja_poradnik": 2400,
    "dochody": "handel, szkutnictwo"
   },
   {
@@ -554,7 +562,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 1750,
+   "populacja": 8750,
    "zamoznosc": 3,
    "prowincja": "Reikland",
    "strefa": "kemperbad",
@@ -591,6 +599,7 @@
      "cena": 1.042
     }
    },
+   "populacja_poradnik": 1750,
    "dochody": "handel, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -605,7 +614,7 @@
    "limit_p": null,
    "dostepnosc": "metropolia",
    "typ": "metropolia",
-   "populacja": 85000,
+   "populacja": 425000,
    "zamoznosc": 5,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -643,6 +652,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 85000,
    "dochody": "handel, metalurgia, administracja, wino",
    "tagi": {
     "warsztatowe": 0.92,
@@ -662,7 +672,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 80,
+   "populacja": 400,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -704,6 +714,7 @@
     "zywnosc_podstawowa"
    ],
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 80,
    "dochody": "handel, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -718,7 +729,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 74,
+   "populacja": 370,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -759,6 +770,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 74,
    "dochody": "handel, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -773,7 +785,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 61,
+   "populacja": 305,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -814,6 +826,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 61,
    "dochody": "handel, uprawy, rybołówstwo",
    "tagi": {
     "zywnosc": 0.92,
@@ -828,7 +841,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 9000,
+   "populacja": 45000,
    "zamoznosc": 4,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -865,6 +878,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 9000,
    "dochody": "administracja, handel, rudy metali",
    "tagi": {
     "warsztatowe": 0.92,
@@ -881,7 +895,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 6800,
+   "populacja": 34000,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "sol",
@@ -919,6 +933,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 6800,
    "dochody": "handel, rybołówstwo, ubrania",
    "tagi": {
     "zywnosc": 0.92,
@@ -935,7 +950,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 600,
+   "populacja": 3000,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "sol",
@@ -976,6 +991,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 600,
    "dochody": "uprawy, handel, hodowla",
    "tagi": {
     "zywnosc": 0.92,
@@ -990,7 +1006,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 515,
+   "populacja": 2575,
    "zamoznosc": 4,
    "prowincja": "Wissenland",
    "strefa": "sol",
@@ -1031,6 +1047,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 515,
    "dochody": "uprawy, handel",
    "tagi": {
     "zywnosc": 0.92,
@@ -1045,7 +1062,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 85,
+   "populacja": 425,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "sol",
@@ -1086,6 +1103,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 85,
    "dochody": "handel, futra",
    "tagi": {
     "futra": 0.8,
@@ -1100,7 +1118,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 1100,
+   "populacja": 5500,
    "zamoznosc": 3,
    "prowincja": "Averland",
    "strefa": "sol",
@@ -1137,6 +1155,7 @@
      "cena": 0.922
     }
    },
+   "populacja_poradnik": 1100,
    "dochody": "handel, uprawy, wyroby drewniane",
    "tagi": {
     "zywnosc": 0.92,
@@ -1153,7 +1172,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 800,
+   "populacja": 4000,
    "zamoznosc": 3,
    "prowincja": "Wissenland",
    "strefa": "sol",
@@ -1194,6 +1213,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 800,
    "dochody": "uprawy, handel",
    "tagi": {
     "zywnosc": 0.92,
@@ -1208,7 +1228,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 9400,
+   "populacja": 47000,
    "zamoznosc": 4,
    "prowincja": "Averland",
    "strefa": "krasnoludzki",
@@ -1245,6 +1265,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 9400,
    "dochody": "handel, administracja, bydło, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -1259,7 +1280,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 8800,
+   "populacja": 44000,
    "zamoznosc": 4,
    "prowincja": "Stirland",
    "strefa": "krasnoludzki",
@@ -1296,6 +1317,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 8800,
    "dochody": "handel, administracja, uprawy, wino",
    "tagi": {
     "trunki": 0.85,
@@ -1311,7 +1333,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 425,
+   "populacja": 2125,
    "zamoznosc": 3,
    "prowincja": "Talabekland",
    "strefa": "krasnoludzki",
@@ -1352,6 +1374,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 425,
    "dochody": "handel, drewno, rybołówstwo",
    "tagi": {
     "zywnosc": 0.92,
@@ -1368,7 +1391,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 375,
+   "populacja": 1875,
    "zamoznosc": 3,
    "prowincja": "Averland",
    "strefa": "krasnoludzki",
@@ -1409,6 +1432,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 375,
    "dochody": "handel, futra, rudy metali",
    "tagi": {
     "warsztatowe": 0.92,
@@ -1427,7 +1451,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 4500,
+   "populacja": 22500,
    "zamoznosc": 4,
    "prowincja": "Talabekland",
    "strefa": "krasnoludzki",
@@ -1464,6 +1488,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 4500,
    "dochody": "handel, uprawy, rybołówstwo",
    "tagi": {
     "zywnosc": 0.92,
@@ -1478,7 +1503,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 3580,
+   "populacja": 17900,
    "zamoznosc": 3,
    "prowincja": "Averland",
    "strefa": "krasnoludzki",
@@ -1515,6 +1540,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 3580,
    "dochody": "uprawy, bydło, handel",
    "tagi": {
     "zywnosc": 0.92,
@@ -1529,7 +1555,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 5500,
+   "populacja": 27500,
    "zamoznosc": 3,
    "prowincja": "Averland",
    "strefa": "krasnoludzki",
@@ -1566,6 +1592,7 @@
      "cena": 0.982
     }
    },
+   "populacja_poradnik": 5500,
    "dochody": "uprawy, handel, wino",
    "tagi": {
     "trunki": 0.85,
@@ -1581,7 +1608,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 3375,
+   "populacja": 16875,
    "zamoznosc": 3,
    "prowincja": "Kraina Zgromadzenia",
    "strefa": "zhufbar",
@@ -1619,6 +1646,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 3375,
    "dochody": "uprawy, handel, piwo, administracja",
    "tagi": {
     "trunki": 0.85,
@@ -1635,7 +1663,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 675,
+   "populacja": 3375,
    "zamoznosc": 3,
    "prowincja": "Stirland",
    "strefa": "zhufbar",
@@ -1677,6 +1705,7 @@
     "zywnosc_podstawowa"
    ],
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 675,
    "dochody": "handel, piwo, bydło",
    "tagi": {
     "trunki": 0.85,
@@ -1692,7 +1721,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 4200,
+   "populacja": 21000,
    "zamoznosc": 2,
    "prowincja": "Stirland",
    "strefa": "zhufbar",
@@ -1729,6 +1758,7 @@
      "cena": 1.022
     }
    },
+   "populacja_poradnik": 4200,
    "dochody": "handel, administracja, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -1743,7 +1773,7 @@
    "limit_p": null,
    "dostepnosc": "metropolia",
    "typ": "metropolia",
-   "populacja": 72000,
+   "populacja": 360000,
    "zamoznosc": 4,
    "prowincja": "Talabekland",
    "strefa": "lesna",
@@ -1781,6 +1811,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 72000,
    "dochody": "handel, administracja, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -1797,7 +1828,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 4200,
+   "populacja": 21000,
    "zamoznosc": 3,
    "prowincja": "Middenland",
    "strefa": "lesna",
@@ -1834,6 +1865,7 @@
      "cena": 1.002
     }
    },
+   "populacja_poradnik": 4200,
    "dochody": "drewno, handel, uprawy, bydło",
    "tagi": {
     "zywnosc": 0.92,
@@ -1850,7 +1882,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 500,
+   "populacja": 2500,
    "zamoznosc": 3,
    "prowincja": "Hochland",
    "strefa": "lesna",
@@ -1891,6 +1923,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 500,
    "dochody": "handel, administracja, drewno, uprawy",
    "tagi": {
     "zywnosc": 0.92,
@@ -1909,7 +1942,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 6500,
+   "populacja": 32500,
    "zamoznosc": 4,
    "prowincja": "Talabekland",
    "strefa": "lesna",
@@ -1946,6 +1979,7 @@
      "cena": 1.002
     }
    },
+   "populacja_poradnik": 6500,
    "dochody": "handel, administracja, uprawy, rybołówstwo",
    "tagi": {
     "zywnosc": 0.92,
@@ -1962,7 +1996,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 450,
+   "populacja": 2250,
    "zamoznosc": 3,
    "prowincja": "Talabekland",
    "strefa": "lesna",
@@ -2003,6 +2037,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 450,
    "dochody": "rybołówstwo, uprawy, drewno, handel",
    "tagi": {
     "zywnosc": 0.92,
@@ -2019,7 +2054,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 7600,
+   "populacja": 38000,
    "zamoznosc": 4,
    "prowincja": "Ostermark",
    "strefa": "polnocny_wschod",
@@ -2056,6 +2091,7 @@
      "cena": 1.062
     }
    },
+   "populacja_poradnik": 7600,
    "dochody": "handel, administracja, drewno, uprawy, budowa łodzi",
    "tagi": {
     "zywnosc": 0.92,
@@ -2072,7 +2108,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 1100,
+   "populacja": 5500,
    "zamoznosc": 3,
    "prowincja": "Ostland",
    "strefa": "polnocny_wschod",
@@ -2109,6 +2145,7 @@
      "cena": 1.062
     }
    },
+   "populacja_poradnik": 1100,
    "dochody": "handel, drewno, administracja, wyroby z cyny",
    "tagi": {
     "domowe": 0.92,
@@ -2123,7 +2160,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 1450,
+   "populacja": 7250,
    "zamoznosc": 2,
    "prowincja": "Ostland",
    "strefa": "polnocny_wschod",
@@ -2160,6 +2197,7 @@
      "cena": 1.062
     }
    },
+   "populacja_poradnik": 1450,
    "dochody": "bydło, drewno, handel, ser",
    "tagi": {
     "zywnosc": 0.92,
@@ -2176,7 +2214,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 7500,
+   "populacja": 37500,
    "zamoznosc": 4,
    "prowincja": "Nordland",
    "strefa": "salzenmund",
@@ -2214,6 +2252,7 @@
     }
    },
    "uwaga": "Wolne miasto.",
+   "populacja_poradnik": 7500,
    "dochody": "handel, administracja, wyroby drewniane",
    "tagi": {
     "domowe": 0.92,
@@ -2228,7 +2267,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 130,
+   "populacja": 650,
    "zamoznosc": 3,
    "prowincja": "Ostland",
    "strefa": "salzenmund",
@@ -2269,6 +2308,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 130,
    "dochody": "antyki, handel, drewno",
    "tagi": {
     "domowe": 0.92,
@@ -2283,7 +2323,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 252,
+   "populacja": 1260,
    "zamoznosc": 2,
    "prowincja": "Nordland",
    "strefa": "salzenmund",
@@ -2324,6 +2364,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 252,
    "dochody": "drewno, handel",
    "tagi": {
     "domowe": 0.92,
@@ -2338,7 +2379,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 895,
+   "populacja": 4475,
    "zamoznosc": 3,
    "prowincja": "Nordland",
    "strefa": "salzenmund",
@@ -2379,6 +2420,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 895,
    "dochody": "handel, rybołówstwo, drewno",
    "tagi": {
     "zywnosc": 0.92,
@@ -2395,7 +2437,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 3200,
+   "populacja": 16000,
    "zamoznosc": 3,
    "prowincja": "Nordland",
    "strefa": "salzenmund",
@@ -2432,6 +2474,7 @@
      "cena": 1.062
     }
    },
+   "populacja_poradnik": 3200,
    "dochody": "rybołówstwo, handel, bursztyn, transport więźniów",
    "tagi": {
     "zywnosc": 0.92,
@@ -2485,6 +2528,7 @@
     }
    },
    "uwaga": "MG (2525 KI): ok. 150 000 mieszkańców — uchodźcy z całego Middenlandu. Poradnik podaje 15 000 (stan tuż po oblężeniu 2522; wcześniej 95 000, Dziedzictwo Sigmara s. 70). Futra i żelazo z Middenlandu tanie, żywność droga.",
+   "populacja_poradnik": 15000,
    "dochody": "handel, usługi, administracja",
    "tagi": {
     "futra": 0.8,
@@ -2494,8 +2538,7 @@
     "tarcze": 0.92,
     "zywnosc": 1.1,
     "zboze": 1.1
-   },
-   "populacja_poradnik": 15000
+   }
   },
   {
    "id": "miasto-beeckerhoven",
@@ -2505,7 +2548,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 408,
+   "populacja": 2040,
    "zamoznosc": 3,
    "prowincja": "Nordland",
    "strefa": "drakwald",
@@ -2546,6 +2589,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 408,
    "dochody": "drewno, handel",
    "tagi": {
     "domowe": 0.92,
@@ -2560,7 +2604,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 4500,
+   "populacja": 22500,
    "zamoznosc": 3,
    "prowincja": "Middenland",
    "strefa": "drakwald",
@@ -2597,6 +2641,7 @@
      "cena": 1.022
     }
    },
+   "populacja_poradnik": 4500,
    "dochody": "wino, drewno",
    "tagi": {
     "trunki": 0.85,
@@ -2612,7 +2657,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 980,
+   "populacja": 4900,
    "zamoznosc": 3,
    "prowincja": "Middenland",
    "strefa": "drakwald",
@@ -2653,6 +2698,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 980,
    "dochody": "drewno, handel",
    "tagi": {
     "domowe": 0.92,
@@ -2667,7 +2713,7 @@
    "limit_p": 480,
    "dostepnosc": "wioska",
    "typ": "wies",
-   "populacja": 850,
+   "populacja": 4250,
    "zamoznosc": 3,
    "prowincja": "Middenland",
    "strefa": "marienburg",
@@ -2708,6 +2754,7 @@
     "zwierze_hodowlane",
     "zywnosc_podstawowa"
    ],
+   "populacja_poradnik": 850,
    "dochody": "handel, uprawy, rybołówstwo",
    "tagi": {
     "zywnosc": 0.92,
@@ -2722,7 +2769,7 @@
    "limit_p": 3600,
    "dostepnosc": "miasteczko",
    "typ": "miasteczko",
-   "populacja": 5500,
+   "populacja": 27500,
    "zamoznosc": 3,
    "prowincja": "Reikland",
    "strefa": "marienburg",
@@ -2759,6 +2806,7 @@
      "cena": 0.922
     }
    },
+   "populacja_poradnik": 5500,
    "dochody": "handel, rybołówstwo, uprawy",
    "tagi": {
     "zywnosc": 0.92,

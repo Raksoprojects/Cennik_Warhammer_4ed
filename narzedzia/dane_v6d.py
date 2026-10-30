@@ -102,7 +102,14 @@ for o in OS['osady']:
     t.update(TAGI.get(o['id'], {}))
     if t: o['tagi'] = t
 # Populacje kampanii (MG, 2525 KI): liczby z Poradnika są za małe jak na skalę Imperium. Wartość z Poradnika zostaje obok.
+# Pozostałe ośrodki: Poradnik × 5. Typ osady (a więc ceny) zostaje z liczb Poradnika (dane_v6c.py) — progi w skali kampanii:
+# wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej.
+SKALA_POP = 5
 POPULACJA_MG = {'miasto-middenheim': 150000, 'altdorf': 1000000}
+for o in OS['osady']:
+    if o.get('populacja') and o['id'] not in POPULACJA_MG:
+        o['populacja_poradnik'] = o.get('populacja_poradnik', o['populacja'])
+        o['populacja'] = o['populacja_poradnik'] * SKALA_POP
 for i, p in POPULACJA_MG.items():
     O[i]['populacja_poradnik'] = O[i].get('populacja_poradnik', O[i].get('populacja'))
     O[i]['populacja'] = p
