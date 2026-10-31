@@ -253,12 +253,12 @@ v6c: szansa na pozycję z kupcy.json → trefne (domyślnie domyslna_szansa); ce
 
 | Kwatera | Tydzień | Miesiąc | Rok |
 |---|---|---|---|
-| Kąt w izbie czeladnej | 2 s | 7 s | 3 ZK |
-| Izba na poddaszu | 3 s | 8 s | 4 ZK |
-| Izba w kamienicy | 8 s | 1 ZK 4 s | 12 ZK |
-| Mieszkanie mieszczańskie (2–3 izby) | 12 s | 2 ZK | 20 ZK |
-| Dom mistrza z warsztatem | 1 ZK 4 s | 4 ZK | 40 ZK |
-| Kamienica kupiecka | 3 ZK | 11 ZK | 110 ZK |
+| Kąt w izbie czeladnej | 2 s | 7 s | 3 ZK 15 s |
+| Izba na poddaszu | 3 s | 10 s | 5 ZK |
+| Izba w kamienicy | 8 s | 1 ZK 8 s | 15 ZK |
+| Mieszkanie mieszczańskie (2–3 izby) | 12 s | 2 ZK 2 s | 22 ZK |
+| Dom mistrza z warsztatem | 1 ZK 4 s | 4 ZK 4 s | 45 ZK |
+| Kamienica kupiecka | 3 ZK | 10 ZK 10 s | 110 ZK |
 
 | Kupno | Cena |
 |---|---|
@@ -526,12 +526,12 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 |---|---|---|---|---|---|
 | Kąt w izbie czeladnej / tydzień (nie w handlu) | 2 s | — | — | — | kampania |
 | Kąt w izbie czeladnej / miesiąc (nie w handlu) | 7 s | — | — | — | kampania |
-| Izba na poddaszu / miesiąc (nie w handlu) | 8 s | — | — | — | kampania |
-| Izba w kamienicy / miesiąc (nie w handlu) | 1 ZK 4 s | — | — | — | kampania |
-| Izba w kamienicy / rok (nie w handlu) | 12 ZK | — | — | — | kampania |
-| Mieszkanie mieszczańskie (2–3 izby) / miesiąc (nie w handlu) | 2 ZK | — | — | — | kampania |
-| Mieszkanie mieszczańskie / rok (nie w handlu) | 20 ZK | — | — | — | kampania |
-| Dom mistrza z warsztatem / rok (nie w handlu) | 40 ZK | — | — | — | kampania |
+| Izba na poddaszu / miesiąc (nie w handlu) | 10 s | — | — | — | kampania |
+| Izba w kamienicy / miesiąc (nie w handlu) | 1 ZK 8 s | — | — | — | kampania |
+| Izba w kamienicy / rok (nie w handlu) | 15 ZK | — | — | — | kampania |
+| Mieszkanie mieszczańskie (2–3 izby) / miesiąc (nie w handlu) | 2 ZK 2 s | — | — | — | kampania |
+| Mieszkanie mieszczańskie / rok (nie w handlu) | 22 ZK | — | — | — | kampania |
+| Dom mistrza z warsztatem / rok (nie w handlu) | 45 ZK | — | — | — | kampania |
 | Kamienica kupiecka / rok (nie w handlu) | 110 ZK | — | — | — | kampania |
 | Kupno: prosty dom (nie w handlu) | 120 ZK | — | — | — | kampania |
 | Kupno: dom rzemieślnika (nie w handlu) | 320 ZK | — | — | — | kampania |

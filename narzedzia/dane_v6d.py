@@ -156,6 +156,27 @@ RY['typ_osady'] = {
                   for typ, (w, z, zi) in TYP.items()}}
 W('data/rynek.json', RY)
 
+# ---------------------------------------------------------------- 4. czynsze (MG 2026-10-31)
+# Miesiąc (33 dni, ponad 4 tygodnie) ≈ 3,5 × tydzień (rabat 15% za dłuższy najem), rok ≈ 10,8 × miesiąc (rabat 10%).
+# Zbrojownia Starego Świata s. 91: najem domu 8–10% jego wartości rocznie — rząd wielkości się zgadza.
+NAJEM = {  # kwatera: (tydzień, miesiąc, rok) w pensach
+    'Kąt w izbie czeladnej': (24, 84, 900), 'Izba na poddaszu': (36, 120, 1200), 'Izba w kamienicy': (96, 336, 3600),
+    'Mieszkanie mieszczańskie (2–3 izby)': (144, 504, 5280), 'Dom mistrza z warsztatem': (288, 1008, 10800),
+    'Kamienica kupiecka': (720, 2520, 26400)}
+CZ = J('data/czynsze.json')
+for k in CZ['najem']: k['tydzien_p'], k['miesiac_p'], k['rok_p'] = NAJEM[k['kwatera']]
+CZ['opis'] = CZ['opis'].split(' v6d:')[0] + ' v6d: miesiąc ≈ 3,5 × tydzień, rok ≈ 10,8 × miesiąc (decyzja MG).'
+W('data/czynsze.json', CZ)
+OKRES = {'tydzień': 0, 'miesiąc': 1, 'rok': 2}
+C = J('data/cennik.json')
+for c in C['pozycje']:
+    if c['kat'] != 'Czynsze i mieszkanie' or ' / ' not in c['nazwa']: continue
+    kw, okres = c['nazwa'].split(' / ')
+    nowa = next(v[OKRES[okres]] for n, v in NAJEM.items() if n.startswith(kw))
+    c['cena_ref_p'] = round(c['cena_ref_p'] * nowa / c['cena_p'])   # cena_ref = przed mnożnikiem klasy cenowej
+    c['cena_p'] = nowa
+W('data/cennik.json', C)
+
 H = J('data/handel.json')
 for w in H['wahania']['lista']:
     w['dostepnosc'] = {'stabilny': 1, 'hossa': 0.7, 'bessa': 1.3}[w['id']]

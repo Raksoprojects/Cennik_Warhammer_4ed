@@ -1,40 +1,40 @@
 {
- "opis": "Czynsze v4 (presety „zalecany” i „x3”): najem ×2 poza kątem i poddaszem (×1 — budżet Brązu 3 i 4), kupno ×2 — stosunek kupna do najmu bez zmian. Mnóż przez osadę i koniunkturę.",
+ "opis": "Czynsze v4 (presety „zalecany” i „x3”): najem ×2 poza kątem i poddaszem (×1 — budżet Brązu 3 i 4), kupno ×2 — stosunek kupna do najmu bez zmian. Mnóż przez osadę i koniunkturę. v6d: miesiąc ≈ 3,5 × tydzień, rok ≈ 10,8 × miesiąc (decyzja MG).",
  "najem": [
   {
    "kwatera": "Kąt w izbie czeladnej",
    "tydzien_p": 24,
    "miesiac_p": 84,
-   "rok_p": 720
+   "rok_p": 900
   },
   {
    "kwatera": "Izba na poddaszu",
    "tydzien_p": 36,
-   "miesiac_p": 96,
-   "rok_p": 960
+   "miesiac_p": 120,
+   "rok_p": 1200
   },
   {
    "kwatera": "Izba w kamienicy",
    "tydzien_p": 96,
-   "miesiac_p": 288,
-   "rok_p": 2880
+   "miesiac_p": 336,
+   "rok_p": 3600
   },
   {
    "kwatera": "Mieszkanie mieszczańskie (2–3 izby)",
    "tydzien_p": 144,
-   "miesiac_p": 480,
-   "rok_p": 4800
+   "miesiac_p": 504,
+   "rok_p": 5280
   },
   {
    "kwatera": "Dom mistrza z warsztatem",
    "tydzien_p": 288,
-   "miesiac_p": 960,
-   "rok_p": 9600
+   "miesiac_p": 1008,
+   "rok_p": 10800
   },
   {
    "kwatera": "Kamienica kupiecka",
    "tydzien_p": 720,
-   "miesiac_p": 2640,
+   "miesiac_p": 2520,
    "rok_p": 26400
   }
  ],

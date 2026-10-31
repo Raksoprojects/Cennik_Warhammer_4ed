@@ -18,7 +18,10 @@ test(`preset domyślny (${K.domyslny}) = data/cennik.json`, () => {
 // v5 poprawiło bazę flambergu i łuku elfiego oraz klasę arkanu — te dwie pozycje celowo różnią się od archiwum v4.
 // v6 (decyzja MG): łuki i kusze — porządny łuk 2 ZK, kusza 4 ZK, rodziny w tych samych proporcjach.
 const ZMIENIONE_W_V5 = new Set(['flamberg', 'arkan', 'luk-elfi',
-  'krotki-luk', 'luk', 'luk-dlugi', 'kusza', 'ciezka-kusza', 'kusza-pistoletowa', 'miecz', 'bulat']);   // v6b/v6c: miecz i bułat 3 ZK
+  'krotki-luk', 'luk', 'luk-dlugi', 'kusza', 'ciezka-kusza', 'kusza-pistoletowa', 'miecz', 'bulat',   // v6b/v6c: miecz i bułat 3 ZK
+  // v6d: czynsze miesięczne i roczne (miesiąc ≈ 3,5 × tydzień, rok ≈ 10,8 × miesiąc)
+  'kat-w-izbie-czeladnej-miesiac', 'izba-na-poddaszu-miesiac', 'izba-w-kamienicy-miesiac', 'izba-w-kamienicy-rok',
+  'mieszkanie-mieszczanskie-23-izby-miesiac', 'mieszkanie-mieszczanskie-rok', 'dom-mistrza-z-warsztatem-rok', 'kamienica-kupiecka-rok']);
 for (const [pr, plik] of [['zalecany_v4', 'zalecany'], ['drogi', 'drogi']]) test(`preset ${pr} = propozycja/cennik_v4_${plik}.json`, () => {
   const roznice = porownaj(zastosujPreset(cennik, K, pr), rd(`propozycja/cennik_v4_${plik}.json`))
     .filter(r => !ZMIENIONE_W_V5.has(r.split(':')[0]));

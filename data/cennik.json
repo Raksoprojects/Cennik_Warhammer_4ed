@@ -3729,7 +3729,7 @@
    "nazwa": "Izba na poddaszu / miesiąc",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 96,
+   "cena_p": 120,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "j.w.",
@@ -3739,7 +3739,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 96,
+   "cena_ref_p": 120,
    "klasa": "najem_dolny"
   },
   {
@@ -3748,7 +3748,7 @@
    "nazwa": "Izba w kamienicy / miesiąc",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 288,
+   "cena_p": 336,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "j.w.",
@@ -3758,7 +3758,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 144,
+   "cena_ref_p": 168,
    "klasa": "najem"
   },
   {
@@ -3767,7 +3767,7 @@
    "nazwa": "Izba w kamienicy / rok",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 2880,
+   "cena_p": 3600,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "j.w.",
@@ -3777,7 +3777,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 1440,
+   "cena_ref_p": 1800,
    "klasa": "najem"
   },
   {
@@ -3786,7 +3786,7 @@
    "nazwa": "Mieszkanie mieszczańskie (2–3 izby) / miesiąc",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 480,
+   "cena_p": 504,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "Frankfurt 1450: bednarz 4 guldeny rocznie",
@@ -3796,7 +3796,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 240,
+   "cena_ref_p": 252,
    "klasa": "najem"
   },
   {
@@ -3805,7 +3805,7 @@
    "nazwa": "Mieszkanie mieszczańskie / rok",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 4800,
+   "cena_p": 5280,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "j.w.",
@@ -3815,7 +3815,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 2400,
+   "cena_ref_p": 2640,
    "klasa": "najem"
   },
   {
@@ -3824,7 +3824,7 @@
    "nazwa": "Dom mistrza z warsztatem / rok",
    "zrodlo": null,
    "cena_raw_p": null,
-   "cena_p": 9600,
+   "cena_p": 10800,
    "obc": null,
    "dostepnosc": null,
    "podstawa_hist": "Frankfurt 1450: złotnik 10 guldenów rocznie = 23 ZK",
@@ -3834,7 +3834,7 @@
    "pozycja_kampanii": true,
    "typ": "nieruchomosc",
    "podtyp": null,
-   "cena_ref_p": 4800,
+   "cena_ref_p": 5400,
    "klasa": "najem"
   },
   {
