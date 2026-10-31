@@ -1,6 +1,6 @@
 # Skarbiec Imperium — dane do Kompendium MG
 
-Wygenerowano 2026-10-30 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
+Wygenerowano 2026-10-31 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
 Wszystkie ceny to ceny **bazowe (wytwórcy)**; gracz płaci u kupca więcej (marża, osada, sytuacja). 1 ZK = 20 s = 240 p.
 
 ## 1. Status i zarobki
@@ -66,8 +66,8 @@ Preferencja: rdzeń ×0,95, boczny ×1,1. Kaprys 1k10: ≤1 ×0,9, ≤3 ×0,95, 
 | Miasteczko | 0% | 15 ZK | miasteczko |  |
 | Miasto | +10% | 60 ZK | miasto |  |
 | Metropolia (Nuln, Middenheim) | +20% | bez limitu | metropolia |  |
-| Altdorf | +30% | bez limitu | metropolia | Ok. 1 000 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
-| Marienburg | +45% | bez limitu | metropolia | Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach. |
+| Altdorf | +30% | bez limitu | metropolia | Ok. 900 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
+| Marienburg | +45% | bez limitu | metropolia | Ok. 1 000 000 mieszkańców (MG). Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach. |
 
 ### Typ osady
 
@@ -90,59 +90,59 @@ v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Dzia
 
 ### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)
 
-Populacja w skali kampanii (2525 KI): Poradnik × 5 (Middenheim 150 000 i Altdorf 1 000 000 — MG). Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).
+Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).
 
-| Miasto | Strefa | Populacja | Zamożność | Typ | Mnożnik | Dochody | Specjalności |
-|---|---|---|---|---|---|---|---|
-| Carroburg | Dorzecze Reiklandzkie | 60000 | 4 | miasto | +16% | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
-| Bögenhafen | Dorzecze Reiklandzkie | 25000 | 3 | miasteczko | 0% | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Helmgart | Dorzecze Reiklandzkie | 11000 | 2 | miasteczko | -5% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Ubersreik | Dorzecze Reiklandzkie | 17500 | 4 | miasteczko | +5% | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Weissbruck | Dorzecze Reiklandzkie | 1360 | 2 | wies | -19% | handel, transport |  |
-| Kemperbad | Enklawa Kemperbadu | 37500 | 4 | miasteczko | +5% | handel, wino, brandy | trunki ×0,85 |
-| Auerswald | Enklawa Kemperbadu | 25000 | 3 | miasteczko | 0% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Grunburg | Enklawa Kemperbadu | 12000 | 2 | miasteczko | -5% | handel, szkutnictwo |  |
-| Stimmigen | Enklawa Kemperbadu | 8750 | 3 | miasteczko | 0% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Nuln | Strefa Handlowa Nuln | 425000 | 5 | metropolia | +32% | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
-| Ambosstein | Strefa Handlowa Nuln | 400 | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Furtzhausen | Strefa Handlowa Nuln | 370 | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Kotzenheim | Strefa Handlowa Nuln | 305 | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Wissenburg | Strefa Handlowa Nuln | 45000 | 4 | miasteczko | +5% | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Pfeildorf | Dolina Górnego Solu | 34000 | 3 | miasteczko | 0% | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
-| Geschburg | Dolina Górnego Solu | 3000 | 3 | wies | -15% | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
-| Kreutzhofen | Dolina Górnego Solu | 2575 | 4 | wies | -11% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Kroppenleben | Dolina Górnego Solu | 425 | 3 | wies | -15% | handel, futra | futra ×0,8, mysliwska ×0,95 |
-| Wuppertal | Dolina Górnego Solu | 5500 | 3 | miasteczko | 0% | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wusterburg | Dolina Górnego Solu | 4000 | 3 | wies | -15% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Averheim | Stary Trakt Krasnoludzki | 47000 | 4 | miasteczko | +5% | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Wurtbad | Stary Trakt Krasnoludzki | 44000 | 4 | miasteczko | +5% | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Gersdorf | Stary Trakt Krasnoludzki | 2125 | 3 | wies | -15% | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hocheleben | Stary Trakt Krasnoludzki | 1875 | 3 | wies | -15% | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
-| Krugenheim | Stary Trakt Krasnoludzki | 22500 | 4 | miasteczko | +5% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Pfungzig | Stary Trakt Krasnoludzki | 17900 | 3 | miasteczko | 0% | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
-| Streissen | Stary Trakt Krasnoludzki | 27500 | 3 | miasteczko | 0% | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Eicheschatten | Trakt do Zhufbaru | 16875 | 3 | miasteczko | 0% | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
-| Schramleben | Trakt do Zhufbaru | 3375 | 3 | wies | -15% | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Waldenhof | Trakt do Zhufbaru | 21000 | 2 | miasteczko | -5% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Talabheim | Stara Droga Leśna | 360000 | 4 | metropolia | +26% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Ahlenhof | Stara Droga Leśna | 21000 | 3 | miasteczko | 0% | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hergig | Stara Droga Leśna | 2500 | 3 | wies | -15% | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Küsel | Stara Droga Leśna | 32500 | 4 | miasteczko | +5% | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Talagaad | Stara Droga Leśna | 2250 | 3 | wies | -15% | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Bechafen | Przejście Północno-Wschodnie | 38000 | 4 | miasteczko | +5% | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wolfenburg | Przejście Północno-Wschodnie | 5500 | 3 | miasteczko | 0% | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
-| Wurzen | Przejście Północno-Wschodnie | 7250 | 2 | miasteczko | -5% | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Salzenmund | Wybrzeże Salzenmund | 37500 | 4 | miasteczko | +5% | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
-| Ferlangen | Wybrzeże Salzenmund | 650 | 3 | wies | -15% | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
-| Grafenrich | Wybrzeże Salzenmund | 1260 | 2 | wies | -19% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Neue Emskrank | Wybrzeże Salzenmund | 4475 | 3 | wies | -15% | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Norden | Wybrzeże Salzenmund | 16000 | 3 | miasteczko | 0% | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
-| Middenheim | Korytarz Drakwaldzki | 150000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
-| Beeckerhoven | Korytarz Drakwaldzki | 2040 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Delberz | Korytarz Drakwaldzki | 22500 | 3 | miasteczko | 0% | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Schoninghagen | Korytarz Drakwaldzki | 4900 | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Scheinfeld | Delta Marienburga | 4250 | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Schilderheim | Delta Marienburga | 27500 | 3 | miasteczko | 0% | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Miasto | Strefa | Populacja | Przed wojną | Zamożność | Typ | Mnożnik | Dochody | Specjalności |
+|---|---|---|---|---|---|---|---|---|
+| Carroburg | Dorzecze Reiklandzkie | 60000 | 40000 | 4 | miasto | +16% | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
+| Bögenhafen | Dorzecze Reiklandzkie | 25000 |  | 3 | miasteczko | 0% | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Helmgart | Dorzecze Reiklandzkie | 11000 |  | 2 | miasteczko | -5% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Ubersreik | Dorzecze Reiklandzkie | 17500 |  | 4 | miasteczko | +5% | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Weissbruck | Dorzecze Reiklandzkie | 1360 |  | 2 | wies | -19% | handel, transport |  |
+| Kemperbad | Enklawa Kemperbadu | 37500 |  | 4 | miasteczko | +5% | handel, wino, brandy | trunki ×0,85 |
+| Auerswald | Enklawa Kemperbadu | 25000 |  | 3 | miasteczko | 0% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Grunburg | Enklawa Kemperbadu | 12000 |  | 2 | miasteczko | -5% | handel, szkutnictwo |  |
+| Stimmigen | Enklawa Kemperbadu | 8750 |  | 3 | miasteczko | 0% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Nuln | Strefa Handlowa Nuln | 700000 |  | 5 | metropolia | +32% | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
+| Ambosstein | Strefa Handlowa Nuln | 400 |  | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Furtzhausen | Strefa Handlowa Nuln | 370 |  | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Kotzenheim | Strefa Handlowa Nuln | 305 |  | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Wissenburg | Strefa Handlowa Nuln | 45000 |  | 4 | miasteczko | +5% | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Pfeildorf | Dolina Górnego Solu | 34000 |  | 3 | miasteczko | 0% | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
+| Geschburg | Dolina Górnego Solu | 3000 |  | 3 | wies | -15% | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
+| Kreutzhofen | Dolina Górnego Solu | 2575 |  | 4 | wies | -11% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Kroppenleben | Dolina Górnego Solu | 425 |  | 3 | wies | -15% | handel, futra | futra ×0,8, mysliwska ×0,95 |
+| Wuppertal | Dolina Górnego Solu | 5500 |  | 3 | miasteczko | 0% | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wusterburg | Dolina Górnego Solu | 4000 |  | 3 | wies | -15% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Averheim | Stary Trakt Krasnoludzki | 47000 |  | 4 | miasteczko | +5% | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Wurtbad | Stary Trakt Krasnoludzki | 44000 |  | 4 | miasteczko | +5% | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Gersdorf | Stary Trakt Krasnoludzki | 2125 |  | 3 | wies | -15% | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hocheleben | Stary Trakt Krasnoludzki | 1875 |  | 3 | wies | -15% | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
+| Krugenheim | Stary Trakt Krasnoludzki | 22500 |  | 4 | miasteczko | +5% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Pfungzig | Stary Trakt Krasnoludzki | 17900 |  | 3 | miasteczko | 0% | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
+| Streissen | Stary Trakt Krasnoludzki | 27500 |  | 3 | miasteczko | 0% | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Eicheschatten | Trakt do Zhufbaru | 16875 |  | 3 | miasteczko | 0% | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
+| Schramleben | Trakt do Zhufbaru | 3375 |  | 3 | wies | -15% | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Waldenhof | Trakt do Zhufbaru | 21000 |  | 2 | miasteczko | -5% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Talabheim | Stara Droga Leśna | 360000 |  | 4 | metropolia | +26% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Ahlenhof | Stara Droga Leśna | 21000 | 11000 | 3 | miasteczko | 0% | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hergig | Stara Droga Leśna | 2500 | 46000 | 3 | wies | -15% | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Küsel | Stara Droga Leśna | 32500 |  | 4 | miasteczko | +5% | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Talagaad | Stara Droga Leśna | 2250 |  | 3 | wies | -15% | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Bechafen | Przejście Północno-Wschodnie | 38000 |  | 4 | miasteczko | +5% | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wolfenburg | Przejście Północno-Wschodnie | 5500 | 44500 | 3 | miasteczko | 0% | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
+| Wurzen | Przejście Północno-Wschodnie | 7250 |  | 2 | miasteczko | -5% | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Salzenmund | Wybrzeże Salzenmund | 37500 |  | 4 | miasteczko | +5% | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
+| Ferlangen | Wybrzeże Salzenmund | 650 | 12500 | 3 | wies | -15% | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
+| Grafenrich | Wybrzeże Salzenmund | 1260 |  | 2 | wies | -19% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Neue Emskrank | Wybrzeże Salzenmund | 4475 |  | 3 | wies | -15% | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Norden | Wybrzeże Salzenmund | 16000 |  | 3 | miasteczko | 0% | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
+| Middenheim | Korytarz Drakwaldzki | 400000 | 475000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
+| Beeckerhoven | Korytarz Drakwaldzki | 2040 |  | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Delberz | Korytarz Drakwaldzki | 22500 | 10000 | 3 | miasteczko | 0% | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Schoninghagen | Korytarz Drakwaldzki | 4900 |  | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Scheinfeld | Delta Marienburga | 4250 |  | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Schilderheim | Delta Marienburga | 27500 |  | 3 | miasteczko | 0% | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
 
 ### Dostępność (PG s. 290 + zasady kampanii)
 

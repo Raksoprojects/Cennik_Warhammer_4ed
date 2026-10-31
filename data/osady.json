@@ -45,7 +45,7 @@
    "rzadkie_latwiej": true,
    "dostepnosc": "metropolia",
    "zamoznosc": 5,
-   "uwaga": "Ok. 1 000 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).",
+   "uwaga": "Ok. 900 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).",
    "strefa": "reik",
    "kategorie": {
     "Ubranie i dodatki": {
@@ -80,7 +80,7 @@
     }
    },
    "populacja_poradnik": 105000,
-   "populacja": 1000000,
+   "populacja": 900000,
    "dochody": "handel, administracja"
   },
   {
@@ -88,7 +88,7 @@
    "nazwa": "Marienburg",
    "mnoznik": 1.45,
    "limit_p": null,
-   "uwaga": "Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach.",
+   "uwaga": "Ok. 1 000 000 mieszkańców (MG). Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach.",
    "dostepnosc": "metropolia",
    "zamoznosc": 5,
    "rzadkie_latwiej": true,
@@ -126,6 +126,8 @@
      "cena": 0.922
     }
    },
+   "populacja_poradnik": 135000,
+   "populacja": 1000000,
    "tagi": {
     "kolonialne": 0.8,
     "luksus": 0.9,
@@ -183,7 +185,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "populacja_przed_wojna": 40000
   },
   {
    "id": "miasto-bogenhafen",
@@ -614,7 +617,7 @@
    "limit_p": null,
    "dostepnosc": "metropolia",
    "typ": "metropolia",
-   "populacja": 425000,
+   "populacja": 700000,
    "zamoznosc": 5,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -1872,7 +1875,8 @@
     "zboze": 0.92,
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "populacja_przed_wojna": 11000
   },
   {
    "id": "miasto-hergig",
@@ -1932,7 +1936,8 @@
     "pojemniki": 0.92,
     "futra": 0.85,
     "mysliwska": 0.95
-   }
+   },
+   "populacja_przed_wojna": 46000
   },
   {
    "id": "miasto-kusel",
@@ -2150,7 +2155,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "populacja_przed_wojna": 44500
   },
   {
    "id": "miasto-wurzen",
@@ -2313,7 +2319,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "populacja_przed_wojna": 12500
   },
   {
    "id": "miasto-grafenrich",
@@ -2490,7 +2497,7 @@
    "limit_p": null,
    "dostepnosc": "metropolia",
    "typ": "metropolia",
-   "populacja": 150000,
+   "populacja": 400000,
    "zamoznosc": 5,
    "prowincja": "Middenland",
    "strefa": "drakwald",
@@ -2527,7 +2534,7 @@
      "cena": 1.022
     }
    },
-   "uwaga": "MG (2525 KI): ok. 150 000 mieszkańców — uchodźcy z całego Middenlandu. Poradnik podaje 15 000 (stan tuż po oblężeniu 2522; wcześniej 95 000, Dziedzictwo Sigmara s. 70). Futra i żelazo z Middenlandu tanie, żywność droga.",
+   "uwaga": "MG (2525 KI): ok. 400 000 — przed wojną 475 000 (95 000 × 5, Dziedzictwo Sigmara s. 70), oblężenie 2522 −20–30%, uchodźcy z Middenlandu +20–40%, głód −10%. Poradnik: 15 000. Futra i żelazo z Middenlandu tanie, żywność droga.",
    "populacja_poradnik": 15000,
    "dochody": "handel, usługi, administracja",
    "tagi": {
@@ -2538,7 +2545,8 @@
     "tarcze": 0.92,
     "zywnosc": 1.1,
     "zboze": 1.1
-   }
+   },
+   "populacja_przed_wojna": 475000
   },
   {
    "id": "miasto-beeckerhoven",
@@ -2647,7 +2655,8 @@
     "trunki": 0.85,
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "populacja_przed_wojna": 10000
   },
   {
    "id": "miasto-schoninghagen",

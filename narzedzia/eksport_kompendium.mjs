@@ -43,9 +43,9 @@ const KT = d.rynek.typ_osady.kategorie;
 tab(['Kategoria', ...Object.keys(KT)], d.koniunktura.kategorie.filter(k => Object.values(KT).some(t => t[k] != null && t[k] !== 1))
   .map(k => [k, ...Object.values(KT).map(t => `×${pl(t[k] ?? 1)}`)]));
 w('### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)', '',
-  'Populacja w skali kampanii (2525 KI): Poradnik × 5 (Middenheim 150 000 i Altdorf 1 000 000 — MG). Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).', '');
-tab(['Miasto', 'Strefa', 'Populacja', 'Zamożność', 'Typ', 'Mnożnik', 'Dochody', 'Specjalności'],
-  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa, o.grupa, o.populacja, o.zamoznosc, o.typ, proc(o.mnoznik), o.dochody ?? '',
+  'Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).', '');
+tab(['Miasto', 'Strefa', 'Populacja', 'Przed wojną', 'Zamożność', 'Typ', 'Mnożnik', 'Dochody', 'Specjalności'],
+  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa, o.grupa, o.populacja, o.populacja_przed_wojna ?? '', o.zamoznosc, o.typ, proc(o.mnoznik), o.dochody ?? '',
     o.tagi ? Object.entries(o.tagi).map(([t, m]) => `${t} ×${pl(m)}`).join(', ') : '']));
 w('### Dostępność (PG s. 290 + zasady kampanii)', '');
 tab(['Dostępność', ...Object.keys(d.rynek.dostepnosc.tabela)], ['Powszechna', 'Ograniczona', 'Rzadka', 'Egzotyczna'].map(x =>
