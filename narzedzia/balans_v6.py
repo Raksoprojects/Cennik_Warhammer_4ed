@@ -2,7 +2,7 @@
 """v6: balans cen wobec zarobków. Ile Robót (netto) i tygodni brutto kosztuje koszyk rzeczy na każdym szczeblu Statusu.
 
 Robota = netto za tydzień pracy ponad normę (rzut na Dochód). Brutto = 5 × netto, 80% brutto to utrzymanie w osadzie.
-Wynik: docs/analiza_v6/balans.csv i tabela na standardowe wyjście (do docs/ANALIZA_v6.md).
+Wynik: docs/analiza_v6/balans.csv i tabela na standardowe wyjście (do docs/archiwum/ANALIZA_v6.md).
 Uruchom z katalogu repo: py narzedzia/balans_v6.py
 """
 import csv, json, os

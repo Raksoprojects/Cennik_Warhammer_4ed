@@ -5,7 +5,9 @@
   let { value = $bindable(), onchange }: { value: string; onchange?: (v: string) => void } = $props();
   const osady = $derived(stan.d.osady.osady as any[]);
   const grupy = $derived([...new Set(osady.filter(o => o.grupa).map(o => o.grupa))] as string[]);
-  const opis = (o: any) => o.populacja ? `${o.nazwa} — ${o.populacja.toLocaleString('pl')} mieszk., zamożność ${o.zamoznosc}${o.wolne_miasto ? ', wolne miasto' : ''} (${etykietaOsady(o).split('(').pop()}` : etykietaOsady(o);
+  // Domyślna sytuacja osady (np. północ po wojnie) — dopisek, żeby MG wiedział, skąd zmiana sytuacji.
+  const syt = (o: any) => o.sytuacja ? ' · ' + (stan.d.koniunktura.koniunktury.find((k: any) => k.id === o.sytuacja)?.nazwa ?? o.sytuacja) : '';
+  const opis = (o: any) => (o.populacja ? `${o.nazwa} — ${o.populacja.toLocaleString('pl')} mieszk., zamożność ${o.zamoznosc}${o.wolne_miasto ? ', wolne miasto' : ''} (${etykietaOsady(o).split('(').pop()}` : etykietaOsady(o)) + syt(o);
 </script>
 
 <select bind:value onchange={e => onchange?.(e.currentTarget.value)}>

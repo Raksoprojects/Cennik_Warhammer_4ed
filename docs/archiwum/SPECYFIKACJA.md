@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan artefakt z 2026-09-16.** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Skarbiec Imperium – specyfikacja programu
 
 Dokument opisuje wszystko, co robi artefakt „Skarbiec Imperium” (claude.ai, wersja z 2026-09-16), plus zmiany

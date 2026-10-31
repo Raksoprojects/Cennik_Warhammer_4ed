@@ -37,7 +37,7 @@ WYROBY = ['mikstura-lecznicza', 'eliksir-zywotnosci', 'kataplazm-leczniczy', 'to
 for i in SKLADNIKI: K['klasy'][i] = 'alchemia_skladnik'
 for i in WYROBY: K['klasy'][i] = 'alchemia_wyrob'
 K['klasy']['nocleg-w-stajni-na-sianie'] = 'utrzymanie'
-# Poprawki poziomu ×1 (cena_ref_p) — tylko spójność wewnętrzna, opisane w ANALIZA_v5.md rozdz. 3.
+# Poprawki poziomu ×1 (cena_ref_p) — tylko spójność wewnętrzna, opisane w docs/archiwum/ANALIZA_v5.md rozdz. 3.
 POPRAWKI_BAZY = {
  'flamberg': (4080, 'v5: baza = RAW bez źródła, a miecz dwuręczny ma bazę 0,57× RAW ze źródła. '
                     'Proporcja RAW flamberg ÷ miecz dwuręczny = 3 → 4080 p.'),

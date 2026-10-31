@@ -2,7 +2,7 @@
   // Generator kupca. Stan w adresie: #kupcy?k=zbrojmistrz&o=altdorf&n=wojna&s=48213 — ten sam link = ten sam kupiec.
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz } from '../lib/format';
-  import { generujKupca, etykietaKoniunktury } from '../silnik.js';
+  import { generujKupca, etykietaKoniunktury, sytuacjaOsady } from '../silnik.js';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
   import WyborRynku from '../komponenty/WyborRynku.svelte';
   import { utworzKupca, dodajPozycje, czyWAsortymencie, wycen } from '../kupcy_trwali.js';
@@ -52,7 +52,7 @@
     <label class="pole"><span>Kto handluje</span><select bind:value={k}>
       {#each d.kupcy.kupcy as x}<option value={x.id}>{x.nazwa} ({mnoz(x.marza)})</option>{/each}</select></label>
     <label class="pole"><span>Gdzie <Podpowiedz tekst="Typ osady albo konkretny ośrodek handlu z Poradnika Staroświatowca (tab. 3-2): wielkość wg populacji, ceny wg zamożności (1–5) i strefy handlowej (co tam tanie, co drogie)." /></span>
-      <WyborOsady bind:value={o} /></label>
+      <WyborOsady bind:value={o} onchange={v => n = sytuacjaOsady(d, v)} /></label>
     <label class="pole"><span>Sytuacja</span><select bind:value={n}>
       {#each d.koniunktura.koniunktury as x}<option value={x.id}>{etykietaKoniunktury(d, x, { krotko: true })}</option>{/each}</select></label>
   </div>

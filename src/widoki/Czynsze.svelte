@@ -1,7 +1,7 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, proc, mnoz } from '../lib/format';
-  import { czynsz } from '../silnik.js';
+  import { czynsz, sytuacjaOsady } from '../silnik.js';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
 
   const d = $derived(stan.d);
@@ -17,7 +17,7 @@
 <h2>Czynsze</h2>
 <p class="drugi">Najem: baza × osada × sytuacja. Czynsz ma własny mnożnik sytuacji: po zarazie spada (puste izby), w oblężeniu i kryzysie mieszkaniowym rośnie.</p>
 <div class="pasek">
-  <label class="pole"><span>Osada</span><WyborOsady bind:value={o} /></label>
+  <label class="pole"><span>Osada</span><WyborOsady bind:value={o} onchange={v => n = sytuacjaOsady(d, v)} /></label>
   <label class="pole"><span>Sytuacja</span><select bind:value={n}>
     {#each d.koniunktura.koniunktury as k}<option value={k.id}>{k.nazwa} (czynsz {mCz(k) === 1 ? 'bez zmian' : proc(mCz(k))})</option>{/each}</select></label>
 </div>

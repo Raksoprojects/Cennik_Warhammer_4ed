@@ -2,7 +2,7 @@
 
 Narzędzie ekonomiczne do kampanii WFRP 4 ed. (wyd. polskie). Zawiera:
 
-- cennik kampanii (**365 pozycji**, ceny bazowe = ceny wytwórcy, preset „zalecany” v5.2);
+- cennik kampanii (**376 pozycji**, ceny bazowe = ceny wytwórcy, preset „zalecany”);
 - zarobki wg Statusu z zasadami domowymi;
 - generator kupców (marża, osada, koniunktura, popyt i zapas);
 - zamówienia na miarę, skup i targowanie;
@@ -45,8 +45,8 @@ Dane v6 (`narzedzia/dodaj_v6.py`):
 
 ## Wersja v5 (2026-10-24)
 
-**Agent w VS Code:** zacznij od `AGENTS.md` → `docs/AGENT_BRIEF.md` → `TASKS.md`.
-Działający wzór interfejsu: `reference/skarbiec_v5.html` (otwórz w przeglądarce).
+**Agent w VS Code:** zacznij od `AGENTS.md` → `docs/AGENT_BRIEF.md` → `docs/DANE.md`.
+Historia wersji poniżej odsyła do dokumentów, które są już w `docs/archiwum/` (nieaktualne liczby — rację mają dane).
 
 - `data/cennik.json` = **v5-zalecany** (cena bazowa w `cena_p`, poziom ×1 w `cena_ref_p`). Preset „zalecany” po
   analizie wszystkich pozycji: mnożniki bez podstawy w danych zniknęły (codzienne 1,5→1,2; palna 1,5→1;
@@ -57,7 +57,7 @@ Działający wzór interfejsu: `reference/skarbiec_v5.html` (otwórz w przegląd
 - Silnik: **cena minimalna** kupca (dolna granica targowania), **osobowość kupca** (preferencja rdzeń/boczne,
   kaprys 1k10, granice −15% … +20%), **etykiety z modyfikatorem** („Altdorf (+30%)”, „Wojna (… +80% …)”).
 - `src/spojnosc.js`: testy spójności wspólne dla node i aplikacji.
-- Analiza: `docs/ANALIZA_v5.md`, tabele `docs/analiza_v5/*.csv`. 34 testy przechodzą.
+- Analiza: `docs/archiwum/ANALIZA_v5.md`, tabele `docs/analiza_v5/*.csv`. 34 testy przechodzą.
 - Szkielet aplikacji: `package.json`, `vite.config.js`, `index.html`, `src/app/`.
 
 ## Wersja v3 (2026-10-23)
@@ -73,7 +73,7 @@ Cennik `data/cennik.json` jest **zatwierdzoną** wersją v3. Co weszło:
 - **wyjątki od limitu wsi** dla żywego inwentarza i podstawowej żywności;
 - 9 nowych reguł spójności i 4 testy strukturalne.
 
-Szczegóły i uzasadnienia: `docs/PRZEGLAD_v3.md`. Materiały do zbudowania interfejsu: `docs/APLIKACJA.md`.
+Szczegóły i uzasadnienia: `docs/archiwum/PRZEGLAD_v3.md`. Materiały do zbudowania interfejsu: `docs/archiwum/APLIKACJA.md`.
 
 ## Wersja v4 (2026-11) — poziom cen i arbitraż
 
@@ -86,23 +86,23 @@ Szczegóły i uzasadnienia: `docs/PRZEGLAD_v3.md`. Materiały do zbudowania inte
 - Generator liczy limity i ilości od `cena_ref_p`, więc poziom cen nie wycina asortymentu.
 - Nowe testy: `test/arbitraz.test.mjs` (materiał ≤ produkt, pełne ≥ puste naczynie, rodziny rzeczy,
   tusze, biżuteria vs kruszec, budżet utrzymania, karczma vs najem, zwrot z kupna, test rzemieślnika).
-- Analiza z za i przeciw: `docs/ANALIZA_v4.md`.
+- Analiza z za i przeciw: `docs/archiwum/ANALIZA_v4.md`.
 
 ## Zawartość
 
 ```
-data/        wszystkie liczby i teksty (JSON) – tu się edytuje ceny i zasady; spojnosc.json = 59 reguł
-src/silnik.js   logika obliczeń, bez DOM i zależności (ES module)
-test/        testy: zgodność z oryginałem + spójność cennika (node --test test/*.test.mjs)
-propozycja/  cennik_v2.json, czynsze_v2.json, zmiany.json, nowe_pozycje.json – ZATWIERDZONE, weszły do v3
-narzedzia/   zrodla.py (przeliczenie źródeł na dniówki), propozycja.py (buduje v2)
+data/        wszystkie liczby i teksty (JSON) – jedyne źródło prawdy dla cen i zasad
+src/         silnik.js, kupcy_trwali.js, spojnosc.js (logika bez DOM) + widoki Svelte
+test/        testy silnika, danych i kupców (npm test)
+propozycja/  archiwum cenników v2–v4 (testy regresji presetów)
+narzedzia/   skrypty danych (dane_v6*.py — kolejność w docs/DANE.md), eksport Kompendium, analizy
 docs/
-  SPECYFIKACJA.md        co robi program, krok po kroku, z wzorami
-  PRZEGLAD_v3.md         weryfikacja analizy, defekty, odpowiedzi na otwarte decyzje  ← zacznij tutaj
-  APLIKACJA.md           stack, struktura, widoki, kolejność prac, kryteria odbioru
-  ANALIZA_ZRODEL.md      cennik vs 8 źródeł historycznych + propozycja v2 (przyjęta)
-  ANALIZA_CEN.md         pierwsza wersja przeglądu (zastąpiona)
+  AGENT_BRIEF.md         kontekst, zasady domowe, API silnika, niezmienniki  ← zacznij tutaj
+  DANE.md                decyzje MG, otwarte punkty, mapa danych
+  KOMPENDIUM_DANE.md     wszystkie tabele i zasady wygenerowane z danych
   ZASADY_DOMOWE_ekonomia.md  HR-018, 021–024, 026
+  analiza_v5/, analiza_v6/   tabele CSV generowane przez narzedzia/analiza_v5.py i balans_v6.py
+  archiwum/              stare analizy i plany (v1–v6) — tylko historia decyzji, liczby mogą być nieaktualne
 reference/
   skarbiec_oryginal.html  oryginalny artefakt (wygląd, teksty sekcji)
   dane_oryginal.json      dane z artefaktu (302 pozycje) – tylko do testów
@@ -110,14 +110,10 @@ reference/
 
 ## Jak tego użyć
 
-- **Interfejs:** do napisania — patrz `docs/APLIKACJA.md`. Szkic w `reference/skarbiec_oryginal.html`; program czyta `data/*.json`
-  i wołać funkcje z `src/silnik.js`:
-  - `generujKupca`, `wycenZamowienie`, `targuj`;
-  - `rzutDochodu`, `sredniDochod`, `jalmuzna`;
-  - `cenaMagiczna`, `mon`.
-- **Hosting:** GitHub Pages wystarczy (statyczna strona, `fetch('data/cennik.json')`).
-- **Zmiana ceny:** edytuj `cena_p` w `data/cennik.json` (w pensach: 1 ZK = 240 p, 1 s = 12 p).
-- **Nowy kupiec / osada / koniunktura:** dopisz wpis w odpowiednim JSON; silnik go podchwyci.
+- **Interfejs:** `npm run dev`; wersja na GitHub Pages (link wyżej).
+- **Zmiana ceny przy stole:** zakładka Edycja cen (ustawienia MG w przeglądarce, eksport do pliku).
+- **Trwała zmiana ceny albo zasady:** skrypt w `narzedzia/` (np. `dane_v6d.py`), potem `npm test`
+  i `node narzedzia/eksport_kompendium.mjs`. Nie edytuj `data/cennik.json` ręcznie.
 
 ## Zgodność z oryginałem
 
@@ -129,7 +125,7 @@ Testy porównują silnik z oryginałem uruchomionym w przeglądarce:
 
 Różnice celowe:
 
-- Wada = ×½ (HR-024; w oryginale ¼);
-- cennik 331 pozycji (w oryginale 302);
+- jakość: Zaleta ×1,6, Wada ×0,6 (HR-024, decyzja MG v6b; w oryginale Wada ¼) — test zgodności liczy na danych oryginału;
+- cennik 376 pozycji (w oryginale 302);
 - wieś trzyma tylko Dostępność Powszechną (zasada była opisana, ale niezaimplementowana) – wyłączysz to przez
   `stosujDostepnosc: false`.

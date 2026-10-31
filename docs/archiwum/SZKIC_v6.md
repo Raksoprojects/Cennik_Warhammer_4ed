@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v6 (plan, 2026-10-24).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Skarbiec Imperium — szkic aplikacji (2026-10-24)
 
 Plan przeniesienia artefaktu „Skarbiec Imperium” do aplikacji na GitHub Pages

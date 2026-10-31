@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v5 (2026-10-24).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Analiza v5 — cennik Starego Świata pozycja po pozycji i zarobki profesji
 
 Data: 2026-10-24. Dotyczy: `data/cennik.json` w wersji `v5-zalecany`.

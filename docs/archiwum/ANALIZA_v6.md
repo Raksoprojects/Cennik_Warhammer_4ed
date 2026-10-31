@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v6 (2026-10-24).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Analiza v6 — balans cen wobec zarobków (2026-10-24)
 
 Pytanie MG: czy rzeczy mają sens? Chłopa ma być stać na przeżycie, ale nie na pistolet. Wóz wieś kupi,

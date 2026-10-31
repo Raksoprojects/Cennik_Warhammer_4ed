@@ -7,7 +7,11 @@ i Marienburg działają), 8 (wahania zmieniają cenę i Dostępność), 9 (stref
 10 (Egzotyczne: metropolia 3%, Marienburg 6%, gdzie indziej 0,1%), 11 (Zalety rzadsze we wsi), 13 (krasnolud zostaje
 wszędzie, jego towar we wsi jak Ograniczony), 14 (nielegalne rozszerzone, broń prochowa legalna), 15 (konie),
 17 (dane do Kompendium: `docs/KOMPENDIUM_DANE.md`), 21 (dymek przypomnienia), 23 (dopisek w kalkulatorze).
-Otwarte: 1, 2 (propozycja czynszów czeka na zgodę), 4 (Nuln może być droższy — zostaje), 7, 12, 16, 18, 19, 20, 22.
+
+**2026-10-31:** rozwiązane 1 (6 dniówek = tydzień pracy; rok = 50 tygodni, nie 52), 2 (czynsze: miesiąc ≈ 3,5 × tydzień,
+rok ≈ 10,8 × miesiąc), 12 (Dostępność 15 pozycji), 19 (stare dokumenty w `docs/archiwum/`, AGENT_BRIEF odświeżony).
+Nowe: domyślna sytuacja osad północy po wojnie (`osady.json → sytuacja`).
+Otwarte: 4 (Nuln może być droższy — zostaje), 7, 16, 18 (propozycja w toku), 20, 22.
 
 **Czas i kalendarz**
 
@@ -56,7 +60,8 @@ Otwarte: 1, 2 (propozycja czynszów czeka na zgodę), 4 (Nuln może być droższ
     ×0,6), pełna płytówka 48 ZK (jest 96 ZK), mistrzowska ×4 (jest ×2,56). → Wygenerować Kompendium na nowo z danych.
 18. **Utrzymanie:** Kompendium (PG s. 51) „połowa Statusu dziennie”, Skarbiec 80% brutto tygodniowo, a dziwactwo z
     `nazwy.json` mówi o 10% zniżki za gotówkę. Dwie różne miary w użyciu. → Wybrać jedną.
-19. **`docs/AGENT_BRIEF.md`, `docs/ANALIZA_v5.md`, `TASKS.md` opisują stan v5** (targowanie 10%, jakość ×2). → Odświeżyć.
+19. **`docs/AGENT_BRIEF.md`, `docs/ANALIZA_v5.md`, `TASKS.md` opisywały stan v5** (targowanie 10%, jakość ×2).
+    ✓ AGENT_BRIEF odświeżony, reszta w `docs/archiwum/` z banerem „ARCHIWUM”.
 20. **Edycja cen nie obejmuje `handel.json`, `postacie.json`, `kalendarz.json`** — zmiany tylko w plikach. → Dodać, jeśli
     potrzebne przy stole.
 21. **Baza kupców jest tylko w przeglądarce.** Wyczyszczenie danych strony ją kasuje. → Eksportować regularnie
@@ -117,7 +122,10 @@ Dwie drogi zmian:
 | Dostępność, specjalności miast (v6d) | `narzedzia/dane_v6d.py` → `data/cennik.json`, `data/osady.json`, `data/rynek.json`, `data/handel.json` | cennik: `strona`, `nielegalny`, `nielegalny_uwaga`; osady: `tagi` (branża → mnożnik ceny, np. Middenheim futra ×0,8), `rzadkie_latwiej`, `import`; rynek: `dostepnosc.tabela.metropolia`, `import_egzotyczne`, `obce_wies`, `jakosc.osada_zalety`, `gospoda.standardy`; handel: `strefa_cena` (krok, min, max), `wahania[].dostepnosc` | Specjalności miast to szacunek MG (Poradnik s. 34/38 odsyła do „Dziedzictwa Sigmara”, 2. ed.). Strony z `narzedzia/strony_pg.json`. |
 | Typ osady, dochody miast (v6e) | `narzedzia/dane_v6d.py` → `data/rynek.json` → `typ_osady`, `data/osady.json` → `dochody`, `tagi` | `typ_osady.kategorie[wioska / miasteczko / miasto / metropolia][kategoria]` — wyroby ×1,2 → ×0,8, żywność ×0,85 → ×1,15; `dochody` z indeksów Dziedzictwa Sigmara (rozdz. VI) zamieniane na `tagi` (`Z_DOCHODU`), ręczne `TAGI` nadpisują | Łączny mnożnik specjalności przycięty do ×0,8–×1,2 (`mnoznikLokalny`). |
 | Populacje kampanii (2525 KI) | `narzedzia/dane_v6d.py` → `SKALA_POP`, `POPULACJA_MG`, `PRZED_WOJNA` | `populacja` (Poradnik × 5 albo MG), `populacja_poradnik`, `populacja_przed_wojna` | MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Uzasadnienie (dane historyczne XV–XVI w., oblężenia Paryża 1590 i Lejdy 1574) w komentarzu skryptu. Typ osady liczony z liczb Poradnika, więc ceny bez zmian. |
+| Domyślna sytuacja osady | `narzedzia/dane_v6d.py` → `SPLADROWANE`, `UCHODZCY`, `POLNOC` → `data/osady.json → sytuacja` | id z `koniunktura.json` | Północ po Burzy Chaosu: splądrowane (Wolfenburg, Hergig, Ferlangen, Delberz, Ahlenhof) „Wojna”, Middenheim i Carroburg „Napływ ludzi”, reszta Middenlandu, Hochlandu, Ostlandu, Nordlandu i Ostermarku „Braki w dostawach”. Podstawia się przy wyborze osady; MG zmienia ją ręcznie. |
+| Rok w zarobkach | `data/statusy.json` | `tygodni_w_roku` (50) | Rok imperialny 400 dni = 50 tygodni po 8 dni. Kotwica robotnika liczy 6 dniówek („tydzień pracy”). |
 | Dane do Kompendium MG | `docs/KOMPENDIUM_DANE.md` | | Generowany: `node narzedzia/eksport_kompendium.mjs`. Nie edytuj ręcznie. |
+| Stare analizy i plany | `docs/archiwum/` | | Nieaktualne liczby (v1–v6). Tylko historia decyzji; indeks w `docs/archiwum/README.md`. |
 
 Kolejność skryptów danych: `narzedzia/dodaj_v6.py` → `narzedzia/dane_v6b.py` → `narzedzia/dane_v6c.py` → `narzedzia/dane_v6d.py`
 (każdy idempotentny; v6c przebudowuje osady, więc v6d zawsze po nim).

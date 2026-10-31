@@ -6,9 +6,16 @@ Projekt: **Skarbiec Imperium** — cennik, generator i baza kupców, zarobki i c
 **Nie masz dostępu do rozmów, w których powstał projekt, ani do pamięci Claude.** Wszystko jest tutaj:
 
 1. `docs/AGENT_BRIEF.md` — kontekst, zasady domowe, słowniczek, API silnika, niezmienniki, decyzje. **Przeczytaj w całości.**
-2. `README.md` — co jest w aplikacji (v6) i jak jest zbudowana.
-3. `TASKS.md` — zadania z kryteriami odbioru.
-4. `docs/ANALIZA_v5.md` — skąd są ceny i co czeka na decyzję MG.
+2. `docs/DANE.md` — decyzje MG, **otwarte punkty** (pytaj o nie MG) i mapa danych: gdzie co jest i który skrypt to tworzy.
+3. `docs/KOMPENDIUM_DANE.md` — wszystkie obowiązujące tabele i zasady, generowane z danych. Liczby sprawdzaj tutaj
+   albo w `data/*.json`.
+4. `README.md` — co jest w aplikacji i jak jest zbudowana.
+
+**Aktualne vs archiwum.** Obowiązują tylko: `data/*.json`, pliki w `docs/` (bez podkatalogu `archiwum/`), `README.md`
+i ten plik. `docs/archiwum/` to stare analizy i plany (v1–v6) — mogą mieć nieaktualne liczby (np. targowanie 10%,
+jakość ×2, rok 52 tygodnie). Czytaj je tylko po historię decyzji albo źródło ceny. Gdy archiwum i dane się różnią,
+**rację mają dane.** Nowa analiza albo plan, który się zdezaktualizuje → przenieś do `docs/archiwum/` z banerem
+„ARCHIWUM” i dopisz do `docs/archiwum/README.md`.
 
 ## Polecenia
 
@@ -28,7 +35,7 @@ python3 narzedzia/dodaj_v6.py     # broń z podręczników ras + Zalety i Wady (
 - **Nie zmieniaj cen ręcznie w `data/cennik.json`.** Ceny idą przez presety (`data/klasy_cenowe.json`), ustawienia
   (`data/ustawienia.json`) albo skrypty w `narzedzia/`. Każda zmiana cen musi przejść `npm test`.
 - **Nie podnoś cen bez źródła.** MG: „nie chcę, żeby było drożej tylko po to, żeby było drożej”.
-- Decyzje oznaczone w `docs/AGENT_BRIEF.md` rozdz. 10 jako otwarte — **pytaj MG**, nie rozstrzygaj sam.
+- Punkty otwarte w `docs/DANE.md` (lista na górze) — **pytaj MG**, nie rozstrzygaj sam.
 - W interfejsie **zawsze** cena bazowa obok ceny kupca; osada i sytuacja z modyfikatorem w nawiasie.
 - Nazwy Talentów, Zalet i Wad tylko z polskiego wydania podręcznika. Nie tłumacz z angielskiego.
 - PDF-y podręczników tylko w `reference/pdf/` (w `.gitignore`). **Nigdy ich nie commituj.**

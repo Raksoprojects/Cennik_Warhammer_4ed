@@ -98,3 +98,12 @@ test('v6d: Middenheim — metropolia, tańsze futra i żelazo', () => {
   assert.equal(S.mnoznikLokalny(m, c), 0.8);
   assert.equal(S.mnoznikLokalny(os('miasto'), c), 1);
 });
+
+test('v6f: domyślna sytuacja osady, rok 50 tygodni, każdy towar ma Dostępność', () => {
+  assert.equal(S.sytuacjaOsady(d, 'miasto-wolfenburg'), 'wojna');
+  assert.equal(S.sytuacjaOsady(d, 'miasto-middenheim'), 'naplyw');
+  assert.equal(S.sytuacjaOsady(d, 'altdorf'), 'normalna');
+  for (const o of d.osady.osady) if (o.sytuacja) assert.ok(kon(o.sytuacja), o.id);
+  assert.equal(d.statusy.tygodni_w_roku, 50);
+  assert.deepEqual(d.cennik.pozycje.filter(c => c.typ === 'towar' && !c.dostepnosc).map(c => c.id), []);
+});

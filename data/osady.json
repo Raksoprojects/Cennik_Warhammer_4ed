@@ -186,7 +186,8 @@
     "domowe": 0.92,
     "pojemniki": 0.92
    },
-   "populacja_przed_wojna": 40000
+   "populacja_przed_wojna": 40000,
+   "sytuacja": "naplyw"
   },
   {
    "id": "miasto-bogenhafen",
@@ -1876,7 +1877,8 @@
     "domowe": 0.92,
     "pojemniki": 0.92
    },
-   "populacja_przed_wojna": 11000
+   "populacja_przed_wojna": 11000,
+   "sytuacja": "wojna"
   },
   {
    "id": "miasto-hergig",
@@ -1937,7 +1939,8 @@
     "futra": 0.85,
     "mysliwska": 0.95
    },
-   "populacja_przed_wojna": 46000
+   "populacja_przed_wojna": 46000,
+   "sytuacja": "wojna"
   },
   {
    "id": "miasto-kusel",
@@ -2103,7 +2106,8 @@
     "zboze": 0.92,
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-wolfenburg",
@@ -2156,7 +2160,8 @@
     "domowe": 0.92,
     "pojemniki": 0.92
    },
-   "populacja_przed_wojna": 44500
+   "populacja_przed_wojna": 44500,
+   "sytuacja": "wojna"
   },
   {
    "id": "miasto-wurzen",
@@ -2210,7 +2215,8 @@
     "zboze": 0.92,
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-salzenmund",
@@ -2263,7 +2269,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-ferlangen",
@@ -2320,7 +2327,8 @@
     "domowe": 0.92,
     "pojemniki": 0.92
    },
-   "populacja_przed_wojna": 12500
+   "populacja_przed_wojna": 12500,
+   "sytuacja": "wojna"
   },
   {
    "id": "miasto-grafenrich",
@@ -2376,7 +2384,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-neue-emskrank",
@@ -2434,7 +2443,8 @@
     "zboze": 0.92,
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-norden",
@@ -2487,7 +2497,8 @@
     "zywnosc": 0.92,
     "zboze": 0.92,
     "kosztownosci": 0.9
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-middenheim",
@@ -2546,7 +2557,8 @@
     "zywnosc": 1.1,
     "zboze": 1.1
    },
-   "populacja_przed_wojna": 475000
+   "populacja_przed_wojna": 475000,
+   "sytuacja": "naplyw"
   },
   {
    "id": "miasto-beeckerhoven",
@@ -2602,7 +2614,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-delberz",
@@ -2656,7 +2669,8 @@
     "domowe": 0.92,
     "pojemniki": 0.92
    },
-   "populacja_przed_wojna": 10000
+   "populacja_przed_wojna": 10000,
+   "sytuacja": "wojna"
   },
   {
    "id": "miasto-schoninghagen",
@@ -2712,7 +2726,8 @@
    "tagi": {
     "domowe": 0.92,
     "pojemniki": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-scheinfeld",
@@ -2768,7 +2783,8 @@
    "tagi": {
     "zywnosc": 0.92,
     "zboze": 0.92
-   }
+   },
+   "sytuacja": "braki"
   },
   {
    "id": "miasto-schilderheim",

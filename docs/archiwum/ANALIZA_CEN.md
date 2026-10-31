@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v1 (2026-10-23).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Analiza spójności cennika (pierwsza wersja)
 
 > **Zastąpione przez `ANALIZA_ZRODEL.md`** (2026-10-23) – tam ceny sprawdzone ze źródłami i gotowa propozycja v2.

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz } from '../lib/format';
-  import { wycenZamowienie, etykietaOsady, etykietaKoniunktury, modyfikatorKoniunktury } from '../silnik.js';
+  import { wycenZamowienie, etykietaOsady, sytuacjaOsady, etykietaKoniunktury, modyfikatorKoniunktury } from '../silnik.js';
   import Podpowiedz from '../komponenty/Podpowiedz.svelte';
   import WyborCech from '../komponenty/WyborCech.svelte';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
@@ -23,7 +23,7 @@
   <div class="pasek">
     <label class="pole"><span>U kogo</span><select bind:value={k} onchange={wycen}>
       {#each d.kupcy.kupcy as x}<option value={x.id}>{x.nazwa} ({mnoz(x.marza)})</option>{/each}</select></label>
-    <label class="pole"><span>Gdzie</span><WyborOsady bind:value={o} onchange={wycen} /></label>
+    <label class="pole"><span>Gdzie</span><WyborOsady bind:value={o} onchange={v => { n = sytuacjaOsady(d, v); wycen(); }} /></label>
     <label class="pole"><span>Sytuacja</span><select bind:value={n} onchange={wycen}>
       {#each d.koniunktura.koniunktury as x}<option value={x.id}>{etykietaKoniunktury(d, x, { krotko: true })}</option>{/each}</select></label>
   </div>

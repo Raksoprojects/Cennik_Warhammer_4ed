@@ -7,28 +7,29 @@ Wszystkie ceny to ceny **bazowe (wytwórcy)**; gracz płaci u kupca więcej (mar
 
 Kotwica: robotnik niewykwalifikowany (Brąz 3) — 13 s 9 p brutto tygodniowo, dniówka 27,5 p.
 Netto = rzut za jedną Robotę (tydzień pracy ponad normę). Brutto = 5 × netto; 80% brutto to utrzymanie w osadzie.
+Rok = 50 tygodni (400 dni po 8). Kotwica liczy 6 dniówek — tydzień pracy, nie kalendarzowy.
 Majętny: +1k5 monet szczebla za poziom Talentu (do rzutu, czyli do netto).
 
 | Status | Rzut | Netto / Robotę | Brutto / tydz. | Brutto / rok | Kto |
 |---|---|---|---|---|---|
 | Brąz 0 | brak | — | — | — | Żebrak, pokutnik, kaleka. Dochód wyłącznie z jałmużny. |
-| Brąz 1 | 2k10 pensów | 11 p | 4 s 7 p | 11 ZK 18 s 4 p | Nędzarz z pracą dorywczą. Zimą głoduje. |
-| Brąz 2 | 4k10 pensów | 1 s 10 p | 9 s 2 p | 23 ZK 16 s 8 p | Parobek, wyrobnik, komornik, sługa bez ziemi. |
-| Brąz 3 | 6k10 pensów | 2 s 9 p | 13 s 9 p | 35 ZK 15 s | JEDNOSTKA ODNIESIENIA: robotnik niewykwalifikowany, chłop małorolny. Kraków 1526–35: 1,5 gr dziennie, 9 gr tygodniowo, 13,5 zł rocznie. |
-| Brąz 4 | 8k10 pensów | 3 s 8 p | 18 s 4 p | 47 ZK 13 s 4 p | Robotnik wykwalifikowany, młodszy czeladnik. |
-| Brąz 5 | 10k10 pensów | 4 s 7 p | 1 ZK 2 s 11 p | 59 ZK 11 s 8 p | Czeladnik cechowy (Kraków: 2,5 gr dziennie = 15 gr tygodniowo), kmieć z pełnym łanem, wolny gwarek. |
-| Srebro 1 | 1k10 szylingów | 5 s 6 p | 1 ZK 7 s 6 p | 71 ZK 10 s | Mistrz rzemieślnik z własnym warsztatem, drobny kupiec. Dwa razy tyle, co robotnik. |
-| Srebro 2 | 2k10 szylingów | 11 s | 2 ZK 15 s | 143 ZK | Zamożny mistrz cechowy, niższy urzędnik miejski, lancknecht (4 guldeny reńskie miesięcznie). |
-| Srebro 3 | 3k10 szylingów | 16 s 6 p | 4 ZK 2 s 6 p | 214 ZK 10 s | Mistrz z kilkoma czeladnikami, przedsiębiorca budowlany (Kraków: murarz 60 gr/tydzień), trębacz miejski. |
-| Srebro 4 | 4k10 szylingów | 1 ZK 2 s | 5 ZK 10 s | 286 ZK | Kupiec hurtowy, notariusz, oficer najemny. |
-| Srebro 5 | 5k10 szylingów | 1 ZK 7 s 6 p | 6 ZK 17 s 6 p | 357 ZK 10 s | Kupiec dalekomorski, lekarz miejski, Doppelsöldner (8 guldenów miesięcznie). Ok. 156 florenów rocznie – więcej niż golibroda królewski (100 fl.). |
-| Złoto 1 | 1k5 ZK | 3 ZK | 15 ZK | 780 ZK | Patrycjusz, kanonik, profesor, drobna szlachta. Ok. 340 florenów rocznie brutto – poziom doktora teologii w Krakowie (400 fl.). |
-| Złoto 2 | 2k5 ZK | 6 ZK | 30 ZK | 1560 ZK | Wielki kupiec, rycerz z lennem, arcykapłan, arcymag Kolegium. |
-| Złoto 3 | 3k5 ZK | 9 ZK | 45 ZK | 2340 ZK | Baron, wysoki urzędnik prowincji, Lektor, lekarz nadworny (700 fl./rok). Ok. 1000 florenów – tyle, co marszałek nadworny. |
-| Złoto 4 | 4k5 ZK | 12 ZK | 60 ZK | 3120 ZK | Hrabia, arcybiskup, patrycjat kupiecki formatu Fuggerów, mistrz szpiegów. |
-| Złoto 5 | 5k5 ZK | 15 ZK | 75 ZK | 3900 ZK | Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji, Najwyższy Lektor. |
-| Złoto 6 | 6k5 ZK | 18 ZK | 90 ZK | 4680 ZK | Książę prowincji, wielki ród arystokratyczny. |
-| Złoto 7 | 7k5 ZK | 21 ZK | 105 ZK | 5460 ZK | Arystokrata najwyższego rzędu: elektor, wielki książę. Dochód to przybliżenie po wydatkach stanu — utrzymanie dworu, świty i pozycji pochłania większość przychodu. Do tego poziomy Talentu Majętny (+1k5 ZK za poziom); figury państwowe ×10 (zasady). |
+| Brąz 1 | 2k10 pensów | 11 p | 4 s 7 p | 11 ZK 9 s 2 p | Nędzarz z pracą dorywczą. Zimą głoduje. |
+| Brąz 2 | 4k10 pensów | 1 s 10 p | 9 s 2 p | 22 ZK 18 s 4 p | Parobek, wyrobnik, komornik, sługa bez ziemi. |
+| Brąz 3 | 6k10 pensów | 2 s 9 p | 13 s 9 p | 34 ZK 7 s 6 p | JEDNOSTKA ODNIESIENIA: robotnik niewykwalifikowany, chłop małorolny. Kraków 1526–35: 1,5 gr dziennie, 9 gr tygodniowo, 13,5 zł rocznie. |
+| Brąz 4 | 8k10 pensów | 3 s 8 p | 18 s 4 p | 45 ZK 16 s 8 p | Robotnik wykwalifikowany, młodszy czeladnik. |
+| Brąz 5 | 10k10 pensów | 4 s 7 p | 1 ZK 2 s 11 p | 57 ZK 5 s 10 p | Czeladnik cechowy (Kraków: 2,5 gr dziennie = 15 gr tygodniowo), kmieć z pełnym łanem, wolny gwarek. |
+| Srebro 1 | 1k10 szylingów | 5 s 6 p | 1 ZK 7 s 6 p | 68 ZK 15 s | Mistrz rzemieślnik z własnym warsztatem, drobny kupiec. Dwa razy tyle, co robotnik. |
+| Srebro 2 | 2k10 szylingów | 11 s | 2 ZK 15 s | 137 ZK 10 s | Zamożny mistrz cechowy, niższy urzędnik miejski, lancknecht (4 guldeny reńskie miesięcznie). |
+| Srebro 3 | 3k10 szylingów | 16 s 6 p | 4 ZK 2 s 6 p | 206 ZK 5 s | Mistrz z kilkoma czeladnikami, przedsiębiorca budowlany (Kraków: murarz 60 gr/tydzień), trębacz miejski. |
+| Srebro 4 | 4k10 szylingów | 1 ZK 2 s | 5 ZK 10 s | 275 ZK | Kupiec hurtowy, notariusz, oficer najemny. |
+| Srebro 5 | 5k10 szylingów | 1 ZK 7 s 6 p | 6 ZK 17 s 6 p | 343 ZK 15 s | Kupiec dalekomorski, lekarz miejski, Doppelsöldner (8 guldenów miesięcznie). Ok. 156 florenów rocznie – więcej niż golibroda królewski (100 fl.). |
+| Złoto 1 | 1k5 ZK | 3 ZK | 15 ZK | 750 ZK | Patrycjusz, kanonik, profesor, drobna szlachta. Ok. 340 florenów rocznie brutto – poziom doktora teologii w Krakowie (400 fl.). |
+| Złoto 2 | 2k5 ZK | 6 ZK | 30 ZK | 1500 ZK | Wielki kupiec, rycerz z lennem, arcykapłan, arcymag Kolegium. |
+| Złoto 3 | 3k5 ZK | 9 ZK | 45 ZK | 2250 ZK | Baron, wysoki urzędnik prowincji, Lektor, lekarz nadworny (700 fl./rok). Ok. 1000 florenów – tyle, co marszałek nadworny. |
+| Złoto 4 | 4k5 ZK | 12 ZK | 60 ZK | 3000 ZK | Hrabia, arcybiskup, patrycjat kupiecki formatu Fuggerów, mistrz szpiegów. |
+| Złoto 5 | 5k5 ZK | 15 ZK | 75 ZK | 3750 ZK | Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji, Najwyższy Lektor. |
+| Złoto 6 | 6k5 ZK | 18 ZK | 90 ZK | 4500 ZK | Książę prowincji, wielki ród arystokratyczny. |
+| Złoto 7 | 7k5 ZK | 21 ZK | 105 ZK | 5250 ZK | Arystokrata najwyższego rzędu: elektor, wielki książę. Dochód to przybliżenie po wydatkach stanu — utrzymanie dworu, świty i pozycji pochłania większość przychodu. Do tego poziomy Talentu Majętny (+1k5 ZK za poziom); figury państwowe ×10 (zasady). |
 
 ## 2. Cena u kupca
 
@@ -90,59 +91,59 @@ v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Dzia
 
 ### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)
 
-Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2).
+Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2). Sytuacja = domyślna po wojnie (MG może zmienić).
 
-| Miasto | Strefa | Populacja | Przed wojną | Zamożność | Typ | Mnożnik | Dochody | Specjalności |
-|---|---|---|---|---|---|---|---|---|
-| Carroburg | Dorzecze Reiklandzkie | 60000 | 40000 | 4 | miasto | +16% | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
-| Bögenhafen | Dorzecze Reiklandzkie | 25000 |  | 3 | miasteczko | 0% | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Helmgart | Dorzecze Reiklandzkie | 11000 |  | 2 | miasteczko | -5% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Ubersreik | Dorzecze Reiklandzkie | 17500 |  | 4 | miasteczko | +5% | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Weissbruck | Dorzecze Reiklandzkie | 1360 |  | 2 | wies | -19% | handel, transport |  |
-| Kemperbad | Enklawa Kemperbadu | 37500 |  | 4 | miasteczko | +5% | handel, wino, brandy | trunki ×0,85 |
-| Auerswald | Enklawa Kemperbadu | 25000 |  | 3 | miasteczko | 0% | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Grunburg | Enklawa Kemperbadu | 12000 |  | 2 | miasteczko | -5% | handel, szkutnictwo |  |
-| Stimmigen | Enklawa Kemperbadu | 8750 |  | 3 | miasteczko | 0% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Nuln | Strefa Handlowa Nuln | 700000 |  | 5 | metropolia | +32% | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
-| Ambosstein | Strefa Handlowa Nuln | 400 |  | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Furtzhausen | Strefa Handlowa Nuln | 370 |  | 3 | wies | -15% | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Kotzenheim | Strefa Handlowa Nuln | 305 |  | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Wissenburg | Strefa Handlowa Nuln | 45000 |  | 4 | miasteczko | +5% | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Pfeildorf | Dolina Górnego Solu | 34000 |  | 3 | miasteczko | 0% | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
-| Geschburg | Dolina Górnego Solu | 3000 |  | 3 | wies | -15% | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
-| Kreutzhofen | Dolina Górnego Solu | 2575 |  | 4 | wies | -11% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Kroppenleben | Dolina Górnego Solu | 425 |  | 3 | wies | -15% | handel, futra | futra ×0,8, mysliwska ×0,95 |
-| Wuppertal | Dolina Górnego Solu | 5500 |  | 3 | miasteczko | 0% | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wusterburg | Dolina Górnego Solu | 4000 |  | 3 | wies | -15% | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Averheim | Stary Trakt Krasnoludzki | 47000 |  | 4 | miasteczko | +5% | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Wurtbad | Stary Trakt Krasnoludzki | 44000 |  | 4 | miasteczko | +5% | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Gersdorf | Stary Trakt Krasnoludzki | 2125 |  | 3 | wies | -15% | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hocheleben | Stary Trakt Krasnoludzki | 1875 |  | 3 | wies | -15% | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
-| Krugenheim | Stary Trakt Krasnoludzki | 22500 |  | 4 | miasteczko | +5% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Pfungzig | Stary Trakt Krasnoludzki | 17900 |  | 3 | miasteczko | 0% | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
-| Streissen | Stary Trakt Krasnoludzki | 27500 |  | 3 | miasteczko | 0% | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Eicheschatten | Trakt do Zhufbaru | 16875 |  | 3 | miasteczko | 0% | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
-| Schramleben | Trakt do Zhufbaru | 3375 |  | 3 | wies | -15% | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Waldenhof | Trakt do Zhufbaru | 21000 |  | 2 | miasteczko | -5% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Talabheim | Stara Droga Leśna | 360000 |  | 4 | metropolia | +26% | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Ahlenhof | Stara Droga Leśna | 21000 | 11000 | 3 | miasteczko | 0% | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hergig | Stara Droga Leśna | 2500 | 46000 | 3 | wies | -15% | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Küsel | Stara Droga Leśna | 32500 |  | 4 | miasteczko | +5% | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Talagaad | Stara Droga Leśna | 2250 |  | 3 | wies | -15% | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Bechafen | Przejście Północno-Wschodnie | 38000 |  | 4 | miasteczko | +5% | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wolfenburg | Przejście Północno-Wschodnie | 5500 | 44500 | 3 | miasteczko | 0% | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
-| Wurzen | Przejście Północno-Wschodnie | 7250 |  | 2 | miasteczko | -5% | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Salzenmund | Wybrzeże Salzenmund | 37500 |  | 4 | miasteczko | +5% | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
-| Ferlangen | Wybrzeże Salzenmund | 650 | 12500 | 3 | wies | -15% | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
-| Grafenrich | Wybrzeże Salzenmund | 1260 |  | 2 | wies | -19% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Neue Emskrank | Wybrzeże Salzenmund | 4475 |  | 3 | wies | -15% | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Norden | Wybrzeże Salzenmund | 16000 |  | 3 | miasteczko | 0% | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
-| Middenheim | Korytarz Drakwaldzki | 400000 | 475000 | 5 | metropolia | +32% | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
-| Beeckerhoven | Korytarz Drakwaldzki | 2040 |  | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Delberz | Korytarz Drakwaldzki | 22500 | 10000 | 3 | miasteczko | 0% | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Schoninghagen | Korytarz Drakwaldzki | 4900 |  | 3 | wies | -15% | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Scheinfeld | Delta Marienburga | 4250 |  | 3 | wies | -15% | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Schilderheim | Delta Marienburga | 27500 |  | 3 | miasteczko | 0% | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Miasto | Strefa | Populacja | Przed wojną | Zamożność | Typ | Mnożnik | Sytuacja | Dochody | Specjalności |
+|---|---|---|---|---|---|---|---|---|---|
+| Carroburg | Dorzecze Reiklandzkie | 60000 | 40000 | 4 | miasto | +16% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
+| Bögenhafen | Dorzecze Reiklandzkie | 25000 |  | 3 | miasteczko | 0% |  | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Helmgart | Dorzecze Reiklandzkie | 11000 |  | 2 | miasteczko | -5% |  | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Ubersreik | Dorzecze Reiklandzkie | 17500 |  | 4 | miasteczko | +5% |  | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Weissbruck | Dorzecze Reiklandzkie | 1360 |  | 2 | wies | -19% |  | handel, transport |  |
+| Kemperbad | Enklawa Kemperbadu | 37500 |  | 4 | miasteczko | +5% |  | handel, wino, brandy | trunki ×0,85 |
+| Auerswald | Enklawa Kemperbadu | 25000 |  | 3 | miasteczko | 0% |  | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Grunburg | Enklawa Kemperbadu | 12000 |  | 2 | miasteczko | -5% |  | handel, szkutnictwo |  |
+| Stimmigen | Enklawa Kemperbadu | 8750 |  | 3 | miasteczko | 0% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Nuln | Strefa Handlowa Nuln | 700000 |  | 5 | metropolia | +32% |  | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
+| Ambosstein | Strefa Handlowa Nuln | 400 |  | 3 | wies | -15% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Furtzhausen | Strefa Handlowa Nuln | 370 |  | 3 | wies | -15% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Kotzenheim | Strefa Handlowa Nuln | 305 |  | 3 | wies | -15% |  | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Wissenburg | Strefa Handlowa Nuln | 45000 |  | 4 | miasteczko | +5% |  | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Pfeildorf | Dolina Górnego Solu | 34000 |  | 3 | miasteczko | 0% |  | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
+| Geschburg | Dolina Górnego Solu | 3000 |  | 3 | wies | -15% |  | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
+| Kreutzhofen | Dolina Górnego Solu | 2575 |  | 4 | wies | -11% |  | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Kroppenleben | Dolina Górnego Solu | 425 |  | 3 | wies | -15% |  | handel, futra | futra ×0,8, mysliwska ×0,95 |
+| Wuppertal | Dolina Górnego Solu | 5500 |  | 3 | miasteczko | 0% |  | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wusterburg | Dolina Górnego Solu | 4000 |  | 3 | wies | -15% |  | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Averheim | Stary Trakt Krasnoludzki | 47000 |  | 4 | miasteczko | +5% |  | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Wurtbad | Stary Trakt Krasnoludzki | 44000 |  | 4 | miasteczko | +5% |  | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Gersdorf | Stary Trakt Krasnoludzki | 2125 |  | 3 | wies | -15% |  | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hocheleben | Stary Trakt Krasnoludzki | 1875 |  | 3 | wies | -15% |  | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
+| Krugenheim | Stary Trakt Krasnoludzki | 22500 |  | 4 | miasteczko | +5% |  | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Pfungzig | Stary Trakt Krasnoludzki | 17900 |  | 3 | miasteczko | 0% |  | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
+| Streissen | Stary Trakt Krasnoludzki | 27500 |  | 3 | miasteczko | 0% |  | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Eicheschatten | Trakt do Zhufbaru | 16875 |  | 3 | miasteczko | 0% |  | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
+| Schramleben | Trakt do Zhufbaru | 3375 |  | 3 | wies | -15% |  | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Waldenhof | Trakt do Zhufbaru | 21000 |  | 2 | miasteczko | -5% |  | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Talabheim | Stara Droga Leśna | 360000 |  | 4 | metropolia | +26% |  | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Ahlenhof | Stara Droga Leśna | 21000 | 11000 | 3 | miasteczko | 0% | Wojna | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hergig | Stara Droga Leśna | 2500 | 46000 | 3 | wies | -15% | Wojna | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Küsel | Stara Droga Leśna | 32500 |  | 4 | miasteczko | +5% |  | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Talagaad | Stara Droga Leśna | 2250 |  | 3 | wies | -15% |  | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Bechafen | Przejście Północno-Wschodnie | 38000 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wolfenburg | Przejście Północno-Wschodnie | 5500 | 44500 | 3 | miasteczko | 0% | Wojna | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
+| Wurzen | Przejście Północno-Wschodnie | 7250 |  | 2 | miasteczko | -5% | Braki w dostawach (zła droga, cło, zima) | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Salzenmund | Wybrzeże Salzenmund | 37500 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
+| Ferlangen | Wybrzeże Salzenmund | 650 | 12500 | 3 | wies | -15% | Wojna | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
+| Grafenrich | Wybrzeże Salzenmund | 1260 |  | 2 | wies | -19% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Neue Emskrank | Wybrzeże Salzenmund | 4475 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Norden | Wybrzeże Salzenmund | 16000 |  | 3 | miasteczko | 0% | Braki w dostawach (zła droga, cło, zima) | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
+| Middenheim | Korytarz Drakwaldzki | 400000 | 475000 | 5 | metropolia | +32% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
+| Beeckerhoven | Korytarz Drakwaldzki | 2040 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Delberz | Korytarz Drakwaldzki | 22500 | 10000 | 3 | miasteczko | 0% | Wojna | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Schoninghagen | Korytarz Drakwaldzki | 4900 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Scheinfeld | Delta Marienburga | 4250 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Schilderheim | Delta Marienburga | 27500 |  | 3 | miasteczko | 0% |  | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
 
 ### Dostępność (PG s. 290 + zasady kampanii)
 
@@ -458,10 +459,10 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Kurczak | 1 s 6 p | 5 p | 1 | Powszechna | PG 306 |
 | Gołąb pocztowy | 5 s | 3 s | 1 | Ograniczona | PG 306 |
 | Robaki (6) | 1 p | 1 p | 0 | Powszechna | PG 306 |
-| Owca / baran | 18 s | — | — | — | kampania |
-| Świnia | 3 ZK | — | — | — | kampania |
-| Krowa | 5 ZK | — | — | — | kampania |
-| Wół | 6 ZK | — | — | — | kampania |
+| Owca / baran | 18 s | — | — | Powszechna | kampania |
+| Świnia | 3 ZK | — | — | Powszechna | kampania |
+| Krowa | 5 ZK | — | — | Powszechna | kampania |
+| Wół | 6 ZK | — | — | Powszechna | kampania |
 | Pies myśliwski | 3 ZK | 2 ZK | — | Rzadka | PG 306 |
 | Małpa | 15 ZK | 10 ZK | 2 | Rzadka | PG 306 |
 | Muł | 12 ZK | 5 ZK | — | Powszechna | PG 306 |
@@ -499,7 +500,7 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Butelka wina | 5 s 6 p | 10 p | 0 | Powszechna | PG 302 |
 | Beczułka piwa (10 l) | 3 s | 3 s | 2 | Powszechna | PG 302 |
 | Pół litra Piwa Bugmana | 1 s 6 p | 9 p | 0 | Rzadka | PG 302 |
-| Prowiant wojskowy na 1 tydzień | 10 s | — | — | — | kampania |
+| Prowiant wojskowy na 1 tydzień | 10 s | — | — | Powszechna | kampania |
 | Pieprz (funt, 0,4 kg) | 1 ZK 4 s | — | — | Powszechna | kampania |
 | Cynamon (funt) | 4 ZK 4 s | — | — | Powszechna | kampania |
 | Szafran (funt) | 10 ZK 10 s | — | — | Powszechna | kampania |
@@ -553,7 +554,7 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Mundur | 3 ZK | 1 ZK 2 s | 1 | Ograniczona | PG 302 |
 | Kostium | 3 ZK | 1 ZK | 1 | Ograniczona | PG 302 |
 | Strój dworski | 45 ZK | 12 ZK | 1 | Ograniczona | PG 302 |
-| Strój ceremonialny (aksamit, złotogłów, futra) | 330 ZK | — | 1 | — | kampania |
+| Strój ceremonialny (aksamit, złotogłów, futra) | 330 ZK | — | 1 | Rzadka | kampania |
 | Laska | 6 ZK | 3 ZK | 1 | Powszechna | PG 302 |
 | Berło | 15 ZK | 8 ZK | 1 | Rzadka | PG 302 |
 | Sygnet | 10 ZK | 5 ZK | 0 | Rzadka | PG 302 |
@@ -566,8 +567,8 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Puder do twarzy | 1 ZK 3 s | 10 s | 0 | Powszechna | PG 302 |
 | Zapinki (6) | 1 ZK 10 s | 10 s | 0 | Ograniczona | PG 302 |
 | Tatuaż (nie w handlu) | 6 s | 4 s | 0 | Ograniczona | PG 302 |
-| Jedwabna bielizna | 3 ZK | 1 ZK | — | — | Pod Bronią |
-| Focza skóra | 4 ZK 10 s | 1 ZK 10 s | — | — | Pod Bronią |
+| Jedwabna bielizna | 3 ZK | 1 ZK | — | Rzadka | Pod Bronią |
+| Focza skóra | 4 ZK 10 s | 1 ZK 10 s | — | Ograniczona | Pod Bronią |
 | Sukno cienkie, importowane (łokieć) | 1 ZK 15 s | — | — | Powszechna | kampania |
 | Płótno (łokieć) | 1 s 6 p | — | — | Powszechna | kampania |
 | Sukno szare, samodział (łokieć) | 6 s | — | — | Powszechna | kampania |
@@ -625,13 +626,13 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Zestaw do pisania | 2 ZK 8 s | 2 ZK | 0 | Ograniczona | PG 303 |
 | Zestaw do charakteryzacji | 18 s | 6 s 6 p | 0 | Ograniczona | PG 303 |
 | Zestaw na zatrucia | 4 ZK 16 s | 3 ZK | 0 | Ograniczona | PG 303 |
-| Oselka | 3 s | 2 s 6 p | — | — | Pod Bronią |
-| Bandolier | 9 s 6 p | 6 s | — | — | Pod Bronią |
-| Cięciwa | 5 s | 4 s | — | — | Pod Bronią |
-| Lont prochowy (1 m) | 4 p | 2 p | — | — | Pod Bronią |
-| Kompas | 2 ZK 8 s | 10 s | — | — | Pod Bronią |
-| Teodolit | 14 ZK 10 s | 6 ZK | — | — | Pod Bronią |
-| Strusie pióro | 12 s | 3 s | — | — | Pod Bronią |
+| Oselka | 3 s | 2 s 6 p | — | Powszechna | Pod Bronią |
+| Bandolier | 9 s 6 p | 6 s | — | Ograniczona | Pod Bronią |
+| Cięciwa | 5 s | 4 s | — | Powszechna | Pod Bronią |
+| Lont prochowy (1 m) | 4 p | 2 p | — | Ograniczona | Pod Bronią |
+| Kompas | 2 ZK 8 s | 10 s | — | Rzadka | Pod Bronią |
+| Teodolit | 14 ZK 10 s | 6 ZK | — | Rzadka | Pod Bronią |
+| Strusie pióro | 12 s | 3 s | — | Rzadka | Pod Bronią |
 | Lusterko ręczne | 1 ZK 12 s | 1 ZK 1 s 6 p | 0 | Egzotyczna | PG 303 |
 | Narzędzie do czyszczenia uszu | 2 s 6 p | 2 s | 0 | Ograniczona | PG 303 |
 | Siekiera | 4 s | — | — | Powszechna | kampania |

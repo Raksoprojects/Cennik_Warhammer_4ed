@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v6 (2026-10-24).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # TASKS — kolejność prac nad aplikacją
 
 > **Stan v6 (2026-10-24):** T1–T10 zrobione w Svelte 5 (`src/widoki/`, opis w `README.md`). Zamiast `src/app/*.js`

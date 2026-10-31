@@ -5,7 +5,7 @@ Uruchom z katalogu repo:  python3 narzedzia/analiza_v5.py
 Wyniki:  docs/analiza_v5/cennik_przeglad.csv
          docs/analiza_v5/klasy.csv
          docs/analiza_v5/profesje.csv
-         docs/analiza_v5/wyniki.json   (liczby cytowane w docs/ANALIZA_v5.md)
+         docs/analiza_v5/wyniki.json   (liczby cytowane w docs/archiwum/ANALIZA_v5.md)
 Nie zmienia danych. Tylko czyta data/cennik.json, data/klasy_cenowe.json, data/audyt.json, data/statusy.json.
 """
 import json, re, csv, os, statistics as st, sys
@@ -32,7 +32,7 @@ def mon(p):
     return ' '.join(o)
 
 # ---------------------------------------------------------------- 1. źródło historyczne → pensy
-# Przeliczniki zgodne z docs/ANALIZA_ZRODEL.md (kotwica: Brąz 3 = 165 p/tydz.).
+# Przeliczniki zgodne z docs/archiwum/ANALIZA_ZRODEL.md (kotwica: Brąz 3 = 165 p/tydz.).
 # Gdy opis ma już przeliczenie („= 2 ZK 1 s”), bierzemy przeliczenie autora. W przeciwnym razie
 # przeliczamy walutę: grosz krakowski 18 p, floren/gulden 550 p, funt ang. 1651 p, szyling ang. 82,6 p, pens ang. 6,9 p.
 WAL = [(r'gr\b', 18), (r'(?:floren|gulden)\w*', 550), (r'£', 1651), (r's ang\.?', 82.6), (r'd ang\.?', 6.88), (r'\bd\b', 6.88), (r'\bs\b', 82.6)]
@@ -90,7 +90,7 @@ INNA_JEDNOSTKA = {'bomba', 'srut-i-proch-12', 'pocisk-olowiany-12', 'pistolet', 
 # Źródło podaje inną liczbę sztuk: snop 24 strzał, a pozycja to 12.
 SKALA = {'strzala-12': 0.5}
 # Uwaga: wyjęte też te, gdzie opis łączy dwie epoki (kolczuga XII/XVI w.), dwa przedmioty (ubranie + koszula)
-# albo daje cenę surowca, nie wyrobu (jedwab za jard, proch za funt). Te sprawdzamy ręcznie w ANALIZA_v5.md.
+# albo daje cenę surowca, nie wyrobu (jedwab za jard, proch za funt). Te sprawdzamy ręcznie w docs/archiwum/ANALIZA_v5.md.
 
 # ---------------------------------------------------------------- 2. flagi pozycji
 ZNAK = set(KLASY['znak_stanu'])
@@ -172,7 +172,7 @@ def srednie(tier, lvl):
     netto = ile * (W['k'] + 1) / 2 * W['moneta_p']
     return netto, netto * 5
 
-# Zakupy „narzędzia zawodu” — wybór autora analizy, nie lista z podręcznika (patrz ANALIZA_v5.md, rozdz. 5).
+# Zakupy „narzędzia zawodu” — wybór autora analizy, nie lista z podręcznika (patrz docs/archiwum/ANALIZA_v5.md, rozdz. 5).
 ZAKUPY = {
  'Żołnierz': ['polzbroja-municyjna-napiersnik-morion', 'halabarda', 'kolczuga'],
  'Rycerz': ['rumak', 'pelna-plytowka-4-elementy', 'kopia', 'miecz'],
@@ -222,7 +222,7 @@ for c in AUD:
             PROF.append(dict(profesja=c['profesja'], poziom=nr, nazwa=l['nazwa'], dochod=f"{tier} {lvl}",
                 skad=pole, netto_tydz_p=netto, brutto_tydz_p=brutto, zakup=i, cena_p=C[i], cena=mon(C[i]),
                 rob_netto=round(C[i] / netto, 1), tyg_brutto=round(C[i] / brutto, 1),
-                proc_rocznego_brutto=round(100 * C[i] / (brutto * 52), 1)))
+                proc_rocznego_brutto=round(100 * C[i] / (brutto * 50), 1)))
 with open(OUT + 'profesje.csv', 'w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=list(PROF[0].keys()), delimiter=';'); w.writeheader(); w.writerows(PROF)
 

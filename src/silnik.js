@@ -428,6 +428,8 @@ export function cenaMinimalna(d, { kupiec, pozycja, osada, koniunktura, mRynek =
 /* ------------------------------------------------------------ v5: etykiety modyfikatorów */
 // „Altdorf (+30%)”
 export function etykietaOsady(lok) { return `${lok.nazwa} (${lok.mnoznik === 1 ? 'ceny bez zmian' : proc(lok.mnoznik)})`; }
+// Domyślna sytuacja osady (np. północ po wojnie) — podstawia się przy wyborze osady, MG może ją zmienić.
+export function sytuacjaOsady(d, id) { return d.osady.osady.find(o => o.id === id)?.sytuacja ?? 'normalna'; }
 // „Wojna (Broń biała, Broń zasięgowa, Amunicja, Pancerze +80% · Jedzenie, picie, nocleg +30% · reszta +5% · czynsz +30%)”
 // krotko: true → nazwy kategorii ze słownika koniunktura.skroty („Wojna (broń, strzelecka, amunicja, pancerze +80% · …)”) — do list wyboru.
 export function etykietaKoniunktury(d, kon, { krotko = false } = {}) {
@@ -549,7 +551,7 @@ export function sredniDochod(d, status, majetny = 0) {
   const { tier, lvl } = parsujStatus(status), W = d.statusy.wzory[tier];
   const ile = W.kosci === '2N' ? 2 * lvl : lvl;
   const netto = (ile * (W.k + 1) / 2 + majetny * 3) * W.moneta_p;
-  return { netto_p: netto, brutto_p: netto * 5, brutto_rok_p: netto * 5 * 52, x_robotnik: netto * 5 / d.statusy.robotnik_brutto_p };
+  return { netto_p: netto, brutto_p: netto * 5, brutto_rok_p: netto * 5 * (d.statusy.tygodni_w_roku ?? 50), x_robotnik: netto * 5 / d.statusy.robotnik_brutto_p };
 }
 export function jalmuzna({ ps, swieto = false, seed = losowySeed() }) {
   const { k } = kosci(seed); let p = 0;

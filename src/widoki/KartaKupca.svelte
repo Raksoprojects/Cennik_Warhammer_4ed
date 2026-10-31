@@ -1,7 +1,7 @@
 <script lang="ts">
   import { stan } from '../lib/stan.svelte';
   import { mon, mnoz, parsujCene, parsujMnoznik, pobierzPlik, norm } from '../lib/format';
-  import { etykietaKoniunktury } from '../silnik.js';
+  import { etykietaKoniunktury, sytuacjaOsady } from '../silnik.js';
   import WyborOsady from '../komponenty/WyborOsady.svelte';
   import WyborRynku from '../komponenty/WyborRynku.svelte';
   import DataKampanii from '../komponenty/DataKampanii.svelte';
@@ -112,7 +112,7 @@
 <div class="siatka nie-drukuj">
   <div class="panel">
     <h3>Gdzie i kiedy</h3>
-    <label class="pole"><span>Osada</span><WyborOsady value={K.osada} onchange={v => zapisz(T.przenies(d, $state.snapshot(K), { osada: v }), 'Ceny przeliczone dla nowej osady.')} /></label>
+    <label class="pole"><span>Osada</span><WyborOsady value={K.osada} onchange={v => zapisz(T.przenies(d, $state.snapshot(K), { osada: v, koniunktura: sytuacjaOsady(d, v) }), 'Ceny przeliczone dla nowej osady.')} /></label>
     <div class="pasek" style="margin-top:8px"><WyborRynku pora={K.pora ?? null} wahania={K.wahania ?? null} poraZDaty={!!K.data}
       onchange={z => zapisz(T.przenies(d, $state.snapshot(K), z), 'Ceny przeliczone.')} /></div>
     <DataKampanii data={K.data ?? null} onUstaw={dt => zapisz(T.przenies(d, $state.snapshot(K), { data: dt }), dt ? 'Data ustawiona, pora roku z kalendarza.' : 'Bez daty.')} />

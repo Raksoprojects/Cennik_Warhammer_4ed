@@ -8,6 +8,8 @@
                          Marienburg „import”, lokalne specjalności (tagi): Middenheim futra i żelazo, Nuln proch, Marienburg import
   3. data/rynek.json   ← Egzotyczne: 3% w metropolii, 0,1% gdzie indziej; wahania zmieniają też Dostępność;
                          Zalety rzadziej we wsi; krasnoludzki towar we wsi rzadziej; standard gospody (nocleg, posiłek)
+  4. czynsze miesięczne i roczne
+  5. rok = 50 tygodni (statusy), domyślna sytuacja osad północy, Dostępność 15 pozycji
 Uruchom z katalogu repo: py narzedzia/dane_v6d.py && npm test
 """
 import json, os
@@ -183,3 +185,34 @@ for w in H['wahania']['lista']:
 H['wahania']['opis'] = ('Poradnik s. 39 (opcjonalnie): 1k10 przed testem popytu. Rynek Byka: towaru mniej (Dostępność ×0,7), drożej. '
                         'Rynek Niedźwiedzia: towaru więcej (×1,3), taniej. Mnożniki — szacunek MG.')
 W('data/handel.json', H)
+
+# ---------------------------------------------------------------- 5. decyzje MG 2026-10-31
+# Rok imperialny = 400 dni = 50 tygodni po 8 dni (było 52). Robota liczy dalej 6 dniówek: to tydzień pracy, nie kalendarzowy.
+TYG = 50
+ST = J('data/statusy.json')
+ST['tygodni_w_roku'] = TYG
+ST['opis'] = ST['opis'].split(' Netto = ')[0] + (' Netto = rzut za jedną Robotę; brutto = 5 × netto; rok = brutto × 50 '
+             '(rok imperialny: 400 dni = 50 tygodni po 8 dni). Kotwica robotnika: 6 dniówek — tydzień pracy, nie kalendarzowy.')
+for s in ST['poziomy']: s['netto_rok'], s['brutto_rok'] = s['netto_p'] * TYG, s['brutto_p'] * TYG
+W('data/statusy.json', ST)
+
+# Domyślna sytuacja osady: północ po Burzy Chaosu (kampania 2525 KI). Ustawia się przy wyborze osady; MG może ją zmienić.
+SPLADROWANE = ['miasto-wolfenburg', 'miasto-hergig', 'miasto-ferlangen', 'miasto-delberz', 'miasto-ahlenhof']
+UCHODZCY = ['miasto-middenheim', 'miasto-carroburg']
+POLNOC = ('Middenland', 'Hochland', 'Ostland', 'Nordland', 'Ostermark')
+OS = J('data/osady.json')
+for o in OS['osady']:
+    o.pop('sytuacja', None)
+    if o['id'] in SPLADROWANE: o['sytuacja'] = 'wojna'          # zgliszcza, bandy zwierzoludzi, garnizony
+    elif o['id'] in UCHODZCY: o['sytuacja'] = 'naplyw'          # odbudowa, uchodźcy z prowincji
+    elif o.get('prowincja') in POLNOC: o['sytuacja'] = 'braki'  # spalone wsie, niepewne drogi
+W('data/osady.json', OS)
+
+# Pozycje bez Dostępności (DANE.md p. 12) — decyzja MG.
+DOST = {'Powszechna': ['owca-baran', 'swinia', 'krowa', 'wol', 'prowiant-wojskowy-na-1-tydzien', 'oselka', 'cieciwa'],
+        'Ograniczona': ['bandolier', 'lont-prochowy-1-m', 'focza-skora'],
+        'Rzadka': ['stroj-ceremonialny-aksamit-zlotoglow-futra', 'jedwabna-bielizna', 'kompas', 'teodolit', 'strusie-pioro']}
+C = J('data/cennik.json'); P = {c['id']: c for c in C['pozycje']}
+for dost, ids in DOST.items():
+    for i in ids: P[i]['dostepnosc'] = dost
+W('data/cennik.json', C)

@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v5 (plan interfejsu).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Skarbiec Imperium — aplikacja. Materiały do budowy w VS Code (v5)
 
 Silnik i dane są gotowe i przetestowane. Zostaje interfejs. Ten dokument opisuje, co zbudować,

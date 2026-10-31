@@ -47,6 +47,7 @@ test('dochód: średnie zgodne z tabelą statusów', () => {
     const m = S.sredniDochod(dane, `${s.tier} ${s.lvl}`);
     assert.ok(Math.abs(m.netto_p - s.netto_p) < 0.01, `${s.tier} ${s.lvl}`);
     assert.ok(Math.abs(m.brutto_p - s.brutto_p) < 0.01);
+    assert.ok(Math.abs(m.brutto_rok_p - s.brutto_rok) < 0.01, `${s.tier} ${s.lvl}: rok = 50 tygodni`);
   }
 });
 

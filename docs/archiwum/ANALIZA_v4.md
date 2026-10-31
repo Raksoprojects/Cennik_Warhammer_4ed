@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v4.** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Ceny ×3 — analiza i spójność wewnętrzna (cennik v4)
 
 Odpowiedź na pytanie: czy podnosić ceny ×3, gdzie to ma sens, a gdzie nie — i jak dopilnować,

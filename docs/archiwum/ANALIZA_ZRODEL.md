@@ -1,3 +1,5 @@
+> **ARCHIWUM — stan v2 (2026-10-23).** Liczby i zasady tutaj mogą być nieaktualne. Obowiązują: `data/*.json`, `docs/KOMPENDIUM_DANE.md` (generowany z danych), `docs/DANE.md` (decyzje MG) i `docs/AGENT_BRIEF.md`. Czytaj ten plik tylko po historię decyzji i źródła. Indeks: `docs/archiwum/README.md`.
+
 # Cennik a źródła historyczne – analiza i propozycja v2
 
 Sprawdziłem cennik kampanii (331 pozycji) w dwóch krokach:
