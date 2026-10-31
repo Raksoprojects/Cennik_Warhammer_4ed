@@ -145,8 +145,15 @@ JK['osada_zalety'] = {'wioska': 0.5, 'miasteczko': 0.8, 'miasto': 1, 'metropolia
 JK['osada_zalety_opis'] = 'Szansa na Zalety przedmiotu × ten mnożnik wg osady (we wsi rzadziej, w metropolii częściej).'
 RY['gospoda'] = {
     'opis': 'v6d: nocleg, posiłek i stajnia nie są towarem kupca, ale cena zależy od miejsca: osada × standard gospody (szacunek MG).',
-    'standardy': [{'id': 'podla', 'nazwa': 'Podła spelunka', 'mnoznik': 0.6}, {'id': 'zwykla', 'nazwa': 'Zwykła gospoda', 'mnoznik': 1},
-                  {'id': 'dobra', 'nazwa': 'Dobra gospoda', 'mnoznik': 1.8}, {'id': 'wytworna', 'nazwa': 'Wytworny zajazd', 'mnoznik': 3.5}]}
+    # Zbrojownia Starego Świata tab. 8-1–8-3: kiepski posiłek 0,33–0,5 zwykłego, dobry 1,5–2, uczta 4–5 (MG 2026-10-31).
+    'standardy': [{'id': 'podla', 'nazwa': 'Podła spelunka', 'mnoznik': 0.5}, {'id': 'zwykla', 'nazwa': 'Zwykła gospoda', 'mnoznik': 1},
+                  {'id': 'dobra', 'nazwa': 'Dobra gospoda', 'mnoznik': 1.8}, {'id': 'wytworna', 'nazwa': 'Wytworny zajazd', 'mnoznik': 4}],
+    # Rodzaj lokalu (ZSŚ: zajazd przy drodze ok. 1,5 × noclegownia w mieście; wyszynk bez pokoi i stajni). Brak „tylko” = wszystko.
+    'lokale': [{'id': 'miejska', 'nazwa': 'Gospoda w osadzie', 'mnoznik': 1},
+               {'id': 'przydrozny', 'nazwa': 'Przydrożny zajazd', 'mnoznik': 1.5,
+                'opis': 'jedyny dach na trakcie — drożej o połowę'},
+               {'id': 'wyszynk', 'nazwa': 'Wyszynk', 'mnoznik': 0.8, 'opis': 'bez pokoi i stajni: jedzenie i nocleg przy kominku',
+                'tylko': ['cieply-posilek-w-gospodzie', 'wspolna-izba-na-1-noc']}]}
 # v6e: wyroby rzemieślnicze taniej w mieście (warsztaty, materiał na miejscu), żywność i zwierzęta taniej na wsi. Zakres 0,8–1,2 (MG).
 WYROBY = ['Broń biała', 'Broń zasięgowa', 'Amunicja', 'Pancerze', 'Ubranie i dodatki', 'Narzędzia i zestawy',
           'Księgi i dokumenty', 'Wyposażenie różne', 'Protezy']
@@ -215,4 +222,6 @@ DOST = {'Powszechna': ['owca-baran', 'swinia', 'krowa', 'wol', 'prowiant-wojskow
 C = J('data/cennik.json'); P = {c['id']: c for c in C['pozycje']}
 for dost, ids in DOST.items():
     for i in ids: P[i]['dostepnosc'] = dost
+# Stajnia = 2 × wspólna izba (ZSŚ tab. 8-1, 8-2; MG: kogo stać na konia, tego stać na nocleg).
+P['stajnia-na-1-noc']['cena_p'] = P['stajnia-na-1-noc']['cena_ref_p'] = 2 * P['wspolna-izba-na-1-noc']['cena_p']
 W('data/cennik.json', C)

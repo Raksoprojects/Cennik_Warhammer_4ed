@@ -3506,7 +3506,7 @@
    "nazwa": "Stajnia dla konia na 1 noc (z obrokiem)",
    "zrodlo": "PG",
    "cena_raw_p": 10,
-   "cena_p": 14,
+   "cena_p": 20,
    "obc": null,
    "dostepnosc": "Powszechna",
    "podstawa_hist": "Obrok, gospoda 1331 – 2,5 d = 1 s 5 p",
@@ -3516,7 +3516,7 @@
    "pozycja_kampanii": false,
    "typ": "nocleg",
    "podtyp": null,
-   "cena_ref_p": 14,
+   "cena_ref_p": 20,
    "klasa": "utrzymanie",
    "strona": 302
   },

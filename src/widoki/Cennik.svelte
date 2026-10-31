@@ -175,7 +175,10 @@
                     </dd></div>
                   {:else}
                     <div><dt>Na miejscu ({lok.nazwa}) wg gospody <Podpowiedz tekst={d.rynek.gospoda.opis} /></dt><dd>
-                      {#each d.rynek.gospoda.standardy as s}<div class="male">{s.nazwa}: <span class="cena">{mon(Math.round(c.cena_p * lok.mnoznik * s.mnoznik))}</span></div>{/each}
+                      <table class="male"><thead><tr><th></th>{#each d.rynek.gospoda.lokale as l}<th title={l.opis ?? ''}>{l.nazwa}</th>{/each}</tr></thead><tbody>
+                        {#each d.rynek.gospoda.standardy as s}<tr><td>{s.nazwa}</td>{#each d.rynek.gospoda.lokale as l}<td class="cena">
+                          {(!l.tylko || l.tylko.includes(c.id)) ? mon(Math.round(c.cena_p * lok.mnoznik * l.mnoznik * s.mnoznik)) : '—'}</td>{/each}</tr>{/each}
+                      </tbody></table>
                       <span class="szary male">Osadę zmienisz w „ceny u kupca”.</span></dd></div>
                   {/if}
                 </dl>

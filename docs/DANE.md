@@ -10,7 +10,9 @@ wszędzie, jego towar we wsi jak Ograniczony), 14 (nielegalne rozszerzone, broń
 
 **2026-10-31:** rozwiązane 1 (6 dniówek = tydzień pracy; rok = 50 tygodni, nie 52), 2 (czynsze: miesiąc ≈ 3,5 × tydzień,
 rok ≈ 10,8 × miesiąc), 12 (Dostępność 15 pozycji), 19 (stare dokumenty w `docs/archiwum/`, AGENT_BRIEF odświeżony).
-Nowe: domyślna sytuacja osad północy po wojnie (`osady.json → sytuacja`).
+Nowe: domyślna sytuacja osad północy po wojnie (`osady.json → sytuacja`). Gospody wg Zbrojowni Starego Świata
+(tab. 8-1–8-3): standardy podła ×0,5 i wytworna ×4, rodzaj lokalu (`rynek.json → gospoda.lokale`: przydrożny zajazd ×1,5,
+wyszynk ×0,8 bez pokoi i stajni), stajnia = 2 × wspólna izba (20 p).
 Otwarte: 4 (Nuln może być droższy — zostaje), 7, 16, 18 (propozycja w toku), 20, 22.
 
 **Czas i kalendarz**

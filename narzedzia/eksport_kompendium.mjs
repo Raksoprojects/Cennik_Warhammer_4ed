@@ -82,7 +82,8 @@ tab(['Oszukane', 'Test Wyceny'], d.rynek.trefne.skala_oszustwa.map(s => [`${Math
 w('## 6. Czynsze', '');
 tab(['Kwatera', 'Tydzień', 'Miesiąc', 'Rok'], d.czynsze.najem.map(k => [k.kwatera, mon(k.tydzien_p), mon(k.miesiac_p), mon(k.rok_p)]));
 tab(['Kupno', 'Cena'], d.czynsze.kupno.map(k => [k.nazwa, mon(k.cena_p)]));
-w(`Nocleg i posiłek wg gospody (× osada): ${d.rynek.gospoda.standardy.map(s => `${s.nazwa} ×${pl(s.mnoznik)}`).join(', ')}.`, '');
+w(`Nocleg i posiłek wg gospody (× osada): ${d.rynek.gospoda.standardy.map(s => `${s.nazwa} ×${pl(s.mnoznik)}`).join(', ')}.`,
+  `Rodzaj lokalu (× standard): ${d.rynek.gospoda.lokale.map(l => `${l.nazwa} ×${pl(l.mnoznik)}${l.opis ? ` (${l.opis})` : ''}`).join(', ')}.`, '');
 
 w('## 7. Klasy cenowe (preset domyślny)', '');
 const pr = d.klasy.presety[d.klasy.domyslny];

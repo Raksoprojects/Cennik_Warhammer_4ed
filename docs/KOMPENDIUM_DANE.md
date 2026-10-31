@@ -267,7 +267,8 @@ v6c: szansa na pozycję z kupcy.json → trefne (domyślnie domyslna_szansa); ce
 | Dom rzemieślnika | 320 ZK |
 | Kamienica patrycjuszowska | 3600 ZK |
 
-Nocleg i posiłek wg gospody (× osada): Podła spelunka ×0,6, Zwykła gospoda ×1, Dobra gospoda ×1,8, Wytworny zajazd ×3,5.
+Nocleg i posiłek wg gospody (× osada): Podła spelunka ×0,5, Zwykła gospoda ×1, Dobra gospoda ×1,8, Wytworny zajazd ×4.
+Rodzaj lokalu (× standard): Gospoda w osadzie ×1, Przydrożny zajazd ×1,5 (jedyny dach na trakcie — drożej o połowę), Wyszynk ×0,8 (bez pokoi i stajni: jedzenie i nocleg przy kominku).
 
 ## 7. Klasy cenowe (preset domyślny)
 
@@ -493,7 +494,7 @@ Kolumny: cena bazowa (wytwórcy) · podręcznik (RAW) · Obciążenie · Dostęp
 | Nocleg w stajni (na sianie) (nie w handlu) | 4 p | — | — | Powszechna | kampania |
 | Wspólna izba na 1 noc (ława albo podłoga) (nie w handlu) | 10 p | 10 p | — | Powszechna | PG 302 |
 | Prywatny pokój na 1 noc (nie w handlu) | 3 s | 10 s | — | Powszechna | PG 302 |
-| Stajnia dla konia na 1 noc (z obrokiem) (nie w handlu) | 1 s 2 p | 10 p | — | Powszechna | PG 302 |
+| Stajnia dla konia na 1 noc (z obrokiem) (nie w handlu) | 1 s 8 p | 10 p | — | Powszechna | PG 302 |
 | Pół litra piwa | 3 p | 3 p | 0 | Powszechna | PG 302 |
 | Pół litra mocnego trunku | 2 s | 2 s | 0 | Powszechna | PG 302 |
 | Kielich wina | 6 p | 1 p | 0 | Powszechna | PG 302 |

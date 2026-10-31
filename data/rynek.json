@@ -523,7 +523,7 @@
    {
     "id": "podla",
     "nazwa": "Podła spelunka",
-    "mnoznik": 0.6
+    "mnoznik": 0.5
    },
    {
     "id": "zwykla",
@@ -538,7 +538,30 @@
    {
     "id": "wytworna",
     "nazwa": "Wytworny zajazd",
-    "mnoznik": 3.5
+    "mnoznik": 4
+   }
+  ],
+  "lokale": [
+   {
+    "id": "miejska",
+    "nazwa": "Gospoda w osadzie",
+    "mnoznik": 1
+   },
+   {
+    "id": "przydrozny",
+    "nazwa": "Przydrożny zajazd",
+    "mnoznik": 1.5,
+    "opis": "jedyny dach na trakcie — drożej o połowę"
+   },
+   {
+    "id": "wyszynk",
+    "nazwa": "Wyszynk",
+    "mnoznik": 0.8,
+    "opis": "bez pokoi i stajni: jedzenie i nocleg przy kominku",
+    "tylko": [
+     "cieply-posilek-w-gospodzie",
+     "wspolna-izba-na-1-noc"
+    ]
    }
   ]
  },
