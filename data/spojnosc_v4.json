@@ -279,13 +279,14 @@
     "status": "Brąz 3",
     "brutto_tydz_p": 165,
     "kwatera": "kat-w-izbie-czeladnej-tydzien",
-    "tygodni": 1
+    "tygodni": 1,
+    "tolerancja": 1.1
    },
    {
     "status": "Brąz 4",
     "brutto_tydz_p": 220,
     "kwatera": "izba-na-poddaszu-miesiac",
-    "tygodni": 4.33
+    "tygodni": 4.125
    }
   ],
   "max_udzial_czynszu": 0.25,
@@ -300,7 +301,9 @@
     "status": "Srebro 2",
     "brutto_tydz_p": 660
    }
-  ]
+  ],
+  "dni_tygodnia": 8,
+  "tygodni_w_roku": 50
  },
  "karczma": {
   "min": 0.1,

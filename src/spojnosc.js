@@ -67,10 +67,10 @@ export function sprawdzArbitraz(cennik, T) {
   {
     const B = T.budzet, b = [];
     if (ma('plotno-lokiec', 'sukno-szare-lokiec')) {
-      const jedz = 7 * B.jedzenie_dzien_p;
-      const odz = Object.entries(B.odziez_rok).reduce((s, [i, n]) => s + C[i] * n, 0) / 52;
-      for (const p of B.progi) {
-        const s = jedz + C[p.kwatera] / p.tygodni + odz, u = B.udzial_utrzymania * p.brutto_tydz_p;
+      const jedz = (B.dni_tygodnia ?? 7) * B.jedzenie_dzien_p;
+      const odz = Object.entries(B.odziez_rok).reduce((s, [i, n]) => s + C[i] * n, 0) / (B.tygodni_w_roku ?? 52);
+      for (const p of B.progi) {   // tolerancja: próg „na granicy” (Brąz 3 ledwo wiąże koniec z końcem — decyzja MG)
+        const s = jedz + C[p.kwatera] / p.tygodni + odz, u = B.udzial_utrzymania * p.brutto_tydz_p * (p.tolerancja ?? 1);
         if (s > u) b.push(`${p.status}: ${s.toFixed(0)} p > utrzymanie ${u.toFixed(0)} p/tydz.`);
       }
       for (const p of B.czynsz_najemcy) if (C[p.kwatera] / 4.33 > B.max_udzial_czynszu * p.brutto_tydz_p)

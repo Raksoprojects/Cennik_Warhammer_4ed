@@ -215,6 +215,15 @@ PD['utrzymanie'] = {
     'kara': 'kto nie płaci, traci 1 Pozycję na tydzień'}
 W('data/pozycja_dochod.json', PD)
 
+# Test budżetu (src/spojnosc.js): tydzień 8 dni, rok 50 tygodni, miesiąc 33 dni. Brąz 3 żyje na granicy (MG 2026-11-02:
+# chłopi i robotnicy gotują sami i ledwo żyją): 142 p kosztów wobec 132 p utrzymania — tolerancja +10%.
+SP = J('data/spojnosc_v4.json'); BU = SP['budzet']
+BU['dni_tygodnia'], BU['tygodni_w_roku'] = 8, TYG
+for p in BU['progi']:
+    if p['kwatera'].endswith('-miesiac'): p['tygodni'] = 33 / 8
+    if p['status'] == 'Brąz 3': p['tolerancja'] = 1.1
+W('data/spojnosc_v4.json', SP)
+
 # Domyślna sytuacja osady: północ po Burzy Chaosu (kampania 2525 KI). Ustawia się przy wyborze osady; MG może ją zmienić.
 SPLADROWANE = ['miasto-wolfenburg', 'miasto-hergig', 'miasto-ferlangen', 'miasto-delberz', 'miasto-ahlenhof']
 UCHODZCY = ['miasto-middenheim', 'miasto-carroburg']
