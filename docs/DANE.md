@@ -13,7 +13,8 @@ rok ≈ 10,8 × miesiąc), 12 (Dostępność 15 pozycji), 19 (stare dokumenty w 
 Nowe: domyślna sytuacja osad północy po wojnie (`osady.json → sytuacja`). Gospody wg Zbrojowni Starego Świata
 (tab. 8-1–8-3): standardy podła ×0,5 i wytworna ×4, rodzaj lokalu (`rynek.json → gospoda.lokale`: przydrożny zajazd ×1,5,
 wyszynk ×0,8 bez pokoi i stajni), stajnia = 2 × wspólna izba (20 p).
-Otwarte: 4 (Nuln może być droższy — zostaje), 7, 16, 18 (propozycja w toku), 20, 22.
+**2026-11-01:** rozwiązane 18 (utrzymanie = 4 × średnie netto Roboty).
+Otwarte: 4 (Nuln może być droższy — zostaje), 7, 16, 20, 22.
 
 **Czas i kalendarz**
 
@@ -62,6 +63,8 @@ Otwarte: 4 (Nuln może być droższy — zostaje), 7, 16, 18 (propozycja w toku)
     ×0,6), pełna płytówka 48 ZK (jest 96 ZK), mistrzowska ×4 (jest ×2,56). → Wygenerować Kompendium na nowo z danych.
 18. **Utrzymanie:** Kompendium (PG s. 51) „połowa Statusu dziennie”, Skarbiec 80% brutto tygodniowo, a dziwactwo z
     `nazwy.json` mówi o 10% zniżki za gotówkę. Dwie różne miary w użyciu. → Wybrać jedną.
+    ✓ MG 2026-11-01: utrzymanie = 4 × średnie netto Roboty (= 80% brutto), tylko za tydzień bez Roboty. „Połowa Statusu
+    dziennie” (4 × Status tygodniowo) nie pasuje do cen Skarbca. Kompendium: na szybko 4 s / 1 ZK / 12 ZK na poziom.
 19. **`docs/AGENT_BRIEF.md`, `docs/ANALIZA_v5.md`, `TASKS.md` opisywały stan v5** (targowanie 10%, jakość ×2).
     ✓ AGENT_BRIEF odświeżony, reszta w `docs/archiwum/` z banerem „ARCHIWUM”.
 20. **Edycja cen nie obejmuje `handel.json`, `postacie.json`, `kalendarz.json`** — zmiany tylko w plikach. → Dodać, jeśli

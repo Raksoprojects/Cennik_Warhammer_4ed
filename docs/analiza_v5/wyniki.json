@@ -1,20 +1,35 @@
 {
  "preset": "zalecany",
- "pozycji": 365,
+ "pozycji": 376,
  "ze_zrodlem": 186,
- "bez_zrodla": 179,
+ "bez_zrodla": 190,
  "porownywalne_ze_zrodlem": 65,
- "w_przedziale_zrodla": 46,
+ "w_przedziale_zrodla": 42,
  "ponad_zrodlo": [
   [
    "miecz",
-   "3 ZK 9 s",
-   "ponad źródło ×1.7"
+   "3 ZK",
+   "ponad źródło ×1.5"
   ],
   [
    "poltorak",
    "12 ZK",
    "ponad źródło ×1.7"
+  ],
+  [
+   "krotki-luk",
+   "1 ZK 14 s",
+   "ponad źródło ×2.5"
+  ],
+  [
+   "luk",
+   "2 ZK",
+   "ponad źródło ×2.3"
+  ],
+  [
+   "luk-dlugi",
+   "2 ZK 15 s",
+   "ponad źródło ×2.4"
   ],
   [
    "rusznica",
@@ -43,8 +58,8 @@
   ],
   [
    "dom-mistrza-z-warsztatem-rok",
-   "40 ZK",
-   "ponad źródło ×1.7"
+   "45 ZK",
+   "ponad źródło ×2.0"
   ],
   [
    "kupno-prosty-dom",
@@ -99,12 +114,17 @@
    "skrajne wobec RAW ×0.12; poniżej źródła ×0.57"
   ],
   [
+   "kusza",
+   "4 ZK",
+   "poniżej źródła ×0.58"
+  ],
+  [
    "woz",
    "18 ZK",
    "skrajne wobec RAW ×0.24; poniżej źródła ×0.53"
   ]
  ],
- "baza_ne_raw_bez_zrodla": 127,
+ "baza_ne_raw_bez_zrodla": 138,
  "skrajne_raw": [
   [
    "noz",
@@ -117,18 +137,6 @@
   [
    "palka",
    0.15
-  ],
-  [
-   "krotki-luk",
-   0.27
-  ],
-  [
-   "luk",
-   0.24
-  ],
-  [
-   "luk-dlugi",
-   0.26
   ],
   [
    "kolczuga",
@@ -250,12 +258,12 @@
   },
   {
    "klasa": "bron",
-   "pozycji": 67,
+   "pozycji": 76,
    "ze_zrodlem_liczbowym": 15,
-   "bez_zrodla": 38,
+   "bez_zrodla": 47,
    "mnoznik": 2,
-   "mediana_cennik_do_zrodla": 1.16,
-   "mediana_baza_do_zrodla": 0.57,
+   "mediana_cennik_do_zrodla": 1.25,
+   "mediana_baza_do_zrodla": 0.58,
    "mnoznik_z_testu_rzemieslnika": 2.56
   },
   {
@@ -324,8 +332,8 @@
    "ze_zrodlem_liczbowym": 1,
    "bez_zrodla": 0,
    "mnoznik": 2,
-   "mediana_cennik_do_zrodla": 1.74,
-   "mediana_baza_do_zrodla": 0.87,
+   "mediana_cennik_do_zrodla": 1.96,
+   "mediana_baza_do_zrodla": 0.98,
    "mnoznik_z_testu_rzemieslnika": null
   },
   {
@@ -350,9 +358,9 @@
   },
   {
    "klasa": "palna",
-   "pozycji": 29,
+   "pozycji": 31,
    "ze_zrodlem_liczbowym": 2,
-   "bez_zrodla": 22,
+   "bez_zrodla": 24,
    "mnoznik": 2,
    "mediana_cennik_do_zrodla": 2.1,
    "mediana_baza_do_zrodla": 1.05,
@@ -481,9 +489,9 @@
    "klasa": "bron",
    "warsztat": "zbrojmistrz",
    "dni": 1.5,
-   "q_baza": 0.54,
-   "q_cennik": 1.63,
-   "m_dla_1_4": 2.57
+   "q_baza": 0.47,
+   "q_cennik": 1.42,
+   "m_dla_1_4": 2.96
   },
   {
    "id": "kolczuga",
@@ -543,10 +551,10 @@
    "id": "luk-dlugi",
    "klasa": "bron",
    "warsztat": "luczarz",
-   "dni": 2,
-   "q_baza": 0.7,
-   "q_cennik": 1.4,
-   "m_dla_1_4": 2.0
+   "dni": 3,
+   "q_baza": 0.92,
+   "q_cennik": 1.86,
+   "m_dla_1_4": 1.52
   },
   {
    "id": "ksiega-medycyna",

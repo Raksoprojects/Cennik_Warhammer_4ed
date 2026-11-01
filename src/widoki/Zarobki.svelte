@@ -37,7 +37,7 @@
 <details class="opis">
   <summary>Jak to działa</summary>
   <p>Rzut to <b>netto</b> — co zostaje po jednej Robocie (tygodniu pracy ponad normę). Nie mnóż przez 52: między przygodami
-    postać ma zwykle 1–3 Roboty. Brutto = 5 × netto; 80% brutto idzie na utrzymanie w osadzie.</p>
+    postać ma zwykle 1–3 Roboty. Brutto = 5 × netto. {d.pozycja_dochod.utrzymanie.wzor}</p>
   <p>Brąz N = 2N k10 p, Srebro N = N k10 s, Złoto N = N k5 ZK. Majętny: +1k5 monet szczebla za poziom Talentu, dodawane do rzutu (netto).</p>
 </details>
 

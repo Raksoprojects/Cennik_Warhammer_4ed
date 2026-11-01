@@ -1,7 +1,7 @@
 id;nazwa;kat;klasa;typ;raw_p;baza_p;mnoznik;cennik_p;cennik;x_raw;hist_lo_p;hist_hi_p;x_hist;tyg_brazu3;zrodlo;flagi
-miecz;Miecz;Broń biała;bron;towar;240;276;3.0;828;3 ZK 9 s;3.45;492;492;1.68;5.02;Miecz, Anglia XVI w. – 6 s = 2 ZK 1 s;ponad źródło ×1.7
+miecz;Miecz;Broń biała;bron;towar;240;240;3.0;720;3 ZK;3.0;492;492;1.46;4.36;Miecz, Anglia XVI w. – 6 s = 2 ZK 1 s;ponad źródło ×1.5
 bron-reczna-topor-maczuga;Broń ręczna (topór, maczuga);Broń biała;bron;towar;240;204;2;408;1 ZK 14 s;1.7;;;;2.47;j.w., prostsze wykonanie;źródło j.w.
-bulat;Bułat;Broń biała;bron;towar;240;276;3.0;828;3 ZK 9 s;3.45;;;;5.02;Import ze wschodu;
+bulat;Bułat;Broń biała;bron;towar;240;240;3.0;720;3 ZK;3.0;;;;4.36;Import ze wschodu;
 szabla;Szabla;Broń biała;bron;towar;480;408;3.0;1224;5 ZK 2 s;2.55;;;;7.42;j.w.;źródło j.w.
 noz;Nóż;Broń biała;codzienne;towar;96;10;1.2;12;1 s;0.12;21;21;0.57;0.07;Nóż kuchenny/myśliwski – 3 d ang. = 1 s 9 p;"skrajne wobec RAW ×0.12; poniżej źródła ×0.57"
 sztylet;Sztylet;Broń biała;bron;towar;192;66;2;132;11 s;0.69;124;124;1.06;0.8;Sztylet bojowy – 1,5 s ang. = 10 s 4 p;
@@ -47,13 +47,20 @@ szydlo;Szydło;Broń biała;bron;towar;480;192;2;384;1 ZK 12 s;0.8;;;;2.33;;"bez
 topor-drzewcowy;Topór drzewcowy;Broń biała;bron;towar;480;276;2;552;2 ZK 6 s;1.15;;;;3.35;;"bez źródła; baza≠RAW bez źródła"
 flamberg;Flamberg;Broń biała;bron;towar;7200;4080;3.0;12240;51 ZK;1.7;;;;74.18;;"bez źródła; baza≠RAW bez źródła"
 nadziak-dwureczny;Nadziak dwuręczny;Broń biała;bron;towar;108;168;2;336;1 ZK 8 s;3.11;;;;2.04;;"bez źródła; baza≠RAW bez źródła"
-krotki-luk;Krótki łuk;Broń zasięgowa;bron;towar;720;96;2;192;16 s;0.27;165;165;1.16;1.16;Łuk III klasy, Anglia XVI w. – 2 s = 13 s 9 p;skrajne wobec RAW ×0.27
-luk;Łuk;Broń zasięgowa;bron;towar;960;114;2;228;19 s;0.24;206;206;1.11;1.38;Łuk II klasy – 2 s 6 d = 17 s 2 p;skrajne wobec RAW ×0.24
-luk-dlugi;Łuk długi;Broń zasięgowa;bron;towar;1200;156;2;312;1 ZK 6 s;0.26;275;275;1.13;1.89;Łuk najlepszej klasy – 3 s 4 d = 1 ZK 2 s 11 p;skrajne wobec RAW ×0.26
-luk-elfi;Łuk elfi;Broń zasięgowa;bron;towar;2400;780;2;1560;6 ZK 10 s;0.65;;;;9.45;;"bez źródła; baza≠RAW bez źródła"
-kusza;Kusza;Broń zasięgowa;bron;towar;1200;828;2;1656;6 ZK 18 s;1.38;1656;1656;1.0;10.04;Kusza – ok. £1 = 6 ZK 18 s;
-ciezka-kusza;Ciężka kusza;Broń zasięgowa;bron;towar;1680;1236;2;2460;10 ZK 5 s;1.46;;;;14.91;;"bez źródła; baza≠RAW bez źródła"
-kusza-pistoletowa;Kusza pistoletowa;Broń zasięgowa;bron;towar;1440;1200;2;2400;10 ZK;1.67;;;;14.55;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-topor;Krasnoludzki topór;Broń biała;bron;towar;240;204;2;408;1 ZK 14 s;1.7;;;;2.47;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-mlot-bojowy;Krasnoludzki młot bojowy;Broń biała;bron;towar;240;204;2;408;1 ZK 14 s;1.7;;;;2.47;;"bez źródła; baza≠RAW bez źródła"
+wirujace-ostrza-smierci;Wirujące ostrza śmierci;Broń biała;bron;towar;1200;680;2;1356;5 ZK 13 s;1.13;;;;8.22;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-wielki-topor;Krasnoludzki wielki topór;Broń biała;bron;towar;960;408;2;816;3 ZK 8 s;0.85;;;;4.95;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-wielki-mlot;Krasnoludzki wielki młot;Broń biała;bron;towar;960;368;2;732;3 ZK 1 s;0.76;;;;4.44;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-kilof;Krasnoludzki kilof;Broń biała;bron;towar;240;204;2;408;1 ZK 14 s;1.7;;;;2.47;;"bez źródła; baza≠RAW bez źródła"
+wielki-miecz-hoetha;Wielki miecz Hoetha;Broń biała;bron;towar;480000;273600;2;547200;2280 ZK;1.14;;;;3316.36;;"bez źródła; baza≠RAW bez źródła"
+krotki-luk;Krótki łuk;Broń zasięgowa;bron;towar;720;202;2;408;1 ZK 14 s;0.57;165;165;2.47;2.47;Łuk III klasy, Anglia XVI w. – 2 s = 13 s 9 p;ponad źródło ×2.5
+luk;Łuk;Broń zasięgowa;bron;towar;960;240;2;480;2 ZK;0.5;206;206;2.33;2.91;Łuk II klasy – 2 s 6 d = 17 s 2 p;ponad źródło ×2.3
+luk-dlugi;Łuk długi;Broń zasięgowa;bron;towar;1200;328;2;660;2 ZK 15 s;0.55;275;275;2.4;4.0;Łuk najlepszej klasy – 3 s 4 d = 1 ZK 2 s 11 p;ponad źródło ×2.4
+luk-elfi;Łuk elfi;Broń zasięgowa;bron;towar;2400;1642;2;3300;13 ZK 15 s;1.38;;;;20.0;;"bez źródła; baza≠RAW bez źródła"
+kusza;Kusza;Broń zasięgowa;bron;towar;1200;480;2;960;4 ZK;0.8;1656;1656;0.58;5.82;Kusza – ok. £1 = 6 ZK 18 s;poniżej źródła ×0.58
+ciezka-kusza;Ciężka kusza;Broń zasięgowa;bron;towar;1680;717;2;1440;6 ZK;0.86;;;;8.73;;"bez źródła; baza≠RAW bez źródła"
+kusza-pistoletowa;Kusza pistoletowa;Broń zasięgowa;bron;towar;1440;696;2;1392;5 ZK 16 s;0.97;;;;8.44;;"bez źródła; baza≠RAW bez źródła"
 rusznica;Rusznica;Broń zasięgowa;palna;towar;960;720;2;1440;6 ZK;1.5;660;660;2.18;8.73;Arkebuz, Anglia XVI w. – 8 s = 2 ZK 15 s;ponad źródło ×2.2
 garlacz;Garłacz;Broń zasięgowa;palna;towar;480;720;2;1440;6 ZK;3.0;;;;8.73;;"bez źródła; baza≠RAW bez źródła"
 muszkiet-kaliwer;Muszkiet (kaliwer);Broń zasięgowa;palna;towar;1680;1680;2;3360;14 ZK;2.0;1656;1656;2.03;20.36;Kaliwer – 20 s ang. = 6 ZK 18 s;ponad źródło ×2.0
@@ -82,6 +89,10 @@ halabarda-pistoletowa;Halabarda pistoletowa;Broń zasięgowa;palna;towar;2400;36
 topor-pistoletowy;Topór pistoletowy;Broń zasięgowa;palna;towar;1920;2880;2;5760;24 ZK;3.0;;;;34.91;;"bez źródła; baza≠RAW bez źródła"
 laska-pistoletowa;Laska pistoletowa;Broń zasięgowa;palna;towar;3600;4800;2;9600;40 ZK;2.67;;;;58.18;;"bez źródła; baza≠RAW bez źródła"
 mozdzierz-reczny;Moździerz ręczny;Broń zasięgowa;palna;towar;12000;12000;2;24000;100 ZK;2.0;;;;145.45;;bez źródła
+krasnoludzka-kusza;Krasnoludzka kusza;Broń zasięgowa;bron;towar;1200;480;2;960;4 ZK;0.8;;;;5.82;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzka-hakownica;Krasnoludzka hakownica;Broń zasięgowa;palna;towar;1440;864;2;1728;7 ZK 4 s;1.2;;;;10.47;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-pistolet;Krasnoludzki pistolet;Broń zasięgowa;palna;towar;2880;3600;2;7200;30 ZK;2.5;;;;43.64;;"bez źródła; baza≠RAW bez źródła"
+krasnoludzki-topor-do-rzucania;Krasnoludzki topór do rzucania;Broń zasięgowa;bron;towar;240;96;2;192;16 s;0.8;;;;1.16;;"bez źródła; baza≠RAW bez źródła"
 strzala-12;Strzała (12);Amunicja;bron;towar;60;60;2;120;10 s;2.0;96;96;1.25;0.73;Snop 24 strzał – 2 s 4 d ang. = 16 s;
 belt-12;Bełt (12);Amunicja;bron;towar;60;60;2;120;10 s;2.0;;;;0.73;j.w.;źródło j.w.
 strzala-elfia-1;Strzała elfia (1);Amunicja;bron;towar;72;96;2;192;16 s;2.67;;;;1.16;;"bez źródła; baza≠RAW bez źródła"
@@ -147,7 +158,7 @@ jedzenie-na-zimno-na-1-dzien;Jedzenie na zimno na 1 dzień;Jedzenie, picie, nocl
 nocleg-w-stajni-na-sianie;Nocleg w stajni (na sianie);Jedzenie, picie, nocleg;utrzymanie;nocleg;;4;1;4;4 p;;;;;0.02;;bez źródła
 wspolna-izba-na-1-noc;Wspólna izba na 1 noc (ława albo podłoga);Jedzenie, picie, nocleg;utrzymanie;nocleg;10;10;1;10;10 p;1.0;;;;0.06;;bez źródła
 prywatny-pokoj-na-1-noc;Prywatny pokój na 1 noc;Jedzenie, picie, nocleg;utrzymanie;nocleg;120;36;1;36;3 s;0.3;34;34;1.06;0.22;Izba prywatna – 5 d ang. = 2 s 10 p;skrajne wobec RAW ×0.30
-stajnia-na-1-noc;Stajnia dla konia na 1 noc (z obrokiem);Jedzenie, picie, nocleg;utrzymanie;nocleg;10;14;1;14;1 s 2 p;1.4;17;17;0.82;0.08;Obrok, gospoda 1331 – 2,5 d = 1 s 5 p;
+stajnia-na-1-noc;Stajnia dla konia na 1 noc (z obrokiem);Jedzenie, picie, nocleg;utrzymanie;nocleg;10;20;1;20;1 s 8 p;2.0;17;17;1.18;0.12;Obrok, gospoda 1331 – 2,5 d = 1 s 5 p;
 pol-litra-piwa;Pół litra piwa;Jedzenie, picie, nocleg;utrzymanie;towar;3;3;1;3;3 p;1.0;;;;0.02;"Ale 1 d/galon hurtem; w karczmie 3× drożej";
 pol-litra-mocnego-trunku;Pół litra mocnego trunku;Jedzenie, picie, nocleg;utrzymanie;towar;24;24;1;24;2 s;1.0;;;;0.15;Gorzałka – nowinka;
 kielich-wina;Kielich wina;Jedzenie, picie, nocleg;utrzymanie;towar;1;6;1;6;6 p;6.0;;;;0.04;;"bez źródła; baza≠RAW bez źródła; skrajne wobec RAW ×6.00"
@@ -157,12 +168,12 @@ pol-litra-piwa-bugmana;Pół litra Piwa Bugmana;Jedzenie, picie, nocleg;utrzyman
 prowiant-wojskowy-na-1-tydzien;Prowiant wojskowy na 1 tydzień;Jedzenie, picie, nocleg;utrzymanie;towar;;120;1;120;10 s;;;;;0.73;Racje suszone, sucharowe;
 kat-w-izbie-czeladnej-tydzien;Kąt w izbie czeladnej / tydzień;Czynsze i mieszkanie;najem_dolny;nieruchomosc;;24;1;24;2 s;;;;;0.15;Frankfurt 1450: murarz 1,6 guldena czynszu rocznie;
 kat-w-izbie-czeladnej-miesiac;Kąt w izbie czeladnej / miesiąc;Czynsze i mieszkanie;najem_dolny;nieruchomosc;;84;1;84;7 s;;;;;0.51;j.w.;źródło j.w.
-izba-na-poddaszu-miesiac;Izba na poddaszu / miesiąc;Czynsze i mieszkanie;najem_dolny;nieruchomosc;;96;1;96;8 s;;;;;0.58;j.w.;źródło j.w.
-izba-w-kamienicy-miesiac;Izba w kamienicy / miesiąc;Czynsze i mieszkanie;najem;nieruchomosc;;144;2;288;1 ZK 4 s;;;;;1.75;j.w.;źródło j.w.
-izba-w-kamienicy-rok;Izba w kamienicy / rok;Czynsze i mieszkanie;najem;nieruchomosc;;1440;2;2880;12 ZK;;;;;17.45;j.w.;źródło j.w.
-mieszkanie-mieszczanskie-23-izby-miesiac;Mieszkanie mieszczańskie (2–3 izby) / miesiąc;Czynsze i mieszkanie;najem;nieruchomosc;;240;2;480;2 ZK;;;;;2.91;Frankfurt 1450: bednarz 4 guldeny rocznie;
-mieszkanie-mieszczanskie-rok;Mieszkanie mieszczańskie / rok;Czynsze i mieszkanie;najem;nieruchomosc;;2400;2;4800;20 ZK;;;;;29.09;j.w.;źródło j.w.
-dom-mistrza-z-warsztatem-rok;Dom mistrza z warsztatem / rok;Czynsze i mieszkanie;najem;nieruchomosc;;4800;2;9600;40 ZK;;5520;5520;1.74;58.18;Frankfurt 1450: złotnik 10 guldenów rocznie = 23 ZK;ponad źródło ×1.7
+izba-na-poddaszu-miesiac;Izba na poddaszu / miesiąc;Czynsze i mieszkanie;najem_dolny;nieruchomosc;;120;1;120;10 s;;;;;0.73;j.w.;źródło j.w.
+izba-w-kamienicy-miesiac;Izba w kamienicy / miesiąc;Czynsze i mieszkanie;najem;nieruchomosc;;168;2;336;1 ZK 8 s;;;;;2.04;j.w.;źródło j.w.
+izba-w-kamienicy-rok;Izba w kamienicy / rok;Czynsze i mieszkanie;najem;nieruchomosc;;1800;2;3600;15 ZK;;;;;21.82;j.w.;źródło j.w.
+mieszkanie-mieszczanskie-23-izby-miesiac;Mieszkanie mieszczańskie (2–3 izby) / miesiąc;Czynsze i mieszkanie;najem;nieruchomosc;;252;2;504;2 ZK 2 s;;;;;3.05;Frankfurt 1450: bednarz 4 guldeny rocznie;
+mieszkanie-mieszczanskie-rok;Mieszkanie mieszczańskie / rok;Czynsze i mieszkanie;najem;nieruchomosc;;2640;2;5280;22 ZK;;;;;32.0;j.w.;źródło j.w.
+dom-mistrza-z-warsztatem-rok;Dom mistrza z warsztatem / rok;Czynsze i mieszkanie;najem;nieruchomosc;;5400;2;10800;45 ZK;;5520;5520;1.96;65.45;Frankfurt 1450: złotnik 10 guldenów rocznie = 23 ZK;ponad źródło ×2.0
 kamienica-kupiecka-rok;Kamienica kupiecka / rok;Czynsze i mieszkanie;najem;nieruchomosc;;13200;2;26400;110 ZK;;;;;160.0;j.w., górna półka;źródło j.w.
 kupno-prosty-dom;Kupno: prosty dom;Czynsze i mieszkanie;kupno;nieruchomosc;;14400;2;28800;120 ZK;;11040;16560;2.09;174.55;Frankfurt 1450: prosty dom 20–30 guldenów = 46–69 ZK;ponad źródło ×1.7
 kupno-dom-rzemieslnika;Kupno: dom rzemieślnika;Czynsze i mieszkanie;kupno;nieruchomosc;;38400;2;76800;320 ZK;;22000;55000;1.99;465.45;Frankfurt 1450: 40–100 guldenów;ponad źródło ×1.4
@@ -191,7 +202,7 @@ amulet;Amulet;Ubranie i dodatki;odziez;towar;2;3;1.5;5;5 p;2.5;;;;0.03;;"bez źr
 perfumy;Perfumy;Ubranie i dodatki;prestiz;towar;120;240;1.5;360;1 ZK 10 s;3.0;;;;2.18;;"bez źródła; baza≠RAW bez źródła"
 puder-do-twarzy;Puder do twarzy;Ubranie i dodatki;prestiz;towar;120;180;1.5;276;1 ZK 3 s;2.3;;;;1.67;;"bez źródła; baza≠RAW bez źródła"
 zapinki-6;Zapinki (6);Ubranie i dodatki;odziez;towar;120;240;1.5;360;1 ZK 10 s;3.0;;;;2.18;;"bez źródła; baza≠RAW bez źródła"
-tatuaz;Tatuaż;Ubranie i dodatki;utrzymanie;towar;48;72;1;72;6 s;1.5;;;;0.44;;"bez źródła; baza≠RAW bez źródła"
+tatuaz;Tatuaż;Ubranie i dodatki;utrzymanie;usluga;48;72;1;72;6 s;1.5;;;;0.44;;"bez źródła; baza≠RAW bez źródła"
 jedwabna-bielizna;Jedwabna bielizna;Ubranie i dodatki;prestiz;towar;240;480;1.5;720;3 ZK;3.0;;;;4.36;Jedwab 10–12 s ang./jard = 3–4 ZK;
 focza-skora;Focza skóra;Ubranie i dodatki;odziez;towar;360;720;1.5;1080;4 ZK 10 s;3.0;;;;6.55;Futra z Morza Szponów;
 narzedzia-pracy;Narzędzia Pracy;Narzędzia i zestawy;codzienne;towar;720;1440;1.2;1728;7 ZK 4 s;2.4;;;;10.47;Wyposażenie rzemieślnika – oszczędności kilku lat;

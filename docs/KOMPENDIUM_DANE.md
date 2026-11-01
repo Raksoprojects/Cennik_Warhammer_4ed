@@ -1,35 +1,37 @@
 # Skarbiec Imperium — dane do Kompendium MG
 
-Wygenerowano 2026-10-31 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
+Wygenerowano 2026-11-01 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
 Wszystkie ceny to ceny **bazowe (wytwórcy)**; gracz płaci u kupca więcej (marża, osada, sytuacja). 1 ZK = 20 s = 240 p.
 
 ## 1. Status i zarobki
 
 Kotwica: robotnik niewykwalifikowany (Brąz 3) — 13 s 9 p brutto tygodniowo, dniówka 27,5 p.
-Netto = rzut za jedną Robotę (tydzień pracy ponad normę). Brutto = 5 × netto; 80% brutto to utrzymanie w osadzie.
+Netto = rzut za jedną Robotę (tydzień pracy ponad normę), już po utrzymaniu. Brutto = 5 × netto.
+Utrzymanie / tydz. =4 × średni rzut Roboty (netto) = 80% brutto. Rzut Roboty jest już po utrzymaniu. Płaci się je tylko za tydzień w osadzie bez Roboty; kto nie płaci, traci 1 Pozycję na tydzień.
+Na szybko: Brąz 4 s, Srebro 1 ZK, Złoto 12 ZK na poziom Statusu tygodniowo (dokładnie: Brąz 3 s 8 p, Srebro 1 ZK 2 s, Złoto 12 ZK).
 Rok = 50 tygodni (400 dni po 8). Kotwica liczy 6 dniówek — tydzień pracy, nie kalendarzowy.
 Majętny: +1k5 monet szczebla za poziom Talentu (do rzutu, czyli do netto).
 
-| Status | Rzut | Netto / Robotę | Brutto / tydz. | Brutto / rok | Kto |
-|---|---|---|---|---|---|
-| Brąz 0 | brak | — | — | — | Żebrak, pokutnik, kaleka. Dochód wyłącznie z jałmużny. |
-| Brąz 1 | 2k10 pensów | 11 p | 4 s 7 p | 11 ZK 9 s 2 p | Nędzarz z pracą dorywczą. Zimą głoduje. |
-| Brąz 2 | 4k10 pensów | 1 s 10 p | 9 s 2 p | 22 ZK 18 s 4 p | Parobek, wyrobnik, komornik, sługa bez ziemi. |
-| Brąz 3 | 6k10 pensów | 2 s 9 p | 13 s 9 p | 34 ZK 7 s 6 p | JEDNOSTKA ODNIESIENIA: robotnik niewykwalifikowany, chłop małorolny. Kraków 1526–35: 1,5 gr dziennie, 9 gr tygodniowo, 13,5 zł rocznie. |
-| Brąz 4 | 8k10 pensów | 3 s 8 p | 18 s 4 p | 45 ZK 16 s 8 p | Robotnik wykwalifikowany, młodszy czeladnik. |
-| Brąz 5 | 10k10 pensów | 4 s 7 p | 1 ZK 2 s 11 p | 57 ZK 5 s 10 p | Czeladnik cechowy (Kraków: 2,5 gr dziennie = 15 gr tygodniowo), kmieć z pełnym łanem, wolny gwarek. |
-| Srebro 1 | 1k10 szylingów | 5 s 6 p | 1 ZK 7 s 6 p | 68 ZK 15 s | Mistrz rzemieślnik z własnym warsztatem, drobny kupiec. Dwa razy tyle, co robotnik. |
-| Srebro 2 | 2k10 szylingów | 11 s | 2 ZK 15 s | 137 ZK 10 s | Zamożny mistrz cechowy, niższy urzędnik miejski, lancknecht (4 guldeny reńskie miesięcznie). |
-| Srebro 3 | 3k10 szylingów | 16 s 6 p | 4 ZK 2 s 6 p | 206 ZK 5 s | Mistrz z kilkoma czeladnikami, przedsiębiorca budowlany (Kraków: murarz 60 gr/tydzień), trębacz miejski. |
-| Srebro 4 | 4k10 szylingów | 1 ZK 2 s | 5 ZK 10 s | 275 ZK | Kupiec hurtowy, notariusz, oficer najemny. |
-| Srebro 5 | 5k10 szylingów | 1 ZK 7 s 6 p | 6 ZK 17 s 6 p | 343 ZK 15 s | Kupiec dalekomorski, lekarz miejski, Doppelsöldner (8 guldenów miesięcznie). Ok. 156 florenów rocznie – więcej niż golibroda królewski (100 fl.). |
-| Złoto 1 | 1k5 ZK | 3 ZK | 15 ZK | 750 ZK | Patrycjusz, kanonik, profesor, drobna szlachta. Ok. 340 florenów rocznie brutto – poziom doktora teologii w Krakowie (400 fl.). |
-| Złoto 2 | 2k5 ZK | 6 ZK | 30 ZK | 1500 ZK | Wielki kupiec, rycerz z lennem, arcykapłan, arcymag Kolegium. |
-| Złoto 3 | 3k5 ZK | 9 ZK | 45 ZK | 2250 ZK | Baron, wysoki urzędnik prowincji, Lektor, lekarz nadworny (700 fl./rok). Ok. 1000 florenów – tyle, co marszałek nadworny. |
-| Złoto 4 | 4k5 ZK | 12 ZK | 60 ZK | 3000 ZK | Hrabia, arcybiskup, patrycjat kupiecki formatu Fuggerów, mistrz szpiegów. |
-| Złoto 5 | 5k5 ZK | 15 ZK | 75 ZK | 3750 ZK | Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji, Najwyższy Lektor. |
-| Złoto 6 | 6k5 ZK | 18 ZK | 90 ZK | 4500 ZK | Książę prowincji, wielki ród arystokratyczny. |
-| Złoto 7 | 7k5 ZK | 21 ZK | 105 ZK | 5250 ZK | Arystokrata najwyższego rzędu: elektor, wielki książę. Dochód to przybliżenie po wydatkach stanu — utrzymanie dworu, świty i pozycji pochłania większość przychodu. Do tego poziomy Talentu Majętny (+1k5 ZK za poziom); figury państwowe ×10 (zasady). |
+| Status | Rzut | Netto / Robotę | Utrzymanie / tydz. | Brutto / tydz. | Brutto / rok | Kto |
+|---|---|---|---|---|---|---|
+| Brąz 0 | brak | — | — | — | — | Żebrak, pokutnik, kaleka. Dochód wyłącznie z jałmużny. |
+| Brąz 1 | 2k10 pensów | 11 p | 3 s 8 p | 4 s 7 p | 11 ZK 9 s 2 p | Nędzarz z pracą dorywczą. Zimą głoduje. |
+| Brąz 2 | 4k10 pensów | 1 s 10 p | 7 s 4 p | 9 s 2 p | 22 ZK 18 s 4 p | Parobek, wyrobnik, komornik, sługa bez ziemi. |
+| Brąz 3 | 6k10 pensów | 2 s 9 p | 11 s | 13 s 9 p | 34 ZK 7 s 6 p | JEDNOSTKA ODNIESIENIA: robotnik niewykwalifikowany, chłop małorolny. Kraków 1526–35: 1,5 gr dziennie, 9 gr tygodniowo, 13,5 zł rocznie. |
+| Brąz 4 | 8k10 pensów | 3 s 8 p | 14 s 8 p | 18 s 4 p | 45 ZK 16 s 8 p | Robotnik wykwalifikowany, młodszy czeladnik. |
+| Brąz 5 | 10k10 pensów | 4 s 7 p | 18 s 4 p | 1 ZK 2 s 11 p | 57 ZK 5 s 10 p | Czeladnik cechowy (Kraków: 2,5 gr dziennie = 15 gr tygodniowo), kmieć z pełnym łanem, wolny gwarek. |
+| Srebro 1 | 1k10 szylingów | 5 s 6 p | 1 ZK 2 s | 1 ZK 7 s 6 p | 68 ZK 15 s | Mistrz rzemieślnik z własnym warsztatem, drobny kupiec. Dwa razy tyle, co robotnik. |
+| Srebro 2 | 2k10 szylingów | 11 s | 2 ZK 4 s | 2 ZK 15 s | 137 ZK 10 s | Zamożny mistrz cechowy, niższy urzędnik miejski, lancknecht (4 guldeny reńskie miesięcznie). |
+| Srebro 3 | 3k10 szylingów | 16 s 6 p | 3 ZK 6 s | 4 ZK 2 s 6 p | 206 ZK 5 s | Mistrz z kilkoma czeladnikami, przedsiębiorca budowlany (Kraków: murarz 60 gr/tydzień), trębacz miejski. |
+| Srebro 4 | 4k10 szylingów | 1 ZK 2 s | 4 ZK 8 s | 5 ZK 10 s | 275 ZK | Kupiec hurtowy, notariusz, oficer najemny. |
+| Srebro 5 | 5k10 szylingów | 1 ZK 7 s 6 p | 5 ZK 10 s | 6 ZK 17 s 6 p | 343 ZK 15 s | Kupiec dalekomorski, lekarz miejski, Doppelsöldner (8 guldenów miesięcznie). Ok. 156 florenów rocznie – więcej niż golibroda królewski (100 fl.). |
+| Złoto 1 | 1k5 ZK | 3 ZK | 12 ZK | 15 ZK | 750 ZK | Patrycjusz, kanonik, profesor, drobna szlachta. Ok. 340 florenów rocznie brutto – poziom doktora teologii w Krakowie (400 fl.). |
+| Złoto 2 | 2k5 ZK | 6 ZK | 24 ZK | 30 ZK | 1500 ZK | Wielki kupiec, rycerz z lennem, arcykapłan, arcymag Kolegium. |
+| Złoto 3 | 3k5 ZK | 9 ZK | 36 ZK | 45 ZK | 2250 ZK | Baron, wysoki urzędnik prowincji, Lektor, lekarz nadworny (700 fl./rok). Ok. 1000 florenów – tyle, co marszałek nadworny. |
+| Złoto 4 | 4k5 ZK | 12 ZK | 48 ZK | 60 ZK | 3000 ZK | Hrabia, arcybiskup, patrycjat kupiecki formatu Fuggerów, mistrz szpiegów. |
+| Złoto 5 | 5k5 ZK | 15 ZK | 60 ZK | 75 ZK | 3750 ZK | Wielki magnat, Patriarcha bogatego Kolegium, gubernator prowincji, Najwyższy Lektor. |
+| Złoto 6 | 6k5 ZK | 18 ZK | 72 ZK | 90 ZK | 4500 ZK | Książę prowincji, wielki ród arystokratyczny. |
+| Złoto 7 | 7k5 ZK | 21 ZK | 84 ZK | 105 ZK | 5250 ZK | Arystokrata najwyższego rzędu: elektor, wielki książę. Dochód to przybliżenie po wydatkach stanu — utrzymanie dworu, świty i pozycji pochłania większość przychodu. Do tego poziomy Talentu Majętny (+1k5 ZK za poziom); figury państwowe ×10 (zasady). |
 
 ## 2. Cena u kupca
 

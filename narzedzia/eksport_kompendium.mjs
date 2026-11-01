@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import * as S from '../src/silnik.js';
 const R = new URL('../', import.meta.url);
 const rd = f => JSON.parse(fs.readFileSync(new URL(f, R)));
-const PLIKI = ['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel', 'kalendarz'];
+const PLIKI = ['cennik', 'kupcy', 'osady', 'koniunktura', 'rynek', 'nazwy', 'statusy', 'przedmioty_magiczne', 'czynsze', 'postacie', 'handel', 'kalendarz', 'pozycja_dochod'];
 const d0 = Object.fromEntries(PLIKI.map(n => [n, rd(`data/${n}.json`)]));
 d0.klasy = rd('data/klasy_cenowe.json');
 const ust = rd('data/ustawienia.json'); delete ust.przyklad; delete ust.opis;
@@ -22,11 +22,13 @@ w('# Skarbiec Imperium — dane do Kompendium MG', '',
   'Wszystkie ceny to ceny **bazowe (wytwórcy)**; gracz płaci u kupca więcej (marża, osada, sytuacja). 1 ZK = 20 s = 240 p.', '');
 
 w('## 1. Status i zarobki', '', `Kotwica: robotnik niewykwalifikowany (Brąz 3) — ${mon(d.statusy.robotnik_brutto_p)} brutto tygodniowo, dniówka ${pl(d.statusy.dniowka_p)} p.`,
-  'Netto = rzut za jedną Robotę (tydzień pracy ponad normę). Brutto = 5 × netto; 80% brutto to utrzymanie w osadzie.',
+  'Netto = rzut za jedną Robotę (tydzień pracy ponad normę), już po utrzymaniu. Brutto = 5 × netto.',
+  `${d.pozycja_dochod.utrzymanie.wzor} Płaci się je tylko za tydzień w osadzie bez Roboty; ${d.pozycja_dochod.utrzymanie.kara}.`,
+  `Na szybko: ${Object.entries(d.pozycja_dochod.utrzymanie.przyblizenie).map(([t, v]) => `${t} ${v}`).join(', ')} ${d.pozycja_dochod.utrzymanie.przyblizenie_opis}.`,
   `Rok = ${d.statusy.tygodni_w_roku} tygodni (400 dni po 8). Kotwica liczy 6 dniówek — tydzień pracy, nie kalendarzowy.`,
   `Majętny: +1k${d.statusy.majetny.k} monet szczebla za poziom Talentu (do rzutu, czyli do netto).`, '');
-tab(['Status', 'Rzut', 'Netto / Robotę', 'Brutto / tydz.', 'Brutto / rok', 'Kto'],
-  d.statusy.poziomy.map(s => [`${s.tier} ${s.lvl}`, s.kostka, mon(s.netto_p), mon(s.brutto_p), mon(s.brutto_rok), s.opis]));
+tab(['Status', 'Rzut', 'Netto / Robotę', 'Utrzymanie / tydz.', 'Brutto / tydz.', 'Brutto / rok', 'Kto'],
+  d.statusy.poziomy.map(s => [`${s.tier} ${s.lvl}`, s.kostka, mon(s.netto_p), mon(s.brutto_p - s.netto_p), mon(s.brutto_p), mon(s.brutto_rok), s.opis]));
 
 w('## 2. Cena u kupca', '', 'Cena u kupca = cena bazowa × marża × (preferencja × kaprys) × osada × sytuacja × pora roku × wahania × strefa handlowa × zapas/popyt × cecha kupca.',
   `Cena minimalna = koszt nabycia × ${pl(d.rynek.cena_minimalna.narzut_min)} (wyprzedaż: × ${pl(d.rynek.cena_minimalna.wyprzedaz)}); koszt nabycia = cena bazowa × osada × sytuacja (wytwórca × ${pl(d.rynek.cena_minimalna.koszt_wlasny)}).`,

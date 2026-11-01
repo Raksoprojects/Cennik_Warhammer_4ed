@@ -54,8 +54,10 @@
   <div class="siatka">
     <div class="panel"><h3>1. Pozycja i Dochód to dwie liczby</h3><p>Pozycja rządzi tym, kto z tobą rozmawia i gdzie cię wpuszczą. Dochód rządzi sakiewką.</p>
       <ul class="male">{#each d.pozycja_dochod.przyklady as p}<li>{p.kto}: Pozycja {p.pozycja} / Dochód {p.dochod}{p.uwaga ? ` (${p.uwaga})` : ''}</li>{/each}</ul></div>
-    <div class="panel"><h3>2. Utrzymanie płacisz w mieście</h3><p>80% brutto to opłata za bycie kimś w danym miejscu: czynsz, czeladź, strój, składka cechowa.
-      Naliczaj je tylko za tygodnie w osadzie. W trasie postać płaci realne ceny z cennika.</p></div>
+    <div class="panel"><h3>2. Utrzymanie płacisz w mieście</h3><p>Utrzymanie to opłata za bycie kimś w danym miejscu: czynsz, czeladź, strój, składka cechowa.
+      {d.pozycja_dochod.utrzymanie.wzor} Naliczaj je tylko za tygodnie w osadzie bez Roboty; {d.pozycja_dochod.utrzymanie.kara}.
+      W trasie postać płaci realne ceny z cennika.</p>
+      <p class="male">Na szybko: {Object.entries(d.pozycja_dochod.utrzymanie.przyblizenie).map(([t, v]) => `${t} ${v}`).join(', ')} {d.pozycja_dochod.utrzymanie.przyblizenie_opis}.</p></div>
     <div class="panel"><h3>3. Jakość (PG s. 292, HR-024)</h3><p>Cena w cenniku to wariant podstawowy; cechy broni są w niej wliczone.
       Każda Zaleta przedmiotu ×{d.rynek.jakosc.za_zalete}, każda Wada ×{String(d.rynek.jakosc.za_wade).replace('.', ',')}.
       Wyśmienity i Wytrzymały można brać kilka razy — każdy poziom to osobna Zaleta: miecz Wytrzymały 2, Wyśmienity 2 kosztuje

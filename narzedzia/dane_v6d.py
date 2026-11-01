@@ -203,6 +203,18 @@ ST['opis'] = ST['opis'].split(' Netto = ')[0] + (' Netto = rzut za jedną Robot�
 for s in ST['poziomy']: s['netto_rok'], s['brutto_rok'] = s['netto_p'] * TYG, s['brutto_p'] * TYG
 W('data/statusy.json', ST)
 
+# Utrzymanie (DANE.md p. 18, MG 2026-11-01, wariant A): 4 × średnie netto Roboty = 80% brutto. Rzut Roboty to netto — już po
+# utrzymaniu; utrzymanie płaci się osobno tylko za tydzień bez Roboty. Kompendium podaje okrągłe przybliżenie na poziom Statusu.
+PD = J('data/pozycja_dochod.json')
+PD['utrzymanie'] = {
+    'udzial_brutto': 0.8, 'krotnosc_netto': 4,
+    'zasada': 'tylko za tygodnie spędzone w osadzie bez Roboty; w trasie realne ceny z cennika',
+    'wzor': 'Utrzymanie / tydz. =4 × średni rzut Roboty (netto) = 80% brutto. Rzut Roboty jest już po utrzymaniu.',
+    'przyblizenie': {'Brąz': '4 s', 'Srebro': '1 ZK', 'Złoto': '12 ZK'},
+    'przyblizenie_opis': 'na poziom Statusu tygodniowo (dokładnie: Brąz 3 s 8 p, Srebro 1 ZK 2 s, Złoto 12 ZK)',
+    'kara': 'kto nie płaci, traci 1 Pozycję na tydzień'}
+W('data/pozycja_dochod.json', PD)
+
 # Domyślna sytuacja osady: północ po Burzy Chaosu (kampania 2525 KI). Ustawia się przy wyborze osady; MG może ją zmienić.
 SPLADROWANE = ['miasto-wolfenburg', 'miasto-hergig', 'miasto-ferlangen', 'miasto-delberz', 'miasto-ahlenhof']
 UCHODZCY = ['miasto-middenheim', 'miasto-carroburg']

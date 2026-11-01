@@ -44,7 +44,8 @@ Identyfikatory w kodzie: polskie bez znaków diakrytycznych (`cena_p`, `generujK
 
 1. **Zarobek ze Statusu** jak w RAW, poza Złotem: Brąz N = 2N k10 p, Srebro N = N k10 s, **Złoto N = N k5 ZK**.
 2. **Majętny**: +1k5 monet szczebla za każdy poziom Talentu (dodaje się do rzutu, czyli do netto).
-3. **Rzut na zarobek = NETTO za jedną Robotę.** Brutto = 5 × netto. 80% brutto idzie na utrzymanie.
+3. **Rzut na zarobek = NETTO za jedną Robotę.** Brutto = 5 × netto. Utrzymanie = 4 × średnie netto
+   (= 80% brutto), płacone tylko za tydzień bez Roboty — rzut Roboty jest już po utrzymaniu (`pozycja_dochod.json → utrzymanie`).
 4. **Pieniądze nie znikają** między przygodami.
 5. **Status ≠ zarobek.** Status zapisuje się jako para Pozycja / Dochód (`data/pozycja_dochod.json`, `data/audyt.json`).
 6. **„Pod Bronią” zastępuje podręcznik główny** tam, gdzie oba podają to samo.

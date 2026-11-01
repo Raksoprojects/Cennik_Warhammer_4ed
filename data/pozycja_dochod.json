@@ -53,6 +53,15 @@
  },
  "utrzymanie": {
   "udzial_brutto": 0.8,
-  "zasada": "tylko za tygodnie spędzone w osadzie; w trasie realne ceny z cennika"
+  "krotnosc_netto": 4,
+  "zasada": "tylko za tygodnie spędzone w osadzie bez Roboty; w trasie realne ceny z cennika",
+  "wzor": "Utrzymanie / tydz. =4 × średni rzut Roboty (netto) = 80% brutto. Rzut Roboty jest już po utrzymaniu.",
+  "przyblizenie": {
+   "Brąz": "4 s",
+   "Srebro": "1 ZK",
+   "Złoto": "12 ZK"
+  },
+  "przyblizenie_opis": "na poziom Statusu tygodniowo (dokładnie: Brąz 3 s 8 p, Srebro 1 ZK 2 s, Złoto 12 ZK)",
+  "kara": "kto nie płaci, traci 1 Pozycję na tydzień"
  }
 }
