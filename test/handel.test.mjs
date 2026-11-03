@@ -107,3 +107,27 @@ test('v6f: domyślna sytuacja osady, rok 50 tygodni, każdy towar ma Dostępnoś
   assert.equal(d.statusy.tygodni_w_roku, 50);
   assert.deepEqual(d.cennik.pozycje.filter(c => c.typ === 'towar' && !c.dostepnosc).map(c => c.id), []);
 });
+
+test('v6g: zakładka Osady — ceny stref jak w dane_v6c.py, wyliczenie osady, osady i sytuacje MG', () => {
+  for (const o of d.osady.osady.filter(o => o.strefa && o.kategorie)) assert.deepEqual(S.cenyStrefy(d, o.strefa), o.kategorie, o.id);
+  const nuln = os('miasto-nuln'), w = S.wyliczOsade(d, { typ: nuln.typ, zamoznosc: nuln.zamoznosc, strefa: nuln.strefa });
+  assert.equal(w.mnoznik, nuln.mnoznik);
+  assert.equal(w.dostepnosc, 'metropolia');
+  assert.equal(S.wyliczOsade(d, { typ: 'wies', zamoznosc: 1 }).mnoznik, 0.765);   // 0,85 × 0,9
+  assert.deepEqual(d.osady.osady.filter(o => o.populacja_mg).map(o => [o.id, o.populacja]).sort(),
+    [['altdorf', 700000], ['marienburg', 1000000], ['miasto-middenheim', 400000], ['miasto-nuln', 760000]]);
+  const dd = { ...d, klasy: rd('data/klasy_cenowe.json') };
+  const n = S.zastosujUstawienia(dd, {
+    nowe_osady: [{ ...os('miasteczko'), id: 'mg-grunburg', nazwa: 'Grünburg', grupa: 'Osady MG', typ: 'miasteczko', sytuacja: 'mg-glod' }],
+    nowe_sytuacje: [{ ...kon('braki'), id: 'mg-glod', nazwa: 'Głód' }],
+    osady: { 'mg-grunburg': { mnoznik: 0.9 } }, koniunktury: { 'mg-glod': { nazwa: 'Wielki głód', czynsz: 0.8 } } });
+  const g = n.osady.osady.find(o => o.id === 'mg-grunburg');
+  assert.equal(g.mnoznik, 0.9);
+  assert.ok(g.wlasna);
+  assert.equal(S.sytuacjaOsady(n, 'mg-grunburg'), 'mg-glod');
+  assert.equal(n.koniunktura.koniunktury.find(k => k.id === 'mg-glod').nazwa, 'Wielki głód');
+  assert.ok(S.generujKupca(n, { kupiec: 'kramarz', osada: 'mg-grunburg', koniunktura: 'mg-glod', seed: 1 }).towar.length > 0);
+  // Usunięta sytuacja MG: osada wraca do Normalnej, zostawione nadpisanie sytuacji nie psuje danych.
+  const bez = S.zastosujUstawienia(dd, { nowe_osady: [{ ...os('miasteczko'), id: 'mg-x', nazwa: 'X', sytuacja: 'mg-brak' }], koniunktury: { 'mg-brak': { czynsz: 2 } } });
+  assert.equal(S.sytuacjaOsady(bez, 'mg-x'), 'normalna');
+});

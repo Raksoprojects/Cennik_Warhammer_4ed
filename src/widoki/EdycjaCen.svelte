@@ -13,8 +13,7 @@
   const zmiany = $derived(roznicaCen(baza, d));
   const ileWKlasie = $derived(d.cennik.pozycje.reduce((m: any, c: any) => (m[c.klasa] = (m[c.klasa] || 0) + 1, m), {}));
   const kategorie = $derived(d.koniunktura.kategorie as string[]);
-  let msg = $state(''), zly = $state(false), spojnosc = $state<any[] | null>(null), konId = $state('wojna');
-  const kon = $derived(d.koniunktura.koniunktury.find((x: any) => x.id === konId));
+  let msg = $state(''), zly = $state(false), spojnosc = $state<any[] | null>(null);
   const ZR: Record<string, string> = { dane: 'zielony', zasada: 'zloty', 'dane + zasada': 'zloty', brak: 'czerwony', sprzeczne: 'czerwony' };
 
   function liczba(txt: string, fn: (m: number) => void) {
@@ -154,13 +153,9 @@
 </details>
 
 <details class="sekcja">
-  <summary><span>Osady i kupcy</span></summary>
-  <div class="siatka" style="padding-top:10px">
-    <div class="tabela"><table>
-      <thead><tr><th>Osada</th><th class="num">Mnożnik</th></tr></thead>
-      <tbody>{#each d.osady.osady as o}<tr><td>{o.nazwa}{#if u.osady[o.id]}<span class="znacznik zloty">MG</span>{/if}</td>
-        <td class="num"><input class="w-tabeli" value={pl(o.mnoznik)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { x.osady[o.id] = { ...(x.osady[o.id] || {}), mnoznik: m }; }))} /></td></tr>{/each}</tbody>
-    </table></div>
+  <summary><span>Kupcy</span></summary>
+  <p class="male drugi">Osady i sytuacje (mnożniki, strefy, specjalności, nowe osady i sytuacje) zmieniasz w zakładce <a href="#osady">Osady</a>.</p>
+  <div style="padding-top:4px">
     <div class="tabela"><table>
       <thead><tr><th>Kupiec</th><th class="num">Marża</th><th class="num">Skup</th><th class="num">Zalety %</th><th class="num">Wady %</th></tr></thead>
       <tbody>{#each d.kupcy.kupcy as k}<tr><td>{k.nazwa}{#if u.kupcy[k.id]}<span class="znacznik zloty">MG</span>{/if}</td>
@@ -172,27 +167,7 @@
         {/each}</tr>{/each}</tbody>
     </table></div>
   </div>
-  <div class="przyciski"><button class="maly" onclick={() => ustaw(x => { x.osady = {}; x.kupcy = {}; })}>Przywróć osady i kupców</button></div>
-</details>
-
-<details class="sekcja">
-  <summary><span>Sytuacje (koniunktura)</span></summary>
-  <div class="panel" style="border-top:0;border-radius:0 0 var(--r) var(--r)">
-    <label class="pole"><span>Sytuacja</span><select bind:value={konId}>{#each d.koniunktura.koniunktury as k}<option value={k.id}>{k.nazwa}</option>{/each}</select></label>
-    <div class="tabela" style="margin-top:8px"><table>
-      <thead><tr><th>Kategoria</th><th class="num">Cena</th><th class="num">Popyt</th></tr></thead>
-      <tbody>{#each kategorie as kat}
-        {@const v = kon.kategorie[kat] ?? { cena: 1, popyt: 0 }}
-        <tr><td>{kat}</td>
-          <td class="num"><input class="w-tabeli" value={pl(v.cena)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { const k = x.koniunktury[konId] ??= {}; k.kategorie ??= {}; k.kategorie[kat] = { ...(k.kategorie[kat] || {}), cena: m }; }))} /></td>
-          <td class="num"><select value={v.popyt} onchange={e => ustaw(x => { const k = x.koniunktury[konId] ??= {}; k.kategorie ??= {}; k.kategorie[kat] = { ...(k.kategorie[kat] || {}), popyt: +e.currentTarget.value }; })}>
-            {#each [-1, 0, 1] as p}<option value={p}>{p > 0 ? '+1' : p}</option>{/each}</select></td></tr>
-      {/each}
-        <tr><td><b>Czynsz</b></td><td class="num"><input class="w-tabeli" value={pl(kon.czynsz?.mnoznik ?? 1)} onchange={e => liczba(e.currentTarget.value, m => ustaw(x => { (x.koniunktury[konId] ??= {}).czynsz = m; }))} /></td><td></td></tr>
-      </tbody>
-    </table></div>
-    <div class="przyciski"><button class="maly" onclick={() => ustaw(x => { delete x.koniunktury[konId]; })}>Przywróć tę sytuację</button></div>
-  </div>
+  <div class="przyciski"><button class="maly" onclick={() => ustaw(x => { x.kupcy = {}; })}>Przywróć kupców</button></div>
 </details>
 
 <details class="sekcja">

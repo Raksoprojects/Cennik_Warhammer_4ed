@@ -7,10 +7,11 @@
   import Czynsze from './widoki/Czynsze.svelte';
   import EdycjaCen from './widoki/EdycjaCen.svelte';
   import Tabele from './widoki/Tabele.svelte';
+  import Osady from './widoki/Osady.svelte';
 
   const WIDOKI = [
     ['cennik', 'Cennik', Cennik], ['kupcy', 'Kupcy', Kupcy], ['zamowienie', 'Zamówienie', Zamowienie],
-    ['zarobki', 'Zarobki', Zarobki], ['czynsze', 'Czynsze', Czynsze], ['edycja', 'Edycja cen', EdycjaCen],
+    ['zarobki', 'Zarobki', Zarobki], ['czynsze', 'Czynsze', Czynsze], ['osady', 'Osady', Osady], ['edycja', 'Edycja cen', EdycjaCen],
     ['tabele', 'Zasady i tabele', Tabele],
   ] as const;
   const biezacy = $derived(WIDOKI.find(w => w[0] === stan.trasa.widok) ?? WIDOKI[0]);

@@ -109,7 +109,8 @@ for o in OS['osady']:
 SKALA_POP = 5
 # Uzasadnienie (2026-10-31): Imperium ≈ Święte Cesarstwo × 5 (80–100 mln, ok. 10% w miastach); największa stolica ≈ 1% ludności.
 # Middenheim: 95 000 sprzed wojny × 5 = 475 000; oblężenie −20–30% (Paryż 1590, Lejda 1574), uchodźcy +20–40%, 3 lata głodu −10%.
-POPULACJA_MG = {'miasto-middenheim': 400000, 'altdorf': 900000, 'miasto-nuln': 700000, 'marienburg': 1000000}
+# 2026-11-03 (MG): Altdorf 700 000, Nuln 760 000 (Nuln większy od stolicy), Marienburg równo 1 000 000.
+POPULACJA_MG = {'miasto-middenheim': 400000, 'altdorf': 700000, 'miasto-nuln': 760000, 'marienburg': 1000000}
 POPULACJA_PORADNIK = {'altdorf': 105000, 'marienburg': 135000}   # osady ogólne nie mają liczby z tab. 3-2 w osady.json
 # Przed Burzą Chaosu (Dziedzictwo Sigmara, uwagi w indeksach) × 5. Splądrowane miasta zostają na poziomie z 2522 × 5.
 PRZED_WOJNA = {'miasto-middenheim': 95000, 'miasto-carroburg': 8000, 'miasto-delberz': 2000, 'miasto-ahlenhof': 2200,
@@ -121,9 +122,11 @@ for o in OS['osady']:
 for i, p in POPULACJA_MG.items():
     O[i]['populacja_poradnik'] = O[i].get('populacja_poradnik') or O[i].get('populacja') or POPULACJA_PORADNIK.get(i)
     O[i]['populacja'] = p
-for o in OS['osady']: o.pop('populacja_przed_wojna', None)
+for o in OS['osady']:
+    o.pop('populacja_przed_wojna', None); o.pop('populacja_mg', None)
+    if o['id'] in POPULACJA_MG: o['populacja_mg'] = True   # Kompendium wypisuje te liczby jako decyzję MG
 for i, p in PRZED_WOJNA.items(): O[i]['populacja_przed_wojna'] = p * SKALA_POP
-O['altdorf']['uwaga'] = 'Ok. 900 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).'
+O['altdorf']['uwaga'] = 'Ok. 700 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).'
 O['marienburg']['uwaga'] = ('Ok. 1 000 000 mieszkańców (MG). Wszystko z importu: Rzadkie o stopień łatwiej, '
                             'Egzotyczne częściej niż w innych metropoliach.')
 O['miasto-middenheim']['uwaga'] = ('MG (2525 KI): ok. 400 000 — przed wojną 475 000 (95 000 × 5, Dziedzictwo Sigmara s. 70), '

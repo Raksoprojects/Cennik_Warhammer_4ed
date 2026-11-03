@@ -45,7 +45,7 @@
    "rzadkie_latwiej": true,
    "dostepnosc": "metropolia",
    "zamoznosc": 5,
-   "uwaga": "Ok. 900 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).",
+   "uwaga": "Ok. 700 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej).",
    "strefa": "reik",
    "kategorie": {
     "Ubranie i dodatki": {
@@ -80,8 +80,9 @@
     }
    },
    "populacja_poradnik": 105000,
-   "populacja": 900000,
-   "dochody": "handel, administracja"
+   "populacja": 700000,
+   "dochody": "handel, administracja",
+   "populacja_mg": true
   },
   {
    "id": "marienburg",
@@ -132,7 +133,8 @@
     "kolonialne": 0.8,
     "luksus": 0.9,
     "tkaniny": 0.9
-   }
+   },
+   "populacja_mg": true
   },
   {
    "id": "miasto-carroburg",
@@ -618,7 +620,7 @@
    "limit_p": null,
    "dostepnosc": "metropolia",
    "typ": "metropolia",
-   "populacja": 700000,
+   "populacja": 760000,
    "zamoznosc": 5,
    "prowincja": "Wissenland",
    "strefa": "nuln",
@@ -666,7 +668,8 @@
     "trunki": 0.9,
     "prochowa": 0.85,
     "eksperymentalna": 0.85
-   }
+   },
+   "populacja_mg": true
   },
   {
    "id": "miasto-ambosstein",
@@ -2557,6 +2560,7 @@
     "zywnosc": 1.1,
     "zboze": 1.1
    },
+   "populacja_mg": true,
    "populacja_przed_wojna": 475000,
    "sytuacja": "naplyw"
   },

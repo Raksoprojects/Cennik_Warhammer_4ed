@@ -13,7 +13,7 @@ function pisz(klucz: string, v: unknown) { try { localStorage.setItem(klucz, JSO
 
 export function pusteUstawienia(): any {
   const { przyklad, opis, ...r } = structuredClone(ustawieniaDomyslne);
-  return { kategorie: {}, nowe: [], ...r };
+  return { kategorie: {}, nowe: [], nowe_osady: [], nowe_sytuacje: [], ...r };
 }
 
 export interface Trasa { widok: string; sciezka: string; param: URLSearchParams }

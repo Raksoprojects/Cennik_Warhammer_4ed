@@ -46,17 +46,34 @@ const KT = d.rynek.typ_osady.kategorie;
 tab(['Kategoria', ...Object.keys(KT)], d.koniunktura.kategorie.filter(k => Object.values(KT).some(t => t[k] != null && t[k] !== 1))
   .map(k => [k, ...Object.values(KT).map(t => `×${pl(t[k] ?? 1)}`)]));
 w('### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)', '',
-  'Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2). Sytuacja = domyślna po wojnie (MG może zmienić).', '');
-const nazwaSyt = id => d.koniunktura.koniunktury.find(k => k.id === id)?.nazwa ?? '';
-tab(['Miasto', 'Strefa', 'Populacja', 'Przed wojną', 'Zamożność', 'Typ', 'Mnożnik', 'Sytuacja', 'Dochody', 'Specjalności'],
-  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa, o.grupa, o.populacja, o.populacja_przed_wojna ?? '', o.zamoznosc, o.typ, proc(o.mnoznik),
-    nazwaSyt(o.sytuacja), o.dochody ?? '', o.tagi ? Object.entries(o.tagi).map(([t, m]) => `${t} ×${pl(m)}`).join(', ') : '']));
+  `Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: ${d.osady.osady.filter(o => o.populacja_mg).sort((a, b) => b.populacja - a.populacja)
+    .map(o => `${o.nazwa} ${o.populacja.toLocaleString('pl')}`).join(', ')}.` + ' Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2). Sytuacja = domyślna po wojnie (MG może zmienić).', '');
+const nazwaSyt = id => d.koniunktura.koniunktury.find(k => k.id === (id ?? 'normalna'))?.nazwa ?? '';
+const tys = n => n ? n.toLocaleString('pl') : '';
+const SKR = d.koniunktura.skroty, KATY_STREF = Object.keys(d.handel.kategorie_z_towarow).filter(k => k !== 'opis');
+tab(['Miasto', 'Prowincja', 'Strefa', 'Populacja', 'Przed wojną', 'Zamożność', 'Typ', 'Mnożnik', 'Sytuacja', 'Dochody', 'Specjalności'],
+  d.osady.osady.filter(o => o.grupa).map(o => [o.nazwa + (o.wlasna ? ' (MG)' : ''), o.prowincja ?? '', o.grupa, tys(o.populacja), tys(o.populacja_przed_wojna),
+    o.zamoznosc, o.typ, proc(o.mnoznik), nazwaSyt(o.sytuacja), o.dochody ?? '', o.tagi ? Object.entries(o.tagi).map(([t, m]) => `${t} ×${pl(m)}`).join(', ') : '']));
+w('', 'Uwagi do osad:', '', ...d.osady.osady.filter(o => o.grupa && o.uwaga && o.uwaga !== 'Wolne miasto.').map(o => `- **${o.nazwa}:** ${o.uwaga}`), '');
+w('### Strefy handlowe — ceny kategorii', '', d.handel.strefa_cena.opis, '');
+tab(['Strefa', 'Szlak', ...KATY_STREF.map(k => SKR[k] ?? k)], d.handel.strefy.map(s => {
+  const c = S.cenyStrefy(d, s.id);
+  return [s.nazwa, s.szlak, ...KATY_STREF.map(k => `×${pl(c[k].cena)}`)];
+}));
 w('### Dostępność (PG s. 290 + zasady kampanii)', '');
 tab(['Dostępność', ...Object.keys(d.rynek.dostepnosc.tabela)], ['Powszechna', 'Ograniczona', 'Rzadka', 'Egzotyczna'].map(x =>
   [x, ...Object.values(d.rynek.dostepnosc.tabela).map(t => `${pl(t[x] * 100)}%`)]));
 w(`Altdorf i Marienburg: Rzadkie jak Ograniczone. Marienburg (import): Egzotyczne ${pl(d.rynek.dostepnosc.import_egzotyczne * 100)}%. Towar krasnoludzki / elfi u kupca innej rasy: × ${pl(d.rynek.dostepnosc.obce_pochodzenie)}.`, '');
 w('### Sytuacje', '');
-tab(['Sytuacja', 'Ceny', 'Popyt', 'Czynsz'], d.koniunktura.koniunktury.map(k => [k.nazwa, S.etykietaKoniunktury(d, k).replace(k.nazwa + ' ', ''), k.opis_popytu ?? '', proc(k.czynsz?.mnoznik ?? 1)]));
+// Popyt liczony z danych (sytuacje MG nie mają opisu): „+1: broń, pancerze · −1: reszta”.
+const popyt = k => {
+  const g = {};
+  for (const kat of d.koniunktura.kategorie) { const p = k.kategorie[kat]?.popyt ?? 0; if (p) (g[p] ??= []).push(SKR[kat] ?? kat); }
+  return Object.entries(g).map(([p, l]) => `${p > 0 ? '+' : '−'}${Math.abs(p)}: ${l.length === d.koniunktura.kategorie.length ? 'wszystko' : l.join(', ')}`).join(' · ') || 'bez zmian';
+};
+const ileOsad = id => d.osady.osady.filter(o => (o.sytuacja ?? 'normalna') === id).length;
+tab(['Sytuacja', 'Ceny', 'Popyt', 'Czynsz', 'Domyślna w osadach'], d.koniunktura.koniunktury.map(k => [k.nazwa + (k.wlasna ? ' (MG)' : ''),
+  S.etykietaKoniunktury(d, k).replace(k.nazwa + ' ', ''), popyt(k), proc(k.czynsz?.mnoznik ?? 1), ileOsad(k.id) || '']));
 w('### Pora roku i wahania rynku', '');
 tab(['Pora', 'Ceny', 'Kategorie', 'Zagrożenia w podróży'], d.handel.pory_roku.lista.map(p => [p.nazwa, `×${pl(p.ceny)}`,
   Object.entries(p.kategorie).map(([k, v]) => `${k} ×${pl(v.cena)}${v.popyt ? ', popyt +' + v.popyt : ''}`).join('; '), `+${p.zagrozenia}`]));

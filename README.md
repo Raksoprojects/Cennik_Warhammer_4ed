@@ -27,7 +27,8 @@ Zakładki:
 | Zamówienie | wycena na miarę: robi / sprowadza / odmawia (i do kogo odsyła). |
 | Zarobki | Statusy, kalkulator z rzutem, „ile Robót odłożyć”, jałmużna. |
 | Czynsze | najem × okres w osadzie i sytuacji, kupno. |
-| Edycja cen | preset, mnożniki klas i kategorii, ceny pozycji, nowe pozycje MG, osady, marże, sytuacje, rynek i upływ czasu, spójność, JSON / eksport / import. |
+| Osady | lista osad z filtrem; karta osady: typ, zamożność, strefa, mnożnik, limit, sytuacja domyślna, specjalności, ceny kategorii; nowe osady i sytuacje MG, edycja sytuacji. |
+| Edycja cen | preset, mnożniki klas i kategorii, ceny pozycji, nowe pozycje MG, marże kupców, rynek i upływ czasu, spójność, JSON / eksport / import. |
 | Zasady i tabele | wzór ceny, marże, osady, sytuacje, macierz rynku, zasady domowe, audyt profesji, źródła historyczne. |
 
 Kod: `src/silnik.js` (ceny, generator), `src/kupcy_trwali.js` (zapisany kupiec: wycena na żywo, edycja, czas, zamówienia),

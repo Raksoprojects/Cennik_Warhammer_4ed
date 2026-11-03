@@ -1,6 +1,6 @@
 # Skarbiec Imperium — dane do Kompendium MG
 
-Wygenerowano 2026-11-01 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
+Wygenerowano 2026-11-03 z repozytorium (narzedzia/eksport_kompendium.mjs). Cennik: v5-zalecany+ustawienia.
 Wszystkie ceny to ceny **bazowe (wytwórcy)**; gracz płaci u kupca więcej (marża, osada, sytuacja). 1 ZK = 20 s = 240 p.
 
 ## 1. Status i zarobki
@@ -69,7 +69,7 @@ Preferencja: rdzeń ×0,95, boczny ×1,1. Kaprys 1k10: ≤1 ×0,9, ≤3 ×0,95, 
 | Miasteczko | 0% | 15 ZK | miasteczko |  |
 | Miasto | +10% | 60 ZK | miasto |  |
 | Metropolia (Nuln, Middenheim) | +20% | bez limitu | metropolia |  |
-| Altdorf | +30% | bez limitu | metropolia | Ok. 900 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
+| Altdorf | +30% | bez limitu | metropolia | Ok. 700 000 mieszkańców (MG; Poradnik: 105 000). Rzadkie o stopień łatwiej (szansa jak Ograniczonej). |
 | Marienburg | +45% | bez limitu | metropolia | Ok. 1 000 000 mieszkańców (MG). Wszystko z importu: Rzadkie o stopień łatwiej, Egzotyczne częściej niż w innych metropoliach. |
 
 ### Typ osady
@@ -93,59 +93,82 @@ v6e: mnożnik kategorii wg wielkości osady (klucz = osady → dostepnosc). Dzia
 
 ### Ośrodki handlu (Poradnik Staroświatowca, tab. 3-2; dochody: Dziedzictwo Sigmara, rozdz. VI)
 
-Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Altdorf 900 000, Marienburg 1 000 000, Nuln 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2). Sytuacja = domyślna po wojnie (MG może zmienić).
+Populacja w skali kampanii (2525 KI): Poradnik × 5; MG: Marienburg 1 000 000, Nuln 760 000, Altdorf 700 000, Middenheim 400 000. Kolumna „Przed wojną” = Dziedzictwo Sigmara × 5. Typ osady wg progów: wieś < 5 000, miasteczko < 50 000, miasto < 250 000, metropolia więcej. Zamożność jak w Poradniku (po Burzy Chaosu). Specjalności: tag branży × mnożnik ceny (łącznie najwyżej ×0,8–×1,2). Sytuacja = domyślna po wojnie (MG może zmienić).
 
-| Miasto | Strefa | Populacja | Przed wojną | Zamożność | Typ | Mnożnik | Sytuacja | Dochody | Specjalności |
-|---|---|---|---|---|---|---|---|---|---|
-| Carroburg | Dorzecze Reiklandzkie | 60000 | 40000 | 4 | miasto | +16% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
-| Bögenhafen | Dorzecze Reiklandzkie | 25000 |  | 3 | miasteczko | 0% |  | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Helmgart | Dorzecze Reiklandzkie | 11000 |  | 2 | miasteczko | -5% |  | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Ubersreik | Dorzecze Reiklandzkie | 17500 |  | 4 | miasteczko | +5% |  | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Weissbruck | Dorzecze Reiklandzkie | 1360 |  | 2 | wies | -19% |  | handel, transport |  |
-| Kemperbad | Enklawa Kemperbadu | 37500 |  | 4 | miasteczko | +5% |  | handel, wino, brandy | trunki ×0,85 |
-| Auerswald | Enklawa Kemperbadu | 25000 |  | 3 | miasteczko | 0% |  | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Grunburg | Enklawa Kemperbadu | 12000 |  | 2 | miasteczko | -5% |  | handel, szkutnictwo |  |
-| Stimmigen | Enklawa Kemperbadu | 8750 |  | 3 | miasteczko | 0% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Nuln | Strefa Handlowa Nuln | 700000 |  | 5 | metropolia | +32% |  | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
-| Ambosstein | Strefa Handlowa Nuln | 400 |  | 3 | wies | -15% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Furtzhausen | Strefa Handlowa Nuln | 370 |  | 3 | wies | -15% |  | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Kotzenheim | Strefa Handlowa Nuln | 305 |  | 3 | wies | -15% |  | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Wissenburg | Strefa Handlowa Nuln | 45000 |  | 4 | miasteczko | +5% |  | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
-| Pfeildorf | Dolina Górnego Solu | 34000 |  | 3 | miasteczko | 0% |  | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
-| Geschburg | Dolina Górnego Solu | 3000 |  | 3 | wies | -15% |  | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
-| Kreutzhofen | Dolina Górnego Solu | 2575 |  | 4 | wies | -11% |  | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Kroppenleben | Dolina Górnego Solu | 425 |  | 3 | wies | -15% |  | handel, futra | futra ×0,8, mysliwska ×0,95 |
-| Wuppertal | Dolina Górnego Solu | 5500 |  | 3 | miasteczko | 0% |  | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wusterburg | Dolina Górnego Solu | 4000 |  | 3 | wies | -15% |  | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
-| Averheim | Stary Trakt Krasnoludzki | 47000 |  | 4 | miasteczko | +5% |  | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Wurtbad | Stary Trakt Krasnoludzki | 44000 |  | 4 | miasteczko | +5% |  | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Gersdorf | Stary Trakt Krasnoludzki | 2125 |  | 3 | wies | -15% |  | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hocheleben | Stary Trakt Krasnoludzki | 1875 |  | 3 | wies | -15% |  | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
-| Krugenheim | Stary Trakt Krasnoludzki | 22500 |  | 4 | miasteczko | +5% |  | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Pfungzig | Stary Trakt Krasnoludzki | 17900 |  | 3 | miasteczko | 0% |  | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
-| Streissen | Stary Trakt Krasnoludzki | 27500 |  | 3 | miasteczko | 0% |  | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Eicheschatten | Trakt do Zhufbaru | 16875 |  | 3 | miasteczko | 0% |  | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
-| Schramleben | Trakt do Zhufbaru | 3375 |  | 3 | wies | -15% |  | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
-| Waldenhof | Trakt do Zhufbaru | 21000 |  | 2 | miasteczko | -5% |  | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
-| Talabheim | Stara Droga Leśna | 360000 |  | 4 | metropolia | +26% |  | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Ahlenhof | Stara Droga Leśna | 21000 | 11000 | 3 | miasteczko | 0% | Wojna | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Hergig | Stara Droga Leśna | 2500 | 46000 | 3 | wies | -15% | Wojna | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Küsel | Stara Droga Leśna | 32500 |  | 4 | miasteczko | +5% |  | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
-| Talagaad | Stara Droga Leśna | 2250 |  | 3 | wies | -15% |  | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Bechafen | Przejście Północno-Wschodnie | 38000 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Wolfenburg | Przejście Północno-Wschodnie | 5500 | 44500 | 3 | miasteczko | 0% | Wojna | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
-| Wurzen | Przejście Północno-Wschodnie | 7250 |  | 2 | miasteczko | -5% | Braki w dostawach (zła droga, cło, zima) | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Salzenmund | Wybrzeże Salzenmund | 37500 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
-| Ferlangen | Wybrzeże Salzenmund | 650 | 12500 | 3 | wies | -15% | Wojna | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
-| Grafenrich | Wybrzeże Salzenmund | 1260 |  | 2 | wies | -19% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Neue Emskrank | Wybrzeże Salzenmund | 4475 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
-| Norden | Wybrzeże Salzenmund | 16000 |  | 3 | miasteczko | 0% | Braki w dostawach (zła droga, cło, zima) | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
-| Middenheim | Korytarz Drakwaldzki | 400000 | 475000 | 5 | metropolia | +32% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
-| Beeckerhoven | Korytarz Drakwaldzki | 2040 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Delberz | Korytarz Drakwaldzki | 22500 | 10000 | 3 | miasteczko | 0% | Wojna | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
-| Schoninghagen | Korytarz Drakwaldzki | 4900 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
-| Scheinfeld | Delta Marienburga | 4250 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
-| Schilderheim | Delta Marienburga | 27500 |  | 3 | miasteczko | 0% |  | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Miasto | Prowincja | Strefa | Populacja | Przed wojną | Zamożność | Typ | Mnożnik | Sytuacja | Dochody | Specjalności |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Carroburg | Middenland | Dorzecze Reiklandzkie | 60 000 | 40 000 | 4 | miasto | +16% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, szkło i ceramika | domowe ×0,92, pojemniki ×0,92 |
+| Bögenhafen | Reikland | Dorzecze Reiklandzkie | 25 000 |  | 3 | miasteczko | 0% | Normalna | handel, wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Helmgart | Reikland | Dorzecze Reiklandzkie | 11 000 |  | 2 | miasteczko | -5% | Normalna | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Ubersreik | Reikland | Dorzecze Reiklandzkie | 17 500 |  | 4 | miasteczko | +5% | Normalna | handel, rudy i obróbka metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Weissbruck | Reikland | Dorzecze Reiklandzkie | 1360 |  | 2 | wies | -19% | Normalna | handel, transport |  |
+| Kemperbad | Reikland | Enklawa Kemperbadu | 37 500 |  | 4 | miasteczko | +5% | Normalna | handel, wino, brandy | trunki ×0,85 |
+| Auerswald | Reikland | Enklawa Kemperbadu | 25 000 |  | 3 | miasteczko | 0% | Normalna | handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Grunburg | Reikland | Enklawa Kemperbadu | 12 000 |  | 2 | miasteczko | -5% | Normalna | handel, szkutnictwo |  |
+| Stimmigen | Reikland | Enklawa Kemperbadu | 8750 |  | 3 | miasteczko | 0% | Normalna | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Nuln | Wissenland | Strefa Handlowa Nuln | 760 000 |  | 5 | metropolia | +32% | Normalna | handel, metalurgia, administracja, wino | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, trunki ×0,9, prochowa ×0,85, eksperymentalna ×0,85 |
+| Ambosstein | Wissenland | Strefa Handlowa Nuln | 400 |  | 3 | wies | -15% | Normalna | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Furtzhausen | Wissenland | Strefa Handlowa Nuln | 370 |  | 3 | wies | -15% | Normalna | handel, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Kotzenheim | Wissenland | Strefa Handlowa Nuln | 305 |  | 3 | wies | -15% | Normalna | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Wissenburg | Wissenland | Strefa Handlowa Nuln | 45 000 |  | 4 | miasteczko | +5% | Normalna | administracja, handel, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95 |
+| Pfeildorf | Wissenland | Dolina Górnego Solu | 34 000 |  | 3 | miasteczko | 0% | Normalna | handel, rybołówstwo, ubrania | zywnosc ×0,92, zboze ×0,92, odziez ×0,92, tkaniny ×0,9 |
+| Geschburg | Wissenland | Dolina Górnego Solu | 3000 |  | 3 | wies | -15% | Normalna | uprawy, handel, hodowla | zywnosc ×0,92, zboze ×0,92 |
+| Kreutzhofen | Wissenland | Dolina Górnego Solu | 2575 |  | 4 | wies | -11% | Normalna | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Kroppenleben | Wissenland | Dolina Górnego Solu | 425 |  | 3 | wies | -15% | Normalna | handel, futra | futra ×0,8, mysliwska ×0,95 |
+| Wuppertal | Averland | Dolina Górnego Solu | 5500 |  | 3 | miasteczko | 0% | Normalna | handel, uprawy, wyroby drewniane | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wusterburg | Wissenland | Dolina Górnego Solu | 4000 |  | 3 | wies | -15% | Normalna | uprawy, handel | zywnosc ×0,92, zboze ×0,92 |
+| Averheim | Averland | Stary Trakt Krasnoludzki | 47 000 |  | 4 | miasteczko | +5% | Normalna | handel, administracja, bydło, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Wurtbad | Stirland | Stary Trakt Krasnoludzki | 44 000 |  | 4 | miasteczko | +5% | Normalna | handel, administracja, uprawy, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Gersdorf | Talabekland | Stary Trakt Krasnoludzki | 2125 |  | 3 | wies | -15% | Normalna | handel, drewno, rybołówstwo | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hocheleben | Averland | Stary Trakt Krasnoludzki | 1875 |  | 3 | wies | -15% | Normalna | handel, futra, rudy metali | warsztatowe ×0,92, prosta ×0,95, wojskowa ×0,95, tarcze ×0,95, futra ×0,8, mysliwska ×0,95 |
+| Krugenheim | Talabekland | Stary Trakt Krasnoludzki | 22 500 |  | 4 | miasteczko | +5% | Normalna | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Pfungzig | Averland | Stary Trakt Krasnoludzki | 17 900 |  | 3 | miasteczko | 0% | Normalna | uprawy, bydło, handel | zywnosc ×0,92, zboze ×0,92 |
+| Streissen | Averland | Stary Trakt Krasnoludzki | 27 500 |  | 3 | miasteczko | 0% | Normalna | uprawy, handel, wino | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Eicheschatten | Kraina Zgromadzenia | Trakt do Zhufbaru | 16 875 |  | 3 | miasteczko | 0% | Normalna | uprawy, handel, piwo, administracja | trunki ×0,85, zywnosc ×0,85, zboze ×0,92, tkaniny ×0,92 |
+| Schramleben | Stirland | Trakt do Zhufbaru | 3375 |  | 3 | wies | -15% | Normalna | handel, piwo, bydło | trunki ×0,85, zywnosc ×0,92, zboze ×0,92 |
+| Waldenhof | Stirland | Trakt do Zhufbaru | 21 000 |  | 2 | miasteczko | -5% | Normalna | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92 |
+| Talabheim | Talabekland | Stara Droga Leśna | 360 000 |  | 4 | metropolia | +26% | Normalna | handel, administracja, uprawy | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Ahlenhof | Middenland | Stara Droga Leśna | 21 000 | 11 000 | 3 | miasteczko | 0% | Wojna | drewno, handel, uprawy, bydło | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Hergig | Hochland | Stara Droga Leśna | 2500 | 46 000 | 3 | wies | -15% | Wojna | handel, administracja, drewno, uprawy | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Küsel | Talabekland | Stara Droga Leśna | 32 500 |  | 4 | miasteczko | +5% | Normalna | handel, administracja, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92, futra ×0,85, mysliwska ×0,95 |
+| Talagaad | Talabekland | Stara Droga Leśna | 2250 |  | 3 | wies | -15% | Normalna | rybołówstwo, uprawy, drewno, handel | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Bechafen | Ostermark | Przejście Północno-Wschodnie | 38 000 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, drewno, uprawy, budowa łodzi | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Wolfenburg | Ostland | Przejście Północno-Wschodnie | 5500 | 44 500 | 3 | miasteczko | 0% | Wojna | handel, drewno, administracja, wyroby z cyny | domowe ×0,92, pojemniki ×0,92 |
+| Wurzen | Ostland | Przejście Północno-Wschodnie | 7250 |  | 2 | miasteczko | -5% | Braki w dostawach (zła droga, cło, zima) | bydło, drewno, handel, ser | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Salzenmund | Nordland | Wybrzeże Salzenmund | 37 500 |  | 4 | miasteczko | +5% | Braki w dostawach (zła droga, cło, zima) | handel, administracja, wyroby drewniane | domowe ×0,92, pojemniki ×0,92 |
+| Ferlangen | Ostland | Wybrzeże Salzenmund | 650 | 12 500 | 3 | wies | -15% | Wojna | antyki, handel, drewno | domowe ×0,92, pojemniki ×0,92 |
+| Grafenrich | Nordland | Wybrzeże Salzenmund | 1260 |  | 2 | wies | -19% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Neue Emskrank | Nordland | Wybrzeże Salzenmund | 4475 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, rybołówstwo, drewno | zywnosc ×0,92, zboze ×0,92, domowe ×0,92, pojemniki ×0,92 |
+| Norden | Nordland | Wybrzeże Salzenmund | 16 000 |  | 3 | miasteczko | 0% | Braki w dostawach (zła droga, cło, zima) | rybołówstwo, handel, bursztyn, transport więźniów | zywnosc ×0,92, zboze ×0,92, kosztownosci ×0,9 |
+| Middenheim | Middenland | Korytarz Drakwaldzki | 400 000 | 475 000 | 5 | metropolia | +32% | Napływ ludzi (pielgrzymi, uchodźcy, święto) | handel, usługi, administracja | futra ×0,8, warsztatowe ×0,9, prosta ×0,92, wojskowa ×0,92, tarcze ×0,92, zywnosc ×1,1, zboze ×1,1 |
+| Beeckerhoven | Nordland | Korytarz Drakwaldzki | 2040 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Delberz | Middenland | Korytarz Drakwaldzki | 22 500 | 10 000 | 3 | miasteczko | 0% | Wojna | wino, drewno | trunki ×0,85, domowe ×0,92, pojemniki ×0,92 |
+| Schoninghagen | Middenland | Korytarz Drakwaldzki | 4900 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | drewno, handel | domowe ×0,92, pojemniki ×0,92 |
+| Scheinfeld | Middenland | Delta Marienburga | 4250 |  | 3 | wies | -15% | Braki w dostawach (zła droga, cło, zima) | handel, uprawy, rybołówstwo | zywnosc ×0,92, zboze ×0,92 |
+| Schilderheim | Reikland | Delta Marienburga | 27 500 |  | 3 | miasteczko | 0% | Normalna | handel, rybołówstwo, uprawy | zywnosc ×0,92, zboze ×0,92 |
+
+
+Uwagi do osad:
+
+- **Middenheim:** MG (2525 KI): ok. 400 000 — przed wojną 475 000 (95 000 × 5, Dziedzictwo Sigmara s. 70), oblężenie 2522 −20–30%, uchodźcy z Middenlandu +20–40%, głód −10%. Poradnik: 15 000. Futra i żelazo z Middenlandu tanie, żywność droga.
+
+### Strefy handlowe — ceny kategorii
+
+v6d: cena kategorii w strefie = 1 − krok × (stopień strefy − średni stopień Imperium). Stopnie z siatki Poradnika (s. 41). Szacunek MG.
+
+| Strefa | Szlak | ubrania | jedzenie | narzędzia | wyposażenie | broń | strzelecka | amunicja | pancerze | zwierzęta | zioła |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Dorzecze Reiklandzkie | Reik, Bögen, Talabek, Góry Szare | ×0,971 | ×0,964 | ×0,981 | ×1,005 | ×0,951 | ×0,981 | ×0,981 | ×1 | ×0,997 | ×0,982 |
+| Enklawa Kemperbadu | Reik, Teufel, Dolny Stir | ×1,007 | ×0,998 | ×1,011 | ×1,02 | ×1,011 | ×1,011 | ×1,011 | ×1 | ×1,027 | ×1,042 |
+| Strefa Handlowa Nuln | Górny Reik, Dolny Aver | ×0,995 | ×1,024 | ×1,011 | ×1,005 | ×1,011 | ×1,011 | ×1,011 | ×1 | ×0,997 | ×0,982 |
+| Dolina Górnego Solu | Sol, Górny Reik | ×0,947 | ×1,033 | ×1,041 | ×1,005 | ×1,011 | ×1,041 | ×1,041 | ×1 | ×1,027 | ×0,922 |
+| Stary Trakt Krasnoludzki | Stary Trakt Krasnoludzki, Stir, Aver | ×0,983 | ×0,99 | ×1,011 | ×0,975 | ×1,011 | ×1,011 | ×1,011 | ×0,97 | ×0,967 | ×0,982 |
+| Trakt do Zhufbaru | Trakt do Zhufbaru, Górny Aver | ×1,031 | ×0,981 | ×1,071 | ×1,005 | ×1,071 | ×1,071 | ×1,071 | ×1 | ×1,027 | ×1,022 |
+| Stara Droga Leśna | Stara Droga Leśna, Talabek | ×0,995 | ×0,998 | ×0,981 | ×0,975 | ×1,011 | ×0,981 | ×0,981 | ×1 | ×0,967 | ×1,002 |
+| Przejście Północno-Wschodnie | Górny Talabek | ×1,067 | ×1,067 | ×0,921 | ×0,975 | ×0,951 | ×0,921 | ×0,921 | ×0,97 | ×0,937 | ×1,062 |
+| Wybrzeże Salzenmund | Morze Szponów, Middenheim, Trakt Erengradzki | ×1,043 | ×0,998 | ×0,981 | ×1,005 | ×1,011 | ×0,981 | ×0,981 | ×1,03 | ×0,997 | ×1,062 |
+| Korytarz Drakwaldzki | Stara Droga Leśna, Delb | ×0,995 | ×1,016 | ×0,951 | ×1,005 | ×0,951 | ×0,951 | ×0,951 | ×1 | ×0,997 | ×1,022 |
+| Delta Marienburga | Dolny Reik, Morze Szponów | ×0,971 | ×0,93 | ×1,041 | ×1,02 | ×1,011 | ×1,041 | ×1,041 | ×1,03 | ×1,057 | ×0,922 |
 
 ### Dostępność (PG s. 290 + zasady kampanii)
 
@@ -160,20 +183,20 @@ Altdorf i Marienburg: Rzadkie jak Ograniczone. Marienburg (import): Egzotyczne 6
 
 ### Sytuacje
 
-| Sytuacja | Ceny | Popyt | Czynsz |
-|---|---|---|---|
-| Normalna | (ceny bez zmian) | bez zmian | 0% |
-| Nadmiar towaru po jarmarku | (wszystko -20%) | popyt o stopień niżej | 0% |
-| Niedobór na rynku | (wszystko +40% · czynsz +10%) | popyt o stopień wyżej | +10% |
-| Wojna | (Broń biała, Broń zasięgowa, Amunicja, Pancerze +80% · Jedzenie, picie, nocleg +30% · reszta +5% · czynsz +30%) | broń i pancerz +1 | +30% |
-| Zaraza | (Zioła, mikstury, narkotyki, Protezy +150% · Jedzenie, picie, nocleg +60% · reszta -15% · czynsz -40%) | leki i prowiant +1, reszta −1 | -40% |
-| Oblężenie | (Jedzenie, picie, nocleg +250% · Broń biała, Broń zasięgowa, Amunicja, Pancerze +40% · reszta -30% · czynsz +100%) | prowiant +1, broń 0, reszta −1 | +100% |
-| Zamknięte szlaki (bandyci, lód) | (Ubranie i dodatki, Księgi i dokumenty, Zioła, mikstury, narkotyki +60% · reszta +5% · czynsz +10%) | ubranie i księgi +1 | +10% |
-| Kryzys mieszkaniowy | (ceny bez zmian · czynsz +70%) |  | +70% |
-| Napływ ludzi (pielgrzymi, uchodźcy, święto) | (Jedzenie, picie, nocleg +25% · Ubranie i dodatki, Wyposażenie różne +10% · reszta +5% · czynsz +40%) | jedzenie, ubranie, wyposażenie +1 | +40% |
-| Braki w dostawach (zła droga, cło, zima) | (Jedzenie, picie, nocleg +30% · Narzędzia i zestawy, Zioła, mikstury, narkotyki +20% · reszta +10%) | jedzenie +1 | 0% |
-| Kryzys (podatki, bankructwa, zła moneta) | (Jedzenie, picie, nocleg +10% · Ubranie i dodatki, Księgi i dokumenty -15% · reszta -5% · czynsz -10%) | popyt o stopień niżej, jedzenie bez zmian | -10% |
-| Dobry sezon (urodzaj, spokój na szlakach) | (Zwierzęta i pojazdy -10% · Jedzenie, picie, nocleg -20% · reszta -5% · czynsz +5%) | ubranie, wyposażenie, księgi +1 — ludzie mają pieniądze | +5% |
+| Sytuacja | Ceny | Popyt | Czynsz | Domyślna w osadach |
+|---|---|---|---|---|
+| Normalna | (ceny bez zmian) | bez zmian | 0% | 39 |
+| Nadmiar towaru po jarmarku | (wszystko -20%) | −1: wszystko | 0% |  |
+| Niedobór na rynku | (wszystko +40% · czynsz +10%) | +1: wszystko | +10% |  |
+| Wojna | (Broń biała, Broń zasięgowa, Amunicja, Pancerze +80% · Jedzenie, picie, nocleg +30% · reszta +5% · czynsz +30%) | +1: broń, strzelecka, amunicja, pancerze | +30% | 5 |
+| Zaraza | (Zioła, mikstury, narkotyki, Protezy +150% · Jedzenie, picie, nocleg +60% · reszta -15% · czynsz -40%) | +1: jedzenie, zioła, protezy · −1: broń, strzelecka, amunicja, pancerze, zwierzęta, czynsze, ubrania, narzędzia, księgi, wyposażenie, usługi | -40% |  |
+| Oblężenie | (Jedzenie, picie, nocleg +250% · Broń biała, Broń zasięgowa, Amunicja, Pancerze +40% · reszta -30% · czynsz +100%) | +1: jedzenie · −1: zwierzęta, czynsze, ubrania, narzędzia, księgi, zioła, wyposażenie, protezy, usługi | +100% |  |
+| Zamknięte szlaki (bandyci, lód) | (Ubranie i dodatki, Księgi i dokumenty, Zioła, mikstury, narkotyki +60% · reszta +5% · czynsz +10%) | +1: ubrania, księgi | +10% |  |
+| Kryzys mieszkaniowy | (ceny bez zmian · czynsz +70%) | bez zmian | +70% |  |
+| Napływ ludzi (pielgrzymi, uchodźcy, święto) | (Jedzenie, picie, nocleg +25% · Ubranie i dodatki, Wyposażenie różne +10% · reszta +5% · czynsz +40%) | +1: jedzenie, ubrania, wyposażenie | +40% | 2 |
+| Braki w dostawach (zła droga, cło, zima) | (Jedzenie, picie, nocleg +30% · Narzędzia i zestawy, Zioła, mikstury, narkotyki +20% · reszta +10%) | +1: jedzenie | 0% | 9 |
+| Kryzys (podatki, bankructwa, zła moneta) | (Jedzenie, picie, nocleg +10% · Ubranie i dodatki, Księgi i dokumenty -15% · reszta -5% · czynsz -10%) | −1: broń, strzelecka, amunicja, pancerze, zwierzęta, czynsze, ubrania, narzędzia, księgi, zioła, wyposażenie, protezy, usługi | -10% |  |
+| Dobry sezon (urodzaj, spokój na szlakach) | (Zwierzęta i pojazdy -10% · Jedzenie, picie, nocleg -20% · reszta -5% · czynsz +5%) | +1: ubrania, księgi, wyposażenie | +5% |  |
 
 ### Pora roku i wahania rynku
 

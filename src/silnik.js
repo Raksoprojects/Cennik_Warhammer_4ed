@@ -156,6 +156,31 @@ export function koniunkturaEfektywna(d, kon, { osada = null, pora = null, wahani
   const nazwa = [kon.nazwa, P?.nazwa, Wa && Wa.ceny !== 1 ? Wa.nazwa : null].filter(Boolean).join(' · ');
   return { ...kon, nazwa, kategorie, pora: P, wahania: Wa };
 }
+// v6c: ceny kategorii w strefie handlowej (to samo co narzedzia/dane_v6c.py → ceny_strefy): odchylenie stopnia strefy
+// od średniej Imperium, cena = 1 − krok × różnica, w granicach [min, max].
+export function cenyStrefy(d, strefa) {
+  const H = d.handel, Kz = H.kategorie_z_towarow, katy = Object.keys(Kz).filter(k => k !== 'opis');
+  const stopien = (s, kat) => {
+    const st = Object.fromEntries(H.towary_poradnika.map((t, i) => [t, s.siatka.split(' ')[i]]));
+    return Kz[kat].reduce((a, t) => a + H.stopnie.indexOf(st[t]), 0) / Kz[kat].length;
+  };
+  const S = H.strefy.find(s => s.id === strefa);
+  if (!S) throw new Error('Nieznana strefa: ' + strefa);
+  const { krok, min, max } = H.strefa_cena, r3 = x => Math.round(x * 1000) / 1000;
+  return Object.fromEntries(katy.map(k => {
+    const sr = H.strefy.reduce((a, s) => a + stopien(s, k), 0) / H.strefy.length;
+    return [k, { cena: r3(Math.min(max, Math.max(min, 1 - krok * (stopien(S, k) - sr)))) }];
+  }));
+}
+// v6g: pola osady wyliczane z typu, zamożności i strefy (jak dane_v6c.py) — do zakładki Osady, gdy MG zmienia typ.
+// typ: id osady-wzorca (wies, miasteczko, miasto, metropolia). Zwraca tylko pola wyliczane.
+export function wyliczOsade(d, { typ, zamoznosc, strefa }) {
+  const t = osadaZ(d, typ), o = {
+    typ, mnoznik: Math.round(t.mnoznik * (d.handel.zamoznosc.mnoznik_cen[String(zamoznosc)] ?? 1) * 1000) / 1000,
+    limit_p: t.limit_p, dostepnosc: t.dostepnosc, limit_omijaja_podtypy: t.limit_omijaja_podtypy };
+  if (strefa) o.kategorie = cenyStrefy(d, strefa);
+  return o;
+}
 // v6c: podróż kupiecka (Poradnik s. 39–40). Na każde 100 km (50 km na mało uczęszczanym szlaku) 50% szans
 // na zagrożenie; rzut 1k100 + modyfikator pory roku, tabela lądowa albo wodna. Zwraca listę zdarzeń.
 /** @param {any} d @param {Record<string, any>} opcje */
@@ -429,7 +454,10 @@ export function cenaMinimalna(d, { kupiec, pozycja, osada, koniunktura, mRynek =
 // „Altdorf (+30%)”
 export function etykietaOsady(lok) { return `${lok.nazwa} (${lok.mnoznik === 1 ? 'ceny bez zmian' : proc(lok.mnoznik)})`; }
 // Domyślna sytuacja osady (np. północ po wojnie) — podstawia się przy wyborze osady, MG może ją zmienić.
-export function sytuacjaOsady(d, id) { return d.osady.osady.find(o => o.id === id)?.sytuacja ?? 'normalna'; }
+export function sytuacjaOsady(d, id) {
+  const s = d.osady.osady.find(o => o.id === id)?.sytuacja;
+  return s && d.koniunktura.koniunktury.some(k => k.id === s) ? s : 'normalna';   // sytuacja MG mogła zostać usunięta
+}
 // „Wojna (Broń biała, Broń zasięgowa, Amunicja, Pancerze +80% · Jedzenie, picie, nocleg +30% · reszta +5% · czynsz +30%)”
 // krotko: true → nazwy kategorii ze słownika koniunktura.skroty („Wojna (broń, strzelecka, amunicja, pancerze +80% · …)”) — do list wyboru.
 export function etykietaKoniunktury(d, kon, { krotko = false } = {}) {
@@ -693,9 +721,14 @@ export function zastosujUstawienia(d, ust = {}) {
     }
     for (const k of n.czynsze.kupno ?? []) { const id = 'kupno-' + slugId(k.nazwa); if (id in C) k.cena_p = C[id]; }
   }
-  for (const [id, o] of Object.entries(ust.osady || {})) Object.assign(osadaZ(n, id), o);
+  // v6g: osady i sytuacje dopisane przez MG (zakładka Osady) — pełne obiekty; zmiany pól idą dalej przez ust.osady / ust.koniunktury.
+  for (const x of ust.nowe_osady || []) if (!n.osady.osady.some(o => o.id === x.id)) n.osady.osady.push({ ...kopia(x), wlasna: true });
+  for (const x of ust.nowe_sytuacje || []) if (!n.koniunktura.koniunktury.some(k => k.id === x.id)) n.koniunktura.koniunktury.push({ ...kopia(x), wlasna: true });
+  for (const [id, o] of Object.entries(ust.osady || {})) if (n.osady.osady.some(x => x.id === id)) Object.assign(osadaZ(n, id), o);
   for (const [id, o] of Object.entries(ust.koniunktury || {})) {
+    if (!n.koniunktura.koniunktury.some(x => x.id === id)) continue;   // usunięta sytuacja MG
     const k = konZ(n, id);
+    for (const p of ['nazwa', 'opis']) if (o[p] != null) k[p] = o[p];
     for (const [kat, v] of Object.entries(o.kategorie || {})) k.kategorie[kat] = { ...(k.kategorie[kat] || { cena: 1, popyt: 0 }), ...v };
     if (o.czynsz != null) k.czynsz = { ...(k.czynsz || {}), mnoznik: o.czynsz };
   }

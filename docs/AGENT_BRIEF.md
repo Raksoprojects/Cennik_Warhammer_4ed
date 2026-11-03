@@ -97,7 +97,8 @@ Wymagania MG dotyczące wyświetlania (dosłownie z jego prośby, v5):
 | `etykietaOsady`, `etykietaKoniunktury`, `modyfikatorKoniunktury` | teksty z modyfikatorem w nawiasie |
 | `koniunkturaEfektywna(d, kon, { pora, wahania, osada })` | v6c: sytuacja + pora roku + wahania + strefa + typ osady w jednej koniunkturze |
 | `mnoznikLokalny(osada, pozycja)`, `szansaDostepnosci(d, {...})` | v6d: specjalności ośrodka (0,8–1,2); szansa, że rzecz jest na półce |
-| `sytuacjaOsady(d, id)` | v6d: domyślna sytuacja osady (północ po wojnie); widoki podstawiają ją przy wyborze osady |
+| `sytuacjaOsady(d, id)` | v6d: domyślna sytuacja osady (północ po wojnie); widoki podstawiają ją przy wyborze osady; usunięta sytuacja MG → `normalna` |
+| `cenyStrefy(d, strefa)`, `wyliczOsade(d, { typ, zamoznosc, strefa })` | v6g: to samo co `dane_v6c.py` — ceny kategorii strefy i mnożnik / limit / Dostępność z typu × zamożności; zakładka Osady |
 | `rzutDochodu`, `sredniDochod`, `jalmuzna` | zarobki |
 | `czynsz(d, { kwatera, okres, osada, koniunktura })` | czynsz z mnożnikiem osady i koniunktury czynszu |
 | `cenaMagiczna`, `cenaZJakoscia` | przedmioty magiczne (HR-026), jakość (HR-024) |
