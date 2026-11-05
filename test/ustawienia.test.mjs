@@ -26,7 +26,7 @@ test('przykład z data/ustawienia.json działa i nie psuje danych wejściowych',
   assert.equal(n.osady.osady.find(o => o.id === 'altdorf').mnoznik, 1.4);
   assert.equal(n.koniunktura.koniunktury.find(k => k.id === 'wojna').kategorie.Pancerze.cena, 2);
   assert.equal(n.kupcy.kupcy.find(k => k.id === 'zbrojmistrz').marza, 1.2);
-  assert.deepEqual(n.rynek.kaprys.granice, [0.9, 1.1]);
+  assert.deepEqual(n.rynek.kaprys.granice, rd('data/ustawienia.json').przyklad.rynek.kaprys.granice);
   assert.ok(n.rynek.kaprys.progi.length, 'scalenie sekcji rynku jest płytkie — progi zostają');
 });
 

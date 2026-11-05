@@ -16,6 +16,6 @@
   "osady": { "altdorf": { "mnoznik": 1.4 } },
   "koniunktury": { "wojna": { "kategorie": { "Pancerze": { "cena": 2 } } } },
   "kupcy": { "zbrojmistrz": { "marza": 1.2 } },
-  "rynek": { "kaprys": { "granice": [0.9, 1.1] } }
+  "rynek": { "kaprys": { "granice": [0.85, 1.15] } }
  }
 }
